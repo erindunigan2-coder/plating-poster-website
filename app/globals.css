@@ -1,26 +1,63 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  /* Plating Posters Inc — Light Edition design system */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Backgrounds */
+  --color-bg: #F5F4F0;           /* warm off-white — body */
+  --color-gunmetal: #1A1F2E;     /* dark base — header, footer, dark sections */
+  --color-navy: #0D1020;         /* deepest dark — footer bar */
+  --color-callout: #1E2435;      /* glass card fill */
+  --color-altrow: #252B3D;       /* alternate row tint */
+
+  /* Primary accents */
+  --color-amber: #E8A020;        /* primary accent on dark backgrounds */
+  --color-amber-dark: #A06C00;   /* primary accent on light backgrounds (AA) */
+  --color-teal: #2EC4B6;         /* process accent on dark */
+  --color-teal-dark: #17857A;    /* process accent on light */
+  --color-coral: #E05C5C;        /* warning / safety / error */
+  --color-emerald: #27AE60;      /* pass / success */
+
+  /* Neutrals */
+  --color-slate: #3A4055;        /* neutral row, secondary elements */
+  --color-text: #1A1F2E;         /* body text */
+  --color-warm-white: #F0EDE8;   /* text on dark backgrounds */
+  --color-muted: #6B7080;        /* secondary text on light */
+  --color-muted-dark: #9098A8;   /* secondary text on dark */
+  --color-border: #DDD9D0;       /* borders on light */
+  --color-border-dark: #2A3048;  /* borders on dark */
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+/* Utility: frosted glass surface (dark edition — for poster placeholders & cards) */
+.glass-dark {
+  background-color: rgba(30, 36, 53, 0.85);
+  background-image: linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.010));
+  border: 1px solid rgba(255,255,255,.10);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.10),
+    inset 0 -1px 0 rgba(0,0,0,.20),
+    0 4px 16px rgba(0,0,0,.30);
+}
+
+/* Utility: amber-tinted glass */
+.glass-amber {
+  background-color: rgba(232, 160, 32, 0.12);
+  border: 1px solid rgba(232, 160, 32, 0.22);
+}
+
+/* Utility: teal-tinted glass */
+.glass-teal {
+  background-color: rgba(46, 196, 182, 0.12);
+  border: 1px solid rgba(46, 196, 182, 0.20);
+}
+
+/* Utility: coral-tinted glass */
+.glass-coral {
+  background-color: rgba(224, 92, 92, 0.12);
+  border: 1px solid rgba(224, 92, 92, 0.22);
 }
