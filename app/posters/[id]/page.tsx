@@ -1,6 +1,7 @@
 import { getPoster, getAvailablePosters } from "@/lib/posters";
 import { getProducts } from "@/lib/shopify";
 import { notFound } from "next/navigation";
+import Image from "next/image";
 import OrderForm from "@/components/OrderForm";
 
 export async function generateStaticParams() {
@@ -39,25 +40,32 @@ export default async function PosterDetailPage({ params }: Props) {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
         {/* Left: Preview */}
         <div>
-          <div
-            className="rounded-none aspect-[3/4] flex flex-col items-center justify-center gap-4"
-            style={{ background: "#1e1e1c" }}
-          >
-            <p className="font-black uppercase text-xs tracking-widest" style={{ color: "#d4532a" }}>
-              {poster.category}
-            </p>
-            <p className="font-black uppercase text-white text-3xl text-center px-6 leading-tight">
-              {poster.title}
-            </p>
-            <p className="font-medium italic text-center text-sm px-6" style={{ color: "#888880" }}>
-              {poster.titleEs}
-            </p>
-            <svg className="w-14 h-14 mt-4" style={{ color: "#3a3a38" }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1}
-                d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+          <div className="relative rounded-none aspect-[2/3] overflow-hidden" style={{ background: "#1e1e1c" }}>
+            {poster.previewImage ? (
+              <Image
+                src={poster.previewImage}
+                alt={`${poster.title} poster preview`}
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover object-top"
+                priority
               />
-            </svg>
-            <p className="text-xs" style={{ color: "#555550" }}>Preview image coming soon</p>
+            ) : (
+              <div className="flex flex-col items-center justify-center gap-4 h-full">
+                <p className="font-black uppercase text-xs tracking-widest" style={{ color: "#d4532a" }}>
+                  {poster.category}
+                </p>
+                <p className="font-black uppercase text-white text-3xl text-center px-6 leading-tight">
+                  {poster.title}
+                </p>
+                <svg className="w-14 h-14 mt-4" style={{ color: "#3a3a38" }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1}
+                    d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                  />
+                </svg>
+                <p className="text-xs" style={{ color: "#555550" }}>Preview image coming soon</p>
+              </div>
+            )}
           </div>
         </div>
 
