@@ -81,7 +81,7 @@ export const CATEGORIES: CategoryEntry[] = [
     accentColor: "#27AE60",
     totalPosters: 64,
     processes: [
-      { id: pid("Electroless Nickel (Low Phosphorus)"), title: "Electroless Nickel (Low Phosphorus)", posterCount: 8 },
+      { id: pid("Electroless Nickel (Low Phosphorus)"), title: "Electroless Nickel (Low Phosphorus)", posterCount: 8, available: true },
       { id: pid("Electroless Nickel (Mid Phosphorus)"), title: "Electroless Nickel (Mid Phosphorus)", posterCount: 8 },
       { id: pid("Electroless Nickel (High Phosphorus)"), title: "Electroless Nickel (High Phosphorus)", posterCount: 8 },
       { id: pid("Electroless Copper"), title: "Electroless Copper", posterCount: 8 },
