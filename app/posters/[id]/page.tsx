@@ -1,5 +1,5 @@
 import { getPoster, getAvailablePosters } from "@/lib/posters";
-import { getProducts } from "@/lib/shopify";
+import { VARIANT_MAP } from "@/lib/variants";
 import { notFound } from "next/navigation";
 import PosterDetailClient from "@/components/PosterDetailClient";
 
@@ -16,22 +16,7 @@ export default async function PosterDetailPage({ params }: Props) {
   const poster = getPoster(id);
   if (!poster) notFound();
 
-  const variantMap: Record<string, string> = {};
-  try {
-    const products = await getProducts();
-    const shopifyProduct = products.find((p: { title: string }) =>
-      p.title.toLowerCase().includes(poster.title.toLowerCase())
-    );
-    if (shopifyProduct) {
-      shopifyProduct.variants.edges.forEach(
-        ({ node: v }: { node: { title: string; id: string } }) => {
-          variantMap[v.title] = v.id;
-        }
-      );
-    }
-  } catch (e) {
-    console.error("Could not fetch Shopify variants:", e);
-  }
+  const variantMap = VARIANT_MAP[id] ?? {};
 
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

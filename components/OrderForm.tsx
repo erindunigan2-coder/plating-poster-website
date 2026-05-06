@@ -45,16 +45,18 @@ export default function OrderForm({ poster, variantMap, edition: editionProp, on
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  const isShopTough = finish === "Shop Tough";
-  const unitPrice = isShopTough ? 95 : poster.price;
+  // Price table matches the Shopify CSV: Matte $75/99/169, Shop Tough $85/115/189
+  const PRICES: Record<string, Record<string, number>> = {
+    "Matte Laminate": { "18×24": 75, "24×36": 99, "36×48": 169 },
+    "Shop Tough":     { "18×24": 85, "24×36": 115, "36×48": 189 },
+  };
+  const unitPrice = PRICES[finish]?.[size] ?? poster.price;
   const total = (unitPrice + (logoUpgrade ? poster.logoUpgradePrice : 0)) * quantity;
 
   const shopifySize = toShopifySize(size);
-  const shopifyLang = toShopifyLanguage(language);
-  // Variant key includes edition when Shopify is updated; for now falls back gracefully
-  const variantKey = `${shopifyLang} / ${shopifySize} / ${finish}`;
-  const variantKeyLegacy = `${shopifyLang} / ${shopifySize} / Matte`;
-  const variantId = variantMap[variantKey] || variantMap[variantKeyLegacy];
+  // Key format matches Shopify variant titles: "Edition / Size / Finish"
+  const variantKey = `${edition} / ${shopifySize} / ${finish}`;
+  const variantId = variantMap[variantKey];
 
   async function handleAddToCart() {
     if (!variantId) {
@@ -165,7 +167,7 @@ export default function OrderForm({ poster, variantMap, edition: editionProp, on
             </button>
           ))}
         </div>
-        {isShopTough && (
+        {finish === "Shop Tough" && (
           <p className="text-xs mt-2" style={{ color: "#17857A" }}>
             ✔ Shop Tough prints on rigid .030 styrene — holds up in wet and chemical environments.
           </p>
