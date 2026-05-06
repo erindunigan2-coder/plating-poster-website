@@ -7,6 +7,8 @@ import { createCartAndCheckout, LOGO_UPGRADE_VARIANT_ID, toShopifySize, toShopif
 type Props = {
   poster: Poster;
   variantMap: Record<string, string>;
+  edition?: "Dark" | "Light";
+  onEditionChange?: (edition: "Dark" | "Light") => void;
 };
 
 const FINISHES = [
@@ -22,16 +24,22 @@ const FINISHES = [
   },
 ];
 
-const EDITIONS = [
+const EDITIONS: { id: "Dark" | "Light"; label: string; description: string }[] = [
   { id: "Dark", label: "Dark Edition", description: "Gunmetal background — flagship series." },
   { id: "Light", label: "Light Edition", description: "Warm off-white background — bright environments." },
 ];
 
-export default function OrderForm({ poster, variantMap }: Props) {
+export default function OrderForm({ poster, variantMap, edition: editionProp, onEditionChange }: Props) {
   const [language, setLanguage] = useState<"en" | "es">("en");
   const [size, setSize] = useState(poster.sizes[0]);
   const [finish, setFinish] = useState("Matte Laminate");
-  const [edition, setEdition] = useState("Dark");
+  const [editionInternal, setEditionInternal] = useState<"Dark" | "Light">("Dark");
+
+  const edition = editionProp ?? editionInternal;
+  const setEdition = (ed: "Dark" | "Light") => {
+    setEditionInternal(ed);
+    onEditionChange?.(ed);
+  };
   const [logoUpgrade, setLogoUpgrade] = useState(false);
   const [quantity, setQuantity] = useState(1);
   const [loading, setLoading] = useState(false);
