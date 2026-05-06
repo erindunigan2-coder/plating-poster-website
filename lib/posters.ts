@@ -15,7 +15,8 @@ export type Poster = {
   logoUpgradePrice: number; // additional cost for logo customization
   sizes: string[];
   available: boolean;
-  previewImage: string; // path to preview image in /public
+  previewImage: string;       // dark edition preview — /public/posters/
+  previewImageLight?: string; // light edition preview
   languages: Language[];
 };
 
@@ -54,6 +55,7 @@ export const POSTERS: Poster[] = [
     sizes: ["18×24", "24×36", "36×48"],
     available: true,
     previewImage: "/posters/en-low-phos-demystified-preview.jpg",
+    previewImageLight: "/posters/en-low-phos-demystified-light-preview.jpg",
     languages: ["en"],
   },
   {
@@ -71,6 +73,7 @@ export const POSTERS: Poster[] = [
     sizes: ["18×24", "24×36", "36×48"],
     available: true,
     previewImage: "/posters/en-low-phos-process-flow-preview.jpg",
+    previewImageLight: "/posters/en-low-phos-process-flow-light-preview.jpg",
     languages: ["en", "es"],
   },
   {
@@ -88,6 +91,7 @@ export const POSTERS: Poster[] = [
     sizes: ["18×24", "24×36", "36×48"],
     available: true,
     previewImage: "/posters/en-low-phos-cleaning-preview.jpg",
+    previewImageLight: "/posters/en-low-phos-cleaning-light-preview.jpg",
     languages: ["en", "es"],
   },
   {
@@ -105,6 +109,7 @@ export const POSTERS: Poster[] = [
     sizes: ["18×24", "24×36", "36×48"],
     available: true,
     previewImage: "/posters/en-low-phos-rinse-pre-activation-preview.jpg",
+    previewImageLight: "/posters/en-low-phos-rinse-pre-activation-light-preview.jpg",
     languages: ["en"],
   },
   {
@@ -122,6 +127,7 @@ export const POSTERS: Poster[] = [
     sizes: ["18×24", "24×36", "36×48"],
     available: true,
     previewImage: "/posters/en-low-phos-activation-preview.jpg",
+    previewImageLight: "/posters/en-low-phos-activation-light-preview.jpg",
     languages: ["en"],
   },
   {
@@ -139,6 +145,7 @@ export const POSTERS: Poster[] = [
     sizes: ["18×24", "24×36", "36×48"],
     available: true,
     previewImage: "/posters/en-low-phos-critical-rinse-preview.jpg",
+    previewImageLight: "/posters/en-low-phos-critical-rinse-light-preview.jpg",
     languages: ["en"],
   },
   {
@@ -156,6 +163,7 @@ export const POSTERS: Poster[] = [
     sizes: ["18×24", "24×36", "36×48"],
     available: true,
     previewImage: "/posters/en-low-phos-en-bath-preview.jpg",
+    previewImageLight: "/posters/en-low-phos-en-bath-light-preview.jpg",
     languages: ["en"],
   },
   {
@@ -173,6 +181,7 @@ export const POSTERS: Poster[] = [
     sizes: ["18×24", "24×36", "36×48"],
     available: true,
     previewImage: "/posters/en-low-phos-final-rinse-preview.jpg",
+    previewImageLight: "/posters/en-low-phos-final-rinse-light-preview.jpg",
     languages: ["en"],
   },
   {
@@ -190,6 +199,7 @@ export const POSTERS: Poster[] = [
     sizes: ["18×24", "24×36", "36×48"],
     available: true,
     previewImage: "/posters/en-low-phos-post-treatment-preview.jpg",
+    previewImageLight: "/posters/en-low-phos-post-treatment-light-preview.jpg",
     languages: ["en"],
   },
 ];

@@ -103,17 +103,25 @@ export default function OrderForm({ poster, variantMap }: Props) {
         <label className="block text-xs font-black uppercase tracking-widest mb-2" style={{ color: gunmetal }}>
           Language
         </label>
-        <div className="flex gap-2">
-          {poster.languages.includes("en") && (
-            <button onClick={() => setLanguage("en")} className={btnBase} style={language === "en" ? btnActive : btnInactive}>
-              🇺🇸 English
-            </button>
-          )}
-          {poster.languages.includes("es") && (
-            <button onClick={() => setLanguage("es")} className={btnBase} style={language === "es" ? btnActive : btnInactive}>
+        <div className="flex gap-2 flex-wrap">
+          <button onClick={() => setLanguage("en")} className={btnBase} style={language === "en" ? btnActive : btnInactive}>
+            🇺🇸 English
+          </button>
+          <div className="relative">
+            <button
+              disabled
+              className={btnBase}
+              style={{ ...btnInactive, color: "#bbb8b0", borderColor: "#ede9e0", cursor: "not-allowed", paddingRight: "80px" }}
+            >
               🇪🇸 Español
             </button>
-          )}
+            <span
+              className="absolute right-2 top-1/2 -translate-y-1/2 text-xs font-black uppercase tracking-wider px-2 py-0.5"
+              style={{ background: "#FFF3D6", color: "#E8A020", borderRadius: "3px", whiteSpace: "nowrap" }}
+            >
+              Coming Soon
+            </span>
+          </div>
         </div>
       </div>
 
