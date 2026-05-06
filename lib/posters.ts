@@ -10,6 +10,7 @@ export type Poster = {
   description: string;
   descriptionEs: string;
   category: string;
+  processId?: string; // catalog process slug — links poster to a category/process page
   price: number; // in USD
   logoUpgradePrice: number; // additional cost for logo customization
   sizes: string[];
@@ -47,6 +48,7 @@ export const POSTERS: Poster[] = [
     descriptionEs:
       "Referencia esencial para el niquelado sin corriente. Cubre la reacción autocatalítica, grados de fósforo, especificaciones clave y selección de aplicaciones.",
     category: "Electroless Nickel",
+    processId: "electroless-nickel-low-phosphorus",
     price: 75,
     logoUpgradePrice: 35,
     sizes: ["18×24", "24×36", "36×48"],
@@ -63,6 +65,7 @@ export const POSTERS: Poster[] = [
     descriptionEs:
       "Mapa visual de las 7 etapas del proceso de niquelado sin corriente de bajo fósforo. Póster de orientación esencial para operadores nuevos.",
     category: "Electroless Nickel",
+    processId: "electroless-nickel-low-phosphorus",
     price: 75,
     logoUpgradePrice: 35,
     sizes: ["18×24", "24×36", "36×48"],
@@ -79,6 +82,7 @@ export const POSTERS: Poster[] = [
     descriptionEs:
       "Parámetros críticos y modos de falla para la etapa de limpieza. Cubre limpieza por inmersión y electrolítica, temperatura y trampas de contaminación.",
     category: "Electroless Nickel",
+    processId: "electroless-nickel-low-phosphorus",
     price: 75,
     logoUpgradePrice: 35,
     sizes: ["18×24", "24×36", "36×48"],
@@ -95,6 +99,7 @@ export const POSTERS: Poster[] = [
     descriptionEs:
       "Número clave: < 50 µS/cm. Controla el arrastre de limpiador antes de la activación ácida. Cubre umbrales de conductividad y criterios de descarga.",
     category: "Electroless Nickel",
+    processId: "electroless-nickel-low-phosphorus",
     price: 75,
     logoUpgradePrice: 35,
     sizes: ["18×24", "24×36", "36×48"],
@@ -111,6 +116,7 @@ export const POSTERS: Poster[] = [
     descriptionEs:
       "Número clave: 30–120 segundos (acero de alta resistencia: máximo 30 seg). Parámetros de activación con ácido clorhídrico y precauciones para acero de alta resistencia.",
     category: "Electroless Nickel",
+    processId: "electroless-nickel-low-phosphorus",
     price: 75,
     logoUpgradePrice: 35,
     sizes: ["18×24", "24×36", "36×48"],
@@ -127,6 +133,7 @@ export const POSTERS: Poster[] = [
     descriptionEs:
       "Número clave: < 20 µS/cm. La especificación de enjuague más estricta de la línea. Cloruros arrastrados aquí envenenan el baño EN.",
     category: "Electroless Nickel",
+    processId: "electroless-nickel-low-phosphorus",
     price: 75,
     logoUpgradePrice: 35,
     sizes: ["18×24", "24×36", "36×48"],
@@ -143,6 +150,7 @@ export const POSTERS: Poster[] = [
     descriptionEs:
       "Número clave: 80–92 °C. Parámetros completos del baño EN de bajo fósforo: temperatura, pH, concentración de níquel, filtración y vida útil del baño.",
     category: "Electroless Nickel",
+    processId: "electroless-nickel-low-phosphorus",
     price: 75,
     logoUpgradePrice: 35,
     sizes: ["18×24", "24×36", "36×48"],
@@ -159,6 +167,7 @@ export const POSTERS: Poster[] = [
     descriptionEs:
       "Número clave: < 10 segundos de tiempo de transferencia. Requisitos de enjuague post-enchapado y control del arrastre de níquel.",
     category: "Electroless Nickel",
+    processId: "electroless-nickel-low-phosphorus",
     price: 75,
     logoUpgradePrice: 35,
     sizes: ["18×24", "24×36", "36×48"],
@@ -175,6 +184,7 @@ export const POSTERS: Poster[] = [
     descriptionEs:
       "Número clave: 190–210 °C / mínimo 4 horas. Recocido de alivio de fragilización por hidrógeno y endurecimiento por envejecimiento.",
     category: "Electroless Nickel",
+    processId: "electroless-nickel-low-phosphorus",
     price: 75,
     logoUpgradePrice: 35,
     sizes: ["18×24", "24×36", "36×48"],
@@ -190,4 +200,8 @@ export function getPoster(id: string): Poster | undefined {
 
 export function getAvailablePosters(): Poster[] {
   return POSTERS.filter((p) => p.available);
+}
+
+export function getPostersByProcess(processId: string): Poster[] {
+  return POSTERS.filter((p) => p.available && p.processId === processId);
 }

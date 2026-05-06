@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getCategory, getProcess, CATEGORIES } from "@/lib/catalog";
+import { getPostersByProcess } from "@/lib/posters";
+import PosterCard from "@/components/PosterCard";
 import PosterPlaceholder from "@/components/PosterPlaceholder";
 
 type Props = {
@@ -149,6 +151,8 @@ export default async function ProcessSeriesPage({ params }: Props) {
   if (!cat || !proc) notFound();
 
   const seriesTitles = getSeriesTitles(cat.id, proc.title);
+  const availablePosters = getPostersByProcess(proc.id);
+  const isAvailable = proc.available && availablePosters.length > 0;
 
   return (
     <div>
@@ -189,22 +193,38 @@ export default async function ProcessSeriesPage({ params }: Props) {
             {proc.title} process. Available in English and Spanish, dark and light editions.
           </p>
 
-          {/* Coming soon notice */}
-          <div
-            className="inline-flex items-center gap-2 mt-5 px-4 py-2 rounded-full text-sm font-mono"
-            style={{
-              background: "rgba(46,196,182,0.08)",
-              border: "1px solid rgba(46,196,182,0.25)",
-              color: "#2EC4B6",
-            }}
-          >
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-              <circle cx="6" cy="6" r="5" stroke="currentColor" strokeWidth="1.5" />
-              <line x1="6" y1="4" x2="6" y2="6.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-              <circle cx="6" cy="8.5" r="0.75" fill="currentColor" />
-            </svg>
-            Artwork in production — this series is coming soon
-          </div>
+          {/* Availability badge */}
+          {isAvailable ? (
+            <div
+              className="inline-flex items-center gap-2 mt-5 px-4 py-2 rounded-full text-sm font-mono"
+              style={{
+                background: "rgba(39,174,96,0.10)",
+                border: "1px solid rgba(39,174,96,0.35)",
+                color: "#27AE60",
+              }}
+            >
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor">
+                <circle cx="5" cy="5" r="5" />
+              </svg>
+              Available now — order today
+            </div>
+          ) : (
+            <div
+              className="inline-flex items-center gap-2 mt-5 px-4 py-2 rounded-full text-sm font-mono"
+              style={{
+                background: "rgba(46,196,182,0.08)",
+                border: "1px solid rgba(46,196,182,0.25)",
+                color: "#2EC4B6",
+              }}
+            >
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                <circle cx="6" cy="6" r="5" stroke="currentColor" strokeWidth="1.5" />
+                <line x1="6" y1="4" x2="6" y2="6.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                <circle cx="6" cy="8.5" r="0.75" fill="currentColor" />
+              </svg>
+              Artwork in production — this series is coming soon
+            </div>
+          )}
         </div>
       </section>
 
@@ -224,43 +244,49 @@ export default async function ProcessSeriesPage({ params }: Props) {
           </span>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-          {seriesTitles.map((title, i) => (
-            <div
-              key={i}
-              className="flex flex-col overflow-hidden"
-              style={{ borderRadius: "10px", border: "1px solid #2A3048" }}
-            >
-              {/* Placeholder image */}
-              <div className="aspect-[3/4] overflow-hidden" style={{ background: "#1A1F2E" }}>
-                <PosterPlaceholder
-                  categoryTitle={cat.title}
-                  processTitle={proc.title}
-                  posterTitle={title}
-                  accentColor={cat.accentColor}
-                  isMainSummary={i === 0}
-                />
-              </div>
-              {/* Card footer */}
+        {isAvailable ? (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {availablePosters.map((poster) => (
+              <PosterCard key={poster.id} poster={poster} />
+            ))}
+          </div>
+        ) : (
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+            {seriesTitles.map((title, i) => (
               <div
-                className="p-3"
-                style={{ background: "#1A1F2E", borderTop: "1px solid #2A3048" }}
+                key={i}
+                className="flex flex-col overflow-hidden"
+                style={{ borderRadius: "10px", border: "1px solid #2A3048" }}
               >
-                <p
-                  className="font-bold uppercase leading-tight text-xs"
-                  style={{ color: "#F0EDE8", fontFamily: "var(--font-barlow-condensed)" }}
+                <div className="aspect-[3/4] overflow-hidden" style={{ background: "#1A1F2E" }}>
+                  <PosterPlaceholder
+                    categoryTitle={cat.title}
+                    processTitle={proc.title}
+                    posterTitle={title}
+                    accentColor={cat.accentColor}
+                    isMainSummary={i === 0}
+                  />
+                </div>
+                <div
+                  className="p-3"
+                  style={{ background: "#1A1F2E", borderTop: "1px solid #2A3048" }}
                 >
-                  {title}
-                </p>
-                {i === 0 && (
-                  <p className="font-mono text-xs mt-1" style={{ color: cat.accentColor }}>
-                    Main Summary
+                  <p
+                    className="font-bold uppercase leading-tight text-xs"
+                    style={{ color: "#F0EDE8", fontFamily: "var(--font-barlow-condensed)" }}
+                  >
+                    {title}
                   </p>
-                )}
+                  {i === 0 && (
+                    <p className="font-mono text-xs mt-1" style={{ color: cat.accentColor }}>
+                      Main Summary
+                    </p>
+                  )}
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
 
         {/* What's in every series */}
         <div
@@ -290,27 +316,29 @@ export default async function ProcessSeriesPage({ params }: Props) {
           </div>
         </div>
 
-        {/* Notify CTA */}
-        <div
-          className="mt-8 p-6 rounded-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"
-          style={{ background: "#F5F4F0", border: "1px solid #DDD9D0" }}
-        >
-          <div>
-            <p className="font-black uppercase text-base mb-1" style={{ color: "#1A1F2E" }}>
-              Interested in this series?
-            </p>
-            <p className="text-sm" style={{ color: "#6B7080" }}>
-              Contact us to be notified when the {proc.title} series is available.
-            </p>
-          </div>
-          <Link
-            href="/contact"
-            className="shrink-0 inline-flex items-center justify-center px-6 py-2.5 font-black text-sm tracking-widest uppercase"
-            style={{ background: "#E8A020", color: "#1A1F2E", borderRadius: "4px" }}
+        {/* Notify CTA — only show for coming-soon series */}
+        {!isAvailable && (
+          <div
+            className="mt-8 p-6 rounded-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"
+            style={{ background: "#F5F4F0", border: "1px solid #DDD9D0" }}
           >
-            Get Notified
-          </Link>
-        </div>
+            <div>
+              <p className="font-black uppercase text-base mb-1" style={{ color: "#1A1F2E" }}>
+                Interested in this series?
+              </p>
+              <p className="text-sm" style={{ color: "#6B7080" }}>
+                Contact us to be notified when the {proc.title} series is available.
+              </p>
+            </div>
+            <Link
+              href="/contact"
+              className="shrink-0 inline-flex items-center justify-center px-6 py-2.5 font-black text-sm tracking-widest uppercase"
+              style={{ background: "#E8A020", color: "#1A1F2E", borderRadius: "4px" }}
+            >
+              Get Notified
+            </Link>
+          </div>
+        )}
       </section>
 
       {/* Back nav */}
