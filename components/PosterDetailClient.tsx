@@ -13,11 +13,6 @@ type Props = {
 export default function PosterDetailClient({ poster, variantMap }: Props) {
   const [edition, setEdition] = useState<"Dark" | "Light">("Dark");
 
-  const previewSrc =
-    edition === "Light" && poster.previewImageLight
-      ? poster.previewImageLight
-      : poster.previewImage;
-
   const hasLight = !!poster.previewImageLight;
 
   return (
@@ -25,15 +20,27 @@ export default function PosterDetailClient({ poster, variantMap }: Props) {
       {/* Left: Preview */}
       <div>
         <div className="relative aspect-[2/3] overflow-hidden" style={{ background: "#1e1e1c" }}>
+          {/* Dark edition — always mounted */}
           <Image
-            key={previewSrc}
-            src={previewSrc}
-            alt={`${poster.title} — ${edition} edition`}
+            src={poster.previewImage}
+            alt={`${poster.title} — dark edition`}
             fill
             sizes="(max-width: 1024px) 100vw, 50vw"
             className="object-cover object-top"
             priority
+            style={{ opacity: edition === "Dark" ? 1 : 0, transition: "opacity 0.25s ease" }}
           />
+          {/* Light edition — always mounted, fades in */}
+          {poster.previewImageLight && (
+            <Image
+              src={poster.previewImageLight}
+              alt={`${poster.title} — light edition`}
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover object-top"
+              style={{ opacity: edition === "Light" ? 1 : 0, transition: "opacity 0.25s ease" }}
+            />
+          )}
         </div>
 
         {/* Dark / Light toggle — synced with order form */}
