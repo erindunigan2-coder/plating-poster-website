@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anodizado &mdash; Paso 07 Sellado &mdash; T&eacute;cnico | Plating Posters Inc</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Barlow:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#1A1F2E;--navy:#0D1020;--text:#F0EDE8;--muted:rgba(240,237,232,.62);--faint:rgba(240,237,232,.38);--amber:#E8A020;--teal:#2EC4B6;--emerald:#27AE60;--coral:#E05C5C;--slate:#3A4055;--callout:#1E2435;--altrow:#252B3D;--glass-bg:rgba(30,36,53,.55);--glass-border:rgba(255,255,255,.12);--glass-shadow:inset 0 1px 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(0,0,0,.2),0 4px 12px rgba(0,0,0,.25);}
+.poster[data-edition="light"]{--bg:#F5F4F0;--navy:#DDD8CE;--text:#1B2030;--muted:rgba(27,32,48,.66);--faint:rgba(27,32,48,.42);--amber:#B8770D;--teal:#1A8C82;--emerald:#1E8449;--coral:#B7322F;--slate:#C5C0B5;--callout:#ECEAE1;--altrow:#E4E1D6;--glass-bg:rgba(255,253,247,.66);--glass-border:rgba(27,32,48,.10);--glass-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 4px 12px rgba(27,32,48,.08);}
+html,body{margin:0;padding:0;background:#0a0c14;}.stage{width:100vw;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;overflow:visible;padding:12px 0;box-sizing:border-box;}.poster-wrap{transform-origin:center center;}.poster{width:1200px;height:1800px;position:relative;overflow:hidden;background:radial-gradient(1200px 800px at 15% 8%,rgba(46,196,182,.14),transparent 60%),radial-gradient(1000px 700px at 90% 25%,rgba(232,160,32,.12),transparent 55%),radial-gradient(900px 900px at 50% 80%,rgba(224,92,92,.10),transparent 60%),var(--bg);font-family:'Inter',sans-serif;color:var(--text);display:flex;flex-direction:column;padding:26px 28px;box-sizing:border-box;}.poster::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:50px 50px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);pointer-events:none;z-index:0;}.poster>*{position:relative;z-index:1;}
+.glass{background-color:var(--glass-bg);background-image:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));border:1px solid var(--glass-border);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);box-shadow:var(--glass-shadow);border-radius:12px;}
+.tack{position:absolute;width:24px;height:24px;border-radius:50%;border:1.5px solid rgba(232,160,32,.28);z-index:2;pointer-events:none;}.tack::before,.tack::after{content:"";position:absolute;background:rgba(232,160,32,.28);}.tack::before{left:50%;top:-3px;bottom:-3px;width:1px;transform:translateX(-50%);}.tack::after{top:50%;left:-3px;right:-3px;height:1px;transform:translateY(-50%);}.tack.tl{top:12px;left:12px;}.tack.tr{top:12px;right:12px;}.tack.bl{bottom:12px;left:12px;}.tack.br{bottom:12px;right:12px;}
+.poster-header{flex-shrink:0;}.poster-body{flex:1;overflow:visible;display:flex;flex-direction:column;gap:14px;justify-content:space-between;}.poster-footer{flex-shrink:0;margin-top:2px;}
+.header-band{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:4px;}.header-left{flex:1;min-width:0;}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--amber);letter-spacing:.16em;text-transform:uppercase;margin-bottom:4px;display:flex;align-items:center;gap:12px;}.eyebrow::before{content:"";display:inline-block;width:30px;height:3px;background:var(--amber);}
+.headline{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:72px;color:var(--text);line-height:.92;margin:4px 0;letter-spacing:-.01em;text-transform:uppercase;}.headline em{font-style:normal;color:var(--amber);}
+.subhead{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;color:var(--teal);margin:0 0 3px;letter-spacing:.02em;text-transform:uppercase;}
+.tagline{font-family:'Inter',sans-serif;font-style:italic;font-size:13px;color:var(--muted);line-height:1.45;max-width:700px;margin:0;}
+.logo-card{flex-shrink:0;padding:12px 10px;display:flex;flex-direction:column;align-items:center;gap:8px;align-self:flex-start;}.logo-tile{width:68px;height:68px;border-radius:12px;background:linear-gradient(135deg,#E8A020,#2EC4B6);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -2px 4px rgba(0,0,0,.15),0 4px 14px rgba(0,0,0,.35);}.logo-tile span{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:26px;color:#1A1F2E;letter-spacing:.02em;line-height:1;}.logo-word{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;letter-spacing:.04em;text-transform:uppercase;line-height:1;text-align:center;white-space:nowrap;}.logo-word .a{color:var(--text);}.logo-word .b{color:var(--amber);}.logo-inc{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.05em;text-transform:lowercase;color:var(--muted);margin-top:-2px;}
+.section-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:24px;letter-spacing:.08em;text-transform:uppercase;color:var(--text);margin:0 0 8px;display:flex;align-items:center;gap:8px;}.section-title::before{content:"";width:6px;height:6px;background:var(--amber);border-radius:50%;}.section-title .sub{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;color:var(--muted);margin-left:auto;font-weight:500;}
+.rule-card{display:flex;align-items:center;gap:12px;padding:14px 20px;background:rgba(232,160,32,.07);}
+.rule-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:52px;color:var(--amber);line-height:1;letter-spacing:-.02em;white-space:nowrap;}
+.rule-body{flex:1;}.rule-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:17px;color:var(--amber);letter-spacing:.08em;text-transform:uppercase;}.rule-text{font-family:'Inter',sans-serif;font-size:13px;color:var(--muted);line-height:1.45;margin-top:3px;}
+.data-table{width:100%;border-collapse:collapse;}.data-table th{font-family:'Barlow',sans-serif;font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);padding:6px 10px;text-align:left;background:rgba(13,16,32,.35);border-bottom:1px solid var(--glass-border);}.poster[data-edition="light"] .data-table th{background:rgba(27,32,48,.06);}.data-table td{padding:5px 10px;color:var(--text);line-height:1.3;border-bottom:1px solid rgba(255,255,255,.05);font-family:'Inter',sans-serif;font-size:12px;}.data-table tr:last-child td{border-bottom:none;}.data-table tr:nth-child(even) td{background:rgba(255,255,255,.02);}.poster[data-edition="light"] .data-table tr:nth-child(even) td{background:rgba(27,32,48,.025);}.data-table .mono{font-family:'JetBrains Mono',monospace;font-size:13px;}
+.numbered-list{display:flex;flex-direction:column;gap:8px;}.numbered-item{display:flex;align-items:flex-start;gap:10px;}.num-bullet{width:24px;height:24px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:13px;color:#1A1F2E;margin-top:1px;}.num-text{font-family:'Inter',sans-serif;font-weight:500;font-size:12.5px;color:var(--text);line-height:1.4;}.num-text strong{font-weight:700;}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}.compare-card{padding:10px 16px;}.compare-card h4{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:19px;color:var(--text);margin:0 0 5px;text-transform:uppercase;letter-spacing:.04em;}.compare-card h4 .tag{font-size:11px;padding:2px 8px;border-radius:4px;margin-left:8px;font-family:'JetBrains Mono',monospace;font-weight:500;letter-spacing:.06em;}.compare-card h4 .tag.good{background:rgba(39,174,96,.15);color:var(--emerald);}.compare-card h4 .tag.bad{background:rgba(224,92,92,.15);color:var(--coral);}.compare-card ul{list-style:none;padding:0;margin:0;}.compare-card li{font-size:13.5px;line-height:1.5;padding:3px 0;display:flex;gap:8px;align-items:flex-start;}.compare-card li::before{content:"";width:5px;height:5px;border-radius:50%;margin-top:7px;flex-shrink:0;}.compare-card.do li::before{background:var(--emerald);}.compare-card.dont li::before{background:var(--coral);}
+.trouble-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}.trouble-card{padding:10px 16px;border-radius:10px;border-left:3px solid var(--coral);display:flex;flex-direction:column;gap:3px;}.trouble-card h5{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;color:var(--coral);margin:0;text-transform:uppercase;letter-spacing:.06em;line-height:1.15;}.trouble-card p{font-size:12px;color:var(--muted);margin:0;line-height:1.4;}
+.safety-card{padding:18px 24px;background:rgba(224,92,92,.08);border:1px solid rgba(224,92,92,.25);border-radius:12px;}.safety-head{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px;color:var(--coral);letter-spacing:.06em;text-transform:uppercase;margin-bottom:2px;}.safety-body{font-size:14px;color:var(--text);line-height:1.55;}.safety-body strong{font-weight:700;color:var(--coral);}
+.bottom-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.footer{padding:10px 20px;background-color:rgba(13,16,32,.85);background-image:linear-gradient(180deg,rgba(255,255,255,.04),rgba(0,0,0,0));border:1px solid rgba(255,255,255,.10);border-radius:8px;text-align:center;display:flex;flex-direction:column;gap:2px;}.poster[data-edition="light"] .footer{background-color:rgba(221,216,206,.95);border-color:rgba(27,32,48,.10);}.footer-disclaimer{font-family:'Inter',sans-serif;font-size:9px;line-height:1.35;color:var(--faint);margin:0 auto;max-width:900px;}.footer-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:13px;color:var(--text);letter-spacing:.04em;text-transform:uppercase;margin:0;}.footer-brand{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;}
+.tweaks{position:fixed;bottom:16px;right:16px;z-index:100;background:rgba(13,16,32,.92);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:10px 14px;display:flex;flex-direction:column;gap:8px;font-family:'Inter',sans-serif;font-size:12px;color:#F0EDE8;}
+@media print{@page{size:12.5in 18.75in;margin:0;}html,body{background:#1A1F2E !important;-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}*{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}.stage{position:static;padding:0;display:block;overflow:visible;}.poster-wrap{transform:none !important;width:auto !important;height:auto !important;}.poster{box-shadow:none !important;width:1200px !important;height:1800px !important;overflow:hidden !important;}.glass,.trouble-card,.safety-card{backdrop-filter:none !important;-webkit-backdrop-filter:none !important;}.tweaks{display:none !important;}}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="poster-wrap" id="posterWrap">
+<div class="poster" id="poster" data-edition="light">
+  <span class="tack tl" aria-hidden="true"></span><span class="tack tr" aria-hidden="true"></span>
+  <span class="tack bl" aria-hidden="true"></span><span class="tack br" aria-hidden="true"></span>
+
+  <div class="poster-header">
+    <header class="header-band">
+      <div class="header-left">
+        <div class="eyebrow"><span>Plating Posters &nbsp;&middot;&nbsp; Serie de Anodizado &nbsp;&middot;&nbsp; Etapa 7 de 8</span></div>
+        <h1 class="headline"><em>SELLADO</em></h1>
+        <h2 class="subhead">Cierre los Poros &mdash; Fije el Color, la Resistencia a la Corrosi&oacute;n y la Dureza</h2>
+        <p class="tagline">Un anodizado sin sellar es un anodizado incompleto. El sellado convierte el &oacute;xido poroso en una barrera densa e hidratada.</p>
+      </div>
+      <aside class="glass logo-card">
+        <div class="logo-tile"><span>PP</span></div>
+        <div class="logo-word"><span class="a">Plating</span> <span class="b">Posters</span></div>
+        <div class="logo-inc">www.platingposters.com</div>
+      </aside>
+    </header>
+  </div>
+
+  <div class="poster-body">
+
+    <div class="glass rule-card">
+      <div class="rule-num">200&deg;F+</div>
+      <div class="rule-body">
+        <div class="rule-label">Sellado con Agua Caliente &mdash; El Est&aacute;ndar de Oro</div>
+        <div class="rule-text">El agua DI hirviendo o casi hirviendo hidrata el Al&sub2;O&sub3; poroso en boehmita (AlOOH), hinchando las paredes de los poros hasta cerrarlos. El acetato de n&iacute;quel y los sellados de temperatura media ofrecen alternativas con diferentes compromisos.</div>
+      </div>
+    </div>
+
+    <!-- BEFORE / AFTER SEAL — PORE STRUCTURE -->
+    <div class="glass" style="padding:8px 12px;">
+      <svg viewBox="0 0 1100 105" width="100%" xmlns="http://www.w3.org/2000/svg" style="display:block;">
+        <!-- Title -->
+        <text x="550" y="14" fill="#E8A020" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="11" letter-spacing=".08em" text-anchor="middle">MECANISMO DE SELLADO DE POROS</text>
+        <!-- LEFT: UNSEALED -->
+        <text x="250" y="30" fill="#E05C5C" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="11" text-anchor="middle" letter-spacing=".06em">SIN SELLAR &mdash; Al POROSO&#x2082;O&#x2083;</text>
+        <!-- Oxide block with open pores -->
+        <rect x="80" y="36" width="340" height="48" rx="3" fill="rgba(46,196,182,.12)" stroke="rgba(46,196,182,.2)" stroke-width="1"/>
+        <!-- Open pore channels (wide openings) -->
+        <g stroke="#1A1F2E" stroke-width="6" opacity=".4">
+          <line x1="130" y1="36" x2="130" y2="78"/><line x1="180" y1="36" x2="180" y2="78"/>
+          <line x1="230" y1="36" x2="230" y2="78"/><line x1="280" y1="36" x2="280" y2="78"/>
+          <line x1="330" y1="36" x2="330" y2="78"/><line x1="380" y1="36" x2="380" y2="78"/>
+        </g>
+        <!-- Dye molecules inside pores (colored dots) -->
+        <g fill="#E8A020" opacity=".7">
+          <circle cx="130" cy="65" r="2.5"/><circle cx="130" cy="58" r="2.5"/><circle cx="130" cy="72" r="2.5"/>
+          <circle cx="180" cy="68" r="2.5"/><circle cx="180" cy="61" r="2.5"/>
+          <circle cx="230" cy="63" r="2.5"/><circle cx="230" cy="70" r="2.5"/><circle cx="230" cy="56" r="2.5"/>
+          <circle cx="280" cy="66" r="2.5"/><circle cx="280" cy="59" r="2.5"/>
+          <circle cx="330" cy="64" r="2.5"/><circle cx="330" cy="71" r="2.5"/>
+          <circle cx="380" cy="67" r="2.5"/><circle cx="380" cy="60" r="2.5"/><circle cx="380" cy="74" r="2.5"/>
+        </g>
+        <!-- Barrier layer -->
+        <rect x="80" y="84" width="340" height="3" rx="1" fill="#2EC4B6" opacity=".35"/>
+        <!-- Substrate -->
+        <rect x="80" y="87" width="340" height="12" rx="2" fill="#5A6380" opacity=".4"/>
+        <text x="250" y="96" fill="rgba(240,237,232,.4)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle">ALUMINIO</text>
+        <!-- Arrow between -->
+        <g>
+          <line x1="460" y1="62" x2="530" y2="62" stroke="#E8A020" stroke-width="2" opacity=".6"/>
+          <polygon points="530,62 522,58 522,66" fill="#E8A020" opacity=".6"/>
+          <text x="495" y="54" fill="#E8A020" font-family="JetBrains Mono,monospace" font-size="8" text-anchor="middle" opacity=".7">SELLADO</text>
+          <text x="495" y="76" fill="rgba(240,237,232,.4)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle">200&deg;F+ DI</text>
+        </g>
+        <!-- RIGHT: SEALED -->
+        <text x="800" y="30" fill="#27AE60" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="11" text-anchor="middle" letter-spacing=".06em">SELLADO &mdash; AlOOH HIDRATADO (BOEHMITA)</text>
+        <!-- Oxide block with swollen/closed pores -->
+        <rect x="580" y="36" width="340" height="48" rx="3" fill="rgba(39,174,96,.12)" stroke="rgba(39,174,96,.2)" stroke-width="1"/>
+        <!-- Closed pore channels (narrow/filled openings) -->
+        <g stroke="#1A1F2E" stroke-width="2" opacity=".2">
+          <line x1="630" y1="42" x2="630" y2="78"/><line x1="680" y1="42" x2="680" y2="78"/>
+          <line x1="730" y1="42" x2="730" y2="78"/><line x1="780" y1="42" x2="780" y2="78"/>
+          <line x1="830" y1="42" x2="830" y2="78"/><line x1="880" y1="42" x2="880" y2="78"/>
+        </g>
+        <!-- Sealed pore caps (swollen walls closing mouth) -->
+        <g fill="rgba(39,174,96,.35)">
+          <rect x="623" y="36" width="14" height="8" rx="2"/><rect x="673" y="36" width="14" height="8" rx="2"/>
+          <rect x="723" y="36" width="14" height="8" rx="2"/><rect x="773" y="36" width="14" height="8" rx="2"/>
+          <rect x="823" y="36" width="14" height="8" rx="2"/><rect x="873" y="36" width="14" height="8" rx="2"/>
+        </g>
+        <!-- Trapped dye (still visible but locked in) -->
+        <g fill="#E8A020" opacity=".5">
+          <circle cx="630" cy="65" r="2"/><circle cx="630" cy="58" r="2"/>
+          <circle cx="680" cy="62" r="2"/><circle cx="680" cy="69" r="2"/>
+          <circle cx="730" cy="60" r="2"/><circle cx="730" cy="67" r="2"/>
+          <circle cx="780" cy="63" r="2"/><circle cx="780" cy="56" r="2"/>
+          <circle cx="830" cy="66" r="2"/><circle cx="830" cy="59" r="2"/>
+          <circle cx="880" cy="64" r="2"/><circle cx="880" cy="71" r="2"/>
+        </g>
+        <!-- Wall swelling arrows -->
+        <g fill="none" stroke="rgba(39,174,96,.4)" stroke-width=".8">
+          <path d="M621,50 L617,50"/><path d="M637,50 L641,50"/>
+          <path d="M671,50 L667,50"/><path d="M687,50 L691,50"/>
+          <path d="M721,50 L717,50"/><path d="M737,50 L741,50"/>
+        </g>
+        <!-- Barrier layer -->
+        <rect x="580" y="84" width="340" height="3" rx="1" fill="#27AE60" opacity=".35"/>
+        <!-- Substrate -->
+        <rect x="580" y="87" width="340" height="12" rx="2" fill="#5A6380" opacity=".4"/>
+        <text x="750" y="96" fill="rgba(240,237,232,.4)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle">ALUMINIO</text>
+      </svg>
+    </div>
+
+    <div>
+      <h3 class="section-title">Procedimientos Clave <span class="sub">5 pasos</span></h3>
+      <div class="numbered-list">
+        <div class="numbered-item"><div class="num-bullet">1</div><div class="num-text"><strong>Verifique el ba&ntilde;o de sellado:</strong> temperatura, pH y qu&iacute;mica (concentraci&oacute;n de Ni si usa acetato de n&iacute;quel).</div></div>
+        <div class="numbered-item"><div class="num-bullet">2</div><div class="num-text"><strong>Transfiera del tinte (o enjuague) inmediatamente.</strong> No deje que las piezas se enfr&iacute;en o sequen.</div></div>
+        <div class="numbered-item"><div class="num-bullet">3</div><div class="num-text"><strong>Sumerja completamente.</strong> Aseg&uacute;rese de que todas las superficies est&eacute;n sumergidas. Las bolsas de aire impiden el sellado.</div></div>
+        <div class="numbered-item"><div class="num-bullet">4</div><div class="num-text"><strong>Mantenga el tiempo requerido:</strong> 2&ndash;3 min/&micro;m de espesor de &oacute;xido para agua caliente; seg&uacute;n TDS para acetato de Ni.</div></div>
+        <div class="numbered-item"><div class="num-bullet">5</div><div class="num-text"><strong>Retire y seque.</strong> Verifique la calidad del sellado con prueba de mancha de tinte (ASTM B136) o prueba de admitancia.</div></div>
+      </div>
+    </div>
+
+    <!-- COMPARACI&Oacute;N DE M&Eacute;TODOS DE SELLADO -->
+    <div>
+      <h3 class="section-title">M&eacute;todos de Sellado Comparados <span class="sub">3 opciones</span></h3>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table">
+          <thead><tr><th>Par&aacute;metro</th><th>Agua Caliente (DI)</th><th>Acetato de N&iacute;quel</th><th>Temp Media (Propietario)</th></tr></thead>
+          <tbody>
+            <tr><td>Temperatura</td><td class="mono">200&ndash;212&deg;F (93&ndash;100&deg;C)</td><td class="mono">185&ndash;210&deg;F (85&ndash;99&deg;C)</td><td class="mono">150&ndash;175&deg;F (66&ndash;79&deg;C)</td></tr>
+            <tr><td>pH</td><td class="mono">5.5&ndash;6.5</td><td class="mono">5.5&ndash;6.0</td><td class="mono">5.5&ndash;6.5 (var&iacute;a)</td></tr>
+            <tr><td>Qu&iacute;mica</td><td class="mono">Solo agua DI</td><td class="mono">5&ndash;8 g/L Ni(OAc)&sub2;</td><td class="mono">Mezcla propietaria</td></tr>
+            <tr><td>Tiempo</td><td class="mono">2&ndash;3 min/&micro;m</td><td class="mono">15&ndash;20 min (t&iacute;pico)</td><td class="mono">10&ndash;15 min (t&iacute;pico)</td></tr>
+            <tr><td>Impacto en Color</td><td>Cambio m&iacute;nimo</td><td>Posible ligero tinte verde</td><td>Cambio m&iacute;nimo</td></tr>
+            <tr><td>Corrosi&oacute;n</td><td>Excelente</td><td>Excelente</td><td>Buena&ndash;Excelente</td></tr>
+            <tr><td>Riesgo de Smut</td><td>Bajo</td><td>Moderado (si el pH se desv&iacute;a)</td><td>Bajo</td></tr>
+            <tr><td>Costo Energ&eacute;tico</td><td style="color:var(--coral);">Alto (ebullici&oacute;n)</td><td>Moderado</td><td style="color:var(--emerald);">Menor</td></tr>
+            <tr><td>Mejor Para</td><td>Especificaci&oacute;n militar, anodizado claro</td><td>Piezas te&ntilde;idas, uso general</td><td>Ahorro energ&eacute;tico, alto volumen</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="bottom-grid">
+      <div>
+        <h3 class="section-title">Soluci&oacute;n de Problemas</h3>
+        <div class="trouble-grid">
+          <div class="glass trouble-card"><h5>Prueba de Mancha de Tinte Fallida</h5><p>Sellado incompleto. Temperatura muy baja; tiempo muy corto; pH incorrecto. Verifique temp a 200&deg;F+; extienda tiempo; revise pH.</p></div>
+          <div class="glass trouble-card"><h5>Polvo Blanco / Smut</h5><p>pH de acetato de Ni muy alto o concentraci&oacute;n muy alta. Baje pH a 5.5; reduzca concentraci&oacute;n de Ni; mejore enjuague.</p></div>
+          <div class="glass trouble-card"><h5>Sangrado / Desvanecimiento de Color</h5><p>pH de sellado muy bajo (el &aacute;cido lixivia el tinte); temperatura muy alta muy r&aacute;pido. Suba pH; aumente temperatura gradualmente.</p></div>
+          <div class="glass trouble-card"><h5>Superficie Blanda / Caliza</h5><p>Sobre-sellado (demasiado tiempo a temperatura) o agua DI contaminada. Revise calidad del agua; reduzca tiempo; pruebe conductividad.</p></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="compare-grid" style="grid-template-columns:1fr;">
+          <div class="glass compare-card do">
+            <h4>S&iacute; Haga <span class="tag good">buena</span></h4>
+            <ul>
+              <li>Use agua DI para todos los tanques de sellado</li>
+              <li>Monitoree pH con medidor calibrado</li>
+              <li>Verifique sellado con prueba de mancha de tinte (ASTM B136)</li>
+              <li>Mantenga el tanque de sellado tapado para reducir evaporaci&oacute;n</li>
+
+              <li>Realizar prueba de mancha de tinte (ASTM B136) en piezas selladas de cada lote</li>
+            </ul>
+          </div>
+          <div class="glass compare-card dont">
+            <h4>No Haga <span class="tag bad">evitar</span></h4>
+            <ul>
+              <li>Usar agua de grifo (los minerales causan smut/neblina)</li>
+              <li>Omitir pruebas de calidad del sellado</li>
+              <li>Sobre-sellar (da&ntilde;a la estructura del &oacute;xido)</li>
+              <li>Dejar que el tanque de sellado baje de temperatura entre cargas</li>
+
+              <li>Cargar piezas fr&iacute;as directamente al tanque de sellado hirviendo &mdash; el choque t&eacute;rmico agrieta el &oacute;xido</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="safety-card">
+      <div class="safety-head">&#9888; Seguridad &mdash; Agua Hirviendo + Vapor + N&iacute;quel</div>
+      <div class="safety-body"><strong>El sellado con agua caliente opera a o cerca de ebullici&oacute;n (200&ndash;212&deg;F).</strong> El vapor y las salpicaduras causan quemaduras instant&aacute;neas. El acetato de n&iacute;quel es un sensibilizante cut&aacute;neo &mdash; la exposici&oacute;n repetida causa dermatitis de contacto al&eacute;rgica. EPP: guantes qu&iacute;micos resistentes al calor, careta, mandil, protectores de mangas. <strong>Se requiere ventilaci&oacute;n de vapor.</strong> Mantenga el tanque tapado entre cargas. Las aguas residuales con n&iacute;quel requieren tratamiento antes de su descarga. Los tanques de sellado operan a temperaturas cercanas a la ebullici&oacute;n. Las quemaduras por vapor pueden causar lesiones severas. Par&eacute;se a un lado al cargar &mdash; nunca se incline sobre un tanque caliente abierto.</div>
+    </div>
+
+  </div>
+
+  <footer class="footer poster-footer">
+    <p class="footer-disclaimer">Solo referencia t&eacute;cnica. Verifique todos los par&aacute;metros contra la TDS de su proveedor qu&iacute;mico, especificaciones del cliente y requisitos regulatorios aplicables antes del uso en producci&oacute;n. Consulte siempre a su proveedor qu&iacute;mico para los rangos operativos m&aacute;s actuales y las hojas de datos de seguridad.</p>
+    <p class="footer-title">Sellado &mdash; Serie de Anodizado con &Aacute;cido Sulf&uacute;rico</p>
+    <span class="footer-brand">Plating Posters &middot; Serie de Referencia de Acabado de Metales &middot; PP-Anod-07-T / v1.0 / 2026</span>
+  </footer>
+</div>
+</div>
+</div>
+<div class="tweaks"><div style="display:flex;gap:8px;align-items:center;"><span style="color:rgba(240,237,232,.5);font-size:11px;letter-spacing:.06em;text-transform:uppercase;">Edici&oacute;n</span><button id="btnDark" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:#E8A020;color:#1A1F2E;border:1px solid #E8A020;" onclick="setEdition('')">Oscuro</button><button id="btnLight" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);" onclick="setEdition('light')">Claro</button></div><button onclick="window.print()" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);">Imprimir / PDF</button></div>
+<script>const posterWrap=document.getElementById('posterWrap');const poster=document.getElementById('poster');function scalePoster(){const sW=(window.innerWidth-24)/1200;const sH=(window.innerHeight-24)/1800;const s=Math.min(sW,sH);posterWrap.style.transform='scale('+s+')';posterWrap.style.transformOrigin='top center';posterWrap.style.width='1200px';posterWrap.style.height=(1800*s)+'px';}function setEdition(e){if(e)poster.dataset.edition=e;else delete poster.dataset.edition;document.getElementById('btnDark').style.background=e?'transparent':'#E8A020';document.getElementById('btnDark').style.color=e?'#F0EDE8':'#1A1F2E';document.getElementById('btnDark').style.borderColor=e?'rgba(255,255,255,.2)':'#E8A020';document.getElementById('btnLight').style.background=e?'#E8A020':'transparent';document.getElementById('btnLight').style.color=e?'#1A1F2E':'#F0EDE8';document.getElementById('btnLight').style.borderColor=e?'#E8A020':'rgba(255,255,255,.2)';}scalePoster();window.addEventListener('resize',scalePoster);</script>
+</body>
+</html>

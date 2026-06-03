@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Decorative Chrome &mdash; Flujo del Proceso &mdash; Technical | Plating Posters Inc</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Barlow:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#1A1F2E;--navy:#0D1020;--text:#F0EDE8;--muted:rgba(240,237,232,.62);
+  --faint:rgba(240,237,232,.38);
+  --amber:#E8A020;--teal:#2EC4B6;--emerald:#27AE60;--coral:#E05C5C;
+  --slate:#3A4055;--callout:#1E2435;--altrow:#252B3D;
+  --glass-bg:rgba(30,36,53,.55);--glass-border:rgba(255,255,255,.12);
+  --glass-shadow:inset 0 1px 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(0,0,0,.2),0 4px 12px rgba(0,0,0,.25);
+}
+.poster[data-edition="light"]{
+  --bg:#F5F4F0;--navy:#DDD8CE;--text:#1B2030;--muted:rgba(27,32,48,.66);
+  --faint:rgba(27,32,48,.42);
+  --amber:#B8770D;--teal:#1A8C82;--emerald:#1E8449;--coral:#B7322F;
+  --slate:#C5C0B5;--callout:#ECEAE1;--altrow:#E4E1D6;
+  --glass-bg:rgba(255,253,247,.66);--glass-border:rgba(27,32,48,.10);
+  --glass-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 4px 12px rgba(27,32,48,.08);
+}
+html,body{margin:0;padding:0;background:#0a0c14;}
+.stage{width:100vw;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;overflow:visible;padding:12px 0;box-sizing:border-box;}
+.poster-wrap{transform-origin:center center;}
+.poster{width:1200px;height:1800px;position:relative;overflow:hidden;background:radial-gradient(1200px 800px at 15% 8%,rgba(46,196,182,.14),transparent 60%),radial-gradient(1000px 700px at 90% 25%,rgba(232,160,32,.12),transparent 55%),radial-gradient(900px 900px at 50% 80%,rgba(224,92,92,.10),transparent 60%),var(--bg);font-family:'Inter',sans-serif;color:var(--text);display:flex;flex-direction:column;padding:32px;box-sizing:border-box;}
+.poster::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:50px 50px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);pointer-events:none;z-index:0;}
+.poster>*{position:relative;z-index:1;}
+.glass{background-color:var(--glass-bg);background-image:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));border:1px solid var(--glass-border);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);box-shadow:var(--glass-shadow);border-radius:12px;}
+.tack{position:absolute;width:24px;height:24px;border-radius:50%;border:1.5px solid rgba(232,160,32,.28);z-index:2;pointer-events:none;}.tack::before,.tack::after{content:"";position:absolute;background:rgba(232,160,32,.28);}.tack::before{left:50%;top:-3px;bottom:-3px;width:1px;transform:translateX(-50%);}.tack::after{top:50%;left:-3px;right:-3px;height:1px;transform:translateY(-50%);}.tack.tl{top:12px;left:12px;}.tack.tr{top:12px;right:12px;}.tack.bl{bottom:12px;left:12px;}.tack.br{bottom:12px;right:12px;}
+.poster-header{flex-shrink:0;}.poster-body{flex:1;overflow:hidden;display:flex;flex-direction:column;gap:7px;justify-content:space-between;}.poster-footer{flex-shrink:0;margin-top:8px;}
+.header-band{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:8px;}.header-left{flex:1;min-width:0;}.eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--amber);letter-spacing:.16em;text-transform:uppercase;margin-bottom:4px;display:flex;align-items:center;gap:12px;}.eyebrow::before{content:"";display:inline-block;width:30px;height:3px;background:var(--amber);}.headline{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:72px;color:var(--text);line-height:.92;margin:4px 0;letter-spacing:-.01em;text-transform:uppercase;}.headline em{font-style:normal;color:var(--amber);}.subhead{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;color:var(--teal);margin:0 0 3px;letter-spacing:.02em;text-transform:uppercase;}.tagline{font-family:'Inter',sans-serif;font-style:italic;font-size:13px;color:var(--muted);line-height:1.45;max-width:700px;margin:0;}
+.logo-card{flex-shrink:0;padding:12px 10px;display:flex;flex-direction:column;align-items:center;gap:8px;align-self:flex-start;}.logo-tile{width:68px;height:68px;border-radius:12px;background:linear-gradient(135deg,#E8A020,#2EC4B6);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -2px 4px rgba(0,0,0,.15),0 4px 14px rgba(0,0,0,.35);}.logo-tile span{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:26px;color:#1A1F2E;letter-spacing:.02em;line-height:1;}.logo-word{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;letter-spacing:.04em;text-transform:uppercase;line-height:1;text-align:center;white-space:nowrap;}.logo-word .a{color:var(--text);}.logo-word .b{color:var(--amber);}.logo-inc{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.05em;text-transform:lowercase;color:var(--muted);margin-top:-2px;}
+.section-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:28px;letter-spacing:.08em;text-transform:uppercase;color:var(--text);margin:0 0 6px;display:flex;align-items:center;gap:8px;}.section-title::before{content:"";width:6px;height:6px;background:var(--amber);border-radius:50%;}.section-title .sub{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;color:var(--muted);margin-left:auto;font-weight:500;}
+.rule-card{display:flex;align-items:center;gap:20px;padding:18px 28px;background:rgba(232,160,32,.07);}.rule-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:68px;color:var(--amber);line-height:1;letter-spacing:-.02em;}.rule-body{flex:1;}.rule-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:19px;color:var(--amber);letter-spacing:.08em;text-transform:uppercase;}.rule-text{font-family:'Inter',sans-serif;font-size:14px;color:var(--muted);line-height:1.5;margin-top:4px;}
+.data-table{width:100%;border-collapse:collapse;}.data-table th{font-family:'Barlow',sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);padding:8px 12px;text-align:left;background:rgba(13,16,32,.35);border-bottom:1px solid var(--glass-border);}.poster[data-edition="light"] .data-table th{background:rgba(27,32,48,.06);}.data-table td{padding:8px 12px;color:var(--text);line-height:1.5;border-bottom:1px solid rgba(255,255,255,.05);font-family:'Inter',sans-serif;font-size:14px;}.data-table tr:last-child td{border-bottom:none;}.data-table tr:nth-child(even) td{background:rgba(255,255,255,.02);}.poster[data-edition="light"] .data-table tr:nth-child(even) td{background:rgba(27,32,48,.025);}.data-table .mono{font-family:'JetBrains Mono',monospace;font-size:13px;}.data-table.compact th{font-size:12px;padding:7px 10px;}.data-table.compact td{padding:6px 10px;font-size:13px;line-height:1.45;}.data-table.compact .mono{font-size:12.5px;}.data-table.bath th{font-size:12px;padding:6px 8px;}.data-table.bath td{padding:5px 8px;font-size:13px;line-height:1.4;}.data-table.bath .mono{font-size:12px;}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}.compare-card{padding:18px 24px;}.compare-card h4{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:21px;color:var(--text);margin:0 0 8px;text-transform:uppercase;letter-spacing:.04em;}.compare-card h4 .tag{font-size:12px;padding:2px 8px;border-radius:4px;margin-left:8px;font-family:'JetBrains Mono',monospace;font-weight:500;letter-spacing:.06em;}.compare-card h4 .tag.good{background:rgba(39,174,96,.15);color:var(--emerald);}.compare-card h4 .tag.bad{background:rgba(224,92,92,.15);color:var(--coral);}.compare-card ul{list-style:none;padding:0;margin:0;}.compare-card li{font-size:13.5px;line-height:1.5;padding:2px 0;display:flex;gap:8px;align-items:flex-start;}.compare-card li::before{content:"";width:5px;height:5px;border-radius:50%;margin-top:7px;flex-shrink:0;}.compare-card.do li::before{background:var(--emerald);}.compare-card.dont li::before{background:var(--coral);}
+.bottom-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:10px;}
+.insight-card{padding:20px 24px;border-left:3px solid var(--teal);background:rgba(46,196,182,.06);border-radius:0 12px 12px 0;}.insight-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;color:var(--teal);letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px;}.insight-text{font-family:'Inter',sans-serif;font-size:14.5px;color:var(--text);line-height:1.5;}
+.safety-card{padding:18px 24px;background:rgba(224,92,92,.08);border:1px solid rgba(224,92,92,.25);border-radius:12px;}.safety-head{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px;color:var(--coral);letter-spacing:.06em;text-transform:uppercase;margin-bottom:5px;}.safety-body{font-size:14px;color:var(--text);line-height:1.55;}.safety-body strong{font-weight:700;color:var(--coral);}
+.process-flow{display:flex;align-items:center;justify-content:space-between;padding:10px 16px;height:80px;gap:4px;}
+.footer{padding:10px 20px;background-color:rgba(13,16,32,.85);background-image:linear-gradient(180deg,rgba(255,255,255,.04),rgba(0,0,0,0));border:1px solid rgba(255,255,255,.10);border-radius:8px;text-align:center;display:flex;flex-direction:column;gap:2px;}.poster[data-edition="light"] .footer{background-color:rgba(221,216,206,.95);border-color:rgba(27,32,48,.10);}.footer-disclaimer{font-family:'Inter',sans-serif;font-size:9px;line-height:1.35;color:var(--faint);margin:0 auto;max-width:900px;}.footer-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:13px;color:var(--text);letter-spacing:.04em;text-transform:uppercase;margin:0;}.footer-brand{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;}
+.tweaks{position:fixed;bottom:16px;right:16px;z-index:100;background:rgba(13,16,32,.92);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:10px 14px;display:flex;flex-direction:column;gap:8px;font-family:'Inter',sans-serif;font-size:12px;color:#F0EDE8;}
+@media print{@page{size:12.5in 18.75in;margin:0;}html,body{background:#1A1F2E !important;-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}*{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}.stage{position:static;padding:0;display:block;overflow:visible;}.poster-wrap{transform:none !important;width:auto !important;height:auto !important;}.poster{box-shadow:none !important;width:1200px !important;height:1800px !important;overflow:hidden !important;}.glass,.insight-card,.safety-card{backdrop-filter:none !important;-webkit-backdrop-filter:none !important;}.tweaks{display:none !important;}}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="poster-wrap" id="posterWrap">
+<div class="poster" id="poster" data-edition="light">
+  <span class="tack tl" aria-hidden="true"></span><span class="tack tr" aria-hidden="true"></span>
+  <span class="tack bl" aria-hidden="true"></span><span class="tack br" aria-hidden="true"></span>
+  <div class="poster-header">
+    <header class="header-band">
+      <div class="header-left">
+        <div class="eyebrow"><span>Plating Posters &nbsp;&middot;&nbsp; Cromo Decorativo &nbsp;&middot;&nbsp; Sistema Multicapa &nbsp;&middot;&nbsp; Flujo del Proceso</span></div>
+        <h1 class="headline">FLUJO DEL<br><em>PROCESO</em></h1>
+        <h2 class="subhead">L&iacute;nea Completa de Cromo Decorativo &mdash; 15+ Etapas del Sustrato al Espejo</h2>
+        <p class="tagline">Cada etapa en la l&iacute;nea de cromo decorativo existe por una raz&oacute;n. Si se omite un enjuague, se apresura una limpieza o se acorta una activaci&oacute;n, el defecto aparecer&aacute; en el cromo &mdash; aunque el cromo sea la &uacute;ltima estaci&oacute;n. Entender el flujo es entender el acabado.</p>
+      </div>
+      <aside class="glass logo-card">
+        <div class="logo-tile"><span>PP</span></div>
+        <div class="logo-word"><span class="a">Plating</span> <span class="b">Posters</span></div>
+        <div class="logo-inc">www.platingposters.com</div>
+      </aside>
+    </header>
+  </div>
+  <div class="poster-body">
+    <div class="glass rule-card">
+      <div class="rule-num">15+</div>
+      <div class="rule-body">
+        <div class="rule-label">Etapas del Proceso &mdash; Cada Una Protege la Siguiente</div>
+        <div class="rule-text">Una l&iacute;nea de cromo decorativo no es solo &ldquo;recubrir cromo.&rdquo; Es una secuencia precisa de limpieza, activaci&oacute;n, nivelaci&oacute;n con cobre, n&iacute;quel multicapa, destello de cromo y post-tratamiento. Cada etapa tiene qu&iacute;mica, temperatura, densidad de corriente y tiempo espec&iacute;ficos. Las desviaciones se propagan &mdash; una falla de limpieza se convierte en falla de adherencia del n&iacute;quel y luego en desprendimiento de cromo.</div>
+      </div>
+    </div>
+
+    <!-- FLUJO DE PROCESO EXPANDIDO SVG -->
+    <div class="glass" style="padding:10px 14px;">
+      <h3 class="section-title" style="margin-bottom:4px;">Secuencia de L&iacute;nea de Cromo Decorativo <span class="sub">15 etapas + enjuagues</span></h3>
+      <svg viewBox="0 0 1100 200" width="100%" height="170" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="10" y="8" width="120" height="32" rx="6" fill="rgba(46,196,182,.10)" stroke="var(--teal)" stroke-width="1.2"/>
+        <text x="70" y="28" text-anchor="middle" fill="var(--teal)" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="10">1. LIMP. INMERSI&Oacute;N</text>
+        <line x1="130" y1="24" x2="145" y2="24" stroke="var(--faint)" stroke-width="1"/><polygon points="145,22 149,24 145,26" fill="var(--faint)"/>
+        <rect x="149" y="8" width="90" height="32" rx="6" fill="rgba(46,196,182,.06)" stroke="var(--teal)" stroke-width=".8" stroke-dasharray="3,2"/>
+        <text x="194" y="28" text-anchor="middle" fill="var(--teal)" font-family="Barlow Condensed,sans-serif" font-weight="700" font-size="9" opacity=".7">ENJUAGUE</text>
+        <line x1="239" y1="24" x2="254" y2="24" stroke="var(--faint)" stroke-width="1"/><polygon points="254,22 258,24 254,26" fill="var(--faint)"/>
+        <rect x="258" y="8" width="130" height="32" rx="6" fill="rgba(46,196,182,.10)" stroke="var(--teal)" stroke-width="1.2"/>
+        <text x="323" y="28" text-anchor="middle" fill="var(--teal)" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="10">2. ELECTROLIMPIEZA</text>
+        <line x1="388" y1="24" x2="403" y2="24" stroke="var(--faint)" stroke-width="1"/><polygon points="403,22 407,24 403,26" fill="var(--faint)"/>
+        <rect x="407" y="8" width="90" height="32" rx="6" fill="rgba(46,196,182,.06)" stroke="var(--teal)" stroke-width=".8" stroke-dasharray="3,2"/>
+        <text x="452" y="28" text-anchor="middle" fill="var(--teal)" font-family="Barlow Condensed,sans-serif" font-weight="700" font-size="9" opacity=".7">ENJUAGUE</text>
+        <line x1="497" y1="24" x2="512" y2="24" stroke="var(--faint)" stroke-width="1"/><polygon points="512,22 516,24 512,26" fill="var(--faint)"/>
+        <rect x="516" y="8" width="130" height="32" rx="6" fill="rgba(232,160,32,.10)" stroke="var(--amber)" stroke-width="1.2"/>
+        <text x="581" y="28" text-anchor="middle" fill="var(--amber)" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="10">3. ACTIVACI&Oacute;N</text>
+        <line x1="646" y1="24" x2="661" y2="24" stroke="var(--faint)" stroke-width="1"/><polygon points="661,22 665,24 661,26" fill="var(--faint)"/>
+        <rect x="665" y="8" width="90" height="32" rx="6" fill="rgba(232,160,32,.06)" stroke="var(--amber)" stroke-width=".8" stroke-dasharray="3,2"/>
+        <text x="710" y="28" text-anchor="middle" fill="var(--amber)" font-family="Barlow Condensed,sans-serif" font-weight="700" font-size="9" opacity=".7">ENJUAGUE</text>
+        <line x1="755" y1="24" x2="770" y2="24" stroke="var(--faint)" stroke-width="1"/><polygon points="770,22 774,24 770,26" fill="var(--faint)"/>
+        <rect x="774" y="8" width="130" height="32" rx="6" fill="rgba(232,160,32,.10)" stroke="var(--amber)" stroke-width="1.2"/>
+        <text x="839" y="28" text-anchor="middle" fill="var(--amber)" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="10">4. Cu ATAQUE</text>
+        <line x1="904" y1="24" x2="919" y2="24" stroke="var(--faint)" stroke-width="1"/><polygon points="919,22 923,24 919,26" fill="var(--faint)"/>
+        <rect x="923" y="8" width="130" height="32" rx="6" fill="rgba(232,160,32,.12)" stroke="var(--amber)" stroke-width="1.5"/>
+        <text x="988" y="28" text-anchor="middle" fill="var(--amber)" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="10">5. COBRE &Aacute;CIDO</text>
+        <!-- Row 2 -->
+        <line x1="988" y1="40" x2="988" y2="55" stroke="var(--faint)" stroke-width="1"/><polygon points="985,55 988,59 991,55" fill="var(--faint)"/>
+        <rect x="923" y="62" width="130" height="32" rx="6" fill="rgba(232,160,32,.06)" stroke="var(--amber)" stroke-width=".8" stroke-dasharray="3,2"/>
+        <text x="988" y="82" text-anchor="middle" fill="var(--amber)" font-family="Barlow Condensed,sans-serif" font-weight="700" font-size="9" opacity=".7">ENJUAGUE</text>
+        <line x1="923" y1="78" x2="908" y2="78" stroke="var(--faint)" stroke-width="1"/><polygon points="908,76 904,78 908,80" fill="var(--faint)"/>
+        <rect x="750" y="62" width="154" height="32" rx="6" fill="rgba(224,92,92,.10)" stroke="var(--coral)" stroke-width="1.2"/>
+        <text x="827" y="82" text-anchor="middle" fill="var(--coral)" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="10">6. Ni SEMI-BRILL</text>
+        <line x1="750" y1="78" x2="735" y2="78" stroke="var(--faint)" stroke-width="1"/><polygon points="735,76 731,78 735,80" fill="var(--faint)"/>
+        <rect x="641" y="62" width="90" height="32" rx="6" fill="rgba(224,92,92,.06)" stroke="var(--coral)" stroke-width=".8" stroke-dasharray="3,2"/>
+        <text x="686" y="82" text-anchor="middle" fill="var(--coral)" font-family="Barlow Condensed,sans-serif" font-weight="700" font-size="9" opacity=".7">ENJUAGUE</text>
+        <line x1="641" y1="78" x2="626" y2="78" stroke="var(--faint)" stroke-width="1"/><polygon points="626,76 622,78 626,80" fill="var(--faint)"/>
+        <rect x="480" y="62" width="142" height="32" rx="6" fill="rgba(224,92,92,.10)" stroke="var(--coral)" stroke-width="1.2"/>
+        <text x="551" y="82" text-anchor="middle" fill="var(--coral)" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="10">7. Ni BRILLANTE</text>
+        <line x1="480" y1="78" x2="465" y2="78" stroke="var(--faint)" stroke-width="1"/><polygon points="465,76 461,78 465,80" fill="var(--faint)"/>
+        <rect x="330" y="62" width="131" height="32" rx="6" fill="rgba(224,92,92,.10)" stroke="var(--coral)" stroke-width="1.2"/>
+        <text x="395" y="82" text-anchor="middle" fill="var(--coral)" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="10">8. Ni &micro;POROSO</text>
+        <line x1="330" y1="78" x2="315" y2="78" stroke="var(--faint)" stroke-width="1"/><polygon points="315,76 311,78 315,80" fill="var(--faint)"/>
+        <rect x="221" y="62" width="90" height="32" rx="6" fill="rgba(224,92,92,.06)" stroke="var(--coral)" stroke-width=".8" stroke-dasharray="3,2"/>
+        <text x="266" y="82" text-anchor="middle" fill="var(--coral)" font-family="Barlow Condensed,sans-serif" font-weight="700" font-size="9" opacity=".7">ENJUAGUE</text>
+        <!-- Row 3 -->
+        <line x1="266" y1="94" x2="266" y2="109" stroke="var(--faint)" stroke-width="1"/><polygon points="263,109 266,113 269,109" fill="var(--faint)"/>
+        <rect x="200" y="116" width="132" height="32" rx="6" fill="rgba(39,174,96,.12)" stroke="var(--emerald)" stroke-width="1.8"/>
+        <text x="266" y="136" text-anchor="middle" fill="var(--emerald)" font-family="Barlow Condensed,sans-serif" font-weight="900" font-size="11">9. CROMO</text>
+        <line x1="332" y1="132" x2="347" y2="132" stroke="var(--faint)" stroke-width="1"/><polygon points="347,130 351,132 347,134" fill="var(--faint)"/>
+        <rect x="351" y="116" width="90" height="32" rx="6" fill="rgba(39,174,96,.06)" stroke="var(--emerald)" stroke-width=".8" stroke-dasharray="3,2"/>
+        <text x="396" y="136" text-anchor="middle" fill="var(--emerald)" font-family="Barlow Condensed,sans-serif" font-weight="700" font-size="9" opacity=".7">ARRASTRE</text>
+        <line x1="441" y1="132" x2="456" y2="132" stroke="var(--faint)" stroke-width="1"/><polygon points="456,130 460,132 456,134" fill="var(--faint)"/>
+        <rect x="460" y="116" width="90" height="32" rx="6" fill="rgba(39,174,96,.06)" stroke="var(--emerald)" stroke-width=".8" stroke-dasharray="3,2"/>
+        <text x="505" y="136" text-anchor="middle" fill="var(--emerald)" font-family="Barlow Condensed,sans-serif" font-weight="700" font-size="9" opacity=".7">ENJUAGUE</text>
+        <line x1="550" y1="132" x2="565" y2="132" stroke="var(--faint)" stroke-width="1"/><polygon points="565,130 569,132 565,134" fill="var(--faint)"/>
+        <rect x="569" y="116" width="140" height="32" rx="6" fill="rgba(39,174,96,.10)" stroke="var(--emerald)" stroke-width="1.2"/>
+        <text x="639" y="136" text-anchor="middle" fill="var(--emerald)" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="10">10. POST-TRAT.</text>
+        <line x1="709" y1="132" x2="724" y2="132" stroke="var(--faint)" stroke-width="1"/><polygon points="724,130 728,132 724,134" fill="var(--faint)"/>
+        <rect x="728" y="116" width="120" height="32" rx="6" fill="rgba(39,174,96,.10)" stroke="var(--emerald)" stroke-width="1.2"/>
+        <text x="788" y="136" text-anchor="middle" fill="var(--emerald)" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="10">11. SECAR</text>
+        <!-- Legend -->
+        <rect x="10" y="170" width="14" height="10" rx="2" fill="rgba(46,196,182,.10)" stroke="var(--teal)" stroke-width=".8"/>
+        <text x="30" y="178" fill="var(--muted)" font-family="Inter,sans-serif" font-size="8">Limpieza</text>
+        <rect x="100" y="170" width="14" height="10" rx="2" fill="rgba(232,160,32,.10)" stroke="var(--amber)" stroke-width=".8"/>
+        <text x="120" y="178" fill="var(--muted)" font-family="Inter,sans-serif" font-size="8">Activaci&oacute;n / Cobre</text>
+        <rect x="250" y="170" width="14" height="10" rx="2" fill="rgba(224,92,92,.10)" stroke="var(--coral)" stroke-width=".8"/>
+        <text x="270" y="178" fill="var(--muted)" font-family="Inter,sans-serif" font-size="8">Sistema de N&iacute;quel</text>
+        <rect x="380" y="170" width="14" height="10" rx="2" fill="rgba(39,174,96,.10)" stroke="var(--emerald)" stroke-width=".8"/>
+        <text x="400" y="178" fill="var(--muted)" font-family="Inter,sans-serif" font-size="8">Cromo / Acabado</text>
+        <rect x="500" y="170" width="14" height="10" rx="2" fill="none" stroke="var(--faint)" stroke-width=".8" stroke-dasharray="3,2"/>
+        <text x="520" y="178" fill="var(--muted)" font-family="Inter,sans-serif" font-size="8">Enjuague (entre cada etapa de proceso)</text>
+      </svg>
+    </div>
+
+    <!-- TABLA DE PAR&Aacute;METROS -->
+    <div>
+      <h3 class="section-title">Par&aacute;metros del Proceso <span class="sub">rangos t&iacute;picos</span></h3>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table compact">
+          <thead><tr><th>Etapa</th><th>Qu&iacute;mica</th><th>Temp</th><th>Tiempo</th><th>Corriente / Notas</th></tr></thead>
+          <tbody>
+            <tr><td style="font-weight:600;">Limp. Inmersi&oacute;n</td><td>Alcalino, pH 12&ndash;14</td><td class="mono">60&ndash;80&deg;C</td><td class="mono">3&ndash;5 min</td><td>Surfactantes, quelantes, emulsificantes</td></tr>
+            <tr><td style="font-weight:600;">Electrolimpieza</td><td>Alcalino, an&oacute;dica preferida</td><td class="mono">50&ndash;70&deg;C</td><td class="mono">1&ndash;3 min</td><td class="mono">5&ndash;10 A/dm&sup2;</td></tr>
+            <tr><td style="font-weight:600;">Activaci&oacute;n &Aacute;cida</td><td>HCl 10&ndash;30% v/v (acero)</td><td class="mono">TA&ndash;40&deg;C</td><td class="mono">15&ndash;60 seg</td><td>Fluoruro para zamak</td></tr>
+            <tr><td style="font-weight:600;">Cobre Ataque</td><td>Cu alcalino (sin cianuro)</td><td class="mono">25&ndash;40&deg;C</td><td class="mono">2&ndash;5 min</td><td class="mono">1&ndash;3 A/dm&sup2;</td></tr>
+            <tr><td style="font-weight:600;">Cobre &Aacute;cido</td><td>CuSO&#8324;&middot;5H&#8322;O 60&ndash;240 g/L</td><td class="mono">20&ndash;35&deg;C</td><td class="mono">15&ndash;45 min</td><td class="mono">2&ndash;6 A/dm&sup2;</td></tr>
+            <tr><td style="font-weight:600;">Ni Semi-Brillante</td><td>Watts + aditivos Clase I</td><td class="mono">55&ndash;60&deg;C</td><td class="mono">20&ndash;40 min</td><td class="mono">3&ndash;5 A/dm&sup2;</td></tr>
+            <tr><td style="font-weight:600;">Ni Brillante</td><td>Watts + abrillantadores Clase II</td><td class="mono">55&ndash;60&deg;C</td><td class="mono">10&ndash;20 min</td><td class="mono">3&ndash;6 A/dm&sup2;</td></tr>
+            <tr><td style="font-weight:600;">Ni &micro;Poroso</td><td>Watts + SiO&#8322; / Al&#8322;O&#8323;</td><td class="mono">55&ndash;60&deg;C</td><td class="mono">1&ndash;3 min</td><td class="mono">1&ndash;3 A/dm&sup2;</td></tr>
+            <tr><td style="font-weight:600;">Cromo (Hex)</td><td>CrO&#8323; 250&ndash;400 g/L</td><td class="mono">40&ndash;55&deg;C</td><td class="mono">3&ndash;8 min</td><td class="mono">10&ndash;25 A/dm&sup2;</td></tr>
+            <tr><td style="font-weight:600;">Post-Tratamiento</td><td>Conversi&oacute;n tri-Cr / sello DI</td><td class="mono">TA&ndash;60&deg;C</td><td class="mono">30&ndash;60 seg</td><td>Anti-deslustre opcional</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- PUNTOS CR&Iacute;TICOS -->
+    <div class="insight-card">
+      <div class="insight-label">Puntos Cr&iacute;ticos de Control a lo Largo de la L&iacute;nea</div>
+      <div class="insight-text">Los enjuagues entre cada etapa previenen contaminaci&oacute;n por arrastre &mdash; una sola falla de enjuague puede arruinar un ba&ntilde;o completo. La prueba de ruptura de agua despu&eacute;s de la limpieza es el primer control pasa/no-pasa. La temperatura y densidad de corriente en cada etapa deben mantenerse dentro de &plusmn;2&deg;C y &plusmn;0.5 A/dm&sup2; del objetivo. El tanque de cromo es el m&aacute;s sensible a contaminaci&oacute;n: <strong>0.2 g/L de Cu o Ni</strong> en el ba&ntilde;o de cromo oscurece el dep&oacute;sito.</div>
+    </div>
+
+    <!-- TRAZABILIDAD DE DEFECTOS -->
+    <div>
+      <h3 class="section-title">Trazabilidad de Defectos <span class="sub">d&oacute;nde inicia vs d&oacute;nde aparece</span></h3>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table bath">
+          <thead><tr><th>Defecto Visible</th><th>Etapa Probable de Origen</th><th>Verificar</th></tr></thead>
+          <tbody>
+            <tr><td>Pelado / ampollas</td><td>Limpieza o activaci&oacute;n</td><td>Prueba ruptura agua; conc &aacute;cido y tiempo</td></tr>
+            <tr><td>Falta de dep&oacute;sito</td><td>Limpieza o activaci&oacute;n</td><td>Temp limpiador; polaridad electrolimpieza</td></tr>
+            <tr><td>Picaduras</td><td>Cobre &aacute;cido o n&iacute;quel</td><td>Agente humectante; agitaci&oacute;n; org&aacute;nicos</td></tr>
+            <tr><td>Cromo opaco / lechoso</td><td>Ba&ntilde;o de cromo</td><td>Relaci&oacute;n CrO&#8323;:SO&#8324;; Cr&sup3;+; temperatura</td></tr>
+            <tr><td>Corrosi&oacute;n prematura</td><td>Sistema de n&iacute;quel</td><td>Prueba STEP &Delta;E; espesores; azufre</td></tr>
+            <tr><td>Manchas despu&eacute;s de empaque</td><td>Post-tratamiento / enjuague</td><td>Calidad enjuague final; anti-deslustre</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="safety-card">
+      <div class="safety-head">&#9888; Resumen de Seguridad &mdash; Flujo del Proceso</div>
+      <div class="safety-body"><strong>Cr hex (Cr VI)</strong> &mdash; carcin&oacute;geno IARC Grupo 1; OSHA PEL 5 &micro;g/m&sup3; como Cr(VI); supresores de niebla y VEL obligatorios en tanque de cromo. <strong>N&iacute;quel</strong> &mdash; sensibilizante cut&aacute;neo (GHS Cat. 1); formas solubles Cat. 1A carcin&oacute;geno por inhalaci&oacute;n. <strong>Ba&ntilde;os &aacute;cidos</strong> &mdash; H&#8322;SO&#8324; y HCl causan quemaduras; extracci&oacute;n local requerida. <strong>Limpiadores alcalinos</strong> &mdash; pH 12&ndash;14, quemaduras. Respirador de cara completa en tanque de cromo. Regadera/lavaojos a 10 seg. FTS publicadas.</div>
+    </div>
+
+  </div>
+  <footer class="footer poster-footer">
+    <p class="footer-disclaimer">Solo referencia técnica. Verifique todos los parámetros contra la ficha técnica de su proveedor, especificaciones del cliente y requisitos regulatorios aplicables antes del uso en producción.</p>
+    <p class="footer-title">Flujo del Proceso &mdash; Serie de Cromado Decorativo</p>
+    <span class="footer-brand">Plating Posters &middot; Metal Finishing Reference Series &middot; PP-DC-01-T / v1.0 / 2026</span>
+  </footer>
+</div>
+</div>
+</div>
+<div class="tweaks">
+  <div style="display:flex;gap:6px;align-items:center;">
+    <span style="color:rgba(240,237,232,.5);font-size:11px;letter-spacing:.06em;text-transform:uppercase;">Edition</span>
+    <button id="btnDark" style="padding:4px 10px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);" onclick="setEdition('')">Dark</button>
+    <button id="btnLight" style="padding:4px 10px;border-radius:5px;cursor:pointer;font-size:11px;background:#E8A020;color:#1A1F2E;border:1px solid #E8A020;" onclick="setEdition('light')">Light</button>
+  </div>
+  <button onclick="window.print()" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);">Print / PDF</button>
+</div>
+<script>
+const posterWrap=document.getElementById('posterWrap');const poster=document.getElementById('poster');
+function scalePoster(){const sW=(window.innerWidth-24)/1200;const sH=(window.innerHeight-24)/1800;const s=Math.min(sW,sH);posterWrap.style.transform='scale('+s+')';posterWrap.style.transformOrigin='top center';posterWrap.style.width='1200px';posterWrap.style.height=(1800*s)+'px';}
+function setEdition(e){if(e)poster.dataset.edition=e;else delete poster.dataset.edition;['Dark','Light'].forEach(function(n){var b=document.getElementById('btn'+n);var active=(n.toLowerCase()===e)||(n==='Dark'&&!e);b.style.background=active?'#E8A020':'transparent';b.style.color=active?'#1A1F2E':'#F0EDE8';b.style.borderColor=active?'#E8A020':'rgba(255,255,255,.2)';})}
+scalePoster();window.addEventListener('resize',scalePoster);
+</script>
+</body>
+</html>

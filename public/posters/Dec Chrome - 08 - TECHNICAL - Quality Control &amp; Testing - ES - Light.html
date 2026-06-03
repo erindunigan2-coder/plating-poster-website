@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Decorative Chrome &mdash; Control de Calidad y Pruebas &mdash; Technical | Plating Posters Inc</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Barlow:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#1A1F2E;--navy:#0D1020;--text:#F0EDE8;--muted:rgba(240,237,232,.62);
+  --faint:rgba(240,237,232,.38);
+  --amber:#E8A020;--teal:#2EC4B6;--emerald:#27AE60;--coral:#E05C5C;
+  --slate:#3A4055;--callout:#1E2435;--altrow:#252B3D;
+  --glass-bg:rgba(30,36,53,.55);--glass-border:rgba(255,255,255,.12);
+  --glass-shadow:inset 0 1px 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(0,0,0,.2),0 4px 12px rgba(0,0,0,.25);
+}
+.poster[data-edition="light"]{
+  --bg:#F5F4F0;--navy:#DDD8CE;--text:#1B2030;--muted:rgba(27,32,48,.66);
+  --faint:rgba(27,32,48,.42);
+  --amber:#B8770D;--teal:#1A8C82;--emerald:#1E8449;--coral:#B7322F;
+  --slate:#C5C0B5;--callout:#ECEAE1;--altrow:#E4E1D6;
+  --glass-bg:rgba(255,253,247,.66);--glass-border:rgba(27,32,48,.10);
+  --glass-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 4px 12px rgba(27,32,48,.08);
+}
+html,body{margin:0;padding:0;background:#0a0c14;}
+.stage{width:100vw;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;overflow:visible;padding:12px 0;box-sizing:border-box;}
+.poster-wrap{transform-origin:center center;}
+.poster{width:1200px;height:1800px;position:relative;overflow:hidden;background:radial-gradient(1200px 800px at 15% 8%,rgba(46,196,182,.14),transparent 60%),radial-gradient(1000px 700px at 90% 25%,rgba(232,160,32,.12),transparent 55%),radial-gradient(900px 900px at 50% 80%,rgba(224,92,92,.10),transparent 60%),var(--bg);font-family:'Inter',sans-serif;color:var(--text);display:flex;flex-direction:column;padding:32px;box-sizing:border-box;}
+.poster::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:50px 50px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);pointer-events:none;z-index:0;}
+.poster>*{position:relative;z-index:1;}
+.glass{background-color:var(--glass-bg);background-image:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));border:1px solid var(--glass-border);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);box-shadow:var(--glass-shadow);border-radius:12px;}
+.tack{position:absolute;width:24px;height:24px;border-radius:50%;border:1.5px solid rgba(232,160,32,.28);z-index:2;pointer-events:none;}.tack::before,.tack::after{content:"";position:absolute;background:rgba(232,160,32,.28);}.tack::before{left:50%;top:-3px;bottom:-3px;width:1px;transform:translateX(-50%);}.tack::after{top:50%;left:-3px;right:-3px;height:1px;transform:translateY(-50%);}.tack.tl{top:12px;left:12px;}.tack.tr{top:12px;right:12px;}.tack.bl{bottom:12px;left:12px;}.tack.br{bottom:12px;right:12px;}
+.poster-header{flex-shrink:0;}.poster-body{flex:1;overflow:hidden;display:flex;flex-direction:column;gap:7px;justify-content:space-between;}.poster-footer{flex-shrink:0;margin-top:8px;}
+.header-band{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:8px;}.header-left{flex:1;min-width:0;}.eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--amber);letter-spacing:.16em;text-transform:uppercase;margin-bottom:4px;display:flex;align-items:center;gap:12px;}.eyebrow::before{content:"";display:inline-block;width:30px;height:3px;background:var(--amber);}.headline{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:72px;color:var(--text);line-height:.92;margin:4px 0;letter-spacing:-.01em;text-transform:uppercase;}.headline em{font-style:normal;color:var(--amber);}.subhead{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;color:var(--teal);margin:0 0 3px;letter-spacing:.02em;text-transform:uppercase;}.tagline{font-family:'Inter',sans-serif;font-style:italic;font-size:13px;color:var(--muted);line-height:1.45;max-width:700px;margin:0;}
+.logo-card{flex-shrink:0;padding:12px 10px;display:flex;flex-direction:column;align-items:center;gap:8px;align-self:flex-start;}.logo-tile{width:68px;height:68px;border-radius:12px;background:linear-gradient(135deg,#E8A020,#2EC4B6);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -2px 4px rgba(0,0,0,.15),0 4px 14px rgba(0,0,0,.35);}.logo-tile span{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:26px;color:#1A1F2E;letter-spacing:.02em;line-height:1;}.logo-word{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;letter-spacing:.04em;text-transform:uppercase;line-height:1;text-align:center;white-space:nowrap;}.logo-word .a{color:var(--text);}.logo-word .b{color:var(--amber);}.logo-inc{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.05em;text-transform:lowercase;color:var(--muted);margin-top:-2px;}
+.section-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:28px;letter-spacing:.08em;text-transform:uppercase;color:var(--text);margin:0 0 6px;display:flex;align-items:center;gap:8px;}.section-title::before{content:"";width:6px;height:6px;background:var(--amber);border-radius:50%;}.section-title .sub{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;color:var(--muted);margin-left:auto;font-weight:500;}
+.rule-card{display:flex;align-items:center;gap:20px;padding:18px 28px;background:rgba(232,160,32,.07);}.rule-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:68px;color:var(--amber);line-height:1;letter-spacing:-.02em;}.rule-body{flex:1;}.rule-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:19px;color:var(--amber);letter-spacing:.08em;text-transform:uppercase;}.rule-text{font-family:'Inter',sans-serif;font-size:14px;color:var(--muted);line-height:1.5;margin-top:4px;}
+.data-table{width:100%;border-collapse:collapse;}.data-table th{font-family:'Barlow',sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);padding:8px 12px;text-align:left;background:rgba(13,16,32,.35);border-bottom:1px solid var(--glass-border);}.poster[data-edition="light"] .data-table th{background:rgba(27,32,48,.06);}.data-table td{padding:8px 12px;color:var(--text);line-height:1.5;border-bottom:1px solid rgba(255,255,255,.05);font-family:'Inter',sans-serif;font-size:14px;}.data-table tr:last-child td{border-bottom:none;}.data-table tr:nth-child(even) td{background:rgba(255,255,255,.02);}.poster[data-edition="light"] .data-table tr:nth-child(even) td{background:rgba(27,32,48,.025);}.data-table .mono{font-family:'JetBrains Mono',monospace;font-size:13px;}.data-table.compact th{font-size:12px;padding:7px 10px;}.data-table.compact td{padding:6px 10px;font-size:13px;line-height:1.45;}.data-table.compact .mono{font-size:12.5px;}.data-table.bath th{font-size:12px;padding:6px 8px;}.data-table.bath td{padding:5px 8px;font-size:13px;line-height:1.4;}.data-table.bath .mono{font-size:12px;}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}.compare-card{padding:18px 24px;}.compare-card h4{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:21px;color:var(--text);margin:0 0 8px;text-transform:uppercase;letter-spacing:.04em;}.compare-card h4 .tag{font-size:12px;padding:2px 8px;border-radius:4px;margin-left:8px;font-family:'JetBrains Mono',monospace;font-weight:500;letter-spacing:.06em;}.compare-card h4 .tag.good{background:rgba(39,174,96,.15);color:var(--emerald);}.compare-card h4 .tag.bad{background:rgba(224,92,92,.15);color:var(--coral);}.compare-card ul{list-style:none;padding:0;margin:0;}.compare-card li{font-size:13.5px;line-height:1.5;padding:2px 0;display:flex;gap:8px;align-items:flex-start;}.compare-card li::before{content:"";width:5px;height:5px;border-radius:50%;margin-top:7px;flex-shrink:0;}.compare-card.do li::before{background:var(--emerald);}.compare-card.dont li::before{background:var(--coral);}
+.bottom-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:10px;}
+.insight-card{padding:20px 24px;border-left:3px solid var(--teal);background:rgba(46,196,182,.06);border-radius:0 12px 12px 0;}.insight-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;color:var(--teal);letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px;}.insight-text{font-family:'Inter',sans-serif;font-size:14.5px;color:var(--text);line-height:1.5;}
+.safety-card{padding:18px 24px;background:rgba(224,92,92,.08);border:1px solid rgba(224,92,92,.25);border-radius:12px;}.safety-head{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px;color:var(--coral);letter-spacing:.06em;text-transform:uppercase;margin-bottom:5px;}.safety-body{font-size:14px;color:var(--text);line-height:1.55;}.safety-body strong{font-weight:700;color:var(--coral);}
+.process-flow{display:flex;align-items:center;justify-content:space-between;padding:10px 16px;height:80px;gap:4px;}
+.footer{padding:10px 20px;background-color:rgba(13,16,32,.85);background-image:linear-gradient(180deg,rgba(255,255,255,.04),rgba(0,0,0,0));border:1px solid rgba(255,255,255,.10);border-radius:8px;text-align:center;display:flex;flex-direction:column;gap:2px;}.poster[data-edition="light"] .footer{background-color:rgba(221,216,206,.95);border-color:rgba(27,32,48,.10);}.footer-disclaimer{font-family:'Inter',sans-serif;font-size:9px;line-height:1.35;color:var(--faint);margin:0 auto;max-width:900px;}.footer-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:13px;color:var(--text);letter-spacing:.04em;text-transform:uppercase;margin:0;}.footer-brand{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;}
+.tweaks{position:fixed;bottom:16px;right:16px;z-index:100;background:rgba(13,16,32,.92);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:10px 14px;display:flex;flex-direction:column;gap:8px;font-family:'Inter',sans-serif;font-size:12px;color:#F0EDE8;}
+@media print{@page{size:12.5in 18.75in;margin:0;}html,body{background:#1A1F2E !important;-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}*{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}.stage{position:static;padding:0;display:block;overflow:visible;}.poster-wrap{transform:none !important;width:auto !important;height:auto !important;}.poster{box-shadow:none !important;width:1200px !important;height:1800px !important;overflow:hidden !important;}.glass,.insight-card,.safety-card{backdrop-filter:none !important;-webkit-backdrop-filter:none !important;}.tweaks{display:none !important;}}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="poster-wrap" id="posterWrap">
+<div class="poster" id="poster" data-edition="light">
+  <span class="tack tl" aria-hidden="true"></span><span class="tack tr" aria-hidden="true"></span>
+  <span class="tack bl" aria-hidden="true"></span><span class="tack br" aria-hidden="true"></span>
+  <div class="poster-header">
+    <header class="header-band">
+      <div class="header-left">
+        <div class="eyebrow"><span>Plating Posters &nbsp;&middot;&nbsp; Cromo Decorativo &nbsp;&middot;&nbsp; Sistema Multicapa &nbsp;&middot;&nbsp; CC y Pruebas</span></div>
+        <h1 class="headline">CONTROL DE<br><em>CALIDAD</em></h1>
+        <h2 class="subhead">Condiciones de Servicio ASTM B456 y Pruebas de Aceptaci&oacute;n</h2>
+        <p class="tagline">La pieza final es tan buena como las pruebas que la validan. ASTM B456 define cuatro condiciones de servicio (SC1&ndash;SC4) con requisitos de corrosi&oacute;n crecientes. Las pruebas STEP verifican la arquitectura del n&iacute;quel; CASS y Corrodkote confirman el desempe&ntilde;o del sistema.</p>
+      </div>
+      <aside class="glass logo-card">
+        <div class="logo-tile"><span>PP</span></div>
+        <div class="logo-word"><span class="a">Plating</span> <span class="b">Posters</span></div>
+        <div class="logo-inc">www.platingposters.com</div>
+      </aside>
+    </header>
+  </div>
+  <div class="poster-body">
+    <div class="glass rule-card">
+      <div class="rule-num">SC4</div>
+      <div class="rule-body">
+        <div class="rule-label">Servicio Severo &mdash; &ge;32 hr CASS, Exposici&oacute;n Automotriz Exterior</div>
+        <div class="rule-text">La Condici&oacute;n de Servicio 4 es la clasificaci&oacute;n m&aacute;s exigente de ASTM B456 &mdash; molduras automotrices exteriores expuestas a sal de carretera, UV y ciclado t&eacute;rmico. Requiere n&iacute;quel d&uacute;plex o tr&iacute;plex m&aacute;s cromo microporoso o microagrietado. La prueba STEP verifica potenciales de capas; CASS (ASTM B368) confirma resistencia acelerada a corrosi&oacute;n. La falla en CC significa falla en campo.</div>
+      </div>
+    </div>
+
+    <!-- TABLA CONDICIONES DE SERVICIO -->
+    <div>
+      <h3 class="section-title">Condiciones de Servicio ASTM B456 <span class="sub">SC1 a SC4</span></h3>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table compact">
+          <thead><tr><th>CS</th><th>Severidad</th><th>Aplicaci&oacute;n T&iacute;pica</th><th>Ni M&iacute;nimo</th><th>Tipo Cr</th><th>Hrs CASS</th></tr></thead>
+          <tbody>
+            <tr><td class="mono" style="font-weight:700;">SC1</td><td>Interior leve</td><td>Herrajes interiores, perillas</td><td class="mono">10 &micro;m (Ni simple OK)</td><td>Convencional</td><td class="mono">8</td></tr>
+            <tr><td class="mono" style="font-weight:700;">SC2</td><td>Interior moderado</td><td>Grifer&iacute;a ba&ntilde;o, muebles</td><td class="mono">20 &micro;m (d&uacute;plex)</td><td>Convencional o &micro;poro</td><td class="mono">16</td></tr>
+            <tr><td class="mono" style="font-weight:700;">SC3</td><td>Exterior moderado</td><td>Exterior cubierto, jard&iacute;n</td><td class="mono">30 &micro;m (d&uacute;plex)</td><td>&micro;Poroso o &micro;agrietado</td><td class="mono">22</td></tr>
+            <tr><td class="mono" style="font-weight:700;color:var(--amber);">SC4</td><td style="font-weight:600;color:var(--amber);">Exterior severo</td><td style="color:var(--amber);">Molduras automotrices exteriores</td><td class="mono" style="color:var(--amber);">40 &micro;m (d&uacute;plex/tr&iacute;plex)</td><td style="color:var(--amber);">&micro;Poroso o &micro;agrietado</td><td class="mono" style="color:var(--amber);">32</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- TABLA M&Eacute;TODOS DE PRUEBA -->
+    <div>
+      <h3 class="section-title">M&eacute;todos de Prueba <span class="sub">kit de validaci&oacute;n</span></h3>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table compact">
+          <thead><tr><th>Prueba</th><th>Norma</th><th>Qu&eacute; Mide</th><th>Criterio de Aceptaci&oacute;n</th></tr></thead>
+          <tbody>
+            <tr><td style="font-weight:600;">Prueba STEP</td><td class="mono">ASTM B764</td><td>Diferencia de potencial entre capas Ni</td><td class="mono">100&ndash;200 mV (&Delta;E)</td></tr>
+            <tr><td style="font-weight:600;">Prueba CASS</td><td class="mono">ASTM B368</td><td>Corrosi&oacute;n acelerada (&aacute;c. ac&eacute;tico + CuCl&#8322;)</td><td class="mono">Seg&uacute;n clasif. SC (8&ndash;32 hr)</td></tr>
+            <tr><td style="font-weight:600;">Corrodkote</td><td class="mono">ASTM B380</td><td>Prueba de corrosi&oacute;n con pasta para Ni/Cr multicapa</td><td>Sin corrosi&oacute;n metal base a hrs calificadas</td></tr>
+            <tr><td style="font-weight:600;">Espesor (XRF)</td><td class="mono">ASTM B568</td><td>Espesor no destructivo de capas</td><td>Seg&uacute;n plano o requisito SC</td></tr>
+            <tr><td style="font-weight:600;">Espesor (Coulom&eacute;trico)</td><td class="mono">ASTM B504</td><td>Destructivo; mide capas individuales</td><td>Seg&uacute;n tablas ASTM B456</td></tr>
+            <tr><td style="font-weight:600;">Adherencia (Doblez)</td><td class="mono">ASTM B571</td><td>Doblez 180&deg;; sin descamado o pelado</td><td>Sin separaci&oacute;n a 1x aumento</td></tr>
+            <tr><td style="font-weight:600;">Choque T&eacute;rmico</td><td class="mono">ASTM B571</td><td>Horno 250&deg;C / temple; verifica adherencia</td><td>Sin ampollas o pelado</td></tr>
+            <tr><td style="font-weight:600;">Conteo de Microporos</td><td class="mono">ASTM B604</td><td>Sitios activos de corrosi&oacute;n por cm&sup2;</td><td class="mono">&gt;10,000 poros/cm&sup2;</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- SVG FLUJO DE DECISI&Oacute;N CC -->
+    <div class="glass" style="padding:10px 18px;">
+      <h3 class="section-title" style="margin-bottom:5px;">Flujo de Decisi&oacute;n de CC <span class="sub">inspecci&oacute;n de piezas</span></h3>
+      <svg viewBox="0 0 1060 135" width="100%" height="135" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="30" y="20" width="150" height="40" rx="6" fill="rgba(46,196,182,.10)" stroke="var(--teal)" stroke-width="1.5"/>
+        <text x="105" y="44" text-anchor="middle" fill="var(--teal)" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="11">INSP. VISUAL</text>
+        <line x1="180" y1="40" x2="210" y2="40" stroke="var(--faint)" stroke-width="1.2"/><polygon points="210,37 217,40 210,43" fill="var(--faint)"/>
+        <rect x="220" y="20" width="150" height="40" rx="6" fill="rgba(232,160,32,.10)" stroke="var(--amber)" stroke-width="1.5"/>
+        <text x="295" y="44" text-anchor="middle" fill="var(--amber)" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="11">ESPESOR XRF</text>
+        <line x1="370" y1="40" x2="400" y2="40" stroke="var(--faint)" stroke-width="1.2"/><polygon points="400,37 407,40 400,43" fill="var(--faint)"/>
+        <rect x="410" y="20" width="140" height="40" rx="6" fill="rgba(224,92,92,.10)" stroke="var(--coral)" stroke-width="1.5"/>
+        <text x="480" y="44" text-anchor="middle" fill="var(--coral)" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="11">PRUEBA STEP</text>
+        <line x1="550" y1="40" x2="580" y2="40" stroke="var(--faint)" stroke-width="1.2"/><polygon points="580,37 587,40 580,43" fill="var(--faint)"/>
+        <rect x="590" y="20" width="140" height="40" rx="6" fill="rgba(224,92,92,.10)" stroke="var(--coral)" stroke-width="1.5"/>
+        <text x="660" y="44" text-anchor="middle" fill="var(--coral)" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="11">ADHERENCIA</text>
+        <line x1="730" y1="40" x2="760" y2="40" stroke="var(--faint)" stroke-width="1.2"/><polygon points="760,37 767,40 760,43" fill="var(--faint)"/>
+        <rect x="770" y="20" width="140" height="40" rx="6" fill="rgba(39,174,96,.10)" stroke="var(--emerald)" stroke-width="1.5"/>
+        <text x="840" y="44" text-anchor="middle" fill="var(--emerald)" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="11">PRUEBA CASS</text>
+        <line x1="910" y1="40" x2="940" y2="40" stroke="var(--emerald)" stroke-width="1.5"/><polygon points="940,37 947,40 940,43" fill="var(--emerald)"/>
+        <rect x="950" y="20" width="90" height="40" rx="6" fill="rgba(39,174,96,.15)" stroke="var(--emerald)" stroke-width="2"/>
+        <text x="995" y="44" text-anchor="middle" fill="var(--emerald)" font-family="Barlow Condensed,sans-serif" font-weight="900" font-size="12">PASA</text>
+        <text x="105" y="80" text-anchor="middle" fill="var(--coral)" font-family="Inter,sans-serif" font-size="8">Falla: opaco, picas,</text>
+        <text x="105" y="90" text-anchor="middle" fill="var(--coral)" font-family="Inter,sans-serif" font-size="8">falta dep., decoloraci&oacute;n</text>
+        <text x="295" y="80" text-anchor="middle" fill="var(--coral)" font-family="Inter,sans-serif" font-size="8">Falla: por debajo del</text>
+        <text x="295" y="90" text-anchor="middle" fill="var(--coral)" font-family="Inter,sans-serif" font-size="8">m&iacute;nimo seg&uacute;n CS</text>
+        <text x="480" y="80" text-anchor="middle" fill="var(--coral)" font-family="Inter,sans-serif" font-size="8">Falla: &Delta;E &lt;100</text>
+        <text x="480" y="90" text-anchor="middle" fill="var(--coral)" font-family="Inter,sans-serif" font-size="8">o &gt;200 mV</text>
+        <text x="660" y="80" text-anchor="middle" fill="var(--coral)" font-family="Inter,sans-serif" font-size="8">Falla: pelado o</text>
+        <text x="660" y="90" text-anchor="middle" fill="var(--coral)" font-family="Inter,sans-serif" font-size="8">ampollas</text>
+        <text x="840" y="80" text-anchor="middle" fill="var(--coral)" font-family="Inter,sans-serif" font-size="8">Falla: corrosi&oacute;n metal</text>
+        <text x="840" y="90" text-anchor="middle" fill="var(--coral)" font-family="Inter,sans-serif" font-size="8">base &lt; hrs calificadas</text>
+        <line x1="105" y1="95" x2="105" y2="115" stroke="var(--coral)" stroke-width="1"/>
+        <line x1="295" y1="95" x2="295" y2="115" stroke="var(--coral)" stroke-width="1"/>
+        <line x1="480" y1="95" x2="480" y2="115" stroke="var(--coral)" stroke-width="1"/>
+        <line x1="660" y1="95" x2="660" y2="115" stroke="var(--coral)" stroke-width="1"/>
+        <line x1="840" y1="95" x2="840" y2="115" stroke="var(--coral)" stroke-width="1"/>
+        <line x1="105" y1="115" x2="840" y2="115" stroke="var(--coral)" stroke-width="1"/>
+        <line x1="475" y1="115" x2="475" y2="125" stroke="var(--coral)" stroke-width="1.2"/><polygon points="472,125 475,130 478,125" fill="var(--coral)"/>
+        <text x="530" y="130" fill="var(--coral)" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="10" letter-spacing=".04em">RECHAZAR &rarr; CAUSA RA&Iacute;Z &rarr; ACCI&Oacute;N CORRECTIVA</text>
+      </svg>
+    </div>
+
+    <!-- INFORMACI&Oacute;N CLAVE -->
+    <div class="insight-card">
+      <div class="insight-label">Prueba STEP: La Herramienta de CC M&aacute;s Importante para Cromo Decorativo</div>
+      <div class="insight-text">La prueba STEP (ASTM B764) usa disoluci&oacute;n electrol&iacute;tica para medir el potencial de cada capa de n&iacute;quel individualmente. Un &Delta;E de 100&ndash;200 mV entre Ni semi-brillante y brillante confirma que el sistema d&uacute;plex funciona. Piezas que pasan CASS pero fallan STEP pueden haber enmascarado un problema &mdash; la prueba CASS es acelerada pero la STEP revela el <strong>mecanismo</strong>. Si el mecanismo es incorrecto, las fallas en campo seguir&aacute;n aunque la prueba acelerada pase.</div>
+    </div>
+
+    <div class="safety-card">
+      <div class="safety-head">&#9888; Resumen de Seguridad &mdash; CC y Pruebas</div>
+      <div class="safety-body"><strong>Soluci&oacute;n de prueba CASS</strong> &mdash; contiene &aacute;cido ac&eacute;tico y CuCl&#8322;; irritante; manejar en campana de humos. <strong>Prueba STEP</strong> &mdash; usa electrolito &aacute;cido; use guantes y protecci&oacute;n ocular. <strong>Analizadores XRF</strong> &mdash; contienen fuente de rayos X; solo operadores capacitados; seguir protocolo de seguridad radiol&oacute;gica. <strong>Coulom&eacute;trico (destructivo)</strong> &mdash; soluciones de decapado &aacute;cido; EPP est&aacute;ndar para &aacute;cidos. <strong>Horno de choque t&eacute;rmico</strong> &mdash; superficie a 250&deg;C; riesgo de quemaduras; guantes t&eacute;rmicos. FTS publicadas para todos los qu&iacute;micos de prueba.</div>
+    </div>
+
+  </div>
+  <footer class="footer poster-footer">
+    <p class="footer-disclaimer">Solo referencia técnica. Verifique todos los parámetros contra la ficha técnica de su proveedor, especificaciones del cliente y requisitos regulatorios aplicables antes del uso en producción.</p>
+    <p class="footer-title">Control de Calidad y Pruebas &mdash; Serie de Cromado Decorativo</p>
+    <span class="footer-brand">Plating Posters &middot; Metal Finishing Reference Series &middot; PP-DC-08-T / v1.0 / 2026</span>
+  </footer>
+</div>
+</div>
+</div>
+<div class="tweaks">
+  <div style="display:flex;gap:6px;align-items:center;">
+    <span style="color:rgba(240,237,232,.5);font-size:11px;letter-spacing:.06em;text-transform:uppercase;">Edition</span>
+    <button id="btnDark" style="padding:4px 10px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);" onclick="setEdition('')">Dark</button>
+    <button id="btnLight" style="padding:4px 10px;border-radius:5px;cursor:pointer;font-size:11px;background:#E8A020;color:#1A1F2E;border:1px solid #E8A020;" onclick="setEdition('light')">Light</button>
+  </div>
+  <button onclick="window.print()" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);">Print / PDF</button>
+</div>
+<script>
+const posterWrap=document.getElementById('posterWrap');const poster=document.getElementById('poster');
+function scalePoster(){const sW=(window.innerWidth-24)/1200;const sH=(window.innerHeight-24)/1800;const s=Math.min(sW,sH);posterWrap.style.transform='scale('+s+')';posterWrap.style.transformOrigin='top center';posterWrap.style.width='1200px';posterWrap.style.height=(1800*s)+'px';}
+function setEdition(e){if(e)poster.dataset.edition=e;else delete poster.dataset.edition;['Dark','Light'].forEach(function(n){var b=document.getElementById('btn'+n);var active=(n.toLowerCase()===e)||(n==='Dark'&&!e);b.style.background=active?'#E8A020':'transparent';b.style.color=active?'#1A1F2E':'#F0EDE8';b.style.borderColor=active?'#E8A020':'rgba(255,255,255,.2)';})}
+scalePoster();window.addEventListener('resize',scalePoster);
+</script>
+</body>
+</html>

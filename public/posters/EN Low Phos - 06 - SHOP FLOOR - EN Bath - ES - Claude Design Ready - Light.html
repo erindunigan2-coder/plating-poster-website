@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>EN Bajo Fósforo — Baño EN | Plating Posters Inc</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700;800&family=Barlow+Condensed:ital,wght@0,700;0,800;0,900;1,800;1,900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<style>
+:root{
+  --bg:#1A1F2E;--navy:#0D1020;--text:#F0EDE8;--muted:rgba(240,237,232,.62);--faint:rgba(240,237,232,.38);
+  --amber:#E8A020;--teal:#2EC4B6;--emerald:#27AE60;--coral:#E05C5C;--slate:#3A4055;
+  --callout:#1E2435;--altrow:#252B3D;
+  --glass-bg:rgba(30,36,53,.55);--glass-img:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));
+  --glass-border:rgba(255,255,255,.12);--glass-shadow:inset 0 1px 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(0,0,0,.2),0 4px 12px rgba(0,0,0,.25);
+  --tint-amber:rgba(232,160,32,.16);--tint-coral:rgba(224,92,92,.16);--tint-teal:rgba(46,196,182,.14);
+  --tint-emer:rgba(39,174,96,.14);--tint-slate:rgba(58,64,85,.45);
+  --hl-amber:rgba(232,160,32,.30);--hl-coral:rgba(224,92,92,.30);--hl-teal:rgba(46,196,182,.30);
+}
+body[data-edition="light"]{
+  --bg:#F5F4F0;--navy:#DDD8CE;--text:#1B2030;--muted:rgba(27,32,48,.66);--faint:rgba(27,32,48,.42);
+  --amber:#B8770D;--teal:#1A8C82;--emerald:#1E8449;--coral:#B7322F;--slate:#C5C0B5;
+  --callout:#ECEAE1;--altrow:#E4E1D6;
+  --glass-bg:rgba(255,253,247,.66);--glass-img:linear-gradient(145deg,rgba(0,0,0,.025),rgba(0,0,0,.005));
+  --glass-border:rgba(27,32,48,.10);--glass-shadow:inset 0 1px 0 rgba(255,255,255,.55),inset 0 -1px 0 rgba(0,0,0,.06),0 4px 12px rgba(0,0,0,.10);
+  --tint-amber:rgba(184,119,13,.18);--tint-coral:rgba(183,50,47,.16);--tint-teal:rgba(26,140,130,.16);
+  --tint-emer:rgba(30,132,73,.16);--tint-slate:rgba(197,192,181,.55);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:#0a0c14;color:var(--text);font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+body[data-edition="light"]{background:#bcb9ae}
+.stage{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;padding:24px;overflow:auto}
+.poster-wrap{position:relative;transform-origin:center center;will-change:transform}
+.poster{position:relative;width:900px;height:1200px;background:radial-gradient(900px 600px at 15% 8%,rgba(46,196,182,.14),transparent 60%),radial-gradient(750px 525px at 90% 25%,rgba(232,160,32,.12),transparent 55%),radial-gradient(675px 675px at 50% 80%,rgba(224,92,92,.10),transparent 60%),var(--bg);color:var(--text);overflow:hidden;box-shadow:0 40px 120px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.04);}
+body[data-edition="light"] .poster{background:radial-gradient(900px 600px at 15% 8%,rgba(26,140,130,.10),transparent 60%),radial-gradient(750px 525px at 90% 25%,rgba(184,119,13,.09),transparent 55%),radial-gradient(675px 675px at 50% 80%,rgba(183,50,47,.07),transparent 60%),var(--bg);}
+.poster::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(240,237,232,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(240,237,232,.045) 1px,transparent 1px);background-size:50px 50px;-webkit-mask-image:radial-gradient(825px 1000px at 50% 50%,#000 40%,transparent 90%);mask-image:radial-gradient(825px 1000px at 50% 50%,#000 40%,transparent 90%);z-index:0;}
+body[data-edition="light"] .poster::before{background-image:linear-gradient(rgba(27,32,48,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(27,32,48,.06) 1px,transparent 1px);}
+body[data-grid="off"] .poster::before{display:none}
+.canvas{position:relative;z-index:1;padding:26px;display:flex;flex-direction:column;gap:9px;height:100%}
+.tack{position:absolute;width:18px;height:18px;border-radius:50%;border:1.5px solid rgba(232,160,32,.28);z-index:2;pointer-events:none}
+.tack::before,.tack::after{content:"";position:absolute;background:rgba(232,160,32,.28)}
+.tack::before{left:50%;top:-2px;bottom:-2px;width:1px;transform:translateX(-50%)}
+.tack::after{top:50%;left:-2px;right:-2px;height:1px;transform:translateY(-50%)}
+.tack.tl{top:8px;left:8px}.tack.tr{top:8px;right:8px}.tack.bl{bottom:8px;left:8px}.tack.br{bottom:8px;right:8px}
+.glass{background-color:var(--glass-bg);background-image:var(--glass-img);border:1px solid var(--glass-border);border-radius:14px;box-shadow:var(--glass-shadow);-webkit-backdrop-filter:blur(18px) saturate(140%);backdrop-filter:blur(18px) saturate(140%);position:relative;}
+.glass.coral{background-color:rgba(224,92,92,.16);border-color:rgba(224,92,92,.32);}
+body[data-edition="light"] .glass.coral{background-color:rgba(183,50,47,.12);border-color:rgba(183,50,47,.32);}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-weight:500;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);display:flex;align-items:center;gap:14px}
+.eyebrow::before{content:"";display:inline-block;width:25px;height:2px;background:var(--amber)}
+.headline{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:52px;line-height:.88;letter-spacing:-.01em;text-transform:uppercase;margin:5px 0 3px}
+.subhead{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px;line-height:1;letter-spacing:.02em;color:var(--emerald);text-transform:uppercase;margin:0 0 5px}
+.tagline{font-family:'Inter',sans-serif;font-size:11.5px;line-height:1.4;color:var(--muted);margin:0;max-width:480px}
+.zone-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;line-height:1;letter-spacing:.06em;text-transform:uppercase;text-align:center;color:var(--text);margin:0}
+.zone-label .dot{display:inline-block;width:4px;height:4px;background:var(--amber);border-radius:50%;vertical-align:middle;margin:0 8px;transform:translateY(-3px)}
+.zone-head{margin:0}
+.z1{display:grid;grid-template-columns:1fr 160px;gap:14px;align-items:start}
+.z1 .left{padding-top:2px;min-width:0}
+.logo-card{padding:14px 12px;display:flex;flex-direction:column;align-items:center;gap:10px}
+.logo-tile{width:58px;height:58px;border-radius:10px;background:linear-gradient(135deg,#E8A020,#2EC4B6);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -2px 4px rgba(0,0,0,.15),0 4px 14px rgba(0,0,0,.35)}
+.logo-tile span{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:22px;color:#1A1F2E;letter-spacing:.02em;line-height:1}
+.logo-word{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;letter-spacing:.04em;text-transform:uppercase;line-height:1;text-align:center;white-space:nowrap}
+.logo-word .a{color:#F0EDE8}.logo-word .b{color:#E8A020}
+body[data-edition="light"] .logo-word .a{color:#1B2030}
+.logo-inc{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.05em;text-transform:lowercase;color:var(--muted);margin-top:-2px}
+body[data-edition="light"] .logo-inc{color:rgba(27,32,48,.62)}
+.poster-no{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--faint);letter-spacing:.18em}
+.key-card{padding:11px 15px;background:rgba(232,160,32,.07);}
+.key-eyebrow{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--amber);letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px}
+.key-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:46px;color:var(--amber);line-height:1;margin-bottom:6px}
+.key-note{font-family:'Inter',sans-serif;font-weight:500;font-size:11.5px;color:var(--muted);line-height:1.4}
+.section-card{padding:11px 15px}
+.section-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--amber);margin:0 0 8px}
+.section-title.coral{color:var(--coral)}
+.numbered-list{display:flex;flex-direction:column;gap:6px}
+.numbered-item{display:flex;align-items:flex-start;gap:10px}
+.num-bullet{width:23px;height:23px;border-radius:50%;background:radial-gradient(circle at 32% 28%,rgba(255,255,255,.85),rgba(255,255,255,0) 38%),radial-gradient(circle at 50% 55%,#2EC4B6,#126e66);box-shadow:inset 0 1px 0 rgba(255,255,255,.5),inset 0 -2px 4px rgba(0,0,0,.3),0 0 14px rgba(46,196,182,.45);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:12.5px;color:#0D1020;margin-top:1px;}
+.num-bullet.coral-bg{background:radial-gradient(circle at 32% 28%,rgba(255,255,255,.5),rgba(255,255,255,0) 38%),var(--coral);box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 0 14px rgba(224,92,92,.45);color:#fff;}
+.num-text{font-family:'Inter',sans-serif;font-weight:500;font-size:11.5px;color:var(--text);line-height:1.4}
+.num-text.coral-text{color:var(--coral);font-weight:600}
+.problems-table{width:100%;border-collapse:collapse}
+.problems-table th{font-family:'Barlow',sans-serif;font-weight:700;font-size:10px;color:var(--amber);letter-spacing:.07em;text-transform:uppercase;padding:5.5px 8.5px;text-align:left;border-bottom:1px solid var(--glass-border)}
+.problems-table td{font-family:'Inter',sans-serif;font-weight:500;font-size:11px;color:var(--text);padding:6px 8.5px;border-bottom:1px solid rgba(255,255,255,.05);line-height:1.4}
+body[data-edition="light"] .problems-table td{border-bottom-color:rgba(27,32,48,.08);}
+.problems-table td.muted{color:var(--muted)}
+.problems-table td.alarm{color:var(--coral);font-weight:600}
+.problems-table tr.alt{background:rgba(58,64,85,.35)}
+.problems-table tr.danger td{background:rgba(224,92,92,.08)}
+.problems-table tr:last-child td{border-bottom:none}
+.safety-zone{padding:11px 15px;background:rgba(224,92,92,.06);border-radius:14px}
+.safety-items{display:flex;flex-direction:column;gap:6px}
+.safety-item{display:flex;align-items:flex-start;gap:8px;font-family:'Inter',sans-serif;font-weight:500;font-size:11px;color:var(--text);line-height:1.4}
+.safety-item.coral-text{color:var(--coral);font-weight:600}
+.safety-bullet{color:var(--coral);flex-shrink:0;font-size:12.5px;margin-top:1px}
+.zone-foot{margin:auto 0 0;padding:5px 14px 5px;background-color:rgba(13,16,32,.85);background-image:linear-gradient(180deg,rgba(255,255,255,.04),rgba(0,0,0,0));border:1px solid rgba(255,255,255,.10);border-radius:8px;display:flex;flex-direction:column;gap:4px;}
+body[data-edition="light"] .zone-foot{background-color:rgba(221,216,206,.95);border-color:rgba(27,32,48,.10);}
+.foot-disc{font-family:'Inter',sans-serif;font-size:8.5px;line-height:1.35;color:var(--faint);text-align:center;margin:0 auto;max-width:800px}
+.foot-brand{display:flex;align-items:center;justify-content:center;gap:12px}
+.foot-brand .mark{width:18px;height:18px;border-radius:5px;display:flex;align-items:center;justify-content:center;background:linear-gradient(145deg,#E8A020,#B8770D);color:#0D1020;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:10px;letter-spacing:0;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 2px 6px rgba(0,0,0,.4)}
+.foot-brand .title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--text)}
+.foot-brand .sep{color:var(--faint)}
+.foot-brand .series{font-family:'Inter',sans-serif;font-size:9.5px;color:var(--muted);font-style:italic}
+.foot-meta{display:flex;justify-content:center;gap:16px;font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.14em;color:var(--faint);text-transform:uppercase}
+@media print{
+  @page{size:9.375in 12.5in;margin:0;}
+  html,body{background:#1A1F2E !important;-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
+  body[data-edition="light"]{background:#F5F4F0 !important;}
+  *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
+  .stage{position:static;padding:0;display:block;overflow:visible;inset:auto;}
+  .poster-wrap{transform:none !important;width:auto !important;height:auto !important;}
+  .poster{box-shadow:none !important;width:900px !important;height:1200px !important;overflow:hidden !important;}
+  .glass,.safety-zone,.zone-foot{backdrop-filter:none !important;-webkit-backdrop-filter:none !important;}
+  #tweaks-root{display:none !important;}
+}
+</style>
+</head>
+<body data-edition="dark" data-grid="on">
+
+<div class="stage" id="stage">
+  <div class="poster-wrap" id="posterWrap">
+    <div class="poster" id="poster">
+      <div class="canvas">
+
+        <span class="tack tl" aria-hidden="true"></span>
+        <span class="tack tr" aria-hidden="true"></span>
+        <span class="tack bl" aria-hidden="true"></span>
+        <span class="tack br" aria-hidden="true"></span>
+
+        <!-- ZONE 1 — HEADER -->
+        <header class="z1">
+          <div class="left">
+            <div class="eyebrow">
+              <span>Níquel Químico (Electroless) — Etapa 5 de 7</span>
+              <span class="poster-no">No. SF-06 / ES</span>
+            </div>
+            <h1 class="headline">BAÑO EN</h1>
+            <h2 class="subhead">Depósito autocatalítico de níquel-fósforo — sin rectificador, sin ánodo</h2>
+            <p class="tagline">Si el estabilizador se agota, la temperatura sube por encima de 95 °C o se introduce demasiada superficie catalítica activa, el baño puede descomponerse — una reacción rápida, exotérmica e irreversible.</p>
+          </div>
+          <aside class="glass logo-card">
+            <div class="logo-tile"><span>PP</span></div>
+            <div class="logo-word"><span class="a">Plating</span> <span class="b">Posters</span></div>
+            <div class="logo-inc">www.platingposters.com</div>
+          </aside>
+        </header>
+
+        <!-- ZONE 2 — EL NÚMERO CLAVE -->
+        <section class="zone-head">
+          <h2 class="zone-label"><span class="dot"></span>El Número Clave<span class="dot"></span></h2>
+        </section>
+
+        <div class="glass">
+          <div class="key-card">
+            <div class="key-eyebrow">El Número Clave</div>
+            <div class="key-title">80–92 °C</div>
+            <div class="key-note">Temperatura de operación. Por debajo de 80 °C el depósito se hace lento. Por encima de 95 °C el baño puede descomponerse. Monitoree continuamente.</div>
+          </div>
+        </div>
+
+        <!-- ZONE 3 — LO QUE DEBE HACER -->
+        <section class="zone-head">
+          <h2 class="zone-label"><span class="dot"></span>Lo Que Debe Hacer<span class="dot"></span></h2>
+        </section>
+
+        <div class="glass">
+          <div class="section-card">
+            <div class="numbered-list">
+              <div class="numbered-item"><div class="num-bullet">1</div><div class="num-text">Verifique temperatura (80–92 °C), pH (según ficha técnica del proveedor) y nivel de Ni²⁺ (4.5–6.0 g/L) al inicio del turno y cada 2 horas.</div></div>
+              <div class="numbered-item"><div class="num-bullet">2</div><div class="num-text">Mantenga la filtración continua — mínimo 1 a 2 volúmenes del tanque por hora.</div></div>
+              <div class="numbered-item"><div class="num-bullet">3</div><div class="num-text">Nunca deje el baño caliente parado sin piezas — use una pieza de sacrificio (dummy) si es necesario.</div></div>
+              <div class="numbered-item"><div class="num-bullet coral-bg">4</div><div class="num-text coral-text">Si nota turbidez repentina, burbujas inusuales o temperatura sube sola — PARE y llame al supervisor de inmediato.</div></div>
+              <div class="numbered-item"><div class="num-bullet">5</div><div class="num-text">Registre el número de MTO — después de 6–8 MTO (o según la especificación del proveedor) el baño debe descartarse. El rendimiento se degrada conforme el MTO aumenta.</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ZONE 4 — PROBLEMAS COMUNES -->
+        <section class="zone-head">
+          <h2 class="zone-label"><span class="dot"></span>Problemas Comunes<span class="dot"></span></h2>
+        </section>
+
+        <div class="glass">
+          <div class="section-card">
+            <table class="problems-table">
+              <thead>
+                <tr>
+                  <th style="width:26%">Problema</th>
+                  <th style="width:32%">Qué Ver</th>
+                  <th>Qué Hacer</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="alt">
+                  <td>Tasa de depósito baja</td>
+                  <td class="muted">Tasa de depósito por debajo de 10 µm/hr (objetivo típico: 15–25 µm/hr)</td>
+                  <td class="muted">Verifique temperatura, pH y concentración de Ni²⁺</td>
+                </tr>
+                <tr>
+                  <td>Hoyos (pitting)</td>
+                  <td class="muted">Cráteres en la superficie enchapada</td>
+                  <td class="muted">Verifique arrastre de cloruros del enjuague; aumente agitación</td>
+                </tr>
+                <tr class="danger">
+                  <td class="alarm">Descomposición del baño</td>
+                  <td class="muted">Turbidez violenta, temperatura sube sola</td>
+                  <td class="alarm">EMERGENCIA: evacúe el área inmediata; llame al supervisor. Solo el personal capacitado debe intentar agregar agua DI fría para frenar la reacción — el riesgo de salpicaduras es severo.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- ZONE 5 — SEGURIDAD -->
+        <section class="zone-head">
+          <h2 class="zone-label"><span class="dot"></span>Seguridad<span class="dot"></span></h2>
+        </section>
+
+        <div class="glass coral">
+          <div class="safety-zone">
+            <div class="section-title coral">&#9888; SEGURIDAD</div>
+            <div class="safety-items">
+              <div class="safety-item"><span class="safety-bullet">&#9679;</span><span>El baño a 80–92 °C quema gravemente — use guantes para altas temperaturas al manipular cargas.</span></div>
+              <div class="safety-item"><span class="safety-bullet">&#9679;</span><span>La reacción libera H₂ continuamente — se requiere ventilación activa; no permita acumulación.</span></div>
+              <div class="safety-item"><span class="safety-bullet">&#9679;</span><span>El níquel disuelto es un sensibilizante — evite contacto repetido con piel; use guantes de nitrilo.</span></div>
+              <div class="safety-item coral-text"><span class="safety-bullet">&#9679;</span><span>Descomposición del baño: evacúe el área y llame al supervisor — no intente detenerlo solo.</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ZONE 6 — FOOTER -->
+        <footer class="zone-foot">
+          <p class="foot-disc">Consulte al supervisor antes de reponer cualquier químico al baño o si el pH o la temperatura están fuera de rango.</p>
+          <div class="foot-brand">
+            <div class="mark">PP</div>
+            <span class="title">EN Bajo Fósforo — Baño EN, Etapa 5 de 7</span>
+            <span class="sep">/</span>
+            <span class="series">Plating Posters Inc · Serie de Referencia para Piso de Planta</span>
+          </div>
+          <div class="foot-meta">
+            <span>No. SF-06 / ES</span>
+            <span>·</span>
+            <span>v 1.0 — Mayo 2026</span>
+            <span>·</span>
+            <span>© 2026 Plating Posters Inc</span>
+          </div>
+        </footer>
+
+      </div><!-- /canvas -->
+    </div><!-- /poster -->
+  </div><!-- /poster-wrap -->
+</div><!-- /stage -->
+
+<div id="tweaks-root"></div>
+
+<script type="text/babel">
+function TweaksApp(){
+  const [edition, setEdition] = React.useState('dark');
+  const [grid, setGrid] = React.useState('on');
+  React.useEffect(() => { document.body.setAttribute('data-edition', edition); }, [edition]);
+  React.useEffect(() => { document.body.setAttribute('data-grid', grid); }, [grid]);
+  const panelStyle = {position:'fixed',bottom:'16px',right:'16px',zIndex:100,background:'rgba(13,16,32,.92)',border:'1px solid rgba(255,255,255,.12)',borderRadius:'10px',padding:'12px 16px',display:'flex',flexDirection:'column',gap:'8px',fontFamily:"'Inter',sans-serif",fontSize:'12px',color:'#F0EDE8'};
+  const btnBase = {padding:'3px 10px',borderRadius:'4px',cursor:'pointer',fontSize:'11px'};
+  const btnActive = {...btnBase,border:'1px solid #E8A020',background:'#E8A020',color:'#1A1F2E'};
+  const btnInactive = {...btnBase,border:'1px solid rgba(255,255,255,.2)',background:'transparent',color:'#F0EDE8'};
+  return (
+    <div style={panelStyle}>
+      <div style={{display:'flex',gap:'8px',alignItems:'center'}}>
+        <span style={{color:'rgba(240,237,232,.5)'}}>Edición</span>
+        <button style={edition==='dark'?btnActive:btnInactive} onClick={()=>setEdition('dark')}>Oscuro</button>
+        <button style={edition==='light'?btnActive:btnInactive} onClick={()=>setEdition('light')}>Claro</button>
+      </div>
+      <div style={{display:'flex',gap:'8px',alignItems:'center'}}>
+        <span style={{color:'rgba(240,237,232,.5)'}}>Cuadrícula</span>
+        <button style={grid==='on'?btnActive:btnInactive} onClick={()=>setGrid('on')}>Sí</button>
+        <button style={grid==='off'?btnActive:btnInactive} onClick={()=>setGrid('off')}>No</button>
+      </div>
+      <button style={btnInactive} onClick={()=>window.print()}>Imprimir / PDF</button>
+    </div>
+  );
+}
+const root = ReactDOM.createRoot(document.getElementById('tweaks-root'));
+root.render(<TweaksApp />);
+</script>
+
+<script>
+(function(){
+  const wrap = document.getElementById('posterWrap');
+  const W = 900, H = 1200;
+  function fit(){
+    const pad = 48;
+    const s = Math.min((window.innerWidth-pad)/W,(window.innerHeight-pad)/H,1);
+    wrap.style.width=W+'px';wrap.style.height=H+'px';
+    wrap.style.transform='scale('+s+')';wrap.style.transformOrigin='center center';
+  }
+  window.addEventListener('resize',fit);fit();
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zinc Plating (Alkaline) &mdash; Step 04 Rinse Pre-Plate &mdash; Technical | Plating Posters Inc</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Barlow:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#1A1F2E;--navy:#0D1020;--text:#F0EDE8;--muted:rgba(240,237,232,.62);--faint:rgba(240,237,232,.38);--amber:#E8A020;--teal:#2EC4B6;--emerald:#27AE60;--coral:#E05C5C;--slate:#3A4055;--callout:#1E2435;--altrow:#252B3D;--glass-bg:rgba(30,36,53,.55);--glass-border:rgba(255,255,255,.12);--glass-shadow:inset 0 1px 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(0,0,0,.2),0 4px 12px rgba(0,0,0,.25);}
+.poster[data-edition="light"]{--bg:#F5F4F0;--navy:#DDD8CE;--text:#1B2030;--muted:rgba(27,32,48,.66);--faint:rgba(27,32,48,.42);--amber:#B8770D;--teal:#1A8C82;--emerald:#1E8449;--coral:#B7322F;--slate:#C5C0B5;--callout:#ECEAE1;--altrow:#E4E1D6;--glass-bg:rgba(255,253,247,.66);--glass-border:rgba(27,32,48,.10);--glass-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 4px 12px rgba(27,32,48,.08);}
+html,body{margin:0;padding:0;background:#0a0c14;}
+.stage{width:100vw;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;overflow:visible;padding:12px 0;box-sizing:border-box;}
+.poster-wrap{transform-origin:center center;}
+.poster{width:1200px;height:1800px;position:relative;overflow:hidden;background:radial-gradient(1200px 800px at 15% 8%,rgba(46,196,182,.14),transparent 60%),radial-gradient(1000px 700px at 90% 25%,rgba(232,160,32,.12),transparent 55%),radial-gradient(900px 900px at 50% 80%,rgba(224,92,92,.10),transparent 60%),var(--bg);font-family:'Inter',sans-serif;color:var(--text);display:flex;flex-direction:column;padding:32px;box-sizing:border-box;}
+.poster::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:50px 50px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);pointer-events:none;z-index:0;}
+.poster>*{position:relative;z-index:1;}
+.glass{background-color:var(--glass-bg);background-image:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));border:1px solid var(--glass-border);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);box-shadow:var(--glass-shadow);border-radius:12px;}
+.tack{position:absolute;width:24px;height:24px;border-radius:50%;border:1.5px solid rgba(232,160,32,.28);z-index:2;pointer-events:none;}.tack::before,.tack::after{content:"";position:absolute;background:rgba(232,160,32,.28);}.tack::before{left:50%;top:-3px;bottom:-3px;width:1px;transform:translateX(-50%);}.tack::after{top:50%;left:-3px;right:-3px;height:1px;transform:translateY(-50%);}.tack.tl{top:12px;left:12px;}.tack.tr{top:12px;right:12px;}.tack.bl{bottom:12px;left:12px;}.tack.br{bottom:12px;right:12px;}
+.poster-header{flex-shrink:0;}.poster-body{flex:1;overflow:hidden;display:flex;flex-direction:column;gap:10px;justify-content:space-between;}.poster-footer{flex-shrink:0;margin-top:8px;}
+.header-band{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:6px;}.header-left{flex:1;min-width:0;}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--amber);letter-spacing:.16em;text-transform:uppercase;margin-bottom:4px;display:flex;align-items:center;gap:12px;}.eyebrow::before{content:"";display:inline-block;width:30px;height:3px;background:var(--amber);}
+.headline{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:78px;color:var(--text);line-height:.92;margin:4px 0;letter-spacing:-.01em;text-transform:uppercase;}.headline em{font-style:normal;color:var(--amber);}
+.subhead{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:23px;color:var(--teal);margin:0 0 3px;letter-spacing:.02em;text-transform:uppercase;}
+.tagline{font-family:'Inter',sans-serif;font-style:italic;font-size:13px;color:var(--muted);line-height:1.4;max-width:700px;margin:0;}
+.logo-card{flex-shrink:0;padding:12px 10px;display:flex;flex-direction:column;align-items:center;gap:8px;align-self:flex-start;}.logo-tile{width:68px;height:68px;border-radius:12px;background:linear-gradient(135deg,#E8A020,#2EC4B6);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -2px 4px rgba(0,0,0,.15),0 4px 14px rgba(0,0,0,.35);}.logo-tile span{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:26px;color:#1A1F2E;letter-spacing:.02em;line-height:1;}.logo-word{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;letter-spacing:.04em;text-transform:uppercase;line-height:1;text-align:center;white-space:nowrap;}.logo-word .a{color:var(--text);}.logo-word .b{color:var(--amber);}.logo-inc{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.05em;text-transform:lowercase;color:var(--muted);margin-top:-2px;}
+.section-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:28px;letter-spacing:.08em;text-transform:uppercase;color:var(--text);margin:0 0 6px;display:flex;align-items:center;gap:8px;}.section-title::before{content:"";width:6px;height:6px;background:var(--amber);border-radius:50%;}.section-title .sub{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;color:var(--muted);margin-left:auto;font-weight:500;}
+.rule-card{display:flex;align-items:center;gap:18px;padding:18px 28px;background:rgba(232,160,32,.07);}
+.rule-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:68px;color:var(--amber);line-height:1;letter-spacing:-.02em;white-space:nowrap;}
+.rule-body{flex:1;}.rule-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:19px;color:var(--amber);letter-spacing:.08em;text-transform:uppercase;}.rule-text{font-family:'Inter',sans-serif;font-size:15px;color:var(--muted);line-height:1.5;margin-top:3px;}
+.data-table{width:100%;border-collapse:collapse;}.data-table th{font-family:'Barlow',sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);padding:7px 12px;text-align:left;background:rgba(13,16,32,.35);border-bottom:1px solid var(--glass-border);}.poster[data-edition="light"] .data-table th{background:rgba(27,32,48,.06);}.data-table td{padding:7px 12px;color:var(--text);line-height:1.5;border-bottom:1px solid rgba(255,255,255,.05);font-family:'Inter',sans-serif;font-size:14px;}.data-table tr:last-child td{border-bottom:none;}.data-table tr:nth-child(even) td{background:rgba(255,255,255,.02);}.poster[data-edition="light"] .data-table tr:nth-child(even) td{background:rgba(27,32,48,.025);}.data-table .mono{font-family:'JetBrains Mono',monospace;font-size:13px;}
+.numbered-list{display:flex;flex-direction:column;gap:7px;}.numbered-item{display:flex;align-items:flex-start;gap:10px;}.num-bullet{width:32px;height:32px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:17px;color:#1A1F2E;margin-top:1px;}.num-text{font-family:'Inter',sans-serif;font-weight:500;font-size:15px;color:var(--text);line-height:1.5;}.num-text strong{font-weight:700;}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}.compare-card{padding:18px 24px;}.compare-card h4{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:21px;color:var(--text);margin:0 0 6px;text-transform:uppercase;letter-spacing:.04em;}.compare-card h4 .tag{font-size:11px;padding:2px 8px;border-radius:4px;margin-left:8px;font-family:'JetBrains Mono',monospace;font-weight:500;letter-spacing:.06em;}.compare-card h4 .tag.good{background:rgba(39,174,96,.15);color:var(--emerald);}.compare-card h4 .tag.bad{background:rgba(224,92,92,.15);color:var(--coral);}.compare-card ul{list-style:none;padding:0;margin:0;}.compare-card li{font-size:14.5px;line-height:1.5;padding:3px 0;display:flex;gap:8px;align-items:flex-start;}.compare-card li::before{content:"";width:5px;height:5px;border-radius:50%;margin-top:7px;flex-shrink:0;}.compare-card.do li::before{background:var(--emerald);}.compare-card.dont li::before{background:var(--coral);}
+.trouble-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}.trouble-card{padding:16px 18px;border-radius:10px;border-left:3px solid var(--coral);display:flex;flex-direction:column;gap:4px;}.trouble-card h5{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;color:var(--coral);margin:0;text-transform:uppercase;letter-spacing:.06em;line-height:1.1;}.trouble-card p{font-size:13.5px;color:var(--muted);margin:0;line-height:1.5;}
+.safety-card{padding:18px 24px;background:rgba(224,92,92,.08);border:1px solid rgba(224,92,92,.25);border-radius:12px;}.safety-head{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px;color:var(--coral);letter-spacing:.06em;text-transform:uppercase;margin-bottom:5px;}.safety-body{font-size:14px;color:var(--text);line-height:1.5;}.safety-body strong{font-weight:700;color:var(--coral);}
+.svg-diagram{display:block;padding:8px 0;width:100%;}
+.footer{padding:10px 20px;background-color:rgba(13,16,32,.85);background-image:linear-gradient(180deg,rgba(255,255,255,.04),rgba(0,0,0,0));border:1px solid rgba(255,255,255,.10);border-radius:8px;text-align:center;display:flex;flex-direction:column;gap:2px;}.poster[data-edition="light"] .footer{background-color:rgba(221,216,206,.95);border-color:rgba(27,32,48,.10);}.footer-disclaimer{font-family:'Inter',sans-serif;font-size:8.5px;line-height:1.35;color:var(--faint);margin:0 auto;max-width:900px;}.footer-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:12px;color:var(--text);letter-spacing:.04em;text-transform:uppercase;margin:0;}.footer-brand{font-family:'JetBrains Mono',monospace;font-size:8.5px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;}
+.tweaks{position:fixed;bottom:16px;right:16px;z-index:100;background:rgba(13,16,32,.92);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:10px 14px;display:flex;flex-direction:column;gap:8px;font-family:'Inter',sans-serif;font-size:12px;color:#F0EDE8;}
+@media print{@page{size:12.5in 18.75in;margin:0;}html,body{background:#1A1F2E !important;-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}*{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}.stage{position:static;padding:0;display:block;overflow:visible;}.poster-wrap{transform:none !important;width:auto !important;height:auto !important;}.poster{box-shadow:none !important;width:1200px !important;height:1800px !important;overflow:hidden !important;}.glass,.trouble-card,.safety-card{backdrop-filter:none !important;-webkit-backdrop-filter:none !important;}.tweaks{display:none !important;}}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="poster-wrap" id="posterWrap">
+<div class="poster" id="poster">
+  <span class="tack tl" aria-hidden="true"></span><span class="tack tr" aria-hidden="true"></span>
+  <span class="tack bl" aria-hidden="true"></span><span class="tack br" aria-hidden="true"></span>
+
+  <div class="poster-header">
+    <header class="header-band">
+      <div class="header-left">
+        <div class="eyebrow"><span>Plating Posters &nbsp;&middot;&nbsp; Alkaline Zinc Series &nbsp;&middot;&nbsp; Stage 4 of 8</span></div>
+        <h1 class="headline">GUARD<br><em>RINSE</em></h1>
+        <h2 class="subhead">The Last Barrier Between Acid and Your Plating Bath</h2>
+        <p class="tagline">This rinse protects the most expensive tank on the line.</p>
+      </div>
+      <aside class="glass logo-card">
+        <div class="logo-tile"><span>PP</span></div>
+        <div class="logo-word"><span class="a">Plating</span> <span class="b">Posters</span></div>
+        <div class="logo-inc">www.platingposters.com</div>
+      </aside>
+    </header>
+  </div>
+
+  <div class="poster-body">
+
+    <div class="glass rule-card">
+      <div class="rule-num">&lt;200</div>
+      <div class="rule-body">
+        <div class="rule-label">&micro;S/cm &mdash; Conductivity Target</div>
+        <div class="rule-text">Acid drag-in to an alkaline zinc bath neutralizes NaOH, drops the NaOH:Zn ratio, wastes chemistry, and degrades deposit quality. This rinse is your firewall.</div>
+      </div>
+    </div>
+
+    <!-- SVG: Firewall Concept Diagram -->
+    <div class="svg-diagram">
+      <svg viewBox="0 0 1100 90" width="100%" height="auto" fill="none" style="display:block;">
+        <!-- Tank 1: Acid Activation -->
+        <rect x="30" y="18" width="280" height="54" rx="8" stroke="var(--coral)" stroke-width="2" fill="none"/>
+        <text x="170" y="12" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="14" fill="var(--coral)" letter-spacing=".06em">ACID ACTIVATION</text>
+        <text x="170" y="50" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="12" fill="var(--coral)" opacity=".7">HCl / H&#x2082;SO&#x2084;</text>
+
+        <!-- WRONG PATH (direct acid to zinc) with big X -->
+        <line x1="320" y1="24" x2="780" y2="24" stroke="var(--coral)" stroke-width="1.6" stroke-dasharray="8 5" opacity=".4"/>
+        <!-- X mark -->
+        <line x1="540" y1="16" x2="560" y2="32" stroke="var(--coral)" stroke-width="3.5"/>
+        <line x1="560" y1="16" x2="540" y2="32" stroke="var(--coral)" stroke-width="3.5"/>
+
+        <!-- Tank 2: Rinse FIREWALL -->
+        <rect x="410" y="30" width="280" height="54" rx="8" stroke="var(--teal)" stroke-width="2.4" fill="none"/>
+        <rect x="410" y="30" width="280" height="54" rx="8" fill="var(--teal)" opacity=".06"/>
+        <text x="550" y="56" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-weight="900" font-size="18" fill="var(--teal)" letter-spacing=".08em">FIREWALL</text>
+        <text x="550" y="72" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="12" fill="var(--teal)" opacity=".7">RINSE</text>
+
+        <!-- Tank 3: Alkaline Zinc Bath -->
+        <rect x="790" y="18" width="280" height="54" rx="8" stroke="var(--amber)" stroke-width="2" fill="none"/>
+        <text x="930" y="12" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="14" fill="var(--amber)" letter-spacing=".06em">ALK. ZINC BATH</text>
+        <text x="930" y="50" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="12" fill="var(--amber)" opacity=".7">NaOH + Zn</text>
+
+        <!-- CORRECT PATH arrows (acid -> rinse -> zinc) -->
+        <line x1="316" y1="57" x2="404" y2="57" stroke="var(--emerald)" stroke-width="2.4" marker-end="url(#arr04a)"/>
+        <line x1="696" y1="57" x2="784" y2="57" stroke="var(--emerald)" stroke-width="2.4" marker-end="url(#arr04b)"/>
+        <!-- Checkmark on correct path -->
+        <path d="M720,48 L730,58 L748,38" stroke="var(--emerald)" stroke-width="3" fill="none"/>
+
+        <defs>
+          <marker id="arr04a" viewBox="0 0 6 6" refX="5" refY="3" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="var(--emerald)"/></marker>
+          <marker id="arr04b" viewBox="0 0 6 6" refX="5" refY="3" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="var(--emerald)"/></marker>
+        </defs>
+      </svg>
+    </div>
+
+    <div>
+      <h3 class="section-title">Key Procedures <span class="sub">7 steps</span></h3>
+      <div class="numbered-list">
+        <div class="numbered-item"><div class="num-bullet">1</div><div class="num-text"><strong>Transfer from acid immediately.</strong> Parts must stay wet.</div></div>
+        <div class="numbered-item"><div class="num-bullet">2</div><div class="num-text"><strong>Immerse fully.</strong> Agitate vigorously &mdash; 5&ndash;8 vertical strokes minimum.</div></div>
+        <div class="numbered-item"><div class="num-bullet">3</div><div class="num-text"><strong>Hold 30&ndash;60 sec.</strong> Counter-current systems: enter the dirty stage first.</div></div>
+        <div class="numbered-item"><div class="num-bullet">4</div><div class="num-text"><strong>Double-rinse setups:</strong> repeat immersion and agitation in the second stage.</div></div>
+        <div class="numbered-item"><div class="num-bullet">5</div><div class="num-text"><strong>Check conductivity.</strong> If &gt;200 &micro;S/cm, increase flow or dump-and-refill.</div></div>
+        <div class="numbered-item"><div class="num-bullet">6</div><div class="num-text"><strong>Check pH.</strong> Below 5 = excessive acid drag-in. Investigate drain time.</div></div>
+        <div class="numbered-item"><div class="num-bullet">7</div><div class="num-text"><strong>Drain 15&ndash;20 sec</strong> before entering the plating bath.</div></div>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="section-title">Operating Parameters <span class="sub">Pre-plate rinse</span></h3>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table">
+          <thead><tr><th>Parameter</th><th>Range</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td>Temperature</td><td class="mono">Ambient (60&ndash;85&deg;F / 16&ndash;29&deg;C)</td><td>No heating required</td></tr>
+            <tr><td>Time</td><td class="mono">30&ndash;60 sec with agitation</td><td>Double rinse recommended</td></tr>
+            <tr><td>Water Source</td><td class="mono">DI water preferred</td><td>Minimizes chloride/sulfate to plating bath</td></tr>
+            <tr><td>Conductivity</td><td class="mono">&lt;200 &micro;S/cm (target &lt;100)</td><td>Tighter than Stage 2 &mdash; guards plating bath</td></tr>
+            <tr><td>pH</td><td class="mono">5.0&ndash;8.0</td><td>Below 5 = excessive acid drag-in</td></tr>
+            <tr><td>Flow Rate</td><td class="mono">Continuous overflow, 3&ndash;5 gal/min</td><td>Counter-current ideal</td></tr>
+            <tr><td>Drain Time</td><td class="mono">15&ndash;20 sec minimum</td><td>Long drain prevents diluting plating bath</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="compare-grid">
+      <div class="glass compare-card do">
+        <h4>Do <span class="tag good">best practice</span></h4>
+        <ul>
+          <li>Use two rinse stages here if at all possible</li>
+          <li>Monitor conductivity and pH every shift</li>
+          <li>Drain thoroughly &mdash; gravity is free</li>
+          <li>Replace rinse water aggressively at this station</li>
+        </ul>
+      </div>
+      <div class="glass compare-card dont">
+        <h4>Don&rsquo;t <span class="tag bad">avoid</span></h4>
+        <ul>
+          <li>Rely on a single static dip tank</li>
+          <li>Assume it&rsquo;s fine because plating &ldquo;seems okay&rdquo;</li>
+          <li>Rush parts into plating dripping wet</li>
+          <li>Save water at the expense of plating bath contamination</li>
+        </ul>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="section-title">Troubleshooting <span class="sub">Common issues</span></h3>
+      <div class="trouble-grid">
+        <div class="glass trouble-card"><h5>Conductivity Consistently High</h5><p>Acid drag-out too heavy or flow rate too low. Increase drain time from acid; increase rinse flow; add counter-current stage.</p></div>
+        <div class="glass trouble-card"><h5>Plating Bath NaOH Dropping Fast</h5><p>Acid drag-in through this rinse. Tighten conductivity target; add double rinse; titrate bath more frequently.</p></div>
+        <div class="glass trouble-card"><h5>Chloride Buildup in Bath</h5><p>HCl drag-in through rinse. Switch to DI rinse water; consider H&sub2;SO&sub4; activation instead.</p></div>
+        <div class="glass trouble-card"><h5>Parts Re-Oxidizing</h5><p>Transfer too slow; parts drying. Speed up &mdash; parts must enter plating within 30 sec of leaving this rinse.</p></div>
+      </div>
+    </div>
+
+    <div class="safety-card">
+      <div class="safety-head">&#9888; Safety</div>
+      <div class="safety-body"><strong>Dilute acid residue</strong> in rinse water. Mild skin irritation risk. Wet floors &mdash; leading cause of slip injuries on plating lines. PPE: chemical splash goggles, chemical-resistant gloves, non-slip footwear. Maintain housekeeping.</div>
+    </div>
+
+
+  </div>
+
+  <footer class="footer poster-footer">
+    <p class="footer-disclaimer">Technical reference only. Verify all parameters against your chemistry supplier&rsquo;s TDS, customer specifications, and applicable regulatory requirements before production use.</p>
+    <p class="footer-title">Rinse (Pre-Plate) &mdash; Alkaline Non-Cyanide Zinc Plating Series</p>
+    <span class="footer-brand">Plating Posters &middot; Metal Finishing Reference Series &middot; PP-ZnAlk-04-T / v1.0 / 2026</span>
+  </footer>
+</div>
+</div>
+</div>
+<div class="tweaks"><div style="display:flex;gap:8px;align-items:center;"><span style="color:rgba(240,237,232,.5);font-size:11px;letter-spacing:.06em;text-transform:uppercase;">Edition</span><button id="btnDark" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:#E8A020;color:#1A1F2E;border:1px solid #E8A020;" onclick="setEdition('')">Dark</button><button id="btnLight" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);" onclick="setEdition('light')">Light</button></div><button onclick="window.print()" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);">Print / PDF</button></div>
+<script>const posterWrap=document.getElementById('posterWrap');const poster=document.getElementById('poster');function scalePoster(){const sW=(window.innerWidth-24)/1200;const sH=(window.innerHeight-24)/1800;const s=Math.min(sW,sH);posterWrap.style.transform='scale('+s+')';posterWrap.style.transformOrigin='top center';posterWrap.style.width='1200px';posterWrap.style.height=(1800*s)+'px';}function setEdition(e){if(e)poster.dataset.edition=e;else delete poster.dataset.edition;document.getElementById('btnDark').style.background=e?'transparent':'#E8A020';document.getElementById('btnDark').style.color=e?'#F0EDE8':'#1A1F2E';document.getElementById('btnDark').style.borderColor=e?'rgba(255,255,255,.2)':'#E8A020';document.getElementById('btnLight').style.background=e?'#E8A020':'transparent';document.getElementById('btnLight').style.color=e?'#1A1F2E':'#F0EDE8';document.getElementById('btnLight').style.borderColor=e?'#E8A020':'rgba(255,255,255,.2)';}scalePoster();window.addEventListener('resize',scalePoster);</script>
+</body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anodizado &mdash; Visi&oacute;n General del Proceso &mdash; T&eacute;cnico | Plating Posters Inc</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Barlow:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#1A1F2E;--navy:#0D1020;--text:#F0EDE8;--muted:rgba(240,237,232,.62);--faint:rgba(240,237,232,.38);--amber:#E8A020;--teal:#2EC4B6;--emerald:#27AE60;--coral:#E05C5C;--slate:#3A4055;--callout:#1E2435;--altrow:#252B3D;--glass-bg:rgba(30,36,53,.55);--glass-border:rgba(255,255,255,.12);--glass-shadow:inset 0 1px 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(0,0,0,.2),0 4px 12px rgba(0,0,0,.25);}
+.poster[data-edition="light"]{--bg:#F5F4F0;--navy:#DDD8CE;--text:#1B2030;--muted:rgba(27,32,48,.66);--faint:rgba(27,32,48,.42);--amber:#B8770D;--teal:#1A8C82;--emerald:#1E8449;--coral:#B7322F;--slate:#C5C0B5;--callout:#ECEAE1;--altrow:#E4E1D6;--glass-bg:rgba(255,253,247,.66);--glass-border:rgba(27,32,48,.10);--glass-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 4px 12px rgba(27,32,48,.08);}
+html,body{margin:0;padding:0;background:#0a0c14;}.stage{width:100vw;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;overflow:visible;padding:12px 0;box-sizing:border-box;}.poster-wrap{transform-origin:center center;}.poster{width:1200px;height:1800px;position:relative;overflow:hidden;background:radial-gradient(1200px 800px at 15% 8%,rgba(46,196,182,.14),transparent 60%),radial-gradient(1000px 700px at 90% 25%,rgba(232,160,32,.12),transparent 55%),radial-gradient(900px 900px at 50% 80%,rgba(224,92,92,.10),transparent 60%),var(--bg);font-family:'Inter',sans-serif;color:var(--text);display:flex;flex-direction:column;padding:26px 28px;box-sizing:border-box;}.poster::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:50px 50px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);pointer-events:none;z-index:0;}.poster>*{position:relative;z-index:1;}
+.glass{background-color:var(--glass-bg);background-image:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));border:1px solid var(--glass-border);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);box-shadow:var(--glass-shadow);border-radius:12px;}
+.tack{position:absolute;width:24px;height:24px;border-radius:50%;border:1.5px solid rgba(232,160,32,.28);z-index:2;pointer-events:none;}.tack::before,.tack::after{content:"";position:absolute;background:rgba(232,160,32,.28);}.tack::before{left:50%;top:-3px;bottom:-3px;width:1px;transform:translateX(-50%);}.tack::after{top:50%;left:-3px;right:-3px;height:1px;transform:translateY(-50%);}.tack.tl{top:12px;left:12px;}.tack.tr{top:12px;right:12px;}.tack.bl{bottom:12px;left:12px;}.tack.br{bottom:12px;right:12px;}
+.poster-header{flex-shrink:0;}.poster-body{flex:1;overflow:visible;display:flex;flex-direction:column;gap:6px;justify-content:space-between;}.poster-footer{flex-shrink:0;margin-top:2px;}
+.header-band{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:4px;}.header-left{flex:1;min-width:0;}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--amber);letter-spacing:.16em;text-transform:uppercase;margin-bottom:4px;display:flex;align-items:center;gap:12px;}.eyebrow::before{content:"";display:inline-block;width:30px;height:3px;background:var(--amber);}
+.headline{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:72px;color:var(--text);line-height:.92;margin:4px 0;letter-spacing:-.01em;text-transform:uppercase;}.headline em{font-style:normal;color:var(--amber);}
+.subhead{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;color:var(--teal);margin:0 0 3px;letter-spacing:.02em;text-transform:uppercase;}
+.tagline{font-family:'Inter',sans-serif;font-style:italic;font-size:13px;color:var(--muted);line-height:1.45;max-width:700px;margin:0;}
+.logo-card{flex-shrink:0;padding:12px 10px;display:flex;flex-direction:column;align-items:center;gap:8px;align-self:flex-start;}.logo-tile{width:68px;height:68px;border-radius:12px;background:linear-gradient(135deg,#E8A020,#2EC4B6);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -2px 4px rgba(0,0,0,.15),0 4px 14px rgba(0,0,0,.35);}.logo-tile span{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:26px;color:#1A1F2E;letter-spacing:.02em;line-height:1;}.logo-word{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;letter-spacing:.04em;text-transform:uppercase;line-height:1;text-align:center;white-space:nowrap;}.logo-word .a{color:var(--text);}.logo-word .b{color:var(--amber);}.logo-inc{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.05em;text-transform:lowercase;color:var(--muted);margin-top:-2px;}
+.section-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:24px;letter-spacing:.08em;text-transform:uppercase;color:var(--text);margin:0 0 3px;display:flex;align-items:center;gap:8px;}.section-title::before{content:"";width:6px;height:6px;background:var(--amber);border-radius:50%;}.section-title .sub{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;color:var(--muted);margin-left:auto;font-weight:500;}
+.rule-card{display:flex;align-items:center;gap:12px;padding:10px 18px;background:rgba(232,160,32,.07);}
+.rule-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:52px;color:var(--amber);line-height:1;letter-spacing:-.02em;white-space:nowrap;}
+.rule-body{flex:1;}.rule-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:17px;color:var(--amber);letter-spacing:.08em;text-transform:uppercase;}.rule-text{font-family:'Inter',sans-serif;font-size:12px;color:var(--muted);line-height:1.35;margin-top:3px;}
+.data-table{width:100%;border-collapse:collapse;}.data-table th{font-family:'Barlow',sans-serif;font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);padding:4px 8px;text-align:left;background:rgba(13,16,32,.35);border-bottom:1px solid var(--glass-border);}.poster[data-edition="light"] .data-table th{background:rgba(27,32,48,.06);}.data-table td{padding:3px 8px;color:var(--text);line-height:1.3;border-bottom:1px solid rgba(255,255,255,.05);font-family:'Inter',sans-serif;font-size:11.5px;}.data-table tr:last-child td{border-bottom:none;}.data-table tr:nth-child(even) td{background:rgba(255,255,255,.02);}.poster[data-edition="light"] .data-table tr:nth-child(even) td{background:rgba(27,32,48,.025);}.data-table .mono{font-family:'JetBrains Mono',monospace;font-size:13px;}
+.process-flow{display:flex;align-items:center;gap:0;padding:8px 12px;flex-wrap:nowrap;justify-content:center;}.flow-step{display:flex;flex-direction:column;align-items:center;gap:3px;min-width:0;flex:0 1 auto;}.flow-num{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:15px;flex-shrink:0;}.flow-label{font-family:'Inter',sans-serif;font-size:9.5px;font-weight:600;text-align:center;line-height:1.2;color:var(--text);max-width:90px;}.flow-arrow{font-size:16px;color:var(--faint);margin:0 2px;flex-shrink:0;align-self:center;margin-bottom:14px;}
+.insight-card{padding:20px 24px;background:rgba(46,196,182,.06);border:1px solid rgba(46,196,182,.18);border-radius:12px;}.insight-head{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px;color:var(--teal);letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px;}.insight-body{font-size:14.5px;color:var(--text);line-height:1.5;}.insight-body strong{font-weight:700;color:var(--teal);}
+.safety-card{padding:18px 24px;background:rgba(224,92,92,.08);border:1px solid rgba(224,92,92,.25);border-radius:12px;}.safety-head{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px;color:var(--coral);letter-spacing:.06em;text-transform:uppercase;margin-bottom:2px;}.safety-body{font-size:14px;color:var(--text);line-height:1.55;}.safety-body strong{font-weight:700;color:var(--coral);}
+.bottom-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:10px;}
+.orient-strip{display:flex;align-items:center;gap:10px;padding:6px 14px;border-radius:8px;background:rgba(232,160,32,.06);border:1px solid rgba(232,160,32,.12);}.orient-strip .orient-icon{font-size:20px;}.orient-strip .orient-text{font-family:'Inter',sans-serif;font-size:13px;color:var(--muted);line-height:1.4;}.orient-strip .orient-text strong{color:var(--amber);font-weight:700;}
+.footer{padding:10px 20px;background-color:rgba(13,16,32,.85);background-image:linear-gradient(180deg,rgba(255,255,255,.04),rgba(0,0,0,0));border:1px solid rgba(255,255,255,.10);border-radius:8px;text-align:center;display:flex;flex-direction:column;gap:2px;}.poster[data-edition="light"] .footer{background-color:rgba(221,216,206,.95);border-color:rgba(27,32,48,.10);}.footer-disclaimer{font-family:'Inter',sans-serif;font-size:9px;line-height:1.35;color:var(--faint);margin:0 auto;max-width:900px;}.footer-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:13px;color:var(--text);letter-spacing:.04em;text-transform:uppercase;margin:0;}.footer-brand{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;}
+.tweaks{position:fixed;bottom:16px;right:16px;z-index:100;background:rgba(13,16,32,.92);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:10px 14px;display:flex;flex-direction:column;gap:8px;font-family:'Inter',sans-serif;font-size:12px;color:#F0EDE8;}
+@media print{@page{size:12.5in 18.75in;margin:0;}html,body{background:#1A1F2E !important;-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}*{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}.stage{position:static;padding:0;display:block;overflow:visible;}.poster-wrap{transform:none !important;width:auto !important;height:auto !important;}.poster{box-shadow:none !important;width:1200px !important;height:1800px !important;overflow:hidden !important;}.glass,.safety-card,.insight-card{backdrop-filter:none !important;-webkit-backdrop-filter:none !important;}.tweaks{display:none !important;}}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="poster-wrap" id="posterWrap">
+<div class="poster" id="poster" data-edition="light">
+  <span class="tack tl" aria-hidden="true"></span><span class="tack tr" aria-hidden="true"></span>
+  <span class="tack bl" aria-hidden="true"></span><span class="tack br" aria-hidden="true"></span>
+
+  <div class="poster-header">
+    <header class="header-band">
+      <div class="header-left">
+        <div class="eyebrow"><span>Plating Posters &nbsp;&middot;&nbsp; Serie de Anodizado &nbsp;&middot;&nbsp; Visi&oacute;n General</span></div>
+        <h1 class="headline">ALUMINIO<br><em>ANODIZADO</em></h1>
+        <h2 class="subhead">Tipo II &amp; Tipo III &mdash; La L&iacute;nea Completa del Proceso con &Aacute;cido Sulf&uacute;rico</h2>
+        <p class="tagline">Usted no est&aacute; recubriendo aluminio &mdash; est&aacute; haciendo crecer su propio &oacute;xido en una superficie ingenierada.</p>
+      </div>
+      <aside class="glass logo-card">
+        <div class="logo-tile"><span>PP</span></div>
+        <div class="logo-word"><span class="a">Plating</span> <span class="b">Posters</span></div>
+        <div class="logo-inc">www.platingposters.com</div>
+      </aside>
+    </header>
+  </div>
+
+  <div class="poster-body">
+
+    <div class="glass rule-card">
+      <div class="rule-num">Al&#x2082;O&#x2083;</div>
+      <div class="rule-body">
+        <div class="rule-label">&Oacute;xido de Aluminio &mdash; Crecido, No Depositado</div>
+        <div class="rule-text">El anodizado convierte la superficie del aluminio en una capa dura y porosa de &oacute;xido de aluminio mediante oxidaci&oacute;n electrol&iacute;tica en &aacute;cido sulf&uacute;rico. La pieza es el &aacute;nodo. El &oacute;xido es integral al sustrato &mdash; no se puede pelar ni descascarar como un recubrimiento. Cada etapa requiere control de proceso independiente. Un atajo en un paso crea un defecto en el siguiente &mdash; el proceso es tan fuerte como su eslab&oacute;n m&aacute;s d&eacute;bil. La temperatura, la qu&iacute;mica y la densidad de corriente deben verificarse antes de la inmersi&oacute;n. La microestructura del &oacute;xido depende de que cada variable se mantenga dentro del rango durante todo el ciclo.</div>
+      </div>
+    </div>
+
+    <!-- PROCESS FLOW -->
+    <div class="glass process-flow">
+      <div class="flow-step"><div class="flow-num" style="background:var(--teal);color:#1A1F2E;">00</div><div class="flow-label">Visi&oacute;n<br>General</div></div>
+      <div class="flow-arrow">&rarr;</div>
+      <div class="flow-step"><div class="flow-num" style="background:var(--amber);color:#1A1F2E;">01</div><div class="flow-label">Limpieza &amp;<br>Decapado</div></div>
+      <div class="flow-arrow">&rarr;</div>
+      <div class="flow-step"><div class="flow-num" style="background:var(--slate);color:var(--text);">02</div><div class="flow-label">Enjuague<br>Post-Decapado</div></div>
+      <div class="flow-arrow">&rarr;</div>
+      <div class="flow-step"><div class="flow-num" style="background:var(--coral);color:#1A1F2E;">03</div><div class="flow-label">Desmut /<br>Desoxidar</div></div>
+      <div class="flow-arrow">&rarr;</div>
+      <div class="flow-step"><div class="flow-num" style="background:var(--amber);color:#1A1F2E;">04</div><div class="flow-label">Anodizado<br>Tipo II/III</div></div>
+      <div class="flow-arrow">&rarr;</div>
+      <div class="flow-step"><div class="flow-num" style="background:var(--slate);color:var(--text);">05</div><div class="flow-label">Enjuague<br>Post-Anodizado</div></div>
+      <div class="flow-arrow">&rarr;</div>
+      <div class="flow-step"><div class="flow-num" style="background:var(--emerald);color:#1A1F2E;">06</div><div class="flow-label">Te&ntilde;ido /<br>Color</div></div>
+      <div class="flow-arrow">&rarr;</div>
+      <div class="flow-step"><div class="flow-num" style="background:var(--teal);color:#1A1F2E;">07</div><div class="flow-label">Sellado</div></div>
+    </div>
+
+    <!-- TYPE II vs TYPE III COMPARISON -->
+    <div>
+      <h3 class="section-title">Tipo II vs Tipo III <span class="sub">MIL-A-8625F</span></h3>
+      <!-- OXIDE LAYER CROSS-SECTION — 50% in / 50% out -->
+      <div class="glass" style="padding:8px 12px;margin-bottom:6px;">
+        <svg viewBox="0 0 1100 110" width="100%" xmlns="http://www.w3.org/2000/svg" style="display:block;">
+          <!-- Labels -->
+          <text x="50" y="14" fill="#E8A020" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="11" letter-spacing=".08em" text-anchor="middle">SECCI&Oacute;N TRANSVERSAL</text>
+          <!-- Aluminum substrate -->
+          <rect x="140" y="62" width="820" height="38" rx="2" fill="#5A6380" opacity=".55"/>
+          <text x="550" y="86" fill="#F0EDE8" font-family="Inter,sans-serif" font-size="12" font-weight="600" text-anchor="middle">SUSTRATO DE ALUMINIO</text>
+          <!-- Original surface line (dashed) -->
+          <line x1="140" y1="62" x2="960" y2="62" stroke="#E8A020" stroke-width="1.5" stroke-dasharray="8,5" opacity=".7"/>
+          <text x="980" y="66" fill="#E8A020" font-family="JetBrains Mono,monospace" font-size="9" opacity=".8">SUPERFICIE ORIGINAL</text>
+          <!-- Porous oxide layer ABOVE original surface (~50% out) -->
+          <rect x="140" y="28" width="820" height="34" rx="2" fill="#2EC4B6" opacity=".18"/>
+          <!-- Pore channels -->
+          <g opacity=".35" stroke="#1A1F2E" stroke-width="1.5">
+            <line x1="210" y1="28" x2="210" y2="62"/><line x1="280" y1="28" x2="280" y2="62"/>
+            <line x1="350" y1="28" x2="350" y2="62"/><line x1="420" y1="28" x2="420" y2="62"/>
+            <line x1="490" y1="28" x2="490" y2="62"/><line x1="560" y1="28" x2="560" y2="62"/>
+            <line x1="630" y1="28" x2="630" y2="62"/><line x1="700" y1="28" x2="700" y2="62"/>
+            <line x1="770" y1="28" x2="770" y2="62"/><line x1="840" y1="28" x2="840" y2="62"/>
+            <line x1="910" y1="28" x2="910" y2="62"/>
+          </g>
+          <!-- Oxide layer BELOW original surface (~50% in) -->
+          <rect x="140" y="62" width="820" height="12" rx="0" fill="#2EC4B6" opacity=".12"/>
+          <!-- Barrier layer at base -->
+          <rect x="140" y="74" width="820" height="3" rx="1" fill="#2EC4B6" opacity=".35"/>
+          <!-- Labels for oxide -->
+          <text x="550" y="50" fill="#2EC4B6" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" opacity=".9">&Oacute;XIDO POROSO Al&#x2082;O&#x2083; OXIDE</text>
+          <!-- Dimension arrows - above -->
+          <line x1="120" y1="28" x2="120" y2="62" stroke="#F0EDE8" stroke-width="1" opacity=".5"/>
+          <polygon points="120,30 117,36 123,36" fill="#F0EDE8" opacity=".5"/>
+          <polygon points="120,60 117,54 123,54" fill="#F0EDE8" opacity=".5"/>
+          <text x="108" y="48" fill="#F0EDE8" font-family="JetBrains Mono,monospace" font-size="8" text-anchor="end" opacity=".7">~50%</text>
+          <text x="108" y="56" fill="#F0EDE8" font-family="JetBrains Mono,monospace" font-size="8" text-anchor="end" opacity=".7">FUERA</text>
+          <!-- Dimension arrows - below -->
+          <line x1="120" y1="62" x2="120" y2="74" stroke="#F0EDE8" stroke-width="1" opacity=".5"/>
+          <polygon points="120,64 117,68 123,68" fill="#F0EDE8" opacity=".5"/>
+          <polygon points="120,74 117,70 123,70" fill="#F0EDE8" opacity=".5"/>
+          <text x="108" y="70" fill="#F0EDE8" font-family="JetBrains Mono,monospace" font-size="8" text-anchor="end" opacity=".7">~50% DENTRO</text>
+          <!-- Barrier layer label -->
+          <text x="550" y="84" fill="#2EC4B6" font-family="JetBrains Mono,monospace" font-size="8" text-anchor="middle" opacity=".7">CAPA BARRERA</text>
+          <!-- Annotation -->
+          <text x="550" y="108" fill="rgba(240,237,232,.5)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle">El &oacute;xido crece dentro del sustrato ~50% — considerar esto en piezas cr&iacute;ticas de tolerancia</text>
+        </svg>
+      </div>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table">
+          <thead><tr><th>Par&aacute;metro</th><th>Tipo II (Convencional)</th><th>Tipo III (Capa Dura)</th></tr></thead>
+          <tbody>
+            <tr><td>Especificaci&oacute;n</td><td class="mono">MIL-A-8625F Type II</td><td class="mono">MIL-A-8625F Type III</td></tr>
+            <tr><td>Espesor del &Oacute;xido</td><td class="mono">0.7&ndash;1.0 mil (18&ndash;25 &micro;m)</td><td class="mono">2.0&ndash;3.0 mil (50&ndash;75 &micro;m)</td></tr>
+            <tr><td>Concentraci&oacute;n de H&sub2;SO&sub4;</td><td class="mono">15&ndash;20% (150&ndash;200 g/L)</td><td class="mono">10&ndash;15% (120&ndash;180 g/L)</td></tr>
+            <tr><td>Temperatura</td><td class="mono">68&ndash;72&deg;F (20&ndash;22&deg;C)</td><td class="mono">28&ndash;36&deg;F (&minus;2&ndash;2&deg;C)</td></tr>
+            <tr><td>Densidad de Corriente</td><td class="mono">12&ndash;18 ASF (1.3&ndash;2.0 A/dm&sup2;)</td><td class="mono">24&ndash;36 ASF (2.6&ndash;3.9 A/dm&sup2;)</td></tr>
+            <tr><td>Tiempo</td><td class="mono">30&ndash;60 min</td><td class="mono">60&ndash;120 min</td></tr>
+            <tr><td>Dureza</td><td class="mono">250&ndash;400 HV</td><td class="mono">400&ndash;700 HV</td></tr>
+            <tr><td>&iquest;Se puede te&ntilde;ir?</td><td class="mono">S&iacute; &mdash; poroso, acepta tinte</td><td class="mono">Limitado &mdash; color natural oscuro</td></tr>
+            <tr><td>Uso Principal</td><td>Decorativo, corrosi&oacute;n, color con tinte</td><td>Desgaste, abrasi&oacute;n, ingenier&iacute;a</td></tr>
+            <tr><td>Tasa de Desgaste (Taber)</td><td class="mono">3&ndash;10 mg/1000 ciclos</td><td class="mono">1&ndash;3 mg/1000 ciclos</td></tr>
+            <tr><td>Resistencia Diel&eacute;ctrica</td><td class="mono">400&ndash;600 V</td><td class="mono">800&ndash;1200 V</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="bottom-grid">
+      <!-- LEFT: Alloy Compatibility + Contamination -->
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        <div>
+          <h3 class="section-title">Compatibilidad de Aleaciones <span class="sub">Respuesta al anodizado</span></h3>
+          <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+            <table class="data-table">
+              <thead><tr><th>Serie de Aleaci&oacute;n</th><th>Respuesta al Anodizado</th><th>Notas</th></tr></thead>
+              <tbody>
+                <tr><td class="mono">1xxx (Al Puro)</td><td style="color:var(--emerald);">Excelente</td><td>&Oacute;xido claro y brillante</td></tr>
+                <tr><td class="mono">5xxx (Al-Mg)</td><td style="color:var(--emerald);">Excelente</td><td>Buena igualaci&oacute;n de color, uso marino</td></tr>
+                <tr><td class="mono">6xxx (Al-Mg-Si)</td><td style="color:var(--emerald);">Muy Buena</td><td>6061/6063 &mdash; las m&aacute;s comunes</td></tr>
+                <tr><td class="mono">7xxx (Al-Zn)</td><td style="color:var(--amber);">Buena</td><td>Aeroespacial, leve tono amarillo</td></tr>
+                <tr><td class="mono">2xxx (Al-Cu)</td><td style="color:var(--coral);">Regular</td><td>Alto Cu altera el &oacute;xido; capa blanda</td></tr>
+                <tr><td class="mono">Fundici&oacute;n (A356, 380)</td><td style="color:var(--coral);">Pobre&ndash;Regular</td><td>Si causa acabado gris/moteado</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="section-title">Lista de Vigilancia de Contaminantes</h3>
+          <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+            <table class="data-table">
+              <thead><tr><th>Contaminante</th><th>L&iacute;mite</th><th>Efecto</th></tr></thead>
+              <tbody>
+                <tr><td>Al Disuelto</td><td class="mono">&lt;20 g/L</td><td>&Oacute;xido blando, mala absorci&oacute;n de tinte</td></tr>
+                <tr><td>Cloruro (Cl&minus;)</td><td class="mono">&lt;50 ppm</td><td>Picaduras, ruptura del &oacute;xido</td></tr>
+                <tr><td>Cobre (Cu)</td><td class="mono">&lt;20 ppm</td><td>Rayas oscuras, defectos en el &oacute;xido</td></tr>
+                <tr><td>Hierro (Fe)</td><td class="mono">&lt;50 ppm</td><td>Amarillamiento del anodizado claro</td></tr>
+                <tr><td>Org&aacute;nicos</td><td class="mono">M&iacute;nimo</td><td>Rayas, &oacute;xido irregular</td></tr>
+                <tr><td>Fosfato (PO&sub4;)</td><td class="mono">&lt;30 ppm</td><td>Inhibe crecimiento del &oacute;xido, puntos delgados</td></tr>
+                <tr><td>Acumulaci&oacute;n de sulfato</td><td class="mono">Monitorear</td><td>Aumenta conductividad, ablanda &oacute;xido a niveles altos</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Why Anodize + Key Specs -->
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        <div class="insight-card">
+          <div class="insight-head">&iquest;Por Qu&eacute; Anodizar Aluminio?</div>
+          <div class="insight-body">
+            <strong>Resistencia a la corrosi&oacute;n</strong> &mdash; la capa de &oacute;xido resiste niebla salina, intemperismo y ataque qu&iacute;mico.<br>
+            <strong>Resistencia al desgaste</strong> &mdash; la capa dura Tipo III rivaliza con el cromo duro en abrasi&oacute;n.<br>
+            <strong>Color decorativo</strong> &mdash; el &oacute;xido poroso absorbe tintes para color permanente.<br>
+            <strong>Aislamiento el&eacute;ctrico</strong> &mdash; el &oacute;xido es una barrera diel&eacute;ctrica.<br>
+            <strong>Control dimensional</strong> &mdash; el &oacute;xido crece ~50% hacia adentro, ~50% hacia afuera desde la superficie original.<br>
+            <strong>Estabilidad t&eacute;rmica</strong> &mdash; el &oacute;xido resiste m&aacute;s de 1,200&deg;F antes de degradarse.<br>
+            <strong>No t&oacute;xico</strong> &mdash; el &oacute;xido de aluminio es inerte y aceptable por la FDA para contacto con alimentos.
+          </div>
+        </div>
+
+        <div class="orient-strip">
+          <div class="orient-icon">&#128196;</div>
+          <div class="orient-text"><strong>MIL-A-8625F</strong> es la especificaci&oacute;n militar que rige. Clase 1 = sin te&ntilde;ir, Clase 2 = te&ntilde;ido. La mayor&iacute;a del trabajo comercial referencia esta especificaci&oacute;n o ASTM B580 / AMS 2468-2471.</div>
+        </div>
+
+        <div class="orient-strip">
+          <div class="orient-icon">&#9888;&#65039;</div>
+          <div class="orient-text"><strong>Nota dimensional:</strong> el &oacute;xido crece hacia el sustrato ~50%. Un recubrimiento Tipo II de 1.0 mil agrega solo ~0.5 mil a cada superficie. Considere esto en piezas con tolerancias cr&iacute;ticas.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="safety-card">
+      <div class="safety-head">&#9888; Seguridad General de la L&iacute;nea</div>
+      <div class="safety-body"><strong>&Aacute;cido sulf&uacute;rico (H&sub2;SO&sub4;) es el peligro principal</strong> &mdash; el &aacute;cido concentrado causa quemaduras severas y genera calor al contacto con agua. Hidr&oacute;xido de sodio (NaOH) en tanques de limpieza/decapado causa quemaduras qu&iacute;micas. <strong>Rectificador: riesgo de descarga el&eacute;ctrica por alto amperaje y arco el&eacute;ctrico.</strong> &Aacute;cido cr&oacute;mico (si se usa en desmut) es un carcin&oacute;geno conocido. EPP en cada tanque: gafas antisalpicaduras + careta facial, guantes qu&iacute;micos, mandil, botas qu&iacute;micas. Ventilaci&oacute;n continua sobre todos los tanques de &aacute;cido y c&aacute;ustico. Notifique a su supervisor de inmediato sobre cualquier derrame qu&iacute;mico, fuga o vapores inusuales. Nunca trabaje solo en la l&iacute;nea de anodizado durante procedimientos de arranque o parada. Publique los n&uacute;meros de contacto de emergencia en ambos extremos de la l&iacute;nea. Verifique todos los enclavamientos en enfriadores, rectificadores y lavadores de gases antes de iniciar el turno.</div>
+    </div>
+
+  </div>
+
+  <footer class="footer poster-footer">
+    <p class="footer-disclaimer">Solo referencia t&eacute;cnica. Verifique todos los par&aacute;metros contra la TDS de su proveedor qu&iacute;mico, especificaciones del cliente y requisitos regulatorios aplicables antes del uso en producci&oacute;n. Consulte siempre a su proveedor qu&iacute;mico para los rangos operativos m&aacute;s actuales y las hojas de datos de seguridad.</p>
+    <p class="footer-title">Visi&oacute;n General del Proceso de Anodizado &mdash; Serie de Anodizado con &Aacute;cido Sulf&uacute;rico</p>
+    <span class="footer-brand">Plating Posters &middot; Serie de Referencia de Acabado de Metales &middot; PP-Anod-00-T / v1.0 / 2026</span>
+  </footer>
+</div>
+</div>
+</div>
+<div class="tweaks"><div style="display:flex;gap:8px;align-items:center;"><span style="color:rgba(240,237,232,.5);font-size:11px;letter-spacing:.06em;text-transform:uppercase;">Edici&oacute;n</span><button id="btnDark" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:#E8A020;color:#1A1F2E;border:1px solid #E8A020;" onclick="setEdition('')">Oscuro</button><button id="btnLight" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);" onclick="setEdition('light')">Claro</button></div><button onclick="window.print()" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);">Imprimir / PDF</button></div>
+<script>const posterWrap=document.getElementById('posterWrap');const poster=document.getElementById('poster');function scalePoster(){const sW=(window.innerWidth-24)/1200;const sH=(window.innerHeight-24)/1800;const s=Math.min(sW,sH);posterWrap.style.transform='scale('+s+')';posterWrap.style.transformOrigin='top center';posterWrap.style.width='1200px';posterWrap.style.height=(1800*s)+'px';}function setEdition(e){if(e)poster.dataset.edition=e;else delete poster.dataset.edition;document.getElementById('btnDark').style.background=e?'transparent':'#E8A020';document.getElementById('btnDark').style.color=e?'#F0EDE8':'#1A1F2E';document.getElementById('btnDark').style.borderColor=e?'rgba(255,255,255,.2)':'#E8A020';document.getElementById('btnLight').style.background=e?'#E8A020':'transparent';document.getElementById('btnLight').style.color=e?'#1A1F2E':'#F0EDE8';document.getElementById('btnLight').style.borderColor=e?'#E8A020':'rgba(255,255,255,.2)';}scalePoster();window.addEventListener('resize',scalePoster);</script>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hard Chrome &mdash; Rampa de Corriente y Secuencia de Ataque &mdash; Technical | Plating Posters Inc</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Barlow:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#1A1F2E;--navy:#0D1020;--text:#F0EDE8;--muted:rgba(240,237,232,.62);--faint:rgba(240,237,232,.38);--amber:#E8A020;--teal:#2EC4B6;--emerald:#27AE60;--coral:#E05C5C;--slate:#3A4055;--callout:#1E2435;--altrow:#252B3D;--glass-bg:rgba(30,36,53,.55);--glass-border:rgba(255,255,255,.12);--glass-shadow:inset 0 1px 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(0,0,0,.2),0 4px 12px rgba(0,0,0,.25);}
+.poster[data-edition="light"]{--bg:#F5F4F0;--navy:#DDD8CE;--text:#1B2030;--muted:rgba(27,32,48,.66);--faint:rgba(27,32,48,.42);--amber:#B8770D;--teal:#1A8C82;--emerald:#1E8449;--coral:#B7322F;--slate:#C5C0B5;--callout:#ECEAE1;--altrow:#E4E1D6;--glass-bg:rgba(255,253,247,.66);--glass-border:rgba(27,32,48,.10);--glass-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 4px 12px rgba(27,32,48,.08);}
+html,body{margin:0;padding:0;background:#0a0c14;}
+.stage{width:100vw;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;overflow:visible;padding:12px 0;box-sizing:border-box;}
+.poster-wrap{transform-origin:center center;}
+.poster{width:1200px;height:1800px;position:relative;overflow:hidden;background:radial-gradient(1200px 800px at 15% 8%,rgba(46,196,182,.14),transparent 60%),radial-gradient(1000px 700px at 90% 25%,rgba(232,160,32,.12),transparent 55%),radial-gradient(900px 900px at 50% 80%,rgba(224,92,92,.10),transparent 60%),var(--bg);font-family:'Inter',sans-serif;color:var(--text);display:flex;flex-direction:column;padding:30px;box-sizing:border-box;}.poster::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:50px 50px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);pointer-events:none;z-index:0;}.poster>*{position:relative;z-index:1;}
+.glass{background-color:var(--glass-bg);background-image:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));border:1px solid var(--glass-border);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);box-shadow:var(--glass-shadow);border-radius:12px;}
+.tack{position:absolute;width:24px;height:24px;border-radius:50%;border:1.5px solid rgba(232,160,32,.28);z-index:2;pointer-events:none;}.tack::before,.tack::after{content:"";position:absolute;background:rgba(232,160,32,.28);}.tack::before{left:50%;top:-3px;bottom:-3px;width:1px;transform:translateX(-50%);}.tack::after{top:50%;left:-3px;right:-3px;height:1px;transform:translateY(-50%);}.tack.tl{top:12px;left:12px;}.tack.tr{top:12px;right:12px;}.tack.bl{bottom:12px;left:12px;}.tack.br{bottom:12px;right:12px;}
+.poster-header{flex-shrink:0;}.poster-body{flex:1;overflow:hidden;display:flex;flex-direction:column;gap:10px;}.poster-footer{flex-shrink:0;margin-top:8px;}
+.header-band{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:8px;}.header-left{flex:1;min-width:0;}.eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--amber);letter-spacing:.16em;text-transform:uppercase;margin-bottom:4px;display:flex;align-items:center;gap:12px;}.eyebrow::before{content:"";display:inline-block;width:30px;height:3px;background:var(--amber);}.headline{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:72px;color:var(--text);line-height:.92;margin:4px 0;letter-spacing:-.01em;text-transform:uppercase;}.headline em{font-style:normal;color:var(--amber);}.subhead{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;color:var(--teal);margin:0 0 3px;letter-spacing:.02em;text-transform:uppercase;}.tagline{font-family:'Inter',sans-serif;font-style:italic;font-size:13px;color:var(--muted);line-height:1.45;max-width:700px;margin:0;}
+.logo-card{flex-shrink:0;padding:12px 10px;display:flex;flex-direction:column;align-items:center;gap:8px;align-self:flex-start;}.logo-tile{width:68px;height:68px;border-radius:12px;background:linear-gradient(135deg,#E8A020,#2EC4B6);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -2px 4px rgba(0,0,0,.15),0 4px 14px rgba(0,0,0,.35);}.logo-tile span{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:26px;color:#1A1F2E;letter-spacing:.02em;line-height:1;}.logo-word{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;letter-spacing:.04em;text-transform:uppercase;line-height:1;text-align:center;white-space:nowrap;}.logo-word .a{color:var(--text);}.logo-word .b{color:var(--amber);}.logo-inc{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.05em;text-transform:lowercase;color:var(--muted);margin-top:-2px;}
+.section-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:26px;letter-spacing:.08em;text-transform:uppercase;color:var(--text);margin:0 0 5px;display:flex;align-items:center;gap:8px;}.section-title::before{content:"";width:6px;height:6px;background:var(--amber);border-radius:50%;}.section-title .sub{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;color:var(--muted);margin-left:auto;font-weight:500;}
+.rule-card{display:flex;align-items:center;gap:20px;padding:14px 22px;background:rgba(232,160,32,.07);}.rule-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:56px;color:var(--amber);line-height:1;letter-spacing:-.02em;}.rule-body{flex:1;}.rule-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:19px;color:var(--amber);letter-spacing:.08em;text-transform:uppercase;}.rule-text{font-family:'Inter',sans-serif;font-size:13px;color:var(--muted);line-height:1.35;margin-top:3px;}
+.data-table{width:100%;border-collapse:collapse;}.data-table th{font-family:'Barlow',sans-serif;font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);padding:4px 6px;text-align:left;background:rgba(13,16,32,.35);border-bottom:1px solid var(--glass-border);}.poster[data-edition="light"] .data-table th{background:rgba(27,32,48,.06);}.data-table td{padding:3px 6px;color:var(--text);line-height:1.4;border-bottom:1px solid rgba(255,255,255,.05);font-family:'Inter',sans-serif;font-size:13px;}.data-table tr:last-child td{border-bottom:none;}.data-table tr:nth-child(even) td{background:rgba(255,255,255,.02);}.poster[data-edition="light"] .data-table tr:nth-child(even) td{background:rgba(27,32,48,.025);}.data-table .mono{font-family:'JetBrains Mono',monospace;font-size:12px;}
+.insight-card{padding:10px 14px;border-left:3px solid var(--teal);background:rgba(46,196,182,.06);border-radius:0 12px 12px 0;}.insight-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;color:var(--teal);letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px;}.insight-text{font-family:'Inter',sans-serif;font-size:13px;color:var(--text);line-height:1.4;}
+.safety-card{padding:10px 14px;background:rgba(224,92,92,.08);border:1px solid rgba(224,92,92,.25);border-radius:12px;}.safety-head{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px;color:var(--coral);letter-spacing:.06em;text-transform:uppercase;margin-bottom:5px;}.safety-body{font-size:13px;color:var(--text);line-height:1.4;}.safety-body strong{font-weight:700;color:var(--coral);}
+.footer{padding:10px 20px;background-color:rgba(13,16,32,.85);background-image:linear-gradient(180deg,rgba(255,255,255,.04),rgba(0,0,0,0));border:1px solid rgba(255,255,255,.10);border-radius:8px;text-align:center;display:flex;flex-direction:column;gap:2px;}.poster[data-edition="light"] .footer{background-color:rgba(221,216,206,.95);border-color:rgba(27,32,48,.10);}.footer-disclaimer{font-family:'Inter',sans-serif;font-size:9px;line-height:1.35;color:var(--faint);margin:0 auto;max-width:900px;}.footer-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:13px;color:var(--text);letter-spacing:.04em;text-transform:uppercase;margin:0;}.footer-brand{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;}
+.tweaks{position:fixed;bottom:16px;right:16px;z-index:100;background:rgba(13,16,32,.92);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:10px 14px;display:flex;flex-direction:column;gap:8px;font-family:'Inter',sans-serif;font-size:12px;color:#F0EDE8;}
+@media print{@page{size:12.5in 18.75in;margin:0;}html,body{background:#1A1F2E !important;-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}*{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}.stage{position:static;padding:0;display:block;overflow:visible;}.poster-wrap{transform:none !important;width:auto !important;height:auto !important;}.poster{box-shadow:none !important;width:1200px !important;height:1800px !important;overflow:hidden !important;}.glass,.insight-card,.safety-card{backdrop-filter:none !important;-webkit-backdrop-filter:none !important;}.tweaks{display:none !important;}}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="poster-wrap" id="posterWrap">
+<div class="poster" id="poster">
+  <span class="tack tl" aria-hidden="true"></span><span class="tack tr" aria-hidden="true"></span>
+  <span class="tack bl" aria-hidden="true"></span><span class="tack br" aria-hidden="true"></span>
+  <div class="poster-header">
+    <header class="header-band">
+      <div class="header-left">
+        <div class="eyebrow"><span>Plating Posters &nbsp;&middot;&nbsp; Hard Chrome &nbsp;&middot;&nbsp; Etapa 7 de 11</span></div>
+        <h1 class="headline">SECUENCIA DE<br><em>ATAQUE</em></h1>
+        <h2 class="subhead">La Secuencia Crítica de Adhesión &mdash; Ataque Inverso, Golpe, Rampa</h2>
+        <p class="tagline">Esta secuencia determina si su cromo se adhiere o se despega. Sin atajos.</p>
+      </div>
+      <aside class="glass logo-card">
+        <div class="logo-tile"><span>PP</span></div>
+        <div class="logo-word"><span class="a">Plating</span> <span class="b">Posters</span></div>
+        <div class="logo-inc">www.platingposters.com</div>
+      </aside>
+    </header>
+  </div>
+  <div class="poster-body" style="gap:8px;">
+    <div class="glass rule-card">
+      <div class="rule-num">5 PASOS</div>
+      <div class="rule-body">
+        <div class="rule-label">Inmersión &rarr; Ataque Inverso &rarr; Golpe &rarr; Cromado &rarr; Rampa de Descenso</div>
+        <div class="rule-text">El ataque de adherencia es la habilidad central del cromado duro. Domine esta secuencia y su adhesión será confiable. Omítala o apresúrela y las piezas se despegarán.</div>
+      </div>
+    </div>
+    <div>
+      <div class="glass" style="padding:8px 14px;background:rgba(232,160,32,.08);border:1.5px solid var(--amber);margin-bottom:8px;">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:15px;color:var(--amber);letter-spacing:.08em;text-transform:uppercase;text-align:center;">&#9888; Nota: Esta secuencia de ataque se realiza ANTES de que comience el cromado sostenido (Etapa 06).</div>
+      </div>
+      <div class="glass" style="padding:6px 14px;margin-bottom:4px;">
+<svg xmlns="http://www.w3.org/2000/svg" width="1140" height="130" viewBox="0 0 1140 200" style="display:block;">
+  <text x="570" y="16" font-family="'Barlow Condensed',sans-serif" font-weight="800" font-size="13" fill="var(--amber)" text-anchor="middle" letter-spacing="0.12em">CORRIENTE vs TIEMPO &mdash; FORMA DE ONDA</text>
+  <line x1="120" y1="100" x2="1100" y2="100" stroke="var(--glass-border)" stroke-width="1"/>
+  <line x1="120" y1="30" x2="120" y2="180" stroke="var(--glass-border)" stroke-width="1"/>
+  <text x="110" y="55" font-family="'JetBrains Mono',monospace" font-size="10" fill="var(--coral)" text-anchor="end">An&#xf3;dica (+)</text>
+  <text x="110" y="145" font-family="'JetBrains Mono',monospace" font-size="10" fill="var(--teal)" text-anchor="end">Cat&#xf3;dica (&#x2212;)</text>
+  <text x="50" y="104" font-family="'Barlow Condensed',sans-serif" font-weight="800" font-size="11" fill="var(--amber)" text-anchor="middle" transform="rotate(-90,50,104)">CORRIENTE</text>
+  <text x="610" y="196" font-family="'Barlow Condensed',sans-serif" font-weight="800" font-size="11" fill="var(--amber)" text-anchor="middle">TIEMPO</text>
+  <polyline points="120,100 220,100 220,55 370,55 370,150 570,150 570,130 870,130 870,100 1000,100" fill="none" stroke="var(--amber)" stroke-width="2.5" stroke-linejoin="round"/>
+  <rect x="120" y="28" width="100" height="155" fill="var(--slate)" opacity="0.15"/>
+  <rect x="220" y="28" width="150" height="155" fill="var(--coral)" opacity="0.1"/>
+  <rect x="370" y="28" width="200" height="155" fill="var(--teal)" opacity="0.1"/>
+  <rect x="570" y="28" width="300" height="155" fill="var(--amber)" opacity="0.08"/>
+  <rect x="870" y="28" width="130" height="155" fill="var(--slate)" opacity="0.1"/>
+  <text x="170" y="192" font-family="'Barlow Condensed',sans-serif" font-weight="800" font-size="11" fill="var(--muted)" text-anchor="middle">Inmersi&#xf3;n</text>
+  <text x="295" y="192" font-family="'Barlow Condensed',sans-serif" font-weight="800" font-size="11" fill="var(--coral)" text-anchor="middle">Ataque</text>
+  <text x="470" y="192" font-family="'Barlow Condensed',sans-serif" font-weight="800" font-size="11" fill="var(--teal)" text-anchor="middle">Adherencia</text>
+  <text x="720" y="192" font-family="'Barlow Condensed',sans-serif" font-weight="800" font-size="11" fill="var(--amber)" text-anchor="middle">Cromado sostenido</text>
+  <text x="935" y="192" font-family="'Barlow Condensed',sans-serif" font-weight="800" font-size="11" fill="var(--muted)" text-anchor="middle">Rampa</text>
+  <line x1="370" y1="40" x2="370" y2="170" stroke="var(--amber)" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="375" y="42" font-family="'Barlow Condensed',sans-serif" font-weight="900" font-size="10" fill="var(--amber)">SIN PAUSA &#x26A1;</text>
+</svg>
+</div>
+      <h3 class="section-title">Parámetros Operativos <span class="sub">Etapa 07</span></h3>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table">
+          <thead><tr><th>Secuencia</th><th>Polaridad</th><th>Densidad de Corriente</th><th>Duración</th></tr></thead>
+          <tbody><tr><td>1. Inmersión (sin corriente)</td><td>Ninguna</td><td>0</td><td>30&ndash;60 seg</td></tr>
+<tr><td>2. Ataque Inverso</td><td>Pieza es ÁNODO (+)</td><td>1&ndash;2 ASI</td><td>30&ndash;90 seg</td></tr>
+<tr><td>3. Golpe</td><td>Pieza es CÁTODO (&minus;)</td><td>2&ndash;3 ASI</td><td>2&ndash;5 min</td></tr>
+<tr><td>4. Cromado</td><td>Pieza es CÁTODO (&minus;)</td><td>2&ndash;3 ASI</td><td>Por espesor</td></tr>
+<tr><td>5. Rampa Descenso</td><td>Pieza es CÁTODO (&minus;)</td><td>Disminuir &rarr; 0</td><td>15&ndash;30 seg</td></tr>
+</tbody>
+        </table>
+      </div>
+    </div>
+    <div>
+      <h3 class="section-title">Mejores Prácticas <span class="sub">Directrices Críticas</span></h3>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+        <div class="glass" style="padding:8px 10px;">
+          <h4 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;margin:0 0 4px;color:var(--emerald);text-transform:uppercase;">&#10003; Haga</h4>
+          <ul style="list-style:none;padding:0;margin:0;"><li>Cambiar polaridad INSTANTÁNEAMENTE de ataque a golpe &mdash; sin pausa en cero</li><li>Aumentar corriente suavemente &mdash; sin interrupciones</li><li>Verificar supresión de humos a capacidad máxima durante fase de ataque</li><li>Repetir secuencia completa si la corriente se interrumpe</li></ul>
+        </div>
+        <div class="glass" style="padding:8px 10px;">
+          <h4 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;margin:0 0 4px;color:var(--coral);text-transform:uppercase;">&#10007; No Haga</h4>
+          <ul style="list-style:none;padding:0;margin:0;"><li>Permanecer en corriente cero entre ataque y golpe &mdash; la superficie se pasiva al instante</li><li>Interrumpir corriente durante el cromado &mdash; la adhesión falla en la interrupción</li><li>Cambiar polaridad parado en charcos &mdash; use tapete aislante seco</li><li>Simplemente reiniciar corriente después de un corte de energía &mdash; consultar al ingeniero</li></ul>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h3 class="section-title">Parámetros de Ataque por Sustrato <span class="sub">Detalle de Ingeniería</span></h3>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table">
+          <thead><tr><th>Sustrato</th><th>DC Ataque</th><th>Tiempo Ataque</th><th>DC Golpe</th><th>Notas</th></tr></thead>
+          <tbody>
+            <tr><td>Acero al carbono (4140, 4340)</td><td class="mono">1&ndash;2 ASI</td><td class="mono">30&ndash;60 seg</td><td class="mono">2&ndash;3 ASI</td><td>Secuencia estándar</td></tr>
+            <tr><td>Acero inoxidable (serie 300)</td><td class="mono">2&ndash;3 ASI</td><td class="mono">60&ndash;90 seg</td><td class="mono">3 ASI</td><td>Óxido tenaz &mdash; requiere ataque más largo</td></tr>
+            <tr><td>Hierro fundido</td><td class="mono">1 ASI</td><td class="mono">30&ndash;45 seg</td><td class="mono">2 ASI</td><td>Ataque suave &mdash; riesgo de desprendimiento de grafito</td></tr>
+            <tr><td>Aleaciones de cobre</td><td class="mono">1 ASI</td><td class="mono">15&ndash;30 seg</td><td class="mono">2 ASI</td><td>Ataque muy corto &mdash; Cu se disuelve rápido</td></tr>
+            <tr><td>Re-cromado (decapar y re-placar)</td><td class="mono">2 ASI</td><td class="mono">60&ndash;90 seg</td><td class="mono">3 ASI</td><td>Debe eliminar completamente el cromo anterior</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="glass" style="padding:8px 10px;">
+      <h4 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:15px;margin:0 0 4px;color:var(--coral);text-transform:uppercase;">Análisis de Falla de Adhesión</h4>
+      <table class="data-table">
+        <thead><tr><th>Modo de Falla</th><th>Causa Raíz</th><th>Prueba Diagnóstica</th><th>Acción Correctiva</th></tr></thead>
+        <tbody>
+          <tr><td>Desprendimiento en láminas</td><td>Pausa en corriente cero durante cruce</td><td>Prueba de doblez &mdash; cromo se levanta en lámina continua</td><td>Re-entrenar operador en cambio instantáneo</td></tr>
+          <tr><td>Descascaramiento en bordes</td><td>Profundidad de ataque insuficiente</td><td>Prueba de cinta falla en bordes primero</td><td>Aumentar tiempo de ataque o DC por tipo de sustrato</td></tr>
+          <tr><td>Ampollas aleatorias</td><td>Contaminación superficial</td><td>Visual &mdash; ampollas no siguen patrón de DC</td><td>Auditar secuencia de pre-limpieza (Etapas 02&ndash;05)</td></tr>
+          <tr><td>Delaminación post-horneado</td><td>Fragilización por H&#8322; + adhesión marginal</td><td>Falla solo después de horneado de alivio</td><td>Optimizar secuencia + verificar temp/tiempo de horneado</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="glass" style="padding:8px 10px;">
+      <h4 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:15px;margin:0 0 4px;color:var(--amber);text-transform:uppercase;">Protocolo de Recuperación por Falla Eléctrica</h4>
+      <div style="font-size:12px;line-height:1.35;color:var(--text);">
+        <strong>Durante fase de ataque:</strong> Reiniciar secuencia completa desde remojo. La superficie parcialmente atacada se ha re-pasivado.<br>
+        <strong>Durante fase de golpe:</strong> Reiniciar secuencia completa. La capa delgada de cromo sobre metal re-pasivado se despegará.<br>
+        <strong>Durante cromado sostenido (&gt;5 min):</strong> Consultar al ingeniero de proceso. Puede ser rescatable con re-ataque a parámetros reducidos, pero la adhesión en la interfaz de interrupción está comprometida.<br>
+        <strong>Regla general:</strong> En caso de duda, decapar y reiniciar. Enviar una pieza con falla de adhesión oculta es mucho más costoso que re-placar.
+      </div>
+    </div>
+    <div class="insight-card">
+      <div class="insight-label">Contexto del Proceso</div>
+      <div class="insight-text">El ataque inverso disuelve la capa de óxido pasivo mientras el sustrato está sumergido en el electrolito de ácido crómico. El cambio instantáneo a catódico previene la re-pasivación, permitiendo que el cromo nucleé directamente sobre el metal base activado. Cualquier pausa a corriente cero permite que el óxido se re-forme, destruyendo la adhesión. Por eso el &ldquo;cruce sin pausa&rdquo; es el momento más crítico de todo el proceso de cromado duro.</div>
+    </div>
+    <div class="safety-card">
+      <div class="safety-head">&#9888; Seguridad &mdash; Etapa 7</div>
+      <div class="safety-body"><strong>Operaciones activas del rectificador cerca de ácido crómico.</strong> EPP completo para Cr(VI) obligatorio. El ataque inverso aumenta la generación de neblina &mdash; verificar ventilación a capacidad máxima. Nunca cambiar polaridad en piso mojado &mdash; usar tapete aislante seco. Verificar polaridad antes de energizar &mdash; polaridad incorrecta disuelve la pieza. Nunca tocar barras energizadas. Si falla la energía, NO reiniciar sin consultar al ingeniero.</div>
+    </div>
+  </div>
+  <footer class="footer poster-footer">
+    <p class="footer-disclaimer">Referencia técnica solamente. Verifique todos los parámetros contra la hoja técnica de su proveedor.</p>
+    <p class="footer-title">Rampa de Corriente y Secuencia de Ataque &mdash; Serie de Cromado Duro</p>
+    <span class="footer-brand">Plating Posters &middot; Serie de Referencia de Acabado de Metales &middot; PP-HC-07-T / v1.0 / 2026</span>
+  </footer>
+</div>
+</div>
+</div>
+<div class="tweaks">
+  <div style="display:flex;gap:8px;align-items:center;">
+    <span style="color:rgba(240,237,232,.5);font-size:11px;letter-spacing:.06em;text-transform:uppercase;">Edition</span>
+    <button id="btnDark" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:#E8A020;color:#1A1F2E;border:1px solid #E8A020;" onclick="setEdition('')">Dark</button>
+    <button id="btnLight" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);" onclick="setEdition('light')">Light</button>
+  </div>
+  <button onclick="window.print()" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);">Print / PDF</button>
+</div>
+<script>
+const posterWrap=document.getElementById('posterWrap');const poster=document.getElementById('poster');function scalePoster(){const sW=(window.innerWidth-24)/1200;const sH=(window.innerHeight-24)/1800;const s=Math.min(sW,sH);posterWrap.style.transform='scale('+s+')';posterWrap.style.transformOrigin='top center';posterWrap.style.width='1200px';posterWrap.style.height=(1800*s)+'px';}function setEdition(e){if(e)poster.dataset.edition=e;else delete poster.dataset.edition;document.getElementById('btnDark').style.background=e?'transparent':'#E8A020';document.getElementById('btnDark').style.color=e?'#F0EDE8':'#1A1F2E';document.getElementById('btnDark').style.borderColor=e?'rgba(255,255,255,.2)':'#E8A020';document.getElementById('btnLight').style.background=e?'#E8A020':'transparent';document.getElementById('btnLight').style.color=e?'#1A1F2E':'#F0EDE8';document.getElementById('btnLight').style.borderColor=e?'#E8A020':'rgba(255,255,255,.2)';}scalePoster();window.addEventListener('resize',scalePoster);
+</script>
+</body>
+</html>

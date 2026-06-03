@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>General Knowledge &mdash; 11 Troubleshooting Framework for Plating Defects &mdash; Technical | Plating Posters Inc</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Barlow:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#0F1B2E;--navy:#0A1225;--text:#F0EDE8;--muted:rgba(240,237,232,.62);
+  --faint:rgba(240,237,232,.38);
+  --accent:#1B3A5C;--blue:#4A7AB5;--green:#1E6B3A;--red:#B22234;
+  --gold:#B8860B;--cream:#F8F7F3;
+  --slate:#2A3550;--callout:#152035;--altrow:#1A2840;
+  --glass-bg:rgba(15,27,46,.55);--glass-border:rgba(255,255,255,.12);
+  --glass-shadow:inset 0 1px 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(0,0,0,.2),0 4px 12px rgba(0,0,0,.25);
+}
+.poster[data-edition="light"]{
+  --bg:#F8F7F3;--navy:#E8E4DA;--text:#1B2030;--muted:rgba(27,32,48,.66);
+  --faint:rgba(27,32,48,.42);
+  --accent:#1B3A5C;--blue:#2E5C8A;--green:#1E6B3A;--red:#B22234;
+  --gold:#8B6914;--cream:#F8F7F3;
+  --slate:#D0CBBE;--callout:#EFEDE4;--altrow:#E6E3D8;
+  --glass-bg:rgba(255,253,247,.66);--glass-border:rgba(27,32,48,.10);
+  --glass-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 4px 12px rgba(27,32,48,.08);
+}
+html,body{margin:0;padding:0;background:#0a0c14;}
+.stage{width:100vw;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;overflow:visible;padding:12px 0;box-sizing:border-box;}
+.poster-wrap{transform-origin:center center;}
+.poster{
+  width:1200px;height:1800px;position:relative;overflow:hidden;
+  background:
+    radial-gradient(1200px 800px at 15% 8%,rgba(74,122,181,.12),transparent 60%),
+    radial-gradient(1000px 700px at 90% 25%,rgba(27,58,92,.10),transparent 55%),
+    radial-gradient(900px 900px at 50% 80%,rgba(178,34,52,.08),transparent 60%),
+    var(--bg);
+  font-family:'Inter',sans-serif;color:var(--text);
+  display:flex;flex-direction:column;padding:32px;box-sizing:border-box;
+}
+.glass{background-color:var(--glass-bg);background-image:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));border:1px solid var(--glass-border);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);box-shadow:var(--glass-shadow);border-radius:12px;}
+.tack{position:absolute;width:24px;height:24px;border-radius:50%;border:1.5px solid rgba(27,58,92,.28);z-index:2;pointer-events:none;}
+.tack::before,.tack::after{content:"";position:absolute;background:rgba(27,58,92,.28);}
+.tack::before{left:50%;top:-3px;bottom:-3px;width:1px;transform:translateX(-50%);}
+.tack::after{top:50%;left:-3px;right:-3px;height:1px;transform:translateY(-50%);}
+.tack.tl{top:12px;left:12px;}.tack.tr{top:12px;right:12px;}.tack.bl{bottom:12px;left:12px;}.tack.br{bottom:12px;right:12px;}
+
+/* ===== THREE-PART FLEX LAYOUT ===== */
+.poster-header{flex-shrink:0;}
+.poster-body{flex:1;overflow:hidden;display:flex;flex-direction:column;gap:10px;justify-content:space-between;}
+.poster-footer{flex-shrink:0;margin-top:8px;}
+
+/* Header */
+.header-band{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:8px;}
+.header-left{flex:1;min-width:0;}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--accent);letter-spacing:.16em;text-transform:uppercase;margin-bottom:4px;display:flex;align-items:center;gap:12px;}
+.eyebrow::before{content:"";display:inline-block;width:30px;height:3px;background:var(--accent);}
+.headline{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:72px;color:var(--text);line-height:.92;margin:4px 0;letter-spacing:-.01em;text-transform:uppercase;}
+.headline em{font-style:normal;color:var(--accent);}
+.subhead{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:20px;color:var(--blue);margin:0 0 3px;letter-spacing:.02em;text-transform:uppercase;}
+.tagline{font-family:'Inter',sans-serif;font-style:italic;font-size:11px;color:var(--muted);line-height:1.35;max-width:700px;margin:0;}
+.logo-card{flex-shrink:0;padding:12px 10px;display:flex;flex-direction:column;align-items:center;gap:8px;align-self:flex-start;}
+.logo-tile{width:68px;height:68px;border-radius:12px;background:linear-gradient(135deg,#1B3A5C,#B22234);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -2px 4px rgba(0,0,0,.15),0 4px 14px rgba(0,0,0,.35);}
+.logo-tile span{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:26px;color:#F8F7F3;letter-spacing:.02em;line-height:1;}
+.logo-word{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;letter-spacing:.04em;text-transform:uppercase;line-height:1;text-align:center;white-space:nowrap;}
+.logo-word .a{color:var(--text);}.logo-word .b{color:var(--accent);}
+.logo-inc{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.05em;text-transform:lowercase;color:var(--muted);margin-top:-2px;}
+
+/* Series banner */
+.series-banner{display:flex;align-items:center;gap:10px;padding:8px 14px;margin-bottom:0;}
+.series-banner .star{color:var(--gold);font-size:14px;}
+.series-banner .label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);}
+.series-banner .divider{flex:1;height:1px;background:var(--glass-border);}
+.series-banner .count{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:.08em;}
+
+/* Section title */
+.section-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;letter-spacing:.08em;text-transform:uppercase;color:var(--text);margin:0 0 6px;display:flex;align-items:center;gap:8px;}
+.section-title::before{content:"";width:5px;height:5px;background:var(--accent);border-radius:50%;}
+.section-title .sub{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.14em;color:var(--muted);margin-left:auto;font-weight:500;}
+
+/* Rule card */
+.rule-card{display:flex;align-items:center;gap:18px;padding:14px 20px;background:rgba(27,58,92,.07);}
+.rule-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:64px;color:var(--accent);line-height:1;letter-spacing:-.02em;}
+.rule-body{flex:1;}
+.rule-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:15px;color:var(--accent);letter-spacing:.08em;text-transform:uppercase;}
+.rule-text{font-family:'Inter',sans-serif;font-size:11px;color:var(--muted);line-height:1.4;margin-top:3px;}
+
+/* Key insight card */
+.insight-card{padding:14px 18px;border-left:3px solid var(--blue);background:rgba(74,122,181,.06);border-radius:0 12px 12px 0;}
+.insight-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;color:var(--blue);letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px;}
+.insight-text{font-family:'Inter',sans-serif;font-size:12px;color:var(--text);line-height:1.5;}
+
+/* Parameter table */
+.data-table{width:100%;border-collapse:collapse;}
+.data-table th{font-family:'Barlow',sans-serif;font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);padding:8px 12px;text-align:left;background:rgba(27,58,92,.08);border-bottom:1px solid var(--glass-border);}
+.poster[data-edition="light"] .data-table th{background:rgba(27,58,92,.06);}
+.data-table td{padding:8px 12px;color:var(--text);line-height:1.4;border-bottom:1px solid rgba(255,255,255,.05);font-family:'Inter',sans-serif;font-size:12px;}
+.data-table tr:last-child td{border-bottom:none;}
+.data-table tr:nth-child(even) td{background:rgba(255,255,255,.02);}
+.poster[data-edition="light"] .data-table tr:nth-child(even) td{background:rgba(27,32,48,.025);}
+.data-table .mono{font-family:'JetBrains Mono',monospace;font-size:11px;}
+.data-table .check{color:var(--green);font-weight:700;text-align:center;}
+.data-table .dash{color:var(--faint);text-align:center;}
+
+/* Comparison cards */
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.compare-card{padding:14px 16px;}
+.compare-card h4{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;color:var(--text);margin:0 0 8px;text-transform:uppercase;letter-spacing:.04em;}
+.compare-card h4 .tag{font-size:11px;padding:2px 8px;border-radius:4px;margin-left:8px;font-family:'JetBrains Mono',monospace;font-weight:500;letter-spacing:.06em;}
+.compare-card h4 .tag.good{background:rgba(30,107,58,.15);color:var(--green);}
+.compare-card h4 .tag.bad{background:rgba(178,34,52,.15);color:var(--red);}
+.compare-card ul{list-style:none;padding:0;margin:0;}
+.compare-card li{font-size:12px;line-height:1.5;padding:3px 0;display:flex;gap:8px;align-items:flex-start;}
+.compare-card li::before{content:"";width:5px;height:5px;border-radius:50%;margin-top:6px;flex-shrink:0;}
+.compare-card.do li::before{background:var(--green);}
+.compare-card.dont li::before{background:var(--red);}
+
+/* Trouble cards */
+.trouble-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.trouble-card{padding:12px 14px;border-radius:10px;border-left:3px solid var(--red);display:flex;flex-direction:column;gap:4px;}
+.trouble-card h5{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;color:var(--red);margin:0;text-transform:uppercase;letter-spacing:.06em;line-height:1.1;}
+.trouble-card p{font-size:11px;color:var(--muted);margin:0;line-height:1.4;}
+
+/* Info grid */
+.info-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;}
+.info-card{padding:12px 14px;text-align:center;}
+.info-card .icon{font-size:24px;margin-bottom:6px;}
+.info-card h5{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;color:var(--accent);margin:0 0 4px;text-transform:uppercase;letter-spacing:.06em;}
+.info-card p{font-size:11px;color:var(--muted);margin:0;line-height:1.4;}
+
+/* Checklist */
+.checklist{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:4px 16px;}
+.checklist li{font-size:11.5px;line-height:1.5;padding:4px 0;display:flex;gap:8px;align-items:flex-start;color:var(--text);}
+.checklist li::before{content:"\2713";color:var(--green);font-weight:700;flex-shrink:0;margin-top:0px;}
+
+/* Safety callout */
+.safety-card{padding:14px 18px;background:rgba(178,34,52,.08);border:1px solid rgba(178,34,52,.25);border-radius:12px;}
+.safety-head{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:16px;color:var(--red);letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px;}
+.safety-body{font-size:11.5px;color:var(--text);line-height:1.5;}
+.safety-body strong{font-weight:700;color:var(--red);}
+
+/* SVG infographic */
+.infographic-wrap{padding:8px 10px;}
+.infographic-wrap svg{display:block;}
+
+/* Footer */
+.footer{padding:10px 20px;background-color:rgba(27,58,92,.85);background-image:linear-gradient(180deg,rgba(255,255,255,.04),rgba(0,0,0,0));border:1px solid rgba(255,255,255,.10);border-radius:8px;text-align:center;display:flex;flex-direction:column;gap:2px;}
+.poster[data-edition="light"] .footer{background-color:rgba(221,216,206,.95);border-color:rgba(27,32,48,.10);}
+.footer-disclaimer{font-family:'Inter',sans-serif;font-size:8.5px;line-height:1.35;color:var(--faint);margin:0 auto;max-width:900px;}
+.footer-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:12px;color:var(--text);letter-spacing:.04em;text-transform:uppercase;margin:0;}
+.footer-brand{font-family:'JetBrains Mono',monospace;font-size:8.5px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;}
+
+/* Compact: prevent bottom-cutoff on dense poster */
+.poster-body{gap:4px !important;}
+.data-table th{padding:4px 8px !important;font-size:10px !important;}
+.data-table td{padding:4px 8px !important;font-size:11px !important;}
+.rule-card{padding:8px 14px !important;}
+.rule-num{font-size:48px !important;}
+.rule-text{font-size:10px !important;}
+.insight-card{padding:8px 12px !important;}
+.insight-text{font-size:11px !important;}
+.compare-card{padding:8px 10px !important;}
+.compare-card h4{margin:0 0 4px !important;}
+.compare-card li{font-size:11px !important;padding:2px 0 !important;}
+.trouble-card{padding:6px 10px !important;}
+.trouble-card p{font-size:10px !important;}
+.info-card{padding:6px 10px !important;}
+.safety-card{padding:8px 12px !important;}
+.safety-head{margin-bottom:3px !important;font-size:14px !important;}
+.safety-body{font-size:10.5px !important;}
+.infographic-wrap{padding:2px 6px !important;}
+.section-title{font-size:18px !important;margin:0 0 3px !important;}
+
+@media print{
+  @page{size:12.5in 18.75in;margin:0;}
+  html,body{background:var(--bg) !important;-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
+  *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
+  .stage{position:static;padding:0;display:block;overflow:visible;}
+  .poster-wrap{transform:none !important;width:auto !important;height:auto !important;}
+  .poster{box-shadow:none !important;width:1200px !important;height:1800px !important;overflow:hidden !important;}
+  .glass,.trouble-card,.insight-card,.safety-card{backdrop-filter:none !important;-webkit-backdrop-filter:none !important;}
+}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="poster-wrap" id="posterWrap">
+<div class="poster" id="poster" data-edition="light">
+  <span class="tack tl" aria-hidden="true"></span><span class="tack tr" aria-hidden="true"></span>
+  <span class="tack bl" aria-hidden="true"></span><span class="tack br" aria-hidden="true"></span>
+
+  <!-- ===== HEADER ===== -->
+  <div class="poster-header">
+    <header class="header-band">
+      <div class="header-left">
+        <div class="eyebrow"><span>Plating Posters Inc &nbsp;&middot;&nbsp; General Knowledge Series &nbsp;&middot;&nbsp; Poster 11 of 15</span></div>
+        <h1 class="headline">TROUBLESHOOTING<br><em>FRAMEWORK</em></h1>
+        <h2 class="subhead">A Systematic Approach to Diagnosing &amp; Correcting Plating Defects</h2>
+        <p class="tagline">When a defect appears, the worst thing you can do is start changing variables at random. A structured diagnostic method saves time, saves chemistry, and builds knowledge that prevents recurrence.</p>
+      </div>
+      <aside class="glass logo-card">
+        <div class="logo-tile"><span>PP</span></div>
+        <div class="logo-word"><span class="a">Plating</span> <span class="b">Posters</span></div>
+        <div class="logo-inc">www.platingposters.com</div>
+      </aside>
+    </header>
+
+    <!-- SERIES BANNER -->
+    <div class="series-banner glass">
+      <span class="star">&#9733;</span>
+      <span class="label">General Knowledge &mdash; Surface Finishing Reference Series</span>
+      <span class="divider"></span>
+      <span class="count">11 / 15</span>
+    </div>
+  </div>
+
+  <!-- ===== BODY ===== -->
+  <div class="poster-body">
+
+    <!-- RULE CARD -->
+    <div class="glass rule-card">
+      <div class="rule-num">#1</div>
+      <div class="rule-body">
+        <div class="rule-label">Is It on ALL Parts or SOME Parts?</div>
+        <div class="rule-text">This single question separates bath-wide problems (chemistry, temperature, current density) from part-specific problems (surface prep, racking, substrate variation). Ask it first, every time. It cuts your diagnostic search space in half before you touch a single titration kit.</div>
+      </div>
+    </div>
+
+    <!-- DEFECT-TO-ROOT-CAUSE TABLE -->
+    <div>
+      <h3 class="section-title">Defect-to-Root-Cause Matrix <span class="sub">Likely cause domains by defect type</span></h3>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table">
+          <thead><tr><th>Defect Type</th><th style="text-align:center;">Bath Chemistry</th><th style="text-align:center;">Prep / Cleaning</th><th style="text-align:center;">Current / Power</th><th style="text-align:center;">Temperature</th><th style="text-align:center;">Contamination</th></tr></thead>
+          <tbody>
+            <tr><td>Pitting</td><td class="check">&#10003;</td><td class="check">&#10003;</td><td class="dash">&mdash;</td><td class="dash">&mdash;</td><td class="check">&#10003;</td></tr>
+            <tr><td>Roughness</td><td class="check">&#10003;</td><td class="check">&#10003;</td><td class="check">&#10003;</td><td class="dash">&mdash;</td><td class="check">&#10003;</td></tr>
+            <tr><td>Dullness</td><td class="check">&#10003;</td><td class="dash">&mdash;</td><td class="check">&#10003;</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
+            <tr><td>Blistering / Peeling</td><td class="dash">&mdash;</td><td class="check">&#10003;</td><td class="check">&#10003;</td><td class="dash">&mdash;</td><td class="check">&#10003;</td></tr>
+            <tr><td>Burning</td><td class="check">&#10003;</td><td class="dash">&mdash;</td><td class="check">&#10003;</td><td class="check">&#10003;</td><td class="dash">&mdash;</td></tr>
+            <tr><td>Skip Plating</td><td class="check">&#10003;</td><td class="check">&#10003;</td><td class="check">&#10003;</td><td class="dash">&mdash;</td><td class="dash">&mdash;</td></tr>
+            <tr><td>Discoloration</td><td class="check">&#10003;</td><td class="check">&#10003;</td><td class="dash">&mdash;</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
+            <tr><td>Low Thickness</td><td class="check">&#10003;</td><td class="dash">&mdash;</td><td class="check">&#10003;</td><td class="check">&#10003;</td><td class="dash">&mdash;</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- SVG INFOGRAPHIC: Decision Tree Flowchart -->
+    <div class="glass infographic-wrap">
+      <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 1100 145" fill="none">
+        <style>
+          .svg-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:13px;fill:var(--accent);letter-spacing:0.08em;text-transform:uppercase;}
+          .svg-label{font-family:'Inter',sans-serif;font-size:10px;fill:var(--text);}
+          .svg-sub{font-family:'JetBrains Mono',monospace;font-size:8px;fill:var(--muted);}
+          .svg-node{rx:8;ry:8;}
+          .svg-diamond{fill:var(--accent);opacity:0.12;}
+          .svg-branch{stroke:var(--accent);stroke-width:1.5;fill:none;opacity:0.5;}
+          .svg-branchR{stroke:var(--red);stroke-width:1.5;fill:none;opacity:0.4;}
+          .svg-branchG{stroke:var(--green);stroke-width:1.5;fill:none;opacity:0.4;}
+        </style>
+        <text x="10" y="16" class="svg-title">Diagnostic Decision Tree &mdash; First Response to Any Plating Defect</text>
+
+        <!-- Defect Observed node -->
+        <rect x="440" y="28" width="160" height="30" class="svg-node" fill="var(--accent)" opacity="0.15"/>
+        <text x="520" y="48" text-anchor="middle" class="svg-label" font-weight="600">Defect Observed</text>
+
+        <!-- Arrow down to diamond -->
+        <line x1="520" y1="58" x2="520" y2="72" class="svg-branch"/>
+
+        <!-- Diamond: All or Some? -->
+        <polygon points="520,72 580,92 520,112 460,92" class="svg-diamond"/>
+        <text x="520" y="96" text-anchor="middle" class="svg-sub" font-weight="600" fill="var(--accent)">ALL OR SOME?</text>
+
+        <!-- Left branch: ALL PARTS -->
+        <line x1="460" y1="92" x2="240" y2="92" class="svg-branchR"/>
+        <line x1="240" y1="92" x2="240" y2="108" class="svg-branchR"/>
+        <rect x="150" y="108" width="180" height="26" class="svg-node" fill="var(--red)" opacity="0.10"/>
+        <text x="240" y="125" text-anchor="middle" class="svg-label" font-weight="600" fill="var(--red)">Bath-Wide Issue</text>
+
+        <!-- Sub-checks under Bath-Wide -->
+        <line x1="240" y1="134" x2="120" y2="148" class="svg-branchR"/>
+        <line x1="240" y1="134" x2="240" y2="148" class="svg-branchR"/>
+        <line x1="240" y1="134" x2="360" y2="148" class="svg-branchR"/>
+        <rect x="55" y="148" width="130" height="24" class="svg-node" fill="var(--red)" opacity="0.06"/>
+        <text x="120" y="164" text-anchor="middle" class="svg-sub">CHECK CHEMISTRY</text>
+        <rect x="175" y="148" width="130" height="24" class="svg-node" fill="var(--red)" opacity="0.06"/>
+        <text x="240" y="164" text-anchor="middle" class="svg-sub">CHECK TEMPERATURE</text>
+        <rect x="295" y="148" width="130" height="24" class="svg-node" fill="var(--red)" opacity="0.06"/>
+        <text x="360" y="164" text-anchor="middle" class="svg-sub">CHECK CURRENT</text>
+
+        <!-- Right branch: SOME PARTS -->
+        <line x1="580" y1="92" x2="800" y2="92" class="svg-branchG"/>
+        <line x1="800" y1="92" x2="800" y2="108" class="svg-branchG"/>
+        <rect x="710" y="108" width="180" height="26" class="svg-node" fill="var(--green)" opacity="0.10"/>
+        <text x="800" y="125" text-anchor="middle" class="svg-label" font-weight="600" fill="var(--green)">Part-Specific Issue</text>
+
+        <!-- Sub-checks under Part-Specific -->
+        <line x1="800" y1="134" x2="680" y2="148" class="svg-branchG"/>
+        <line x1="800" y1="134" x2="800" y2="148" class="svg-branchG"/>
+        <line x1="800" y1="134" x2="920" y2="148" class="svg-branchG"/>
+        <rect x="615" y="148" width="130" height="24" class="svg-node" fill="var(--green)" opacity="0.06"/>
+        <text x="680" y="164" text-anchor="middle" class="svg-sub">CHECK PREP</text>
+        <rect x="735" y="148" width="130" height="24" class="svg-node" fill="var(--green)" opacity="0.06"/>
+        <text x="800" y="164" text-anchor="middle" class="svg-sub">CHECK RACKING</text>
+        <rect x="855" y="148" width="130" height="24" class="svg-node" fill="var(--green)" opacity="0.06"/>
+        <text x="920" y="164" text-anchor="middle" class="svg-sub">CHECK SUBSTRATE</text>
+      </svg>
+    </div>
+
+    <!-- DIAGNOSTIC TOOLS -->
+    <div>
+      <h3 class="section-title">Diagnostic Methods <span class="sub">Tools for structured troubleshooting</span></h3>
+      <div class="info-grid">
+        <div class="glass info-card">
+          <div class="icon">&#9879;</div>
+          <h5>Hull Cell Diagnosis</h5>
+          <p>A 267 mL Hull cell panel shows the full current density range in one test. Bright high-current = good brightener. Dull low-current = low metal. Burned edges = excess current or low additive. Read the panel like a map of your bath.</p>
+        </div>
+        <div class="glass info-card">
+          <div class="icon">&#128269;</div>
+          <h5>Systematic Elimination</h5>
+          <p>Change one variable at a time. Document the baseline, make a single adjustment, run a test panel or production sample, then evaluate. If the defect persists, revert and try the next variable. Never stack changes.</p>
+        </div>
+        <div class="glass info-card">
+          <div class="icon">&#128203;</div>
+          <h5>Documentation</h5>
+          <p>Log every defect: what it looked like, when it started, what changed, and what fixed it. This builds institutional knowledge that turns months of trial-and-error into a lookup table for the next occurrence.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- DO vs DON'T -->
+    <div class="compare-grid">
+      <div class="compare-card glass do">
+        <h4>Best Practices <span class="tag good">Do</span></h4>
+        <ul>
+          <li>Ask &ldquo;all parts or some?&rdquo; before touching anything</li>
+          <li>Pull a Hull cell panel as your first diagnostic step</li>
+          <li>Change only one variable at a time and document results</li>
+          <li>Check the simplest explanations first &mdash; temperature, water quality, rack contacts</li>
+          <li>Keep a defect log with photos, dates, and corrective actions taken</li>
+        </ul>
+      </div>
+      <div class="compare-card glass dont">
+        <h4>Common Mistakes <span class="tag bad">Avoid</span></h4>
+        <ul>
+          <li>Changing multiple variables at once &mdash; you won&rsquo;t know what fixed it</li>
+          <li>Not documenting the fix &mdash; the same defect will return and no one will remember</li>
+          <li>Blaming the chemistry supplier first without running your own diagnostics</li>
+          <li>Adding chemical to &ldquo;fix&rdquo; a problem without confirming the root cause by analysis</li>
+          <li>Assuming a defect is new when it may have been present but unreported</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- KEY INSIGHT -->
+    <div class="insight-card glass">
+      <div class="insight-label">Why the Hull Cell Is Your First Test</div>
+      <div class="insight-text">If the Hull cell panel looks good, the bath chemistry is fine and the problem is upstream (surface preparation, racking, substrate) or downstream (post-treatment, rinsing, drying). If the panel reproduces the defect, you&rsquo;ve narrowed the problem to bath chemistry &mdash; metal concentration, additive levels, pH, or contamination. One panel, five minutes, and you&rsquo;ve cut your search space in half. No other single test gives you that much diagnostic leverage.</div>
+    </div>
+
+    <!-- TROUBLE GRID: Meta-Troubleshooting Patterns -->
+    <div>
+      <h3 class="section-title">Defect Pattern Recognition <span class="sub">What the pattern tells you</span></h3>
+      <div class="trouble-grid">
+        <div class="trouble-card glass">
+          <h5>Intermittent Defects</h5>
+          <p>Appearing and disappearing = contamination. Organic drag-in, oil from a failing pump seal, or parts falling off racks and dissolving. Carbon-treat or investigate the contamination source.</p>
+        </div>
+        <div class="trouble-card glass">
+          <h5>Gradual Degradation</h5>
+          <p>Slowly worsening quality over days/weeks = buildup of byproducts, metal impurities, or drag-in accumulation. Analyze the bath, check for metallic contamination, consider dummy plating or carbon treatment.</p>
+        </div>
+        <div class="trouble-card glass">
+          <h5>Sudden Onset</h5>
+          <p>Good yesterday, bad today = something changed. New chemical shipment, rectifier setting moved, heater failure, water supply issue, or a new substrate lot. Investigate what changed in the last 24 hours.</p>
+        </div>
+        <div class="trouble-card glass">
+          <h5>Position-Dependent</h5>
+          <p>Defect only in certain rack positions = current distribution problem. Check anode placement, anode bag condition, rack contact points, shielding, and the proximity of parts to anodes or tank walls.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SAFETY -->
+    <div class="safety-card">
+      <div class="safety-head">&#9888; Safety &mdash; Investigating Plating Defects</div>
+      <div class="safety-body"><strong>Bath sampling:</strong> Always wear chemical-resistant gloves, safety goggles, and a face shield when pulling samples from plating tanks. Avoid skin contact with all bath solutions. <strong>Hull cell testing:</strong> Use proper PPE when handling Hull cell panels &mdash; the solution is concentrated bath chemistry. Rinse panels thoroughly before handling. <strong>Never taste, smell, or touch</strong> plating solutions to identify them. Use analytical methods and proper labeling. Maintain SDS access for every chemical in the line.</div>
+    </div>
+
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer poster-footer">
+    <p class="footer-disclaimer">Technical reference only. Verify all parameters against your chemistry supplier&rsquo;s TDS, customer specifications, and applicable regulatory requirements before production use.</p>
+    <p class="footer-title">Poster 11 &mdash; Troubleshooting Framework for Plating Defects &mdash; General Knowledge Series</p>
+    <span class="footer-brand">Plating Posters Inc &middot; Surface Finishing Reference Series &middot; GK-11-T / v1.0 / 2026</span>
+  </footer>
+
+</div>
+</div>
+</div>
+
+<script>
+const posterWrap=document.getElementById('posterWrap');
+const poster=document.getElementById('poster');
+function scalePoster(){const sW=(window.innerWidth-24)/1200;const sH=(window.innerHeight-24)/1800;const s=Math.min(sW,sH);posterWrap.style.transform='scale('+s+')';posterWrap.style.transformOrigin='top center';posterWrap.style.width='1200px';posterWrap.style.height=(1800*s)+'px';}
+scalePoster();window.addEventListener('resize',scalePoster);
+</script>
+</body>
+</html>

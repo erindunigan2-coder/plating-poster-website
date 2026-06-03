@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>General Knowledge &mdash; 10 Bath Analysis &amp; Titration Fundamentals &mdash; Technical | Plating Posters Inc</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Barlow:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#0F1B2E;--navy:#0A1225;--text:#F0EDE8;--muted:rgba(240,237,232,.62);
+  --faint:rgba(240,237,232,.38);
+  --accent:#1B3A5C;--blue:#4A7AB5;--green:#1E6B3A;--red:#B22234;
+  --gold:#B8860B;--cream:#F8F7F3;
+  --slate:#2A3550;--callout:#152035;--altrow:#1A2840;
+  --glass-bg:rgba(15,27,46,.55);--glass-border:rgba(255,255,255,.12);
+  --glass-shadow:inset 0 1px 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(0,0,0,.2),0 4px 12px rgba(0,0,0,.25);
+}
+.poster[data-edition="light"]{
+  --bg:#F8F7F3;--navy:#E8E4DA;--text:#1B2030;--muted:rgba(27,32,48,.66);
+  --faint:rgba(27,32,48,.42);
+  --accent:#1B3A5C;--blue:#2E5C8A;--green:#1E6B3A;--red:#B22234;
+  --gold:#8B6914;--cream:#F8F7F3;
+  --slate:#D0CBBE;--callout:#EFEDE4;--altrow:#E6E3D8;
+  --glass-bg:rgba(255,253,247,.66);--glass-border:rgba(27,32,48,.10);
+  --glass-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 4px 12px rgba(27,32,48,.08);
+}
+html,body{margin:0;padding:0;background:#0a0c14;}
+.stage{width:100vw;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;overflow:visible;padding:12px 0;box-sizing:border-box;}
+.poster-wrap{transform-origin:center center;}
+.poster{
+  width:1200px;height:1800px;position:relative;overflow:hidden;
+  background:
+    radial-gradient(1200px 800px at 15% 8%,rgba(74,122,181,.12),transparent 60%),
+    radial-gradient(1000px 700px at 90% 25%,rgba(27,58,92,.10),transparent 55%),
+    radial-gradient(900px 900px at 50% 80%,rgba(178,34,52,.08),transparent 60%),
+    var(--bg);
+  font-family:'Inter',sans-serif;color:var(--text);
+  display:flex;flex-direction:column;padding:32px;box-sizing:border-box;
+}
+.glass{background-color:var(--glass-bg);background-image:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));border:1px solid var(--glass-border);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);box-shadow:var(--glass-shadow);border-radius:12px;}
+.tack{position:absolute;width:24px;height:24px;border-radius:50%;border:1.5px solid rgba(27,58,92,.28);z-index:2;pointer-events:none;}
+.tack::before,.tack::after{content:"";position:absolute;background:rgba(27,58,92,.28);}
+.tack::before{left:50%;top:-3px;bottom:-3px;width:1px;transform:translateX(-50%);}
+.tack::after{top:50%;left:-3px;right:-3px;height:1px;transform:translateY(-50%);}
+.tack.tl{top:12px;left:12px;}.tack.tr{top:12px;right:12px;}.tack.bl{bottom:12px;left:12px;}.tack.br{bottom:12px;right:12px;}
+
+/* ===== THREE-PART FLEX LAYOUT ===== */
+.poster-header{flex-shrink:0;}
+.poster-body{flex:1;overflow:hidden;display:flex;flex-direction:column;gap:10px;justify-content:space-between;}
+.poster-footer{flex-shrink:0;margin-top:8px;}
+
+/* Header */
+.header-band{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:8px;}
+.header-left{flex:1;min-width:0;}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--accent);letter-spacing:.16em;text-transform:uppercase;margin-bottom:4px;display:flex;align-items:center;gap:12px;}
+.eyebrow::before{content:"";display:inline-block;width:30px;height:3px;background:var(--accent);}
+.headline{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:72px;color:var(--text);line-height:.92;margin:4px 0;letter-spacing:-.01em;text-transform:uppercase;}
+.headline em{font-style:normal;color:var(--accent);}
+.subhead{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:20px;color:var(--blue);margin:0 0 3px;letter-spacing:.02em;text-transform:uppercase;}
+.tagline{font-family:'Inter',sans-serif;font-style:italic;font-size:11px;color:var(--muted);line-height:1.35;max-width:700px;margin:0;}
+.logo-card{flex-shrink:0;padding:12px 10px;display:flex;flex-direction:column;align-items:center;gap:8px;align-self:flex-start;}
+.logo-tile{width:68px;height:68px;border-radius:12px;background:linear-gradient(135deg,#1B3A5C,#B22234);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -2px 4px rgba(0,0,0,.15),0 4px 14px rgba(0,0,0,.35);}
+.logo-tile span{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:26px;color:#F8F7F3;letter-spacing:.02em;line-height:1;}
+.logo-word{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;letter-spacing:.04em;text-transform:uppercase;line-height:1;text-align:center;white-space:nowrap;}
+.logo-word .a{color:var(--text);}.logo-word .b{color:var(--accent);}
+.logo-inc{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.05em;text-transform:lowercase;color:var(--muted);margin-top:-2px;}
+
+/* Series banner */
+.series-banner{display:flex;align-items:center;gap:10px;padding:8px 14px;margin-bottom:0;}
+.series-banner .star{color:var(--gold);font-size:14px;}
+.series-banner .label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);}
+.series-banner .divider{flex:1;height:1px;background:var(--glass-border);}
+.series-banner .count{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:.08em;}
+
+/* Section title */
+.section-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;letter-spacing:.08em;text-transform:uppercase;color:var(--text);margin:0 0 6px;display:flex;align-items:center;gap:8px;}
+.section-title::before{content:"";width:5px;height:5px;background:var(--accent);border-radius:50%;}
+.section-title .sub{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.14em;color:var(--muted);margin-left:auto;font-weight:500;}
+
+/* Rule card */
+.rule-card{display:flex;align-items:center;gap:18px;padding:14px 20px;background:rgba(27,58,92,.07);}
+.rule-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:64px;color:var(--accent);line-height:1;letter-spacing:-.02em;}
+.rule-body{flex:1;}
+.rule-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:15px;color:var(--accent);letter-spacing:.08em;text-transform:uppercase;}
+.rule-text{font-family:'Inter',sans-serif;font-size:11px;color:var(--muted);line-height:1.4;margin-top:3px;}
+
+/* Key insight card */
+.insight-card{padding:14px 18px;border-left:3px solid var(--blue);background:rgba(74,122,181,.06);border-radius:0 12px 12px 0;}
+.insight-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;color:var(--blue);letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px;}
+.insight-text{font-family:'Inter',sans-serif;font-size:12px;color:var(--text);line-height:1.5;}
+
+/* Parameter table */
+.data-table{width:100%;border-collapse:collapse;}
+.data-table th{font-family:'Barlow',sans-serif;font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);padding:8px 12px;text-align:left;background:rgba(27,58,92,.08);border-bottom:1px solid var(--glass-border);}
+.poster[data-edition="light"] .data-table th{background:rgba(27,58,92,.06);}
+.data-table td{padding:8px 12px;color:var(--text);line-height:1.4;border-bottom:1px solid rgba(255,255,255,.05);font-family:'Inter',sans-serif;font-size:12px;}
+.data-table tr:last-child td{border-bottom:none;}
+.data-table tr:nth-child(even) td{background:rgba(255,255,255,.02);}
+.poster[data-edition="light"] .data-table tr:nth-child(even) td{background:rgba(27,32,48,.025);}
+.data-table .mono{font-family:'JetBrains Mono',monospace;font-size:11px;}
+
+/* Comparison cards */
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.compare-card{padding:14px 16px;}
+.compare-card h4{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;color:var(--text);margin:0 0 8px;text-transform:uppercase;letter-spacing:.04em;}
+.compare-card h4 .tag{font-size:11px;padding:2px 8px;border-radius:4px;margin-left:8px;font-family:'JetBrains Mono',monospace;font-weight:500;letter-spacing:.06em;}
+.compare-card h4 .tag.good{background:rgba(30,107,58,.15);color:var(--green);}
+.compare-card h4 .tag.bad{background:rgba(178,34,52,.15);color:var(--red);}
+.compare-card ul{list-style:none;padding:0;margin:0;}
+.compare-card li{font-size:12px;line-height:1.5;padding:3px 0;display:flex;gap:8px;align-items:flex-start;}
+.compare-card li::before{content:"";width:5px;height:5px;border-radius:50%;margin-top:6px;flex-shrink:0;}
+.compare-card.do li::before{background:var(--green);}
+.compare-card.dont li::before{background:var(--red);}
+
+/* Trouble cards */
+.trouble-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.trouble-card{padding:12px 14px;border-radius:10px;border-left:3px solid var(--red);display:flex;flex-direction:column;gap:4px;}
+.trouble-card h5{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;color:var(--red);margin:0;text-transform:uppercase;letter-spacing:.06em;line-height:1.1;}
+.trouble-card p{font-size:11px;color:var(--muted);margin:0;line-height:1.4;}
+
+/* Info grid */
+.info-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;}
+.info-card{padding:12px 14px;text-align:center;}
+.info-card .icon{font-size:24px;margin-bottom:6px;}
+.info-card h5{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;color:var(--accent);margin:0 0 4px;text-transform:uppercase;letter-spacing:.06em;}
+.info-card p{font-size:11px;color:var(--muted);margin:0;line-height:1.4;}
+
+/* Checklist */
+.checklist{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:4px 16px;}
+.checklist li{font-size:11.5px;line-height:1.5;padding:4px 0;display:flex;gap:8px;align-items:flex-start;color:var(--text);}
+.checklist li::before{content:"\2713";color:var(--green);font-weight:700;flex-shrink:0;margin-top:0px;}
+
+/* Safety callout */
+.safety-card{padding:14px 18px;background:rgba(178,34,52,.08);border:1px solid rgba(178,34,52,.25);border-radius:12px;}
+.safety-head{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:16px;color:var(--red);letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px;}
+.safety-body{font-size:11.5px;color:var(--text);line-height:1.5;}
+.safety-body strong{font-weight:700;color:var(--red);}
+
+/* SVG infographic */
+.infographic-wrap{padding:8px 10px;}
+.infographic-wrap svg{display:block;}
+
+/* Footer */
+.footer{padding:10px 20px;background-color:rgba(27,58,92,.85);background-image:linear-gradient(180deg,rgba(255,255,255,.04),rgba(0,0,0,0));border:1px solid rgba(255,255,255,.10);border-radius:8px;text-align:center;display:flex;flex-direction:column;gap:2px;}
+.poster[data-edition="light"] .footer{background-color:rgba(221,216,206,.95);border-color:rgba(27,32,48,.10);}
+.footer-disclaimer{font-family:'Inter',sans-serif;font-size:8.5px;line-height:1.35;color:var(--faint);margin:0 auto;max-width:900px;}
+.footer-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:12px;color:var(--text);letter-spacing:.04em;text-transform:uppercase;margin:0;}
+.footer-brand{font-family:'JetBrains Mono',monospace;font-size:8.5px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;}
+
+/* Compact: prevent bottom-cutoff on dense poster */
+.poster-body{gap:4px !important;}
+.data-table th{padding:4px 8px !important;font-size:10px !important;}
+.data-table td{padding:4px 8px !important;font-size:11px !important;}
+.rule-card{padding:8px 14px !important;}
+.rule-num{font-size:48px !important;}
+.rule-text{font-size:10px !important;}
+.insight-card{padding:8px 12px !important;}
+.insight-text{font-size:11px !important;}
+.compare-card{padding:8px 10px !important;}
+.compare-card h4{margin:0 0 4px !important;}
+.compare-card li{font-size:11px !important;padding:2px 0 !important;}
+.trouble-card{padding:6px 10px !important;}
+.trouble-card p{font-size:10px !important;}
+.info-card{padding:6px 10px !important;}
+.safety-card{padding:8px 12px !important;}
+.safety-head{margin-bottom:3px !important;font-size:14px !important;}
+.safety-body{font-size:10.5px !important;}
+.infographic-wrap{padding:2px 6px !important;}
+.section-title{font-size:18px !important;margin:0 0 3px !important;}
+
+@media print{
+  @page{size:12.5in 18.75in;margin:0;}
+  html,body{background:var(--bg) !important;-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
+  *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
+  .stage{position:static;padding:0;display:block;overflow:visible;}
+  .poster-wrap{transform:none !important;width:auto !important;height:auto !important;}
+  .poster{box-shadow:none !important;width:1200px !important;height:1800px !important;overflow:hidden !important;}
+  .glass,.trouble-card,.insight-card,.safety-card{backdrop-filter:none !important;-webkit-backdrop-filter:none !important;}
+}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="poster-wrap" id="posterWrap">
+<div class="poster" id="poster" data-edition="light">
+  <span class="tack tl" aria-hidden="true"></span><span class="tack tr" aria-hidden="true"></span>
+  <span class="tack bl" aria-hidden="true"></span><span class="tack br" aria-hidden="true"></span>
+
+  <!-- ===== HEADER ===== -->
+  <div class="poster-header">
+    <header class="header-band">
+      <div class="header-left">
+        <div class="eyebrow"><span>Plating Posters Inc &nbsp;&middot;&nbsp; General Knowledge Series &nbsp;&middot;&nbsp; Poster 10 of 15</span></div>
+        <h1 class="headline">BATH ANALYSIS<br><em>&amp; TITRATION</em></h1>
+        <h2 class="subhead">Keeping Your Chemistry in Spec &mdash; The Foundation of Consistent Plating Quality</h2>
+        <p class="tagline">Analyze on schedule, adjust to target, document every result. Reactive maintenance costs 5&ndash;10&times; more than proactive analysis &mdash; disciplined bath control is the cheapest quality tool on the line.</p>
+      </div>
+      <aside class="glass logo-card">
+        <div class="logo-tile"><span>PP</span></div>
+        <div class="logo-word"><span class="a">Plating</span> <span class="b">Posters</span></div>
+        <div class="logo-inc">www.platingposters.com</div>
+      </aside>
+    </header>
+
+    <!-- SERIES BANNER -->
+    <div class="series-banner glass">
+      <span class="star">&#9733;</span>
+      <span class="label">General Knowledge &mdash; Surface Finishing Reference Series</span>
+      <span class="divider"></span>
+      <span class="count">10 / 15</span>
+    </div>
+  </div>
+
+  <!-- ===== BODY ===== -->
+  <div class="poster-body">
+
+    <!-- RULE CARD -->
+    <div class="glass rule-card">
+      <div class="rule-num">#1</div>
+      <div class="rule-body">
+        <div class="rule-label">Analyze on Schedule, Adjust to Target, Document Every Result</div>
+        <div class="rule-text">Reactive maintenance costs 5&ndash;10&times; more than proactive analysis. A single out-of-spec bath can scrap an entire rack of parts in minutes. Scheduled titrations and instrument checks catch drift before it becomes a production crisis.</div>
+      </div>
+    </div>
+
+    <!-- COMMON ANALYSES BY BATH TYPE -->
+    <div>
+      <h3 class="section-title">Common Analyses by Bath Type <span class="sub">Key parameters &amp; methods</span></h3>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table">
+          <thead><tr><th>Bath</th><th>Analysis</th><th>Frequency</th><th>Method</th></tr></thead>
+          <tbody>
+            <tr><td rowspan="4" style="vertical-align:top;font-weight:600;">Watts Nickel</td><td>Boric acid</td><td class="mono">Weekly</td><td>Titration (mannitol method)</td></tr>
+            <tr><td>pH</td><td class="mono">Every shift</td><td>pH meter (calibrated daily)</td></tr>
+            <tr><td>Nickel metal</td><td class="mono">Daily</td><td>Titration (murexide indicator)</td></tr>
+            <tr><td>Organics</td><td class="mono">Weekly</td><td>Hull cell panel evaluation</td></tr>
+            <tr><td rowspan="3" style="vertical-align:top;font-weight:600;">Alkaline Zinc</td><td>Total zinc</td><td class="mono">Daily</td><td>EDTA titration</td></tr>
+            <tr><td>NaOH (caustic)</td><td class="mono">Daily</td><td>Acid&ndash;base titration</td></tr>
+            <tr><td>Brightener performance</td><td class="mono">2&times;/week</td><td>Hull cell panel evaluation</td></tr>
+            <tr><td rowspan="3" style="vertical-align:top;font-weight:600;">Chrome (Hex)</td><td>CrO&#8323; concentration</td><td class="mono">Daily</td><td>Specific gravity + titration</td></tr>
+            <tr><td>Sulfate ratio (CrO&#8323;:SO&#8324;)</td><td class="mono">Weekly</td><td>Barium chloride turbidity</td></tr>
+            <tr><td>Trivalent Cr</td><td class="mono">Weekly</td><td>Titration (KMnO&#8324; or diphenylcarbazide)</td></tr>
+            <tr><td rowspan="4" style="vertical-align:top;font-weight:600;">Electroless Ni</td><td>Nickel metal</td><td class="mono">Per turnover</td><td>EDTA titration</td></tr>
+            <tr><td>Hypophosphite</td><td class="mono">Per turnover</td><td>Iodine titration</td></tr>
+            <tr><td>pH</td><td class="mono">Before each load</td><td>pH meter</td></tr>
+            <tr><td>Stabilizer</td><td class="mono">Per turnover</td><td>Lead strip test or PdCl&#8322; spot</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- SVG INFOGRAPHIC: Titration Setup -->
+    <div class="glass infographic-wrap">
+      <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 1100 140" fill="none">
+        <style>
+          .svg-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:13px;fill:var(--accent);letter-spacing:0.08em;text-transform:uppercase;}
+          .svg-label{font-family:'Inter',sans-serif;font-size:10px;fill:var(--text);}
+          .svg-sub{font-family:'JetBrains Mono',monospace;font-size:8px;fill:var(--muted);}
+          .svg-bold{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:11px;fill:var(--accent);letter-spacing:0.04em;text-transform:uppercase;}
+        </style>
+        <text x="10" y="16" class="svg-title">Titration Setup &mdash; Volumetric Analysis Fundamentals</text>
+
+        <!-- Burette -->
+        <rect x="180" y="30" width="14" height="120" rx="3" fill="var(--blue)" opacity="0.15" stroke="var(--blue)" stroke-width="1"/>
+        <rect x="183" y="34" width="8" height="80" rx="2" fill="var(--blue)" opacity="0.3"/>
+        <line x1="187" y1="150" x2="187" y2="158" stroke="var(--accent)" stroke-width="1.5"/>
+        <!-- Burette clamp -->
+        <rect x="170" y="28" width="34" height="4" rx="1" fill="var(--accent)" opacity="0.4"/>
+        <rect x="194" y="25" width="4" height="135" rx="1" fill="var(--accent)" opacity="0.2"/>
+        <!-- Stopcock -->
+        <rect x="182" y="140" width="10" height="6" rx="2" fill="var(--accent)" opacity="0.4"/>
+        <text x="140" y="75" class="svg-bold" text-anchor="end">Titrant</text>
+        <text x="140" y="87" class="svg-sub" text-anchor="end">Known concentration</text>
+        <text x="140" y="97" class="svg-sub" text-anchor="end">added from burette</text>
+        <!-- Droplet -->
+        <circle cx="187" cy="163" r="2.5" fill="var(--blue)" opacity="0.5"/>
+
+        <!-- Erlenmeyer Flask -->
+        <path d="M155 370 L175 280 Q187 265 199 280 L219 370 Z" transform="translate(0,-210) scale(1)" fill="var(--gold)" opacity="0.08" stroke="var(--gold)" stroke-width="1" opacity="0.3"/>
+        <polygon points="162,160 212,160 205,135 220,135 154,135 169,135" fill="var(--gold)" opacity="0.1" stroke="var(--gold)" stroke-width="0.8"/>
+        <!-- Flask body -->
+        <path d="M162 160 L178 128 L196 128 L212 160 Z" fill="var(--gold)" opacity="0.08" stroke="var(--gold)" stroke-width="0.8"/>
+        <!-- Flask neck -->
+        <rect x="178" y="108" width="18" height="20" rx="1" fill="none" stroke="var(--gold)" stroke-width="0.8"/>
+        <!-- Liquid in flask -->
+        <path d="M164 155 L177 133 L197 133 L210 155 Z" fill="var(--green)" opacity="0.15"/>
+        <text x="248" y="130" class="svg-bold">Analyte</text>
+        <text x="248" y="142" class="svg-sub">Sample of unknown</text>
+        <text x="248" y="152" class="svg-sub">concentration in flask</text>
+
+        <!-- Stir Plate -->
+        <rect x="148" y="162" width="78" height="12" rx="3" fill="var(--accent)" opacity="0.2" stroke="var(--accent)" stroke-width="0.8"/>
+        <text x="187" y="171" text-anchor="middle" class="svg-sub" fill="var(--accent)">STIR PLATE</text>
+
+        <!-- Indicator color change diagram -->
+        <text x="420" y="42" class="svg-bold">Indicator Color Change at Endpoint</text>
+        <!-- Before endpoint -->
+        <rect x="420" y="52" width="120" height="50" rx="8" fill="var(--blue)" opacity="0.12" stroke="var(--blue)" stroke-width="0.8"/>
+        <text x="480" y="73" text-anchor="middle" class="svg-label" font-weight="600">Before</text>
+        <text x="480" y="87" text-anchor="middle" class="svg-sub">Original color</text>
+        <!-- Arrow -->
+        <text x="560" y="80" text-anchor="middle" class="svg-bold" fill="var(--accent)">&#8594;</text>
+        <!-- At endpoint -->
+        <rect x="580" y="52" width="120" height="50" rx="8" fill="var(--red)" opacity="0.15" stroke="var(--red)" stroke-width="0.8"/>
+        <text x="640" y="73" text-anchor="middle" class="svg-label" font-weight="600">Endpoint</text>
+        <text x="640" y="87" text-anchor="middle" class="svg-sub">Color persists 30 s</text>
+        <!-- Arrow -->
+        <text x="720" y="80" text-anchor="middle" class="svg-bold" fill="var(--red)">&#8594;</text>
+        <!-- Past endpoint -->
+        <rect x="740" y="52" width="120" height="50" rx="8" fill="var(--red)" opacity="0.25" stroke="var(--red)" stroke-width="0.8"/>
+        <text x="800" y="73" text-anchor="middle" class="svg-label" font-weight="600">Overshot</text>
+        <text x="800" y="87" text-anchor="middle" class="svg-sub">Too much titrant</text>
+
+        <!-- Key terms -->
+        <text x="420" y="125" class="svg-bold">Key Terms</text>
+        <rect x="420" y="132" width="540" height="32" rx="6" fill="var(--accent)" opacity="0.05" stroke="var(--glass-border)" stroke-width="0.5"/>
+        <text x="440" y="148" class="svg-label"><tspan font-weight="600">Titrant:</tspan> reagent of known conc.</text>
+        <text x="640" y="148" class="svg-label"><tspan font-weight="600">Analyte:</tspan> sample being measured</text>
+        <text x="840" y="148" class="svg-label"><tspan font-weight="600">Endpoint:</tspan> indicator color shift</text>
+        <text x="440" y="160" class="svg-sub">Dispensed from burette drop by drop</text>
+        <text x="640" y="160" class="svg-sub">Pipetted into Erlenmeyer flask</text>
+        <text x="840" y="160" class="svg-sub">Persistent color = reaction complete</text>
+      </svg>
+    </div>
+
+    <!-- INFO GRID: Analysis Tools -->
+    <div>
+      <h3 class="section-title">Essential Analysis Tools <span class="sub">Every plating lab needs these</span></h3>
+      <div class="info-grid">
+        <div class="glass info-card">
+          <div class="icon">&#9881;</div>
+          <h5>Hull Cell Testing</h5>
+          <p>A miniature plating cell that deposits across a range of current densities on one panel. Reveals brightness, coverage, burning, and low-current-density performance in a single 5-minute test &mdash; the fastest diagnostic in the shop.</p>
+        </div>
+        <div class="glass info-card">
+          <div class="icon">&#9879;</div>
+          <h5>pH Measurement</h5>
+          <p>Calibrate with two buffers daily (pH 4 &amp; 7 or 7 &amp; 10 depending on bath). Store electrode in KCl solution, never DI water. Replace junction every 6&ndash;12 months. Rinse probe between samples to prevent cross-contamination.</p>
+        </div>
+        <div class="glass info-card">
+          <div class="icon">&#9878;</div>
+          <h5>Specific Gravity / Baum&eacute;</h5>
+          <p>Quick check on total dissolved solids. Use a hydrometer or digital density meter. Chrome baths: SG correlates directly to CrO&#8323; concentration. Temperature-correct all readings to 20&thinsp;&deg;C for accuracy.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- DO vs DON'T -->
+    <div class="compare-grid">
+      <div class="compare-card glass do">
+        <h4>Best Practices <span class="tag good">Do</span></h4>
+        <ul>
+          <li>Use clean, rinsed glassware for every sample &mdash; residue skews results</li>
+          <li>Pipette exact volumes; never estimate or pour freehand</li>
+          <li>Run duplicate titrations and average the results</li>
+          <li>Replace indicators on schedule &mdash; they degrade with age and light exposure</li>
+          <li>Record results immediately in the bath log with date, time, and initials</li>
+        </ul>
+      </div>
+      <div class="compare-card glass dont">
+        <h4>Common Errors <span class="tag bad">Avoid</span></h4>
+        <ul>
+          <li>Sampling from the surface (floating oil skews results) &mdash; sample mid-depth</li>
+          <li>Using expired indicators that no longer change color sharply</li>
+          <li>Wrong pipette volume (10 mL vs. 5 mL changes the math by 2&times;)</li>
+          <li>Contaminating the sample flask with previous bath chemistry</li>
+          <li>Skipping the blank titration that corrects for reagent-grade errors</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- KEY INSIGHT -->
+    <div class="insight-card glass">
+      <div class="insight-label">Why the Hull Cell Is the Plater&rsquo;s Most Valuable Tool</div>
+      <div class="insight-text">The Hull cell shows the entire current density range on one panel &mdash; from high-current-density burning at the near edge to low-current-density skip plating at the far edge. In a single 5-minute, 267 mL test you can evaluate brightness, leveling, coverage, pitting, and additive balance simultaneously. No other analytical tool gives this breadth of information this fast. When production parts start rejecting, the first thing a veteran plater reaches for is the Hull cell &mdash; it tells you whether the problem is chemistry, current, or contamination.</div>
+    </div>
+
+    <!-- TROUBLESHOOTING -->
+    <div>
+      <h3 class="section-title">Analysis-Related Problems <span class="sub">When chemistry drifts</span></h3>
+      <div class="trouble-grid">
+        <div class="trouble-card glass">
+          <h5>Drifting pH Kills Brightener</h5>
+          <p>In acid zinc and nickel baths, even 0.3 pH units of drift degrades brightener performance. Low pH accelerates brightener consumption; high pH causes hazy deposits. Check pH every shift and adjust incrementally.</p>
+        </div>
+        <div class="trouble-card glass">
+          <h5>Sulfate Buildup in Chrome</h5>
+          <p>Excess sulfate (low CrO&#8323;:SO&#8324; ratio) causes poor coverage and rough deposits. Sources: drag-in from acid dips, sulfate-containing anodes. Correct with barium carbonate precipitation &mdash; add slowly, allow settling.</p>
+        </div>
+        <div class="trouble-card glass">
+          <h5>Organic Contamination in Nickel</h5>
+          <p>Breakdown products from brighteners, drag-in oils, and rack coatings accumulate as organics. Symptoms: pitting, hazy deposits, poor ductility. Treat with activated carbon, then peroxide, then re-add brightener to target.</p>
+        </div>
+        <div class="trouble-card glass">
+          <h5>Stabilizer Depletion in EN</h5>
+          <p>Electroless nickel baths rely on trace stabilizers (Pb, thiourea, or proprietary) to prevent spontaneous plate-out. Depletion causes uncontrolled decomposition &mdash; metallic nickel precipitates throughout the tank. Monitor with lead strip or PdCl&#8322; test before every load.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SAFETY -->
+    <div class="safety-card">
+      <div class="safety-head">&#9888; Safety &mdash; Chemical Handling During Analysis</div>
+      <div class="safety-body"><strong>Never mouth-pipette</strong> &mdash; always use a pipette bulb or mechanical pipettor, especially with acids and chromium solutions. <strong>Concentrated acids</strong> (H&#8322;SO&#8324;, HCl, HNO&#8323;) must be handled in a fume hood; add acid to water, never the reverse. <strong>Indicator chemicals</strong> (murexide, EBT, PAN) may stain skin and clothing but are low toxicity &mdash; wear nitrile gloves. <strong>Waste disposal:</strong> collect all titration waste by bath type, never pour chrome or nickel waste down the drain. Follow your facility&rsquo;s waste treatment protocol and applicable RCRA / local discharge limits.</div>
+    </div>
+
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer poster-footer">
+    <p class="footer-disclaimer">Technical reference only. Verify all parameters against your chemistry supplier&rsquo;s TDS, customer specifications, and applicable regulatory requirements before production use.</p>
+    <p class="footer-title">Poster 10 &mdash; Bath Analysis &amp; Titration Fundamentals &mdash; General Knowledge Series</p>
+    <span class="footer-brand">Plating Posters Inc &middot; Surface Finishing Reference Series &middot; GK-10-T / v1.0 / 2026</span>
+  </footer>
+
+</div>
+</div>
+</div>
+
+<script>
+const posterWrap=document.getElementById('posterWrap');
+const poster=document.getElementById('poster');
+function scalePoster(){const sW=(window.innerWidth-24)/1200;const sH=(window.innerHeight-24)/1800;const s=Math.min(sW,sH);posterWrap.style.transform='scale('+s+')';posterWrap.style.transformOrigin='top center';posterWrap.style.width='1200px';posterWrap.style.height=(1800*s)+'px';}
+scalePoster();window.addEventListener('resize',scalePoster);
+</script>
+</body>
+</html>

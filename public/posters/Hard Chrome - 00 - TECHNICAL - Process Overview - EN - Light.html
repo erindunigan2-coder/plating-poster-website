@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hard Chrome &mdash; Process Overview &mdash; Technical | Plating Posters Inc</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Barlow:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#1A1F2E;--navy:#0D1020;--text:#F0EDE8;--muted:rgba(240,237,232,.62);--faint:rgba(240,237,232,.38);--amber:#E8A020;--teal:#2EC4B6;--emerald:#27AE60;--coral:#E05C5C;--slate:#3A4055;--callout:#1E2435;--altrow:#252B3D;--glass-bg:rgba(30,36,53,.55);--glass-border:rgba(255,255,255,.12);--glass-shadow:inset 0 1px 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(0,0,0,.2),0 4px 12px rgba(0,0,0,.25);}
+.poster[data-edition="light"]{--bg:#F5F4F0;--navy:#DDD8CE;--text:#1B2030;--muted:rgba(27,32,48,.66);--faint:rgba(27,32,48,.42);--amber:#B8770D;--teal:#1A8C82;--emerald:#1E8449;--coral:#B7322F;--slate:#C5C0B5;--callout:#ECEAE1;--altrow:#E4E1D6;--glass-bg:rgba(255,253,247,.66);--glass-border:rgba(27,32,48,.10);--glass-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 4px 12px rgba(27,32,48,.08);}
+html,body{margin:0;padding:0;background:#0a0c14;}
+.stage{width:100vw;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;overflow:visible;padding:12px 0;box-sizing:border-box;}
+.poster-wrap{transform-origin:center center;}
+.poster{width:1200px;height:1800px;position:relative;overflow:hidden;background:radial-gradient(1200px 800px at 15% 8%,rgba(46,196,182,.14),transparent 60%),radial-gradient(1000px 700px at 90% 25%,rgba(232,160,32,.12),transparent 55%),radial-gradient(900px 900px at 50% 80%,rgba(224,92,92,.10),transparent 60%),var(--bg);font-family:'Inter',sans-serif;color:var(--text);display:flex;flex-direction:column;padding:30px;box-sizing:border-box;}.poster::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:50px 50px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);pointer-events:none;z-index:0;}.poster>*{position:relative;z-index:1;}
+.glass{background-color:var(--glass-bg);background-image:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));border:1px solid var(--glass-border);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);box-shadow:var(--glass-shadow);border-radius:12px;}
+.tack{position:absolute;width:24px;height:24px;border-radius:50%;border:1.5px solid rgba(232,160,32,.28);z-index:2;pointer-events:none;}.tack::before,.tack::after{content:"";position:absolute;background:rgba(232,160,32,.28);}.tack::before{left:50%;top:-3px;bottom:-3px;width:1px;transform:translateX(-50%);}.tack::after{top:50%;left:-3px;right:-3px;height:1px;transform:translateY(-50%);}.tack.tl{top:12px;left:12px;}.tack.tr{top:12px;right:12px;}.tack.bl{bottom:12px;left:12px;}.tack.br{bottom:12px;right:12px;}
+.poster-header{flex-shrink:0;}.poster-body{flex:1;overflow:hidden;display:flex;flex-direction:column;gap:10px;}.poster-footer{flex-shrink:0;margin-top:8px;}
+.header-band{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:8px;}.header-left{flex:1;min-width:0;}.eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--amber);letter-spacing:.16em;text-transform:uppercase;margin-bottom:4px;display:flex;align-items:center;gap:12px;}.eyebrow::before{content:"";display:inline-block;width:30px;height:3px;background:var(--amber);}.headline{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:72px;color:var(--text);line-height:.92;margin:4px 0;letter-spacing:-.01em;text-transform:uppercase;}.headline em{font-style:normal;color:var(--amber);}.subhead{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;color:var(--teal);margin:0 0 3px;letter-spacing:.02em;text-transform:uppercase;}.tagline{font-family:'Inter',sans-serif;font-style:italic;font-size:13px;color:var(--muted);line-height:1.45;max-width:700px;margin:0;}
+.logo-card{flex-shrink:0;padding:12px 10px;display:flex;flex-direction:column;align-items:center;gap:8px;align-self:flex-start;}.logo-tile{width:68px;height:68px;border-radius:12px;background:linear-gradient(135deg,#E8A020,#2EC4B6);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -2px 4px rgba(0,0,0,.15),0 4px 14px rgba(0,0,0,.35);}.logo-tile span{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:26px;color:#1A1F2E;letter-spacing:.02em;line-height:1;}.logo-word{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;letter-spacing:.04em;text-transform:uppercase;line-height:1;text-align:center;white-space:nowrap;}.logo-word .a{color:var(--text);}.logo-word .b{color:var(--amber);}.logo-inc{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.05em;text-transform:lowercase;color:var(--muted);margin-top:-2px;}
+.section-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:24px;letter-spacing:.08em;text-transform:uppercase;color:var(--text);margin:0 0 4px;display:flex;align-items:center;gap:8px;}.section-title::before{content:"";width:6px;height:6px;background:var(--amber);border-radius:50%;}.section-title .sub{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;color:var(--muted);margin-left:auto;font-weight:500;}
+.rule-card{display:flex;align-items:center;gap:20px;padding:10px 18px;background:rgba(232,160,32,.07);}.rule-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:52px;color:var(--amber);line-height:1;letter-spacing:-.02em;}.rule-body{flex:1;}.rule-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:19px;color:var(--amber);letter-spacing:.08em;text-transform:uppercase;}.rule-text{font-family:'Inter',sans-serif;font-size:14px;color:var(--muted);line-height:1.5;margin-top:4px;}
+.data-table{width:100%;border-collapse:collapse;}.data-table th{font-family:'Barlow',sans-serif;font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);padding:4px 6px;text-align:left;background:rgba(13,16,32,.35);border-bottom:1px solid var(--glass-border);}.poster[data-edition="light"] .data-table th{background:rgba(27,32,48,.06);}.data-table td{padding:3px 6px;color:var(--text);line-height:1.4;border-bottom:1px solid rgba(255,255,255,.05);font-family:'Inter',sans-serif;font-size:13px;}.data-table tr:last-child td{border-bottom:none;}.data-table tr:nth-child(even) td{background:rgba(255,255,255,.02);}.poster[data-edition="light"] .data-table tr:nth-child(even) td{background:rgba(27,32,48,.025);}.data-table .mono{font-family:'JetBrains Mono',monospace;font-size:12px;}
+.insight-card{padding:10px 14px;border-left:3px solid var(--teal);background:rgba(46,196,182,.06);border-radius:0 12px 12px 0;}.insight-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;color:var(--teal);letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px;}.insight-text{font-family:'Inter',sans-serif;font-size:13px;color:var(--text);line-height:1.5;}
+.safety-card{padding:12px 16px;background:rgba(224,92,92,.08);border:1px solid rgba(224,92,92,.25);border-radius:12px;}.safety-head{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px;color:var(--coral);letter-spacing:.06em;text-transform:uppercase;margin-bottom:5px;}.safety-body{font-size:13px;color:var(--text);line-height:1.5;}.safety-body strong{font-weight:700;color:var(--coral);}
+.footer{padding:10px 20px;background-color:rgba(13,16,32,.85);background-image:linear-gradient(180deg,rgba(255,255,255,.04),rgba(0,0,0,0));border:1px solid rgba(255,255,255,.10);border-radius:8px;text-align:center;display:flex;flex-direction:column;gap:2px;}.poster[data-edition="light"] .footer{background-color:rgba(221,216,206,.95);border-color:rgba(27,32,48,.10);}.footer-disclaimer{font-family:'Inter',sans-serif;font-size:9px;line-height:1.35;color:var(--faint);margin:0 auto;max-width:900px;}.footer-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:13px;color:var(--text);letter-spacing:.04em;text-transform:uppercase;margin:0;}.footer-brand{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;}
+.tweaks{position:fixed;bottom:16px;right:16px;z-index:100;background:rgba(13,16,32,.92);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:10px 14px;display:flex;flex-direction:column;gap:8px;font-family:'Inter',sans-serif;font-size:12px;color:#F0EDE8;}
+@media print{@page{size:12.5in 18.75in;margin:0;}html,body{background:#1A1F2E !important;-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}*{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}.stage{position:static;padding:0;display:block;overflow:visible;}.poster-wrap{transform:none !important;width:auto !important;height:auto !important;}.poster{box-shadow:none !important;width:1200px !important;height:1800px !important;overflow:hidden !important;}.glass,.insight-card,.safety-card{backdrop-filter:none !important;-webkit-backdrop-filter:none !important;}.tweaks{display:none !important;}}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="poster-wrap" id="posterWrap">
+<div class="poster" id="poster" data-edition="light">
+  <span class="tack tl" aria-hidden="true"></span><span class="tack tr" aria-hidden="true"></span>
+  <span class="tack bl" aria-hidden="true"></span><span class="tack br" aria-hidden="true"></span>
+  <div class="poster-header">
+    <header class="header-band">
+      <div class="header-left">
+        <div class="eyebrow"><span>Plating Posters &nbsp;&middot;&nbsp; Hard Chrome &nbsp;&middot;&nbsp; Overview</span></div>
+        <h1 class="headline">HARD<br><em>CHROME</em></h1>
+        <h2 class="subhead">11 Stages From Raw Part to Precision-Finished Surface</h2>
+        <p class="tagline">Chrome amplifies every cleaning failure and every fixturing shortcut. Follow every stage.</p>
+      </div>
+      <aside class="glass logo-card">
+        <div class="logo-tile"><span>PP</span></div>
+        <div class="logo-word"><span class="a">Plating</span> <span class="b">Posters</span></div>
+        <div class="logo-inc">www.platingposters.com</div>
+      </aside>
+    </header>
+  </div>
+  <div class="poster-body" style="gap:6px;">
+    <div class="glass rule-card">
+      <div class="rule-num">11</div>
+      <div class="rule-body">
+        <div class="rule-label">Process Stages &mdash; Rack &rarr; Clean &rarr; Activate &rarr; Plate &rarr; Rinse &rarr; Bake &rarr; Grind &rarr; Inspect</div>
+        <div class="rule-text">Hard chrome is deposited directly on the base metal &mdash; no copper or nickel undercoat. Every upstream failure becomes an adhesion failure. Hex chrome (Cr(VI)) is a confirmed carcinogen &mdash; full PPE at every station.</div>
+      </div>
+    </div>
+    <div>
+      <h3 class="section-title">Operating Parameters <span class="sub">Stage 00</span></h3>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table">
+          <thead><tr><th>#</th><th>Step</th><th>Temp (&deg;F)</th><th>Time</th></tr></thead>
+          <tbody><tr><td>01</td><td>Rack, Fixture &amp; Mask</td><td>Ambient</td><td>Per job</td></tr>
+<tr><td>02</td><td>Alkaline Soak Clean</td><td>140&ndash;180</td><td>3&ndash;10 min</td></tr>
+<tr><td>03</td><td>Electroclean</td><td>140&ndash;180</td><td>1&ndash;3 min</td></tr>
+<tr><td>04</td><td>Rinse (Counter-Flow)</td><td>Ambient</td><td>30&ndash;60 sec</td></tr>
+<tr><td>05</td><td>Acid Activation (Etch)</td><td>Ambient&ndash;120</td><td>15&ndash;60 sec</td></tr>
+<tr><td>06</td><td>Hard Chrome Plating*</td><td>130&ndash;150</td><td>Per thickness</td></tr>
+<tr><td>07</td><td>Etch-Strike &amp; Ramp-Up*</td><td>130&ndash;150</td><td>3&ndash;7 min</td></tr>
+<tr><td>08</td><td>Post-Plate Rinse &amp; Recovery</td><td>Ambient</td><td>30&ndash;60 sec</td></tr>
+<tr><td>09</td><td>H-Embrittlement Bake</td><td>375 &plusmn; 25</td><td>3&ndash;24 hr</td></tr>
+<tr><td>10</td><td>Grind / Hone / Lap</td><td>N/A</td><td>Per print</td></tr>
+<tr><td>11</td><td>QC Inspection</td><td>N/A</td><td>Per spec</td></tr>
+</tbody>
+        </table>
+        <div style="font-family:'Inter',sans-serif;font-size:10px;color:var(--muted);margin-top:4px;padding:0 8px;">*Note: Etch-strike (Stage 07) is performed first as the initial phase of the chrome plating cycle, before sustained plating (Stage 06) at full current.</div>
+      </div>
+    </div>
+<div class="glass" style="padding:10px 14px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1140 150" width="1140" height="150" style="display:block;"><style>text{font-family:Inter,sans-serif;fill:var(--text);}.axis-label{font-size:10px;fill:var(--muted);}.stage-label{font-size:9px;fill:var(--muted);text-anchor:middle;}.temp-dot{fill:var(--amber);}.time-bar{fill:var(--teal);opacity:.5;}</style><rect x="80" y="10" width="990" height="145" rx="4" fill="none" stroke="var(--glass-border)" stroke-dasharray="3,3" /><!-- Cr(VI) Exposure Zone band across stages 05-08 --><rect x="440" y="10" width="360" height="145" rx="0" fill="var(--coral)" opacity=".06" /><text x="620" y="22" font-size="9" fill="var(--coral)" text-anchor="middle" opacity=".7">Cr(VI) Exposure Zone</text><!-- Y-axis left: Temperature --><text x="12" y="85" class="axis-label" transform="rotate(-90,12,85)" text-anchor="middle" font-size="11" fill="var(--amber)">Temp (&deg;F)</text><text x="72" y="25" class="axis-label" text-anchor="end" font-size="9">400</text><text x="72" y="58" class="axis-label" text-anchor="end" font-size="9">300</text><text x="72" y="91" class="axis-label" text-anchor="end" font-size="9">200</text><text x="72" y="124" class="axis-label" text-anchor="end" font-size="9">100</text><text x="72" y="153" class="axis-label" text-anchor="end" font-size="9">0</text><line x1="78" y1="20" x2="78" y2="155" stroke="var(--glass-border)" stroke-width="1" /><!-- Y-axis right: Time --><text x="1128" y="85" class="axis-label" transform="rotate(90,1128,85)" text-anchor="middle" font-size="11" fill="var(--teal)">Time</text><text x="1078" y="153" class="axis-label" font-size="9">sec</text><text x="1078" y="124" class="axis-label" font-size="9">min</text><text x="1078" y="91" class="axis-label" font-size="9">hr</text><line x1="1072" y1="20" x2="1072" y2="155" stroke="var(--glass-border)" stroke-width="1" /><!-- X-axis --><line x1="78" y1="155" x2="1072" y2="155" stroke="var(--glass-border)" stroke-width="1" /><!-- Stage positions: 11 stages evenly spaced from x=125 to x=1025, spacing=90 --><!-- Time bars (log scale: sec~150, min~120, hr~55) --><rect x="113" y="120" width="24" height="35" rx="3" class="time-bar" /><rect x="203" y="95" width="24" height="60" rx="3" class="time-bar" /><rect x="293" y="110" width="24" height="45" rx="3" class="time-bar" /><rect x="383" y="130" width="24" height="25" rx="3" class="time-bar" /><rect x="473" y="130" width="24" height="25" rx="3" class="time-bar" /><rect x="563" y="55" width="24" height="100" rx="3" class="time-bar" /><rect x="653" y="110" width="24" height="45" rx="3" class="time-bar" /><rect x="743" y="130" width="24" height="25" rx="3" class="time-bar" /><rect x="833" y="30" width="24" height="125" rx="3" class="time-bar" /><rect x="923" y="85" width="24" height="70" rx="3" class="time-bar" /><rect x="1013" y="95" width="24" height="60" rx="3" class="time-bar" /><!-- Temperature line (connected dots) --><!-- Stage temps: 01=amb(70), 02=160, 03=160, 04=amb(70), 05=90, 06=140, 07=140, 08=amb(70), 09=375, 10=NA(70), 11=NA(70) --><!-- Y scale: 400=20, 0=155, so y = 155 - (temp/400)*135 --><polyline points="125,131 215,101 305,101 395,131 485,124 575,107 665,107 755,131 845,28 935,131 1025,131" fill="none" stroke="var(--amber)" stroke-width="2" /><circle cx="125" cy="131" r="4" class="temp-dot" /><circle cx="215" cy="101" r="4" class="temp-dot" /><circle cx="305" cy="101" r="4" class="temp-dot" /><circle cx="395" cy="131" r="4" class="temp-dot" /><circle cx="485" cy="124" r="4" class="temp-dot" /><circle cx="575" cy="107" r="4" class="temp-dot" /><circle cx="665" cy="107" r="4" class="temp-dot" /><circle cx="755" cy="131" r="4" class="temp-dot" /><circle cx="845" cy="28" r="5" class="temp-dot" /><circle cx="935" cy="131" r="4" class="temp-dot" /><circle cx="1025" cy="131" r="4" class="temp-dot" /><!-- Stage labels --><text x="125" y="175" class="stage-label">01</text><text x="215" y="175" class="stage-label">02</text><text x="305" y="175" class="stage-label">03</text><text x="395" y="175" class="stage-label">04</text><text x="485" y="175" class="stage-label">05</text><text x="575" y="175" class="stage-label">06</text><text x="665" y="175" class="stage-label">07</text><text x="755" y="175" class="stage-label">08</text><text x="845" y="175" class="stage-label">09</text><text x="935" y="175" class="stage-label">10</text><text x="1025" y="175" class="stage-label">11</text><text x="125" y="190" class="stage-label" font-size="7">Rack</text><text x="215" y="190" class="stage-label" font-size="7">Soak</text><text x="305" y="190" class="stage-label" font-size="7">E-Clean</text><text x="395" y="190" class="stage-label" font-size="7">Rinse</text><text x="485" y="190" class="stage-label" font-size="7">Acid</text><text x="575" y="190" class="stage-label" font-size="7">Chrome</text><text x="665" y="190" class="stage-label" font-size="7">Etch</text><text x="755" y="190" class="stage-label" font-size="7">Rinse</text><text x="845" y="190" class="stage-label" font-size="7" fill="var(--coral)">Bake</text><text x="935" y="190" class="stage-label" font-size="7">Grind</text><text x="1025" y="190" class="stage-label" font-size="7" fill="var(--emerald)">QC</text></svg></div>
+    <div>
+      <h3 class="section-title">Best Practices <span class="sub">Critical Guidelines</span></h3>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+        <div class="glass" style="padding:10px 14px;">
+          <h4 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;margin:0 0 6px;color:var(--emerald);text-transform:uppercase;">&#10003; Do</h4>
+          <ul style="list-style:none;padding:0;margin:0;"><li>Follow all 11 stages in order, every load</li><li>Full Cr(VI) PPE at every chrome-adjacent station</li><li>Water-break test after cleaning &mdash; mandatory</li><li>Record plate-to-oven time for every bake</li></ul>
+        </div>
+        <div class="glass" style="padding:10px 14px;">
+          <h4 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;margin:0 0 6px;color:var(--coral);text-transform:uppercase;">&#10007; Don&rsquo;t</h4>
+          <ul style="list-style:none;padding:0;margin:0;"><li>Skip the etch-strike &mdash; adhesion depends on it</li><li>Let parts dry between activation and chrome</li><li>Delay bake &mdash; HE risk increases every minute</li><li>Dry-grind chrome &mdash; Cr(VI) dust is carcinogenic</li></ul>
+        </div>
+      </div>
+    </div>
+    <div class="insight-card">
+      <div class="insight-label">Process Context</div>
+      <div class="insight-text">Hard chrome cathode efficiency is only 10&ndash;20%, meaning 80&ndash;90% of applied current generates hydrogen gas. This low efficiency is why hydrogen embrittlement management is non-negotiable, and why plating time calculations must account for this ratio. At 2 ASI and ~15% efficiency, expect approximately 0.001 in/hr deposition rate.</div>
+    </div>
+    <div>
+      <h3 class="section-title">Common Failure Modes <span class="sub">Diagnostics</span></h3>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table">
+          <thead><tr><th>Defect</th><th>Root Cause</th><th>Stage</th><th>Corrective Action</th></tr></thead>
+          <tbody><tr><td>Peeling / flaking</td><td>Organic residue or passive oxide</td><td>02 &amp; 05</td><td>Water-break test; increase etch time</td></tr>
+<tr><td>Milky / dull deposit</td><td>Low bath temp or trivalent Cr buildup</td><td>06</td><td>Check heater; carbon-treat bath</td></tr>
+<tr><td>Edge burning</td><td>Excessive current density</td><td>01 &amp; 06</td><td>Add shields; reduce amperage</td></tr>
+<tr><td>Pitting</td><td>Fume suppressant depletion or gas entrapment</td><td>06</td><td>Replenish suppressant; check agitation</td></tr>
+<tr><td>Hydrogen embrittlement</td><td>Delayed or insufficient bake</td><td>09</td><td>Bake within 1 hr; verify time at temp</td></tr>
+<tr><td>Rough / nodular deposit</td><td>Particulates or anode sludge</td><td>06</td><td>Filter; inspect anode bags</td></tr>
+</tbody>
+        </table>
+      </div>
+    </div>
+    <div class="glass" style="padding:10px 14px;">
+      <h3 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;color:var(--amber);letter-spacing:.06em;text-transform:uppercase;margin:0 0 6px;">Key Specifications Reference</h3>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;font-family:'Inter',sans-serif;font-size:12px;color:var(--text);line-height:1.5;">
+        <div><strong style="color:var(--amber);">Bath Chemistry</strong><br>CrO&#8323; 250&ndash;400 g/L<br>Ratio CrO&#8323;:SO&#8324; = 100:1<br>Mixed catalyst per TDS</div>
+        <div><strong style="color:var(--amber);">Deposit Properties</strong><br>Hardness 62&ndash;70 HRC<br>Thickness 0.001&ndash;0.020 in typical<br>Coefficient of friction 0.12&ndash;0.16</div>
+        <div><strong style="color:var(--amber);">Applicable Standards</strong><br>AMS 2406 / QQ-C-320<br>ASTM B177 (thickness)<br>ASTM B850 (bake)</div>
+      </div>
+    </div>
+    <div class="safety-card">
+      <div class="safety-head">&#9888; Safety &mdash; Todas las Etapas</div>
+      <div class="safety-body"><strong>Hexavalent chromium (Cr(VI))</strong> &mdash; confirmed human carcinogen (IARC Group 1). OSHA PEL 5 &micro;g/m&sup3;. Full PPE required: chemical-resistant gloves (neoprene/butyl), splash goggles or face shield, chemical-resistant apron, rubber boots. Chrome mist controlled by push-pull ventilation and fume suppressants. <strong>Acid burns</strong> (Stage 5) &mdash; flush 20 min. <strong>Hot alkaline</strong> (Stages 2-3) &mdash; chemical burns. <strong>H-embrittlement</strong> &mdash; bake &gt;40 HRC parts per ASTM B850 / AMS 2759/9. Emergency shower and eyewash within 10 seconds of every station.</div>
+    </div>
+  </div>
+  <footer class="footer poster-footer">
+    <p class="footer-disclaimer">Technical reference only. Verify all parameters against your chemistry supplier&rsquo;s TDS, customer specifications, and applicable regulatory requirements before production use.</p>
+    <p class="footer-title">Process Overview &mdash; Hard Chrome Plating Series</p>
+    <span class="footer-brand">Plating Posters &middot; Metal Finishing Reference Series &middot; PP-HC-00-T / v1.0 / 2026</span>
+  </footer>
+</div>
+</div>
+</div>
+<div class="tweaks">
+  <div style="display:flex;gap:8px;align-items:center;">
+    <span style="color:rgba(240,237,232,.5);font-size:11px;letter-spacing:.06em;text-transform:uppercase;">Edition</span>
+    <button id="btnDark" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:#E8A020;color:#1A1F2E;border:1px solid #E8A020;" onclick="setEdition('')">Dark</button>
+    <button id="btnLight" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);" onclick="setEdition('light')">Light</button>
+  </div>
+  <button onclick="window.print()" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);">Print / PDF</button>
+</div>
+<script>
+const posterWrap=document.getElementById('posterWrap');const poster=document.getElementById('poster');function scalePoster(){const sW=(window.innerWidth-24)/1200;const sH=(window.innerHeight-24)/1800;const s=Math.min(sW,sH);posterWrap.style.transform='scale('+s+')';posterWrap.style.transformOrigin='top center';posterWrap.style.width='1200px';posterWrap.style.height=(1800*s)+'px';}function setEdition(e){if(e)poster.dataset.edition=e;else delete poster.dataset.edition;document.getElementById('btnDark').style.background=e?'transparent':'#E8A020';document.getElementById('btnDark').style.color=e?'#F0EDE8':'#1A1F2E';document.getElementById('btnDark').style.borderColor=e?'rgba(255,255,255,.2)':'#E8A020';document.getElementById('btnLight').style.background=e?'#E8A020':'transparent';document.getElementById('btnLight').style.color=e?'#1A1F2E':'#F0EDE8';document.getElementById('btnLight').style.borderColor=e?'#E8A020':'rgba(255,255,255,.2)';}scalePoster();window.addEventListener('resize',scalePoster);
+</script>
+</body>
+</html>

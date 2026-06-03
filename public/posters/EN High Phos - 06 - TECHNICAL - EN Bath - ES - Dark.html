@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EN High Phos &mdash; Ba&ntilde;o EN &mdash; Technical | Plating Posters Inc</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Barlow:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#1A1F2E;--navy:#0D1020;--text:#F0EDE8;--muted:rgba(240,237,232,.62);
+  --faint:rgba(240,237,232,.38);
+  --amber:#E8A020;--teal:#2EC4B6;--emerald:#27AE60;--coral:#E05C5C;
+  --slate:#3A4055;--callout:#1E2435;--altrow:#252B3D;
+  --glass-bg:rgba(30,36,53,.55);--glass-border:rgba(255,255,255,.12);
+  --glass-shadow:inset 0 1px 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(0,0,0,.2),0 4px 12px rgba(0,0,0,.25);
+}
+.poster[data-edition="light"]{
+  --bg:#F5F4F0;--navy:#DDD8CE;--text:#1B2030;--muted:rgba(27,32,48,.66);
+  --faint:rgba(27,32,48,.42);
+  --amber:#B8770D;--teal:#1A8C82;--emerald:#1E8449;--coral:#B7322F;
+  --slate:#C5C0B5;--callout:#ECEAE1;--altrow:#E4E1D6;
+  --glass-bg:rgba(255,253,247,.66);--glass-border:rgba(27,32,48,.10);
+  --glass-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 4px 12px rgba(27,32,48,.08);
+}
+html,body{margin:0;padding:0;background:#0a0c14;}
+.stage{width:100vw;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;overflow:visible;padding:12px 0;box-sizing:border-box;}
+.poster-wrap{transform-origin:center center;}
+.poster{width:1200px;height:1800px;position:relative;overflow:hidden;background:radial-gradient(1200px 800px at 15% 8%,rgba(46,196,182,.14),transparent 60%),radial-gradient(1000px 700px at 90% 25%,rgba(232,160,32,.12),transparent 55%),radial-gradient(900px 900px at 50% 80%,rgba(224,92,92,.10),transparent 60%),var(--bg);font-family:'Inter',sans-serif;color:var(--text);display:flex;flex-direction:column;padding:32px;box-sizing:border-box;}
+.poster::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:50px 50px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);pointer-events:none;z-index:0;}
+.poster>*{position:relative;z-index:1;}
+.glass{background-color:var(--glass-bg);background-image:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));border:1px solid var(--glass-border);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);box-shadow:var(--glass-shadow);border-radius:12px;}
+.tack{position:absolute;width:24px;height:24px;border-radius:50%;border:1.5px solid rgba(232,160,32,.28);z-index:2;pointer-events:none;}.tack::before,.tack::after{content:"";position:absolute;background:rgba(232,160,32,.28);}.tack::before{left:50%;top:-3px;bottom:-3px;width:1px;transform:translateX(-50%);}.tack::after{top:50%;left:-3px;right:-3px;height:1px;transform:translateY(-50%);}.tack.tl{top:12px;left:12px;}.tack.tr{top:12px;right:12px;}.tack.bl{bottom:12px;left:12px;}.tack.br{bottom:12px;right:12px;}
+.poster-header{flex-shrink:0;}.poster-body{flex:1;min-height:0;overflow:hidden;display:flex;flex-direction:column;gap:5px;justify-content:space-between;}.poster-footer{flex-shrink:0;margin-top:8px;}
+.header-band{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:8px;}.header-left{flex:1;min-width:0;}.eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--amber);letter-spacing:.16em;text-transform:uppercase;margin-bottom:4px;display:flex;align-items:center;gap:12px;}.eyebrow::before{content:"";display:inline-block;width:30px;height:3px;background:var(--amber);}.headline{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:72px;color:var(--text);line-height:.92;margin:4px 0;letter-spacing:-.01em;text-transform:uppercase;}.headline em{font-style:normal;color:var(--amber);}.subhead{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;color:var(--teal);margin:0 0 3px;letter-spacing:.02em;text-transform:uppercase;}.tagline{font-family:'Inter',sans-serif;font-style:italic;font-size:13px;color:var(--muted);line-height:1.45;max-width:700px;margin:0;}
+.logo-card{flex-shrink:0;padding:12px 10px;display:flex;flex-direction:column;align-items:center;gap:8px;align-self:flex-start;}.logo-tile{width:68px;height:68px;border-radius:12px;background:linear-gradient(135deg,#E8A020,#2EC4B6);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -2px 4px rgba(0,0,0,.15),0 4px 14px rgba(0,0,0,.35);}.logo-tile span{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:26px;color:#1A1F2E;letter-spacing:.02em;line-height:1;}.logo-word{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;letter-spacing:.04em;text-transform:uppercase;line-height:1;text-align:center;white-space:nowrap;}.logo-word .a{color:var(--text);}.logo-word .b{color:var(--amber);}.logo-inc{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.05em;text-transform:lowercase;color:var(--muted);margin-top:-2px;}
+.section-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:28px;letter-spacing:.08em;text-transform:uppercase;color:var(--text);margin:0 0 6px;display:flex;align-items:center;gap:8px;}.section-title::before{content:"";width:6px;height:6px;background:var(--amber);border-radius:50%;}.section-title .sub{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;color:var(--muted);margin-left:auto;font-weight:500;}
+.rule-card{display:flex;align-items:center;gap:16px;padding:14px 24px;background:rgba(232,160,32,.07);}.rule-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:68px;color:var(--amber);line-height:1;letter-spacing:-.02em;}.rule-body{flex:1;}.rule-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:19px;color:var(--amber);letter-spacing:.08em;text-transform:uppercase;}.rule-text{font-family:'Inter',sans-serif;font-size:13px;color:var(--muted);line-height:1.45;margin-top:3px;}
+.data-table{width:100%;border-collapse:collapse;}.data-table th{font-family:'Barlow',sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);padding:8px 12px;text-align:left;background:rgba(13,16,32,.35);border-bottom:1px solid var(--glass-border);}.poster[data-edition="light"] .data-table th{background:rgba(27,32,48,.06);}.data-table td{padding:8px 12px;color:var(--text);line-height:1.5;border-bottom:1px solid rgba(255,255,255,.05);font-family:'Inter',sans-serif;font-size:14px;}.data-table tr:last-child td{border-bottom:none;}.data-table tr:nth-child(even) td{background:rgba(255,255,255,.02);}.poster[data-edition="light"] .data-table tr:nth-child(even) td{background:rgba(27,32,48,.025);}.data-table .mono{font-family:'JetBrains Mono',monospace;font-size:13px;}.data-table.compact th{font-size:12px;padding:7px 10px;}.data-table.compact td{padding:6px 10px;font-size:13px;line-height:1.45;}.data-table.compact .mono{font-size:12.5px;}.data-table.bath th{font-size:12px;padding:6px 8px;}.data-table.bath td{padding:5px 8px;font-size:13px;line-height:1.4;}.data-table.bath .mono{font-size:12px;}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}.compare-card{padding:18px 24px;}.compare-card h4{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:21px;color:var(--text);margin:0 0 8px;text-transform:uppercase;letter-spacing:.04em;}.compare-card h4 .tag{font-size:12px;padding:2px 8px;border-radius:4px;margin-left:8px;font-family:'JetBrains Mono',monospace;font-weight:500;letter-spacing:.06em;}.compare-card h4 .tag.good{background:rgba(39,174,96,.15);color:var(--emerald);}.compare-card h4 .tag.bad{background:rgba(224,92,92,.15);color:var(--coral);}.compare-card ul{list-style:none;padding:0;margin:0;}.compare-card li{font-size:13.5px;line-height:1.5;padding:2px 0;display:flex;gap:8px;align-items:flex-start;}.compare-card li::before{content:"";width:5px;height:5px;border-radius:50%;margin-top:7px;flex-shrink:0;}.compare-card.do li::before{background:var(--emerald);}.compare-card.dont li::before{background:var(--coral);}
+.bottom-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:10px;}
+.insight-card{padding:12px 18px;border-left:3px solid var(--teal);background:rgba(46,196,182,.06);border-radius:0 12px 12px 0;}.insight-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;color:var(--teal);letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px;}.insight-text{font-family:'Inter',sans-serif;font-size:13px;color:var(--text);line-height:1.45;}
+.safety-card{padding:12px 18px;background:rgba(224,92,92,.08);border:1px solid rgba(224,92,92,.25);border-radius:12px;}.safety-head{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px;color:var(--coral);letter-spacing:.06em;text-transform:uppercase;margin-bottom:5px;}.safety-body{font-size:13px;color:var(--text);line-height:1.45;}.safety-body strong{font-weight:700;color:var(--coral);}
+.process-flow{display:flex;align-items:center;justify-content:space-between;padding:10px 16px;height:80px;gap:4px;}
+.footer{padding:10px 20px;background-color:rgba(13,16,32,.85);background-image:linear-gradient(180deg,rgba(255,255,255,.04),rgba(0,0,0,0));border:1px solid rgba(255,255,255,.10);border-radius:8px;text-align:center;display:flex;flex-direction:column;gap:2px;}.poster[data-edition="light"] .footer{background-color:rgba(221,216,206,.95);border-color:rgba(27,32,48,.10);}.footer-disclaimer{font-family:'Inter',sans-serif;font-size:9px;line-height:1.35;color:var(--faint);margin:0 auto;max-width:900px;}.footer-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:13px;color:var(--text);letter-spacing:.04em;text-transform:uppercase;margin:0;}.footer-brand{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;}
+.tweaks{position:fixed;bottom:16px;right:16px;z-index:100;background:rgba(13,16,32,.92);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:10px 14px;display:flex;flex-direction:column;gap:8px;font-family:'Inter',sans-serif;font-size:12px;color:#F0EDE8;}
+@media print{@page{size:12.5in 18.75in;margin:0;}html,body{background:#1A1F2E !important;-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}*{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}.stage{position:static;padding:0;display:block;overflow:visible;}.poster-wrap{transform:none !important;width:auto !important;height:auto !important;}.poster{box-shadow:none !important;width:1200px !important;height:1800px !important;overflow:hidden !important;}.glass,.insight-card,.safety-card{backdrop-filter:none !important;-webkit-backdrop-filter:none !important;}.tweaks{display:none !important;}}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="poster-wrap" id="posterWrap">
+<div class="poster" id="poster">
+  <span class="tack tl" aria-hidden="true"></span><span class="tack tr" aria-hidden="true"></span>
+  <span class="tack bl" aria-hidden="true"></span><span class="tack br" aria-hidden="true"></span>
+  <div class="poster-header">
+    <header class="header-band">
+      <div class="header-left">
+        <div class="eyebrow"><span>Plating Posters &nbsp;&middot;&nbsp; EN Alto F&oacute;sforo (10&ndash;13% P) &nbsp;&middot;&nbsp; Proceso de 7 Etapas &nbsp;&middot;&nbsp; Ba&ntilde;o EN</span></div>
+        <h1 class="headline">N&Iacute;QUEL<br><em>QU&Iacute;MICO</em></h1>
+        <h2 class="subhead">Alto F&oacute;sforo (10&ndash;13% P) &mdash; M&aacute;xima Resistencia a Corrosi&oacute;n, No Magn&eacute;tico</h2>
+        <p class="tagline">Sin corriente, sin &aacute;nodo &mdash; el ba&ntilde;o deposita por s&iacute; solo. Alto f&oacute;sforo es el campe&oacute;n anticorrosi&oacute;n de la familia EN.</p>
+      </div>
+      <aside class="glass logo-card">
+        <div class="logo-tile"><span>PP</span></div>
+        <div class="logo-word"><span class="a">Plating</span> <span class="b">Posters</span></div>
+        <div class="logo-inc">www.platingposters.com</div>
+      </aside>
+    </header>
+  </div>
+  <div class="poster-body">
+
+    <div class="glass rule-card">
+      <div class="rule-num">85&ndash;91&deg;C</div>
+      <div class="rule-body">
+        <div class="rule-label">Etapa 5 &mdash; El Ba&ntilde;o EN de Alto F&oacute;sforo</div>
+        <div class="rule-text">El coraz&oacute;n del proceso. Los iones de n&iacute;quel son reducidos por hipofosfito de sodio sobre una superficie catal&iacute;tica sin corriente externa. La reacci&oacute;n es autocatal&iacute;tica &mdash; una vez iniciada sobre una superficie limpia, el dep&oacute;sito mismo cataliza m&aacute;s deposici&oacute;n. Temperatura, pH, concentraci&oacute;n de n&iacute;quel y raz&oacute;n de reductor deben mantenerse dentro de ventanas estrechas o el ba&ntilde;o puede perder velocidad, producir defectos o descomponerse catastr&oacute;ficamente.</div>
+      </div>
+    </div>
+
+    <!-- SVG MECANISMO DE REACCI&Oacute;N AUTOCATAL&Iacute;TICA -->
+    <div class="glass" style="padding:10px 14px;">
+      <h3 class="section-title" style="margin-bottom:4px;">Mecanismo de Reacci&oacute;n Autocatal&iacute;tica <span class="sub">simplificado</span></h3>
+      <svg viewBox="0 0 1100 90" width="100%" height="75" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="30" y="10" width="320" height="70" rx="8" fill="rgba(232,160,32,.06)" stroke="var(--amber)" stroke-width="1"/>
+        <text x="190" y="25" text-anchor="middle" fill="var(--amber)" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="11" letter-spacing=".06em">REACTIVOS (EN SOLUCI&Oacute;N)</text>
+        <text x="190" y="45" text-anchor="middle" fill="var(--text)" font-family="JetBrains Mono,monospace" font-size="13" font-weight="500">Ni&sup2;&#8314; + H&#8322;PO&#8322;&macr; + H&#8322;O</text>
+        <text x="190" y="62" text-anchor="middle" fill="var(--muted)" font-family="Inter,sans-serif" font-size="8">Sulfato de n&iacute;quel + hipofosfito de sodio</text>
+        <text x="190" y="73" text-anchor="middle" fill="var(--muted)" font-family="Inter,sans-serif" font-size="8">pH 4.2&ndash;4.8 &bull; 85&ndash;91&deg;C &bull; requiere superficie catal&iacute;tica</text>
+        <line x1="360" y1="45" x2="430" y2="45" stroke="var(--amber)" stroke-width="2"/><polygon points="426,40 435,45 426,50" fill="var(--amber)"/>
+        <text x="395" y="38" text-anchor="middle" fill="var(--amber)" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="10">SUPERFICIE</text>
+        <text x="395" y="58" text-anchor="middle" fill="var(--amber)" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="10">CATAL&Iacute;TICA</text>
+        <rect x="440" y="10" width="350" height="70" rx="8" fill="rgba(46,196,182,.06)" stroke="var(--teal)" stroke-width="1"/>
+        <text x="615" y="25" text-anchor="middle" fill="var(--teal)" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="11" letter-spacing=".06em">PRODUCTOS (DEPOSITADO + GAS)</text>
+        <text x="615" y="45" text-anchor="middle" fill="var(--text)" font-family="JetBrains Mono,monospace" font-size="13" font-weight="500">Ni&deg; + P + H&#8322;&uarr; + H&#8314; + HPO&#8323;&sup2;&macr;</text>
+        <text x="615" y="62" text-anchor="middle" fill="var(--muted)" font-family="Inter,sans-serif" font-size="8">Aleaci&oacute;n Ni-P + gas hidr&oacute;geno + subproducto ortofosfito</text>
+        <text x="615" y="73" text-anchor="middle" fill="var(--muted)" font-family="Inter,sans-serif" font-size="8">10&ndash;13% P co-depositado &bull; 8&ndash;15 &micro;m/hr &bull; pH baja (&aacute;cido generado)</text>
+        <rect x="830" y="10" width="230" height="70" rx="8" fill="rgba(224,92,92,.06)" stroke="var(--coral)" stroke-width="1"/>
+        <text x="945" y="25" text-anchor="middle" fill="var(--coral)" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="11" letter-spacing=".06em">ACUMULACI&Oacute;N DE SUBPRODUCTO</text>
+        <text x="945" y="42" text-anchor="middle" fill="var(--text)" font-family="JetBrains Mono,monospace" font-size="11" font-weight="500">HPO&#8323;&sup2;&macr; se acumula</text>
+        <text x="945" y="57" text-anchor="middle" fill="var(--coral)" font-family="Inter,sans-serif" font-size="8" font-weight="600">Reduce velocidad a alto MTO</text>
+        <text x="945" y="70" text-anchor="middle" fill="var(--muted)" font-family="Inter,sans-serif" font-size="8">Vida del ba&ntilde;o: 5&ndash;7 MTO t&iacute;pico</text>
+      </svg>
+    </div>
+
+    <!-- TABLA PAR&Aacute;METROS OPERATIVOS -->
+    <div>
+      <h3 class="section-title">Par&aacute;metros Operativos <span class="sub">ba&ntilde;o EN alto f&oacute;sforo</span></h3>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table compact">
+          <thead><tr><th>Par&aacute;metro</th><th>Rango</th><th>Objetivo</th><th>Efecto de Desviaci&oacute;n</th></tr></thead>
+          <tbody>
+            <tr><td style="font-weight:600;">Temperatura</td><td class="mono">85&ndash;91&deg;C</td><td class="mono">88&deg;C</td><td>Baja: velocidad lenta. Alta: riesgo de descomposici&oacute;n</td></tr>
+            <tr><td style="font-weight:600;">pH</td><td class="mono">4.2&ndash;4.8</td><td class="mono">4.5</td><td>Bajo: velocidad lenta, alto %P. Alto: velocidad r&aacute;pida, bajo %P, rugosidad</td></tr>
+            <tr><td style="font-weight:600;">N&iacute;quel (Ni&sup2;&#8314;)</td><td class="mono">4.5&ndash;6.5 g/L</td><td class="mono">5.5 g/L</td><td>Bajo: velocidad lenta. Alto: bajo %P, posible descomposici&oacute;n</td></tr>
+            <tr><td style="font-weight:600;">Hipofosfito (reductor)</td><td class="mono">25&ndash;40 g/L</td><td class="mono">30 g/L</td><td>Bajo: sin dep&oacute;sito. Alto: desperdicio, puede desestabilizar</td></tr>
+            <tr><td style="font-weight:600;">Velocidad de Dep&oacute;sito</td><td class="mono">8&ndash;15 &micro;m/hr</td><td class="mono">12 &micro;m/hr</td><td>Velocidad definida por T, pH, Ni, balance estabilizador</td></tr>
+            <tr><td style="font-weight:600;">Carga</td><td class="mono">0.5&ndash;1.5 dm&sup2;/L</td><td class="mono">1.0 dm&sup2;/L</td><td>Baja: exceso estabilizador, lento. Alta: agotamiento, desigualdad</td></tr>
+            <tr><td style="font-weight:600;">Filtraci&oacute;n</td><td class="mono">Continua, 5&ndash;10 &micro;m</td><td class="mono">5 &micro;m</td><td>Pobre filtraci&oacute;n &rarr; dep&oacute;sito rugoso/nodular</td></tr>
+            <tr><td style="font-weight:600;">Vida del Ba&ntilde;o (MTO)</td><td class="mono">5&ndash;7 MTO</td><td class="mono">5 MTO reconstruir</td><td>Acumulaci&oacute;n de ortofosfito reduce velocidad y estrecha ventana</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- TABLA PROPIEDADES DEL DEP&Oacute;SITO -->
+    <div>
+      <h3 class="section-title">Propiedades del Dep&oacute;sito &mdash; Tal como Depositado vs Horneado <span class="sub">alto f&oacute;sforo 10&ndash;13% P</span></h3>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table compact">
+          <thead><tr><th>Propiedad</th><th>Tal como Dep.</th><th>Horneado 190&deg;C/4hr</th><th>Horneado 260&deg;C/1hr</th><th>Horneado 400&deg;C/1hr</th></tr></thead>
+          <tbody>
+            <tr><td style="font-weight:600;">Dureza</td><td class="mono">450&ndash;550 HV</td><td class="mono">500&ndash;600 HV</td><td class="mono">600&ndash;750 HV</td><td class="mono">850&ndash;1000 HV</td></tr>
+            <tr><td style="font-weight:600;">Estructura</td><td>Completamente amorfo</td><td>Amorfo</td><td>En transici&oacute;n</td><td>Cristalino (Ni + Ni&#8323;P)</td></tr>
+            <tr><td style="font-weight:600;">Corrosi&oacute;n (25 &micro;m NSS)</td><td class="mono">&gt;1000 hr</td><td class="mono">&gt;1000 hr</td><td class="mono">500&ndash;800 hr</td><td class="mono">200&ndash;400 hr</td></tr>
+            <tr><td style="font-weight:600;">Magn&eacute;tico</td><td>No magn&eacute;tico</td><td>No magn&eacute;tico</td><td>D&eacute;bilmente magn&eacute;tico</td><td>Magn&eacute;tico</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- SOLUCI&Oacute;N DE PROBLEMAS + MTO -->
+    <div class="bottom-grid">
+      <div>
+        <h3 class="section-title">Soluci&oacute;n de Problemas <span class="sub">problemas comunes del ba&ntilde;o</span></h3>
+        <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+          <table class="data-table compact">
+            <thead><tr><th>S&iacute;ntoma</th><th>Causa Probable</th><th>Acci&oacute;n</th></tr></thead>
+            <tbody>
+              <tr><td style="font-weight:600;">Velocidad baja</td><td>Temp baja; Ni bajo; exceso estabilizador; alto MTO</td><td>Verificar T, Ni, MTO; ajustar estabilizador</td></tr>
+              <tr><td style="font-weight:600;">Picaduras</td><td>Burbujas H&#8322; adheridas; bajo agente humectante</td><td>Agregar humectante; aumentar agitaci&oacute;n</td></tr>
+              <tr><td style="font-weight:600;">Dep&oacute;sito oscuro/opaco</td><td>Contaminaci&oacute;n met&aacute;lica (Cu, Zn, Fe, Pb)</td><td>Dep&oacute;sito dummy a baja corriente; tratar con carb&oacute;n</td></tr>
+              <tr><td style="font-weight:600;">Alto estr&eacute;s interno</td><td>Contaminaci&oacute;n org&aacute;nica; alto MTO; deriva de pH</td><td>Tratar con carb&oacute;n; reconstruir si MTO &gt;6</td></tr>
+              <tr><td style="font-weight:600;">Rugoso/nodular</td><td>Part&iacute;culas en ba&ntilde;o; pobre filtraci&oacute;n</td><td>Reemplazar cartuchos de filtro; verificar 5 &micro;m</td></tr>
+              <tr><td style="font-weight:600;">Descomposici&oacute;n</td><td>Pico de temp &gt;95&deg;C; sin estabilizador; contaminaci&oacute;n</td><td>EVACUE si no se controla. Enfr&iacute;e. NO agregue qu&iacute;micos</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- SVG VIDA DEL BA&Ntilde;O VS CALIDAD -->
+    <div class="glass" style="padding:10px 14px;">
+      <h3 class="section-title" style="margin-bottom:4px;">Vida del Ba&ntilde;o vs Calidad del Dep&oacute;sito <span class="sub">velocidad de deposici&oacute;n y ortofosfito sobre recambios met&aacute;licos</span></h3>
+      <svg viewBox="0 0 1100 130" width="100%" height="110" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Rebuild zone -->
+        <rect x="610" y="10" width="200" height="100" rx="4" fill="rgba(232,160,32,.08)"/>
+        <text x="710" y="22" text-anchor="middle" fill="var(--amber)" font-family="Barlow Condensed,sans-serif" font-weight="700" font-size="9" letter-spacing=".05em">ZONA DE RECONSTRUCCI&Oacute;N</text>
+        <!-- Axes -->
+        <line x1="80" y1="110" x2="930" y2="110" stroke="var(--muted)" stroke-width="1" opacity=".5"/>
+        <line x1="80" y1="10" x2="80" y2="110" stroke="var(--teal)" stroke-width="1" opacity=".6"/>
+        <line x1="930" y1="10" x2="930" y2="110" stroke="var(--coral)" stroke-width="1" opacity=".6"/>
+        <!-- X-axis ticks (MTO 0-8) -->
+        <line x1="80" y1="108" x2="80" y2="112" stroke="var(--muted)" stroke-width="1"/><text x="80" y="122" text-anchor="middle" fill="var(--muted)" font-family="JetBrains Mono,monospace" font-size="8">0</text>
+        <line x1="186" y1="108" x2="186" y2="112" stroke="var(--muted)" stroke-width="1"/><text x="186" y="122" text-anchor="middle" fill="var(--muted)" font-family="JetBrains Mono,monospace" font-size="8">1</text>
+        <line x1="292" y1="108" x2="292" y2="112" stroke="var(--muted)" stroke-width="1"/><text x="292" y="122" text-anchor="middle" fill="var(--muted)" font-family="JetBrains Mono,monospace" font-size="8">2</text>
+        <line x1="398" y1="108" x2="398" y2="112" stroke="var(--muted)" stroke-width="1"/><text x="398" y="122" text-anchor="middle" fill="var(--muted)" font-family="JetBrains Mono,monospace" font-size="8">3</text>
+        <line x1="504" y1="108" x2="504" y2="112" stroke="var(--muted)" stroke-width="1"/><text x="504" y="122" text-anchor="middle" fill="var(--muted)" font-family="JetBrains Mono,monospace" font-size="8">4</text>
+        <line x1="610" y1="108" x2="610" y2="112" stroke="var(--muted)" stroke-width="1"/><text x="610" y="122" text-anchor="middle" fill="var(--muted)" font-family="JetBrains Mono,monospace" font-size="8">5</text>
+        <line x1="716" y1="108" x2="716" y2="112" stroke="var(--muted)" stroke-width="1"/><text x="716" y="122" text-anchor="middle" fill="var(--muted)" font-family="JetBrains Mono,monospace" font-size="8">6</text>
+        <line x1="822" y1="108" x2="822" y2="112" stroke="var(--muted)" stroke-width="1"/><text x="822" y="122" text-anchor="middle" fill="var(--muted)" font-family="JetBrains Mono,monospace" font-size="8">7</text>
+        <line x1="930" y1="108" x2="930" y2="112" stroke="var(--muted)" stroke-width="1"/><text x="930" y="122" text-anchor="middle" fill="var(--muted)" font-family="JetBrains Mono,monospace" font-size="8">8</text>
+        <!-- X-axis label -->
+        <text x="505" y="130" text-anchor="middle" fill="var(--muted)" font-family="Inter,sans-serif" font-size="8" font-weight="600">Recambios Met&aacute;licos (MTO)</text>
+        <!-- Left Y-axis label (teal) -->
+        <text x="35" y="60" text-anchor="middle" fill="var(--teal)" font-family="Inter,sans-serif" font-size="7" font-weight="600" transform="rotate(-90,35,60)">Vel. Deposici&oacute;n (&mu;m/hr)</text>
+        <!-- Right Y-axis label (coral) -->
+        <text x="975" y="60" text-anchor="middle" fill="var(--coral)" font-family="Inter,sans-serif" font-size="7" font-weight="600" transform="rotate(90,975,60)">Ortofosfito (g/L)</text>
+        <!-- Plating rate curve (teal) -->
+        <polyline points="80,18 186,22 292,28 398,38 504,50 610,62 716,78 822,90 930,100" stroke="var(--teal)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- Orthophosphite curve (coral) -->
+        <polyline points="80,105 186,100 292,92 398,82 504,68 610,52 716,38 822,25 930,15" stroke="var(--coral)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- Data dots -->
+        <circle cx="80" cy="18" r="3" fill="var(--teal)"/><circle cx="930" cy="100" r="3" fill="var(--teal)"/>
+        <circle cx="80" cy="105" r="3" fill="var(--coral)"/><circle cx="930" cy="15" r="3" fill="var(--coral)"/>
+        <!-- Vertical dashed line at MTO 7 -->
+        <line x1="822" y1="10" x2="822" y2="108" stroke="var(--coral)" stroke-width="1.5" stroke-dasharray="5,3"/>
+        <text x="822" y="8" text-anchor="middle" fill="var(--coral)" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="8" letter-spacing=".05em">VIDA M&Aacute;X. DEL BA&Ntilde;O</text>
+        <!-- Legend -->
+        <rect x="170" y="12" width="250" height="14" rx="3" fill="rgba(0,0,0,.03)"/>
+        <line x1="180" y1="19" x2="198" y2="19" stroke="var(--teal)" stroke-width="2"/><text x="202" y="22" fill="var(--teal)" font-family="Inter,sans-serif" font-size="7" font-weight="600">Vel. Deposici&oacute;n (&mu;m/hr)</text>
+        <line x1="310" y1="19" x2="328" y2="19" stroke="var(--coral)" stroke-width="2"/><text x="332" y="22" fill="var(--coral)" font-family="Inter,sans-serif" font-size="7" font-weight="600">Ortofosfito (g/L)</text>
+      </svg>
+    </div>
+
+    <div>
+        <div class="insight-card" style="margin-bottom:8px;">
+          <div class="insight-label">MTO y Vida del Ba&ntilde;o</div>
+          <div class="insight-text">Cada recambio met&aacute;lico (MTO) = 100% del n&iacute;quel original ha sido depositado y repuesto. Ba&ntilde;os de alto f&oacute;sforo t&iacute;picamente alcanzan <strong>5&ndash;7 MTO</strong> antes de que la acumulaci&oacute;n de ortofosfito (HPO&#8323;&sup2;&macr;) reduzca la velocidad y estreche la ventana operativa. Rastree v&iacute;a consumo acumulado de n&iacute;quel (kg Ni repuesto).</div>
+        </div>
+        <div class="insight-card">
+          <div class="insight-label">La Cascada de Descomposici&oacute;n</div>
+          <div class="insight-text">La descomposici&oacute;n del ba&ntilde;o EN es una reacci&oacute;n exot&eacute;rmica desbocada. Se&ntilde;ales de alerta: aumento s&uacute;bito de temperatura, evoluci&oacute;n de gas (H&#8322; + PH&#8323;), turbidez, part&iacute;culas negras. Si un ba&ntilde;o comienza a descomponerse: <strong>EVACUE</strong> el &aacute;rea inmediatamente. Gas fosfina (TLV 0.05 ppm) es t&oacute;xico y puede ser letal. NO intente agregar estabilizador o enfriar. Reporte a su supervisor.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SVG CASCADA DE DESCOMPOSICI&Oacute;N -->
+    <div class="glass" style="padding:10px 14px;">
+      <h3 class="section-title" style="margin-bottom:4px;">Cascada de Descomposici&oacute;n del Ba&ntilde;o <span class="sub">secuencia de alerta</span></h3>
+      <svg viewBox="0 0 1100 100" width="100%" height="82" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Etapa 1: DETONANTE -->
+        <rect x="20" y="15" width="220" height="65" rx="8" fill="rgba(232,160,32,.10)" stroke="var(--amber)" stroke-width="1.4"/>
+        <text x="130" y="32" text-anchor="middle" fill="var(--amber)" font-family="Barlow Condensed,sans-serif" font-weight="900" font-size="12" letter-spacing=".06em">DETONANTE</text>
+        <text x="130" y="48" text-anchor="middle" fill="var(--text)" font-family="Inter,sans-serif" font-size="8" font-weight="500">Estabilizador agotado</text>
+        <text x="130" y="59" text-anchor="middle" fill="var(--text)" font-family="Inter,sans-serif" font-size="8" font-weight="500">Temp &gt;95&deg;C</text>
+        <text x="130" y="70" text-anchor="middle" fill="var(--text)" font-family="Inter,sans-serif" font-size="8" font-weight="500">Contaminaci&oacute;n</text>
+        <!-- Flecha 1 -->
+        <line x1="245" y1="47" x2="285" y2="47" stroke="var(--amber)" stroke-width="2"/><polygon points="281,43 290,47 281,51" fill="var(--amber)"/>
+        <!-- Etapa 2: ADVERTENCIA -->
+        <rect x="290" y="15" width="220" height="65" rx="8" fill="rgba(232,160,32,.06)" stroke="var(--amber)" stroke-width="1.2"/>
+        <rect x="290" y="15" width="220" height="65" rx="8" fill="rgba(224,92,92,.04)" stroke="var(--coral)" stroke-width="0.6"/>
+        <text x="400" y="32" text-anchor="middle" fill="var(--amber)" font-family="Barlow Condensed,sans-serif" font-weight="900" font-size="12" letter-spacing=".06em">ADVERTENCIA</text>
+        <text x="400" y="48" text-anchor="middle" fill="var(--text)" font-family="Inter,sans-serif" font-size="8" font-weight="500">Turbidez aumentando</text>
+        <text x="400" y="59" text-anchor="middle" fill="var(--text)" font-family="Inter,sans-serif" font-size="8" font-weight="500">Burbujas de gas aumentan</text>
+        <text x="400" y="70" text-anchor="middle" fill="var(--text)" font-family="Inter,sans-serif" font-size="8" font-weight="500">Temperatura subiendo</text>
+        <!-- Flecha 2 -->
+        <line x1="515" y1="47" x2="555" y2="47" stroke="var(--coral)" stroke-width="2"/><polygon points="551,43 560,47 551,51" fill="var(--coral)"/>
+        <!-- Etapa 3: DESBOCADA -->
+        <rect x="560" y="15" width="220" height="65" rx="8" fill="rgba(224,92,92,.12)" stroke="var(--coral)" stroke-width="1.6"/>
+        <text x="670" y="32" text-anchor="middle" fill="var(--coral)" font-family="Barlow Condensed,sans-serif" font-weight="900" font-size="12" letter-spacing=".06em">DESBOCADA</text>
+        <text x="670" y="48" text-anchor="middle" fill="var(--text)" font-family="Inter,sans-serif" font-size="8" font-weight="600">Reacci&oacute;n exot&eacute;rmica</text>
+        <text x="670" y="59" text-anchor="middle" fill="var(--text)" font-family="Inter,sans-serif" font-size="8" font-weight="600">Liberaci&oacute;n gas PH&#8323;</text>
+        <text x="670" y="70" text-anchor="middle" fill="var(--text)" font-family="Inter,sans-serif" font-size="8" font-weight="600">Riesgo de desbordamiento</text>
+        <!-- Flecha 3 -->
+        <line x1="785" y1="47" x2="825" y2="47" stroke="var(--coral)" stroke-width="2.5"/><polygon points="821,42 832,47 821,52" fill="var(--coral)"/>
+        <!-- Etapa 4: ACCI&Oacute;N -->
+        <rect x="835" y="8" width="240" height="80" rx="10" fill="rgba(224,92,92,.18)" stroke="var(--coral)" stroke-width="2.4"/>
+        <text x="955" y="40" text-anchor="middle" fill="var(--coral)" font-family="Barlow Condensed,sans-serif" font-weight="900" font-size="18" letter-spacing=".08em">EVACUE</text>
+        <text x="955" y="58" text-anchor="middle" fill="var(--coral)" font-family="Barlow Condensed,sans-serif" font-weight="900" font-size="14" letter-spacing=".06em">INMEDIATAMENTE</text>
+        <text x="955" y="76" text-anchor="middle" fill="var(--muted)" font-family="Inter,sans-serif" font-size="7.5" font-weight="500">NO agregue qu&iacute;micos. Reporte a su supervisor.</text>
+      </svg>
+    </div>
+
+    <div class="safety-card">
+      <div class="safety-head">&#9888; Seguridad &mdash; Ba&ntilde;o EN</div>
+      <div class="safety-body"><strong>Soluci&oacute;n &aacute;cida caliente de n&iacute;quel</strong> a 85&ndash;91&deg;C &mdash; riesgo severo de quemaduras. <strong>Compuestos de n&iacute;quel</strong> son carcin&oacute;geno GHS Categor&iacute;a 1A (IARC Grupo 1 &mdash; carcin&oacute;geno humano conocido por inhalaci&oacute;n); sensibilizante cut&aacute;neo (GHS Cat. 1). OSHA PEL: 1 mg/m&sup3; como Ni. <strong>Gas hidr&oacute;geno</strong> generado continuamente &mdash; asegure ventilaci&oacute;n adecuada; sin fuentes de ignici&oacute;n. <strong>Riesgo de fosfina</strong>: ba&ntilde;o en descomposici&oacute;n libera gas PH&#8323; (TLV 0.05 ppm) &mdash; olor a ajo/pescado = EVACUE inmediatamente. EPP completo: careta, lentes de seguridad contra salpicaduras, guantes resistentes a &aacute;cido, mandil qu&iacute;mico. Regadera y lavaojos a 10 segundos.</div>
+    </div>
+
+  </div>
+  <footer class="footer poster-footer">
+    <p class="footer-disclaimer">Referencia t&eacute;cnica solamente. Verifique todos los par&aacute;metros contra la FTS de su proveedor, especificaciones del cliente y requisitos regulatorios antes de usar en producci&oacute;n.</p>
+    <p class="footer-title">Ba&ntilde;o EN &mdash; Serie EN Alto F&oacute;sforo</p>
+    <span class="footer-brand">Plating Posters &middot; Serie de Referencia de Acabados Met&aacute;licos &middot; PP-ENhp-06-T / v1.0 / 2026</span>
+  </footer>
+</div>
+</div>
+</div>
+<div class="tweaks">
+  <div style="display:flex;gap:8px;align-items:center;">
+    <span style="color:rgba(240,237,232,.5);font-size:11px;letter-spacing:.06em;text-transform:uppercase;">Edition</span>
+    <button id="btnDark" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:#E8A020;color:#1A1F2E;border:1px solid #E8A020;" onclick="setEdition('')">Dark</button>
+    <button id="btnLight" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);" onclick="setEdition('light')">Light</button>
+  </div>
+  <button onclick="window.print()" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);">Print / PDF</button>
+</div>
+<script>
+const posterWrap=document.getElementById('posterWrap');const poster=document.getElementById('poster');function scalePoster(){const sW=(window.innerWidth-24)/1200;const sH=(window.innerHeight-24)/1800;const s=Math.min(sW,sH);posterWrap.style.transform='scale('+s+')';posterWrap.style.transformOrigin='top center';posterWrap.style.width='1200px';posterWrap.style.height=(1800*s)+'px';}function setEdition(e){if(e)poster.dataset.edition=e;else delete poster.dataset.edition;document.getElementById('btnDark').style.background=e?'transparent':'#E8A020';document.getElementById('btnDark').style.color=e?'#F0EDE8':'#1A1F2E';document.getElementById('btnDark').style.borderColor=e?'rgba(255,255,255,.2)':'#E8A020';document.getElementById('btnLight').style.background=e?'#E8A020':'transparent';document.getElementById('btnLight').style.color=e?'#1A1F2E':'#F0EDE8';document.getElementById('btnLight').style.borderColor=e?'#E8A020':'rgba(255,255,255,.2)';}scalePoster();window.addEventListener('resize',scalePoster);
+</script>
+</body>
+</html>

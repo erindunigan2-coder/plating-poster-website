@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>General Knowledge &mdash; 12 Wastewater Treatment Basics for Plating Shops &mdash; Technical | Plating Posters Inc</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Barlow:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#0F1B2E;--navy:#0A1225;--text:#F0EDE8;--muted:rgba(240,237,232,.62);
+  --faint:rgba(240,237,232,.38);
+  --accent:#1B3A5C;--blue:#4A7AB5;--green:#1E6B3A;--red:#B22234;
+  --gold:#B8860B;--cream:#F8F7F3;
+  --slate:#2A3550;--callout:#152035;--altrow:#1A2840;
+  --glass-bg:rgba(15,27,46,.55);--glass-border:rgba(255,255,255,.12);
+  --glass-shadow:inset 0 1px 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(0,0,0,.2),0 4px 12px rgba(0,0,0,.25);
+}
+.poster[data-edition="light"]{
+  --bg:#F8F7F3;--navy:#E8E4DA;--text:#1B2030;--muted:rgba(27,32,48,.66);
+  --faint:rgba(27,32,48,.42);
+  --accent:#1B3A5C;--blue:#2E5C8A;--green:#1E6B3A;--red:#B22234;
+  --gold:#8B6914;--cream:#F8F7F3;
+  --slate:#D0CBBE;--callout:#EFEDE4;--altrow:#E6E3D8;
+  --glass-bg:rgba(255,253,247,.66);--glass-border:rgba(27,32,48,.10);
+  --glass-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 4px 12px rgba(27,32,48,.08);
+}
+html,body{margin:0;padding:0;background:#0a0c14;}
+.stage{width:100vw;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;overflow:visible;padding:12px 0;box-sizing:border-box;}
+.poster-wrap{transform-origin:center center;}
+.poster{
+  width:1200px;height:1800px;position:relative;overflow:hidden;
+  background:
+    radial-gradient(1200px 800px at 15% 8%,rgba(74,122,181,.12),transparent 60%),
+    radial-gradient(1000px 700px at 90% 25%,rgba(27,58,92,.10),transparent 55%),
+    radial-gradient(900px 900px at 50% 80%,rgba(178,34,52,.08),transparent 60%),
+    var(--bg);
+  font-family:'Inter',sans-serif;color:var(--text);
+  display:flex;flex-direction:column;padding:32px;box-sizing:border-box;
+}
+.glass{background-color:var(--glass-bg);background-image:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));border:1px solid var(--glass-border);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);box-shadow:var(--glass-shadow);border-radius:12px;}
+.tack{position:absolute;width:24px;height:24px;border-radius:50%;border:1.5px solid rgba(27,58,92,.28);z-index:2;pointer-events:none;}
+.tack::before,.tack::after{content:"";position:absolute;background:rgba(27,58,92,.28);}
+.tack::before{left:50%;top:-3px;bottom:-3px;width:1px;transform:translateX(-50%);}
+.tack::after{top:50%;left:-3px;right:-3px;height:1px;transform:translateY(-50%);}
+.tack.tl{top:12px;left:12px;}.tack.tr{top:12px;right:12px;}.tack.bl{bottom:12px;left:12px;}.tack.br{bottom:12px;right:12px;}
+
+/* ===== THREE-PART FLEX LAYOUT ===== */
+.poster-header{flex-shrink:0;}
+.poster-body{flex:1;overflow:hidden;display:flex;flex-direction:column;gap:10px;justify-content:space-between;}
+.poster-footer{flex-shrink:0;margin-top:8px;}
+
+/* Header */
+.header-band{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:8px;}
+.header-left{flex:1;min-width:0;}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--accent);letter-spacing:.16em;text-transform:uppercase;margin-bottom:4px;display:flex;align-items:center;gap:12px;}
+.eyebrow::before{content:"";display:inline-block;width:30px;height:3px;background:var(--accent);}
+.headline{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:72px;color:var(--text);line-height:.92;margin:4px 0;letter-spacing:-.01em;text-transform:uppercase;}
+.headline em{font-style:normal;color:var(--accent);}
+.subhead{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:20px;color:var(--blue);margin:0 0 3px;letter-spacing:.02em;text-transform:uppercase;}
+.tagline{font-family:'Inter',sans-serif;font-style:italic;font-size:11px;color:var(--muted);line-height:1.35;max-width:700px;margin:0;}
+.logo-card{flex-shrink:0;padding:12px 10px;display:flex;flex-direction:column;align-items:center;gap:8px;align-self:flex-start;}
+.logo-tile{width:68px;height:68px;border-radius:12px;background:linear-gradient(135deg,#1B3A5C,#B22234);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -2px 4px rgba(0,0,0,.15),0 4px 14px rgba(0,0,0,.35);}
+.logo-tile span{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:26px;color:#F8F7F3;letter-spacing:.02em;line-height:1;}
+.logo-word{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;letter-spacing:.04em;text-transform:uppercase;line-height:1;text-align:center;white-space:nowrap;}
+.logo-word .a{color:var(--text);}.logo-word .b{color:var(--accent);}
+.logo-inc{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.05em;text-transform:lowercase;color:var(--muted);margin-top:-2px;}
+
+/* Series banner */
+.series-banner{display:flex;align-items:center;gap:10px;padding:8px 14px;margin-bottom:0;}
+.series-banner .star{color:var(--gold);font-size:14px;}
+.series-banner .label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);}
+.series-banner .divider{flex:1;height:1px;background:var(--glass-border);}
+.series-banner .count{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:.08em;}
+
+/* Section title */
+.section-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;letter-spacing:.08em;text-transform:uppercase;color:var(--text);margin:0 0 6px;display:flex;align-items:center;gap:8px;}
+.section-title::before{content:"";width:5px;height:5px;background:var(--accent);border-radius:50%;}
+.section-title .sub{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.14em;color:var(--muted);margin-left:auto;font-weight:500;}
+
+/* Rule card */
+.rule-card{display:flex;align-items:center;gap:18px;padding:14px 20px;background:rgba(27,58,92,.07);}
+.rule-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:64px;color:var(--accent);line-height:1;letter-spacing:-.02em;}
+.rule-body{flex:1;}
+.rule-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:15px;color:var(--accent);letter-spacing:.08em;text-transform:uppercase;}
+.rule-text{font-family:'Inter',sans-serif;font-size:11px;color:var(--muted);line-height:1.4;margin-top:3px;}
+
+/* Key insight card */
+.insight-card{padding:14px 18px;border-left:3px solid var(--blue);background:rgba(74,122,181,.06);border-radius:0 12px 12px 0;}
+.insight-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;color:var(--blue);letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px;}
+.insight-text{font-family:'Inter',sans-serif;font-size:12px;color:var(--text);line-height:1.5;}
+
+/* Parameter table */
+.data-table{width:100%;border-collapse:collapse;}
+.data-table th{font-family:'Barlow',sans-serif;font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);padding:8px 12px;text-align:left;background:rgba(27,58,92,.08);border-bottom:1px solid var(--glass-border);}
+.poster[data-edition="light"] .data-table th{background:rgba(27,58,92,.06);}
+.data-table td{padding:8px 12px;color:var(--text);line-height:1.4;border-bottom:1px solid rgba(255,255,255,.05);font-family:'Inter',sans-serif;font-size:12px;}
+.data-table tr:last-child td{border-bottom:none;}
+.data-table tr:nth-child(even) td{background:rgba(255,255,255,.02);}
+.poster[data-edition="light"] .data-table tr:nth-child(even) td{background:rgba(27,32,48,.025);}
+.data-table .mono{font-family:'JetBrains Mono',monospace;font-size:11px;}
+
+/* Comparison cards */
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.compare-card{padding:14px 16px;}
+.compare-card h4{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;color:var(--text);margin:0 0 8px;text-transform:uppercase;letter-spacing:.04em;}
+.compare-card h4 .tag{font-size:11px;padding:2px 8px;border-radius:4px;margin-left:8px;font-family:'JetBrains Mono',monospace;font-weight:500;letter-spacing:.06em;}
+.compare-card h4 .tag.good{background:rgba(30,107,58,.15);color:var(--green);}
+.compare-card h4 .tag.bad{background:rgba(178,34,52,.15);color:var(--red);}
+.compare-card ul{list-style:none;padding:0;margin:0;}
+.compare-card li{font-size:12px;line-height:1.5;padding:3px 0;display:flex;gap:8px;align-items:flex-start;}
+.compare-card li::before{content:"";width:5px;height:5px;border-radius:50%;margin-top:6px;flex-shrink:0;}
+.compare-card.do li::before{background:var(--green);}
+.compare-card.dont li::before{background:var(--red);}
+
+/* Trouble cards */
+.trouble-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.trouble-card{padding:12px 14px;border-radius:10px;border-left:3px solid var(--red);display:flex;flex-direction:column;gap:4px;}
+.trouble-card h5{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;color:var(--red);margin:0;text-transform:uppercase;letter-spacing:.06em;line-height:1.1;}
+.trouble-card p{font-size:11px;color:var(--muted);margin:0;line-height:1.4;}
+
+/* Info grid */
+.info-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;}
+.info-card{padding:12px 14px;text-align:center;}
+.info-card .icon{font-size:24px;margin-bottom:6px;}
+.info-card h5{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;color:var(--accent);margin:0 0 4px;text-transform:uppercase;letter-spacing:.06em;}
+.info-card p{font-size:11px;color:var(--muted);margin:0;line-height:1.4;}
+
+/* Checklist */
+.checklist{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:4px 16px;}
+.checklist li{font-size:11.5px;line-height:1.5;padding:4px 0;display:flex;gap:8px;align-items:flex-start;color:var(--text);}
+.checklist li::before{content:"\2713";color:var(--green);font-weight:700;flex-shrink:0;margin-top:0px;}
+
+/* Safety callout */
+.safety-card{padding:14px 18px;background:rgba(178,34,52,.08);border:1px solid rgba(178,34,52,.25);border-radius:12px;}
+.safety-head{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:16px;color:var(--red);letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px;}
+.safety-body{font-size:11.5px;color:var(--text);line-height:1.5;}
+.safety-body strong{font-weight:700;color:var(--red);}
+
+/* SVG infographic */
+.infographic-wrap{padding:8px 10px;}
+.infographic-wrap svg{display:block;}
+
+/* Footer */
+.footer{padding:10px 20px;background-color:rgba(27,58,92,.85);background-image:linear-gradient(180deg,rgba(255,255,255,.04),rgba(0,0,0,0));border:1px solid rgba(255,255,255,.10);border-radius:8px;text-align:center;display:flex;flex-direction:column;gap:2px;}
+.poster[data-edition="light"] .footer{background-color:rgba(221,216,206,.95);border-color:rgba(27,32,48,.10);}
+.footer-disclaimer{font-family:'Inter',sans-serif;font-size:8.5px;line-height:1.35;color:var(--faint);margin:0 auto;max-width:900px;}
+.footer-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:12px;color:var(--text);letter-spacing:.04em;text-transform:uppercase;margin:0;}
+.footer-brand{font-family:'JetBrains Mono',monospace;font-size:8.5px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;}
+
+/* Compact: prevent bottom-cutoff on dense poster */
+.poster-body{gap:4px !important;}
+.data-table th{padding:4px 8px !important;font-size:10px !important;}
+.data-table td{padding:4px 8px !important;font-size:11px !important;}
+.rule-card{padding:8px 14px !important;}
+.rule-num{font-size:48px !important;}
+.rule-text{font-size:10px !important;}
+.insight-card{padding:8px 12px !important;}
+.insight-text{font-size:11px !important;}
+.compare-card{padding:8px 10px !important;}
+.compare-card h4{margin:0 0 4px !important;}
+.compare-card li{font-size:11px !important;padding:2px 0 !important;}
+.trouble-card{padding:6px 10px !important;}
+.trouble-card p{font-size:10px !important;}
+.info-card{padding:6px 10px !important;}
+.safety-card{padding:8px 12px !important;}
+.safety-head{margin-bottom:3px !important;font-size:14px !important;}
+.safety-body{font-size:10.5px !important;}
+.infographic-wrap{padding:2px 6px !important;}
+.section-title{font-size:18px !important;margin:0 0 3px !important;}
+
+@media print{
+  @page{size:12.5in 18.75in;margin:0;}
+  html,body{background:var(--bg) !important;-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
+  *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
+  .stage{position:static;padding:0;display:block;overflow:visible;}
+  .poster-wrap{transform:none !important;width:auto !important;height:auto !important;}
+  .poster{box-shadow:none !important;width:1200px !important;height:1800px !important;overflow:hidden !important;}
+  .glass,.trouble-card,.insight-card,.safety-card{backdrop-filter:none !important;-webkit-backdrop-filter:none !important;}
+}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="poster-wrap" id="posterWrap">
+<div class="poster" id="poster" data-edition="light">
+  <span class="tack tl" aria-hidden="true"></span><span class="tack tr" aria-hidden="true"></span>
+  <span class="tack bl" aria-hidden="true"></span><span class="tack br" aria-hidden="true"></span>
+
+  <!-- ===== HEADER ===== -->
+  <div class="poster-header">
+    <header class="header-band">
+      <div class="header-left">
+        <div class="eyebrow"><span>Plating Posters Inc &nbsp;&middot;&nbsp; General Knowledge Series &nbsp;&middot;&nbsp; Poster 12 of 15</span></div>
+        <h1 class="headline">WASTEWATER<br><em>TREATMENT</em></h1>
+        <h2 class="subhead">Metals Removal, pH Adjustment &amp; Discharge Compliance for Electroplating Operations</h2>
+        <p class="tagline">Plating shops generate some of the most regulated industrial wastewater in the country. Under 40 CFR 433, Metal Finishing Point Source Category facilities must treat all process water to meet strict daily maximum and monthly average limits before discharge to a POTW.</p>
+      </div>
+      <aside class="glass logo-card">
+        <div class="logo-tile"><span>PP</span></div>
+        <div class="logo-word"><span class="a">Plating</span> <span class="b">Posters</span></div>
+        <div class="logo-inc">www.platingposters.com</div>
+      </aside>
+    </header>
+
+    <!-- SERIES BANNER -->
+    <div class="series-banner glass">
+      <span class="star">&#9733;</span>
+      <span class="label">General Knowledge &mdash; Surface Finishing Reference Series</span>
+      <span class="divider"></span>
+      <span class="count">12 / 15</span>
+    </div>
+  </div>
+
+  <!-- ===== BODY ===== -->
+  <div class="poster-body">
+
+    <!-- RULE CARD -->
+    <div class="glass rule-card">
+      <div class="rule-num">#1</div>
+      <div class="rule-body">
+        <div class="rule-label">Every Drop That Leaves Your Facility Must Meet Permit Limits</div>
+        <div class="rule-text">Federal categorical limits for plating shops (40 CFR 433 &mdash; local POTW limits may be stricter): Ni &lt; 3.98 mg/L &bull; Zn &lt; 2.61 mg/L &bull; Cu &lt; 3.38 mg/L &bull; Cr(total) &lt; 2.77 mg/L &bull; Cr(VI) must be reduced to Cr(III) first &mdash; no hex chrome discharge permitted. Cyanide (total) &lt; 1.20 mg/L. Penalties for exceedances include fines, surcharges, and potential permit revocation.</div>
+      </div>
+    </div>
+
+    <!-- TREATMENT SEQUENCE TABLE -->
+    <div>
+      <h3 class="section-title">Treatment Process Sequence <span class="sub">Segregated streams &rarr; discharge</span></h3>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table">
+          <thead><tr><th>Step</th><th>Process</th><th>Chemistry / Reagent</th><th>Critical Parameter</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>Chrome Reduction</td><td class="mono">Na&#8322;S&#8322;O&#8325; (sodium metabisulfite)</td><td>pH &lt; 2.5, ORP &lt; 300 mV</td></tr>
+            <tr><td>2</td><td>Cyanide Destruction</td><td class="mono">NaOCl (sodium hypochlorite)</td><td>pH &gt; 10, ORP &gt; 600 mV</td></tr>
+            <tr><td>3</td><td>Metals Precipitation</td><td class="mono">NaOH (50% caustic soda)</td><td>pH 8.5&ndash;9.5 for mixed metals</td></tr>
+            <tr><td>4</td><td>Flocculation</td><td class="mono">Anionic polymer 0.5&ndash;2 mg/L</td><td>Slow mix 2&ndash;5 min, large floc</td></tr>
+            <tr><td>5</td><td>Clarification</td><td class="mono">Gravity settling or plate settler</td><td>Rise rate &lt; 0.5 gpm/ft&sup2;</td></tr>
+            <tr><td>6</td><td>pH Adjustment</td><td class="mono">H&#8322;SO&#8324; or CO&#8322; for pH trim</td><td>Discharge pH 6.0&ndash;9.0</td></tr>
+            <tr><td>7</td><td>Filter Press</td><td class="mono">Plate &amp; frame dewatering</td><td>Sludge to 35&ndash;50% solids</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- SVG INFOGRAPHIC: Waste Stream Flow Diagram -->
+    <div class="glass infographic-wrap">
+      <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 1100 140" fill="none">
+        <style>
+          .svg-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:13px;fill:var(--accent);letter-spacing:0.08em;text-transform:uppercase;}
+          .svg-label{font-family:'Inter',sans-serif;font-size:10px;fill:var(--text);}
+          .svg-sub{font-family:'JetBrains Mono',monospace;font-size:8px;fill:var(--muted);}
+          .svg-box{rx:6;ry:6;stroke-width:1.5;}
+          .svg-arrow{stroke:var(--muted);stroke-width:1.5;fill:none;marker-end:url(#arrowhead);}
+        </style>
+        <defs>
+          <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+            <polygon points="0 0, 8 3, 0 6" fill="var(--muted)"/>
+          </marker>
+        </defs>
+        <text x="10" y="14" class="svg-title">Segregated Waste Stream Treatment Flow</text>
+
+        <!-- Source streams (compressed 3-row layout) -->
+        <rect x="20" y="26" width="140" height="30" class="svg-box" fill="var(--red)" fill-opacity="0.12" stroke="var(--red)" stroke-opacity="0.4"/>
+        <text x="90" y="39" text-anchor="middle" class="svg-label" font-weight="600">Chrome Rinse</text>
+        <text x="90" y="49" text-anchor="middle" class="svg-sub">Cr(VI) bearing</text>
+
+        <rect x="20" y="62" width="140" height="30" class="svg-box" fill="var(--blue)" fill-opacity="0.12" stroke="var(--blue)" stroke-opacity="0.4"/>
+        <text x="90" y="75" text-anchor="middle" class="svg-label" font-weight="600">Cyanide Rinse</text>
+        <text x="90" y="85" text-anchor="middle" class="svg-sub">CN bearing</text>
+
+        <rect x="20" y="98" width="140" height="30" class="svg-box" fill="var(--accent)" fill-opacity="0.12" stroke="var(--accent)" stroke-opacity="0.4"/>
+        <text x="90" y="111" text-anchor="middle" class="svg-label" font-weight="600">Acid/Alkaline</text>
+        <text x="90" y="121" text-anchor="middle" class="svg-sub">General metals</text>
+
+        <!-- Arrows from sources to treatment -->
+        <line x1="160" y1="41" x2="210" y2="41" class="svg-arrow"/>
+        <line x1="160" y1="77" x2="210" y2="77" class="svg-arrow"/>
+        <line x1="160" y1="113" x2="280" y2="113" class="svg-arrow"/>
+
+        <!-- Chrome reduction -->
+        <rect x="210" y="26" width="130" height="30" class="svg-box" fill="var(--red)" fill-opacity="0.08" stroke="var(--red)" stroke-opacity="0.3"/>
+        <text x="275" y="39" text-anchor="middle" class="svg-label" font-weight="600">Cr Reduction</text>
+        <text x="275" y="49" text-anchor="middle" class="svg-sub">pH &lt; 2.5 + SMBS</text>
+
+        <!-- CN destruction -->
+        <rect x="210" y="62" width="130" height="30" class="svg-box" fill="var(--blue)" fill-opacity="0.08" stroke="var(--blue)" stroke-opacity="0.3"/>
+        <text x="275" y="75" text-anchor="middle" class="svg-label" font-weight="600">CN Destroy</text>
+        <text x="275" y="85" text-anchor="middle" class="svg-sub">pH &gt; 10 + NaOCl</text>
+
+        <!-- Arrows converging -->
+        <line x1="340" y1="41" x2="380" y2="77" class="svg-arrow"/>
+        <line x1="340" y1="77" x2="380" y2="77" class="svg-arrow"/>
+        <line x1="340" y1="113" x2="380" y2="77" class="svg-arrow"/>
+
+        <!-- Equalization -->
+        <rect x="380" y="62" width="120" height="30" class="svg-box" fill="var(--accent)" fill-opacity="0.10" stroke="var(--accent)" stroke-opacity="0.3"/>
+        <text x="440" y="75" text-anchor="middle" class="svg-label" font-weight="600">EQ Tank</text>
+        <text x="440" y="85" text-anchor="middle" class="svg-sub">Combined stream</text>
+
+        <line x1="500" y1="77" x2="530" y2="77" class="svg-arrow"/>
+
+        <!-- Precipitation -->
+        <rect x="530" y="62" width="120" height="30" class="svg-box" fill="var(--green)" fill-opacity="0.10" stroke="var(--green)" stroke-opacity="0.3"/>
+        <text x="590" y="75" text-anchor="middle" class="svg-label" font-weight="600">Precipitation</text>
+        <text x="590" y="85" text-anchor="middle" class="svg-sub">NaOH pH 8.5&ndash;9.5</text>
+
+        <line x1="650" y1="77" x2="680" y2="77" class="svg-arrow"/>
+
+        <!-- Floc/Clarifier -->
+        <rect x="680" y="62" width="120" height="30" class="svg-box" fill="var(--gold)" fill-opacity="0.10" stroke="var(--gold)" stroke-opacity="0.3"/>
+        <text x="740" y="75" text-anchor="middle" class="svg-label" font-weight="600">Clarifier</text>
+        <text x="740" y="85" text-anchor="middle" class="svg-sub">Polymer + settling</text>
+
+        <!-- Two outputs from clarifier -->
+        <line x1="800" y1="70" x2="850" y2="47" class="svg-arrow"/>
+        <line x1="800" y1="84" x2="850" y2="113" class="svg-arrow"/>
+
+        <!-- Effluent -->
+        <rect x="850" y="32" width="130" height="30" class="svg-box" fill="var(--green)" fill-opacity="0.15" stroke="var(--green)" stroke-opacity="0.5"/>
+        <text x="915" y="45" text-anchor="middle" class="svg-label" font-weight="600">pH Adjust</text>
+        <text x="915" y="55" text-anchor="middle" class="svg-sub">pH 6.0&ndash;9.0 &rarr; POTW</text>
+
+        <!-- Sludge -->
+        <rect x="850" y="98" width="130" height="30" class="svg-box" fill="var(--red)" fill-opacity="0.10" stroke="var(--red)" stroke-opacity="0.3"/>
+        <text x="915" y="111" text-anchor="middle" class="svg-label" font-weight="600">Filter Press</text>
+        <text x="915" y="121" text-anchor="middle" class="svg-sub">F006 sludge disposal</text>
+
+        <!-- Final arrows -->
+        <line x1="980" y1="47" x2="1020" y2="47" class="svg-arrow"/>
+        <text x="1030" y="43" class="svg-sub" fill="var(--green)">CLEAN</text>
+        <text x="1030" y="53" class="svg-sub" fill="var(--green)">DISCHARGE</text>
+
+        <line x1="980" y1="113" x2="1020" y2="113" class="svg-arrow"/>
+        <text x="1030" y="109" class="svg-sub" fill="var(--red)">HAZ WASTE</text>
+        <text x="1030" y="119" class="svg-sub" fill="var(--red)">MANIFEST</text>
+      </svg>
+    </div>
+
+    <!-- INFO GRID: 3 CARDS -->
+    <div>
+      <h3 class="section-title">Key Treatment Chemistry <span class="sub">Critical reactions</span></h3>
+      <div class="info-grid">
+        <div class="glass info-card">
+          <div class="icon">&#9879;</div>
+          <h5>Hex Chrome Reduction</h5>
+          <p>Na&#8322;S&#8322;O&#8325; generates SO&#8322; in situ at pH &lt; 2.5, reducing toxic Cr&#8310;&#8314; to precipitable Cr&sup3;&#8314;. ORP control below 300 mV confirms complete reduction.</p>
+        </div>
+        <div class="glass info-card">
+          <div class="icon">&#9878;</div>
+          <h5>Hydroxide Precipitation</h5>
+          <p>Each metal has a minimum solubility pH: Cu ~8.1, Ni ~9.3, Zn ~9.0, Cr(III) ~8.5. The pH 8.5&ndash;9.5 window precipitates most plating metals simultaneously. Above 9.5, zinc and lead re-dissolve as amphoteric hydroxides.</p>
+        </div>
+        <div class="glass info-card">
+          <div class="icon">&#9851;</div>
+          <h5>F006 Sludge Management</h5>
+          <p>Wastewater treatment sludge from electroplating (EPA waste code F006) is a listed hazardous waste. Must be manifested, transported by licensed hauler, and disposed at permitted TSDF. Some sludges qualify for metals reclamation.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- DO vs DON'T -->
+    <div class="compare-grid">
+      <div class="compare-card glass do">
+        <h4>Best Practices <span class="tag good">Do</span></h4>
+        <ul>
+          <li>Segregate chrome, cyanide, and acid/alkaline waste streams at the source</li>
+          <li>Use ORP controllers for automated chrome reduction and CN destruction</li>
+          <li>Jar-test new polymer lots before committing to full-scale treatment</li>
+          <li>Log pH, flow, and metals data daily &mdash; trending prevents permit exceedances</li>
+          <li>Maintain a spill prevention plan and train operators on emergency procedures</li>
+        </ul>
+      </div>
+      <div class="compare-card glass dont">
+        <h4>Common Violations <span class="tag bad">Avoid</span></h4>
+        <ul>
+          <li>Mixing cyanide waste with acid streams &mdash; generates lethal HCN gas</li>
+          <li>Batch-dumping concentrated drag-out without flow equalization</li>
+          <li>Ignoring ORP &mdash; visual checks cannot confirm complete chrome reduction</li>
+          <li>Overdosing polymer (creates stable colloidal suspension, cloudier effluent)</li>
+          <li>Discharging without final pH check &mdash; outside 6.0&ndash;9.0 is a permit violation</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- KEY INSIGHT -->
+    <div class="insight-card glass">
+      <div class="insight-label">Why Metals Precipitation Is pH-Dependent</div>
+      <div class="insight-text">Metal ions in solution form insoluble hydroxides when pH is raised with caustic soda. Each metal hydroxide has a minimum solubility at a specific pH &mdash; copper at ~8.1, chromium(III) at ~8.5, zinc at ~9.0, nickel at ~9.3. The challenge in mixed-metals plating shops is finding a single pH that precipitates all metals simultaneously without re-dissolving amphoteric metals like zinc and lead. The practical sweet spot of pH 8.5&ndash;9.5 represents the best compromise, but facilities with high zinc loads must avoid exceeding pH 9.5 or zinc will re-dissolve as zincate ions, causing permit exceedances.</div>
+    </div>
+
+    <!-- TROUBLESHOOTING -->
+    <div>
+      <h3 class="section-title">Treatment Failures <span class="sub">Diagnose &amp; correct</span></h3>
+      <div class="trouble-grid">
+        <div class="trouble-card glass">
+          <h5>Incomplete Chrome Reduction</h5>
+          <p>Cr(VI) passing through to precipitation. Cause: pH too high (&gt; 3.0), insufficient reducing agent, or short reaction time. Fix: verify pH &lt; 2.5, check SMBS feed rate, allow 15&ndash;20 min retention, confirm ORP &lt; 300 mV.</p>
+        </div>
+        <div class="trouble-card glass">
+          <h5>Zinc Re-dissolution</h5>
+          <p>Effluent zinc spikes despite good precipitation. Cause: pH drifting above 9.5 &mdash; zinc hydroxide is amphoteric and re-dissolves as Zn(OH)&#8324;&sup2;&#8315;. Fix: tighten pH control to 8.5&ndash;9.2 range, add pH trim before discharge.</p>
+        </div>
+        <div class="trouble-card glass">
+          <h5>Polymer Overdose</h5>
+          <p>Cloudy effluent with fine suspended particles that won&rsquo;t settle. Excess polymer reverses floc charge and disperses solids. Fix: reduce polymer dose, jar-test to find optimum, consider switching polymer type.</p>
+        </div>
+        <div class="trouble-card glass">
+          <h5>Batch Dump pH Swings</h5>
+          <p>Concentrated batch dumps overwhelm equalization and spike metals in effluent. Fix: install flow equalization tank, meter batch additions over 4&ndash;8 hours, never dump directly to treatment without dilution.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SAFETY -->
+    <div class="safety-card">
+      <div class="safety-head">&#9888; Safety &mdash; Chemical Hazards in Waste Treatment</div>
+      <div class="safety-body"><strong>Chlorine gas:</strong> Mixing sodium hypochlorite (bleach) with acid generates Cl&#8322; gas &mdash; evacuate immediately if detected. <strong>Hydrogen cyanide:</strong> Acidifying cyanide waste below pH 10 releases lethal HCN gas &mdash; always maintain pH &gt; 10 during cyanide destruction. <strong>Caustic burns:</strong> 50% NaOH causes severe chemical burns on contact &mdash; full-face shield, chemical gloves, and apron required. <strong>Confined spaces:</strong> Treatment tanks, sumps, and filter press areas may accumulate toxic or oxygen-depleted atmospheres &mdash; follow OSHA permit-required confined space procedures (29 CFR 1910.146) for all entry.</div>
+    </div>
+
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer poster-footer">
+    <p class="footer-disclaimer">Technical reference only &mdash; per 40 CFR 433, Metal Finishing Point Source Category. Verify all parameters against your discharge permit, local POTW requirements, and current EPA categorical standards before production use.</p>
+    <p class="footer-title">Poster 12 &mdash; Wastewater Treatment Basics for Plating Shops &mdash; General Knowledge Series</p>
+    <span class="footer-brand">Plating Posters Inc &middot; Surface Finishing Reference Series &middot; GK-12-T / v1.0 / 2026</span>
+  </footer>
+
+</div>
+</div>
+</div>
+
+<script>
+const posterWrap=document.getElementById('posterWrap');
+const poster=document.getElementById('poster');
+function scalePoster(){const sW=(window.innerWidth-24)/1200;const sH=(window.innerHeight-24)/1800;const s=Math.min(sW,sH);posterWrap.style.transform='scale('+s+')';posterWrap.style.transformOrigin='top center';posterWrap.style.width='1200px';posterWrap.style.height=(1800*s)+'px';}
+scalePoster();window.addEventListener('resize',scalePoster);
+</script>
+</body>
+</html>

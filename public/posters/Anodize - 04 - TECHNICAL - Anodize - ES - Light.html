@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anodizado &mdash; Paso 04 Anodizado (Tipo II &amp; III) &mdash; T&eacute;cnico | Plating Posters Inc</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Barlow:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#1A1F2E;--navy:#0D1020;--text:#F0EDE8;--muted:rgba(240,237,232,.62);--faint:rgba(240,237,232,.38);--amber:#E8A020;--teal:#2EC4B6;--emerald:#27AE60;--coral:#E05C5C;--slate:#3A4055;--callout:#1E2435;--altrow:#252B3D;--glass-bg:rgba(30,36,53,.55);--glass-border:rgba(255,255,255,.12);--glass-shadow:inset 0 1px 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(0,0,0,.2),0 4px 12px rgba(0,0,0,.25);}
+.poster[data-edition="light"]{--bg:#F5F4F0;--navy:#DDD8CE;--text:#1B2030;--muted:rgba(27,32,48,.66);--faint:rgba(27,32,48,.42);--amber:#B8770D;--teal:#1A8C82;--emerald:#1E8449;--coral:#B7322F;--slate:#C5C0B5;--callout:#ECEAE1;--altrow:#E4E1D6;--glass-bg:rgba(255,253,247,.66);--glass-border:rgba(27,32,48,.10);--glass-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 4px 12px rgba(27,32,48,.08);}
+html,body{margin:0;padding:0;background:#0a0c14;}.stage{width:100vw;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;overflow:visible;padding:12px 0;box-sizing:border-box;}.poster-wrap{transform-origin:center center;}.poster{width:1200px;height:1800px;position:relative;overflow:hidden;background:radial-gradient(1200px 800px at 15% 8%,rgba(46,196,182,.14),transparent 60%),radial-gradient(1000px 700px at 90% 25%,rgba(232,160,32,.12),transparent 55%),radial-gradient(900px 900px at 50% 80%,rgba(224,92,92,.10),transparent 60%),var(--bg);font-family:'Inter',sans-serif;color:var(--text);display:flex;flex-direction:column;padding:26px 28px;box-sizing:border-box;}.poster::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:50px 50px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);pointer-events:none;z-index:0;}.poster>*{position:relative;z-index:1;}
+.glass{background-color:var(--glass-bg);background-image:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));border:1px solid var(--glass-border);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);box-shadow:var(--glass-shadow);border-radius:12px;}
+.tack{position:absolute;width:24px;height:24px;border-radius:50%;border:1.5px solid rgba(232,160,32,.28);z-index:2;pointer-events:none;}.tack::before,.tack::after{content:"";position:absolute;background:rgba(232,160,32,.28);}.tack::before{left:50%;top:-3px;bottom:-3px;width:1px;transform:translateX(-50%);}.tack::after{top:50%;left:-3px;right:-3px;height:1px;transform:translateY(-50%);}.tack.tl{top:12px;left:12px;}.tack.tr{top:12px;right:12px;}.tack.bl{bottom:12px;left:12px;}.tack.br{bottom:12px;right:12px;}
+.poster-header{flex-shrink:0;}.poster-body{flex:1;overflow:visible;display:flex;flex-direction:column;gap:12px;justify-content:space-between;}.poster-footer{flex-shrink:0;margin-top:2px;}
+.header-band{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:4px;}.header-left{flex:1;min-width:0;}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--amber);letter-spacing:.16em;text-transform:uppercase;margin-bottom:4px;display:flex;align-items:center;gap:12px;}.eyebrow::before{content:"";display:inline-block;width:30px;height:3px;background:var(--amber);}
+.headline{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:72px;color:var(--text);line-height:.92;margin:4px 0;letter-spacing:-.01em;text-transform:uppercase;}.headline em{font-style:normal;color:var(--amber);}
+.subhead{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;color:var(--teal);margin:0 0 3px;letter-spacing:.02em;text-transform:uppercase;}
+.tagline{font-family:'Inter',sans-serif;font-style:italic;font-size:13px;color:var(--muted);line-height:1.45;max-width:700px;margin:0;}
+.logo-card{flex-shrink:0;padding:12px 10px;display:flex;flex-direction:column;align-items:center;gap:8px;align-self:flex-start;}.logo-tile{width:68px;height:68px;border-radius:12px;background:linear-gradient(135deg,#E8A020,#2EC4B6);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -2px 4px rgba(0,0,0,.15),0 4px 14px rgba(0,0,0,.35);}.logo-tile span{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:26px;color:#1A1F2E;letter-spacing:.02em;line-height:1;}.logo-word{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;letter-spacing:.04em;text-transform:uppercase;line-height:1;text-align:center;white-space:nowrap;}.logo-word .a{color:var(--text);}.logo-word .b{color:var(--amber);}.logo-inc{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.05em;text-transform:lowercase;color:var(--muted);margin-top:-2px;}
+.section-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:26px;letter-spacing:.08em;text-transform:uppercase;color:var(--text);margin:0 0 5px;display:flex;align-items:center;gap:8px;}.section-title::before{content:"";width:6px;height:6px;background:var(--amber);border-radius:50%;}.section-title .sub{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;color:var(--muted);margin-left:auto;font-weight:500;}
+.rule-card{display:flex;align-items:center;gap:14px;padding:14px 20px;background:rgba(232,160,32,.07);}
+.rule-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:52px;color:var(--amber);line-height:1;letter-spacing:-.02em;white-space:nowrap;}
+.rule-body{flex:1;}.rule-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:19px;color:var(--amber);letter-spacing:.08em;text-transform:uppercase;}.rule-text{font-family:'Inter',sans-serif;font-size:13.5px;color:var(--muted);line-height:1.4;margin-top:3px;}
+.data-table{width:100%;border-collapse:collapse;}.data-table th{font-family:'Barlow',sans-serif;font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);padding:6px 10px;text-align:left;background:rgba(13,16,32,.35);border-bottom:1px solid var(--glass-border);}.poster[data-edition="light"] .data-table th{background:rgba(27,32,48,.06);}.data-table td{padding:5px 10px;color:var(--text);line-height:1.35;border-bottom:1px solid rgba(255,255,255,.05);font-family:'Inter',sans-serif;font-size:13px;}.data-table tr:last-child td{border-bottom:none;}.data-table tr:nth-child(even) td{background:rgba(255,255,255,.02);}.poster[data-edition="light"] .data-table tr:nth-child(even) td{background:rgba(27,32,48,.025);}.data-table .mono{font-family:'JetBrains Mono',monospace;font-size:13.5px;}
+.numbered-list{display:flex;flex-direction:column;gap:6px;}.numbered-item{display:flex;align-items:flex-start;gap:10px;}.num-bullet{width:26px;height:26px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:14px;color:#1A1F2E;margin-top:1px;}.num-text{font-family:'Inter',sans-serif;font-weight:500;font-size:14px;color:var(--text);line-height:1.45;}.num-text strong{font-weight:700;}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}.compare-card{padding:10px 16px;}.compare-card h4{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:20px;color:var(--text);margin:0 0 6px;text-transform:uppercase;letter-spacing:.04em;}.compare-card h4 .tag{font-size:11px;padding:2px 7px;border-radius:4px;margin-left:6px;font-family:'JetBrains Mono',monospace;font-weight:500;letter-spacing:.06em;}.compare-card h4 .tag.good{background:rgba(39,174,96,.15);color:var(--emerald);}.compare-card h4 .tag.bad{background:rgba(224,92,92,.15);color:var(--coral);}.compare-card ul{list-style:none;padding:0;margin:0;}.compare-card li{font-size:14px;line-height:1.45;padding:3px 0;display:flex;gap:7px;align-items:flex-start;}.compare-card li::before{content:"";width:5px;height:5px;border-radius:50%;margin-top:7px;flex-shrink:0;}.compare-card.do li::before{background:var(--emerald);}.compare-card.dont li::before{background:var(--coral);}
+.trouble-card{padding:8px 16px;border-radius:10px;border-left:3px solid var(--coral);display:flex;flex-direction:column;gap:4px;}.trouble-card h5{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:15px;color:var(--coral);margin:0;text-transform:uppercase;letter-spacing:.06em;line-height:1.1;}.trouble-card p{font-size:13px;color:var(--muted);margin:0;line-height:1.4;}
+.safety-card{padding:18px 24px;background:rgba(224,92,92,.08);border:1px solid rgba(224,92,92,.25);border-radius:12px;}.safety-head{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px;color:var(--coral);letter-spacing:.06em;text-transform:uppercase;margin-bottom:2px;}.safety-body{font-size:14px;color:var(--text);line-height:1.55;}.safety-body strong{font-weight:700;color:var(--coral);}
+.bottom-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:14px;}
+.footer{padding:10px 20px;background-color:rgba(13,16,32,.85);background-image:linear-gradient(180deg,rgba(255,255,255,.04),rgba(0,0,0,0));border:1px solid rgba(255,255,255,.10);border-radius:8px;text-align:center;display:flex;flex-direction:column;gap:2px;}.poster[data-edition="light"] .footer{background-color:rgba(221,216,206,.95);border-color:rgba(27,32,48,.10);}.footer-disclaimer{font-family:'Inter',sans-serif;font-size:9px;line-height:1.35;color:var(--faint);margin:0 auto;max-width:900px;}.footer-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:13px;color:var(--text);letter-spacing:.04em;text-transform:uppercase;margin:0;}.footer-brand{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;}
+.tweaks{position:fixed;bottom:16px;right:16px;z-index:100;background:rgba(13,16,32,.92);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:10px 14px;display:flex;flex-direction:column;gap:8px;font-family:'Inter',sans-serif;font-size:12px;color:#F0EDE8;}
+@media print{@page{size:12.5in 18.75in;margin:0;}html,body{background:#1A1F2E !important;-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}*{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}.stage{position:static;padding:0;display:block;overflow:visible;}.poster-wrap{transform:none !important;width:auto !important;height:auto !important;}.poster{box-shadow:none !important;width:1200px !important;height:1800px !important;overflow:hidden !important;}.glass,.trouble-card,.safety-card{backdrop-filter:none !important;-webkit-backdrop-filter:none !important;}.tweaks{display:none !important;}}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="poster-wrap" id="posterWrap">
+<div class="poster" id="poster" data-edition="light">
+  <span class="tack tl" aria-hidden="true"></span><span class="tack tr" aria-hidden="true"></span>
+  <span class="tack bl" aria-hidden="true"></span><span class="tack br" aria-hidden="true"></span>
+
+  <div class="poster-header">
+    <header class="header-band">
+      <div class="header-left">
+        <div class="eyebrow"><span>Plating Posters &nbsp;&middot;&nbsp; Serie de Anodizado &nbsp;&middot;&nbsp; Etapa 4 de 8</span></div>
+        <h1 class="headline">ANODIZADO<br><em>SULF&Uacute;RICO</em></h1>
+        <h2 class="subhead">Tipo II &amp; Tipo III &mdash; Donde el Aluminio se Convierte en &Oacute;xido de Aluminio</h2>
+        <p class="tagline">La pieza es el &aacute;nodo. El &aacute;cido hace el trabajo. La temperatura y la densidad de corriente controlan todo.</p>
+      </div>
+      <aside class="glass logo-card">
+        <div class="logo-tile"><span>PP</span></div>
+        <div class="logo-word"><span class="a">Plating</span> <span class="b">Posters</span></div>
+        <div class="logo-inc">www.platingposters.com</div>
+      </aside>
+    </header>
+  </div>
+
+  <div class="poster-body">
+
+    <!-- TARJETA DE REGLA -->
+    <div class="glass rule-card">
+      <div class="rule-num">Al&#x2082;O&#x2083;</div>
+      <div class="rule-body">
+        <div class="rule-label">Crecimiento Electrol&iacute;tico de &Oacute;xido</div>
+        <div class="rule-text">La corriente DC impulsa ox&iacute;geno hacia la superficie del aluminio, convirtiendo metal en &oacute;xido. El Tipo II opera tibio y lento para un &oacute;xido poroso y te&ntilde;ible. El Tipo III opera cerca de congelaci&oacute;n y r&aacute;pido para un &oacute;xido denso y duro.</div>
+      </div>
+    </div>
+
+    <!-- PROCEDIMIENTOS CLAVE -->
+    <div>
+      <h3 class="section-title">Procedimientos Clave <span class="sub">7 pasos</span></h3>
+      <div class="numbered-list">
+        <div class="numbered-item"><div class="num-bullet">1</div><div class="num-text"><strong>Verifique la qu&iacute;mica del ba&ntilde;o</strong> antes del turno: concentraci&oacute;n de H&sub2;SO&sub4; y Al disuelto por titulaci&oacute;n.</div></div>
+        <div class="numbered-item"><div class="num-bullet">2</div><div class="num-text"><strong>Revise la temperatura.</strong> Tipo II: 68&ndash;72&deg;F. Tipo III: 28&ndash;36&deg;F. No inicie hasta estar en rango.</div></div>
+        <div class="numbered-item"><div class="num-bullet">3</div><div class="num-text"><strong>Calcule el amperaje:</strong> &aacute;rea superficial (ft&sup2;) &times; ASF objetivo = amperios totales. Ajuste el rectificador.</div></div>
+        <div class="numbered-item"><div class="num-bullet">4</div><div class="num-text"><strong>Monte en bastidor y sumerja.</strong> Verifique el contacto en cada punto de sujeci&oacute;n. Suba la corriente gradualmente en 2&ndash;3 min.</div></div>
+        <div class="numbered-item"><div class="num-bullet">5</div><div class="num-text"><strong>Monitoree V y A continuamente.</strong> Aumento de voltaje = &oacute;xido creciendo. Voltaje plano = problema.</div></div>
+        <div class="numbered-item"><div class="num-bullet">6</div><div class="num-text"><strong>Tiempo seg&uacute;n especificaci&oacute;n.</strong> Tipo II: 30&ndash;60 min. Tipo III: 60&ndash;120 min. Verifique espesor con corrientes par&aacute;sitas.</div></div>
+        <div class="numbered-item"><div class="num-bullet">7</div><div class="num-text"><strong>Retire y enjuague inmediatamente.</strong> La permanencia prolongada en &aacute;cido disuelve el &oacute;xido (redisoluci&oacute;n).</div></div>
+      </div>
+    </div>
+
+    <!-- PAR&Aacute;METROS OPERATIVOS -->
+    <div style="display:flex;flex-direction:column;">
+      <h3 class="section-title">Par&aacute;metros Operativos <span class="sub">Tipo II vs Tipo III</span></h3>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table">
+          <thead><tr><th>Par&aacute;metro</th><th>Tipo II (Convencional)</th><th>Tipo III (Anodizado Duro)</th><th>Notas</th></tr></thead>
+          <tbody>
+            <tr><td>H&sub2;SO&sub4;</td><td class="mono">15&ndash;20% (155&ndash;215 g/L)</td><td class="mono">10&ndash;15% (100&ndash;160 g/L)</td><td>Titule diariamente</td></tr>
+            <tr><td>Temperatura</td><td class="mono">68&ndash;72&deg;F (20&ndash;22&deg;C)</td><td class="mono">28&ndash;36&deg;F (&minus;2&ndash;2&deg;C)</td><td>&pm;2&deg;F cr&iacute;tico</td></tr>
+            <tr><td>Densidad de Corriente</td><td class="mono">12&ndash;18 ASF</td><td class="mono">24&ndash;36 ASF</td><td>Calcule a partir del &aacute;rea real</td></tr>
+            <tr><td>Voltaje</td><td class="mono">14&ndash;21 V</td><td class="mono">25&ndash;80+ V</td><td>Aumenta conforme crece el &oacute;xido</td></tr>
+            <tr><td>Tiempo</td><td class="mono">30&ndash;60 min</td><td class="mono">60&ndash;120 min</td><td>Dependiente del espesor</td></tr>
+            <tr><td>Espesor de &Oacute;xido</td><td class="mono">0.7&ndash;1.0 mil</td><td class="mono">2.0&ndash;3.0 mil</td><td>Corrientes par&aacute;sitas o secci&oacute;n transversal</td></tr>
+            <tr><td>Al Disuelto</td><td class="mono">&lt;20 g/L</td><td class="mono">&lt;15 g/L</td><td>Ablanda el &oacute;xido, reduce la dureza</td></tr>
+            <tr><td>Agitaci&oacute;n</td><td class="mono">Aire (moderada)</td><td class="mono">Aire (vigorosa)</td><td>Previene quemaduras a alta CD</td></tr>
+            <tr><td>Enfriamiento</td><td class="mono">Chiller (moderado)</td><td class="mono">Chiller de glicol (fuerte)</td><td>Tipo III: bajo cero es esencial</td></tr>
+            <tr><td>Rampa</td><td class="mono">Arranque suave 2 min</td><td class="mono">Rampa 3&ndash;5 min</td><td>Previene quemaduras en contacto inicial</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="bottom-grid">
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div class="compare-grid">
+          <div class="glass compare-card do">
+            <h4>Haga Esto <span class="tag good">mejor</span></h4>
+            <ul>
+              <li>Calcule la CD para cada carga</li>
+              <li>Suba la corriente gradualmente &mdash; nunca de golpe</li>
+              <li>Mantenga la temperatura &pm;2&deg;F</li>
+
+              <li>Verificar la resistencia de contacto del bastidor antes de sumergir cada carga</li>
+            </ul>
+          </div>
+          <div class="glass compare-card dont">
+            <h4>No Haga Esto <span class="tag bad">evitar</span></h4>
+            <ul>
+              <li>Usar mismos amperios sin importar la carga</li>
+              <li>Dejar que la temp suba de 75&deg;F (Tipo II)</li>
+              <li>Dejar piezas en &aacute;cido sin corriente</li>
+
+              <li>Ajustar contactos del bastidor con corriente aplicada &mdash; bloquee/etiquete primero</li>
+            </ul>
+          </div>
+        </div>
+        <!-- ESQUEMA DE CELDA ELECTROQUIMICA -->
+        <div class="glass" style="padding:6px 12px;border-radius:10px;display:flex;align-items:center;justify-content:center;">
+          <svg viewBox="0 0 520 200" width="100%" height="140" preserveAspectRatio="xMidYMid meet" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="40" y="30" width="440" height="155" rx="6" stroke="currentColor" stroke-width="1.6" opacity=".4"/>
+            <rect x="41" y="65" width="438" height="119" rx="5" fill="rgba(232,160,32,.06)"/>
+            <text x="260" y="55" text-anchor="middle" fill="currentColor" font-family="JetBrains Mono,monospace" font-size="12" opacity=".5">BA&Ntilde;O H&sub2;SO&sub4;</text>
+            <rect x="75" y="72" width="28" height="96" rx="3" stroke="var(--slate)" stroke-width="1.6" fill="rgba(58,64,85,.15)"/>
+            <text x="89" y="184" text-anchor="middle" fill="var(--muted)" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="12">C&Aacute;TODO (&minus;)</text>
+            <rect x="385" y="72" width="46" height="88" rx="5" stroke="var(--amber)" stroke-width="2" fill="rgba(232,160,32,.12)"/>
+            <text x="408" y="184" text-anchor="middle" fill="var(--amber)" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="12">PIEZA (+)</text>
+            <rect x="375" y="75" width="10" height="82" rx="2" fill="rgba(232,160,32,.3)"/>
+            <text x="358" y="116" text-anchor="end" fill="var(--amber)" font-family="JetBrains Mono,monospace" font-size="11" font-weight="700">Al&sub2;O&sub3;</text>
+            <line x1="130" y1="98" x2="356" y2="92" stroke="var(--amber)" stroke-width="1.4" stroke-dasharray="6 4"/>
+            <polygon points="356,87 365,92 356,97" fill="var(--amber)"/>
+            <text x="240" y="86" text-anchor="middle" fill="var(--amber)" font-family="JetBrains Mono,monospace" font-size="12" font-weight="700">O&sup2;&minus; &rarr;</text>
+            <line x1="356" y1="138" x2="130" y2="142" stroke="var(--muted)" stroke-width="1.2" stroke-dasharray="5 4" opacity=".5"/>
+            <text x="240" y="155" text-anchor="middle" fill="var(--muted)" font-family="JetBrains Mono,monospace" font-size="11" opacity=".6">&larr; H&plus; &rarr; H&sub2;&uarr;</text>
+            <path d="M89 30 L89 14 L408 14 L408 30" stroke="var(--amber)" stroke-width="1.6"/>
+            <polygon points="404,30 408,40 412,30" fill="var(--amber)"/>
+            <text x="260" y="11" text-anchor="middle" fill="var(--amber)" font-family="JetBrains Mono,monospace" font-size="12" font-weight="700">CORRIENTE DC &rarr;</text>
+          </svg>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="section-title">Soluci&oacute;n de Problemas</h3>
+        <div style="display:flex;flex-direction:column;gap:7px;">
+          <div class="glass trouble-card"><h5>Quemaduras (Polvo / Manchas Blancas)</h5><p>CD muy alta; temperatura muy alta; mal contacto. Reduzca amperios; revise el chiller; verifique contacto.</p></div>
+          <div class="glass trouble-card"><h5>&Oacute;xido Blando / Baja Dureza</h5><p>Temperatura muy alta; Al disuelto alto; &aacute;cido bajo. Enfr&iacute;e el ba&ntilde;o; decante o reemplace.</p></div>
+          <div class="glass trouble-card"><h5>Agrietamiento / Crazing (Tipo III)</h5><p>Choque t&eacute;rmico por rampa de corriente demasiado r&aacute;pida o pico de temperatura. Extienda el tiempo de rampa a 5 min; verifique que la capacidad del enfriador coincida con el tama&ntilde;o de la carga.</p></div>
+          <div class="glass trouble-card"><h5>El Voltaje No Sube</h5><p>&Oacute;xido no est&aacute; creciendo. Posible cortocircuito, ba&ntilde;o demasiado caliente, o Al disuelto demasiado alto. Revise todas las conexiones; verifique la temperatura; titule el Al.</p></div>
+          <div class="glass trouble-card"><h5>&Oacute;xido Delgado / Desigual</h5><p>Mal contacto; CD incorrecta; tiempo corto. Revise conexiones; recalcule &aacute;rea; extienda tiempo.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="safety-card">
+      <div class="safety-head">&#9888; Seguridad &mdash; &Aacute;cido Sulf&uacute;rico + Alto Amperaje + Enfriamiento</div>
+      <div class="safety-body"><strong>El H&sub2;SO&sub4; causa quemaduras severas.</strong> Exot&eacute;rmico al contacto con agua &mdash; siempre agregue &aacute;cido al agua, nunca al rev&eacute;s. Rectificadores de alto amperaje: riesgo de descarga el&eacute;ctrica y arco el&eacute;ctrico. Los chillers de glicol del Tipo III operan bajo cero &mdash; peligro de congelaci&oacute;n en l&iacute;neas expuestas. Gas H&sub2; generado en el c&aacute;todo &mdash; ventile continuamente. EPP: gafas para &aacute;cido + careta, guantes qu&iacute;micos, mandil, botas. <strong>LOTO para servicio de rectificador y chiller.</strong> El riesgo de arco el&eacute;ctrico en las conexiones del rectificador es real. Nunca introduzca las manos en el tanque mientras fluye corriente. Bloquee/etiquete antes de cualquier ajuste de contactos.</div>
+    </div>
+
+  </div>
+
+  <footer class="footer poster-footer">
+    <p class="footer-disclaimer">Solo referencia t&eacute;cnica. Verifique todos los par&aacute;metros contra la TDS de su proveedor qu&iacute;mico, especificaciones del cliente y requisitos regulatorios aplicables antes del uso en producci&oacute;n. Consulte siempre a su proveedor qu&iacute;mico para los rangos operativos m&aacute;s actuales y las hojas de datos de seguridad.</p>
+    <p class="footer-title">Anodizado Sulf&uacute;rico (Tipo II &amp; III) &mdash; Serie de Anodizado con &Aacute;cido Sulf&uacute;rico</p>
+    <span class="footer-brand">Plating Posters &middot; Serie de Referencia de Acabado de Metales &middot; PP-Anod-04-T / v1.0 / 2026</span>
+  </footer>
+</div>
+</div>
+</div>
+<div class="tweaks"><div style="display:flex;gap:8px;align-items:center;"><span style="color:rgba(240,237,232,.5);font-size:11px;letter-spacing:.06em;text-transform:uppercase;">Edici&oacute;n</span><button id="btnDark" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:#E8A020;color:#1A1F2E;border:1px solid #E8A020;" onclick="setEdition('')">Oscuro</button><button id="btnLight" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);" onclick="setEdition('light')">Claro</button></div><button onclick="window.print()" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);">Imprimir / PDF</button></div>
+<script>const posterWrap=document.getElementById('posterWrap');const poster=document.getElementById('poster');function scalePoster(){const sW=(window.innerWidth-24)/1200;const sH=(window.innerHeight-24)/1800;const s=Math.min(sW,sH);posterWrap.style.transform='scale('+s+')';posterWrap.style.transformOrigin='top center';posterWrap.style.width='1200px';posterWrap.style.height=(1800*s)+'px';}function setEdition(e){if(e)poster.dataset.edition=e;else delete poster.dataset.edition;document.getElementById('btnDark').style.background=e?'transparent':'#E8A020';document.getElementById('btnDark').style.color=e?'#F0EDE8':'#1A1F2E';document.getElementById('btnDark').style.borderColor=e?'rgba(255,255,255,.2)':'#E8A020';document.getElementById('btnLight').style.background=e?'#E8A020':'transparent';document.getElementById('btnLight').style.color=e?'#1A1F2E':'#F0EDE8';document.getElementById('btnLight').style.borderColor=e?'#E8A020':'rgba(255,255,255,.2)';}scalePoster();window.addEventListener('resize',scalePoster);</script>
+</body>
+</html>

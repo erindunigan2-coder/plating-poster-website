@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EN High Phos &mdash; Post Tratamiento &mdash; Technical | Plating Posters Inc</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Barlow:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#1A1F2E;--navy:#0D1020;--text:#F0EDE8;--muted:rgba(240,237,232,.62);
+  --faint:rgba(240,237,232,.38);
+  --amber:#E8A020;--teal:#2EC4B6;--emerald:#27AE60;--coral:#E05C5C;
+  --slate:#3A4055;--callout:#1E2435;--altrow:#252B3D;
+  --glass-bg:rgba(30,36,53,.55);--glass-border:rgba(255,255,255,.12);
+  --glass-shadow:inset 0 1px 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(0,0,0,.2),0 4px 12px rgba(0,0,0,.25);
+}
+.poster[data-edition="light"]{
+  --bg:#F5F4F0;--navy:#DDD8CE;--text:#1B2030;--muted:rgba(27,32,48,.66);
+  --faint:rgba(27,32,48,.42);
+  --amber:#B8770D;--teal:#1A8C82;--emerald:#1E8449;--coral:#B7322F;
+  --slate:#C5C0B5;--callout:#ECEAE1;--altrow:#E4E1D6;
+  --glass-bg:rgba(255,253,247,.66);--glass-border:rgba(27,32,48,.10);
+  --glass-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 4px 12px rgba(27,32,48,.08);
+}
+html,body{margin:0;padding:0;background:#0a0c14;}
+.stage{width:100vw;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;overflow:visible;padding:12px 0;box-sizing:border-box;}
+.poster-wrap{transform-origin:center center;}
+.poster{width:1200px;height:1800px;position:relative;overflow:hidden;background:radial-gradient(1200px 800px at 15% 8%,rgba(46,196,182,.14),transparent 60%),radial-gradient(1000px 700px at 90% 25%,rgba(232,160,32,.12),transparent 55%),radial-gradient(900px 900px at 50% 80%,rgba(224,92,92,.10),transparent 60%),var(--bg);font-family:'Inter',sans-serif;color:var(--text);display:flex;flex-direction:column;padding:32px;box-sizing:border-box;}
+.poster::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:50px 50px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);pointer-events:none;z-index:0;}
+.poster>*{position:relative;z-index:1;}
+.glass{background-color:var(--glass-bg);background-image:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));border:1px solid var(--glass-border);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);box-shadow:var(--glass-shadow);border-radius:12px;}
+.tack{position:absolute;width:24px;height:24px;border-radius:50%;border:1.5px solid rgba(232,160,32,.28);z-index:2;pointer-events:none;}.tack::before,.tack::after{content:"";position:absolute;background:rgba(232,160,32,.28);}.tack::before{left:50%;top:-3px;bottom:-3px;width:1px;transform:translateX(-50%);}.tack::after{top:50%;left:-3px;right:-3px;height:1px;transform:translateY(-50%);}.tack.tl{top:12px;left:12px;}.tack.tr{top:12px;right:12px;}.tack.bl{bottom:12px;left:12px;}.tack.br{bottom:12px;right:12px;}
+.poster-header{flex-shrink:0;}.poster-body{flex:1;min-height:0;overflow:hidden;display:flex;flex-direction:column;gap:5px;justify-content:space-between;}.poster-footer{flex-shrink:0;margin-top:8px;}
+.header-band{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:8px;}.header-left{flex:1;min-width:0;}.eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--amber);letter-spacing:.16em;text-transform:uppercase;margin-bottom:4px;display:flex;align-items:center;gap:12px;}.eyebrow::before{content:"";display:inline-block;width:30px;height:3px;background:var(--amber);}.headline{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:72px;color:var(--text);line-height:.92;margin:4px 0;letter-spacing:-.01em;text-transform:uppercase;}.headline em{font-style:normal;color:var(--amber);}.subhead{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;color:var(--teal);margin:0 0 3px;letter-spacing:.02em;text-transform:uppercase;}.tagline{font-family:'Inter',sans-serif;font-style:italic;font-size:13px;color:var(--muted);line-height:1.45;max-width:700px;margin:0;}
+.logo-card{flex-shrink:0;padding:12px 10px;display:flex;flex-direction:column;align-items:center;gap:8px;align-self:flex-start;}.logo-tile{width:68px;height:68px;border-radius:12px;background:linear-gradient(135deg,#E8A020,#2EC4B6);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -2px 4px rgba(0,0,0,.15),0 4px 14px rgba(0,0,0,.35);}.logo-tile span{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:26px;color:#1A1F2E;letter-spacing:.02em;line-height:1;}.logo-word{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;letter-spacing:.04em;text-transform:uppercase;line-height:1;text-align:center;white-space:nowrap;}.logo-word .a{color:var(--text);}.logo-word .b{color:var(--amber);}.logo-inc{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.05em;text-transform:lowercase;color:var(--muted);margin-top:-2px;}
+.section-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:28px;letter-spacing:.08em;text-transform:uppercase;color:var(--text);margin:0 0 6px;display:flex;align-items:center;gap:8px;}.section-title::before{content:"";width:6px;height:6px;background:var(--amber);border-radius:50%;}.section-title .sub{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;color:var(--muted);margin-left:auto;font-weight:500;}
+.rule-card{display:flex;align-items:center;gap:16px;padding:14px 24px;background:rgba(232,160,32,.07);}.rule-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:68px;color:var(--amber);line-height:1;letter-spacing:-.02em;}.rule-body{flex:1;}.rule-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:19px;color:var(--amber);letter-spacing:.08em;text-transform:uppercase;}.rule-text{font-family:'Inter',sans-serif;font-size:13px;color:var(--muted);line-height:1.45;margin-top:3px;}
+.data-table{width:100%;border-collapse:collapse;}.data-table th{font-family:'Barlow',sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);padding:8px 12px;text-align:left;background:rgba(13,16,32,.35);border-bottom:1px solid var(--glass-border);}.poster[data-edition="light"] .data-table th{background:rgba(27,32,48,.06);}.data-table td{padding:8px 12px;color:var(--text);line-height:1.5;border-bottom:1px solid rgba(255,255,255,.05);font-family:'Inter',sans-serif;font-size:14px;}.data-table tr:last-child td{border-bottom:none;}.data-table tr:nth-child(even) td{background:rgba(255,255,255,.02);}.poster[data-edition="light"] .data-table tr:nth-child(even) td{background:rgba(27,32,48,.025);}.data-table .mono{font-family:'JetBrains Mono',monospace;font-size:13px;}.data-table.compact th{font-size:12px;padding:7px 10px;}.data-table.compact td{padding:6px 10px;font-size:13px;line-height:1.45;}.data-table.compact .mono{font-size:12.5px;}.data-table.bath th{font-size:12px;padding:6px 8px;}.data-table.bath td{padding:5px 8px;font-size:13px;line-height:1.4;}.data-table.bath .mono{font-size:12px;}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}.compare-card{padding:18px 24px;}.compare-card h4{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:21px;color:var(--text);margin:0 0 8px;text-transform:uppercase;letter-spacing:.04em;}.compare-card h4 .tag{font-size:12px;padding:2px 8px;border-radius:4px;margin-left:8px;font-family:'JetBrains Mono',monospace;font-weight:500;letter-spacing:.06em;}.compare-card h4 .tag.good{background:rgba(39,174,96,.15);color:var(--emerald);}.compare-card h4 .tag.bad{background:rgba(224,92,92,.15);color:var(--coral);}.compare-card ul{list-style:none;padding:0;margin:0;}.compare-card li{font-size:13.5px;line-height:1.5;padding:2px 0;display:flex;gap:8px;align-items:flex-start;}.compare-card li::before{content:"";width:5px;height:5px;border-radius:50%;margin-top:7px;flex-shrink:0;}.compare-card.do li::before{background:var(--emerald);}.compare-card.dont li::before{background:var(--coral);}
+.bottom-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:10px;}
+.insight-card{padding:12px 18px;border-left:3px solid var(--teal);background:rgba(46,196,182,.06);border-radius:0 12px 12px 0;}.insight-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;color:var(--teal);letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px;}.insight-text{font-family:'Inter',sans-serif;font-size:13px;color:var(--text);line-height:1.45;}
+.safety-card{padding:12px 18px;background:rgba(224,92,92,.08);border:1px solid rgba(224,92,92,.25);border-radius:12px;}.safety-head{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px;color:var(--coral);letter-spacing:.06em;text-transform:uppercase;margin-bottom:5px;}.safety-body{font-size:13px;color:var(--text);line-height:1.45;}.safety-body strong{font-weight:700;color:var(--coral);}
+.process-flow{display:flex;align-items:center;justify-content:space-between;padding:10px 16px;height:80px;gap:4px;}
+.footer{padding:10px 20px;background-color:rgba(13,16,32,.85);background-image:linear-gradient(180deg,rgba(255,255,255,.04),rgba(0,0,0,0));border:1px solid rgba(255,255,255,.10);border-radius:8px;text-align:center;display:flex;flex-direction:column;gap:2px;}.poster[data-edition="light"] .footer{background-color:rgba(221,216,206,.95);border-color:rgba(27,32,48,.10);}.footer-disclaimer{font-family:'Inter',sans-serif;font-size:9px;line-height:1.35;color:var(--faint);margin:0 auto;max-width:900px;}.footer-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:13px;color:var(--text);letter-spacing:.04em;text-transform:uppercase;margin:0;}.footer-brand{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;}
+.tweaks{position:fixed;bottom:16px;right:16px;z-index:100;background:rgba(13,16,32,.92);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:10px 14px;display:flex;flex-direction:column;gap:8px;font-family:'Inter',sans-serif;font-size:12px;color:#F0EDE8;}
+@media print{@page{size:12.5in 18.75in;margin:0;}html,body{background:#1A1F2E !important;-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}*{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}.stage{position:static;padding:0;display:block;overflow:visible;}.poster-wrap{transform:none !important;width:auto !important;height:auto !important;}.poster{box-shadow:none !important;width:1200px !important;height:1800px !important;overflow:hidden !important;}.glass,.insight-card,.safety-card{backdrop-filter:none !important;-webkit-backdrop-filter:none !important;}.tweaks{display:none !important;}}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="poster-wrap" id="posterWrap">
+<div class="poster" id="poster">
+  <span class="tack tl" aria-hidden="true"></span><span class="tack tr" aria-hidden="true"></span>
+  <span class="tack bl" aria-hidden="true"></span><span class="tack br" aria-hidden="true"></span>
+  <div class="poster-header">
+    <header class="header-band">
+      <div class="header-left">
+        <div class="eyebrow"><span>Plating Posters &nbsp;&middot;&nbsp; EN Alto F&oacute;sforo (10&ndash;13% P) &nbsp;&middot;&nbsp; Proceso de 7 Etapas &nbsp;&middot;&nbsp; Post Tratamiento</span></div>
+        <h1 class="headline">N&Iacute;QUEL<br><em>QU&Iacute;MICO</em></h1>
+        <h2 class="subhead">Alto F&oacute;sforo (10&ndash;13% P) &mdash; M&aacute;xima Resistencia a Corrosi&oacute;n, No Magn&eacute;tico</h2>
+        <p class="tagline">Sin corriente, sin &aacute;nodo &mdash; el ba&ntilde;o deposita por s&iacute; solo. Alto f&oacute;sforo es el campe&oacute;n anticorrosi&oacute;n de la familia EN.</p>
+      </div>
+      <aside class="glass logo-card">
+        <div class="logo-tile"><span>PP</span></div>
+        <div class="logo-word"><span class="a">Plating</span> <span class="b">Posters</span></div>
+        <div class="logo-inc">www.platingposters.com</div>
+      </aside>
+    </header>
+  </div>
+  <div class="poster-body">
+
+    <div class="glass rule-card">
+      <div class="rule-num">&lt;4hr</div>
+      <div class="rule-body">
+        <div class="rule-label">Horneado HE Dentro de 4 Horas para Acero de Alta Resistencia</div>
+        <div class="rule-text">El post-tratamiento transforma el dep&oacute;sito EN tal como se deposit&oacute;. El horneado de alivio de fragilizaci&oacute;n por hidr&oacute;geno (HE) es obligatorio dentro de 4 horas para acero de alta resistencia (&ge;40 HRC) seg&uacute;n ASTM B849. Temperaturas m&aacute;s altas aumentan la dureza pero destruyen la estructura amorfa, la resistencia a corrosi&oacute;n y la propiedad no magn&eacute;tica. Cromato o sellador agregan protecci&oacute;n adicional. Elegir el post-tratamiento correcto depende de qu&eacute; propiedades del dep&oacute;sito requiere la especificaci&oacute;n.</div>
+      </div>
+    </div>
+
+    <!-- TABLA PROGRAMA DE HORNEADO -->
+    <div>
+      <h3 class="section-title">Programa de Horneado <span class="sub">temperatura &times; tiempo &times; prop&oacute;sito</span></h3>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table compact">
+          <thead><tr><th>Tipo de Horneado</th><th>Temp &deg;C (&deg;F)</th><th>Tiempo</th><th>Prop&oacute;sito</th><th>Referencia</th></tr></thead>
+          <tbody>
+            <tr><td style="font-weight:600;color:var(--emerald);">Alivio HE</td><td class="mono">190&deg;C (375&deg;F)</td><td class="mono">1&ndash;4+ hr</td><td>Difundir hidr&oacute;geno atrapado fuera del acero; obligatorio para &ge;40 HRC</td><td class="mono">ASTM B849</td></tr>
+            <tr><td style="font-weight:600;color:var(--amber);">Horneado de Adherencia</td><td class="mono">190&ndash;210&deg;C (375&ndash;410&deg;F)</td><td class="mono">1&ndash;2 hr</td><td>Mejorar adherencia en sustratos de acero</td><td class="mono">AMS 2404</td></tr>
+            <tr><td style="font-weight:600;color:var(--amber);">Dureza Moderada</td><td class="mono">260&deg;C (500&deg;F)</td><td class="mono">1 hr</td><td>Aumentar dureza a 600&ndash;750 HV; inicio de cristalizaci&oacute;n</td><td class="mono">ASTM B733</td></tr>
+            <tr><td style="font-weight:600;color:var(--coral);">Dureza M&aacute;xima</td><td class="mono">400&deg;C (750&deg;F)</td><td class="mono">1 hr</td><td>Dureza m&aacute;xima 850&ndash;1000 HV; completamente cristalizado</td><td class="mono">ASTM B733</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- TABLA PROPIEDADES DEL DEP&Oacute;SITO -->
+    <div>
+      <h3 class="section-title">Propiedades del Dep&oacute;sito &mdash; Efecto de Temperatura de Horneado <span class="sub">alto f&oacute;sforo 10&ndash;13% P</span></h3>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table compact">
+          <thead><tr><th>Propiedad</th><th>Tal como Dep.</th><th>190&deg;C/4hr</th><th>260&deg;C/1hr</th><th>400&deg;C/1hr</th></tr></thead>
+          <tbody>
+            <tr><td style="font-weight:600;">Dureza</td><td class="mono">450&ndash;550 HV</td><td class="mono">500&ndash;600 HV</td><td class="mono">600&ndash;750 HV</td><td class="mono" style="color:var(--amber);font-weight:600;">850&ndash;1000 HV</td></tr>
+            <tr><td style="font-weight:600;">Estructura</td><td style="color:var(--teal);">Completamente amorfo</td><td style="color:var(--teal);">Amorfo (preservado)</td><td style="color:var(--coral);">Transici&oacute;n a cristalino</td><td style="color:var(--coral);">Cristalino (Ni + Ni&#8323;P)</td></tr>
+            <tr><td style="font-weight:600;">Corrosi&oacute;n (NSS)</td><td class="mono" style="color:var(--teal);">&gt;1000 hr</td><td class="mono" style="color:var(--teal);">&gt;1000 hr</td><td class="mono" style="color:var(--coral);">500&ndash;800 hr</td><td class="mono" style="color:var(--coral);">200&ndash;400 hr</td></tr>
+            <tr><td style="font-weight:600;">Magn&eacute;tico</td><td style="color:var(--teal);">No magn&eacute;tico</td><td style="color:var(--teal);">No magn&eacute;tico</td><td style="color:var(--coral);">D&eacute;bilmente magn&eacute;tico</td><td style="color:var(--coral);">Magn&eacute;tico</td></tr>
+            <tr><td style="font-weight:600;">Estr&eacute;s Interno</td><td class="mono">Compresivo bajo</td><td class="mono">Compresivo bajo</td><td class="mono">Cerca de cero</td><td class="mono">Tensil</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- SVG TEMPERATURA DE HORNEADO VS PROPIEDADES -->
+    <div class="glass" style="padding:10px 14px;">
+      <h3 class="section-title" style="margin-bottom:4px;">Temperatura de Horneado vs Propiedades del Dep&oacute;sito <span class="sub">dureza &uarr; corrosi&oacute;n &darr; en umbral de cristalizaci&oacute;n</span></h3>
+      <svg viewBox="0 0 1100 150" width="100%" height="125" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Barra de estado magn&eacute;tico arriba -->
+        <rect x="120" y="2" width="420" height="16" rx="3" fill="rgba(46,196,182,.12)" stroke="var(--teal)" stroke-width="0.8"/>
+        <text x="330" y="13" text-anchor="middle" fill="var(--teal)" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="8" letter-spacing=".06em">MAGN&Eacute;TICO: NO</text>
+        <rect x="540" y="2" width="420" height="16" rx="3" fill="rgba(224,92,92,.12)" stroke="var(--coral)" stroke-width="0.8"/>
+        <text x="750" y="13" text-anchor="middle" fill="var(--coral)" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="8" letter-spacing=".06em">MAGN&Eacute;TICO: S&Iacute;</text>
+        <!-- Etiquetas eje Y -->
+        <text x="15" y="40" fill="var(--amber)" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="8" letter-spacing=".04em">HV</text>
+        <text x="8" y="52" fill="var(--amber)" font-family="JetBrains Mono,monospace" font-size="7">1000</text>
+        <text x="12" y="80" fill="var(--amber)" font-family="JetBrains Mono,monospace" font-size="7">650</text>
+        <text x="12" y="108" fill="var(--amber)" font-family="JetBrains Mono,monospace" font-size="7">500</text>
+        <text x="1075" y="40" fill="var(--teal)" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="8" letter-spacing=".04em">NSS</text>
+        <text x="1060" y="52" fill="var(--teal)" font-family="JetBrains Mono,monospace" font-size="7">1000+</text>
+        <text x="1060" y="92" fill="var(--teal)" font-family="JetBrains Mono,monospace" font-size="7">500</text>
+        <text x="1060" y="120" fill="var(--teal)" font-family="JetBrains Mono,monospace" font-size="7">200</text>
+        <!-- L&iacute;nea eje X -->
+        <line x1="50" y1="130" x2="1040" y2="130" stroke="var(--faint)" stroke-width="1"/>
+        <!-- Etiquetas eje X -->
+        <text x="120" y="143" text-anchor="middle" fill="var(--text)" font-family="Barlow Condensed,sans-serif" font-weight="700" font-size="9">Tal como Dep.</text>
+        <text x="330" y="143" text-anchor="middle" fill="var(--text)" font-family="Barlow Condensed,sans-serif" font-weight="700" font-size="9">190&deg;C (HE)</text>
+        <text x="540" y="143" text-anchor="middle" fill="var(--text)" font-family="Barlow Condensed,sans-serif" font-weight="700" font-size="9">260&deg;C</text>
+        <text x="820" y="143" text-anchor="middle" fill="var(--text)" font-family="Barlow Condensed,sans-serif" font-weight="700" font-size="9">400&deg;C (Completo)</text>
+        <!-- L&iacute;nea umbral de cristalizaci&oacute;n -->
+        <line x1="540" y1="22" x2="540" y2="128" stroke="var(--coral)" stroke-width="2" stroke-dasharray="6,3"/>
+        <text x="540" y="33" text-anchor="middle" fill="var(--coral)" font-family="Barlow Condensed,sans-serif" font-weight="900" font-size="9" letter-spacing=".05em">UMBRAL DE CRISTALIZACI&Oacute;N</text>
+        <!-- Etiqueta izquierda -->
+        <text x="225" y="44" text-anchor="middle" fill="var(--teal)" font-family="Barlow Condensed,sans-serif" font-weight="700" font-size="9" letter-spacing=".04em">AMORFO &mdash; No magn&eacute;tico</text>
+        <!-- Etiqueta derecha -->
+        <text x="700" y="44" text-anchor="middle" fill="var(--coral)" font-family="Barlow Condensed,sans-serif" font-weight="700" font-size="9" letter-spacing=".04em">CRISTALINO &mdash; Magn&eacute;tico</text>
+        <!-- Curva de dureza (amber) - ascendente: 500, 500, 650, 950 -->
+        <circle cx="120" cy="108" r="4" fill="var(--amber)"/>
+        <circle cx="330" cy="108" r="4" fill="var(--amber)"/>
+        <circle cx="540" cy="80" r="4" fill="var(--amber)"/>
+        <circle cx="820" cy="48" r="5" fill="var(--amber)"/>
+        <polyline points="120,108 330,108 540,80 820,48" stroke="var(--amber)" stroke-width="2" fill="none"/>
+        <text x="850" y="48" fill="var(--amber)" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="9">Dureza</text>
+        <!-- Curva de corrosi&oacute;n (teal) - descendente: 1000+, 1000+, 500, 200 -->
+        <circle cx="120" cy="52" r="4" fill="var(--teal)"/>
+        <circle cx="330" cy="52" r="4" fill="var(--teal)"/>
+        <circle cx="540" cy="92" r="4" fill="var(--teal)"/>
+        <circle cx="820" cy="118" r="5" fill="var(--teal)"/>
+        <polyline points="120,52 330,52 540,92 820,118" stroke="var(--teal)" stroke-width="2" fill="none"/>
+        <text x="850" y="118" fill="var(--teal)" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="9">Niebla Salina</text>
+        <!-- Marcas del eje X -->
+        <line x1="120" y1="130" x2="120" y2="126" stroke="var(--faint)" stroke-width="1"/>
+        <line x1="330" y1="130" x2="330" y2="126" stroke="var(--faint)" stroke-width="1"/>
+        <line x1="540" y1="130" x2="540" y2="126" stroke="var(--faint)" stroke-width="1"/>
+        <line x1="820" y1="130" x2="820" y2="126" stroke="var(--faint)" stroke-width="1"/>
+      </svg>
+    </div>
+
+    <!-- SVG DIAGRAMA DE FLUJO DE DECISI&Oacute;N DE HORNEADO -->
+    <div class="glass" style="padding:10px 14px;">
+      <h3 class="section-title" style="margin-bottom:4px;">Diagrama de Flujo de Decisi&oacute;n de Horneado <span class="sub">elija el post-tratamiento correcto</span></h3>
+      <svg viewBox="0 0 1100 120" width="100%" height="100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="30" y="15" width="140" height="35" rx="6" fill="rgba(232,160,32,.10)" stroke="var(--amber)" stroke-width="1.4"/>
+        <text x="100" y="37" text-anchor="middle" fill="var(--amber)" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="11">PIEZA DEPOSITADA</text>
+        <line x1="170" y1="32" x2="210" y2="32" stroke="var(--amber)" stroke-width="1.2"/><polygon points="206,29 213,32 206,35" fill="var(--amber)"/>
+        <rect x="213" y="10" width="170" height="45" rx="6" fill="rgba(46,196,182,.08)" stroke="var(--teal)" stroke-width="1.2"/>
+        <text x="298" y="28" text-anchor="middle" fill="var(--teal)" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="10">&iquest;ACERO ALTA RESIST.?</text>
+        <text x="298" y="42" text-anchor="middle" fill="var(--muted)" font-family="Inter,sans-serif" font-size="8">(&ge;40 HRC / &ge;180 ksi)</text>
+        <line x1="298" y1="55" x2="298" y2="75" stroke="var(--emerald)" stroke-width="1.2"/><polygon points="295,72 298,79 301,72" fill="var(--emerald)"/>
+        <text x="313" y="68" fill="var(--emerald)" font-family="JetBrains Mono,monospace" font-size="8" font-weight="500">S&Iacute;</text>
+        <rect x="228" y="80" width="140" height="30" rx="6" fill="rgba(39,174,96,.12)" stroke="var(--emerald)" stroke-width="1.4"/>
+        <text x="298" y="100" text-anchor="middle" fill="var(--emerald)" font-family="Barlow Condensed,sans-serif" font-weight="900" font-size="11">190&deg;C / 4+ HR</text>
+        <line x1="383" y1="32" x2="430" y2="32" stroke="var(--amber)" stroke-width="1.2"/><polygon points="426,29 433,32 426,35" fill="var(--amber)"/>
+        <text x="405" y="27" fill="var(--coral)" font-family="JetBrains Mono,monospace" font-size="8" font-weight="500">NO</text>
+        <rect x="433" y="10" width="160" height="45" rx="6" fill="rgba(46,196,182,.08)" stroke="var(--teal)" stroke-width="1.2"/>
+        <text x="513" y="28" text-anchor="middle" fill="var(--teal)" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="10">&iquest;NECESITA M&Aacute;X DUREZA?</text>
+        <text x="513" y="42" text-anchor="middle" fill="var(--muted)" font-family="Inter,sans-serif" font-size="8">(&gt;800 HV superficie desgaste)</text>
+        <line x1="513" y1="55" x2="513" y2="75" stroke="var(--coral)" stroke-width="1.2"/><polygon points="510,72 513,79 516,72" fill="var(--coral)"/>
+        <text x="528" y="68" fill="var(--emerald)" font-family="JetBrains Mono,monospace" font-size="8" font-weight="500">S&Iacute;</text>
+        <rect x="443" y="80" width="140" height="30" rx="6" fill="rgba(224,92,92,.12)" stroke="var(--coral)" stroke-width="1.4"/>
+        <text x="513" y="100" text-anchor="middle" fill="var(--coral)" font-family="Barlow Condensed,sans-serif" font-weight="900" font-size="11">400&deg;C / 1 HR</text>
+        <line x1="593" y1="32" x2="640" y2="32" stroke="var(--amber)" stroke-width="1.2"/><polygon points="636,29 643,32 636,35" fill="var(--amber)"/>
+        <text x="616" y="27" fill="var(--coral)" font-family="JetBrains Mono,monospace" font-size="8" font-weight="500">NO</text>
+        <rect x="643" y="10" width="175" height="45" rx="6" fill="rgba(46,196,182,.08)" stroke="var(--teal)" stroke-width="1.2"/>
+        <text x="730" y="28" text-anchor="middle" fill="var(--teal)" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="10">&iquest;NECESITA RESIST. CORR.?</text>
+        <text x="730" y="42" text-anchor="middle" fill="var(--muted)" font-family="Inter,sans-serif" font-size="8">&iquest;o no magn&eacute;tico?</text>
+        <line x1="730" y1="55" x2="730" y2="75" stroke="var(--teal)" stroke-width="1.2"/><polygon points="727,72 730,79 733,72" fill="var(--teal)"/>
+        <text x="745" y="68" fill="var(--emerald)" font-family="JetBrains Mono,monospace" font-size="8" font-weight="500">S&Iacute;</text>
+        <rect x="655" y="80" width="150" height="30" rx="6" fill="rgba(46,196,182,.12)" stroke="var(--teal)" stroke-width="1.4"/>
+        <text x="730" y="100" text-anchor="middle" fill="var(--teal)" font-family="Barlow Condensed,sans-serif" font-weight="900" font-size="11">NO HORNEE &gt;260&deg;C</text>
+        <line x1="818" y1="32" x2="865" y2="32" stroke="var(--amber)" stroke-width="1.2"/><polygon points="861,29 868,32 861,35" fill="var(--amber)"/>
+        <text x="841" y="27" fill="var(--coral)" font-family="JetBrains Mono,monospace" font-size="8" font-weight="500">NO</text>
+        <rect x="868" y="10" width="180" height="45" rx="6" fill="rgba(39,174,96,.08)" stroke="var(--emerald)" stroke-width="1.2"/>
+        <text x="958" y="28" text-anchor="middle" fill="var(--emerald)" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="10">CROMATO / SELLADOR</text>
+        <text x="958" y="42" text-anchor="middle" fill="var(--muted)" font-family="Inter,sans-serif" font-size="8">o env&iacute;e tal como dep. seg&uacute;n especificaci&oacute;n</text>
+      </svg>
+    </div>
+
+    <!-- OPCIONES CROMATO / SELLADOR -->
+    <div class="bottom-grid">
+      <div>
+        <h3 class="section-title">Opciones de Cromato y Sellador <span class="sub">protecci&oacute;n anticorrosi&oacute;n suplementaria</span></h3>
+        <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+          <table class="data-table compact">
+            <thead><tr><th>Tratamiento</th><th>Tipo</th><th>Beneficio</th><th>Notas</th></tr></thead>
+            <tbody>
+              <tr><td style="font-weight:600;">Cromo Hex (Cr&sup3;&#8314;&amp;Cr&#8310;&#8314;)</td><td>Conversi&oacute;n cromato</td><td>Mejor refuerzo anticorrosi&oacute;n; auto-reparable</td><td>Restringido por RoHS; uso en declive</td></tr>
+              <tr><td style="font-weight:600;">Cromo Trivalente (Cr&sup3;&#8314;)</td><td>Conversi&oacute;n cromato</td><td>Buena corrosi&oacute;n; cumple RoHS</td><td>No se auto-repara; reemplaza hex</td></tr>
+              <tr><td style="font-weight:600;">Sellador de Silicato</td><td>Sellador inorg&aacute;nico</td><td>Sella poros; refuerzo leve corrosi&oacute;n</td><td>Recubrimiento delgado; no cambia apariencia</td></tr>
+              <tr><td style="font-weight:600;">Recubrimiento Org&aacute;nico</td><td>Sellador polim&eacute;rico</td><td>Hidrof&oacute;bico; barrera adicional</td><td>Puede afectar dimensiones; verificar con especificaci&oacute;n</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div>
+        <div class="insight-card" style="margin-bottom:8px;">
+          <div class="insight-label">La Trampa de la Cristalizaci&oacute;n</div>
+          <div class="insight-text">Hornear EN de alto f&oacute;sforo por encima de 260&deg;C cristaliza el dep&oacute;sito en precipitados Ni + Ni&#8323;P. Esto aumenta dram&aacute;ticamente la dureza (a 850&ndash;1000 HV) pero <strong>destruye permanentemente</strong> tanto la resistencia a corrosi&oacute;n amorfa (&gt;1000 hr &rarr; 200&ndash;400 hr NSS) como la propiedad no magn&eacute;tica. Si su especificaci&oacute;n requiere resistencia a corrosi&oacute;n o comportamiento no magn&eacute;tico, <strong>no hornee por encima de 260&deg;C</strong>. Horneado HE a 190&deg;C preserva ambas.</div>
+        </div>
+        <div class="insight-card">
+          <div class="insight-label">Tiempo de Horneado HE</div>
+          <div class="insight-text">La ventana de 4 horas para horneado HE se mide desde el momento en que las piezas salen del ba&ntilde;o EN, no desde cuando terminan de enjuagar o secar. Para acero de alta resistencia (&ge;40 HRC), el hidr&oacute;geno absorbido durante el dep&oacute;sito debe ser expulsado antes de que cause agrietamiento. Hornee a 190&deg;C por al menos 1 hora (4+ horas t&iacute;pico para &ge;52 HRC). No hornear dentro de la ventana puede resultar en fractura fr&aacute;gil retardada.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="safety-card">
+      <div class="safety-head">&#9888; Seguridad &mdash; Post Tratamiento</div>
+      <div class="safety-body"><strong>Hornos</strong> a 190&ndash;400&deg;C &mdash; riesgo severo de quemaduras. Use guantes resistentes al calor y pinzas. Las piezas permanecen calientes por minutos despu&eacute;s de retirarlas. <strong>Soluciones de cromato</strong>: cromo trivalente es moderadamente t&oacute;xico; cromo hexavalente es carcin&oacute;geno GHS Categor&iacute;a 1A (IARC Grupo 1). OSHA PEL Cr(VI): 5 &micro;g/m&sup3;. EPP completo incluyendo protecci&oacute;n respiratoria para cromo hex. Maneje piezas tratadas con cromato con guantes. Regadera y lavaojos a 10 segundos de estaciones de cromato.</div>
+    </div>
+
+  </div>
+  <footer class="footer poster-footer">
+    <p class="footer-disclaimer">Referencia t&eacute;cnica solamente. Verifique todos los par&aacute;metros contra la FTS de su proveedor, especificaciones del cliente y requisitos regulatorios antes de usar en producci&oacute;n.</p>
+    <p class="footer-title">Post Tratamiento &mdash; Serie EN Alto F&oacute;sforo</p>
+    <span class="footer-brand">Plating Posters &middot; Serie de Referencia de Acabados Met&aacute;licos &middot; PP-ENhp-08-T / v1.0 / 2026</span>
+  </footer>
+</div>
+</div>
+</div>
+<div class="tweaks">
+  <div style="display:flex;gap:8px;align-items:center;">
+    <span style="color:rgba(240,237,232,.5);font-size:11px;letter-spacing:.06em;text-transform:uppercase;">Edition</span>
+    <button id="btnDark" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:#E8A020;color:#1A1F2E;border:1px solid #E8A020;" onclick="setEdition('')">Dark</button>
+    <button id="btnLight" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);" onclick="setEdition('light')">Light</button>
+  </div>
+  <button onclick="window.print()" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);">Print / PDF</button>
+</div>
+<script>
+const posterWrap=document.getElementById('posterWrap');const poster=document.getElementById('poster');function scalePoster(){const sW=(window.innerWidth-24)/1200;const sH=(window.innerHeight-24)/1800;const s=Math.min(sW,sH);posterWrap.style.transform='scale('+s+')';posterWrap.style.transformOrigin='top center';posterWrap.style.width='1200px';posterWrap.style.height=(1800*s)+'px';}function setEdition(e){if(e)poster.dataset.edition=e;else delete poster.dataset.edition;document.getElementById('btnDark').style.background=e?'transparent':'#E8A020';document.getElementById('btnDark').style.color=e?'#F0EDE8':'#1A1F2E';document.getElementById('btnDark').style.borderColor=e?'rgba(255,255,255,.2)':'#E8A020';document.getElementById('btnLight').style.background=e?'#E8A020':'transparent';document.getElementById('btnLight').style.color=e?'#1A1F2E':'#F0EDE8';document.getElementById('btnLight').style.borderColor=e?'#E8A020':'rgba(255,255,255,.2)';}scalePoster();window.addEventListener('resize',scalePoster);
+</script>
+</body>
+</html>

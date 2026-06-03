@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hard Chrome &mdash; Enjuague y Recuperación Post-Cromado &mdash; Shop Floor | Plating Posters Inc</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Barlow:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#1A1F2E;--navy:#0D1020;--text:#F0EDE8;--muted:rgba(240,237,232,.62);--faint:rgba(240,237,232,.38);--amber:#E8A020;--teal:#2EC4B6;--emerald:#27AE60;--coral:#E05C5C;--slate:#3A4055;--glass-bg:rgba(30,36,53,.55);--glass-border:rgba(255,255,255,.12);--glass-shadow:inset 0 1px 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(0,0,0,.2),0 4px 12px rgba(0,0,0,.25);--tack:24px;}
+body[data-edition="light"]{--bg:#F5F4F0;--navy:#DDD8CE;--text:#1B2030;--muted:rgba(27,32,48,.78);--amber:#8C5A00;--teal:#0F6B62;--emerald:#15693B;--coral:#9B2825;--faint:rgba(27,32,48,.42);--slate:#C5C0B5;--glass-bg:rgba(255,253,247,.82);--glass-border:rgba(27,32,48,.18);--glass-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 4px 12px rgba(27,32,48,.08);}body[data-edition="light"] .logo-url{color:rgba(27,32,48,.62);}body[data-edition="light"] .logo-word .a{color:#1B2030;}
+html,body{margin:0;padding:0;background:#0a0c14;}.stage{width:100vw;height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;}.poster-wrap{transform-origin:center center;}.poster{width:900px;height:1200px;position:relative;overflow:hidden;background:radial-gradient(700px 500px at 10% 8%,rgba(46,196,182,.15),transparent 60%),radial-gradient(600px 450px at 92% 20%,rgba(232,160,32,.13),transparent 55%),radial-gradient(550px 500px at 50% 88%,rgba(224,92,92,.10),transparent 60%),var(--bg);font-family:'Inter',sans-serif;color:var(--text);display:flex;flex-direction:column;padding:var(--tack);box-sizing:border-box;}.poster::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:50px 50px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);pointer-events:none;z-index:0;}.poster>*{position:relative;z-index:1;}
+.glass{background-color:var(--glass-bg);background-image:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));border:1px solid var(--glass-border);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);box-shadow:var(--glass-shadow);border-radius:12px;}
+.tack{position:absolute;width:18px;height:18px;border-radius:50%;border:1.5px solid rgba(232,160,32,.28);z-index:2;pointer-events:none;}.tack::before,.tack::after{content:"";position:absolute;background:rgba(232,160,32,.28);}.tack::before{left:50%;top:-2px;bottom:-2px;width:1px;transform:translateX(-50%);}.tack::after{top:50%;left:-2px;right:-2px;height:1px;transform:translateY(-50%);}.tack.tl{top:6px;left:6px;}.tack.tr{top:6px;right:6px;}.tack.bl{bottom:6px;left:6px;}.tack.br{bottom:6px;right:6px;}
+.poster-header{flex-shrink:0;}.poster-body{flex:1;overflow:hidden;display:flex;flex-direction:column;gap:10px;}.poster-footer{flex-shrink:0;margin-top:8px;}
+.header-row{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:8px;}.header-left{flex:1;min-width:0;}.eyebrow{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--amber);letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px;}.headline{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:56px;color:var(--text);line-height:.92;letter-spacing:-.01em;margin-bottom:4px;}.headline em{font-style:normal;color:var(--amber);}.subhead{font-family:'Barlow',sans-serif;font-weight:700;font-size:17px;color:var(--amber);margin-bottom:4px;}.tagline{font-family:'Inter',sans-serif;font-weight:500;font-size:11px;color:var(--muted);line-height:1.3;max-width:520px;}
+.logo-card{flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:6px;padding:10px 12px;min-width:140px;background-color:var(--glass-bg);background-image:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));border:1px solid var(--glass-border);border-radius:12px;backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 4px 12px rgba(0,0,0,.25);}.logo-mark{width:60px;height:60px;border-radius:11px;background:linear-gradient(135deg,#E8A020,#2EC4B6);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -2px 4px rgba(0,0,0,.15),0 4px 14px rgba(0,0,0,.35);}.logo-mark span{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:22px;color:#1A1F2E;letter-spacing:.02em;line-height:1;}.logo-word{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;letter-spacing:.04em;text-transform:uppercase;line-height:1;text-align:center;white-space:nowrap;}.logo-word .a{color:#F0EDE8;}.logo-word .b{color:#E8A020;}.logo-url{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.06em;color:rgba(240,237,232,.45);margin-top:-1px;}
+.section-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;letter-spacing:.07em;text-transform:uppercase;color:var(--amber);margin-bottom:6px;}.section-title.coral{color:var(--coral);}
+.key-card{padding:12px 16px;background:rgba(232,160,32,.07);border-radius:12px;}.key-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:38px;color:var(--amber);line-height:1;margin-bottom:2px;}.key-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;color:var(--amber);letter-spacing:.06em;text-transform:uppercase;}.key-text{font-family:'Inter',sans-serif;font-size:12px;color:var(--muted);line-height:1.4;margin-top:4px;}
+.flow-table{width:100%;border-collapse:collapse;}.flow-table th{font-family:'Barlow',sans-serif;font-weight:700;font-size:10px;color:var(--amber);letter-spacing:.06em;text-transform:uppercase;padding:3px 6px;text-align:left;border-bottom:1px solid var(--glass-border);}.flow-table td{font-family:'Inter',sans-serif;font-weight:500;font-size:11px;color:var(--text);padding:4px 6px;border-bottom:1px solid rgba(255,255,255,.05);line-height:1.3;}.flow-table td.mono{font-family:'JetBrains Mono',monospace;font-size:10px;}.flow-table tr:nth-child(even) td{background:rgba(255,255,255,.02);}body[data-edition="light"] .flow-table tr:nth-child(even) td{background:rgba(27,32,48,.025);}
+.compare-row{display:flex;gap:10px;}.compare-card{flex:1;padding:8px 10px;}.compare-head{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px;display:flex;align-items:center;gap:8px;}.compare-head.good{color:var(--emerald);}.compare-head.bad{color:var(--coral);}.compare-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:4px;}.compare-list li{font-size:11.5px;line-height:1.4;display:flex;gap:6px;align-items:flex-start;}.compare-list li::before{content:"";width:5px;height:5px;border-radius:50%;margin-top:5px;flex-shrink:0;}.compare-card.do .compare-list li::before{background:var(--emerald);}.compare-card.dont .compare-list li::before{background:var(--coral);}
+.safety-card{padding:8px 10px;background:rgba(224,92,92,.06);border-radius:12px;}.safety-text{font-family:'Inter',sans-serif;font-weight:500;font-size:11.5px;color:var(--text);line-height:1.45;}.safety-text strong{font-weight:700;color:var(--coral);}
+.footer-panel{padding:8px 18px;text-align:center;border-radius:10px;}.footer-disclaimer{font-family:'Inter',sans-serif;font-weight:400;font-size:9px;color:var(--muted);line-height:1.4;margin-bottom:3px;}.footer-title{font-family:'Barlow',sans-serif;font-weight:600;font-size:11px;color:var(--text);margin-bottom:2px;}.footer-brand{font-family:'JetBrains Mono',monospace;font-size:8.5px;color:var(--muted);}
+@media print{@page{size:9.375in 12.5in;margin:0;}html,body{background:#1A1F2E !important;-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}*{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}.stage{position:static;display:block;overflow:visible;}.poster-wrap{transform:none !important;width:auto !important;height:auto !important;}.poster{box-shadow:none !important;width:900px !important;height:1200px !important;overflow:hidden !important;}.glass,.safety-card,.compare-card{backdrop-filter:none !important;-webkit-backdrop-filter:none !important;}.tweaks{display:none !important;}}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="poster-wrap" id="posterWrap">
+<div class="poster" id="poster">
+  <span class="tack tl"></span><span class="tack tr"></span><span class="tack bl"></span><span class="tack br"></span>
+  <div class="poster-header">
+    <div class="header-row">
+      <div class="header-left">
+        <div class="eyebrow">Plating Posters Inc &mdash; Planta &mdash; Hard Chrome &mdash; Etapa 8</div>
+        <div class="headline">ENJUAGUE<br><em>POST-CROMO</em></div>
+        <div class="subhead">Recupere Química y Elimine Cromo Hexavalente de las Piezas</div>
+        <div class="tagline">El tiempo de drenaje ahorra química. El enjuague exhaustivo protege la salud.</div>
+      </div>
+      <div class="logo-card">
+        <div class="logo-mark"><span>PP</span></div>
+        <div class="logo-word"><span class="a">Plating</span> <span class="b">Posters</span></div>
+        <div class="logo-url">www.platingposters.com</div>
+      </div>
+    </div>
+  </div>
+  <div class="poster-body" style="gap:4px;">
+    <div class="glass key-card">
+      <div class="key-num">10-15 s</div>
+      <div class="key-label">Tiempo de Drenaje Sobre el Tanque de Cromo Antes de Transferir</div>
+      <div class="key-text">Cada segundo de drenaje retorna ácido crómico costoso al tanque y reduce la carga de Cr(VI) en su sistema de tratamiento de aguas residuales.</div>
+    </div>
+    <div class="glass" style="padding:8px 10px;">
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="90" viewBox="0 0 852 90" style="display:block;">
+  <text x="426" y="12" font-family="'Barlow Condensed',sans-serif" font-weight="800" font-size="10" fill="var(--amber)" text-anchor="middle" letter-spacing="0.1em">FLUJO DE SECUENCIA DE ENJUAGUE</text>
+  <rect x="10" y="22" width="160" height="40" rx="6" fill="var(--coral)" opacity="0.6" stroke="var(--coral)" stroke-width="1"/>
+  <text x="90" y="46" font-family="'Barlow Condensed',sans-serif" font-weight="800" font-size="11" fill="#fff" text-anchor="middle">Tanque de Cromo</text>
+  <text x="200" y="46" font-family="'JetBrains Mono',monospace" font-weight="700" font-size="9" fill="var(--muted)" text-anchor="middle">DRENAR</text>
+  <text x="200" y="56" font-family="'JetBrains Mono',monospace" font-size="8" fill="var(--faint)" text-anchor="middle">&#x23F8;</text>
+  <rect x="230" y="22" width="160" height="40" rx="6" fill="var(--amber)" opacity="0.45" stroke="var(--amber)" stroke-width="1"/>
+  <text x="310" y="46" font-family="'Barlow Condensed',sans-serif" font-weight="800" font-size="11" fill="var(--text)" text-anchor="middle">Recuperaci&#xf3;n</text>
+  <path d="M310,62 L310,78 L90,78 L90,66" fill="none" stroke="var(--amber)" stroke-width="1.5" marker-end="url(#arrowAmber08)"/>
+  <defs><marker id="arrowAmber08" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="var(--amber)"/></marker><marker id="arrowTeal08" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="var(--teal)"/></marker></defs>
+  <text x="200" y="88" font-family="'JetBrains Mono',monospace" font-size="8" fill="var(--amber)" text-anchor="middle">&#x2190; retorno al cromo</text>
+  <rect x="430" y="22" width="160" height="40" rx="6" fill="var(--amber)" opacity="0.25" stroke="var(--glass-border)" stroke-width="1"/>
+  <text x="510" y="46" font-family="'Barlow Condensed',sans-serif" font-weight="800" font-size="11" fill="var(--text)" text-anchor="middle">Enjuague 1</text>
+  <rect x="630" y="22" width="160" height="40" rx="6" fill="var(--glass-bg)" stroke="var(--glass-border)" stroke-width="1"/>
+  <text x="710" y="46" font-family="'Barlow Condensed',sans-serif" font-weight="800" font-size="11" fill="var(--text)" text-anchor="middle">Enjuague 2</text>
+  <line x1="175" y1="35" x2="225" y2="35" stroke="var(--amber)" stroke-width="1.5" marker-end="url(#arrowAmber08)"/>
+  <line x1="395" y1="35" x2="425" y2="35" stroke="var(--amber)" stroke-width="1.5" marker-end="url(#arrowAmber08)"/>
+  <line x1="595" y1="35" x2="625" y2="35" stroke="var(--amber)" stroke-width="1.5" marker-end="url(#arrowAmber08)"/>
+  <line x1="625" y1="55" x2="595" y2="55" stroke="var(--teal)" stroke-width="1" marker-end="url(#arrowTeal08)"/>
+  <line x1="425" y1="55" x2="395" y2="55" stroke="var(--teal)" stroke-width="1" marker-end="url(#arrowTeal08)"/>
+  <text x="810" y="55" font-family="'JetBrains Mono',monospace" font-size="7" fill="var(--teal)">&#x2190; H&#x2082;O</text>
+  <text x="810" y="35" font-family="'JetBrains Mono',monospace" font-size="7" fill="var(--amber)">Piezas &#x2192;</text>
+</svg>
+</div>
+    <div class="glass" style="padding:8px 10px;">
+      <div class="section-title">Parámetros Operativos</div>
+      <table class="flow-table">
+        <thead><tr><th>Tanque</th><th>Flujo</th><th>Propósito</th><th>Punto Clave</th></tr></thead>
+        <tbody><tr><td>Drenaje sobre cromo</td><td>N/A</td><td>Retornar arrastre grueso</td><td>10&ndash;15 seg drenaje</td></tr>
+<tr><td>Enjuague recuperación (estático)</td><td>SIN FLUJO</td><td>Capturar arrastre diluido</td><td>Retornar al tanque semanalmente</td></tr>
+<tr><td>Enjuague flujo 1</td><td>1&ndash;3 gal/min</td><td>Diluir Cr(VI) restante</td><td>Contracorriente desde enjuague 2</td></tr>
+<tr><td>Enjuague flujo 2</td><td>Agua fresca</td><td>Enjuague final</td><td>Conductividad &lt;50 &micro;S/cm</td></tr>
+</tbody>
+      </table>
+    </div>
+    <div class="glass" style="padding:8px 10px;">
+      <div class="section-title" style="color:var(--amber);">&#128176; Economía del Arrastre</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+        <div style="font-size:11px;line-height:1.35;"><strong style="color:var(--amber);">Cada carga lleva</strong> 0,5&ndash;2,0 gal/100 pie&sup2; de arrastre. A 36 oz/gal de CrO&#8323;, eso es $2&ndash;8 de química por rack.</div>
+        <div style="font-size:11px;line-height:1.35;"><strong style="color:var(--amber);">10 seg de drenado</strong> retorna 50&ndash;70% del arrastre al tanque. 15 seg retorna hasta 80%. Cada segundo cuenta.</div>
+        <div style="font-size:11px;line-height:1.35;"><strong style="color:var(--amber);">Enjuague de recuperación</strong> captura la mayor parte del arrastre restante. Retorne semanalmente al tanque de cromo.</div>
+        <div style="font-size:11px;line-height:1.35;"><strong style="color:var(--amber);">Impacto en aguas residuales:</strong> Menos arrastre = menos Cr(VI) en tratamiento = menor costo de reducción y precipitación.</div>
+      </div>
+    </div>
+    <div class="glass" style="padding:8px 10px;">
+      <div class="section-title" style="color:var(--teal);">&#128269; Lista de Verificación de Calidad de Enjuague</div>
+      <table class="flow-table">
+        <thead><tr><th>Verificar</th><th>Dónde</th><th>Objetivo</th><th>Si Fuera de Especificación</th></tr></thead>
+        <tbody><tr><td>Conductividad</td><td>Salida de enjuague final</td><td>&lt;50 &micro;S/cm</td><td>Aumentar flujo de agua o agregar etapa</td></tr>
+<tr><td>Color amarillo</td><td>Enjuague de recuperación</td><td>Amarillo visible = normal</td><td>Si está claro, verificar que recibe arrastre</td></tr>
+<tr><td>Flujo de agua</td><td>Enjuague de recuperación</td><td>CERO &mdash; tanque quieto</td><td>Cerrar válvulas abiertas inmediatamente</td></tr>
+<tr><td>Ruta de desborde</td><td>Todos los tanques</td><td>A tratamiento de aguas</td><td>Verificar conexiones &mdash; sin desagües al piso</td></tr>
+</tbody>
+      </table>
+    </div>
+    <div class="compare-row">
+      <div class="compare-card glass do"><div class="compare-head good">&#10003; Haga</div><ul class="compare-list"><li>Drenar 10-15 segundos sobre el tanque de cromo antes de mover al enjuague</li><li>Retornar enjuague de recuperación al tanque de cromo según programación</li><li>Manejar piezas con guantes resistentes a químicos hasta el horneado</li><li>Dirigir toda el agua de enjuague al tratamiento de aguas residuales</li></ul></div>
+      <div class="compare-card glass dont"><div class="compare-head bad">&#10007; No Haga</div><ul class="compare-list"><li>Meter manos sin guantes en enjuague post-cromo &mdash; peligro de Cr(VI)</li><li>Descargar enjuague de cromo al desagüe pluvial &mdash; ilegal y peligroso</li><li>Dejar flujo de agua en tanque de recuperación</li><li>Verter o transferir con cubeta soluciones de cromo concentradas</li></ul></div>
+    </div>
+    <div class="glass safety-card">
+      <div class="section-title coral">&#9888; Seguridad &mdash; Etapa 8</div>
+      <div class="safety-text"><strong>Toda el agua de enjuague post-cromo contiene Cr(VI)</strong> &mdash; peligro carcinógeno. El enjuague de recuperación alcanza concentraciones cercanas al baño (2-10 oz/gal CrO&#8323;). Guantes resistentes a químicos, gafas, delantal requeridos en todas las estaciones post-cromo. Nunca descargar sin tratar &mdash; violación de la Ley de Agua Limpia y RCRA, sujeto a sanciones penales. Las piezas portan trazas de Cr(VI) hasta secarse/hornearse &mdash; manejar con guantes. Lavaojos a 10 segundos.</div>
+    </div>
+  </div>
+  <div class="glass footer-panel poster-footer">
+    <div class="footer-disclaimer">Solo referencia del operador. Siga los SOPs de su instalación.</div>
+    <div class="footer-title">Enjuague y Recuperación Post-Cromado &mdash; Serie de Cromado Duro</div>
+    <div class="footer-brand">Plating Posters Inc &middot; Referencia de Planta &middot; PP-HC-08-SF / v1.0 / 2026</div>
+  </div>
+</div>
+</div>
+</div>
+<div class="tweaks" style="position:fixed;bottom:16px;right:16px;z-index:100;background:rgba(13,16,32,.92);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:12px 16px;display:flex;flex-direction:column;gap:8px;font-family:'Inter',sans-serif;font-size:12px;color:#F0EDE8;">
+  <div style="display:flex;gap:8px;align-items:center;"><span style="color:rgba(240,237,232,.5);">Edition</span><button id="btnDark" onclick="setEdition('')" style="padding:3px 10px;border-radius:4px;border:1px solid #E8A020;background:#E8A020;color:#1A1F2E;cursor:pointer;font-size:11px;">Dark</button><button id="btnLight" onclick="setEdition('light')" style="padding:3px 10px;border-radius:4px;border:1px solid rgba(255,255,255,.2);background:transparent;color:#F0EDE8;cursor:pointer;font-size:11px;">Light</button></div>
+  <button onclick="window.print()" style="padding:4px 12px;border-radius:4px;border:1px solid rgba(255,255,255,.2);background:transparent;color:#F0EDE8;cursor:pointer;font-size:11px;">Print / PDF</button>
+</div>
+<script>
+const posterWrap=document.getElementById('posterWrap');const poster=document.getElementById('poster');function scalePoster(){const s=Math.min((window.innerWidth-24)/900,(window.innerHeight-24)/1200);posterWrap.style.transform='scale('+s+')';posterWrap.style.transformOrigin='top center';posterWrap.style.width='900px';posterWrap.style.height=(1200*s)+'px';}function setEdition(e){if(e)document.body.dataset.edition=e;else delete document.body.dataset.edition;document.getElementById('btnDark').style.background=e?'transparent':'#E8A020';document.getElementById('btnDark').style.color=e?'#F0EDE8':'#1A1F2E';document.getElementById('btnDark').style.borderColor=e?'rgba(255,255,255,.2)':'#E8A020';document.getElementById('btnLight').style.background=e?'#E8A020':'transparent';document.getElementById('btnLight').style.color=e?'#1A1F2E':'#F0EDE8';document.getElementById('btnLight').style.borderColor=e?'#E8A020':'rgba(255,255,255,.2)';}scalePoster();window.addEventListener('resize',scalePoster);
+</script>
+</body>
+</html>

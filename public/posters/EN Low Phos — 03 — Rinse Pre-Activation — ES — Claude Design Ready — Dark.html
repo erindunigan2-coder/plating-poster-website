@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Níquel Químico Bajo Fósforo — Enjuague Pre-Activación Etapa 2 | Plating Posters</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Barlow:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#1A1F2E; --navy:#0D1020; --text:#F0EDE8; --muted:rgba(240,237,232,.62);
+  --faint:rgba(240,237,232,.38);
+  --amber:#E8A020; --teal:#2EC4B6; --emerald:#27AE60; --coral:#E05C5C;
+  --slate:#3A4055; --callout:#1E2435; --altrow:#252B3D;
+  --glass-bg: rgba(30,36,53,.55);
+  --glass-border: rgba(255,255,255,.12);
+  --glass-shadow: inset 0 1px 0 rgba(255,255,255,.14), inset 0 -1px 0 rgba(0,0,0,.2), 0 4px 12px rgba(0,0,0,.25);
+}
+.poster[data-edition="light"] {
+  --bg:#F5F4F0; --navy:#DDD8CE; --text:#1B2030; --muted:rgba(27,32,48,.66);
+  --faint:rgba(27,32,48,.42);
+  --amber:#B8770D; --teal:#1A8C82; --emerald:#1E8449; --coral:#B7322F;
+  --slate:#C5C0B5; --callout:#ECEAE1; --altrow:#E4E1D6;
+  --glass-bg: rgba(255,253,247,.66); --glass-border: rgba(27,32,48,.10);
+}
+html, body { margin:0; padding:0; background:#0a0c14; }
+.stage { width:100vw; min-height:100vh; display:flex; align-items:flex-start; justify-content:center; overflow:visible; padding:12px 0; box-sizing:border-box; }
+.poster-wrap { transform-origin: center top; }
+.poster {
+  width:1200px; height:1800px; position:relative; overflow:hidden;
+  background:
+    radial-gradient(1200px 800px at 15% 8%, rgba(46,196,182,.14), transparent 60%),
+    radial-gradient(1000px 700px at 90% 25%, rgba(232,160,32,.12), transparent 55%),
+    radial-gradient(900px 900px at 50% 80%, rgba(224,92,92,.10), transparent 60%),
+    var(--bg);
+  font-family:'Inter',sans-serif; color:var(--text);
+  display:flex; flex-direction:column;
+  padding:36px;
+  box-sizing:border-box;
+}
+.glass {
+  background-color: var(--glass-bg);
+  background-image: linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.015));
+  border:1px solid var(--glass-border);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  box-shadow: var(--glass-shadow);
+  border-radius:12px;
+}
+
+/* Tack markers */
+.tack { position:absolute; width:24px; height:24px; border-radius:50%;
+  border:1.5px solid rgba(232,160,32,.28); z-index:2; pointer-events:none; }
+.tack::before,.tack::after { content:""; position:absolute; background:rgba(232,160,32,.28); }
+.tack::before { left:50%; top:-3px; bottom:-3px; width:1px; transform:translateX(-50%); }
+.tack::after  { top:50%; left:-3px; right:-3px; height:1px; transform:translateY(-50%); }
+.tack.tl { top:12px; left:12px; }
+.tack.tr { top:12px; right:12px; }
+.tack.bl { bottom:12px; left:12px; }
+.tack.br { bottom:12px; right:12px; }
+
+/* Header */
+.header-band { display:flex; align-items:flex-start; justify-content:space-between; gap:20px; margin-bottom:14px; }
+.header-left { flex:1; min-width:0; }
+.eyebrow { font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--teal); letter-spacing:.18em; text-transform:uppercase; margin-bottom:8px; display:flex; align-items:center; gap:14px; }
+.eyebrow::before { content:""; display:inline-block; width:36px; height:3px; background:var(--teal); }
+.headline { font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:84px; color:var(--text); line-height:.92; margin:6px 0 4px; letter-spacing:-.01em; text-transform:uppercase; }
+.subhead { font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:24px; color:var(--teal); margin:0 0 6px; letter-spacing:.02em; text-transform:uppercase; }
+.tagline { font-family:'Inter',sans-serif; font-style:italic; font-size:13px; color:var(--muted); line-height:1.4; max-width:720px; margin:0; }
+
+/* Logo card */
+.logo-card { flex-shrink:0; min-width:185px; padding:14px 16px; display:flex; flex-direction:column; align-items:center; gap:10px; align-self:flex-start; }
+.logo-tile { width:78px; height:78px; border-radius:13px; background:linear-gradient(135deg,#E8A020,#2EC4B6); display:flex; align-items:center; justify-content:center;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -2px 4px rgba(0,0,0,.15),0 4px 14px rgba(0,0,0,.35); }
+.logo-tile span { font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:30px; color:#1A1F2E; letter-spacing:.02em; line-height:1; }
+.logo-word { font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:22px; letter-spacing:.04em; text-transform:uppercase; line-height:1; text-align:center; white-space:nowrap; }
+.logo-word .a { color:var(--text); }
+.logo-word .b { color:var(--amber); }
+.logo-inc { font-family:'JetBrains Mono',monospace; font-size:9.5px; letter-spacing:.05em; text-transform:lowercase; color:var(--muted); margin-top:-2px; }
+.poster[data-edition="light"] .logo-inc { color:rgba(27,32,48,.62); }
+
+/* Section title */
+.section-title {
+  font-family:'Barlow Condensed',sans-serif; font-weight:800;
+  font-size:19px; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--text); margin:0 0 8px;
+  display:flex; align-items:center; gap:10px;
+}
+.section-title::before { content:""; width:5px; height:5px; background:var(--amber); border-radius:50%; }
+.section-title .sub { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.18em; color:var(--muted); margin-left:auto; font-weight:500; }
+
+/* Orientation strip */
+.orient-strip { display:flex; align-items:center; gap:6px; padding:8px 12px; margin-bottom:12px; }
+.orient-stage {
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px;
+  flex:1; padding:9px 10px; border-radius:6px;
+  font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:14px;
+  letter-spacing:.06em; text-transform:uppercase;
+  background: rgba(58,64,85,.4); border:1px solid rgba(255,255,255,.06);
+  color: var(--muted);
+}
+.orient-stage .stage-num { font-family:'JetBrains Mono',monospace; font-size:9px; opacity:.7; letter-spacing:.1em; }
+.orient-stage.active.teal { background: rgba(46,196,182,.16); border-color: rgba(46,196,182,.45); color: var(--teal); box-shadow:0 0 0 1px rgba(46,196,182,.25); }
+.orient-arrow { color: var(--faint); font-size:14px; flex:none; }
+
+/* Hero — cascade rinse */
+.hero { position:relative; padding:18px 20px 14px; height:430px; overflow:hidden; margin-bottom:12px; }
+.hero-title { font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:18px; letter-spacing:.12em; color:var(--teal); text-transform:uppercase; margin:0 0 4px; }
+.hero-sub { font-family:'Inter',sans-serif; font-size:11px; color:var(--muted); margin:0 0 10px; }
+
+.flow-row { display:flex; align-items:center; gap:6px; font-family:'JetBrains Mono',monospace; font-size:9.5px; letter-spacing:.08em; text-transform:uppercase; }
+.flow-row .line { flex:1; height:1px; }
+.flow-water { color:var(--teal); }
+.flow-water .line { background:linear-gradient(to left, rgba(46,196,182,.6), transparent); }
+.flow-parts { color:var(--muted); }
+.flow-parts .line { background:linear-gradient(to right, rgba(240,237,232,.4), transparent); }
+
+.tanks-row { display:flex; gap:14px; align-items:stretch; margin-top:12px; height:240px; }
+.tank-col { flex:1; display:flex; flex-direction:column; gap:6px; }
+.tank-head { text-align:center; }
+.tank-stage { font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:14px; text-transform:uppercase; letter-spacing:.08em; line-height:1; }
+.tank-desc { font-size:10px; color:var(--muted); margin-top:2px; }
+.tank-body { flex:1; border-radius:8px; position:relative; overflow:hidden; border:2px solid; }
+.tank-fill { position:absolute; bottom:0; left:0; right:0; top:30%; }
+.tank-overflow { position:absolute; top:8px; left:50%; transform:translateX(-50%); font-family:'JetBrains Mono',monospace; font-size:9px; letter-spacing:.08em; }
+.tank-part { position:absolute; top:38%; left:50%; transform:translateX(-50%); width:38px; height:54px; border:2px solid rgba(255,255,255,.45); border-radius:3px; background:rgba(255,255,255,.06); }
+.tank-foot { position:absolute; bottom:6px; left:0; right:0; text-align:center; font-family:'JetBrains Mono',monospace; font-size:8px; letter-spacing:.08em; }
+.tank-cond { text-align:center; font-family:'JetBrains Mono',monospace; font-size:10px; }
+.tank-arrow { display:flex; align-items:center; padding-top:36px; font-size:22px; color:var(--faint); }
+
+.tank-col.dirty .tank-body { border-color: rgba(232,160,32,.40); background:rgba(232,160,32,.06); }
+.tank-col.dirty .tank-fill { background:linear-gradient(to top, rgba(232,160,32,.22), rgba(232,160,32,.05)); }
+.tank-col.dirty .tank-stage { color:var(--amber); }
+.tank-col.dirty .tank-overflow { color:var(--amber); opacity:.75; }
+.tank-col.dirty .tank-foot { color:var(--muted); }
+.tank-col.dirty .tank-cond { color:var(--amber); }
+.tank-col.dirty .particle { background:var(--amber); }
+
+.tank-col.mid .tank-body { border-color: var(--glass-border); background:rgba(255,255,255,.04); }
+.tank-col.mid .tank-fill { background:linear-gradient(to top, rgba(255,255,255,.10), rgba(255,255,255,.02)); }
+.tank-col.mid .tank-stage { color:var(--text); }
+.tank-col.mid .tank-overflow { color:var(--muted); opacity:.65; }
+.tank-col.mid .tank-foot { color:var(--muted); }
+.tank-col.mid .tank-cond { color:var(--muted); }
+.tank-col.mid .particle { background:rgba(240,237,232,.5); }
+
+.tank-col.clean .tank-body { border-color: rgba(46,196,182,.40); background:rgba(46,196,182,.06); }
+.tank-col.clean .tank-fill { background:linear-gradient(to top, rgba(46,196,182,.16), rgba(46,196,182,.03)); }
+.tank-col.clean .tank-stage { color:var(--teal); }
+.tank-col.clean .tank-overflow { color:var(--teal); opacity:.85; }
+.tank-col.clean .tank-foot { color:var(--teal); }
+.tank-col.clean .tank-cond { color:var(--teal); font-weight:600; }
+.tank-col.clean .tank-part { border-color:rgba(46,196,182,.55); background:rgba(46,196,182,.10); }
+
+.particle { position:absolute; width:5px; height:5px; border-radius:50%; opacity:.55; }
+
+.efficiency-card { display:flex; align-items:center; gap:14px; padding:11px 16px; margin-top:14px;
+  background:rgba(46,196,182,.10); border:1px solid rgba(46,196,182,.30); border-radius:8px;
+}
+.efficiency-card .stat { font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:30px; color:var(--teal); line-height:1; flex:none; }
+.efficiency-card .copy { font-size:11.5px; color:var(--text); line-height:1.45; }
+.efficiency-card .copy strong { color:var(--teal); }
+
+/* Param + risks */
+.dual-row { display:flex; gap:12px; margin-bottom:12px; align-items:stretch; }
+.dual-col { flex:1; display:flex; flex-direction:column; }
+.dual-col .glass { flex:1; }
+.param-table-wrap { padding:0; overflow:hidden; }
+.param-table { width:100%; border-collapse:collapse; }
+.param-table th { font-family:'Barlow',sans-serif; font-weight:700; font-size:12.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); padding:10px 14px; text-align:left; background:rgba(13,16,32,.35); border-bottom:1px solid var(--glass-border); }
+.poster[data-edition="light"] .param-table th { background:rgba(27,32,48,.06); }
+.param-table td { padding:10px 14px; color:var(--text); line-height:1.5; border-bottom:1px solid rgba(255,255,255,.06); font-family:'Inter',sans-serif; font-size:13.5px; }
+.param-table tr:last-child td { border-bottom:none; }
+.param-table tr:nth-child(even) td { background:rgba(255,255,255,.025); }
+.poster[data-edition="light"] .param-table tr:nth-child(even) td { background:rgba(27,32,48,.025); }
+.param-table .mono { font-family:'JetBrains Mono',monospace; font-size:13px; }
+.param-table td.warn { color:var(--coral); font-size:13px; }
+.param-table td.note { color:var(--amber); font-size:13px; }
+.param-table td.good { color:var(--teal); }
+
+.risk-card { padding:16px 16px 14px; }
+.risk-h { font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:17px; color:var(--amber); text-transform:uppercase; letter-spacing:.08em; margin:0 0 12px; }
+.risk-row { display:flex; gap:10px; margin-bottom:9px; padding:9px 12px; border-radius:6px; align-items:flex-start; font-size:13.5px; line-height:1.5; }
+.risk-row .num { font-family:'Barlow',sans-serif; font-weight:700; flex:none; font-size:14px; }
+.risk-row.r1 { background:rgba(232,160,32,.10); }  .risk-row.r1 .num { color:var(--amber); }
+.risk-row.r2 { background:rgba(46,196,182,.08); } .risk-row.r2 .num { color:var(--teal); }
+.risk-row.r3 { background:rgba(224,92,92,.10); } .risk-row.r3 .num { color:var(--coral); }
+.risk-note { margin-top:12px; padding:11px 13px; background:rgba(46,196,182,.10); border:1px solid rgba(46,196,182,.20); border-radius:6px; }
+.risk-note .h { font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--teal); letter-spacing:.1em; text-transform:uppercase; margin-bottom:5px; font-weight:600; }
+.risk-note .b { font-size:12.5px; color:var(--muted); line-height:1.55; }
+
+/* Safety / water quality */
+.split-row { display:flex; gap:12px; }
+.split-card { flex:1; padding:16px; }
+.split-h { font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:17px; text-transform:uppercase; letter-spacing:.08em; margin:0 0 12px; }
+.split-h.teal { color:var(--teal); }
+.split-h.amber { color:var(--amber); }
+.wq-row { display:flex; justify-content:space-between; align-items:center; padding:9px 0; border-bottom:1px solid rgba(255,255,255,.06); font-size:13.5px; gap:14px; }
+.wq-row:last-child { border-bottom:none; }
+.wq-row .l { color:var(--text); }
+.wq-row .l.teal { color:var(--teal); }
+.wq-row .l.amber { color:var(--amber); }
+.wq-row .l.coral { color:var(--coral); }
+.wq-row .v { font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--muted); white-space:nowrap; }
+.wq-row .v.amber { color:var(--amber); }
+.wq-row .v.coral { color:var(--coral); }
+
+.safety-list { list-style:none; padding:0; margin:0; font-size:13.5px; color:var(--text); line-height:1.85; }
+.safety-list li { padding-left:16px; position:relative; }
+.safety-list li::before { content:"●"; position:absolute; left:0; color:var(--faint); font-size:10px; top:5px; }
+
+/* Footer */
+.footer { margin:auto 0 0; padding:6px 18px 7px;
+  background-color: rgba(13,16,32,.85);
+  background-image: linear-gradient(180deg, rgba(255,255,255,.04), rgba(0,0,0,0));
+  border:1px solid rgba(255,255,255,.10); border-radius:8px;
+  text-align:center; display:flex; flex-direction:column; gap:4px;
+}
+.poster[data-edition="light"] .footer { background-color: rgba(221,216,206,.95); border-color: rgba(27,32,48,.10); }
+.foot-disc { font-family:'Inter',sans-serif; font-size:9.5px; line-height:1.35; color:var(--faint); text-align:center; margin:0 auto; max-width:1080px; }
+.foot-brand { display:flex; align-items:center; justify-content:center; gap:12px; }
+.foot-brand .mark { width:24px; height:24px; border-radius:6px; display:flex; align-items:center; justify-content:center; background:linear-gradient(145deg,#E8A020,#B8770D); color:#0D1020; font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:13px; letter-spacing:0; box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 2px 6px rgba(0,0,0,.4); }
+.foot-brand .title { font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:14px; letter-spacing:.06em; text-transform:uppercase; color:var(--text); }
+.foot-brand .sep { color:var(--faint); }
+.foot-brand .series { font-family:'Inter',sans-serif; font-size:11px; color:var(--muted); font-style:italic; }
+.foot-meta { display:flex; justify-content:center; gap:24px; font-family:'JetBrains Mono',monospace; font-size:9px; letter-spacing:.14em; color:var(--faint); text-transform:uppercase; }
+
+/* Tweaks */
+.tweaks { position:fixed; bottom:16px; right:16px; z-index:100; background:rgba(13,16,32,.92); border:1px solid rgba(255,255,255,.12); border-radius:10px; padding:10px 14px; display:flex; flex-direction:column; gap:8px; font-family:'Inter',sans-serif; font-size:12px; color:#F0EDE8; }
+.tweaks-row { display:flex; gap:8px; align-items:center; }
+.tweaks button { padding:4px 11px; border-radius:5px; cursor:pointer; font-size:11px; font-family:'Inter',sans-serif; }
+.tweaks .label { color:rgba(240,237,232,.5); font-size:11px; letter-spacing:.06em; text-transform:uppercase; }
+.tweaks .b-on { background:#E8A020; color:#1A1F2E; border:1px solid #E8A020; }
+.tweaks .b-off { background:transparent; color:#F0EDE8; border:1px solid rgba(255,255,255,.2); }
+
+@media print {
+  @page { size: 12.5in 18.75in; margin: 0; }
+  html, body { background:#1A1F2E !important; -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; }
+  * { -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; }
+  .stage { position:static; padding:0; display:block; overflow:visible; }
+  .poster-wrap { transform:none !important; }
+  .poster { box-shadow:none !important; width:1200px !important; height:1800px !important; overflow:hidden !important; }
+  .glass { backdrop-filter:none !important; -webkit-backdrop-filter:none !important; }
+  .tweaks { display:none !important; }
+}
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="poster-wrap" id="posterWrap">
+    <div class="poster" id="poster">
+
+      <!-- Tack markers -->
+      <span class="tack tl" aria-hidden="true"></span>
+      <span class="tack tr" aria-hidden="true"></span>
+      <span class="tack bl" aria-hidden="true"></span>
+      <span class="tack br" aria-hidden="true"></span>
+
+      <!-- Header -->
+      <header class="header-band">
+        <div class="header-left">
+          <div class="eyebrow">Níquel Químico (Electroless) — Etapa 2 de 7</div>
+          <h1 class="headline">ENJUAGUE</h1>
+          <p class="subhead">Enjuague en Cascada Pre-Activación — EN Bajo Fósforo</p>
+          <p class="tagline">El puente entre el limpiador alcalino y el ácido activador. Si falla, la activación no cumple su función — sin señal visible.</p>
+        </div>
+        <aside class="glass logo-card">
+          <div class="logo-tile"><span>PP</span></div>
+          <div class="logo-word"><span class="a">Plating</span> <span class="b">Posters</span></div>
+          <div class="logo-inc">www.platingposters.com</div>
+        </aside>
+      </header>
+
+      <!-- Orientation strip -->
+      <div class="orient-strip glass">
+        <div class="orient-stage"><span class="stage-num">01</span>LIMPIEZA</div>
+        <div class="orient-arrow">›</div>
+        <div class="orient-stage active teal"><span class="stage-num">02</span>ENJUAGUE</div>
+        <div class="orient-arrow">›</div>
+        <div class="orient-stage"><span class="stage-num">03</span>ACTIVACIÓN</div>
+        <div class="orient-arrow">›</div>
+        <div class="orient-stage"><span class="stage-num">04</span>ENJUAGUE</div>
+        <div class="orient-arrow">›</div>
+        <div class="orient-stage"><span class="stage-num">05</span>BAÑO EN</div>
+        <div class="orient-arrow">›</div>
+        <div class="orient-stage"><span class="stage-num">06</span>ENJUAGUE</div>
+        <div class="orient-arrow">›</div>
+        <div class="orient-stage"><span class="stage-num">07</span>TRAT. FINAL</div>
+      </div>
+
+      <!-- Hero: cascade rinse -->
+      <section class="glass hero">
+        <h2 class="hero-title">Enjuague en Cascada de 3 Etapas a Contracorriente</h2>
+        <p class="hero-sub">El agua fluye en sentido opuesto a las piezas: el tanque más limpio recibe agua fresca; el más contaminado desborda hacia tratamiento.</p>
+
+        <div class="flow-row flow-water">
+          <span>← Flujo de Agua a Contracorriente</span>
+          <span class="line"></span>
+          <span>Entrada de Agua Fresca →</span>
+        </div>
+
+        <div class="tanks-row">
+          <div class="tank-col dirty">
+            <div class="tank-head">
+              <div class="tank-stage">Etapa 1</div>
+              <div class="tank-desc">Contaminada — mayor arrastre</div>
+            </div>
+            <div class="tank-body">
+              <div class="tank-fill"></div>
+              <div class="tank-overflow">→ desborde →</div>
+              <div class="tank-part"></div>
+              <span class="particle" style="top:42%; left:18%;"></span>
+              <span class="particle" style="top:55%; right:22%; width:4px; height:4px;"></span>
+              <span class="particle" style="top:65%; left:42%;"></span>
+              <span class="particle" style="bottom:18%; right:14%; width:4px; height:4px;"></span>
+              <div class="tank-foot">Alto arrastre</div>
+            </div>
+            <div class="tank-cond">~200–500 µS/cm</div>
+          </div>
+
+          <div class="tank-arrow">›</div>
+
+          <div class="tank-col mid">
+            <div class="tank-head">
+              <div class="tank-stage">Etapa 2</div>
+              <div class="tank-desc">Intermedia</div>
+            </div>
+            <div class="tank-body">
+              <div class="tank-fill"></div>
+              <div class="tank-overflow">→ desborde →</div>
+              <div class="tank-part"></div>
+              <span class="particle" style="top:45%; left:24%; width:4px; height:4px;"></span>
+              <span class="particle" style="top:60%; right:28%; width:4px; height:4px;"></span>
+              <div class="tank-foot">Arrastre medio</div>
+            </div>
+            <div class="tank-cond">~50–200 µS/cm</div>
+          </div>
+
+          <div class="tank-arrow">›</div>
+
+          <div class="tank-col clean">
+            <div class="tank-head">
+              <div class="tank-stage">Etapa 3</div>
+              <div class="tank-desc">Limpia — salida objetivo</div>
+            </div>
+            <div class="tank-body">
+              <div class="tank-fill"></div>
+              <div class="tank-overflow">← entrada de agua</div>
+              <div class="tank-part"></div>
+              <div class="tank-foot">Bajo arrastre</div>
+            </div>
+            <div class="tank-cond">Objetivo &lt;50 µS/cm</div>
+          </div>
+        </div>
+
+        <div class="flow-row flow-parts" style="margin-top:14px;">
+          <span>Piezas →</span>
+          <span class="line"></span>
+        </div>
+
+        <div class="efficiency-card">
+          <div class="stat">90%</div>
+          <div class="copy">Una cascada de 3 etapas usa <strong>90% menos agua</strong> que un enjuague simple. Objetivo: &lt;50 µS/cm de conductividad en la salida de la etapa final antes de la activación.</div>
+        </div>
+      </section>
+
+      <!-- Parameters + Risks -->
+      <div class="dual-row">
+        <div class="dual-col">
+          <div class="section-title">Parámetros de Enjuague <span class="sub">Etapa 2 / Operación</span></div>
+          <div class="glass param-table-wrap">
+            <table class="param-table">
+              <thead><tr><th>Parámetro</th><th>Valor</th></tr></thead>
+              <tbody>
+                <tr><td>Fuente de agua</td><td class="mono">DI / RO preferido; municipal &lt;200 ppm TDS aceptable</td></tr>
+                <tr><td>Temperatura</td><td class="mono">Ambiente 18–30°C</td></tr>
+                <tr><td>Caudal</td><td class="mono">2–5 gal/min por etapa</td></tr>
+                <tr><td>Número de etapas</td><td class="mono">2–3 contraflujo mínimo</td></tr>
+                <tr><td>Tiempo de inmersión</td><td class="mono">30–60 seg por etapa</td></tr>
+                <tr><td>Agitación</td><td class="mono">Aire o movimiento de piezas</td></tr>
+                <tr><td>Conductividad objetivo</td><td class="good mono">&lt;50 µS/cm en etapa final</td></tr>
+                <tr><td>Tiempo de escurrido entre tanques</td><td class="mono">10–15 seg</td></tr>
+                <tr><td>Frecuencia de vaciado</td><td>Cuando &gt;500 µS/cm o pH &gt;10</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="dual-col">
+          <div class="section-title">Por Qué Este Enjuague Importa <span class="sub">Modos de Falla</span></div>
+          <div class="glass risk-card" style="border:1px solid rgba(232,160,32,.30);">
+            <h4 class="risk-h">Riesgos Clave si el Enjuague Falla</h4>
+            <div class="risk-row r1"><span class="num">1</span><span>El arrastre alcalino neutraliza el activador HCl o H₂SO₄ — la activación falla sin señal visible.</span></div>
+            <div class="risk-row r2"><span class="num">2</span><span>En aluminio: el carryover alcalino redisuelve la capa fresca de zincato antes de la activación.</span></div>
+            <div class="risk-row r3"><span class="num">3</span><span>Tasa de arrastre ~0.5–2.0 gal / 1000 ft² — multiplique por el área de la pieza para dimensionar los tanques.</span></div>
+            <div class="risk-note">
+              <div class="h">Nota de Eficiencia</div>
+              <div class="b">Cascada a contracorriente: el tanque 3 desborda al tanque 2, el tanque 2 al tanque 1. Vacíe el tanque 1 para tratamiento de aguas residuales. Diseño más económico para uso de agua y recuperación de químicos.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Problems -->
+      <div class="dual-row">
+        <div class="dual-col" style="flex:1;">
+          <div class="section-title">Problemas de Enjuague — Causas Raíz y Soluciones <span class="sub">Solución de Problemas</span></div>
+          <div class="glass param-table-wrap">
+            <table class="param-table">
+              <thead><tr><th>Problema</th><th>Efecto Posterior</th><th>Causa Raíz</th><th>Solución</th></tr></thead>
+              <tbody>
+                <tr><td class="warn">Carryover alcalino</td><td>Activador neutralizado — enchapado incompleto</td><td>Pocas etapas de enjuague; transferencia muy rápida</td><td>Agregue etapa; aumente inmersión; reduzca arrastre</td></tr>
+                <tr><td class="warn">Conductividad alta (&gt;500 µS/cm)</td><td>Contaminación entra al activador</td><td>Baño de enjuague agotado o sin flujo</td><td>Vacíe y reponga; verifique el caudal</td></tr>
+                <tr><td class="note">Manchas / marcas</td><td>Marcas visibles en la superficie enchapada</td><td>Agua con minerales secándose en las piezas</td><td>Cambie a DI; nunca seque al aire entre etapas</td></tr>
+                <tr><td class="note">Rugosidad en superficie de aluminio</td><td>Depósito EN rugoso</td><td>Zincato disuelto por carryover alcalino</td><td>Mejore el enjuague; reduzca el tiempo de transferencia limpiador→enjuague</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Water Quality + Safety -->
+      <div class="dual-row" style="margin-bottom:0;">
+        <div class="dual-col">
+          <div class="section-title">Guía de Calidad de Agua <span class="sub">Fuente y Límites</span></div>
+          <div class="glass split-card">
+            <div class="wq-row"><span class="l teal">Agua DI</span><span class="v">&lt;10 µS/cm — óptima</span></div>
+            <div class="wq-row"><span class="l">Agua municipal</span><span class="v">200–600 µS/cm — aceptable</span></div>
+            <div class="wq-row"><span class="l amber">Agua dura &gt;300 ppm CaCO₃</span><span class="v amber">Riesgo de manchas — use DI</span></div>
+            <div class="wq-row"><span class="l coral">Límite de vaciado</span><span class="v coral">&gt;500 µS/cm</span></div>
+            <div class="wq-row"><span class="l">Límite de pH para vaciado</span><span class="v coral">&gt;10</span></div>
+          </div>
+        </div>
+        <div class="dual-col">
+          <div class="section-title">Seguridad <span class="sub">Peligros y EPP</span></div>
+          <div class="glass split-card" style="border:1px solid rgba(232,160,32,.30);">
+            <ul class="safety-list">
+              <li>El agua de enjuague es ligeramente alcalina — pH 9–11</li>
+              <li>Desborde hacia tratamiento de aguas — nunca descargue sin tratar</li>
+              <li>Pisos mojados crean riesgo de resbalón — tapetes antiderrapantes requeridos</li>
+              <li>Verifique el pH del enjuague periódicamente — el carryover alcalino eleva el pH</li>
+              <li>Guantes de nitrilo y goggle de salpicadura durante mantenimiento del tanque</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <p class="foot-disc">Los datos de referencia mostrados son típicos. Verifique con la hoja de datos técnicos de su proveedor, el plano del cliente y la revisión de la norma vigente antes de la producción.</p>
+        <div class="foot-brand">
+          <div class="mark">PP</div>
+          <span class="title">Níquel Químico (Electroless) &mdash; Enjuague Pre-Activación</span>
+          <span class="sep">/</span>
+          <span class="series">Plating Posters Inc &middot; Serie de Referencia para Acabados Metálicos</span>
+        </div>
+        <div class="foot-meta">
+          <span>No. 013 / ES</span>
+          <span>&middot;</span>
+          <span>v 1.0 &mdash; Mayo 2026</span>
+          <span>&middot;</span>
+          <span>&copy; 2026 Plating Posters Inc</span>
+        </div>
+      </footer>
+
+    </div>
+  </div>
+</div>
+
+<div class="tweaks">
+  <div class="tweaks-row">
+    <span class="label">Edition</span>
+    <button class="b-on" id="edDark">Dark</button>
+    <button class="b-off" id="edLight">Light</button>
+  </div>
+  <button class="b-off" onclick="window.print()">Print / PDF</button>
+</div>
+
+<script>
+  const posterWrap = document.getElementById('posterWrap');
+  const poster = document.getElementById('poster');
+  function scalePoster() {
+    const s = Math.min(window.innerWidth / 1200, window.innerHeight / 1800);
+    posterWrap.style.transform = 'scale(' + s + ')';
+  }
+  scalePoster();
+  window.addEventListener('resize', scalePoster);
+
+  const dark = document.getElementById('edDark');
+  const light = document.getElementById('edLight');
+  function setEd(mode) {
+    if (mode === 'light') { poster.dataset.edition = 'light'; light.className = 'b-on'; dark.className = 'b-off'; }
+    else { poster.dataset.edition = ''; dark.className = 'b-on'; light.className = 'b-off'; }
+  }
+  dark.addEventListener('click', () => setEd('dark'));
+  light.addEventListener('click', () => setEd('light'));
+</script>
+</body>
+</html>

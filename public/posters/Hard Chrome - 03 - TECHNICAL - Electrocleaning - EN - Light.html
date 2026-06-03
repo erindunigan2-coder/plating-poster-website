@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hard Chrome &mdash; Electrocleaning &mdash; Technical | Plating Posters Inc</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Barlow:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#1A1F2E;--navy:#0D1020;--text:#F0EDE8;--muted:rgba(240,237,232,.62);--faint:rgba(240,237,232,.38);--amber:#E8A020;--teal:#2EC4B6;--emerald:#27AE60;--coral:#E05C5C;--slate:#3A4055;--callout:#1E2435;--altrow:#252B3D;--glass-bg:rgba(30,36,53,.55);--glass-border:rgba(255,255,255,.12);--glass-shadow:inset 0 1px 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(0,0,0,.2),0 4px 12px rgba(0,0,0,.25);}
+.poster[data-edition="light"]{--bg:#F5F4F0;--navy:#DDD8CE;--text:#1B2030;--muted:rgba(27,32,48,.66);--faint:rgba(27,32,48,.42);--amber:#B8770D;--teal:#1A8C82;--emerald:#1E8449;--coral:#B7322F;--slate:#C5C0B5;--callout:#ECEAE1;--altrow:#E4E1D6;--glass-bg:rgba(255,253,247,.66);--glass-border:rgba(27,32,48,.10);--glass-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 4px 12px rgba(27,32,48,.08);}
+html,body{margin:0;padding:0;background:#0a0c14;}
+.stage{width:100vw;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;overflow:visible;padding:12px 0;box-sizing:border-box;}
+.poster-wrap{transform-origin:center center;}
+.poster{width:1200px;height:1800px;position:relative;overflow:hidden;background:radial-gradient(1200px 800px at 15% 8%,rgba(46,196,182,.14),transparent 60%),radial-gradient(1000px 700px at 90% 25%,rgba(232,160,32,.12),transparent 55%),radial-gradient(900px 900px at 50% 80%,rgba(224,92,92,.10),transparent 60%),var(--bg);font-family:'Inter',sans-serif;color:var(--text);display:flex;flex-direction:column;padding:30px;box-sizing:border-box;}.poster::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:50px 50px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);pointer-events:none;z-index:0;}.poster>*{position:relative;z-index:1;}
+.glass{background-color:var(--glass-bg);background-image:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));border:1px solid var(--glass-border);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);box-shadow:var(--glass-shadow);border-radius:12px;}
+.tack{position:absolute;width:24px;height:24px;border-radius:50%;border:1.5px solid rgba(232,160,32,.28);z-index:2;pointer-events:none;}.tack::before,.tack::after{content:"";position:absolute;background:rgba(232,160,32,.28);}.tack::before{left:50%;top:-3px;bottom:-3px;width:1px;transform:translateX(-50%);}.tack::after{top:50%;left:-3px;right:-3px;height:1px;transform:translateY(-50%);}.tack.tl{top:12px;left:12px;}.tack.tr{top:12px;right:12px;}.tack.bl{bottom:12px;left:12px;}.tack.br{bottom:12px;right:12px;}
+.poster-header{flex-shrink:0;}.poster-body{flex:1;overflow:hidden;display:flex;flex-direction:column;gap:10px;}.poster-footer{flex-shrink:0;margin-top:8px;}
+.header-band{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:8px;}.header-left{flex:1;min-width:0;}.eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--amber);letter-spacing:.16em;text-transform:uppercase;margin-bottom:4px;display:flex;align-items:center;gap:12px;}.eyebrow::before{content:"";display:inline-block;width:30px;height:3px;background:var(--amber);}.headline{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:72px;color:var(--text);line-height:.92;margin:4px 0;letter-spacing:-.01em;text-transform:uppercase;}.headline em{font-style:normal;color:var(--amber);}.subhead{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;color:var(--teal);margin:0 0 3px;letter-spacing:.02em;text-transform:uppercase;}.tagline{font-family:'Inter',sans-serif;font-style:italic;font-size:13px;color:var(--muted);line-height:1.45;max-width:700px;margin:0;}
+.logo-card{flex-shrink:0;padding:12px 10px;display:flex;flex-direction:column;align-items:center;gap:8px;align-self:flex-start;}.logo-tile{width:68px;height:68px;border-radius:12px;background:linear-gradient(135deg,#E8A020,#2EC4B6);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -2px 4px rgba(0,0,0,.15),0 4px 14px rgba(0,0,0,.35);}.logo-tile span{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:26px;color:#1A1F2E;letter-spacing:.02em;line-height:1;}.logo-word{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;letter-spacing:.04em;text-transform:uppercase;line-height:1;text-align:center;white-space:nowrap;}.logo-word .a{color:var(--text);}.logo-word .b{color:var(--amber);}.logo-inc{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.05em;text-transform:lowercase;color:var(--muted);margin-top:-2px;}
+.section-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:28px;letter-spacing:.08em;text-transform:uppercase;color:var(--text);margin:0 0 6px;display:flex;align-items:center;gap:8px;}.section-title::before{content:"";width:6px;height:6px;background:var(--amber);border-radius:50%;}.section-title .sub{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;color:var(--muted);margin-left:auto;font-weight:500;}
+.rule-card{display:flex;align-items:center;gap:20px;padding:18px 28px;background:rgba(232,160,32,.07);}.rule-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:68px;color:var(--amber);line-height:1;letter-spacing:-.02em;}.rule-body{flex:1;}.rule-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:19px;color:var(--amber);letter-spacing:.08em;text-transform:uppercase;}.rule-text{font-family:'Inter',sans-serif;font-size:14px;color:var(--muted);line-height:1.5;margin-top:4px;}
+.data-table{width:100%;border-collapse:collapse;}.data-table th{font-family:'Barlow',sans-serif;font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);padding:6px 8px;text-align:left;background:rgba(13,16,32,.35);border-bottom:1px solid var(--glass-border);}.poster[data-edition="light"] .data-table th{background:rgba(27,32,48,.06);}.data-table td{padding:5px 8px;color:var(--text);line-height:1.4;border-bottom:1px solid rgba(255,255,255,.05);font-family:'Inter',sans-serif;font-size:13px;}.data-table tr:last-child td{border-bottom:none;}.data-table tr:nth-child(even) td{background:rgba(255,255,255,.02);}.poster[data-edition="light"] .data-table tr:nth-child(even) td{background:rgba(27,32,48,.025);}.data-table .mono{font-family:'JetBrains Mono',monospace;font-size:12px;}
+.insight-card{padding:16px 20px;border-left:3px solid var(--teal);background:rgba(46,196,182,.06);border-radius:0 12px 12px 0;}.insight-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;color:var(--teal);letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px;}.insight-text{font-family:'Inter',sans-serif;font-size:13px;color:var(--text);line-height:1.5;}
+.safety-card{padding:16px 20px;background:rgba(224,92,92,.08);border:1px solid rgba(224,92,92,.25);border-radius:12px;}.safety-head{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px;color:var(--coral);letter-spacing:.06em;text-transform:uppercase;margin-bottom:5px;}.safety-body{font-size:13px;color:var(--text);line-height:1.5;}.safety-body strong{font-weight:700;color:var(--coral);}
+.footer{padding:10px 20px;background-color:rgba(13,16,32,.85);background-image:linear-gradient(180deg,rgba(255,255,255,.04),rgba(0,0,0,0));border:1px solid rgba(255,255,255,.10);border-radius:8px;text-align:center;display:flex;flex-direction:column;gap:2px;}.poster[data-edition="light"] .footer{background-color:rgba(221,216,206,.95);border-color:rgba(27,32,48,.10);}.footer-disclaimer{font-family:'Inter',sans-serif;font-size:9px;line-height:1.35;color:var(--faint);margin:0 auto;max-width:900px;}.footer-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:13px;color:var(--text);letter-spacing:.04em;text-transform:uppercase;margin:0;}.footer-brand{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;}
+.tweaks{position:fixed;bottom:16px;right:16px;z-index:100;background:rgba(13,16,32,.92);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:10px 14px;display:flex;flex-direction:column;gap:8px;font-family:'Inter',sans-serif;font-size:12px;color:#F0EDE8;}
+@media print{@page{size:12.5in 18.75in;margin:0;}html,body{background:#1A1F2E !important;-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}*{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}.stage{position:static;padding:0;display:block;overflow:visible;}.poster-wrap{transform:none !important;width:auto !important;height:auto !important;}.poster{box-shadow:none !important;width:1200px !important;height:1800px !important;overflow:hidden !important;}.glass,.insight-card,.safety-card{backdrop-filter:none !important;-webkit-backdrop-filter:none !important;}.tweaks{display:none !important;}}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="poster-wrap" id="posterWrap">
+<div class="poster" id="poster" data-edition="light">
+  <span class="tack tl" aria-hidden="true"></span><span class="tack tr" aria-hidden="true"></span>
+  <span class="tack bl" aria-hidden="true"></span><span class="tack br" aria-hidden="true"></span>
+  <div class="poster-header">
+    <header class="header-band">
+      <div class="header-left">
+        <div class="eyebrow"><span>Plating Posters &nbsp;&middot;&nbsp; Hard Chrome &nbsp;&middot;&nbsp; Stage 3 of 11</span></div>
+        <h1 class="headline">ELECTRO&shy;<br><em>CLEANING</em></h1>
+        <h2 class="subhead">Electrochemical Scrubbing for Atomically Clean Surfaces</h2>
+        <p class="tagline">Soak cleaning removes the bulk. Electrocleaning removes the last invisible monolayer.</p>
+      </div>
+      <aside class="glass logo-card">
+        <div class="logo-tile"><span>PP</span></div>
+        <div class="logo-word"><span class="a">Plating</span> <span class="b">Posters</span></div>
+        <div class="logo-inc">www.platingposters.com</div>
+      </aside>
+    </header>
+  </div>
+  <div class="poster-body">
+    <div class="glass rule-card">
+      <div class="rule-num">75 ASF</div>
+      <div class="rule-body">
+        <div class="rule-label">Target Current Density</div>
+        <div class="rule-text">50-100 ASF cathodic generates hydrogen scrubbing at the surface. Always finish with 15-30 seconds anodic to strip cathodic smut.</div>
+      </div>
+    </div>
+    <div>
+      <h3 class="section-title">Operating Parameters <span class="sub">Stage 03</span></h3>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table">
+          <thead><tr><th>Parameter</th><th>Range</th><th>Key Note</th></tr></thead>
+          <tbody><tr><td>Current Density</td><td>50&ndash;100 ASF</td><td>Adjust for part area</td></tr>
+<tr><td>Temperature</td><td>140&ndash;180 &deg;F</td><td>Match soak clean temp</td></tr>
+<tr><td>Cathodic Time</td><td>1&ndash;2 min</td><td>Limit to 60 sec on high-strength steel</td></tr>
+<tr><td>Anodic Finish</td><td>15&ndash;30 sec</td><td>Removes cathodic smut &mdash; mandatory</td></tr>
+<tr><td>Concentration</td><td>4&ndash;8 oz/gal</td><td>Titrate weekly</td></tr>
+</tbody>
+        </table>
+      </div>
+    </div>
+    <div>
+      <h3 class="section-title">Best Practices <span class="sub">Critical Guidelines</span></h3>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+        <div class="glass" style="padding:14px 18px;">
+          <h4 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;margin:0 0 6px;color:var(--emerald);text-transform:uppercase;">&#10003; Do</h4>
+          <ul style="list-style:none;padding:0;margin:0;"><li>Finish with anodic cycle to strip smut</li><li>Watch for uniform gas bubbling on all surfaces</li><li>Transfer directly to rinse &mdash; no air drying</li><li>Limit cathodic time on high-strength steel (&gt;40 HRC)</li></ul>
+        </div>
+        <div class="glass" style="padding:14px 18px;">
+          <h4 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;margin:0 0 6px;color:var(--coral);text-transform:uppercase;">&#10007; Don&rsquo;t</h4>
+          <ul style="list-style:none;padding:0;margin:0;"><li>Disconnect bus bars while current is flowing &mdash; arc ignites H&#8322;</li><li>Exceed 60 sec cathodic on high-strength steel (&gt;40 HRC)</li><li>Leave parts in dead solution without current</li><li>Ignore uneven bubbling &mdash; it means bad contact</li></ul>
+        </div>
+      </div>
+    </div>
+    <div class="insight-card">
+      <div class="insight-label">Process Context</div>
+      <div class="insight-text">Cathodic electrocleaning generates approximately twice the gas volume per unit current compared to anodic, due to hydrogen evolution at the cathode. The vigorous H&lt;sub&gt;2&lt;/sub&gt; scrubbing dislodges tenacious films, but atomic hydrogen also absorbs into the steel lattice&mdash;hence the strict time limit on high-strength substrates. The anodic finish cycle generates O&lt;sub&gt;2&lt;/sub&gt; at the part surface, oxidizing and removing any cathodic smut.</div>
+    </div>
+    <div>
+      <h3 class="section-title">Hydrogen Embrittlement Risk by Substrate <span class="sub">Critical for &gt;40 HRC</span></h3>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table">
+          <thead><tr><th>Substrate</th><th>Hardness</th><th>Max Cathodic Time</th><th>Bake Requirement</th></tr></thead>
+          <tbody><tr><td>Mild steel / low-alloy</td><td>&lt;35 HRC</td><td>2 min (standard)</td><td>None typically required</td></tr>
+<tr><td>Medium-carbon / spring steel</td><td>35&ndash;40 HRC</td><td>90 sec</td><td>Evaluate per spec</td></tr>
+<tr><td>High-strength steel (4340, 300M)</td><td>&gt;40 HRC</td><td>60 sec max</td><td>375 &deg;F / 23 hr within 4 hr of plating</td></tr>
+<tr><td>Landing gear / aerospace alloys</td><td>&gt;50 HRC</td><td>30&ndash;45 sec</td><td>Per AMS 2759/9 &mdash; mandatory</td></tr>
+</tbody>
+        </table>
+      </div>
+    </div>
+    <div>
+      <h3 class="section-title">Solution Maintenance <span class="sub">Weekly Checks</span></h3>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table">
+          <thead><tr><th>Test</th><th>Target</th><th>Corrective Action</th></tr></thead>
+          <tbody><tr><td>Concentration (titration)</td><td>4&ndash;8 oz/gal</td><td>Add cleaner concentrate to raise; dilute with DI water to lower</td></tr>
+<tr><td>Temperature</td><td>140&ndash;180 &deg;F</td><td>Adjust heater setpoint; verify thermostat calibration</td></tr>
+<tr><td>Oil contamination</td><td>No visible sheen</td><td>Skim surface or use coalescing oil remover</td></tr>
+<tr><td>Carbonate buildup</td><td>&lt;30% of cleaner conc.</td><td>Decant or partially dump &amp; refill; carbonates reduce cleaning power</td></tr>
+</tbody>
+        </table>
+      </div>
+    </div>
+    <div class="glass" style="padding:14px 18px;">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1140 180" width="1140" height="180" style="display:block;">
+  <rect x="40" y="20" width="200" height="120" rx="8" fill="none" stroke="var(--teal)" stroke-width="2"/>
+  <text x="140" y="42" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="15" fill="var(--teal)" letter-spacing="0.06em">CATHODE (PART)</text>
+  <text x="140" y="62" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="var(--text)">2H&#8322;O + 2e&#8315;</text>
+  <text x="140" y="78" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="var(--text)">&#8594; H&#8322; + 2OH&#8315;</text>
+  <circle cx="80" cy="10" r="4" fill="var(--teal)" opacity="0.3"/><circle cx="120" cy="6" r="3" fill="var(--teal)" opacity="0.35"/>
+  <circle cx="160" cy="8" r="4" fill="var(--teal)" opacity="0.25"/><circle cx="200" cy="12" r="3" fill="var(--teal)" opacity="0.3"/>
+  <text x="140" y="108" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="var(--muted)">H&#8322; gas scrubs surface</text>
+  <text x="140" y="125" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="var(--coral)">&#9888; H absorbs into steel lattice</text>
+  <line x1="270" y1="55" x2="430" y2="55" stroke="var(--amber)" stroke-width="2"/>
+  <polygon points="425,50 435,55 425,60" fill="var(--amber)"/>
+  <text x="350" y="48" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="var(--amber)">e&#8315; flow</text>
+  <line x1="430" y1="90" x2="270" y2="90" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <polygon points="275,85 265,90 275,95" fill="var(--muted)"/>
+  <text x="350" y="105" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="var(--muted)">OH&#8315; migration</text>
+  <rect x="460" y="35" width="80" height="40" rx="6" fill="var(--glass-bg)" stroke="var(--glass-border)" stroke-width="1"/>
+  <text x="500" y="52" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="11" fill="var(--coral)">REVERSE</text>
+  <text x="500" y="66" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="var(--muted)">polarity</text>
+  <path d="M470,30 Q500,15 530,30" fill="none" stroke="var(--coral)" stroke-width="1.5"/>
+  <polygon points="528,27 533,32 525,32" fill="var(--coral)"/>
+  <rect x="570" y="20" width="200" height="120" rx="8" fill="none" stroke="var(--amber)" stroke-width="2"/>
+  <text x="670" y="42" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="15" fill="var(--amber)" letter-spacing="0.06em">ANODE</text>
+  <text x="670" y="62" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="var(--text)">2H&#8322;O &#8594; O&#8322;</text>
+  <text x="670" y="78" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="var(--text)">+ 4H&#8314; + 4e&#8315;</text>
+  <circle cx="610" cy="10" r="4" fill="var(--amber)" opacity="0.3"/><circle cx="650" cy="6" r="3" fill="var(--amber)" opacity="0.35"/>
+  <circle cx="690" cy="8" r="4" fill="var(--amber)" opacity="0.25"/><circle cx="730" cy="12" r="3" fill="var(--amber)" opacity="0.3"/>
+  <text x="670" y="108" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="var(--muted)">O&#8322; oxidizes cathodic smut</text>
+  <rect x="40" y="150" width="200" height="22" rx="4" fill="var(--teal)" opacity="0.15"/>
+  <text x="140" y="165" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-weight="700" font-size="11" fill="var(--teal)">PHASE 1: CATHODIC (1-2 min)</text>
+  <rect x="570" y="150" width="200" height="22" rx="4" fill="var(--amber)" opacity="0.15"/>
+  <text x="670" y="165" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-weight="700" font-size="11" fill="var(--amber)">PHASE 2: ANODIC (15-30 sec)</text>
+  <rect x="860" y="30" width="240" height="110" rx="8" fill="var(--glass-bg)" stroke="var(--glass-border)" stroke-width="1"/>
+  <text x="980" y="52" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="13" fill="var(--text)" letter-spacing="0.06em">DC RECTIFIER</text>
+  <text x="980" y="72" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="var(--muted)">50-100 ASF</text>
+  <text x="980" y="90" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="var(--muted)">Cathodic: 1-2 min</text>
+  <text x="980" y="106" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="var(--coral)">High-strength: &#8804;60 sec</text>
+  <text x="980" y="122" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="var(--muted)">Anodic finish: 15-30 sec</text>
+  <line x1="860" y1="55" x2="770" y2="55" stroke="var(--faint)" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="860" y1="90" x2="770" y2="90" stroke="var(--faint)" stroke-width="1" stroke-dasharray="3,3"/>
+</svg>
+</div>
+    <div class="safety-card">
+      <div class="safety-head">&#9888; Safety &mdash; Stage 3</div>
+      <div class="safety-body"><strong>Hydrogen gas (cathodic mode)</strong> &mdash; flammable/explosive at 4-75% in air. Ventilate tank; no open flames or sparks. Never break electrical connections under load. <strong>Hot alkaline solution (pH 12-14)</strong> &mdash; chemical and thermal burns. Chemical-resistant gloves, splash goggles, apron, rubber boots. DC current in solution &mdash; LOTO before reaching into tank. Emergency eyewash and shower within 10 seconds.</div>
+    </div>
+  </div>
+  <footer class="footer poster-footer">
+    <p class="footer-disclaimer">Technical reference only. Verify all parameters against your chemistry supplier&rsquo;s TDS, customer specifications, and applicable regulatory requirements before production use.</p>
+    <p class="footer-title">Electrocleaning &mdash; Hard Chrome Plating Series</p>
+    <span class="footer-brand">Plating Posters &middot; Metal Finishing Reference Series &middot; PP-HC-03-T / v1.0 / 2026</span>
+  </footer>
+</div>
+</div>
+</div>
+<div class="tweaks">
+  <div style="display:flex;gap:8px;align-items:center;">
+    <span style="color:rgba(240,237,232,.5);font-size:11px;letter-spacing:.06em;text-transform:uppercase;">Edition</span>
+    <button id="btnDark" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:#E8A020;color:#1A1F2E;border:1px solid #E8A020;" onclick="setEdition('')">Dark</button>
+    <button id="btnLight" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);" onclick="setEdition('light')">Light</button>
+  </div>
+  <button onclick="window.print()" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);">Print / PDF</button>
+</div>
+<script>
+const posterWrap=document.getElementById('posterWrap');const poster=document.getElementById('poster');function scalePoster(){const sW=(window.innerWidth-24)/1200;const sH=(window.innerHeight-24)/1800;const s=Math.min(sW,sH);posterWrap.style.transform='scale('+s+')';posterWrap.style.transformOrigin='top center';posterWrap.style.width='1200px';posterWrap.style.height=(1800*s)+'px';}function setEdition(e){if(e)poster.dataset.edition=e;else delete poster.dataset.edition;document.getElementById('btnDark').style.background=e?'transparent':'#E8A020';document.getElementById('btnDark').style.color=e?'#F0EDE8':'#1A1F2E';document.getElementById('btnDark').style.borderColor=e?'rgba(255,255,255,.2)':'#E8A020';document.getElementById('btnLight').style.background=e?'#E8A020':'transparent';document.getElementById('btnLight').style.color=e?'#1A1F2E':'#F0EDE8';document.getElementById('btnLight').style.borderColor=e?'#E8A020':'rgba(255,255,255,.2)';}scalePoster();window.addEventListener('resize',scalePoster);
+</script>
+</body>
+</html>

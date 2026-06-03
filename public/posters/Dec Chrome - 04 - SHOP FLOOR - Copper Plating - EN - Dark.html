@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Decorative Chrome &mdash; Copper Plating &mdash; Shop Floor | Plating Posters Inc</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Barlow:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#1A1F2E;--navy:#0D1020;--text:#F0EDE8;--muted:rgba(240,237,232,.62);
+  --faint:rgba(240,237,232,.38);
+  --amber:#E8A020;--teal:#2EC4B6;--emerald:#27AE60;--coral:#E05C5C;
+  --slate:#3A4055;--callout:#1E2435;--altrow:#252B3D;
+  --glass-bg:rgba(30,36,53,.55);--glass-border:rgba(255,255,255,.12);
+  --glass-shadow:inset 0 1px 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(0,0,0,.2),0 4px 12px rgba(0,0,0,.25);
+}
+body[data-edition="light"]{
+  --bg:#F5F4F0;--navy:#DDD8CE;--text:#1B2030;--muted:rgba(27,32,48,.66);
+  --faint:rgba(27,32,48,.42);
+  --amber:#B8770D;--teal:#1A8C82;--emerald:#1E8449;--coral:#B7322F;
+  --slate:#C5C0B5;--callout:#ECEAE1;--altrow:#E4E1D6;
+  --glass-bg:rgba(255,253,247,.66);--glass-border:rgba(27,32,48,.10);
+  --glass-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 4px 12px rgba(27,32,48,.08);
+}
+html,body{margin:0;padding:0;background:#0a0c14;}
+.stage{width:100vw;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;overflow:visible;padding:12px 0;box-sizing:border-box;}
+.poster-wrap{transform-origin:center center;}
+.poster{width:900px;height:1200px;position:relative;overflow:hidden;background:radial-gradient(700px 500px at 15% 8%,rgba(46,196,182,.14),transparent 60%),radial-gradient(600px 400px at 90% 25%,rgba(232,160,32,.12),transparent 55%),radial-gradient(500px 500px at 50% 80%,rgba(224,92,92,.10),transparent 60%),var(--bg);font-family:'Inter',sans-serif;color:var(--text);display:flex;flex-direction:column;padding:24px;box-sizing:border-box;}
+.poster::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:50px 50px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);pointer-events:none;z-index:0;}
+.poster>*{position:relative;z-index:1;}
+.glass{background-color:var(--glass-bg);background-image:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));border:1px solid var(--glass-border);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);box-shadow:var(--glass-shadow);border-radius:10px;}
+.tack{position:absolute;width:20px;height:20px;border-radius:50%;border:1.5px solid rgba(232,160,32,.28);z-index:2;pointer-events:none;}.tack::before,.tack::after{content:"";position:absolute;background:rgba(232,160,32,.28);}.tack::before{left:50%;top:-3px;bottom:-3px;width:1px;transform:translateX(-50%);}.tack::after{top:50%;left:-3px;right:-3px;height:1px;transform:translateY(-50%);}.tack.tl{top:10px;left:10px;}.tack.tr{top:10px;right:10px;}.tack.bl{bottom:10px;left:10px;}.tack.br{bottom:10px;right:10px;}
+.poster-header{flex-shrink:0;}.poster-body{flex:1;overflow:hidden;display:flex;flex-direction:column;gap:10px;justify-content:space-between;}.poster-footer{flex-shrink:0;margin-top:6px;}
+.header-band{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:6px;}.header-left{flex:1;min-width:0;}.eyebrow{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--amber);letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px;display:flex;align-items:center;gap:10px;}.eyebrow::before{content:"";display:inline-block;width:24px;height:2.5px;background:var(--amber);}.headline{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:56px;color:var(--text);line-height:.92;margin:4px 0;letter-spacing:-.01em;text-transform:uppercase;}.headline em{font-style:normal;color:var(--amber);}.subhead{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:17px;color:var(--teal);margin:0 0 3px;letter-spacing:.02em;text-transform:uppercase;}.tagline{font-family:'Inter',sans-serif;font-style:italic;font-size:11px;color:var(--muted);line-height:1.3;max-width:500px;margin:0;}
+.logo-card{flex-shrink:0;padding:10px 8px;display:flex;flex-direction:column;align-items:center;gap:6px;align-self:flex-start;}.logo-mark{width:60px;height:60px;border-radius:11px;background:linear-gradient(135deg,#E8A020,#2EC4B6);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -2px 4px rgba(0,0,0,.15),0 4px 14px rgba(0,0,0,.35);}.logo-mark span{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:22px;color:#1A1F2E;letter-spacing:.02em;line-height:1;}.logo-word{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;letter-spacing:.04em;text-transform:uppercase;line-height:1;text-align:center;white-space:nowrap;}.logo-word .a{color:var(--text);}.logo-word .b{color:var(--amber);}.logo-inc{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.05em;text-transform:lowercase;color:var(--muted);margin-top:-2px;}
+.section-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;letter-spacing:.08em;text-transform:uppercase;color:var(--text);margin:0 0 4px;display:flex;align-items:center;gap:6px;}.section-title::before{content:"";width:5px;height:5px;background:var(--amber);border-radius:50%;}.section-title .sub{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.14em;color:var(--muted);margin-left:auto;font-weight:500;}
+.rule-card{display:flex;align-items:center;gap:14px;padding:12px 18px;background:rgba(232,160,32,.07);}.rule-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:48px;color:var(--amber);line-height:1;letter-spacing:-.02em;}.rule-body{flex:1;}.rule-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:15px;color:var(--amber);letter-spacing:.06em;text-transform:uppercase;}.rule-text{font-family:'Inter',sans-serif;font-size:12px;color:var(--muted);line-height:1.4;margin-top:3px;}
+.data-table{width:100%;border-collapse:collapse;}.data-table th{font-family:'Barlow',sans-serif;font-weight:700;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);padding:5px 8px;text-align:left;background:rgba(13,16,32,.35);border-bottom:1px solid var(--glass-border);}body[data-edition="light"] .data-table th{background:rgba(27,32,48,.06);}.data-table td{padding:5px 8px;color:var(--text);line-height:1.4;border-bottom:1px solid rgba(255,255,255,.05);font-family:'Inter',sans-serif;font-size:11.5px;}.data-table tr:last-child td{border-bottom:none;}.data-table tr:nth-child(even) td{background:rgba(255,255,255,.02);}body[data-edition="light"] .data-table tr:nth-child(even) td{background:rgba(27,32,48,.025);}.data-table .mono{font-family:'JetBrains Mono',monospace;font-size:11px;}.data-table.compact th{font-size:10px;padding:4px 7px;}.data-table.compact td{padding:4px 7px;font-size:11px;line-height:1.35;}.data-table.compact .mono{font-size:10.5px;}
+.numbered-list .list-item{display:flex;align-items:flex-start;gap:8px;}.numbered-list .num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:16px;color:var(--amber);min-width:16px;line-height:1.2;}.numbered-list .num-text{font-family:'Inter',sans-serif;font-size:12.5px;color:var(--text);line-height:1.4;}
+.safety-card{padding:10px 14px;background:rgba(224,92,92,.06);border:1px solid rgba(224,92,92,.20);border-radius:12px;}.safety-head{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:16px;color:var(--coral);letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px;}.safety-body{font-size:11.5px;color:var(--text);line-height:1.45;}.safety-body strong{font-weight:700;color:var(--coral);}
+.footer-panel{padding:8px 18px;background-color:rgba(13,16,32,.85);background-image:linear-gradient(180deg,rgba(255,255,255,.04),rgba(0,0,0,0));border:1px solid rgba(255,255,255,.10);border-radius:10px;text-align:center;display:flex;flex-direction:column;gap:2px;}body[data-edition="light"] .footer-panel{background-color:rgba(221,216,206,.95);border-color:rgba(27,32,48,.10);}.footer-disclaimer{font-family:'Inter',sans-serif;font-size:9px;line-height:1.4;color:var(--faint);margin:0 auto;max-width:700px;}.footer-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:11px;color:var(--text);letter-spacing:.04em;text-transform:uppercase;margin:0;}.footer-brand{font-family:'JetBrains Mono',monospace;font-size:8.5px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;}
+.tweaks{position:fixed;bottom:16px;right:16px;z-index:100;background:rgba(13,16,32,.92);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:10px 14px;display:flex;flex-direction:column;gap:8px;font-family:'Inter',sans-serif;font-size:12px;color:#F0EDE8;}
+@media print{@page{size:9.375in 12.5in;margin:0;}html,body{background:#1A1F2E !important;-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}*{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}.stage{position:static;padding:0;display:block;overflow:visible;}.poster-wrap{transform:none !important;width:auto !important;height:auto !important;}.poster{box-shadow:none !important;width:900px !important;height:1200px !important;overflow:hidden !important;}.glass,.insight-card,.safety-card{backdrop-filter:none !important;-webkit-backdrop-filter:none !important;}.tweaks{display:none !important;}}
+</style>
+</head>
+<body >
+<div class="stage">
+<div class="poster-wrap" id="posterWrap">
+<div class="poster" id="poster">
+  <span class="tack tl" aria-hidden="true"></span><span class="tack tr" aria-hidden="true"></span>
+  <span class="tack bl" aria-hidden="true"></span><span class="tack br" aria-hidden="true"></span>
+  <div class="poster-header">
+    <header class="header-band">
+      <div class="header-left">
+        <div class="eyebrow"><span>Plating Posters &nbsp;&middot;&nbsp; Dec Chrome &nbsp;&middot;&nbsp; Copper</span></div>
+        <h1 class="headline">COPPER<br><em>PLATING</em></h1>
+        <h2 class="subhead">Acid Copper + Strike &mdash; Leveling</h2>
+        <p class="tagline">Copper fills defects, smooths surfaces, and buffers the nickel. Mandatory on die-cast.</p>
+      </div>
+      <aside class="glass logo-card">
+        <div class="logo-mark"><span>PP</span></div>
+        <div class="logo-word"><span class="a">Plating</span> <span class="b">Posters</span></div>
+        <div class="logo-inc">www.platingposters.com</div>
+      </aside>
+    </header>
+  </div>
+  <div class="poster-body">
+    <div class="glass rule-card">
+      <div class="rule-num">10&ndash;25&micro;m</div>
+      <div class="rule-body">
+        <div class="rule-label">Copper Thickness</div>
+        <div class="rule-text">Acid copper sulfate at 2&ndash;6 A/dm&sup2; provides leveling and ductility. Copper strike on zinc die-cast prevents immersion displacement.</div>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="section-title">Acid Copper Bath <span class="sub">typical parameters</span></h3>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table compact">
+          <thead><tr><th>Parameter</th><th>Range</th></tr></thead>
+          <tbody>
+            <tr><td>CuSO&#8324;&middot;5H&#8322;O</td><td class="mono">60&ndash;240 g/L</td></tr>
+            <tr><td>H&#8322;SO&#8324;</td><td class="mono">30&ndash;75 g/L</td></tr>
+            <tr><td>Cl&supmin;</td><td class="mono">40&ndash;100 mg/L</td></tr>
+            <tr><td>Temperature</td><td class="mono">20&ndash;35&deg;C</td></tr>
+            <tr><td>Current Density</td><td class="mono">2&ndash;6 A/dm&sup2;</td></tr>
+            <tr><td>Agitation</td><td>Air + cathode rod movement</td></tr>
+            <tr><td>Anodes</td><td>Phosphorized Cu (0.04&ndash;0.06% P)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="numbered-list glass" style="padding:10px 14px;">
+      <h3 class="section-title">Key Rules <span class="sub">copper plating</span></h3>
+      <div style="display:flex;flex-direction:column;gap:5px;">
+        <div class="list-item"><span class="num">1</span><span class="num-text">Copper is the leveling foundation &mdash; if the copper is rough, every layer above it is rough</span></div>
+        <div class="list-item"><span class="num">2</span><span class="num-text">Chloride controls grain structure &mdash; too low = coarse, grainy deposit; too high = haze and pitting</span></div>
+        <div class="list-item"><span class="num">3</span><span class="num-text">Maintain brightener and leveler additions &mdash; depleted organics cause dull, streaky deposits</span></div>
+        <div class="list-item"><span class="num">4</span><span class="num-text">Phosphorized Cu anodes prevent Cu+ buildup &mdash; pure Cu anodes generate cuprous ions that cloud the bath</span></div>
+        <div class="list-item"><span class="num">5</span><span class="num-text">Carbon treat when organics break down &mdash; haze and pitting at low current density is the usual signal</span></div>
+      </div>
+    </div>
+
+    <div class="insight-card">
+      <div class="insight-label">Why Copper Ductility Matters</div>
+      <div class="insight-text">Copper acts as a stress absorber between the substrate and the harder nickel layers above. Without a ductile copper layer, thermal cycling creates micro-cracks that propagate through the nickel and chrome, causing premature corrosion failure. Target 10&ndash;25 &micro;m depending on part geometry.</div>
+    </div>
+
+    <div class="safety-card">
+      <div class="safety-head">&#9888; Safety</div>
+      <div class="safety-body"><strong>H&#8322;SO&#8324;</strong> &mdash; severe burns; exothermic with water. <strong>CuSO&#8324;</strong> &mdash; aquatic toxin; do not discharge to drains. Splash goggles, face shield, chemical-resistant gloves and apron mandatory. Emergency shower/eyewash within 10 sec.</div>
+    </div>
+
+  </div>
+  <footer class="footer-panel poster-footer">
+    <p class="footer-disclaimer">Technical reference only. Verify all parameters against your chemistry supplier’s TDS, customer specifications, and applicable regulatory requirements before production use.</p>
+    <p class="footer-title">Copper Plating &mdash; Decorative Chrome Plating Series</p>
+    <span class="footer-brand">Plating Posters &middot; Metal Finishing Reference Series &middot; PP-DC-04-SF / v1.0 / 2026</span>
+  </footer>
+</div>
+</div>
+</div>
+<div class="tweaks">
+  <div style="display:flex;gap:6px;align-items:center;">
+    <span style="color:rgba(240,237,232,.5);font-size:11px;letter-spacing:.06em;text-transform:uppercase;">Edition</span>
+    <button id="btnDark" style="padding:4px 10px;border-radius:5px;cursor:pointer;font-size:11px;background:#E8A020;color:#1A1F2E;border:1px solid #E8A020;" onclick="setEdition('')">Dark</button>
+    <button id="btnLight" style="padding:4px 10px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);" onclick="setEdition('light')">Light</button>
+  </div>
+  <button onclick="window.print()" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);">Print / PDF</button>
+</div>
+<script>
+const posterWrap=document.getElementById('posterWrap');const poster=document.getElementById('poster');const body=document.body;
+function scalePoster(){const sW=(window.innerWidth-24)/900;const sH=(window.innerHeight-24)/1200;const s=Math.min(sW,sH);posterWrap.style.transform='scale('+s+')';posterWrap.style.transformOrigin='top center';posterWrap.style.width='900px';posterWrap.style.height=(1200*s)+'px';}
+function setEdition(e){if(e)body.dataset.edition=e;else delete body.dataset.edition;['Dark','Light'].forEach(function(n){var b=document.getElementById('btn'+n);var active=(n.toLowerCase()===e)||(n==='Dark'&&!e);b.style.background=active?'#E8A020':'transparent';b.style.color=active?'#1A1F2E':'#F0EDE8';b.style.borderColor=active?'#E8A020':'rgba(255,255,255,.2)';})}
+scalePoster();window.addEventListener('resize',scalePoster);
+</script>
+</body>
+</html>

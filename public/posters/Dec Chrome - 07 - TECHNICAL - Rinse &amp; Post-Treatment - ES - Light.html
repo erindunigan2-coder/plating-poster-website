@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Decorative Chrome &mdash; Enjuague y Post-Tratamiento &mdash; Technical | Plating Posters Inc</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Barlow:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#1A1F2E;--navy:#0D1020;--text:#F0EDE8;--muted:rgba(240,237,232,.62);
+  --faint:rgba(240,237,232,.38);
+  --amber:#E8A020;--teal:#2EC4B6;--emerald:#27AE60;--coral:#E05C5C;
+  --slate:#3A4055;--callout:#1E2435;--altrow:#252B3D;
+  --glass-bg:rgba(30,36,53,.55);--glass-border:rgba(255,255,255,.12);
+  --glass-shadow:inset 0 1px 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(0,0,0,.2),0 4px 12px rgba(0,0,0,.25);
+}
+.poster[data-edition="light"]{
+  --bg:#F5F4F0;--navy:#DDD8CE;--text:#1B2030;--muted:rgba(27,32,48,.66);
+  --faint:rgba(27,32,48,.42);
+  --amber:#B8770D;--teal:#1A8C82;--emerald:#1E8449;--coral:#B7322F;
+  --slate:#C5C0B5;--callout:#ECEAE1;--altrow:#E4E1D6;
+  --glass-bg:rgba(255,253,247,.66);--glass-border:rgba(27,32,48,.10);
+  --glass-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 4px 12px rgba(27,32,48,.08);
+}
+html,body{margin:0;padding:0;background:#0a0c14;}
+.stage{width:100vw;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;overflow:visible;padding:12px 0;box-sizing:border-box;}
+.poster-wrap{transform-origin:center center;}
+.poster{width:1200px;height:1800px;position:relative;overflow:hidden;background:radial-gradient(1200px 800px at 15% 8%,rgba(46,196,182,.14),transparent 60%),radial-gradient(1000px 700px at 90% 25%,rgba(232,160,32,.12),transparent 55%),radial-gradient(900px 900px at 50% 80%,rgba(224,92,92,.10),transparent 60%),var(--bg);font-family:'Inter',sans-serif;color:var(--text);display:flex;flex-direction:column;padding:32px;box-sizing:border-box;}
+.poster::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:50px 50px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);pointer-events:none;z-index:0;}
+.poster>*{position:relative;z-index:1;}
+.glass{background-color:var(--glass-bg);background-image:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));border:1px solid var(--glass-border);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);box-shadow:var(--glass-shadow);border-radius:12px;}
+.tack{position:absolute;width:24px;height:24px;border-radius:50%;border:1.5px solid rgba(232,160,32,.28);z-index:2;pointer-events:none;}.tack::before,.tack::after{content:"";position:absolute;background:rgba(232,160,32,.28);}.tack::before{left:50%;top:-3px;bottom:-3px;width:1px;transform:translateX(-50%);}.tack::after{top:50%;left:-3px;right:-3px;height:1px;transform:translateY(-50%);}.tack.tl{top:12px;left:12px;}.tack.tr{top:12px;right:12px;}.tack.bl{bottom:12px;left:12px;}.tack.br{bottom:12px;right:12px;}
+.poster-header{flex-shrink:0;}.poster-body{flex:1;overflow:hidden;display:flex;flex-direction:column;gap:7px;justify-content:space-between;}.poster-footer{flex-shrink:0;margin-top:8px;}
+.header-band{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:8px;}.header-left{flex:1;min-width:0;}.eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--amber);letter-spacing:.16em;text-transform:uppercase;margin-bottom:4px;display:flex;align-items:center;gap:12px;}.eyebrow::before{content:"";display:inline-block;width:30px;height:3px;background:var(--amber);}.headline{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:72px;color:var(--text);line-height:.92;margin:4px 0;letter-spacing:-.01em;text-transform:uppercase;}.headline em{font-style:normal;color:var(--amber);}.subhead{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;color:var(--teal);margin:0 0 3px;letter-spacing:.02em;text-transform:uppercase;}.tagline{font-family:'Inter',sans-serif;font-style:italic;font-size:13px;color:var(--muted);line-height:1.45;max-width:700px;margin:0;}
+.logo-card{flex-shrink:0;padding:12px 10px;display:flex;flex-direction:column;align-items:center;gap:8px;align-self:flex-start;}.logo-tile{width:68px;height:68px;border-radius:12px;background:linear-gradient(135deg,#E8A020,#2EC4B6);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -2px 4px rgba(0,0,0,.15),0 4px 14px rgba(0,0,0,.35);}.logo-tile span{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:26px;color:#1A1F2E;letter-spacing:.02em;line-height:1;}.logo-word{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;letter-spacing:.04em;text-transform:uppercase;line-height:1;text-align:center;white-space:nowrap;}.logo-word .a{color:var(--text);}.logo-word .b{color:var(--amber);}.logo-inc{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.05em;text-transform:lowercase;color:var(--muted);margin-top:-2px;}
+.section-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:28px;letter-spacing:.08em;text-transform:uppercase;color:var(--text);margin:0 0 6px;display:flex;align-items:center;gap:8px;}.section-title::before{content:"";width:6px;height:6px;background:var(--amber);border-radius:50%;}.section-title .sub{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;color:var(--muted);margin-left:auto;font-weight:500;}
+.rule-card{display:flex;align-items:center;gap:20px;padding:18px 28px;background:rgba(232,160,32,.07);}.rule-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:68px;color:var(--amber);line-height:1;letter-spacing:-.02em;}.rule-body{flex:1;}.rule-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:19px;color:var(--amber);letter-spacing:.08em;text-transform:uppercase;}.rule-text{font-family:'Inter',sans-serif;font-size:14px;color:var(--muted);line-height:1.5;margin-top:4px;}
+.data-table{width:100%;border-collapse:collapse;}.data-table th{font-family:'Barlow',sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);padding:8px 12px;text-align:left;background:rgba(13,16,32,.35);border-bottom:1px solid var(--glass-border);}.poster[data-edition="light"] .data-table th{background:rgba(27,32,48,.06);}.data-table td{padding:8px 12px;color:var(--text);line-height:1.5;border-bottom:1px solid rgba(255,255,255,.05);font-family:'Inter',sans-serif;font-size:14px;}.data-table tr:last-child td{border-bottom:none;}.data-table tr:nth-child(even) td{background:rgba(255,255,255,.02);}.poster[data-edition="light"] .data-table tr:nth-child(even) td{background:rgba(27,32,48,.025);}.data-table .mono{font-family:'JetBrains Mono',monospace;font-size:13px;}.data-table.compact th{font-size:12px;padding:7px 10px;}.data-table.compact td{padding:6px 10px;font-size:13px;line-height:1.45;}.data-table.compact .mono{font-size:12.5px;}.data-table.bath th{font-size:12px;padding:6px 8px;}.data-table.bath td{padding:5px 8px;font-size:13px;line-height:1.4;}.data-table.bath .mono{font-size:12px;}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}.compare-card{padding:18px 24px;}.compare-card h4{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:21px;color:var(--text);margin:0 0 8px;text-transform:uppercase;letter-spacing:.04em;}.compare-card h4 .tag{font-size:12px;padding:2px 8px;border-radius:4px;margin-left:8px;font-family:'JetBrains Mono',monospace;font-weight:500;letter-spacing:.06em;}.compare-card h4 .tag.good{background:rgba(39,174,96,.15);color:var(--emerald);}.compare-card h4 .tag.bad{background:rgba(224,92,92,.15);color:var(--coral);}.compare-card ul{list-style:none;padding:0;margin:0;}.compare-card li{font-size:13.5px;line-height:1.5;padding:2px 0;display:flex;gap:8px;align-items:flex-start;}.compare-card li::before{content:"";width:5px;height:5px;border-radius:50%;margin-top:7px;flex-shrink:0;}.compare-card.do li::before{background:var(--emerald);}.compare-card.dont li::before{background:var(--coral);}
+.bottom-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:10px;}
+.insight-card{padding:20px 24px;border-left:3px solid var(--teal);background:rgba(46,196,182,.06);border-radius:0 12px 12px 0;}.insight-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;color:var(--teal);letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px;}.insight-text{font-family:'Inter',sans-serif;font-size:14.5px;color:var(--text);line-height:1.5;}
+.safety-card{padding:18px 24px;background:rgba(224,92,92,.08);border:1px solid rgba(224,92,92,.25);border-radius:12px;}.safety-head{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px;color:var(--coral);letter-spacing:.06em;text-transform:uppercase;margin-bottom:5px;}.safety-body{font-size:14px;color:var(--text);line-height:1.55;}.safety-body strong{font-weight:700;color:var(--coral);}
+.process-flow{display:flex;align-items:center;justify-content:space-between;padding:10px 16px;height:80px;gap:4px;}
+.footer{padding:10px 20px;background-color:rgba(13,16,32,.85);background-image:linear-gradient(180deg,rgba(255,255,255,.04),rgba(0,0,0,0));border:1px solid rgba(255,255,255,.10);border-radius:8px;text-align:center;display:flex;flex-direction:column;gap:2px;}.poster[data-edition="light"] .footer{background-color:rgba(221,216,206,.95);border-color:rgba(27,32,48,.10);}.footer-disclaimer{font-family:'Inter',sans-serif;font-size:9px;line-height:1.35;color:var(--faint);margin:0 auto;max-width:900px;}.footer-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:13px;color:var(--text);letter-spacing:.04em;text-transform:uppercase;margin:0;}.footer-brand{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;}
+.tweaks{position:fixed;bottom:16px;right:16px;z-index:100;background:rgba(13,16,32,.92);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:10px 14px;display:flex;flex-direction:column;gap:8px;font-family:'Inter',sans-serif;font-size:12px;color:#F0EDE8;}
+@media print{@page{size:12.5in 18.75in;margin:0;}html,body{background:#1A1F2E !important;-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}*{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}.stage{position:static;padding:0;display:block;overflow:visible;}.poster-wrap{transform:none !important;width:auto !important;height:auto !important;}.poster{box-shadow:none !important;width:1200px !important;height:1800px !important;overflow:hidden !important;}.glass,.insight-card,.safety-card{backdrop-filter:none !important;-webkit-backdrop-filter:none !important;}.tweaks{display:none !important;}}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="poster-wrap" id="posterWrap">
+<div class="poster" id="poster" data-edition="light">
+  <span class="tack tl" aria-hidden="true"></span><span class="tack tr" aria-hidden="true"></span>
+  <span class="tack bl" aria-hidden="true"></span><span class="tack br" aria-hidden="true"></span>
+  <div class="poster-header">
+    <header class="header-band">
+      <div class="header-left">
+        <div class="eyebrow"><span>Plating Posters &nbsp;&middot;&nbsp; Cromo Decorativo &nbsp;&middot;&nbsp; Sistema Multicapa &nbsp;&middot;&nbsp; Enjuague</span></div>
+        <h1 class="headline">ENJUAGUE Y<br><em>POST-TRAT.</em></h1>
+        <h2 class="subhead">Dise&ntilde;o de Enjuague en Contraflujo y Tratamientos Post-Recubrimiento</h2>
+        <p class="tagline">El enjuague no es agua desperdiciada &mdash; es control de contaminaci&oacute;n. Cada mililitro de arrastre que entra al siguiente tanque cambia su qu&iacute;mica. El dise&ntilde;o de contraflujo, la reducci&oacute;n del arrastre y los post-tratamientos adecuados protegen el acabado y el medio ambiente.</p>
+      </div>
+      <aside class="glass logo-card">
+        <div class="logo-tile"><span>PP</span></div>
+        <div class="logo-word"><span class="a">Plating</span> <span class="b">Posters</span></div>
+        <div class="logo-inc">www.platingposters.com</div>
+      </aside>
+    </header>
+  </div>
+  <div class="poster-body">
+    <div class="glass rule-card">
+      <div class="rule-num">1:10K</div>
+      <div class="rule-body">
+        <div class="rule-label">Meta de Raz&oacute;n de Enjuague &mdash; Diluir el Arrastre Antes de Que Contamine</div>
+        <div class="rule-text">Un enjuague estancado de una sola etapa rara vez logra la diluci&oacute;n de 1:10,000 necesaria despu&eacute;s de tanques de proceso. El enjuague en contraflujo (cascada) con 2&ndash;3 etapas lo logra con 90% menos agua. Los post-tratamientos &mdash; conversi&oacute;n de cromato trivalente, sellado con agua DI y ba&ntilde;os anti-deslustre &mdash; protegen el acabado durante almacenamiento y env&iacute;o.</div>
+      </div>
+    </div>
+
+    <!-- TABLA DE CALIDAD DE ENJUAGUE -->
+    <div>
+      <h3 class="section-title">Metas de Calidad del Agua de Enjuague <span class="sub">por etapa</span></h3>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table compact">
+          <thead><tr><th>Enjuague Despu&eacute;s de</th><th>Meta Conductividad</th><th>Etapas</th><th>Cr&iacute;tico Porque</th></tr></thead>
+          <tbody>
+            <tr><td style="font-weight:600;">Limpieza Alcalina</td><td class="mono">&le;50 &micro;S/cm</td><td class="mono">2</td><td>Alcalinidad envenena ba&ntilde;os &aacute;cidos</td></tr>
+            <tr><td style="font-weight:600;">Activaci&oacute;n &Aacute;cida</td><td class="mono">&le;30 &micro;S/cm</td><td class="mono">2</td><td>&Aacute;cido arrastrado ataca cobre de ataque</td></tr>
+            <tr><td style="font-weight:600;">Cobreado</td><td class="mono">&le;30 &micro;S/cm</td><td class="mono">2&ndash;3</td><td>Cu en ba&ntilde;o Ni causa rayas oscuras</td></tr>
+            <tr><td style="font-weight:600;">Niquelado</td><td class="mono">&le;20 &micro;S/cm</td><td class="mono">2&ndash;3</td><td>Ni en ba&ntilde;o Cr degrada dep&oacute;sito</td></tr>
+            <tr><td style="font-weight:600;">Cromado</td><td class="mono">&le;10 &micro;S/cm</td><td class="mono">3 (+ arrastre)</td><td>Cr(VI) es t&oacute;xico; recuperaci&oacute;n ahorra $$</td></tr>
+            <tr><td style="font-weight:600;">Enjuague Final</td><td class="mono">&le;5 &micro;S/cm (DI)</td><td class="mono">1 DI</td><td>Previene manchas de agua en piezas terminadas</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- SVG ENJUAGUE EN CONTRAFLUJO -->
+    <div class="glass" style="padding:10px 18px;">
+      <h3 class="section-title" style="margin-bottom:5px;">Dise&ntilde;o de Enjuague en Contraflujo <span class="sub">cascada de 3 etapas</span></h3>
+      <svg viewBox="0 0 1060 140" width="100%" height="140" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="30" y="30" width="140" height="80" rx="6" fill="rgba(232,160,32,.10)" stroke="var(--amber)" stroke-width="1.5"/>
+        <text x="100" y="55" text-anchor="middle" fill="var(--amber)" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="12">TANQUE DE</text>
+        <text x="100" y="70" text-anchor="middle" fill="var(--amber)" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="12">PROCESO</text>
+        <text x="100" y="95" text-anchor="middle" fill="var(--amber)" font-family="Inter,sans-serif" font-size="8" opacity=".7">Alta conc.</text>
+        <line x1="170" y1="55" x2="210" y2="55" stroke="var(--text)" stroke-width="1.5"/><polygon points="210,52 217,55 210,58" fill="var(--text)"/>
+        <text x="193" y="48" text-anchor="middle" fill="var(--text)" font-family="Inter,sans-serif" font-size="7">Piezas</text>
+        <rect x="220" y="30" width="140" height="80" rx="6" fill="rgba(224,92,92,.08)" stroke="var(--coral)" stroke-width="1"/>
+        <text x="290" y="55" text-anchor="middle" fill="var(--coral)" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="11">ENJUAGUE 1</text>
+        <text x="290" y="70" text-anchor="middle" fill="var(--coral)" font-family="Inter,sans-serif" font-size="8" opacity=".7">M&aacute;s contaminado</text>
+        <text x="290" y="95" text-anchor="middle" fill="var(--coral)" font-family="JetBrains Mono,monospace" font-size="8">&sim;1000 &micro;S/cm</text>
+        <line x1="360" y1="55" x2="400" y2="55" stroke="var(--text)" stroke-width="1.5"/><polygon points="400,52 407,55 400,58" fill="var(--text)"/>
+        <rect x="410" y="30" width="140" height="80" rx="6" fill="rgba(46,196,182,.08)" stroke="var(--teal)" stroke-width="1"/>
+        <text x="480" y="55" text-anchor="middle" fill="var(--teal)" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="11">ENJUAGUE 2</text>
+        <text x="480" y="70" text-anchor="middle" fill="var(--teal)" font-family="Inter,sans-serif" font-size="8" opacity=".7">Intermedio</text>
+        <text x="480" y="95" text-anchor="middle" fill="var(--teal)" font-family="JetBrains Mono,monospace" font-size="8">&sim;30 &micro;S/cm</text>
+        <line x1="550" y1="55" x2="590" y2="55" stroke="var(--text)" stroke-width="1.5"/><polygon points="590,52 597,55 590,58" fill="var(--text)"/>
+        <rect x="600" y="30" width="140" height="80" rx="6" fill="rgba(39,174,96,.08)" stroke="var(--emerald)" stroke-width="1.5"/>
+        <text x="670" y="55" text-anchor="middle" fill="var(--emerald)" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="11">ENJUAGUE 3</text>
+        <text x="670" y="70" text-anchor="middle" fill="var(--emerald)" font-family="Inter,sans-serif" font-size="8" opacity=".7">M&aacute;s limpio (agua DI)</text>
+        <text x="670" y="95" text-anchor="middle" fill="var(--emerald)" font-family="JetBrains Mono,monospace" font-size="8">&le;5 &micro;S/cm</text>
+        <line x1="680" y1="22" x2="680" y2="12" stroke="var(--emerald)" stroke-width="1"/><text x="710" y="18" fill="var(--emerald)" font-family="Inter,sans-serif" font-size="7">Agua DI fresca entra</text>
+        <line x1="600" y1="118" x2="550" y2="118" stroke="var(--teal)" stroke-width="1.2"/><polygon points="554,115 548,118 554,121" fill="var(--teal)"/>
+        <line x1="410" y1="118" x2="360" y2="118" stroke="var(--coral)" stroke-width="1.2"/><polygon points="364,115 358,118 364,121" fill="var(--coral)"/>
+        <line x1="220" y1="118" x2="170" y2="118" stroke="var(--amber)" stroke-width="1.2"/><polygon points="174,115 168,118 174,121" fill="var(--amber)"/>
+        <text x="500" y="132" text-anchor="middle" fill="var(--faint)" font-family="Inter,sans-serif" font-size="8" font-style="italic">Agua fluye en contra de las piezas: agua m&aacute;s limpia encuentra piezas m&aacute;s limpias</text>
+        <text x="145" y="132" text-anchor="middle" fill="var(--amber)" font-family="Inter,sans-serif" font-size="7">Rebose a recuperaci&oacute;n de arrastre o drenaje</text>
+        <line x1="740" y1="55" x2="780" y2="55" stroke="var(--text)" stroke-width="1.5"/><polygon points="780,52 787,55 780,58" fill="var(--text)"/>
+        <rect x="790" y="30" width="140" height="80" rx="6" fill="rgba(120,120,140,.08)" stroke="var(--muted)" stroke-width="1"/>
+        <text x="860" y="60" text-anchor="middle" fill="var(--muted)" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="11">SIGUIENTE</text>
+        <text x="860" y="75" text-anchor="middle" fill="var(--muted)" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="11">PROCESO</text>
+      </svg>
+    </div>
+
+    <!-- OPCIONES POST-TRATAMIENTO -->
+    <div>
+      <h3 class="section-title">Opciones de Post-Tratamiento <span class="sub">despu&eacute;s del cromo</span></h3>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table bath">
+          <thead><tr><th>Tratamiento</th><th>Prop&oacute;sito</th><th>Condiciones</th></tr></thead>
+          <tbody>
+            <tr><td style="font-weight:600;">Conversi&oacute;n Cromato (Tri-Cr)</td><td>Resistencia al deslustre; protecci&oacute;n contra huellas</td><td class="mono">pH 3&ndash;4, TA, 30&ndash;60 seg</td></tr>
+            <tr><td style="font-weight:600;">Sello con Agua DI</td><td>Previene manchas; remueve sales residuales</td><td class="mono">&le;2 &micro;S/cm, TA</td></tr>
+            <tr><td style="font-weight:600;">Secado con Aire Caliente</td><td>Secado r&aacute;pido; previene manchas</td><td class="mono">60&ndash;80&deg;C aire forzado</td></tr>
+            <tr><td style="font-weight:600;">Sellador Anti-Deslustre</td><td>Pel&iacute;cula org&aacute;nica para protecci&oacute;n en almacenamiento</td><td class="mono">TA, inmersi&oacute;n o rociado, 10&ndash;30 seg</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- REDUCCI&Oacute;N DE ARRASTRE -->
+    <div class="insight-card">
+      <div class="insight-label">La Reducci&oacute;n de Arrastre Ahorra Qu&iacute;mica y Agua</div>
+      <div class="insight-text">Cada metro cuadrado de piezas lleva 50&ndash;200 mL de soluci&oacute;n al enjuague. Reducir el arrastre 50% disminuye consumo qu&iacute;mico y costos de tratamiento proporcionalmente. M&eacute;todos clave: <strong>tiempo de escurrido</strong> (10&ndash;15 seg sobre tanque), <strong>tanque de arrastre</strong> antes del primer enjuague (recupera 30&ndash;60% del arrastre), <strong>cuchilla de aire</strong> y <strong>dise&ntilde;o de bastidor</strong> que minimice &aacute;reas de retenci&oacute;n. Para cromo, la recuperaci&oacute;n de arrastre es tanto ahorro econ&oacute;mico como requisito ambiental.</div>
+    </div>
+
+    <div class="safety-card">
+      <div class="safety-head">&#9888; Resumen de Seguridad &mdash; Enjuague y Post-Tratamiento</div>
+      <div class="safety-body"><strong>Agua de enjuague despu&eacute;s de cromo</strong> &mdash; contiene Cr(VI); tratar como residuo peligroso; nunca drenar al alcantarillado sin reducci&oacute;n (Cr VI &rarr; Cr III) y precipitaci&oacute;n. <strong>Ba&ntilde;os de conversi&oacute;n de cromato</strong> &mdash; pueden contener Cr(III); baja toxicidad pero a&uacute;n irritante. <strong>Secadores de aire caliente</strong> &mdash; riesgo de quemaduras t&eacute;rmicas; guardas e interbloqueos requeridos. <strong>Anti-deslustre</strong> &mdash; puede contener solventes; VEL para control de COV. Use EPP est&aacute;ndar en estaciones de enjuague. FTS publicadas.</div>
+    </div>
+
+  </div>
+  <footer class="footer poster-footer">
+    <p class="footer-disclaimer">Solo referencia técnica. Verifique todos los parámetros contra la ficha técnica de su proveedor, especificaciones del cliente y requisitos regulatorios aplicables antes del uso en producción.</p>
+    <p class="footer-title">Enjuague y Post-Tratamiento &mdash; Serie de Cromado Decorativo</p>
+    <span class="footer-brand">Plating Posters &middot; Metal Finishing Reference Series &middot; PP-DC-07-T / v1.0 / 2026</span>
+  </footer>
+</div>
+</div>
+</div>
+<div class="tweaks">
+  <div style="display:flex;gap:6px;align-items:center;">
+    <span style="color:rgba(240,237,232,.5);font-size:11px;letter-spacing:.06em;text-transform:uppercase;">Edition</span>
+    <button id="btnDark" style="padding:4px 10px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);" onclick="setEdition('')">Dark</button>
+    <button id="btnLight" style="padding:4px 10px;border-radius:5px;cursor:pointer;font-size:11px;background:#E8A020;color:#1A1F2E;border:1px solid #E8A020;" onclick="setEdition('light')">Light</button>
+  </div>
+  <button onclick="window.print()" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);">Print / PDF</button>
+</div>
+<script>
+const posterWrap=document.getElementById('posterWrap');const poster=document.getElementById('poster');
+function scalePoster(){const sW=(window.innerWidth-24)/1200;const sH=(window.innerHeight-24)/1800;const s=Math.min(sW,sH);posterWrap.style.transform='scale('+s+')';posterWrap.style.transformOrigin='top center';posterWrap.style.width='1200px';posterWrap.style.height=(1800*s)+'px';}
+function setEdition(e){if(e)poster.dataset.edition=e;else delete poster.dataset.edition;['Dark','Light'].forEach(function(n){var b=document.getElementById('btn'+n);var active=(n.toLowerCase()===e)||(n==='Dark'&&!e);b.style.background=active?'#E8A020':'transparent';b.style.color=active?'#1A1F2E':'#F0EDE8';b.style.borderColor=active?'#E8A020':'rgba(255,255,255,.2)';})}
+scalePoster();window.addEventListener('resize',scalePoster);
+</script>
+</body>
+</html>

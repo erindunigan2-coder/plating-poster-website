@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>General Knowledge &mdash; 15 Specifications &amp; Standards Quick Reference &mdash; Technical | Plating Posters Inc</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Barlow:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#0F1B2E;--navy:#0A1225;--text:#F0EDE8;--muted:rgba(240,237,232,.62);
+  --faint:rgba(240,237,232,.38);
+  --accent:#1B3A5C;--blue:#4A7AB5;--green:#1E6B3A;--red:#B22234;
+  --gold:#B8860B;--cream:#F8F7F3;
+  --slate:#2A3550;--callout:#152035;--altrow:#1A2840;
+  --glass-bg:rgba(15,27,46,.55);--glass-border:rgba(255,255,255,.12);
+  --glass-shadow:inset 0 1px 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(0,0,0,.2),0 4px 12px rgba(0,0,0,.25);
+}
+.poster[data-edition="light"]{
+  --bg:#F8F7F3;--navy:#E8E4DA;--text:#1B2030;--muted:rgba(27,32,48,.66);
+  --faint:rgba(27,32,48,.42);
+  --accent:#1B3A5C;--blue:#2E5C8A;--green:#1E6B3A;--red:#B22234;
+  --gold:#8B6914;--cream:#F8F7F3;
+  --slate:#D0CBBE;--callout:#EFEDE4;--altrow:#E6E3D8;
+  --glass-bg:rgba(255,253,247,.66);--glass-border:rgba(27,32,48,.10);
+  --glass-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 4px 12px rgba(27,32,48,.08);
+}
+html,body{margin:0;padding:0;background:#0a0c14;}
+.stage{width:100vw;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;overflow:visible;padding:12px 0;box-sizing:border-box;}
+.poster-wrap{transform-origin:center center;}
+.poster{
+  width:1200px;height:1800px;position:relative;overflow:hidden;
+  background:
+    radial-gradient(1200px 800px at 15% 8%,rgba(74,122,181,.12),transparent 60%),
+    radial-gradient(1000px 700px at 90% 25%,rgba(27,58,92,.10),transparent 55%),
+    radial-gradient(900px 900px at 50% 80%,rgba(178,34,52,.08),transparent 60%),
+    var(--bg);
+  font-family:'Inter',sans-serif;color:var(--text);
+  display:flex;flex-direction:column;padding:32px;box-sizing:border-box;
+}
+.glass{background-color:var(--glass-bg);background-image:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));border:1px solid var(--glass-border);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);box-shadow:var(--glass-shadow);border-radius:12px;}
+.tack{position:absolute;width:24px;height:24px;border-radius:50%;border:1.5px solid rgba(27,58,92,.28);z-index:2;pointer-events:none;}
+.tack::before,.tack::after{content:"";position:absolute;background:rgba(27,58,92,.28);}
+.tack::before{left:50%;top:-3px;bottom:-3px;width:1px;transform:translateX(-50%);}
+.tack::after{top:50%;left:-3px;right:-3px;height:1px;transform:translateY(-50%);}
+.tack.tl{top:12px;left:12px;}.tack.tr{top:12px;right:12px;}.tack.bl{bottom:12px;left:12px;}.tack.br{bottom:12px;right:12px;}
+
+/* ===== THREE-PART FLEX LAYOUT ===== */
+.poster-header{flex-shrink:0;}
+.poster-body{flex:1;overflow:hidden;display:flex;flex-direction:column;gap:10px;justify-content:space-between;}
+.poster-footer{flex-shrink:0;margin-top:8px;}
+
+/* Header */
+.header-band{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:8px;}
+.header-left{flex:1;min-width:0;}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--accent);letter-spacing:.16em;text-transform:uppercase;margin-bottom:4px;display:flex;align-items:center;gap:12px;}
+.eyebrow::before{content:"";display:inline-block;width:30px;height:3px;background:var(--accent);}
+.headline{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:72px;color:var(--text);line-height:.92;margin:4px 0;letter-spacing:-.01em;text-transform:uppercase;}
+.headline em{font-style:normal;color:var(--accent);}
+.subhead{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:20px;color:var(--blue);margin:0 0 3px;letter-spacing:.02em;text-transform:uppercase;}
+.tagline{font-family:'Inter',sans-serif;font-style:italic;font-size:11px;color:var(--muted);line-height:1.35;max-width:700px;margin:0;}
+.logo-card{flex-shrink:0;padding:12px 10px;display:flex;flex-direction:column;align-items:center;gap:8px;align-self:flex-start;}
+.logo-tile{width:68px;height:68px;border-radius:12px;background:linear-gradient(135deg,#1B3A5C,#B22234);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -2px 4px rgba(0,0,0,.15),0 4px 14px rgba(0,0,0,.35);}
+.logo-tile span{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:26px;color:#F8F7F3;letter-spacing:.02em;line-height:1;}
+.logo-word{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;letter-spacing:.04em;text-transform:uppercase;line-height:1;text-align:center;white-space:nowrap;}
+.logo-word .a{color:var(--text);}.logo-word .b{color:var(--accent);}
+.logo-inc{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.05em;text-transform:lowercase;color:var(--muted);margin-top:-2px;}
+
+/* Series banner */
+.series-banner{display:flex;align-items:center;gap:10px;padding:8px 14px;margin-bottom:0;}
+.series-banner .star{color:var(--gold);font-size:14px;}
+.series-banner .label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);}
+.series-banner .divider{flex:1;height:1px;background:var(--glass-border);}
+.series-banner .count{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:.08em;}
+
+/* Section title */
+.section-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;letter-spacing:.08em;text-transform:uppercase;color:var(--text);margin:0 0 6px;display:flex;align-items:center;gap:8px;}
+.section-title::before{content:"";width:5px;height:5px;background:var(--accent);border-radius:50%;}
+.section-title .sub{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.14em;color:var(--muted);margin-left:auto;font-weight:500;}
+
+/* Rule card */
+.rule-card{display:flex;align-items:center;gap:18px;padding:14px 20px;background:rgba(27,58,92,.07);}
+.rule-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:64px;color:var(--accent);line-height:1;letter-spacing:-.02em;}
+.rule-body{flex:1;}
+.rule-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:15px;color:var(--accent);letter-spacing:.08em;text-transform:uppercase;}
+.rule-text{font-family:'Inter',sans-serif;font-size:11px;color:var(--muted);line-height:1.4;margin-top:3px;}
+
+/* Key insight card */
+.insight-card{padding:14px 18px;border-left:3px solid var(--blue);background:rgba(74,122,181,.06);border-radius:0 12px 12px 0;}
+.insight-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;color:var(--blue);letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px;}
+.insight-text{font-family:'Inter',sans-serif;font-size:12px;color:var(--text);line-height:1.5;}
+
+/* Parameter table */
+.data-table{width:100%;border-collapse:collapse;}
+.data-table th{font-family:'Barlow',sans-serif;font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);padding:8px 12px;text-align:left;background:rgba(27,58,92,.08);border-bottom:1px solid var(--glass-border);}
+.poster[data-edition="light"] .data-table th{background:rgba(27,58,92,.06);}
+.data-table td{padding:8px 12px;color:var(--text);line-height:1.4;border-bottom:1px solid rgba(255,255,255,.05);font-family:'Inter',sans-serif;font-size:12px;}
+.data-table tr:last-child td{border-bottom:none;}
+.data-table tr:nth-child(even) td{background:rgba(255,255,255,.02);}
+.poster[data-edition="light"] .data-table tr:nth-child(even) td{background:rgba(27,32,48,.025);}
+.data-table .mono{font-family:'JetBrains Mono',monospace;font-size:11px;}
+
+/* Comparison cards */
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.compare-card{padding:14px 16px;}
+.compare-card h4{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;color:var(--text);margin:0 0 8px;text-transform:uppercase;letter-spacing:.04em;}
+.compare-card h4 .tag{font-size:11px;padding:2px 8px;border-radius:4px;margin-left:8px;font-family:'JetBrains Mono',monospace;font-weight:500;letter-spacing:.06em;}
+.compare-card h4 .tag.good{background:rgba(30,107,58,.15);color:var(--green);}
+.compare-card h4 .tag.bad{background:rgba(178,34,52,.15);color:var(--red);}
+.compare-card ul{list-style:none;padding:0;margin:0;}
+.compare-card li{font-size:12px;line-height:1.5;padding:3px 0;display:flex;gap:8px;align-items:flex-start;}
+.compare-card li::before{content:"";width:5px;height:5px;border-radius:50%;margin-top:6px;flex-shrink:0;}
+.compare-card.do li::before{background:var(--green);}
+.compare-card.dont li::before{background:var(--red);}
+
+/* Trouble cards */
+.trouble-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.trouble-card{padding:12px 14px;border-radius:10px;border-left:3px solid var(--red);display:flex;flex-direction:column;gap:4px;}
+.trouble-card h5{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;color:var(--red);margin:0;text-transform:uppercase;letter-spacing:.06em;line-height:1.1;}
+.trouble-card p{font-size:11px;color:var(--muted);margin:0;line-height:1.4;}
+
+/* Info grid */
+.info-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;}
+.info-card{padding:12px 14px;text-align:center;}
+.info-card .icon{font-size:24px;margin-bottom:6px;}
+.info-card h5{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;color:var(--accent);margin:0 0 4px;text-transform:uppercase;letter-spacing:.06em;}
+.info-card p{font-size:11px;color:var(--muted);margin:0;line-height:1.4;}
+
+/* Checklist */
+.checklist{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:4px 16px;}
+.checklist li{font-size:11.5px;line-height:1.5;padding:4px 0;display:flex;gap:8px;align-items:flex-start;color:var(--text);}
+.checklist li::before{content:"\2713";color:var(--green);font-weight:700;flex-shrink:0;margin-top:0px;}
+
+/* Safety callout */
+.safety-card{padding:14px 18px;background:rgba(178,34,52,.08);border:1px solid rgba(178,34,52,.25);border-radius:12px;}
+.safety-head{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:16px;color:var(--red);letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px;}
+.safety-body{font-size:11.5px;color:var(--text);line-height:1.5;}
+.safety-body strong{font-weight:700;color:var(--red);}
+
+/* SVG infographic */
+.infographic-wrap{padding:8px 10px;}
+.infographic-wrap svg{display:block;}
+
+/* Footer */
+.footer{padding:10px 20px;background-color:rgba(27,58,92,.85);background-image:linear-gradient(180deg,rgba(255,255,255,.04),rgba(0,0,0,0));border:1px solid rgba(255,255,255,.10);border-radius:8px;text-align:center;display:flex;flex-direction:column;gap:2px;}
+.poster[data-edition="light"] .footer{background-color:rgba(221,216,206,.95);border-color:rgba(27,32,48,.10);}
+.footer-disclaimer{font-family:'Inter',sans-serif;font-size:8.5px;line-height:1.35;color:var(--faint);margin:0 auto;max-width:900px;}
+.footer-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:12px;color:var(--text);letter-spacing:.04em;text-transform:uppercase;margin:0;}
+.footer-brand{font-family:'JetBrains Mono',monospace;font-size:8.5px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;}
+
+/* Compact: prevent bottom-cutoff on dense poster */
+.poster-body{gap:4px !important;}
+.data-table th{padding:4px 8px !important;font-size:10px !important;}
+.data-table td{padding:4px 8px !important;font-size:11px !important;}
+.rule-card{padding:8px 14px !important;}
+.rule-num{font-size:48px !important;}
+.rule-text{font-size:10px !important;}
+.insight-card{padding:8px 12px !important;}
+.insight-text{font-size:11px !important;}
+.compare-card{padding:8px 10px !important;}
+.compare-card h4{margin:0 0 4px !important;}
+.compare-card li{font-size:11px !important;padding:2px 0 !important;}
+.trouble-card{padding:6px 10px !important;}
+.trouble-card p{font-size:10px !important;}
+.info-card{padding:6px 10px !important;}
+.safety-card{padding:8px 12px !important;}
+.safety-head{margin-bottom:3px !important;font-size:14px !important;}
+.safety-body{font-size:10.5px !important;}
+.infographic-wrap{padding:2px 6px !important;}
+.section-title{font-size:18px !important;margin:0 0 3px !important;}
+
+@media print{
+  @page{size:12.5in 18.75in;margin:0;}
+  html,body{background:var(--bg) !important;-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
+  *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
+  .stage{position:static;padding:0;display:block;overflow:visible;}
+  .poster-wrap{transform:none !important;width:auto !important;height:auto !important;}
+  .poster{box-shadow:none !important;width:1200px !important;height:1800px !important;overflow:hidden !important;}
+  .glass,.trouble-card,.insight-card,.safety-card{backdrop-filter:none !important;-webkit-backdrop-filter:none !important;}
+}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="poster-wrap" id="posterWrap">
+<div class="poster" id="poster" data-edition="light">
+  <span class="tack tl" aria-hidden="true"></span><span class="tack tr" aria-hidden="true"></span>
+  <span class="tack bl" aria-hidden="true"></span><span class="tack br" aria-hidden="true"></span>
+
+  <!-- ===== HEADER ===== -->
+  <div class="poster-header">
+    <header class="header-band">
+      <div class="header-left">
+        <div class="eyebrow"><span>Plating Posters Inc &nbsp;&middot;&nbsp; General Knowledge Series &nbsp;&middot;&nbsp; Poster 15 of 15</span></div>
+        <h1 class="headline">SPECS &amp;<br><em>STANDARDS</em></h1>
+        <h2 class="subhead">A Quick Reference to ASTM, AMS, MIL &amp; ISO Specifications in Electroplating &amp; Surface Finishing</h2>
+        <p class="tagline">The specification is the contract between you and your customer. Knowing how to read, interpret, and comply with plating specs is as critical as running the bath itself.</p>
+      </div>
+      <aside class="glass logo-card">
+        <div class="logo-tile"><span>PP</span></div>
+        <div class="logo-word"><span class="a">Plating</span> <span class="b">Posters</span></div>
+        <div class="logo-inc">www.platingposters.com</div>
+      </aside>
+    </header>
+
+    <!-- SERIES BANNER -->
+    <div class="series-banner glass">
+      <span class="star">&#9733;</span>
+      <span class="label">General Knowledge &mdash; Surface Finishing Reference Series</span>
+      <span class="divider"></span>
+      <span class="count">15 / 15</span>
+    </div>
+  </div>
+
+  <!-- ===== BODY ===== -->
+  <div class="poster-body">
+
+    <!-- RULE CARD -->
+    <div class="glass rule-card">
+      <div class="rule-num">#15</div>
+      <div class="rule-body">
+        <div class="rule-label">&ldquo;The Specification Is the Contract&rdquo;</div>
+        <div class="rule-text">If a customer calls out ASTM B633 SC3 Type VI, every word matters: B633 = zinc electroplate, SC3 = Service Condition 3 (12 &micro;m min thickness), Type VI = trivalent chromate passivation. Misreading one element means non-conforming parts.</div>
+      </div>
+    </div>
+
+    <!-- TABLE 1: ASTM PLATING SPECIFICATIONS -->
+    <div>
+      <h3 class="section-title">ASTM Plating Specifications <span class="sub">Core electroplating standards</span></h3>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table">
+          <thead><tr><th>Standard</th><th>Coating</th><th>Key Classifications</th><th>What It Specifies</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">ASTM B633</td><td>Zinc Electroplate</td><td>SC1&ndash;SC4 service conditions; Types I&ndash;VI chromate</td><td>Thickness by service condition, chromate conversion type</td></tr>
+            <tr><td class="mono">ASTM B841</td><td>Zinc&ndash;Nickel Alloy</td><td>Types I&ndash;II; Classes 5&ndash;25 &micro;m</td><td>Alloy composition (10&ndash;15% Ni Type I), thickness classes</td></tr>
+            <tr><td class="mono">ASTM B456</td><td>Nickel + Chromium</td><td>SC1&ndash;SC5; Classes a&ndash;f Ni types</td><td>Decorative &amp; engineering Ni/Cr systems, CASS hours</td></tr>
+            <tr><td class="mono">ASTM B177</td><td>Chromium Electroplate</td><td>Engineering (hard) chrome</td><td>Thickness, adhesion, hardness for functional chrome</td></tr>
+            <tr><td class="mono">ASTM B488</td><td>Gold Electroplate</td><td>Types I&ndash;III purity; Classes 0.5&ndash;5.0 &micro;m</td><td>Gold purity, thickness, hardness, solder &amp; wire bond</td></tr>
+            <tr><td class="mono">ASTM B700</td><td>Electroless Nickel</td><td>SC1&ndash;SC4; Classes 1&ndash;4 P content</td><td>Phosphorus range, thickness, heat treatment</td></tr>
+            <tr><td class="mono">ASTM B545</td><td>Tin Electroplate</td><td>Classes A&ndash;D; Types 1&ndash;2</td><td>Thickness, reflow, solderability, whisker mitigation</td></tr>
+            <tr><td class="mono">ASTM B200</td><td>Copper Electroplate</td><td>Classes 0&ndash;4 thickness</td><td>Thickness, adhesion, ductility for underplate &amp; functional</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- TABLE 2: THICKNESS MEASUREMENT STANDARDS -->
+    <div>
+      <h3 class="section-title">Thickness Measurement Standards <span class="sub">How to verify coating thickness</span></h3>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table">
+          <thead><tr><th>Standard</th><th>Method</th><th>Type</th><th>Typical Accuracy</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">ASTM B499</td><td>Magnetic thickness measurement</td><td>Non-destructive</td><td>&plusmn; 5&ndash;10% on flat surfaces</td></tr>
+            <tr><td class="mono">ASTM B244</td><td>Eddy-current thickness measurement</td><td>Non-destructive</td><td>&plusmn; 5&ndash;10% on non-ferrous</td></tr>
+            <tr><td class="mono">ASTM B568</td><td>X-ray fluorescence (XRF)</td><td>Non-destructive</td><td>&plusmn; 3&ndash;5%, multi-layer capable</td></tr>
+            <tr><td class="mono">ASTM B487</td><td>Microscopical cross-section</td><td>Destructive</td><td>&plusmn; 1&ndash;2 &micro;m, visual verification</td></tr>
+            <tr><td class="mono">ASTM B504</td><td>Coulometric (anodic dissolution)</td><td>Destructive</td><td>&plusmn; 5%, alloy composition capable</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- SVG INFOGRAPHIC: How to Read a Plating Callout -->
+    <div class="glass infographic-wrap">
+      <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 1100 120" fill="none">
+        <style>
+          .svg-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:13px;fill:var(--accent);letter-spacing:0.08em;text-transform:uppercase;}
+          .svg-label{font-family:'Inter',sans-serif;font-size:10.5px;fill:var(--text);}
+          .svg-sub{font-family:'JetBrains Mono',monospace;font-size:8.5px;fill:var(--muted);}
+          .svg-callout{font-family:'JetBrains Mono',monospace;font-size:18px;fill:var(--accent);font-weight:700;}
+          .svg-arrow{stroke:var(--blue);stroke-width:1.5;fill:none;}
+          .svg-box{fill:var(--accent);opacity:0.08;rx:4;}
+          .svg-tag{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:10px;fill:var(--blue);letter-spacing:0.06em;text-transform:uppercase;}
+        </style>
+        <text x="10" y="16" class="svg-title">How to Read a Plating Callout</text>
+
+        <!-- The callout string -->
+        <text x="110" y="52" class="svg-callout">ASTM B633</text>
+        <text x="340" y="52" class="svg-callout">,</text>
+        <text x="365" y="52" class="svg-callout">Fe/Zn 12</text>
+        <text x="535" y="52" class="svg-callout">,</text>
+        <text x="560" y="52" class="svg-callout">Type VI</text>
+        <text x="720" y="52" class="svg-callout">,</text>
+        <text x="745" y="52" class="svg-callout">SC3</text>
+
+        <!-- Highlight boxes -->
+        <rect x="105" y="32" width="225" height="28" class="svg-box"/>
+        <rect x="360" y="32" width="165" height="28" class="svg-box"/>
+        <rect x="555" y="32" width="155" height="28" class="svg-box"/>
+        <rect x="740" y="32" width="65" height="28" class="svg-box"/>
+
+        <!-- Arrows and labels -->
+        <line x1="217" y1="63" x2="217" y2="82" class="svg-arrow"/>
+        <text x="217" y="94" text-anchor="middle" class="svg-tag">Specification</text>
+        <text x="217" y="108" text-anchor="middle" class="svg-sub">Which ASTM standard</text>
+        <text x="217" y="120" text-anchor="middle" class="svg-sub">governs this coating</text>
+
+        <line x1="442" y1="63" x2="442" y2="82" class="svg-arrow"/>
+        <text x="442" y="94" text-anchor="middle" class="svg-tag">Substrate / Coating / Thickness</text>
+        <text x="442" y="108" text-anchor="middle" class="svg-sub">Fe = iron substrate, Zn = zinc</text>
+        <text x="442" y="120" text-anchor="middle" class="svg-sub">coating, 12 = 12 &micro;m minimum</text>
+
+        <line x1="632" y1="63" x2="632" y2="82" class="svg-arrow"/>
+        <text x="632" y="94" text-anchor="middle" class="svg-tag">Chromate Type</text>
+        <text x="632" y="108" text-anchor="middle" class="svg-sub">Type VI = trivalent</text>
+        <text x="632" y="120" text-anchor="middle" class="svg-sub">chromate passivation</text>
+
+        <line x1="772" y1="63" x2="772" y2="82" class="svg-arrow"/>
+        <text x="772" y="94" text-anchor="middle" class="svg-tag">Service Condition</text>
+        <text x="772" y="108" text-anchor="middle" class="svg-sub">SC3 = moderate</text>
+        <text x="772" y="120" text-anchor="middle" class="svg-sub">outdoor exposure</text>
+
+        <!-- Legend note -->
+        <text x="870" y="52" class="svg-sub" fill="var(--accent)">Every element in the</text>
+        <text x="870" y="64" class="svg-sub" fill="var(--accent)">callout has a defined</text>
+        <text x="870" y="76" class="svg-sub" fill="var(--accent)">meaning per the spec.</text>
+        <text x="870" y="92" class="svg-sub">Omitting or misreading</text>
+        <text x="870" y="104" class="svg-sub">any part = non-conformance.</text>
+      </svg>
+    </div>
+
+    <!-- INFO GRID: AMS, MIL, ISO -->
+    <div>
+      <h3 class="section-title">Other Specification Systems <span class="sub">AMS &middot; MIL &middot; ISO</span></h3>
+      <div class="info-grid">
+        <div class="glass info-card">
+          <div class="icon">&#9992;</div>
+          <h5>AMS &mdash; Aerospace</h5>
+          <p><strong>AMS 2700</strong> &mdash; passivation of stainless. <strong>AMS 2404</strong> &mdash; electroless nickel. <strong>AMS QQ-N-290</strong> &mdash; nickel plating. <strong>AMS 2460</strong> &mdash; chromium plating. Widely referenced on aerospace &amp; defense drawings.</p>
+        </div>
+        <div class="glass info-card">
+          <div class="icon">&#9881;</div>
+          <h5>MIL &mdash; Military / Defense</h5>
+          <p><strong>MIL-DTL-5541</strong> &mdash; chromate conversion on aluminum. <strong>MIL-PRF-46010</strong> &mdash; hard chrome plating. <strong>MIL-DTL-16232</strong> &mdash; phosphate coatings. Many cancelled and replaced by AMS or SAE equivalents.</p>
+        </div>
+        <div class="glass info-card">
+          <div class="icon">&#127760;</div>
+          <h5>ISO &mdash; International</h5>
+          <p><strong>ISO 2081</strong> &mdash; zinc coatings on iron/steel. <strong>ISO 4042</strong> &mdash; fastener electroplated coatings. <strong>ISO 1456</strong> &mdash; nickel + chromium on metals. <strong>ISO 4527</strong> &mdash; autocatalytic (electroless) nickel.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- DO vs DON'T -->
+    <div class="compare-grid">
+      <div class="compare-card glass do">
+        <h4>Spec Compliance <span class="tag good">Do</span></h4>
+        <ul>
+          <li>Read the complete, latest revision of every called-out specification</li>
+          <li>Verify service condition classification with the customer before plating</li>
+          <li>Maintain calibrated thickness gauges traceable to NIST standards</li>
+          <li>Document hydrogen embrittlement bake times per spec requirements</li>
+          <li>Confirm chromate type (hex vs. tri) &mdash; Type II &ne; Type VI</li>
+        </ul>
+      </div>
+      <div class="compare-card glass dont">
+        <h4>Common Mistakes <span class="tag bad">Avoid</span></h4>
+        <ul>
+          <li>Plating to &ldquo;nickel plate per spec&rdquo; without identifying which spec</li>
+          <li>Using an outdated revision &mdash; specs are revised and superseded</li>
+          <li>Ignoring service condition &mdash; SC1 and SC4 require vastly different thickness</li>
+          <li>Assuming all zinc chromates are interchangeable (hex vs. tri vs. none)</li>
+          <li>Not checking if a MIL spec has been cancelled and replaced by AMS</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- KEY INSIGHT -->
+    <div class="insight-card glass">
+      <div class="insight-label">Why &ldquo;Service Condition&rdquo; Matters More Than Thickness Alone</div>
+      <div class="insight-text">ASTM B633 defines four service conditions that determine the entire plating requirement. SC4 (severe) requires 25 &micro;m zinc minimum plus a supplementary chromate conversion coating for maximum corrosion protection. SC1 (mild) needs only 5 &micro;m for indoor, dry environments. The service condition dictates not just thickness, but also the chromate type, salt spray hours, and acceptance criteria. Specifying the wrong SC means either over-engineering costs or under-engineering performance &mdash; both are costly failures.</div>
+    </div>
+
+    <!-- TROUBLESHOOTING -->
+    <div>
+      <h3 class="section-title">Spec-Related Failures <span class="sub">Common rejection causes</span></h3>
+      <div class="trouble-grid">
+        <div class="trouble-card glass">
+          <h5>Wrong Chromate Type</h5>
+          <p>Customer specifies Type VI (trivalent) but parts receive Type II (hexavalent yellow). Reject is automatic &mdash; especially under RoHS or REACH requirements. Always confirm passivation type before processing.</p>
+        </div>
+        <div class="trouble-card glass">
+          <h5>Thickness Below Minimum</h5>
+          <p>Spec requires measurement at significant surfaces per the standard. Low-current-density areas may pass at the thickest point but fail at the specified test location. Know where to measure.</p>
+        </div>
+        <div class="trouble-card glass">
+          <h5>Wrong ZnNi Composition</h5>
+          <p>ASTM B841 Type I requires 10&ndash;15% nickel in the alloy. Drift outside this range is a non-conformance. Monitor alloy composition with XRF per B568 regularly.</p>
+        </div>
+        <div class="trouble-card glass">
+          <h5>H&#8322; Embrittlement Not Documented</h5>
+          <p>High-strength steel parts require baking within hours of plating per spec (typically 190 &deg;C &times; 23 hr). If the bake is done but not documented with time, temp, and lot traceability, it is a finding.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SAFETY -->
+    <div class="safety-card">
+      <div class="safety-head">&#9888; Quality System &amp; Compliance Requirements</div>
+      <div class="safety-body"><strong>Documented processes:</strong> Every plating specification requires a written process that matches the spec callout &mdash; chemistry, time, temperature, current density. <strong>Calibrated instruments:</strong> Thickness gauges, pH meters, and temperature controllers must be calibrated and traceable to national standards. <strong>Traceability:</strong> Lot numbers, bake records, test reports, and material certifications must be retained. <strong>Non-conformance creates liability</strong> &mdash; shipping parts that do not meet the called-out specification is a quality escape that can result in customer rejects, warranty claims, and loss of accreditation (Nadcap, AS9100, IATF 16949).</div>
+    </div>
+
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer poster-footer">
+    <p class="footer-disclaimer">Technical reference only. Verify all parameters against your chemistry supplier&rsquo;s TDS, customer specifications, and applicable regulatory requirements before production use.</p>
+    <p class="footer-title">Poster 15 &mdash; Specifications &amp; Standards Quick Reference &mdash; General Knowledge Series</p>
+    <span class="footer-brand">Plating Posters Inc &middot; Surface Finishing Reference Series &middot; GK-15-T / v1.0 / 2026</span>
+  </footer>
+
+</div>
+</div>
+</div>
+
+<script>
+const posterWrap=document.getElementById('posterWrap');
+const poster=document.getElementById('poster');
+function scalePoster(){const sW=(window.innerWidth-24)/1200;const sH=(window.innerHeight-24)/1800;const s=Math.min(sW,sH);posterWrap.style.transform='scale('+s+')';posterWrap.style.transformOrigin='top center';posterWrap.style.width='1200px';posterWrap.style.height=(1800*s)+'px';}
+scalePoster();window.addEventListener('resize',scalePoster);
+</script>
+</body>
+</html>

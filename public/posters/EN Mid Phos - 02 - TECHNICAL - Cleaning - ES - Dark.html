@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EN Mid Phos &mdash; Limpieza &mdash; Technical | Plating Posters Inc</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Barlow:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#1A1F2E;--navy:#0D1020;--text:#F0EDE8;--muted:rgba(240,237,232,.62);
+  --faint:rgba(240,237,232,.38);
+  --amber:#E8A020;--teal:#2EC4B6;--emerald:#27AE60;--coral:#E05C5C;
+  --slate:#3A4055;--callout:#1E2435;--altrow:#252B3D;
+  --glass-bg:rgba(30,36,53,.55);--glass-border:rgba(255,255,255,.12);
+  --glass-shadow:inset 0 1px 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(0,0,0,.2),0 4px 12px rgba(0,0,0,.25);
+}
+.poster[data-edition="light"]{
+  --bg:#F5F4F0;--navy:#DDD8CE;--text:#1B2030;--muted:rgba(27,32,48,.66);
+  --faint:rgba(27,32,48,.42);
+  --amber:#B8770D;--teal:#1A8C82;--emerald:#1E8449;--coral:#B7322F;
+  --slate:#C5C0B5;--callout:#ECEAE1;--altrow:#E4E1D6;
+  --glass-bg:rgba(255,253,247,.66);--glass-border:rgba(27,32,48,.10);
+  --glass-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 4px 12px rgba(27,32,48,.08);
+}
+html,body{margin:0;padding:0;background:#0a0c14;}
+.stage{width:100vw;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;overflow:visible;padding:12px 0;box-sizing:border-box;}
+.poster-wrap{transform-origin:center center;}
+.poster{width:1200px;height:1800px;position:relative;overflow:hidden;background:radial-gradient(1200px 800px at 15% 8%,rgba(46,196,182,.14),transparent 60%),radial-gradient(1000px 700px at 90% 25%,rgba(232,160,32,.12),transparent 55%),radial-gradient(900px 900px at 50% 80%,rgba(224,92,92,.10),transparent 60%),var(--bg);font-family:'Inter',sans-serif;color:var(--text);display:flex;flex-direction:column;padding:32px;box-sizing:border-box;}
+.poster::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:50px 50px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);pointer-events:none;z-index:0;}
+.poster>*{position:relative;z-index:1;}
+.glass{background-color:var(--glass-bg);background-image:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));border:1px solid var(--glass-border);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);box-shadow:var(--glass-shadow);border-radius:12px;}
+.tack{position:absolute;width:24px;height:24px;border-radius:50%;border:1.5px solid rgba(232,160,32,.28);z-index:2;pointer-events:none;}.tack::before,.tack::after{content:"";position:absolute;background:rgba(232,160,32,.28);}.tack::before{left:50%;top:-3px;bottom:-3px;width:1px;transform:translateX(-50%);}.tack::after{top:50%;left:-3px;right:-3px;height:1px;transform:translateY(-50%);}.tack.tl{top:12px;left:12px;}.tack.tr{top:12px;right:12px;}.tack.bl{bottom:12px;left:12px;}.tack.br{bottom:12px;right:12px;}
+.poster-header{flex-shrink:0;}.poster-body{flex:1;overflow:hidden;display:flex;flex-direction:column;gap:10px;justify-content:space-between;}.poster-footer{flex-shrink:0;margin-top:8px;}
+.header-band{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:8px;}.header-left{flex:1;min-width:0;}.eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--amber);letter-spacing:.16em;text-transform:uppercase;margin-bottom:4px;display:flex;align-items:center;gap:12px;}.eyebrow::before{content:"";display:inline-block;width:30px;height:3px;background:var(--amber);}.headline{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:72px;color:var(--text);line-height:.92;margin:4px 0;letter-spacing:-.01em;text-transform:uppercase;}.headline em{font-style:normal;color:var(--amber);}.subhead{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;color:var(--teal);margin:0 0 3px;letter-spacing:.02em;text-transform:uppercase;}.tagline{font-family:'Inter',sans-serif;font-style:italic;font-size:13px;color:var(--muted);line-height:1.45;max-width:700px;margin:0;}
+.logo-card{flex-shrink:0;padding:12px 10px;display:flex;flex-direction:column;align-items:center;gap:8px;align-self:flex-start;}.logo-tile{width:68px;height:68px;border-radius:12px;background:linear-gradient(135deg,#E8A020,#2EC4B6);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -2px 4px rgba(0,0,0,.15),0 4px 14px rgba(0,0,0,.35);}.logo-tile span{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:26px;color:#1A1F2E;letter-spacing:.02em;line-height:1;}.logo-word{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;letter-spacing:.04em;text-transform:uppercase;line-height:1;text-align:center;white-space:nowrap;}.logo-word .a{color:var(--text);}.logo-word .b{color:var(--amber);}.logo-inc{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.05em;text-transform:lowercase;color:var(--muted);margin-top:-2px;}
+.section-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:28px;letter-spacing:.08em;text-transform:uppercase;color:var(--text);margin:0 0 6px;display:flex;align-items:center;gap:8px;}.section-title::before{content:"";width:6px;height:6px;background:var(--amber);border-radius:50%;}.section-title .sub{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;color:var(--muted);margin-left:auto;font-weight:500;}
+.rule-card{display:flex;align-items:center;gap:20px;padding:18px 28px;background:rgba(232,160,32,.07);}.rule-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:68px;color:var(--amber);line-height:1;letter-spacing:-.02em;}.rule-body{flex:1;}.rule-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:19px;color:var(--amber);letter-spacing:.08em;text-transform:uppercase;}.rule-text{font-family:'Inter',sans-serif;font-size:14px;color:var(--muted);line-height:1.5;margin-top:4px;}
+.data-table{width:100%;border-collapse:collapse;}.data-table th{font-family:'Barlow',sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);padding:8px 12px;text-align:left;background:rgba(13,16,32,.35);border-bottom:1px solid var(--glass-border);}.poster[data-edition="light"] .data-table th{background:rgba(27,32,48,.06);}.data-table td{padding:8px 12px;color:var(--text);line-height:1.5;border-bottom:1px solid rgba(255,255,255,.05);font-family:'Inter',sans-serif;font-size:14px;}.data-table tr:last-child td{border-bottom:none;}.data-table tr:nth-child(even) td{background:rgba(255,255,255,.02);}.poster[data-edition="light"] .data-table tr:nth-child(even) td{background:rgba(27,32,48,.025);}.data-table .mono{font-family:'JetBrains Mono',monospace;font-size:13px;}.data-table.compact th{font-size:12px;padding:7px 10px;}.data-table.compact td{padding:6px 10px;font-size:13px;line-height:1.45;}.data-table.compact .mono{font-size:12.5px;}.data-table.bath th{font-size:12px;padding:6px 8px;}.data-table.bath td{padding:5px 8px;font-size:13px;line-height:1.4;}.data-table.bath .mono{font-size:12px;}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}.compare-card{padding:18px 24px;}.compare-card h4{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:21px;color:var(--text);margin:0 0 8px;text-transform:uppercase;letter-spacing:.04em;}.compare-card h4 .tag{font-size:12px;padding:2px 8px;border-radius:4px;margin-left:8px;font-family:'JetBrains Mono',monospace;font-weight:500;letter-spacing:.06em;}.compare-card h4 .tag.good{background:rgba(39,174,96,.15);color:var(--emerald);}.compare-card h4 .tag.bad{background:rgba(224,92,92,.15);color:var(--coral);}.compare-card ul{list-style:none;padding:0;margin:0;}.compare-card li{font-size:13.5px;line-height:1.5;padding:2px 0;display:flex;gap:8px;align-items:flex-start;}.compare-card li::before{content:"";width:5px;height:5px;border-radius:50%;margin-top:7px;flex-shrink:0;}.compare-card.do li::before{background:var(--emerald);}.compare-card.dont li::before{background:var(--coral);}
+.bottom-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:10px;}
+.insight-card{padding:20px 24px;border-left:3px solid var(--teal);background:rgba(46,196,182,.06);border-radius:0 12px 12px 0;}.insight-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;color:var(--teal);letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px;}.insight-text{font-family:'Inter',sans-serif;font-size:14.5px;color:var(--text);line-height:1.5;}
+.safety-card{padding:18px 24px;background:rgba(224,92,92,.08);border:1px solid rgba(224,92,92,.25);border-radius:12px;}.safety-head{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px;color:var(--coral);letter-spacing:.06em;text-transform:uppercase;margin-bottom:5px;}.safety-body{font-size:14px;color:var(--text);line-height:1.55;}.safety-body strong{font-weight:700;color:var(--coral);}
+.process-flow{display:flex;align-items:center;justify-content:space-between;padding:10px 16px;height:80px;gap:4px;}
+.footer{padding:10px 20px;background-color:rgba(13,16,32,.85);background-image:linear-gradient(180deg,rgba(255,255,255,.04),rgba(0,0,0,0));border:1px solid rgba(255,255,255,.10);border-radius:8px;text-align:center;display:flex;flex-direction:column;gap:2px;}.poster[data-edition="light"] .footer{background-color:rgba(221,216,206,.95);border-color:rgba(27,32,48,.10);}.footer-disclaimer{font-family:'Inter',sans-serif;font-size:9px;line-height:1.35;color:var(--faint);margin:0 auto;max-width:900px;}.footer-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:13px;color:var(--text);letter-spacing:.04em;text-transform:uppercase;margin:0;}.footer-brand{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;}
+.tweaks{position:fixed;bottom:16px;right:16px;z-index:100;background:rgba(13,16,32,.92);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:10px 14px;display:flex;flex-direction:column;gap:8px;font-family:'Inter',sans-serif;font-size:12px;color:#F0EDE8;}
+@media print{@page{size:12.5in 18.75in;margin:0;}html,body{background:#1A1F2E !important;-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}*{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}.stage{position:static;padding:0;display:block;overflow:visible;}.poster-wrap{transform:none !important;width:auto !important;height:auto !important;}.poster{box-shadow:none !important;width:1200px !important;height:1800px !important;overflow:hidden !important;}.glass,.insight-card,.safety-card{backdrop-filter:none !important;-webkit-backdrop-filter:none !important;}.tweaks{display:none !important;}}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="poster-wrap" id="posterWrap">
+<div class="poster" id="poster">
+  <span class="tack tl" aria-hidden="true"></span><span class="tack tr" aria-hidden="true"></span>
+  <span class="tack bl" aria-hidden="true"></span><span class="tack br" aria-hidden="true"></span>
+  <div class="poster-header">
+    <header class="header-band">
+      <div class="header-left">
+        <div class="eyebrow"><span>Plating Posters &nbsp;&middot;&nbsp; EN Mid Phos &nbsp;&middot;&nbsp; Etapa 1 de 7 &nbsp;&middot;&nbsp; Limpieza</span></div>
+        <h1 class="headline">LIMPIEZA POR<br><em>INMERSI&Oacute;N</em></h1>
+        <h2 class="subhead">Elimine Todo Rastro de Aceite, &Oacute;xido y Contaminaci&oacute;n</h2>
+        <p class="tagline">Mid-phos es m&aacute;s tolerante que low-phos a imperfecciones menores, pero la contaminaci&oacute;n a&uacute;n causa falta de dep&oacute;sito, mala adhesi&oacute;n o picaduras.</p>
+      </div>
+      <aside class="glass logo-card">
+        <div class="logo-tile"><span>PP</span></div>
+        <div class="logo-word"><span class="a">Plating</span> <span class="b">Posters</span></div>
+        <div class="logo-inc">www.platingposters.com</div>
+      </aside>
+    </header>
+  </div>
+  <div class="poster-body">
+    <div class="glass rule-card">
+      <div class="rule-num">60&ndash;80&deg;C</div>
+      <div class="rule-body">
+        <div class="rule-label">Temperatura del Ba&ntilde;o Limpiador</div>
+        <div class="rule-text">Por debajo de 60&deg;C el limpiador no emulsifica aceites efectivamente. La mayor&iacute;a de los limpiadores alcalinos funcionan mejor a 70&ndash;80&deg;C.</div>
+      </div>
+    </div>
+
+    <!-- MECANISMOS DE LIMPIEZA -->
+    <div class="glass" style="padding:12px 16px;">
+      <h3 class="section-title">Mecanismos de Limpieza <span class="sub">vista en corte</span></h3>
+      <svg viewBox="0 0 1100 120" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <rect x="80" y="15" width="600" height="85" rx="4" fill="rgba(46,196,182,.04)" stroke="var(--teal)" stroke-width="1.5"/>
+        <text x="380" y="10" fill="var(--teal)" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="10" text-anchor="middle" letter-spacing=".06em">TANQUE ALCALINO &bull; 60&ndash;80&deg;C &bull; pH 12&ndash;14</text>
+        <rect x="82" y="35" width="596" height="63" rx="2" fill="rgba(46,196,182,.06)"/>
+        <rect x="300" y="40" width="160" height="30" rx="3" fill="rgba(232,160,32,.15)" stroke="var(--amber)" stroke-width="1.5"/>
+        <text x="380" y="59" fill="var(--amber)" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="10" text-anchor="middle">SUSTRATO</text>
+        <rect x="300" y="35" width="160" height="6" rx="2" fill="rgba(224,92,92,.25)" stroke="var(--coral)" stroke-width="0.8" stroke-dasharray="3 2"/>
+        <text x="475" y="42" fill="var(--coral)" font-family="Inter,sans-serif" font-size="7.5" font-weight="600">Pel&iacute;cula de aceite / &oacute;xido</text>
+        <line x1="200" y1="55" x2="298" y2="40" stroke="var(--teal)" stroke-width="1" stroke-dasharray="3 2"/>
+        <circle cx="200" cy="55" r="3" fill="var(--teal)"/>
+        <rect x="100" y="72" width="150" height="22" rx="4" fill="rgba(46,196,182,.10)" stroke="var(--teal)" stroke-width="1"/>
+        <text x="175" y="80" fill="var(--teal)" font-family="Barlow,sans-serif" font-weight="700" font-size="8" text-anchor="middle">SAPONIFICACI&Oacute;N</text>
+        <text x="175" y="90" fill="var(--muted)" font-family="Inter,sans-serif" font-size="7" text-anchor="middle">&Aacute;lcali convierte grasas en jab&oacute;n</text>
+        <line x1="380" y1="72" x2="380" y2="40" stroke="var(--amber)" stroke-width="1" stroke-dasharray="3 2"/>
+        <circle cx="380" cy="72" r="3" fill="var(--amber)"/>
+        <rect x="305" y="72" width="150" height="22" rx="4" fill="rgba(232,160,32,.10)" stroke="var(--amber)" stroke-width="1"/>
+        <text x="380" y="80" fill="var(--amber)" font-family="Barlow,sans-serif" font-weight="700" font-size="8" text-anchor="middle">EMULSIFICACI&Oacute;N</text>
+        <text x="380" y="90" fill="var(--muted)" font-family="Inter,sans-serif" font-size="7" text-anchor="middle">Surfactantes levantan gotas de aceite</text>
+        <line x1="560" y1="55" x2="462" y2="40" stroke="var(--emerald)" stroke-width="1" stroke-dasharray="3 2"/>
+        <circle cx="560" cy="55" r="3" fill="var(--emerald)"/>
+        <rect x="485" y="72" width="150" height="22" rx="4" fill="rgba(39,174,96,.10)" stroke="var(--emerald)" stroke-width="1"/>
+        <text x="560" y="80" fill="var(--emerald)" font-family="Barlow,sans-serif" font-weight="700" font-size="8" text-anchor="middle">DESPLAZAMIENTO</text>
+        <text x="560" y="90" fill="var(--muted)" font-family="Inter,sans-serif" font-size="7" text-anchor="middle">Humectantes penetran bajo la pel&iacute;cula</text>
+        <rect x="720" y="20" width="360" height="80" rx="6" fill="rgba(39,174,96,.06)" stroke="rgba(39,174,96,.25)" stroke-width="1"/>
+        <text x="900" y="36" fill="var(--emerald)" font-family="Barlow,sans-serif" font-weight="700" font-size="9.5" text-anchor="middle" letter-spacing=".04em">PRUEBA DE ROTURA DE AGUA</text>
+        <text x="740" y="52" fill="var(--text)" font-family="Inter,sans-serif" font-size="8.5">&#10003; Pasa = l&aacute;mina continua de agua (limpio)</text>
+        <text x="740" y="66" fill="var(--text)" font-family="Inter,sans-serif" font-size="8.5">&#10007; Falla = el agua se separa (queda aceite)</text>
+        <text x="740" y="82" fill="var(--coral)" font-family="Inter,sans-serif" font-size="8" font-weight="600">No proceda si falla &mdash; vuelva a limpiar</text>
+        <text x="550" y="115" fill="var(--faint)" font-family="Inter,sans-serif" font-size="7.5" font-style="italic" text-anchor="middle">Los tres mecanismos trabajan simult&aacute;neamente &mdash; temperatura y concentraci&oacute;n impulsan la efectividad</text>
+      </svg>
+    </div>
+
+    <div>
+      <h3 class="section-title">Par&aacute;metros Operativos <span class="sub">Limpieza Alcalina</span></h3>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table compact">
+          <thead><tr><th>Par&aacute;metro</th><th>Rango</th><th>Notas</th></tr></thead>
+          <tbody>
+            <tr><td>Temperatura</td><td class="mono">140&ndash;176&deg;F (60&ndash;80&deg;C)</td><td>Objetivo 70&ndash;80&deg;C para mejor desempe&ntilde;o</td></tr>
+            <tr><td>Tiempo</td><td class="mono">3&ndash;10 min</td><td>Aceite pesado/compuesto: 8&ndash;10 min</td></tr>
+            <tr><td>Concentraci&oacute;n</td><td class="mono">4&ndash;8 oz/gal (30&ndash;60 g/L)</td><td>Titular semanalmente; reponer seg&uacute;n necesidad</td></tr>
+            <tr><td>pH</td><td class="mono">12&ndash;14</td><td>Altamente alcalino &mdash; riesgo de quemaduras</td></tr>
+            <tr><td>Agitaci&oacute;n</td><td class="mono">Agitaci&oacute;n de piezas o circulaci&oacute;n</td><td>Aire atrapado = &aacute;reas sin dep&oacute;sito</td></tr>
+            <tr><td>Prueba de Corte de Agua</td><td class="mono">Pasa = l&aacute;mina continua</td><td>Obligatoria antes de continuar</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="insight-card">
+      <div class="insight-label">Por Qu&eacute; Mid-Phos Exige Superficies Limpias</div>
+      <div class="insight-text">A diferencia del electrochapado, el EN no tiene &ldquo;poder de penetraci&oacute;n&rdquo; por corriente aplicada &mdash; la reacci&oacute;n inicia solo sobre una superficie catal&iacute;ticamente activa. Cualquier aceite, &oacute;xido o pel&iacute;cula pasiva residual crea zonas muertas sin deposici&oacute;n. Mid-phos es m&aacute;s tolerante que low-phos a imperfecciones menores, pero la contaminaci&oacute;n que bloquea la iniciaci&oacute;n causa falta de dep&oacute;sito que no se puede reparar sin decapar.</div>
+    </div>
+    <div>
+      <h3 class="section-title">M&eacute;todo de Limpieza por Sustrato <span class="sub">espec&iacute;fico por material</span></h3>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table compact">
+          <thead><tr><th>Sustrato</th><th>Tipo de Limpiador</th><th>Temp</th><th>Precauci&oacute;n</th></tr></thead>
+          <tbody>
+            <tr><td style="font-weight:600;">Acero</td><td>Alcalino est&aacute;ndar por inmersi&oacute;n</td><td class="mono">70&ndash;80&deg;C</td><td>Oxidaci&oacute;n r&aacute;pida si la transferencia es lenta</td></tr>
+            <tr><td style="font-weight:600;">Aluminio</td><td>Alcalino no atacante (pH &lt;12)</td><td class="mono">60&ndash;70&deg;C</td><td>&Aacute;lcali fuerte disuelve Al &mdash; use limpiador suave</td></tr>
+            <tr><td style="font-weight:600;">Acero Inoxidable</td><td>Alcalino est&aacute;ndar por inmersi&oacute;n</td><td class="mono">70&ndash;80&deg;C</td><td>Pel&iacute;cula pasiva se reforma r&aacute;pido &mdash; mueva r&aacute;pido</td></tr>
+            <tr><td style="font-weight:600;">Cobre / Lat&oacute;n</td><td>Alcalino suave</td><td class="mono">60&ndash;70&deg;C</td><td>Manchas por limpiadores agresivos</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div>
+      <h3 class="section-title">Resoluci&oacute;n de Problemas <span class="sub">Etapa 1</span></h3>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table compact">
+          <thead><tr><th>S&iacute;ntoma</th><th>Causa Probable</th><th>Acci&oacute;n Correctiva</th></tr></thead>
+          <tbody>
+            <tr><td>Falla prueba de corte de agua</td><td>Baja concentraci&oacute;n o temperatura</td><td>Titular limpiador; aumentar temp a 70&ndash;80&deg;C</td></tr>
+            <tr><td>Zonas sin dep&oacute;sito</td><td>Aceite residual en cavidades</td><td>Aumentar tiempo de inmersi&oacute;n; mejorar agitaci&oacute;n</td></tr>
+            <tr><td>Dep&oacute;sito rugoso aguas abajo</td><td>Part&iacute;culas en ba&ntilde;o limpiador</td><td>Filtrar ba&ntilde;o limpiador; revisar acumulaci&oacute;n de lodos</td></tr>
+            <tr><td>Ataque al aluminio</td><td>Limpiador muy alcalino o muy caliente</td><td>Cambiar a limpiador no atacante; reducir temp</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="safety-card">
+      <div class="safety-head">&#9888; Seguridad &mdash; Etapa 1</div>
+      <div class="safety-body"><strong>Limpiador alcalino a 60&ndash;80&deg;C &mdash; causa quemaduras qu&iacute;micas.</strong> pH 12&ndash;14. Lentes de seguridad, guantes de nitrilo o neopreno, delantal. Al preparar el limpiador, siempre agregue qu&iacute;mico al agua &mdash; nunca agua al qu&iacute;mico concentrado. Lavaojos a 10 segundos del tanque.</div>
+    </div>
+  </div>
+  <footer class="footer poster-footer">
+    <p class="footer-disclaimer">Solo referencia t&eacute;cnica. Verifique todos los par&aacute;metros contra la ficha t&eacute;cnica de su proveedor de qu&iacute;micos, especificaciones del cliente y requisitos regulatorios aplicables antes del uso en producci&oacute;n.</p>
+    <p class="footer-title">Limpieza &mdash; Serie de N&iacute;quel Qu&iacute;mico EN Mid Phos</p>
+    <span class="footer-brand">Plating Posters &middot; Metal Finishing Reference Series &middot; PP-ENmp-02-T / v1.0 / 2026</span>
+  </footer>
+</div>
+</div>
+</div>
+<div class="tweaks">
+  <div style="display:flex;gap:8px;align-items:center;">
+    <span style="color:rgba(240,237,232,.5);font-size:11px;letter-spacing:.06em;text-transform:uppercase;">Edition</span>
+    <button id="btnDark" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:#E8A020;color:#1A1F2E;border:1px solid #E8A020;" onclick="setEdition('')">Dark</button>
+    <button id="btnLight" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);" onclick="setEdition('light')">Light</button>
+  </div>
+  <button onclick="window.print()" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);">Print / PDF</button>
+</div>
+<script>
+const posterWrap=document.getElementById('posterWrap');const poster=document.getElementById('poster');function scalePoster(){const sW=(window.innerWidth-24)/1200;const sH=(window.innerHeight-24)/1800;const s=Math.min(sW,sH);posterWrap.style.transform='scale('+s+')';posterWrap.style.transformOrigin='top center';posterWrap.style.width='1200px';posterWrap.style.height=(1800*s)+'px';}function setEdition(e){if(e)poster.dataset.edition=e;else delete poster.dataset.edition;document.getElementById('btnDark').style.background=e?'transparent':'#E8A020';document.getElementById('btnDark').style.color=e?'#F0EDE8':'#1A1F2E';document.getElementById('btnDark').style.borderColor=e?'rgba(255,255,255,.2)':'#E8A020';document.getElementById('btnLight').style.background=e?'#E8A020':'transparent';document.getElementById('btnLight').style.color=e?'#1A1F2E':'#F0EDE8';document.getElementById('btnLight').style.borderColor=e?'#E8A020':'rgba(255,255,255,.2)';}scalePoster();window.addEventListener('resize',scalePoster);
+</script>
+</body>
+</html>

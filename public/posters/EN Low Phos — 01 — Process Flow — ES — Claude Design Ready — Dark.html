@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Níquel Químico Bajo Fósforo — Flujo del Proceso | Plating Posters Inc</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Barlow:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #1A1F2E; --navy: #0D1020; --text: #F0EDE8; --muted: rgba(240,237,232,.62);
+  --faint: rgba(240,237,232,.38);
+  --amber: #E8A020; --teal: #2EC4B6; --emerald: #27AE60; --coral: #E05C5C;
+  --slate: #3A4055; --callout: #1E2435; --altrow: #252B3D;
+  --glass-bg: rgba(30,36,53,.55);
+  --glass-border: rgba(255,255,255,.12);
+  --glass-shadow: inset 0 1px 0 rgba(255,255,255,.14), inset 0 -1px 0 rgba(0,0,0,.2), 0 4px 12px rgba(0,0,0,.25);
+}
+.poster[data-edition="light"] {
+  --bg:#F5F4F0; --navy:#DDD8CE; --text:#1B2030; --muted:rgba(27,32,48,.66);
+  --faint:rgba(27,32,48,.42);
+  --amber:#B8770D; --teal:#1A8C82; --emerald:#1E8449; --coral:#B7322F;
+  --slate:#C5C0B5; --callout:#ECEAE1; --altrow:#E4E1D6;
+  --glass-bg: rgba(255,253,247,.66); --glass-border: rgba(27,32,48,.10);
+}
+html, body { margin: 0; padding: 0; background: #0a0c14; }
+.stage { width: 100vw; min-height: 100vh; display: flex; align-items: flex-start; justify-content: center; overflow: visible; padding: 12px 0; box-sizing:border-box; }
+.poster-wrap { transform-origin: center center; }
+.poster {
+  width: 1200px; height: 1800px; position: relative; overflow: hidden;
+  background:
+    radial-gradient(1200px 800px at 15% 8%, rgba(46,196,182,.14), transparent 60%),
+    radial-gradient(1000px 700px at 90% 25%, rgba(232,160,32,.12), transparent 55%),
+    radial-gradient(900px 900px at 50% 80%, rgba(224,92,92,.10), transparent 60%),
+    var(--bg);
+  font-family: 'Inter', sans-serif;
+  color: var(--text);
+  display: flex; flex-direction: column;
+  padding: 34px;
+  box-sizing: border-box;
+}
+.glass {
+  background-color: var(--glass-bg);
+  background-image: linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.015));
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  box-shadow: var(--glass-shadow);
+  border-radius: 12px;
+}
+
+/* Tack-margin corner markers */
+.tack { position:absolute; width:24px; height:24px; border-radius:50%;
+  border:1.5px solid rgba(232,160,32,.28); z-index:2; pointer-events:none; }
+.tack::before,.tack::after { content:""; position:absolute; background:rgba(232,160,32,.28); }
+.tack::before { left:50%; top:-3px; bottom:-3px; width:1px; transform:translateX(-50%); }
+.tack::after  { top:50%; left:-3px; right:-3px; height:1px; transform:translateY(-50%); }
+.tack.tl { top:12px; left:12px; }
+.tack.tr { top:12px; right:12px; }
+.tack.bl { bottom:12px; left:12px; }
+.tack.br { bottom:12px; right:12px; }
+
+/* Header */
+.header-band {
+  display:flex; align-items:flex-start; justify-content:space-between;
+  gap: 20px; margin-bottom: 12px;
+}
+.header-left { flex:1; min-width:0; }
+.eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--amber); letter-spacing: .18em; text-transform: uppercase; margin-bottom: 8px; display:flex; align-items:center; gap:14px; }
+.eyebrow::before { content:""; display:inline-block; width:36px; height:3px; background:var(--amber); }
+.headline { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 73px; color: var(--text); line-height: .90; margin: 4px 0 3px; letter-spacing: -.01em; text-transform: uppercase; }
+.subhead { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 22px; color: var(--emerald); margin: 0 0 4px; letter-spacing:.02em; text-transform:uppercase; }
+.tagline { font-family: 'Inter', sans-serif; font-style: italic; font-size: 13px; color: var(--muted); line-height: 1.4; max-width: 720px; margin:0; }
+
+/* Logo card */
+.logo-card { flex-shrink:0; padding:14px 12px; display:flex; flex-direction:column; align-items:center; gap:10px; align-self:flex-start; }
+.logo-tile { width:78px; height:78px; border-radius:13px; background:linear-gradient(135deg,#E8A020,#2EC4B6);
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -2px 4px rgba(0,0,0,.15),0 4px 14px rgba(0,0,0,.35); }
+.logo-tile span { font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:30px; color:#1A1F2E; letter-spacing:.02em; line-height:1; }
+.logo-word { font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:22px; letter-spacing:.04em; text-transform:uppercase; line-height:1; text-align:center; white-space:nowrap; }
+.logo-word .a { color:var(--text); }
+.logo-word .b { color:var(--amber); }
+.logo-inc { font-family:'JetBrains Mono',monospace; font-size:9.5px; letter-spacing:.05em; text-transform:lowercase; color:var(--muted); margin-top:-2px; }
+.poster[data-edition="light"] .logo-inc { color:rgba(27,32,48,.62); }
+
+/* Section title */
+.section-title {
+  font-family: 'Barlow Condensed', sans-serif; font-weight: 800;
+  font-size: 19px; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--text); margin: 0 0 8px;
+  display:flex; align-items:center; gap:10px;
+}
+.section-title::before { content:""; width:5px; height:5px; background:var(--amber); border-radius:50%; }
+.section-title .sub { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.18em; color:var(--muted); margin-left:auto; font-weight:500; }
+
+/* Orientation Strip */
+.orient-strip {
+  display:flex; align-items:center; gap:6px;
+  padding:6px 11px; margin-bottom:8px;
+}
+.orient-stage {
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px;
+  flex:1; padding:9px 10px; border-radius:6px;
+  font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:15px;
+  letter-spacing:.06em; text-transform:uppercase;
+  background: rgba(58,64,85,.4); border:1px solid rgba(255,255,255,.06);
+  color: var(--muted);
+}
+.orient-stage .stage-num { font-family:'JetBrains Mono',monospace; font-size:9px; opacity:.7; letter-spacing:.1em; }
+.orient-stage.teal     { background: rgba(46,196,182,.16);  border-color: rgba(46,196,182,.35);  color: var(--teal); }
+.orient-stage.amber    { background: rgba(232,160,32,.16);  border-color: rgba(232,160,32,.35);  color: var(--amber); }
+.orient-stage.emerald  { background: rgba(39,174,96,.18);   border-color: rgba(39,174,96,.4);    color: var(--emerald); }
+.orient-arrow { color: var(--faint); font-size:14px; flex:none; }
+
+/* Flow rows */
+.flow-section { margin-bottom: 10px; }
+.flow-row { display:flex; gap:9px; align-items:stretch; margin-bottom:5px; }
+.stage-card {
+  flex:1; padding:11px 13px 10px; border-radius:10px;
+  background-color: var(--glass-bg);
+  background-image: linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.015));
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  box-shadow: var(--glass-shadow);
+  position: relative; overflow: hidden;
+  display:flex; flex-direction:column; gap:5px;
+}
+.stage-card .top-border { position:absolute; top:0; left:0; right:0; height:3px; }
+.stage-badge {
+  display:inline-flex; align-items:center; align-self:flex-start;
+  padding:4px 11px; border-radius:20px;
+  font-family:'JetBrains Mono',monospace; font-size:11.5px; font-weight:500;
+  letter-spacing:.08em; text-transform:uppercase;
+  margin-top:5px;
+}
+.stage-card .params {
+  font-family:'JetBrains Mono',monospace; font-size:12px;
+  color:var(--text); line-height:1.55;
+  padding:7px 10px; border-radius:6px;
+  background: rgba(13,16,32,.4);
+  border:1px solid rgba(255,255,255,.05);
+}
+.poster[data-edition="light"] .stage-card .params { background: rgba(27,32,48,.05); border-color: rgba(27,32,48,.08); }
+.stage-card .purpose { font-size:12px; color:var(--muted); line-height:1.4; margin:0; }
+.stage-card .critical {
+  font-size:11.5px; line-height:1.35; font-weight:600;
+  padding:5px 8px; border-radius:5px; margin-top:auto;
+  border-left: 2px solid currentColor;
+  background: rgba(255,255,255,.03);
+}
+.flow-arrow {
+  display:flex; align-items:center; justify-content:center;
+  font-size:18px; color:var(--faint); flex:none; width:14px;
+}
+
+/* U-turn connector */
+.u-turn { display:flex; align-items:center; gap:8px; margin: 0 0 4px; }
+.u-turn-line { flex:1; height:2px; background: linear-gradient(to right, transparent, rgba(232,160,32,.35) 30%, rgba(232,160,32,.35) 70%, transparent); border-radius:1px; }
+.u-turn-arrow { font-size:18px; color:var(--amber); opacity:.7; padding: 0 10px; font-family:'JetBrains Mono',monospace; letter-spacing:.1em; font-size:10px; text-transform:uppercase; font-weight:600; }
+
+/* Reverse row — stages 7←6←5, centered, cards same width as row 1 */
+.flow-row.reverse { flex-direction: row-reverse; justify-content: center; }
+.flow-row.reverse .stage-card { flex: 0 0 calc((100% - 30px) / 4); }
+
+/* Legend */
+.legend-strip { display:flex; gap:20px; align-items:center; padding:6px 13px; margin-bottom:8px; }
+.legend-item { display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--muted); }
+.legend-dot { width:10px; height:10px; border-radius:50%; flex:none; }
+.legend-strip .meta { margin-left:auto; font-family:'JetBrains Mono',monospace; font-size:9.5px; color:var(--faint); letter-spacing:.08em; }
+
+/* Parameter Table */
+.param-section { margin-bottom: 10px; }
+.param-table-wrap { overflow:hidden; padding:0; }
+.param-table { width:100%; border-collapse:collapse; }
+.param-table th {
+  font-family:'Barlow',sans-serif; font-weight:700; font-size:11px;
+  letter-spacing:.1em; text-transform:uppercase; color:var(--muted);
+  padding:8px 12px; text-align:left;
+  background: rgba(13,16,32,.35);
+  border-bottom:1px solid var(--glass-border);
+}
+.poster[data-edition="light"] .param-table th { background: rgba(27,32,48,.06); }
+.param-table td {
+  padding:6px 12px; color:var(--text); line-height:1.35;
+  border-bottom:1px solid rgba(255,255,255,.06);
+  font-family:'Inter',sans-serif; font-size:11px;
+}
+.param-table tr:last-child td { border-bottom:none; }
+.param-table tr:nth-child(even) td { background: rgba(255,255,255,.025); }
+.poster[data-edition="light"] .param-table tr:nth-child(even) td { background: rgba(27,32,48,.025); }
+.param-table .stage-cell { font-family:'Barlow',sans-serif; font-weight:700; font-size:11.5px; letter-spacing:.02em; white-space:nowrap; }
+.param-table .mono { font-family:'JetBrains Mono',monospace; font-size:11px; }
+.param-table .highlight td {
+  background: rgba(39,174,96,.10) !important;
+  border-top:1px solid rgba(39,174,96,.22);
+  border-bottom:1px solid rgba(39,174,96,.22);
+}
+.poster[data-edition="light"] .param-table .highlight td { background: rgba(30,132,73,.10) !important; }
+
+/* Comparison Cards */
+.compare-section { margin-bottom: 10px; }
+.compare-row { display:flex; gap:10px; }
+.compare-card {
+  flex:1; padding:11px 13px 10px; border-radius:10px; position:relative; overflow:hidden;
+  display:flex; flex-direction:column; gap:5px;
+}
+.compare-card .top-border { position:absolute; top:0; left:0; right:0; height:3px; }
+.compare-card .badge {
+  align-self:flex-start;
+  font-family:'JetBrains Mono',monospace; font-size:9px; font-weight:600;
+  padding:3px 9px; border-radius:11px; letter-spacing:.12em; text-transform:uppercase;
+  margin-top:6px;
+}
+.compare-card h4 { font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:22px; margin:2px 0 0; letter-spacing:.01em; line-height:1; }
+.compare-card .ph { font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--muted); margin:0 0 4px; letter-spacing:.06em; }
+.compare-card ul { margin:0; padding-left:14px; font-size:10.5px; color:var(--text); line-height:1.5; }
+.compare-card ul li { color: var(--muted); }
+.compare-card ul li::marker { color: var(--faint); }
+
+/* Troubleshooting */
+.trouble-section { margin-bottom: 6px; }
+.trouble-row { display:flex; gap:10px; }
+.trouble-card {
+  flex:1; padding:12px 14px; border-radius:8px; border-left:3px solid var(--coral);
+  display:flex; flex-direction:column; gap:5px;
+}
+.trouble-card h5 { font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:17px; color:var(--coral); margin:0; text-transform:uppercase; letter-spacing:.07em; line-height:1.1; }
+.trouble-card p { font-size:12.5px; color:var(--text); margin:0; line-height:1.45; }
+
+/* Footer — sits inside 36px tack-safe margin */
+.footer {
+  margin: auto 0 0;
+  padding: 10px 24px 11px;
+  background-color: rgba(13,16,32,.85);
+  background-image: linear-gradient(180deg, rgba(255,255,255,.04), rgba(0,0,0,0));
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 8px;
+  text-align: center;
+  display:flex; flex-direction:column; gap:3px;
+}
+.poster[data-edition="light"] .footer { background-color: rgba(221,216,206,.95); border-color: rgba(27,32,48,.10); }
+.footer-disclaimer { font-family:'Inter',sans-serif; font-size:10px; line-height:1.4; color: var(--faint); margin:0 auto; max-width: 920px; }
+.footer-title { font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:14px; color: var(--text); letter-spacing:.04em; text-transform:uppercase; margin:0; }
+.footer-brand { font-family:'JetBrains Mono', monospace; font-size:10px; color: var(--muted); letter-spacing:.14em; text-transform:uppercase; }
+
+/* Tweaks */
+.tweaks {
+  position:fixed; bottom:16px; right:16px; z-index:100;
+  background:rgba(13,16,32,.92); border:1px solid rgba(255,255,255,.12);
+  border-radius:10px; padding:10px 14px;
+  display:flex; flex-direction:column; gap:8px;
+  font-family:'Inter',sans-serif; font-size:12px; color:#F0EDE8;
+}
+.tweaks-row { display:flex; gap:8px; align-items:center; }
+.tweaks button {
+  padding:4px 11px; border-radius:5px; cursor:pointer; font-size:11px;
+  font-family:'Inter',sans-serif;
+}
+.tweaks .label { color:rgba(240,237,232,.5); font-size:11px; letter-spacing:.06em; text-transform:uppercase; }
+.tweaks .b-on  { background:#E8A020; color:#1A1F2E; border:1px solid #E8A020; }
+.tweaks .b-off { background:transparent; color:#F0EDE8; border:1px solid rgba(255,255,255,.2); }
+
+@media print {
+  @page { size: 12.5in 18.75in; margin: 0; }
+  html, body { background: #1A1F2E !important; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  .stage { position:static; padding:0; display:block; overflow:visible; }
+  .poster-wrap { transform:none !important; }
+  .poster { box-shadow:none !important; width:1200px !important; height:1800px !important; overflow:hidden !important; }
+  .glass, .stage-card, .compare-card, .trouble-card { backdrop-filter:none !important; -webkit-backdrop-filter:none !important; }
+  .tweaks { display:none !important; }
+}
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="poster-wrap" id="posterWrap">
+    <div class="poster" id="poster">
+
+      <!-- Tack markers -->
+      <span class="tack tl" aria-hidden="true"></span>
+      <span class="tack tr" aria-hidden="true"></span>
+      <span class="tack bl" aria-hidden="true"></span>
+      <span class="tack br" aria-hidden="true"></span>
+
+      <!-- Header -->
+      <header class="header-band">
+        <div class="header-left">
+          <div class="eyebrow">
+            <span>Plating Posters Inc &nbsp;·&nbsp; Serie de Referencia en Acabados Metálicos &nbsp;·&nbsp; No. 011 / ES-LP</span>
+          </div>
+          <h1 class="headline">NÍQUEL QUÍMICO (ELECTROLESS)</h1>
+          <h2 class="subhead">Bajo Fósforo (2&ndash;4% P) &middot; Flujo del Proceso &middot; 7 Etapas</h2>
+          <p class="tagline">Sin rectificador. Sin ánodo. El depósito se forma por sí solo. Ni-P autocatalítico a 650&ndash;750 HV recién enchapado &mdash; la clase EN de mayor dureza directo del baño.</p>
+        </div>
+        <aside class="glass logo-card">
+          <div class="logo-tile"><span>PP</span></div>
+          <div class="logo-word"><span class="a">Plating</span> <span class="b">Posters</span></div>
+          <div class="logo-inc">www.platingposters.com</div>
+        </aside>
+      </header>
+
+      <!-- Orientation Strip -->
+      <div class="orient-strip glass">
+        <div class="orient-stage teal"><span class="stage-num">01</span>Limpieza</div>
+        <div class="orient-arrow">&rsaquo;</div>
+        <div class="orient-stage teal"><span class="stage-num">02</span>Enjuague</div>
+        <div class="orient-arrow">&rsaquo;</div>
+        <div class="orient-stage amber"><span class="stage-num">03</span>Activación</div>
+        <div class="orient-arrow">&rsaquo;</div>
+        <div class="orient-stage teal"><span class="stage-num">04</span>Enjuague</div>
+        <div class="orient-arrow">&rsaquo;</div>
+        <div class="orient-stage emerald"><span class="stage-num">05</span>Baño&nbsp;EN</div>
+        <div class="orient-arrow">&rsaquo;</div>
+        <div class="orient-stage teal"><span class="stage-num">06</span>Enjuague</div>
+        <div class="orient-arrow">&rsaquo;</div>
+        <div class="orient-stage amber"><span class="stage-num">07</span>Trat. Final</div>
+      </div>
+
+      <!-- Flow: U-layout (1→4 top, 5→7 bottom returning) -->
+      <section class="flow-section">
+        <h3 class="section-title">Flujo del Proceso — 7 Etapas <span class="sub">Distribución en U</span></h3>
+
+        <div class="flow-row">
+          <!-- 1 -->
+          <div class="stage-card">
+            <div class="top-border" style="background:var(--teal);"></div>
+            <div class="stage-badge" style="background:rgba(46,196,182,.16);color:var(--teal);border:1px solid rgba(46,196,182,.35);">01 &middot; Limpieza Alcalina</div>
+            <div class="params">60&ndash;80&deg;C<br>NaOH 30&ndash;60&nbsp;g/L<br>Na&#8322;CO&#8323; 15&ndash;30&nbsp;g/L<br>Tiempo: 3&ndash;10&nbsp;min</div>
+            <p class="purpose">Elimina aceite, grasa y contaminantes. El EN es autocatalítico &mdash; cualquier contaminación detiene la deposición.</p>
+            <div class="critical" style="color:var(--teal);">&check; Superficie libre de ruptura de película de agua</div>
+          </div>
+          <div class="flow-arrow">&rsaquo;</div>
+          <!-- 2 -->
+          <div class="stage-card">
+            <div class="top-border" style="background:var(--teal);"></div>
+            <div class="stage-badge" style="background:rgba(46,196,182,.16);color:var(--teal);border:1px solid rgba(46,196,182,.35);">02 &middot; Enjuague Pre-Activación</div>
+            <div class="params">Ambiente<br>Contraflujo 2 etapas<br>&lt;50&nbsp;&micro;S/cm<br>30&ndash;60&nbsp;seg</div>
+            <p class="purpose">Elimina el arrastre alcalino. El arrastre residual neutraliza el activador aguas abajo.</p>
+            <div class="critical" style="color:var(--teal);">&check; Conductividad &lt;50&nbsp;&micro;S/cm</div>
+          </div>
+          <div class="flow-arrow">&rsaquo;</div>
+          <!-- 3 -->
+          <div class="stage-card">
+            <div class="top-border" style="background:var(--amber);"></div>
+            <div class="stage-badge" style="background:rgba(232,160,32,.16);color:var(--amber);border:1px solid rgba(232,160,32,.35);">03 &middot; Activación</div>
+            <div class="params">HCl 10&ndash;20% v/v (acero)<br>o zincato (Al)<br>Ambiente<br>30&ndash;120&nbsp;seg</div>
+            <p class="purpose">Expone la superficie catalítica. El acero es autocatalítico con HCl; el Al requiere secuencia de doble zincato.</p>
+            <div class="critical" style="color:var(--amber);">&check; El acero es autocatalítico</div>
+          </div>
+          <div class="flow-arrow">&rsaquo;</div>
+          <!-- 4 -->
+          <div class="stage-card">
+            <div class="top-border" style="background:var(--teal);"></div>
+            <div class="stage-badge" style="background:rgba(46,196,182,.16);color:var(--teal);border:1px solid rgba(46,196,182,.35);">04 &middot; Enjuague Pre-Enchapado</div>
+            <div class="params">DI preferido<br>Contraflujo doble<br>&lt;20&nbsp;&micro;S/cm<br>30&ndash;60&nbsp;seg</div>
+            <p class="purpose">Enjuague más crítico. Elimina iones ácidos y cloruros que causan picaduras en el baño EN.</p>
+            <div class="critical" style="color:var(--coral);">&#9888; El arrastre de cloruros causa picaduras</div>
+          </div>
+        </div>
+
+        <!-- U-turn -->
+        <div class="u-turn">
+          <div class="u-turn-line"></div>
+          <span class="u-turn-arrow">Retorno en U &darr;</span>
+          <div class="u-turn-line"></div>
+        </div>
+
+        <div class="flow-row reverse">
+          <!-- 7 -->
+          <div class="stage-card">
+            <div class="top-border" style="background:var(--amber);"></div>
+            <div class="stage-badge" style="background:rgba(232,160,32,.16);color:var(--amber);border:1px solid rgba(232,160,32,.35);">07 &middot; Tratamiento Final</div>
+            <div class="params">Horneado HE: 190&ndash;210&deg;C<br>Tiempo: 2&ndash;23&nbsp;hr<br>TT: 350&ndash;400&deg;C, 1&nbsp;hr<br>ASTM B733 Clase 2/3</div>
+            <p class="purpose">El tratamiento térmico convierte el depósito microcristalino en una estructura endurecida por precipitación de Ni&#8323;P.</p>
+            <div class="critical" style="color:var(--amber);">&#9888; Obligatorio para acero &gt;1000&nbsp;MPa</div>
+          </div>
+          <div class="flow-arrow">&lsaquo;</div>
+          <!-- 6 -->
+          <div class="stage-card">
+            <div class="top-border" style="background:var(--teal);"></div>
+            <div class="stage-badge" style="background:rgba(46,196,182,.16);color:var(--teal);border:1px solid rgba(46,196,182,.35);">06 &middot; Enjuague Post-Enchapado</div>
+            <div class="params">Agua fría preferida<br>Contraflujo doble<br>Ambiente<br>30&ndash;60&nbsp;seg</div>
+            <p class="purpose">Detiene la reacción autocatalítica. Elimina el arrastre. El agua fría es el método más rápido para detener la reacción.</p>
+            <div class="critical" style="color:var(--coral);">&#9888; No seque al aire</div>
+          </div>
+          <div class="flow-arrow">&lsaquo;</div>
+          <!-- 5 -->
+          <div class="stage-card" style="border-color:rgba(39,174,96,.4);">
+            <div class="top-border" style="background:var(--emerald);"></div>
+            <div class="stage-badge" style="background:rgba(39,174,96,.18);color:var(--emerald);border:1px solid rgba(39,174,96,.4);">05 &middot; Baño EN Bajo Fósforo</div>
+            <div class="params">Ni&sup2;&#8314; 4.5&ndash;6.0&nbsp;g/L<br>NaH&#8322;PO&#8322; 20&ndash;35&nbsp;g/L<br>pH 8.5&ndash;9.5<br><strong>Temp: 80&ndash;92&deg;C</strong></div>
+            <p class="purpose">Deposición autocatalítica. Recubrimiento uniforme en todas las superficies &mdash; sin rectificador, sin ánodos.</p>
+            <div class="critical" style="color:var(--emerald);">&check; Tasa 10&ndash;15&nbsp;&micro;m/hr &middot; Vida del baño 6&ndash;8&nbsp;MTO</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Legend -->
+      <div class="legend-strip glass">
+        <div class="legend-item"><span class="legend-dot" style="background:var(--teal);"></span>Limpieza y Enjuague</div>
+        <div class="legend-item"><span class="legend-dot" style="background:var(--amber);"></span>Activación y Tratamiento Final</div>
+        <div class="legend-item"><span class="legend-dot" style="background:var(--emerald);"></span>Enchapado</div>
+        <div class="legend-item"><span class="legend-dot" style="background:var(--coral);"></span>Precaución</div>
+        <span class="meta">Las piezas avanzan I&rarr;D arriba &middot; D&rarr;I abajo</span>
+      </div>
+
+      <!-- Parameter Table -->
+      <section class="param-section">
+        <h3 class="section-title">Parámetros del Proceso <span class="sub">Las siete etapas</span></h3>
+        <div class="glass param-table-wrap">
+          <table class="param-table">
+            <thead>
+              <tr><th>Etapa</th><th>Química</th><th>Temp</th><th>Tiempo</th><th>Control Clave</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="stage-cell" style="color:var(--teal);">01 &middot; Limpieza Alcalina</td><td class="mono">NaOH 30&ndash;60&nbsp;g/L &middot; Na&#8322;CO&#8323; 15&ndash;30&nbsp;g/L &middot; surfactantes</td><td class="mono">60&ndash;80&deg;C</td><td class="mono">3&ndash;10&nbsp;min</td><td>Superficie libre de ruptura de película de agua</td></tr>
+              <tr><td class="stage-cell" style="color:var(--teal);">02 &middot; Enjuague Pre-Act.</td><td class="mono">Agua DI / de red &middot; contraflujo 2 etapas</td><td class="mono">Ambiente</td><td class="mono">30&ndash;60&nbsp;seg</td><td>&lt;50&nbsp;&micro;S/cm etapa final</td></tr>
+              <tr><td class="stage-cell" style="color:var(--amber);">03 &middot; Activación</td><td class="mono">HCl 10&ndash;20% v/v (acero) &middot; zincato (Al)</td><td class="mono">Ambiente</td><td class="mono">30&ndash;120&nbsp;seg</td><td>Acero autocatalítico; Al = doble zincato</td></tr>
+              <tr><td class="stage-cell" style="color:var(--teal);">04 &middot; Enjuague Pre-Enchapado</td><td class="mono">Agua DI &middot; contraflujo doble</td><td class="mono">Ambiente</td><td class="mono">30&ndash;60&nbsp;seg</td><td>&#9888; &lt;20&nbsp;&micro;S/cm &middot; Cl&#8315; &lt;5&nbsp;ppm</td></tr>
+              <tr class="highlight"><td class="stage-cell" style="color:var(--emerald);">05 &middot; Baño EN</td><td class="mono">Ni&sup2;&#8314; 4.5&ndash;6.0&nbsp;g/L &middot; NaH&#8322;PO&#8322; 20&ndash;35&nbsp;g/L &middot; pH 8.5&ndash;9.5</td><td class="mono"><strong>80&ndash;92&deg;C</strong></td><td class="mono">Según especificación</td><td>Tasa 10&ndash;15&nbsp;&micro;m/hr &middot; Vida del baño 6&ndash;8&nbsp;MTO</td></tr>
+              <tr><td class="stage-cell" style="color:var(--teal);">06 &middot; Enjuague Post-Enchapado</td><td class="mono">DI frío &middot; contraflujo doble</td><td class="mono">Ambiente (frío)</td><td class="mono">30&ndash;60&nbsp;seg</td><td>&#9888; No secar al aire &middot; sin contacto con los dedos</td></tr>
+              <tr><td class="stage-cell" style="color:var(--amber);">07 &middot; Tratamiento Final</td><td class="mono">Horneado HE 190&ndash;210&deg;C &middot; TT 350&ndash;400&deg;C</td><td class="mono">190&ndash;400&deg;C</td><td class="mono">1&ndash;23&nbsp;hr</td><td>ASTM B733 Clase 2 o 3 según sustrato</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Comparison -->
+      <section class="compare-section">
+        <h3 class="section-title">Comparación de Clases de Fósforo EN <span class="sub">Este póster &rarr; Bajo Fósforo</span></h3>
+        <div class="compare-row">
+          <div class="compare-card glass" style="border-color:rgba(39,174,96,.4);">
+            <div class="top-border" style="background:var(--emerald);"></div>
+            <span class="badge" style="background:rgba(39,174,96,.18);color:var(--emerald);border:1px solid rgba(39,174,96,.35);">Este póster</span>
+            <h4 style="color:var(--emerald);">Bajo Fósforo (2&ndash;4% P)</h4>
+            <div class="ph">pH 4.5&ndash;5.5 &middot; baño ácido</div>
+            <ul>
+              <li>Estructura microcristalina</li>
+              <li>Depósito ferromagnético</li>
+              <li>500&ndash;700 HV recién enchapado</li>
+              <li>900&ndash;1100 HV después de tratamiento térmico</li>
+              <li>Tasa: 10&ndash;15&nbsp;&micro;m/hr</li>
+              <li>Excelente soldabilidad</li>
+            </ul>
+          </div>
+          <div class="compare-card glass" style="border-color:rgba(232,160,32,.3);">
+            <div class="top-border" style="background:var(--amber);"></div>
+            <span class="badge" style="background:rgba(232,160,32,.16);color:var(--amber);border:1px solid rgba(232,160,32,.3);">Más común</span>
+            <h4 style="color:var(--amber);">Fósforo Medio (5&ndash;9% P)</h4>
+            <div class="ph">pH 4.6&ndash;5.2 &middot; baño ácido</div>
+            <ul>
+              <li>Mezcla amorfa / cristalina</li>
+              <li>500&ndash;600 HV recién enchapado</li>
+              <li>Tasa: 18&ndash;25&nbsp;&micro;m/hr (la más rápida)</li>
+              <li>Estándar ENIG para PCB</li>
+              <li>Recubrimiento de uso general</li>
+              <li>Clase más utilizada</li>
+            </ul>
+          </div>
+          <div class="compare-card glass" style="border-color:rgba(46,196,182,.3);">
+            <div class="top-border" style="background:var(--teal);"></div>
+            <span class="badge" style="background:rgba(46,196,182,.16);color:var(--teal);border:1px solid rgba(46,196,182,.3);">Máxima anticorrosión</span>
+            <h4 style="color:var(--teal);">Alto Fósforo (10&ndash;13% P)</h4>
+            <div class="ph">pH 4.2&ndash;4.8 &middot; baño ácido</div>
+            <ul>
+              <li>Estructura completamente amorfa</li>
+              <li>Depósito no magnético</li>
+              <li>450&ndash;550 HV recién enchapado</li>
+              <li>Más de 1000 hr en cámara de niebla salina (SST)</li>
+              <li>Máxima resistencia a la corrosión</li>
+              <li>Aplicaciones en electrónica / HDD</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Trouble -->
+      <section class="trouble-section">
+        <h3 class="section-title">Problemas Comunes <span class="sub">Diagnostique y corrija</span></h3>
+        <div class="trouble-row">
+          <div class="trouble-card glass">
+            <h5>Enchapado Incompleto</h5>
+            <p>Contaminación o activación deficiente. Mejore el protocolo de limpieza; verifique la activación; realice una prueba de ruptura de película de agua.</p>
+          </div>
+          <div class="trouble-card glass">
+            <h5>Picaduras</h5>
+            <p>Arrastre de cloruros del HCl de activación, o partículas en suspensión. Mejore el enjuague DI pre-enchapado; filtre el baño continuamente a 5&ndash;10&nbsp;&micro;m.</p>
+          </div>
+          <div class="trouble-card glass">
+            <h5>Descomposición del Baño</h5>
+            <p>Estabilizador bajo o baño en reposo a temperatura de operación. Verifique el nivel de estabilizador en ppm; nunca deje el baño caliente sin piezas ni una pieza de sacrificio (dummy).</p>
+          </div>
+          <div class="trouble-card glass">
+            <h5>Tasa de Deposición Baja</h5>
+            <p>Desviación del pH, temperatura baja o reductor agotado. Verifique el pH cada 2&ndash;4&nbsp;hr; compruebe la temperatura; reponga el hipofosfito.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <p class="footer-disclaimer">Solo para referencia técnica. Los valores indicados son rangos de operación típicos &mdash; consulte a su proveedor de química para los parámetros específicos del baño. Consulte ASTM B733 para los requisitos de especificación de enchapado.</p>
+        <p class="footer-title">Níquel Químico (Electroless) Bajo Fósforo (2&ndash;4% P) &mdash; Flujo Completo del Proceso</p>
+        <span class="footer-brand">Plating Posters Inc &middot; Serie de Referencia en Acabados Metálicos &middot; v1.0 / 2026</span>
+      </footer>
+
+    </div>
+  </div>
+</div>
+
+<!-- Tweaks -->
+<div class="tweaks">
+  <div class="tweaks-row">
+    <span class="label">Edición</span>
+    <button id="btnDark"  class="b-on"  onclick="setEdition('')">Oscuro</button>
+    <button id="btnLight" class="b-off" onclick="setEdition('light')">Claro</button>
+  </div>
+  <button class="b-off" onclick="window.print()">Imprimir / PDF</button>
+</div>
+
+<script>
+  const posterWrap = document.getElementById('posterWrap');
+  const poster = document.getElementById('poster');
+  function scalePoster() {
+    const sW = (window.innerWidth - 24) / 1200;
+    const sH = (window.innerHeight - 24) / 1800;
+    const s = Math.min(sW, sH);
+    posterWrap.style.transform = 'scale(' + s + ')';
+    posterWrap.style.transformOrigin = 'top center';
+    posterWrap.style.width = '1200px';
+    posterWrap.style.height = (1800 * s) + 'px';
+  }
+  function setEdition(e) {
+    if (e) poster.dataset.edition = e; else delete poster.dataset.edition;
+    document.getElementById('btnDark').className  = e ? 'b-off' : 'b-on';
+    document.getElementById('btnLight').className = e ? 'b-on'  : 'b-off';
+  }
+  scalePoster();
+  window.addEventListener('resize', scalePoster);
+</script>
+</body>
+</html>

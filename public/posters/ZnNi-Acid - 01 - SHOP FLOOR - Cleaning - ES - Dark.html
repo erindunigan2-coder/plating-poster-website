@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zinc-N&iacute;quel &Aacute;cido &mdash; Paso 01 Limpieza &mdash; Piso de Producci&oacute;n | Plating Posters Inc</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Barlow:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#1A1F2E; --navy:#0D1020; --text:#F0EDE8; --muted:rgba(240,237,232,.62);
+  --faint:rgba(240,237,232,.38);
+  --amber:#E8A020; --teal:#2EC4B6; --emerald:#27AE60; --coral:#E05C5C;
+  --slate:#3A4055; --glass-bg:rgba(30,36,53,.55); --glass-border:rgba(255,255,255,.12);
+  --glass-shadow:inset 0 1px 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(0,0,0,.2),0 4px 12px rgba(0,0,0,.25);
+  --tack:24px;
+}
+.poster[data-edition="light"] {
+  --bg:#F5F4F0; --navy:#DDD8CE; --text:#1B2030; --muted:rgba(27,32,48,.78);
+  --amber:#8C5A00; --teal:#0F6B62; --emerald:#15693B; --coral:#9B2825;
+  --faint:rgba(27,32,48,.42);
+  --slate:#C5C0B5;
+  --glass-bg:rgba(255,253,247,.82); --glass-border:rgba(27,32,48,.18);
+  --glass-shadow: inset 0 1px 0 rgba(255,255,255,.6), 0 4px 12px rgba(27,32,48,.08);
+}
+.poster[data-edition="light"] .logo-url { color:rgba(27,32,48,.62); }
+.poster[data-edition="light"] .logo-word .a { color:#1B2030; }
+
+html,body{margin:0;padding:0;background:#0a0c14;}
+.stage{width:100vw;height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.poster-wrap{transform-origin:center center;}
+.poster{
+  width:900px;height:1200px;position:relative;overflow:hidden;
+  background:
+    radial-gradient(700px 500px at 10% 8%,rgba(46,196,182,.15),transparent 60%),
+    radial-gradient(600px 450px at 92% 20%,rgba(232,160,32,.13),transparent 55%),
+    radial-gradient(550px 500px at 50% 88%,rgba(224,92,92,.10),transparent 60%),
+    var(--bg);
+  font-family:'Inter',sans-serif;color:var(--text);
+  display:flex;flex-direction:column;
+  padding:var(--tack);box-sizing:border-box;
+}
+.poster::before{
+  content:'';position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+  background-size:50px 50px;
+  mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);
+  -webkit-mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);
+  pointer-events:none;z-index:0;
+}
+.poster>*{position:relative;z-index:1;}
+.glass{
+  background-color:var(--glass-bg);
+  background-image:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));
+  border:1px solid var(--glass-border);
+  backdrop-filter:blur(18px) saturate(140%);
+  -webkit-backdrop-filter:blur(18px) saturate(140%);
+  box-shadow:var(--glass-shadow);
+  border-radius:12px;
+}
+.tack{position:absolute;width:18px;height:18px;border-radius:50%;border:1.5px solid rgba(232,160,32,.28);z-index:2;pointer-events:none;}
+.tack::before,.tack::after{content:"";position:absolute;background:rgba(232,160,32,.28);}
+.tack::before{left:50%;top:-2px;bottom:-2px;width:1px;transform:translateX(-50%);}
+.tack::after{top:50%;left:-2px;right:-2px;height:1px;transform:translateY(-50%);}
+.tack.tl{top:6px;left:6px;}.tack.tr{top:6px;right:6px;}.tack.bl{bottom:6px;left:6px;}.tack.br{bottom:6px;right:6px;}
+
+.poster-header{flex-shrink:0;}
+.poster-body{flex:1;overflow:hidden;display:flex;flex-direction:column;gap:8px;justify-content:space-between;}
+.poster-footer{flex-shrink:0;margin-top:4px;}
+
+.header-row{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:8px;}
+.header-left{flex:1;min-width:0;}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--amber);letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px;}
+.headline{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:56px;color:var(--text);line-height:.92;letter-spacing:-.01em;margin-bottom:4px;}
+.headline em{font-style:normal;color:var(--amber);}
+.subhead{font-family:'Barlow',sans-serif;font-weight:700;font-size:17px;color:var(--amber);margin-bottom:4px;}
+.tagline{font-family:'Inter',sans-serif;font-weight:500;font-size:11px;color:var(--muted);line-height:1.3;max-width:520px;}
+.logo-card{flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:6px;padding:10px 12px;min-width:140px;
+  background-color:var(--glass-bg);background-image:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));
+  border:1px solid var(--glass-border);border-radius:12px;
+  backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 4px 12px rgba(0,0,0,.25);
+}
+.logo-mark{width:60px;height:60px;border-radius:11px;background:linear-gradient(135deg,#E8A020,#2EC4B6);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -2px 4px rgba(0,0,0,.15),0 4px 14px rgba(0,0,0,.35);}
+.logo-mark span{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:22px;color:#1A1F2E;letter-spacing:.02em;line-height:1;}
+.logo-word{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;letter-spacing:.04em;text-transform:uppercase;line-height:1;text-align:center;white-space:nowrap;}
+.logo-word .a{color:#F0EDE8;}.logo-word .b{color:#E8A020;}
+.logo-url{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.06em;color:rgba(240,237,232,.45);margin-top:-1px;}
+
+.section-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:20px;letter-spacing:.07em;text-transform:uppercase;color:var(--amber);margin-bottom:6px;}
+.section-title.coral{color:var(--coral);}
+.section-card{padding:14px 18px;}
+
+/* Rule card (2x) */
+.key-card{padding:12px 20px;background:rgba(232,160,32,.07);border-radius:12px;display:flex;align-items:center;gap:16px;}
+.key-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:54px;color:var(--amber);line-height:1;flex-shrink:0;}
+.key-body{flex:1;}
+.key-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;color:var(--amber);letter-spacing:.06em;text-transform:uppercase;}
+.key-text{font-family:'Inter',sans-serif;font-size:11px;color:var(--muted);line-height:1.4;margin-top:3px;}
+
+/* Data table */
+.data-table{width:100%;border-collapse:collapse;}
+.data-table th{font-family:'Barlow',sans-serif;font-weight:700;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);padding:5px 8px;text-align:left;background:rgba(13,16,32,.35);border-bottom:1px solid var(--glass-border);}
+.poster[data-edition="light"] .data-table th{background:rgba(27,32,48,.06);}
+.data-table td{padding:5px 8px;color:var(--text);line-height:1.4;border-bottom:1px solid rgba(255,255,255,.05);font-family:'Inter',sans-serif;font-size:12.5px;}
+.data-table tr:last-child td{border-bottom:none;}
+.data-table tr:nth-child(even) td{background:rgba(255,255,255,.02);}
+.poster[data-edition="light"] .data-table tr:nth-child(even) td{background:rgba(27,32,48,.025);}
+.data-table .mono{font-family:'JetBrains Mono',monospace;font-size:11px;}
+
+/* Numbered list */
+.numbered-list{display:flex;flex-direction:column;gap:4px;}
+.numbered-item{display:flex;align-items:flex-start;gap:8px;}
+.num-bullet{width:26px;height:26px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:13px;color:#1A1F2E;margin-top:1px;}
+.num-text{font-family:'Inter',sans-serif;font-weight:500;font-size:11.5px;color:var(--text);line-height:1.4;}
+.num-text strong{font-weight:700;}
+
+/* Safety callout */
+.safety-card{padding:10px 14px;background:rgba(224,92,92,.06);border-radius:12px;}
+.safety-text{font-family:'Inter',sans-serif;font-weight:500;font-size:11.5px;color:var(--text);line-height:1.45;}
+.safety-text strong{font-weight:700;color:var(--coral);}
+
+/* Footer */
+.footer-panel{padding:8px 18px;text-align:center;border-radius:10px;}
+.footer-disclaimer{font-family:'Inter',sans-serif;font-weight:400;font-size:9px;color:var(--muted);line-height:1.4;margin-bottom:3px;}
+.footer-title{font-family:'Barlow',sans-serif;font-weight:600;font-size:11px;color:var(--text);margin-bottom:2px;}
+.footer-brand{font-family:'JetBrains Mono',monospace;font-size:8.5px;color:var(--muted);}
+
+/* Bottom grid */
+.bottom-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.trouble-card{padding:8px 12px;border-radius:10px;border-left:3px solid var(--coral);display:flex;flex-direction:column;gap:2px;}
+.trouble-card h5{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:13px;color:var(--coral);margin:0;text-transform:uppercase;letter-spacing:.06em;line-height:1.1;}
+.trouble-card p{font-size:10.5px;color:var(--muted);margin:0;line-height:1.3;}
+
+@media print {
+  @page{size:9.375in 12.5in;margin:0;}
+  html,body{background:#1A1F2E !important;-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
+  *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
+  .stage{position:static;display:block;overflow:visible;}
+  .poster-wrap{transform:none !important;width:auto !important;height:auto !important;}
+  .poster{box-shadow:none !important;width:900px !important;height:1200px !important;overflow:hidden !important;}
+  .glass,.safety-card{backdrop-filter:none !important;-webkit-backdrop-filter:none !important;}
+  .tweaks{display:none !important;}
+}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="poster-wrap" id="posterWrap">
+<div class="poster" id="poster">
+  <span class="tack tl"></span><span class="tack tr"></span><span class="tack bl"></span><span class="tack br"></span>
+
+  <!-- ===== HEADER ===== -->
+  <div class="poster-header">
+    <div class="header-row">
+      <div class="header-left">
+        <div class="eyebrow">Plating Posters &middot; Serie Zinc-N&iacute;quel &Aacute;cido &middot; Paso 01</div>
+        <div class="headline">LIMPIEZA</div>
+        <div class="subhead">Limpieza por Inmersi&oacute;n + Electrolimpieza &mdash; Preparaci&oacute;n de Superficie en Dos Etapas</div>
+        <div class="tagline">Una pieza limpia es una pieza recubrible. Cada falla de salto de dep&oacute;sito, ampolla o adherencia se origina en una contaminaci&oacute;n que sobrevivi&oacute; este paso. El ba&ntilde;o &aacute;cido de Zn-Ni no elimina residuos org&aacute;nicos.</div>
+      </div>
+      <div class="logo-card">
+        <div class="logo-mark"><span>PP</span></div>
+        <div class="logo-word"><span class="a">Plating</span> <span class="b">Posters</span></div>
+        <div class="logo-url">www.platingposters.com</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== BODY ===== -->
+  <div class="poster-body">
+
+    <!-- 2x RULE CARD -->
+    <div class="glass key-card">
+      <div class="key-num">2&times;</div>
+      <div class="key-body">
+        <div class="key-label">Etapa A: Limpieza por Inmersi&oacute;n &rarr; Etapa B: Electrolimpieza</div>
+        <div class="key-text">Dos etapas de limpieza en serie. La inmersi&oacute;n disuelve los aceites gruesos mediante calor y alcalinidad. La electrolimpieza remueve pel&iacute;culas residuales con desprendimiento de gas en la superficie de la pieza. Ambas etapas deben pasar la prueba de rompimiento de agua antes de continuar.</div>
+      </div>
+    </div>
+
+    <!-- PARAMETER TABLE -->
+    <div>
+      <div class="section-title">Par&aacute;metros de Operaci&oacute;n &mdash; Etapa A vs Etapa B</div>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table">
+          <thead><tr><th>Par&aacute;metro</th><th>Etapa A &mdash; Inmersi&oacute;n</th><th>Etapa B &mdash; Electrolimpieza</th></tr></thead>
+          <tbody>
+            <tr><td>NaOH</td><td class="mono">60&ndash;80 g/L</td><td class="mono">50&ndash;70 g/L</td></tr>
+            <tr><td>Temperatura</td><td class="mono">60&ndash;75&deg;C</td><td class="mono">50&ndash;65&deg;C</td></tr>
+            <tr><td>Tiempo</td><td class="mono">5&ndash;15 min</td><td class="mono">45&ndash;90 s</td></tr>
+            <tr><td>Densidad de Corriente</td><td>&mdash;</td><td class="mono">5&ndash;10 A/dm&sup2;</td></tr>
+            <tr><td>Polaridad Final</td><td>&mdash;</td><td style="color:var(--amber);font-weight:700;">An&oacute;dica (obligatorio)</td></tr>
+            <tr><td>Rompimiento de Agua</td><td class="mono">30 s sin ruptura</td><td class="mono">30 s sin ruptura</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- KEY PROCEDURES + GRAPHIC -->
+    <div class="glass" style="display:flex;gap:16px;align-items:flex-start;padding:12px 16px;">
+      <div style="flex:1;min-width:0;">
+        <div class="section-title">Procedimientos Clave &mdash; 7 Pasos</div>
+        <div class="numbered-list">
+          <div class="numbered-item"><div class="num-bullet">1</div><div class="num-text"><strong>Verifique la temperatura del tanque de inmersi&oacute;n a 60&ndash;75&deg;C</strong> y la alcalinidad de 60&ndash;80 g/L NaOH por titulaci&oacute;n.</div></div>
+          <div class="numbered-item"><div class="num-bullet">2</div><div class="num-text"><strong>Sumerja de 5&ndash;15 min;</strong> retire el aceite flotante al inicio del turno.</div></div>
+          <div class="numbered-item"><div class="num-bullet">3</div><div class="num-text"><strong>Prueba de rompimiento de agua despu&eacute;s de la inmersi&oacute;n;</strong> si falla, extienda el tiempo o reponga el limpiador.</div></div>
+          <div class="numbered-item"><div class="num-bullet">4</div><div class="num-text"><strong>Electrolimpieza: cat&oacute;dica 30&ndash;60 s, luego an&oacute;dica 15&ndash;30 s</strong> &mdash; DEBE terminar en an&oacute;dica.</div></div>
+          <div class="numbered-item"><div class="num-bullet">5</div><div class="num-text"><strong>Densidad de corriente 5&ndash;10 A/dm&sup2;;</strong> voltaje 4&ndash;8 V.</div></div>
+          <div class="numbered-item"><div class="num-bullet">6</div><div class="num-text"><strong>Prueba de rompimiento de agua despu&eacute;s de la electrolimpieza</strong> &mdash; debe mantenerse 30 s sin ruptura.</div></div>
+          <div class="numbered-item"><div class="num-bullet">7</div><div class="num-text"><strong>Transfiera a la activaci&oacute;n &aacute;cida en menos de 60 s</strong> &mdash; no permita que las piezas se sequen.</div></div>
+        </div>
+      </div>
+      <div style="flex-shrink:0;display:flex;align-items:center;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 200" width="260" height="210" role="img" aria-label="Acci&oacute;n cat&oacute;dica vs an&oacute;dica en la superficie de la pieza">
+          <rect x="2" y="2" width="236" height="196" rx="10" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-opacity="0.15" stroke-width="1"/>
+          <text x="120" y="18" text-anchor="middle" font-family="sans-serif" font-size="9" font-weight="bold" fill="#E8A020" letter-spacing="0.5">CAT&#xD3;DICA vs AN&#xD3;DICA</text>
+          <line x1="120" y1="24" x2="120" y2="190" stroke="currentColor" stroke-opacity="0.15" stroke-width="1" stroke-dasharray="3,2"/>
+          <text x="60" y="34" text-anchor="middle" font-family="sans-serif" font-size="7" font-weight="bold" fill="#2EC4B6">CAT&#xD3;DICA (&minus;)</text>
+          <text x="60" y="43" text-anchor="middle" font-family="sans-serif" font-size="5.5" fill="currentColor" fill-opacity="0.6">Pieza = c&#xE1;todo</text>
+          <rect x="14" y="68" width="92" height="80" rx="4" fill="#2EC4B6" fill-opacity="0.08" stroke="#2EC4B6" stroke-opacity="0.3" stroke-width="0.8"/>
+          <text x="60" y="78" text-anchor="middle" font-family="sans-serif" font-size="5" fill="#2EC4B6" fill-opacity="0.7">Soluci&#xF3;n NaOH</text>
+          <rect x="38" y="84" width="44" height="10" rx="2" fill="currentColor" fill-opacity="0.15" stroke="currentColor" stroke-opacity="0.4" stroke-width="0.8"/>
+          <text x="60" y="91.5" text-anchor="middle" font-family="sans-serif" font-size="5" font-weight="bold" fill="currentColor" fill-opacity="0.8">PIEZA &minus;</text>
+          <ellipse cx="44" cy="84" rx="5" ry="2" fill="#E8A020" fill-opacity="0.5"/>
+          <ellipse cx="55" cy="84" rx="4" ry="1.8" fill="#E8A020" fill-opacity="0.4"/>
+          <ellipse cx="68" cy="84" rx="6" ry="2.2" fill="#E8A020" fill-opacity="0.45"/>
+          <text x="75" y="82" font-family="sans-serif" font-size="4.5" fill="#E8A020" fill-opacity="0.8">aceites</text>
+          <circle cx="42" cy="72" r="3" fill="#2EC4B6" fill-opacity="0.2" stroke="#2EC4B6" stroke-opacity="0.5" stroke-width="0.5"/>
+          <text x="42" y="73.5" text-anchor="middle" font-family="sans-serif" font-size="4" fill="#2EC4B6">H&#x2082;</text>
+          <circle cx="54" cy="68" r="2.5" fill="#2EC4B6" fill-opacity="0.15" stroke="#2EC4B6" stroke-opacity="0.4" stroke-width="0.5"/>
+          <text x="54" y="69.5" text-anchor="middle" font-family="sans-serif" font-size="3.5" fill="#2EC4B6">H&#x2082;</text>
+          <circle cx="66" cy="70" r="2.8" fill="#2EC4B6" fill-opacity="0.18" stroke="#2EC4B6" stroke-opacity="0.45" stroke-width="0.5"/>
+          <text x="66" y="71.5" text-anchor="middle" font-family="sans-serif" font-size="3.5" fill="#2EC4B6">H&#x2082;</text>
+          <circle cx="48" cy="62" r="2" fill="#2EC4B6" fill-opacity="0.12" stroke="#2EC4B6" stroke-opacity="0.3" stroke-width="0.5"/>
+          <circle cx="60" cy="64" r="1.8" fill="#2EC4B6" fill-opacity="0.1" stroke="#2EC4B6" stroke-opacity="0.25" stroke-width="0.5"/>
+          <text x="60" y="104" text-anchor="middle" font-family="sans-serif" font-size="4.5" fill="#2EC4B6" fill-opacity="0.9">2H&#x2082;O + 2e&#x207B; &#x2192; H&#x2082;&#x2191; + 2OH&#x207B;</text>
+          <rect x="16" y="109" width="88" height="28" rx="3" fill="#2EC4B6" fill-opacity="0.06" stroke="#2EC4B6" stroke-opacity="0.15" stroke-width="0.5"/>
+          <text x="60" y="118" text-anchor="middle" font-family="sans-serif" font-size="5" fill="currentColor" fill-opacity="0.8">Burbujas H&#x2082; FROTAN</text>
+          <text x="60" y="125" text-anchor="middle" font-family="sans-serif" font-size="5" fill="currentColor" fill-opacity="0.8">aceites mec&#xE1;nicamente</text>
+          <text x="60" y="133" text-anchor="middle" font-family="sans-serif" font-size="4.5" fill="#E8A020" fill-opacity="0.7">&#x26A0; Riesgo: H&#x2082; puede incrustar</text>
+          <text x="180" y="34" text-anchor="middle" font-family="sans-serif" font-size="7" font-weight="bold" fill="#27AE60">AN&#xD3;DICA (+)</text>
+          <text x="180" y="43" text-anchor="middle" font-family="sans-serif" font-size="5.5" fill="currentColor" fill-opacity="0.6">Pieza = &#xE1;nodo</text>
+          <rect x="134" y="68" width="92" height="80" rx="4" fill="#27AE60" fill-opacity="0.08" stroke="#27AE60" stroke-opacity="0.3" stroke-width="0.8"/>
+          <text x="180" y="78" text-anchor="middle" font-family="sans-serif" font-size="5" fill="#27AE60" fill-opacity="0.7">Soluci&#xF3;n NaOH</text>
+          <rect x="158" y="84" width="44" height="10" rx="2" fill="currentColor" fill-opacity="0.15" stroke="#27AE60" stroke-opacity="0.5" stroke-width="0.8"/>
+          <text x="180" y="91.5" text-anchor="middle" font-family="sans-serif" font-size="5" font-weight="bold" fill="currentColor" fill-opacity="0.8">PIEZA +</text>
+          <circle cx="163" cy="73" r="2.2" fill="#27AE60" fill-opacity="0.15" stroke="#27AE60" stroke-opacity="0.4" stroke-width="0.5"/>
+          <text x="163" y="74.5" text-anchor="middle" font-family="sans-serif" font-size="3.5" fill="#27AE60">O&#x2082;</text>
+          <circle cx="175" cy="70" r="2.5" fill="#27AE60" fill-opacity="0.18" stroke="#27AE60" stroke-opacity="0.45" stroke-width="0.5"/>
+          <text x="175" y="71.5" text-anchor="middle" font-family="sans-serif" font-size="3.5" fill="#27AE60">O&#x2082;</text>
+          <circle cx="188" cy="72" r="2" fill="#27AE60" fill-opacity="0.12" stroke="#27AE60" stroke-opacity="0.35" stroke-width="0.5"/>
+          <text x="188" y="73.5" text-anchor="middle" font-family="sans-serif" font-size="3.5" fill="#27AE60">O&#x2082;</text>
+          <circle cx="196" cy="68" r="1.6" fill="#27AE60" fill-opacity="0.1" stroke="#27AE60" stroke-opacity="0.25" stroke-width="0.5"/>
+          <text x="162" y="83" font-family="sans-serif" font-size="5" fill="#E05C5C" fill-opacity="0.7">&#x2715;</text>
+          <text x="178" y="83" font-family="sans-serif" font-size="5" fill="#E05C5C" fill-opacity="0.7">&#x2715;</text>
+          <text x="193" y="83" font-family="sans-serif" font-size="5" fill="#E05C5C" fill-opacity="0.7">&#x2715;</text>
+          <text x="205" y="82" font-family="sans-serif" font-size="4" fill="#E05C5C" fill-opacity="0.5">org&#xE1;nicos</text>
+          <text x="205" y="87" font-family="sans-serif" font-size="4" fill="#E05C5C" fill-opacity="0.5">destruidos</text>
+          <text x="180" y="104" text-anchor="middle" font-family="sans-serif" font-size="4.5" fill="#27AE60" fill-opacity="0.9">2OH&#x207B; &#x2192; O&#x2082;&#x2191; + H&#x2082;O + 2e&#x207B;</text>
+          <rect x="136" y="109" width="88" height="28" rx="3" fill="#27AE60" fill-opacity="0.06" stroke="#27AE60" stroke-opacity="0.15" stroke-width="0.5"/>
+          <text x="180" y="118" text-anchor="middle" font-family="sans-serif" font-size="5" fill="currentColor" fill-opacity="0.8">O&#x2082; OXIDA residuos</text>
+          <text x="180" y="125" text-anchor="middle" font-family="sans-serif" font-size="5" fill="currentColor" fill-opacity="0.8">org&#xE1;nicos qu&#xED;micamente</text>
+          <text x="180" y="133" text-anchor="middle" font-family="sans-serif" font-size="4.5" fill="#27AE60" fill-opacity="0.9">&#x2713; Sin riesgo de smut</text>
+          <rect x="30" y="148" width="180" height="22" rx="5" fill="#E8A020" fill-opacity="0.1" stroke="#E8A020" stroke-opacity="0.4" stroke-width="1"/>
+          <text x="120" y="158" text-anchor="middle" font-family="sans-serif" font-size="6" font-weight="bold" fill="#E8A020">&#x26A1; SIEMPRE TERMINAR EN AN&#xD3;DICA (+)</text>
+          <text x="120" y="166" text-anchor="middle" font-family="sans-serif" font-size="5" fill="currentColor" fill-opacity="0.7">Previene smut met&#xE1;lico &#x2014; asegura prueba de agua</text>
+          <text x="60" y="183" text-anchor="middle" font-family="sans-serif" font-size="5.5" font-weight="bold" fill="#2EC4B6">ETAPA 1</text>
+          <text x="60" y="191" text-anchor="middle" font-family="sans-serif" font-size="4.5" fill="currentColor" fill-opacity="0.5">Desprendimiento mec&#xE1;nico</text>
+          <text x="180" y="183" text-anchor="middle" font-family="sans-serif" font-size="5.5" font-weight="bold" fill="#27AE60">ETAPA 2 (FINAL)</text>
+          <text x="180" y="191" text-anchor="middle" font-family="sans-serif" font-size="4.5" fill="currentColor" fill-opacity="0.5">Oxidaci&#xF3;n qu&#xED;mica</text>
+        </svg>
+      </div>
+    </div>
+
+    <!-- BOTTOM GRID: TROUBLESHOOTING + SAFETY -->
+    <div class="bottom-grid">
+      <div>
+        <div class="section-title" style="color:var(--coral);">Soluci&oacute;n de Problemas</div>
+        <div style="display:flex;flex-direction:column;gap:5px;">
+          <div class="glass trouble-card"><h5>Falla en Rompimiento de Agua</h5><p>Contaminaci&oacute;n por aceite o baja alcalinidad. Verifique NaOH; retire aceite de la superficie; extienda la inmersi&oacute;n; agregue surfactante.</p></div>
+          <div class="glass trouble-card"><h5>Desprendimiento de Gas Desigual</h5><p>Mal contacto el&eacute;ctrico o puntas de bastidor pasivadas. Limpie y reesta&ntilde;e los contactos; verifique el rectificador.</p></div>
+          <div class="glass trouble-card"><h5>Manchas Oscuras Despu&eacute;s de Electrolimpieza</h5><p>Terminar en ciclo cat&oacute;dico deposita manchas met&aacute;licas. Siempre finalice en an&oacute;dica.</p></div>
+          <div class="glass trouble-card"><h5>Salto de Dep&oacute;sito en Ba&ntilde;o &Aacute;cido</h5><p>Residuos org&aacute;nicos &mdash; el Zn-Ni &aacute;cido no tiene acci&oacute;n de decapado. Regrese a la limpieza por inmersi&oacute;n; verifique el rompimiento de agua.</p></div>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        <div class="glass safety-card">
+          <div class="section-title coral">&#9888; Seguridad &mdash; C&aacute;ustico + Corriente + Calor</div>
+          <div class="safety-text"><strong>El NaOH causa quemaduras qu&iacute;micas severas</strong> &mdash; da&ntilde;o tisular inmediato a las concentraciones de trabajo. <strong>Se genera gas H&#x2082; en el c&aacute;todo</strong> &mdash; asegure ventilaci&oacute;n &gt;1 m/s de velocidad frontal sobre el tanque; explosivo al 4&ndash;75% en aire. Los tanques operan a 65&deg;C &mdash; <strong>riesgo de quemadura t&eacute;rmica</strong> por salpicadura. <strong>Bloqueo/etiquetado del rectificador</strong> antes de cualquier mantenimiento de bastidores o &aacute;nodos. EPP: gafas antisalpicadura, careta facial, guantes de nitrilo/neopreno, mandil.</div>
+        </div>
+
+        <div class="glass" style="padding:10px 14px;">
+          <div class="section-title" style="color:var(--emerald);margin-bottom:4px;">Lista de Verificaci&oacute;n del Operador</div>
+          <div style="font-size:11px;color:var(--text);line-height:1.5;display:flex;flex-direction:column;gap:2px;">
+            <div style="display:flex;gap:6px;align-items:flex-start;"><span style="color:var(--emerald);font-weight:700;">&#10003;</span> Prueba de rompimiento de agua en cada bastidor</div>
+            <div style="display:flex;gap:6px;align-items:flex-start;"><span style="color:var(--emerald);font-weight:700;">&#10003;</span> Retire aceite en cada turno</div>
+            <div style="display:flex;gap:6px;align-items:flex-start;"><span style="color:var(--emerald);font-weight:700;">&#10003;</span> Ciclo final an&oacute;dico &mdash; siempre</div>
+            <div style="display:flex;gap:6px;align-items:flex-start;"><span style="color:var(--emerald);font-weight:700;">&#10003;</span> Conductividad del enjuague &lt;200 &micro;S/cm</div>
+            <div style="display:flex;gap:6px;align-items:flex-start;"><span style="color:var(--coral);font-weight:700;">&#10007;</span> Nunca permita que el ba&ntilde;o baje de 55&deg;C</div>
+            <div style="display:flex;gap:6px;align-items:flex-start;"><span style="color:var(--coral);font-weight:700;">&#10007;</span> Nunca omita la titulaci&oacute;n de alcalinidad</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <div class="glass footer-panel poster-footer">
+    <div class="footer-disclaimer">Solo como referencia para el operador. Siga los procedimientos de su planta. Reporte cualquier desviaci&oacute;n del proceso a su supervisor.</div>
+    <div class="footer-title">Limpieza &mdash; Serie Zinc-N&iacute;quel &Aacute;cido</div>
+    <div class="footer-brand">Plating Posters &middot; Referencia de Piso de Producci&oacute;n &middot; PP-ZnNi-A-01-SF / v1.0 / 2026</div>
+  </div>
+
+</div>
+</div>
+</div>
+
+<div class="tweaks" style="position:fixed;bottom:16px;right:16px;z-index:100;background:rgba(13,16,32,.92);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:12px 16px;display:flex;flex-direction:column;gap:8px;font-family:'Inter',sans-serif;font-size:12px;color:#F0EDE8;">
+  <div style="display:flex;gap:8px;align-items:center;">
+    <span style="color:rgba(240,237,232,.5);">Edici&oacute;n</span>
+    <button id="btnDark" onclick="setEdition('')" style="padding:3px 10px;border-radius:4px;border:1px solid #E8A020;background:#E8A020;color:#1A1F2E;cursor:pointer;font-size:11px;">Oscuro</button>
+    <button id="btnLight" onclick="setEdition('light')" style="padding:3px 10px;border-radius:4px;border:1px solid rgba(255,255,255,.2);background:transparent;color:#F0EDE8;cursor:pointer;font-size:11px;">Claro</button>
+  </div>
+  <button onclick="window.print()" style="padding:4px 12px;border-radius:4px;border:1px solid rgba(255,255,255,.2);background:transparent;color:#F0EDE8;cursor:pointer;font-size:11px;">Imprimir / PDF</button>
+</div>
+
+<script>
+const posterWrap=document.getElementById('posterWrap');
+const poster=document.getElementById('poster');
+function scalePoster(){const s=Math.min((window.innerWidth-24)/900,(window.innerHeight-24)/1200);posterWrap.style.transform='scale('+s+')';posterWrap.style.transformOrigin='top center';posterWrap.style.width='900px';posterWrap.style.height=(1200*s)+'px';}
+function setEdition(e){if(e)poster.dataset.edition=e;else delete poster.dataset.edition;document.getElementById('btnDark').style.background=e?'transparent':'#E8A020';document.getElementById('btnDark').style.color=e?'#F0EDE8':'#1A1F2E';document.getElementById('btnDark').style.borderColor=e?'rgba(255,255,255,.2)':'#E8A020';document.getElementById('btnLight').style.background=e?'#E8A020':'transparent';document.getElementById('btnLight').style.color=e?'#1A1F2E':'#F0EDE8';document.getElementById('btnLight').style.borderColor=e?'#E8A020':'rgba(255,255,255,.2)';}
+scalePoster();window.addEventListener('resize',scalePoster);
+</script>
+</body>
+</html>

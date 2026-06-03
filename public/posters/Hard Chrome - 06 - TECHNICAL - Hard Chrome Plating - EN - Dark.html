@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hard Chrome &mdash; Hard Chrome Plating &mdash; Technical | Plating Posters Inc</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Barlow:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#1A1F2E;--navy:#0D1020;--text:#F0EDE8;--muted:rgba(240,237,232,.62);--faint:rgba(240,237,232,.38);--amber:#E8A020;--teal:#2EC4B6;--emerald:#27AE60;--coral:#E05C5C;--slate:#3A4055;--callout:#1E2435;--altrow:#252B3D;--glass-bg:rgba(30,36,53,.55);--glass-border:rgba(255,255,255,.12);--glass-shadow:inset 0 1px 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(0,0,0,.2),0 4px 12px rgba(0,0,0,.25);}
+.poster[data-edition="light"]{--bg:#F5F4F0;--navy:#DDD8CE;--text:#1B2030;--muted:rgba(27,32,48,.66);--faint:rgba(27,32,48,.42);--amber:#B8770D;--teal:#1A8C82;--emerald:#1E8449;--coral:#B7322F;--slate:#C5C0B5;--callout:#ECEAE1;--altrow:#E4E1D6;--glass-bg:rgba(255,253,247,.66);--glass-border:rgba(27,32,48,.10);--glass-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 4px 12px rgba(27,32,48,.08);}
+html,body{margin:0;padding:0;background:#0a0c14;}
+.stage{width:100vw;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;overflow:visible;padding:12px 0;box-sizing:border-box;}
+.poster-wrap{transform-origin:center center;}
+.poster{width:1200px;height:1800px;position:relative;overflow:hidden;background:radial-gradient(1200px 800px at 15% 8%,rgba(46,196,182,.14),transparent 60%),radial-gradient(1000px 700px at 90% 25%,rgba(232,160,32,.12),transparent 55%),radial-gradient(900px 900px at 50% 80%,rgba(224,92,92,.10),transparent 60%),var(--bg);font-family:'Inter',sans-serif;color:var(--text);display:flex;flex-direction:column;padding:30px;box-sizing:border-box;}.poster::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:50px 50px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);pointer-events:none;z-index:0;}.poster>*{position:relative;z-index:1;}
+.glass{background-color:var(--glass-bg);background-image:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));border:1px solid var(--glass-border);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);box-shadow:var(--glass-shadow);border-radius:12px;}
+.tack{position:absolute;width:24px;height:24px;border-radius:50%;border:1.5px solid rgba(232,160,32,.28);z-index:2;pointer-events:none;}.tack::before,.tack::after{content:"";position:absolute;background:rgba(232,160,32,.28);}.tack::before{left:50%;top:-3px;bottom:-3px;width:1px;transform:translateX(-50%);}.tack::after{top:50%;left:-3px;right:-3px;height:1px;transform:translateY(-50%);}.tack.tl{top:12px;left:12px;}.tack.tr{top:12px;right:12px;}.tack.bl{bottom:12px;left:12px;}.tack.br{bottom:12px;right:12px;}
+.poster-header{flex-shrink:0;}.poster-body{flex:1;overflow:hidden;display:flex;flex-direction:column;gap:10px;}.poster-footer{flex-shrink:0;margin-top:8px;}
+.header-band{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:8px;}.header-left{flex:1;min-width:0;}.eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--amber);letter-spacing:.16em;text-transform:uppercase;margin-bottom:4px;display:flex;align-items:center;gap:12px;}.eyebrow::before{content:"";display:inline-block;width:30px;height:3px;background:var(--amber);}.headline{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:72px;color:var(--text);line-height:.92;margin:4px 0;letter-spacing:-.01em;text-transform:uppercase;}.headline em{font-style:normal;color:var(--amber);}.subhead{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;color:var(--teal);margin:0 0 3px;letter-spacing:.02em;text-transform:uppercase;}.tagline{font-family:'Inter',sans-serif;font-style:italic;font-size:13px;color:var(--muted);line-height:1.45;max-width:700px;margin:0;}
+.logo-card{flex-shrink:0;padding:12px 10px;display:flex;flex-direction:column;align-items:center;gap:8px;align-self:flex-start;}.logo-tile{width:68px;height:68px;border-radius:12px;background:linear-gradient(135deg,#E8A020,#2EC4B6);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -2px 4px rgba(0,0,0,.15),0 4px 14px rgba(0,0,0,.35);}.logo-tile span{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:26px;color:#1A1F2E;letter-spacing:.02em;line-height:1;}.logo-word{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;letter-spacing:.04em;text-transform:uppercase;line-height:1;text-align:center;white-space:nowrap;}.logo-word .a{color:var(--text);}.logo-word .b{color:var(--amber);}.logo-inc{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.05em;text-transform:lowercase;color:var(--muted);margin-top:-2px;}
+.section-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:28px;letter-spacing:.08em;text-transform:uppercase;color:var(--text);margin:0 0 6px;display:flex;align-items:center;gap:8px;}.section-title::before{content:"";width:6px;height:6px;background:var(--amber);border-radius:50%;}.section-title .sub{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;color:var(--muted);margin-left:auto;font-weight:500;}
+.rule-card{display:flex;align-items:center;gap:20px;padding:14px 22px;background:rgba(232,160,32,.07);}.rule-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:56px;color:var(--amber);line-height:1;letter-spacing:-.02em;}.rule-body{flex:1;}.rule-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:19px;color:var(--amber);letter-spacing:.08em;text-transform:uppercase;}.rule-text{font-family:'Inter',sans-serif;font-size:14px;color:var(--muted);line-height:1.5;margin-top:4px;}
+.data-table{width:100%;border-collapse:collapse;}.data-table th{font-family:'Barlow',sans-serif;font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);padding:4px 6px;text-align:left;background:rgba(13,16,32,.35);border-bottom:1px solid var(--glass-border);}.poster[data-edition="light"] .data-table th{background:rgba(27,32,48,.06);}.data-table td{padding:3px 6px;color:var(--text);line-height:1.4;border-bottom:1px solid rgba(255,255,255,.05);font-family:'Inter',sans-serif;font-size:13px;}.data-table tr:last-child td{border-bottom:none;}.data-table tr:nth-child(even) td{background:rgba(255,255,255,.02);}.poster[data-edition="light"] .data-table tr:nth-child(even) td{background:rgba(27,32,48,.025);}.data-table .mono{font-family:'JetBrains Mono',monospace;font-size:12px;}
+.insight-card{padding:10px 14px;border-left:3px solid var(--teal);background:rgba(46,196,182,.06);border-radius:0 12px 12px 0;}.insight-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;color:var(--teal);letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px;}.insight-text{font-family:'Inter',sans-serif;font-size:13px;color:var(--text);line-height:1.5;}
+.safety-card{padding:10px 14px;background:rgba(224,92,92,.08);border:1px solid rgba(224,92,92,.25);border-radius:12px;}.safety-head{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px;color:var(--coral);letter-spacing:.06em;text-transform:uppercase;margin-bottom:5px;}.safety-body{font-size:13px;color:var(--text);line-height:1.5;}.safety-body strong{font-weight:700;color:var(--coral);}
+.footer{padding:10px 20px;background-color:rgba(13,16,32,.85);background-image:linear-gradient(180deg,rgba(255,255,255,.04),rgba(0,0,0,0));border:1px solid rgba(255,255,255,.10);border-radius:8px;text-align:center;display:flex;flex-direction:column;gap:2px;}.poster[data-edition="light"] .footer{background-color:rgba(221,216,206,.95);border-color:rgba(27,32,48,.10);}.footer-disclaimer{font-family:'Inter',sans-serif;font-size:9px;line-height:1.35;color:var(--faint);margin:0 auto;max-width:900px;}.footer-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:13px;color:var(--text);letter-spacing:.04em;text-transform:uppercase;margin:0;}.footer-brand{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;}
+.tweaks{position:fixed;bottom:16px;right:16px;z-index:100;background:rgba(13,16,32,.92);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:10px 14px;display:flex;flex-direction:column;gap:8px;font-family:'Inter',sans-serif;font-size:12px;color:#F0EDE8;}
+@media print{@page{size:12.5in 18.75in;margin:0;}html,body{background:#1A1F2E !important;-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}*{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}.stage{position:static;padding:0;display:block;overflow:visible;}.poster-wrap{transform:none !important;width:auto !important;height:auto !important;}.poster{box-shadow:none !important;width:1200px !important;height:1800px !important;overflow:hidden !important;}.glass,.insight-card,.safety-card{backdrop-filter:none !important;-webkit-backdrop-filter:none !important;}.tweaks{display:none !important;}}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="poster-wrap" id="posterWrap">
+<div class="poster" id="poster">
+  <span class="tack tl" aria-hidden="true"></span><span class="tack tr" aria-hidden="true"></span>
+  <span class="tack bl" aria-hidden="true"></span><span class="tack br" aria-hidden="true"></span>
+  <div class="poster-header">
+    <header class="header-band">
+      <div class="header-left">
+        <div class="eyebrow"><span>Plating Posters &nbsp;&middot;&nbsp; Hard Chrome &nbsp;&middot;&nbsp; Stage 6 of 11</span></div>
+        <h1 class="headline">HARD CHROME<br><em>PLATING</em></h1>
+        <h2 class="subhead">Deposit Precision Chromium From Hexavalent Electrolyte</h2>
+        <p class="tagline">You are working with a confirmed carcinogen. Full PPE. No exceptions. No shortcuts.</p>
+      </div>
+      <aside class="glass logo-card">
+        <div class="logo-tile"><span>PP</span></div>
+        <div class="logo-word"><span class="a">Plating</span> <span class="b">Posters</span></div>
+        <div class="logo-inc">www.platingposters.com</div>
+      </aside>
+    </header>
+  </div>
+  <div class="poster-body" style="gap:6px;">
+    <div class="glass rule-card">
+      <div class="rule-num">0.001"/hr</div>
+      <div class="rule-body">
+        <div class="rule-label">Deposition Rate at 2 ASI (Conventional)</div>
+        <div class="rule-text">Plating time (hours) = Required thickness (in) &divide; Deposition rate. Example: 0.005 in &divide; 0.001 in/hr = 5 hours.</div>
+      </div>
+    </div>
+    <div class="glass" style="padding:10px 14px;">
+<svg xmlns="http://www.w3.org/2000/svg" width="1140" height="130" viewBox="0 0 1140 165" style="display:block;">
+  <text x="570" y="16" font-family="'Barlow Condensed',sans-serif" font-weight="800" font-size="13" fill="var(--amber)" text-anchor="middle" letter-spacing="0.12em">CD vs TEMPERATURE OPERATING WINDOW</text>
+  <line x1="100" y1="30" x1="100" y1="175" x2="100" y2="175" stroke="var(--glass-border)" stroke-width="1"/>
+  <line x1="100" y1="175" x2="1080" y2="175" stroke="var(--glass-border)" stroke-width="1"/>
+  <line x1="100" y1="30" x2="100" y2="175" stroke="var(--glass-border)" stroke-width="1"/>
+  <!-- Y-axis labels (CD: 1-4 ASI) -->
+  <text x="90" y="170" font-family="'JetBrains Mono',monospace" font-size="10" fill="var(--muted)" text-anchor="end">1</text>
+  <text x="90" y="122" font-family="'JetBrains Mono',monospace" font-size="10" fill="var(--muted)" text-anchor="end">2</text>
+  <text x="90" y="74" font-family="'JetBrains Mono',monospace" font-size="10" fill="var(--muted)" text-anchor="end">3</text>
+  <text x="90" y="34" font-family="'JetBrains Mono',monospace" font-size="10" fill="var(--muted)" text-anchor="end">4</text>
+  <text x="30" y="105" font-family="'Barlow Condensed',sans-serif" font-weight="800" font-size="11" fill="var(--amber)" text-anchor="middle" transform="rotate(-90,30,105)">CURRENT DENSITY (ASI)</text>
+  <!-- X-axis labels (Temp: 120-160F) -->
+  <text x="100" y="192" font-family="'JetBrains Mono',monospace" font-size="10" fill="var(--muted)" text-anchor="middle">120&#xB0;F</text>
+  <text x="345" y="192" font-family="'JetBrains Mono',monospace" font-size="10" fill="var(--muted)" text-anchor="middle">130&#xB0;F</text>
+  <text x="590" y="192" font-family="'JetBrains Mono',monospace" font-size="10" fill="var(--muted)" text-anchor="middle">140&#xB0;F</text>
+  <text x="835" y="192" font-family="'JetBrains Mono',monospace" font-size="10" fill="var(--muted)" text-anchor="middle">150&#xB0;F</text>
+  <text x="1080" y="192" font-family="'JetBrains Mono',monospace" font-size="10" fill="var(--muted)" text-anchor="middle">160&#xB0;F</text>
+  <text x="590" y="200" font-family="'Barlow Condensed',sans-serif" font-weight="800" font-size="11" fill="var(--amber)" text-anchor="middle" dy="6">TEMPERATURE (&#xB0;F)</text>
+  <!-- Grid lines -->
+  <line x1="345" y1="30" x2="345" y2="175" stroke="var(--glass-border)" stroke-width="0.5" stroke-dasharray="4,4"/>
+  <line x1="590" y1="30" x2="590" y2="175" stroke="var(--glass-border)" stroke-width="0.5" stroke-dasharray="4,4"/>
+  <line x1="835" y1="30" x2="835" y2="175" stroke="var(--glass-border)" stroke-width="0.5" stroke-dasharray="4,4"/>
+  <line x1="100" y1="122" x2="1080" y2="122" stroke="var(--glass-border)" stroke-width="0.5" stroke-dasharray="4,4"/>
+  <line x1="100" y1="74" x2="1080" y2="74" stroke="var(--glass-border)" stroke-width="0.5" stroke-dasharray="4,4"/>
+  <!-- Acceptable operating window (130-150F = x:345-835, 2-3 ASI = y:74-122) -->
+  <rect x="345" y="74" width="490" height="48" rx="4" fill="var(--emerald)" opacity="0.25" stroke="var(--emerald)" stroke-width="1.5"/>
+  <text x="590" y="102" font-family="'Barlow Condensed',sans-serif" font-weight="900" font-size="14" fill="var(--emerald)" text-anchor="middle">ACCEPTABLE OPERATING WINDOW</text>
+  <!-- Corner labels -->
+  <text x="160" y="165" font-family="'Inter',sans-serif" font-weight="600" font-size="11" fill="var(--muted)">Milky/Soft</text>
+  <text x="950" y="45" font-family="'Inter',sans-serif" font-weight="600" font-size="11" fill="var(--coral)">Burnt/Rough</text>
+  <text x="160" y="45" font-family="'Inter',sans-serif" font-weight="600" font-size="11" fill="var(--coral)">Cracked/Stressed</text>
+</svg>
+</div>
+    <div>
+      <h3 class="section-title">Operating Parameters <span class="sub">Stage 06</span></h3>
+      <div class="glass" style="padding:10px 14px;margin-bottom:8px;">
+        <table class="data-table">
+          <thead><tr><th>Parameter</th><th>Range</th></tr></thead>
+          <tbody>
+            <tr><td>Bath Temperature</td><td class="mono">130&ndash;150&deg;F (54&ndash;66&deg;C)</td></tr>
+            <tr><td>CrO&#8323; Concentration</td><td class="mono">32&ndash;40 oz/gal</td></tr>
+            <tr><td>Catalyst Ratio (CrO&#8323;:SO&#8324;)</td><td class="mono">&asymp; 100:1</td></tr>
+            <tr><td>Current Density</td><td class="mono">2&ndash;3 ASI</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table">
+          <thead><tr><th>Condition</th><th>Deposit Appearance</th><th>Action</th></tr></thead>
+          <tbody><tr><td>Normal operation</td><td>Bright to semi-bright, smooth</td><td>Continue &mdash; on target</td></tr>
+<tr><td>Too cold / low CD</td><td>Milky, dull, soft deposit</td><td>Raise temp or increase CD</td></tr>
+<tr><td>Too hot / high CD</td><td>Brown/burnt edges, rough</td><td>Lower temp or reduce CD; add shields</td></tr>
+<tr><td>Gas pitting visible</td><td>Small pits in surface</td><td>Increase agitation; check fume suppressant</td></tr>
+<tr><td>Solution cloudy green</td><td>Cr&#179;&#8314; too high</td><td>Notify supervisor &mdash; needs treatment</td></tr>
+</tbody>
+        </table>
+      </div>
+    </div>
+    <div>
+      <h3 class="section-title">Best Practices <span class="sub">Critical Guidelines</span></h3>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+        <div class="glass" style="padding:8px 10px;">
+          <h4 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;margin:0 0 6px;color:var(--emerald);text-transform:uppercase;">&#10003; Do</h4>
+          <ul style="list-style:none;padding:0;margin:0;"><li>Verify fume suppression and ventilation are ON before starting</li><li>Monitor temperature every 15-30 minutes</li><li>Record rectifier voltage and amperage readings</li><li>Calculate plating time from required thickness</li></ul>
+        </div>
+        <div class="glass" style="padding:8px 10px;">
+          <h4 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;margin:0 0 6px;color:var(--coral);text-transform:uppercase;">&#10007; Don&rsquo;t</h4>
+          <ul style="list-style:none;padding:0;margin:0;"><li>Begin sustained plating before completing the etch-strike sequence (see Stage 07&mdash;performed first)</li><li>Ignore temperature drift &mdash; it changes hardness and appearance</li><li>Splash chromic acid &mdash; lower parts slowly and evenly</li><li>Eat, drink, or smoke in the chrome plating area &mdash; ever</li></ul>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h3 class="section-title">Bath Chemistry &amp; Anode Management <span class="sub">Engineering Detail</span></h3>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+        <div class="glass" style="padding:8px 10px;">
+          <h4 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;margin:0 0 6px;color:var(--amber);text-transform:uppercase;">Bath Chemistry</h4>
+          <table class="data-table" style="font-size:12px;">
+            <tbody>
+              <tr><td>CrO&#8323;</td><td class="mono">32&ndash;40 oz/gal (240&ndash;300 g/L)</td></tr>
+              <tr><td>SO&#8324; (catalyst)</td><td class="mono">0.32&ndash;0.40 oz/gal</td></tr>
+              <tr><td>Cr&#179;&#8314; (max)</td><td class="mono">&lt;3% of total Cr</td></tr>
+              <tr><td>Fe (max)</td><td class="mono">&lt;10 g/L</td></tr>
+              <tr><td>Sp. gravity</td><td class="mono">18&ndash;22&deg; B&eacute;</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="glass" style="padding:8px 10px;">
+          <h4 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;margin:0 0 6px;color:var(--amber);text-transform:uppercase;">Anode Maintenance</h4>
+          <ul style="list-style:none;padding:0;margin:0;font-size:12px;line-height:1.5;">
+            <li><strong>Type:</strong> Pb-Sn (93/7) or Pb-Sb (94/6)</li>
+            <li><strong>Area ratio:</strong> Anode:Cathode &ge; 2:1</li>
+            <li><strong>Film:</strong> Brown PbO&#8322; film = healthy</li>
+            <li><strong>White film:</strong> PbSO&#8324; = excess sulfate</li>
+            <li><strong>Cleaning:</strong> Scrub with Scotch-Brite if filming is uneven or flaking</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="glass" style="padding:8px 10px;">
+      <h4 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;margin:0 0 6px;color:var(--teal);text-transform:uppercase;">Deposit Properties vs. Operating Parameters</h4>
+      <table class="data-table">
+        <thead><tr><th>Parameter Shift</th><th>Hardness Effect</th><th>Appearance Effect</th><th>Practical Note</th></tr></thead>
+        <tbody>
+          <tr><td>Temp &uarr; at constant CD</td><td>Hardness &darr;</td><td>Brighter, softer</td><td>Above 155&deg;F = milky, reduced wear life</td></tr>
+          <tr><td>CD &uarr; at constant temp</td><td>Hardness &uarr; then &darr;</td><td>Rough/burnt at extreme</td><td>Optimum 2&ndash;3 ASI for most substrates</td></tr>
+          <tr><td>CrO&#8323;:SO&#8324; &gt; 120:1</td><td>Marginal</td><td>Rough, poor coverage</td><td>Low catalyst &rarr; poor throwing power</td></tr>
+          <tr><td>CrO&#8323;:SO&#8324; &lt; 80:1</td><td>Hardness &darr;</td><td>Dull, milky</td><td>Excess sulfate &rarr; anode PbSO&#8324;</td></tr>
+          <tr><td>Cr&#179;&#8314; &gt; 3%</td><td>Reduced</td><td>Dark, stressed</td><td>Dummy plate at low CD to oxidize</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="insight-card">
+      <div class="insight-label">Process Context</div>
+      <div class="insight-text">Hard chrome cathode efficiency is only 10&ndash;18%, meaning 82&ndash;90% of applied current generates hydrogen. At 2 ASI, expect approximately 0.001 in/hr deposition. The CrO<sub>3</sub>:SO<sub>4</sub> catalyst ratio (nominally 100:1) is critical&mdash;excess sulfate causes dull, milky deposits; insufficient sulfate gives poor throwing power and rough deposits. Typical deposit hardness ranges from 62&ndash;70 Rc depending on operating conditions.</div>
+    </div>
+    <div class="safety-card">
+      <div class="safety-head">&#9888; Safety &mdash; Stage 6</div>
+      <div class="safety-body"><strong>CHROMIC ACID &mdash; CONFIRMED CARCINOGEN.</strong> Full Cr(VI) PPE MANDATORY: chemical-resistant gloves (neoprene/butyl), full-face shield or splash goggles, chemical-resistant apron, rubber boots. OSHA PEL 5 &micro;g/m&sup3;. Chrome mist controlled by ventilation and fume suppressants &mdash; if you see mist or smell chemicals, report immediately. Skin splash causes chrome ulcers &mdash; flush 20 min minimum. Never eat/drink/smoke in chrome area. P100 respiratory protection if engineering controls insufficient. This is a regulated area &mdash; authorized personnel only.</div>
+    </div>
+  </div>
+  <footer class="footer poster-footer">
+    <p class="footer-disclaimer">Technical reference only. Verify all parameters against your chemistry supplier&rsquo;s TDS, customer specifications, and applicable regulatory requirements before production use.</p>
+    <p class="footer-title">Hard Chrome Plating &mdash; Hard Chrome Plating Series</p>
+    <span class="footer-brand">Plating Posters &middot; Metal Finishing Reference Series &middot; PP-HC-06-T / v1.0 / 2026</span>
+  </footer>
+</div>
+</div>
+</div>
+<div class="tweaks">
+  <div style="display:flex;gap:8px;align-items:center;">
+    <span style="color:rgba(240,237,232,.5);font-size:11px;letter-spacing:.06em;text-transform:uppercase;">Edition</span>
+    <button id="btnDark" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:#E8A020;color:#1A1F2E;border:1px solid #E8A020;" onclick="setEdition('')">Dark</button>
+    <button id="btnLight" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);" onclick="setEdition('light')">Light</button>
+  </div>
+  <button onclick="window.print()" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);">Print / PDF</button>
+</div>
+<script>
+const posterWrap=document.getElementById('posterWrap');const poster=document.getElementById('poster');function scalePoster(){const sW=(window.innerWidth-24)/1200;const sH=(window.innerHeight-24)/1800;const s=Math.min(sW,sH);posterWrap.style.transform='scale('+s+')';posterWrap.style.transformOrigin='top center';posterWrap.style.width='1200px';posterWrap.style.height=(1800*s)+'px';}function setEdition(e){if(e)poster.dataset.edition=e;else delete poster.dataset.edition;document.getElementById('btnDark').style.background=e?'transparent':'#E8A020';document.getElementById('btnDark').style.color=e?'#F0EDE8':'#1A1F2E';document.getElementById('btnDark').style.borderColor=e?'rgba(255,255,255,.2)':'#E8A020';document.getElementById('btnLight').style.background=e?'#E8A020':'transparent';document.getElementById('btnLight').style.color=e?'#1A1F2E':'#F0EDE8';document.getElementById('btnLight').style.borderColor=e?'#E8A020':'rgba(255,255,255,.2)';}scalePoster();window.addEventListener('resize',scalePoster);
+</script>
+</body>
+</html>

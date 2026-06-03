@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Decorative Chrome &mdash; Cobreado &mdash; Technical | Plating Posters Inc</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Barlow:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#1A1F2E;--navy:#0D1020;--text:#F0EDE8;--muted:rgba(240,237,232,.62);
+  --faint:rgba(240,237,232,.38);
+  --amber:#E8A020;--teal:#2EC4B6;--emerald:#27AE60;--coral:#E05C5C;
+  --slate:#3A4055;--callout:#1E2435;--altrow:#252B3D;
+  --glass-bg:rgba(30,36,53,.55);--glass-border:rgba(255,255,255,.12);
+  --glass-shadow:inset 0 1px 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(0,0,0,.2),0 4px 12px rgba(0,0,0,.25);
+}
+.poster[data-edition="light"]{
+  --bg:#F5F4F0;--navy:#DDD8CE;--text:#1B2030;--muted:rgba(27,32,48,.66);
+  --faint:rgba(27,32,48,.42);
+  --amber:#B8770D;--teal:#1A8C82;--emerald:#1E8449;--coral:#B7322F;
+  --slate:#C5C0B5;--callout:#ECEAE1;--altrow:#E4E1D6;
+  --glass-bg:rgba(255,253,247,.66);--glass-border:rgba(27,32,48,.10);
+  --glass-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 4px 12px rgba(27,32,48,.08);
+}
+html,body{margin:0;padding:0;background:#0a0c14;}
+.stage{width:100vw;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;overflow:visible;padding:12px 0;box-sizing:border-box;}
+.poster-wrap{transform-origin:center center;}
+.poster{width:1200px;height:1800px;position:relative;overflow:hidden;background:radial-gradient(1200px 800px at 15% 8%,rgba(46,196,182,.14),transparent 60%),radial-gradient(1000px 700px at 90% 25%,rgba(232,160,32,.12),transparent 55%),radial-gradient(900px 900px at 50% 80%,rgba(224,92,92,.10),transparent 60%),var(--bg);font-family:'Inter',sans-serif;color:var(--text);display:flex;flex-direction:column;padding:32px;box-sizing:border-box;}
+.poster::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:50px 50px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);pointer-events:none;z-index:0;}
+.poster>*{position:relative;z-index:1;}
+.glass{background-color:var(--glass-bg);background-image:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));border:1px solid var(--glass-border);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);box-shadow:var(--glass-shadow);border-radius:12px;}
+.tack{position:absolute;width:24px;height:24px;border-radius:50%;border:1.5px solid rgba(232,160,32,.28);z-index:2;pointer-events:none;}.tack::before,.tack::after{content:"";position:absolute;background:rgba(232,160,32,.28);}.tack::before{left:50%;top:-3px;bottom:-3px;width:1px;transform:translateX(-50%);}.tack::after{top:50%;left:-3px;right:-3px;height:1px;transform:translateY(-50%);}.tack.tl{top:12px;left:12px;}.tack.tr{top:12px;right:12px;}.tack.bl{bottom:12px;left:12px;}.tack.br{bottom:12px;right:12px;}
+.poster-header{flex-shrink:0;}.poster-body{flex:1;overflow:hidden;display:flex;flex-direction:column;gap:7px;justify-content:space-between;}.poster-footer{flex-shrink:0;margin-top:8px;}
+.header-band{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:8px;}.header-left{flex:1;min-width:0;}.eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--amber);letter-spacing:.16em;text-transform:uppercase;margin-bottom:4px;display:flex;align-items:center;gap:12px;}.eyebrow::before{content:"";display:inline-block;width:30px;height:3px;background:var(--amber);}.headline{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:72px;color:var(--text);line-height:.92;margin:4px 0;letter-spacing:-.01em;text-transform:uppercase;}.headline em{font-style:normal;color:var(--amber);}.subhead{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;color:var(--teal);margin:0 0 3px;letter-spacing:.02em;text-transform:uppercase;}.tagline{font-family:'Inter',sans-serif;font-style:italic;font-size:13px;color:var(--muted);line-height:1.45;max-width:700px;margin:0;}
+.logo-card{flex-shrink:0;padding:12px 10px;display:flex;flex-direction:column;align-items:center;gap:8px;align-self:flex-start;}.logo-tile{width:68px;height:68px;border-radius:12px;background:linear-gradient(135deg,#E8A020,#2EC4B6);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -2px 4px rgba(0,0,0,.15),0 4px 14px rgba(0,0,0,.35);}.logo-tile span{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:26px;color:#1A1F2E;letter-spacing:.02em;line-height:1;}.logo-word{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;letter-spacing:.04em;text-transform:uppercase;line-height:1;text-align:center;white-space:nowrap;}.logo-word .a{color:var(--text);}.logo-word .b{color:var(--amber);}.logo-inc{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.05em;text-transform:lowercase;color:var(--muted);margin-top:-2px;}
+.section-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:28px;letter-spacing:.08em;text-transform:uppercase;color:var(--text);margin:0 0 6px;display:flex;align-items:center;gap:8px;}.section-title::before{content:"";width:6px;height:6px;background:var(--amber);border-radius:50%;}.section-title .sub{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;color:var(--muted);margin-left:auto;font-weight:500;}
+.rule-card{display:flex;align-items:center;gap:20px;padding:18px 28px;background:rgba(232,160,32,.07);}.rule-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:68px;color:var(--amber);line-height:1;letter-spacing:-.02em;}.rule-body{flex:1;}.rule-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:19px;color:var(--amber);letter-spacing:.08em;text-transform:uppercase;}.rule-text{font-family:'Inter',sans-serif;font-size:14px;color:var(--muted);line-height:1.5;margin-top:4px;}
+.data-table{width:100%;border-collapse:collapse;}.data-table th{font-family:'Barlow',sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);padding:8px 12px;text-align:left;background:rgba(13,16,32,.35);border-bottom:1px solid var(--glass-border);}.poster[data-edition="light"] .data-table th{background:rgba(27,32,48,.06);}.data-table td{padding:8px 12px;color:var(--text);line-height:1.5;border-bottom:1px solid rgba(255,255,255,.05);font-family:'Inter',sans-serif;font-size:14px;}.data-table tr:last-child td{border-bottom:none;}.data-table tr:nth-child(even) td{background:rgba(255,255,255,.02);}.poster[data-edition="light"] .data-table tr:nth-child(even) td{background:rgba(27,32,48,.025);}.data-table .mono{font-family:'JetBrains Mono',monospace;font-size:13px;}.data-table.compact th{font-size:12px;padding:7px 10px;}.data-table.compact td{padding:6px 10px;font-size:13px;line-height:1.45;}.data-table.compact .mono{font-size:12.5px;}.data-table.bath th{font-size:12px;padding:6px 8px;}.data-table.bath td{padding:5px 8px;font-size:13px;line-height:1.4;}.data-table.bath .mono{font-size:12px;}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}.compare-card{padding:18px 24px;}.compare-card h4{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:21px;color:var(--text);margin:0 0 8px;text-transform:uppercase;letter-spacing:.04em;}.compare-card h4 .tag{font-size:12px;padding:2px 8px;border-radius:4px;margin-left:8px;font-family:'JetBrains Mono',monospace;font-weight:500;letter-spacing:.06em;}.compare-card h4 .tag.good{background:rgba(39,174,96,.15);color:var(--emerald);}.compare-card h4 .tag.bad{background:rgba(224,92,92,.15);color:var(--coral);}.compare-card ul{list-style:none;padding:0;margin:0;}.compare-card li{font-size:13.5px;line-height:1.5;padding:2px 0;display:flex;gap:8px;align-items:flex-start;}.compare-card li::before{content:"";width:5px;height:5px;border-radius:50%;margin-top:7px;flex-shrink:0;}.compare-card.do li::before{background:var(--emerald);}.compare-card.dont li::before{background:var(--coral);}
+.bottom-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:10px;}
+.insight-card{padding:20px 24px;border-left:3px solid var(--teal);background:rgba(46,196,182,.06);border-radius:0 12px 12px 0;}.insight-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;color:var(--teal);letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px;}.insight-text{font-family:'Inter',sans-serif;font-size:14.5px;color:var(--text);line-height:1.5;}
+.safety-card{padding:18px 24px;background:rgba(224,92,92,.08);border:1px solid rgba(224,92,92,.25);border-radius:12px;}.safety-head{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px;color:var(--coral);letter-spacing:.06em;text-transform:uppercase;margin-bottom:5px;}.safety-body{font-size:14px;color:var(--text);line-height:1.55;}.safety-body strong{font-weight:700;color:var(--coral);}
+.process-flow{display:flex;align-items:center;justify-content:space-between;padding:10px 16px;height:80px;gap:4px;}
+.footer{padding:10px 20px;background-color:rgba(13,16,32,.85);background-image:linear-gradient(180deg,rgba(255,255,255,.04),rgba(0,0,0,0));border:1px solid rgba(255,255,255,.10);border-radius:8px;text-align:center;display:flex;flex-direction:column;gap:2px;}.poster[data-edition="light"] .footer{background-color:rgba(221,216,206,.95);border-color:rgba(27,32,48,.10);}.footer-disclaimer{font-family:'Inter',sans-serif;font-size:9px;line-height:1.35;color:var(--faint);margin:0 auto;max-width:900px;}.footer-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:13px;color:var(--text);letter-spacing:.04em;text-transform:uppercase;margin:0;}.footer-brand{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;}
+.tweaks{position:fixed;bottom:16px;right:16px;z-index:100;background:rgba(13,16,32,.92);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:10px 14px;display:flex;flex-direction:column;gap:8px;font-family:'Inter',sans-serif;font-size:12px;color:#F0EDE8;}
+@media print{@page{size:12.5in 18.75in;margin:0;}html,body{background:#1A1F2E !important;-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}*{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}.stage{position:static;padding:0;display:block;overflow:visible;}.poster-wrap{transform:none !important;width:auto !important;height:auto !important;}.poster{box-shadow:none !important;width:1200px !important;height:1800px !important;overflow:hidden !important;}.glass,.insight-card,.safety-card{backdrop-filter:none !important;-webkit-backdrop-filter:none !important;}.tweaks{display:none !important;}}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="poster-wrap" id="posterWrap">
+<div class="poster" id="poster" data-edition="light">
+  <span class="tack tl" aria-hidden="true"></span><span class="tack tr" aria-hidden="true"></span>
+  <span class="tack bl" aria-hidden="true"></span><span class="tack br" aria-hidden="true"></span>
+  <div class="poster-header">
+    <header class="header-band">
+      <div class="header-left">
+        <div class="eyebrow"><span>Plating Posters &nbsp;&middot;&nbsp; Cromo Decorativo &nbsp;&middot;&nbsp; Sistema Multicapa &nbsp;&middot;&nbsp; Cobre</span></div>
+        <h1 class="headline">COBREADO<br><em>ELECTROL&Iacute;TICO</em></h1>
+        <h2 class="subhead">Cobre &Aacute;cido y Cobre de Ataque &mdash; Nivelaci&oacute;n y Ductilidad</h2>
+        <p class="tagline">El cobre es el gran nivelador. Rellena microdefectos, suaviza sustratos rugosos y proporciona un amortiguador d&uacute;ctil entre el metal base r&iacute;gido y el n&iacute;quel estresado superior. En zamak, el cobre de ataque es obligatorio para la adherencia.</p>
+      </div>
+      <aside class="glass logo-card">
+        <div class="logo-tile"><span>PP</span></div>
+        <div class="logo-word"><span class="a">Plating</span> <span class="b">Posters</span></div>
+        <div class="logo-inc">www.platingposters.com</div>
+      </aside>
+    </header>
+  </div>
+  <div class="poster-body">
+    <div class="glass rule-card">
+      <div class="rule-num">10&ndash;25&micro;m</div>
+      <div class="rule-body">
+        <div class="rule-label">Espesor T&iacute;pico de Cobre &mdash; Suficiente para Nivelar, Sin Desperdiciar</div>
+        <div class="rule-text">Los ba&ntilde;os de sulfato de cobre &aacute;cido proporcionan excelente nivelaci&oacute;n y brillo a 2&ndash;6 A/dm&sup2;. El dep&oacute;sito es d&uacute;ctil, absorbe choque t&eacute;rmico y crea una superficie uniforme para el sistema de n&iacute;quel. El cobre de ataque desde ba&ntilde;os alcalinos (sin cianuro) se usa primero en zamak para prevenir desplazamiento por inmersi&oacute;n. El contenido de cloruro (40&ndash;100 mg/L) es cr&iacute;tico para la funci&oacute;n del abrillantador.</div>
+      </div>
+    </div>
+
+    <!-- TABLA COBRE &Aacute;CIDO -->
+    <div>
+      <h3 class="section-title">Ba&ntilde;o de Sulfato de Cobre &Aacute;cido <span class="sub">capa principal de nivelaci&oacute;n</span></h3>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table compact">
+          <thead><tr><th>Par&aacute;metro</th><th>Rango</th><th>Funci&oacute;n / Notas</th></tr></thead>
+          <tbody>
+            <tr><td style="font-weight:600;">CuSO&#8324;&middot;5H&#8322;O</td><td class="mono">60&ndash;240 g/L</td><td>Fuente de metal; mayor conc = mejor poder de penetraci&oacute;n</td></tr>
+            <tr><td style="font-weight:600;">H&#8322;SO&#8324;</td><td class="mono">30&ndash;75 g/L</td><td>Conductividad; disoluci&oacute;n an&oacute;dica; bajo = mala distribuci&oacute;n</td></tr>
+            <tr><td style="font-weight:600;">Cl&minus;</td><td class="mono">40&ndash;100 mg/L</td><td>Sinergista de abrillantador; cr&iacute;tico para refinamiento de grano</td></tr>
+            <tr><td style="font-weight:600;">Temperatura</td><td class="mono">20&ndash;35&deg;C</td><td>Mayor temp mejora distribuci&oacute;n pero acelera degradaci&oacute;n de aditivos</td></tr>
+            <tr><td style="font-weight:600;">Densidad de Corriente</td><td class="mono">2&ndash;6 A/dm&sup2;</td><td>Mayor = m&aacute;s r&aacute;pido pero riesgo de quemado en &aacute;reas de alta corriente</td></tr>
+            <tr><td style="font-weight:600;">Agitaci&oacute;n</td><td>Aire + barra cat&oacute;dica</td><td>Aire continuo; movimiento barra 1&ndash;2 m/min</td></tr>
+            <tr><td style="font-weight:600;">&Aacute;nodos</td><td>Cu fosforizado (0.04&ndash;0.06% P)</td><td>P previene lodo an&oacute;dico; embolsar con polipro</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- TABLA COBRE DE ATAQUE -->
+    <div>
+      <h3 class="section-title">Cobre de Ataque <span class="sub">alcalino sin cianuro</span></h3>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table compact">
+          <thead><tr><th>Par&aacute;metro</th><th>Rango</th><th>Funci&oacute;n / Notas</th></tr></thead>
+          <tbody>
+            <tr><td style="font-weight:600;">Cu (como metal)</td><td class="mono">3&ndash;8 g/L</td><td>Bajo metal; previene dep&oacute;sito por inmersi&oacute;n en Zn</td></tr>
+            <tr><td style="font-weight:600;">Complejante</td><td>Pirofosfato o amina</td><td>Mantiene Cu en soluci&oacute;n a pH alcalino</td></tr>
+            <tr><td style="font-weight:600;">pH</td><td class="mono">8.5&ndash;10.5</td><td>Debe mantenerse alcalino para prevenir disoluci&oacute;n del Zn</td></tr>
+            <tr><td style="font-weight:600;">Temperatura</td><td class="mono">25&ndash;40&deg;C</td><td>Moderada; muy caliente degrada complejante</td></tr>
+            <tr><td style="font-weight:600;">Densidad de Corriente</td><td class="mono">1&ndash;3 A/dm&sup2;</td><td>Baja densidad de corriente; entrar vivo (entrada energizada) en zamak</td></tr>
+            <tr><td style="font-weight:600;">Tiempo</td><td class="mono">2&ndash;5 min</td><td>Suficiente para 1&ndash;3 &micro;m de cobertura</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- SVG DISTRIBUCI&Oacute;N DE CORRIENTE -->
+    <div class="glass" style="padding:10px 18px;">
+      <h3 class="section-title" style="margin-bottom:5px;">Distribuci&oacute;n de Corriente <span class="sub">cobre &aacute;cido en pieza compleja</span></h3>
+      <svg viewBox="0 0 1060 130" width="100%" height="130" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Corte transversal — ancho completo -->
+        <rect x="30" y="20" width="1000" height="90" rx="12" fill="rgba(120,120,140,.08)" stroke="var(--muted)" stroke-width="1.5"/>
+        <text x="530" y="16" text-anchor="middle" fill="var(--muted)" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="11">CORTE TRANSVERSAL DE PIEZA COMPLEJA</text>
+        <!-- Alta densidad de corriente — borde izquierdo -->
+        <rect x="50" y="45" width="200" height="24" rx="4" fill="rgba(224,92,92,.15)" stroke="var(--coral)" stroke-width="1"/>
+        <text x="150" y="60" text-anchor="middle" fill="var(--coral)" font-family="Inter,sans-serif" font-size="8" font-weight="600">Borde &mdash; alta densidad de corriente</text>
+        <text x="150" y="85" text-anchor="middle" fill="var(--coral)" font-family="JetBrains Mono,monospace" font-size="9" font-weight="600">25&ndash;35 &micro;m</text>
+        <text x="150" y="97" text-anchor="middle" fill="var(--coral)" font-family="Inter,sans-serif" font-size="7" opacity=".8">Grueso &mdash; requiere nivelaci&oacute;n</text>
+        <!-- DC nominal — centro -->
+        <rect x="310" y="45" width="380" height="24" rx="4" fill="rgba(232,160,32,.12)" stroke="var(--amber)" stroke-width="1"/>
+        <text x="500" y="60" text-anchor="middle" fill="var(--amber)" font-family="Inter,sans-serif" font-size="8" font-weight="600">&Aacute;rea plana &mdash; densidad de corriente nominal</text>
+        <text x="500" y="85" text-anchor="middle" fill="var(--amber)" font-family="JetBrains Mono,monospace" font-size="9" font-weight="600">10&ndash;25 &micro;m</text>
+        <text x="500" y="97" text-anchor="middle" fill="var(--amber)" font-family="Inter,sans-serif" font-size="7" opacity=".8">Espesor objetivo</text>
+        <!-- Baja DC — cavidad derecha -->
+        <rect x="750" y="45" width="260" height="24" rx="4" fill="rgba(46,196,182,.12)" stroke="var(--teal)" stroke-width="1"/>
+        <text x="880" y="60" text-anchor="middle" fill="var(--teal)" font-family="Inter,sans-serif" font-size="8" font-weight="600">Cavidad &mdash; baja densidad de corriente</text>
+        <text x="880" y="85" text-anchor="middle" fill="var(--teal)" font-family="JetBrains Mono,monospace" font-size="9" font-weight="600">5&ndash;10 &micro;m</text>
+        <text x="880" y="97" text-anchor="middle" fill="var(--teal)" font-family="Inter,sans-serif" font-size="7" opacity=".8">Delgado &mdash; riesgo de falla sin Cu</text>
+        <!-- Flechas conectoras -->
+        <line x1="250" y1="57" x2="310" y2="57" stroke="var(--faint)" stroke-width="1"/><polygon points="307,55 312,57 307,59" fill="var(--faint)"/>
+        <line x1="690" y1="57" x2="750" y2="57" stroke="var(--faint)" stroke-width="1"/><polygon points="747,55 752,57 747,59" fill="var(--faint)"/>
+        <!-- Anotaci&oacute;n inferior -->
+        <text x="300" y="122" text-anchor="middle" fill="var(--text)" font-family="Inter,sans-serif" font-size="8" font-weight="600">&#x2714; La nivelaci&oacute;n del cobre llena cavidades preferencialmente</text>
+        <text x="760" y="122" text-anchor="middle" fill="var(--muted)" font-family="Inter,sans-serif" font-size="8">&#x2718; Sin Cu: N&iacute;quel replica variaci&oacute;n &rarr; puntos delgados &rarr; falla temprana</text>
+      </svg>
+    </div>
+
+    <!-- INFORMACI&Oacute;N CLAVE -->
+    <div class="insight-card">
+      <div class="insight-label">Por Qu&eacute; el Cobre Importa en Zamak (Zinc Fundido a Presi&oacute;n)</div>
+      <div class="insight-text">El zinc es m&aacute;s activo que el cobre en la serie galv&aacute;nica. Si una pieza de zamak entra directamente al ba&ntilde;o de cobre &aacute;cido, el cobre se depositar&aacute; por <strong>desplazamiento por inmersi&oacute;n</strong> &mdash; una capa no adherente y polvosa que garantiza el pelado. El cobre de ataque alcalino deposita una capa delgada y adherente a baja DC en condiciones alcalinas donde el zinc no se disuelve. Solo despu&eacute;s de este ataque la pieza puede entrar al cobre &aacute;cido de forma segura. La <strong>entrada energizada</strong> (aplicar corriente antes de inmersi&oacute;n) previene a&uacute;n m&aacute;s el ataque por inmersi&oacute;n.</div>
+    </div>
+
+    <div class="safety-card">
+      <div class="safety-head">&#9888; Resumen de Seguridad &mdash; Cobreado</div>
+      <div class="safety-body"><strong>H&#8322;SO&#8324; (cobre &aacute;cido)</strong> &mdash; corrosivo; quemaduras severas; exot&eacute;rmico al diluir &mdash; siempre agregar &aacute;cido al agua. <strong>CuSO&#8324;</strong> &mdash; t&oacute;xico para organismos acu&aacute;ticos; prevenir descargas. <strong>Ataque alcalino</strong> &mdash; pH 8.5&ndash;10.5; irritante de piel/ojos. <strong>Niebla</strong> &mdash; niebla &aacute;cida por agitaci&oacute;n de aire; VEL requerida. Use careta, guantes resistentes a &aacute;cidos y mandil. Regadera/lavaojos a 10 seg. FTS publicadas.</div>
+    </div>
+
+  </div>
+  <footer class="footer poster-footer">
+    <p class="footer-disclaimer">Solo referencia técnica. Verifique todos los parámetros contra la ficha técnica de su proveedor, especificaciones del cliente y requisitos regulatorios aplicables antes del uso en producción.</p>
+    <p class="footer-title">Cobreado &mdash; Serie de Cromado Decorativo</p>
+    <span class="footer-brand">Plating Posters &middot; Metal Finishing Reference Series &middot; PP-DC-04-T / v1.0 / 2026</span>
+  </footer>
+</div>
+</div>
+</div>
+<div class="tweaks">
+  <div style="display:flex;gap:6px;align-items:center;">
+    <span style="color:rgba(240,237,232,.5);font-size:11px;letter-spacing:.06em;text-transform:uppercase;">Edition</span>
+    <button id="btnDark" style="padding:4px 10px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);" onclick="setEdition('')">Dark</button>
+    <button id="btnLight" style="padding:4px 10px;border-radius:5px;cursor:pointer;font-size:11px;background:#E8A020;color:#1A1F2E;border:1px solid #E8A020;" onclick="setEdition('light')">Light</button>
+  </div>
+  <button onclick="window.print()" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);">Print / PDF</button>
+</div>
+<script>
+const posterWrap=document.getElementById('posterWrap');const poster=document.getElementById('poster');
+function scalePoster(){const sW=(window.innerWidth-24)/1200;const sH=(window.innerHeight-24)/1800;const s=Math.min(sW,sH);posterWrap.style.transform='scale('+s+')';posterWrap.style.transformOrigin='top center';posterWrap.style.width='1200px';posterWrap.style.height=(1800*s)+'px';}
+function setEdition(e){if(e)poster.dataset.edition=e;else delete poster.dataset.edition;['Dark','Light'].forEach(function(n){var b=document.getElementById('btn'+n);var active=(n.toLowerCase()===e)||(n==='Dark'&&!e);b.style.background=active?'#E8A020':'transparent';b.style.color=active?'#1A1F2E':'#F0EDE8';b.style.borderColor=active?'#E8A020':'rgba(255,255,255,.2)';})}
+scalePoster();window.addEventListener('resize',scalePoster);
+</script>
+</body>
+</html>

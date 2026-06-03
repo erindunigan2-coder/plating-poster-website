@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Electroless Nickel Low Phos — Cleaning Stage 1 | Plating Posters</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Barlow:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #1A1F2E; --navy: #0D1020; --text: #F0EDE8; --muted: rgba(240,237,232,.62);
+  --faint: rgba(240,237,232,.38);
+  --amber: #E8A020; --teal: #2EC4B6; --emerald: #27AE60; --coral: #E05C5C;
+  --slate: #3A4055; --callout: #1E2435; --altrow: #252B3D;
+  --glass-bg: rgba(30,36,53,.55);
+  --glass-border: rgba(255,255,255,.12);
+  --glass-shadow: inset 0 1px 0 rgba(255,255,255,.14), inset 0 -1px 0 rgba(0,0,0,.2), 0 4px 12px rgba(0,0,0,.25);
+}
+.poster[data-edition="light"] {
+  --bg:#F5F4F0; --navy:#DDD8CE; --text:#1B2030; --muted:rgba(27,32,48,.66);
+  --faint:rgba(27,32,48,.42);
+  --amber:#B8770D; --teal:#1A8C82; --emerald:#1E8449; --coral:#B7322F;
+  --slate:#C5C0B5; --callout:#ECEAE1; --altrow:#E4E1D6;
+  --glass-bg: rgba(255,253,247,.66); --glass-border: rgba(27,32,48,.10);
+}
+html, body { margin:0; padding:0; background:#0a0c14; }
+.stage { width:100vw; min-height:100vh; display:flex; align-items:flex-start; justify-content:center; overflow:visible; padding:12px 0; box-sizing:border-box; }
+.poster-wrap { transform-origin: center top; }
+.poster {
+  width:1200px; height:1800px; position:relative; overflow:hidden;
+  background:
+    radial-gradient(1200px 800px at 15% 8%, rgba(46,196,182,.14), transparent 60%),
+    radial-gradient(1000px 700px at 90% 25%, rgba(232,160,32,.12), transparent 55%),
+    radial-gradient(900px 900px at 50% 80%, rgba(224,92,92,.10), transparent 60%),
+    var(--bg);
+  font-family:'Inter',sans-serif; color:var(--text);
+  display:flex; flex-direction:column;
+  padding:36px;
+  box-sizing:border-box;
+}
+.glass {
+  background-color: var(--glass-bg);
+  background-image: linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.015));
+  border:1px solid var(--glass-border);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  box-shadow: var(--glass-shadow);
+  border-radius:12px;
+}
+
+/* Tack markers */
+.tack { position:absolute; width:24px; height:24px; border-radius:50%;
+  border:1.5px solid rgba(232,160,32,.28); z-index:2; pointer-events:none; }
+.tack::before,.tack::after { content:""; position:absolute; background:rgba(232,160,32,.28); }
+.tack::before { left:50%; top:-3px; bottom:-3px; width:1px; transform:translateX(-50%); }
+.tack::after  { top:50%; left:-3px; right:-3px; height:1px; transform:translateY(-50%); }
+.tack.tl { top:12px; left:12px; }
+.tack.tr { top:12px; right:12px; }
+.tack.bl { bottom:12px; left:12px; }
+.tack.br { bottom:12px; right:12px; }
+
+/* Header */
+.header-band { display:flex; align-items:flex-start; justify-content:space-between; gap:20px; margin-bottom:14px; }
+.header-left { flex:1; min-width:0; }
+.eyebrow { font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--teal); letter-spacing:.18em; text-transform:uppercase; margin-bottom:8px; display:flex; align-items:center; gap:14px; }
+.eyebrow::before { content:""; display:inline-block; width:36px; height:3px; background:var(--teal); }
+.headline { font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:84px; color:var(--text); line-height:.92; margin:6px 0 4px; letter-spacing:-.01em; text-transform:uppercase; }
+.subhead { font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:24px; color:var(--teal); margin:0 0 6px; letter-spacing:.02em; text-transform:uppercase; }
+.tagline { font-family:'Inter',sans-serif; font-style:italic; font-size:13px; color:var(--muted); line-height:1.4; max-width:720px; margin:0; }
+
+/* Logo card */
+.logo-card { flex-shrink:0; min-width:185px; padding:14px 16px; display:flex; flex-direction:column; align-items:center; gap:10px; align-self:flex-start; }
+.logo-tile { width:78px; height:78px; border-radius:13px; background:linear-gradient(135deg,#E8A020,#2EC4B6); display:flex; align-items:center; justify-content:center;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -2px 4px rgba(0,0,0,.15),0 4px 14px rgba(0,0,0,.35); }
+.logo-tile span { font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:30px; color:#1A1F2E; letter-spacing:.02em; line-height:1; }
+.logo-word { font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:22px; letter-spacing:.04em; text-transform:uppercase; line-height:1; text-align:center; white-space:nowrap; }
+.logo-word .a { color:var(--text); }
+.logo-word .b { color:var(--amber); }
+.logo-inc { font-family:'JetBrains Mono',monospace; font-size:9.5px; letter-spacing:.05em; text-transform:lowercase; color:var(--muted); margin-top:-2px; }
+.poster[data-edition="light"] .logo-inc { color:rgba(27,32,48,.62); }
+
+/* Section title */
+.section-title {
+  font-family:'Barlow Condensed',sans-serif; font-weight:800;
+  font-size:19px; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--text); margin:0 0 8px;
+  display:flex; align-items:center; gap:10px;
+}
+.section-title::before { content:""; width:5px; height:5px; background:var(--amber); border-radius:50%; }
+.section-title .sub { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.18em; color:var(--muted); margin-left:auto; font-weight:500; }
+
+/* Orientation strip */
+.orient-strip { display:flex; align-items:center; gap:6px; padding:8px 12px; margin-bottom:10px; }
+.orient-stage {
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px;
+  flex:1; padding:9px 10px; border-radius:6px;
+  font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:14px;
+  letter-spacing:.06em; text-transform:uppercase;
+  background: rgba(58,64,85,.4); border:1px solid rgba(255,255,255,.06);
+  color: var(--muted);
+}
+.orient-stage .stage-num { font-family:'JetBrains Mono',monospace; font-size:9px; opacity:.7; letter-spacing:.1em; }
+.orient-stage.active.teal { background: rgba(46,196,182,.16); border-color: rgba(46,196,182,.45); color: var(--teal); box-shadow:0 0 0 1px rgba(46,196,182,.25); }
+.orient-arrow { color: var(--faint); font-size:14px; flex:none; }
+
+/* Before / After bar */
+.ba-row { display:flex; gap:12px; align-items:center; margin-bottom:12px; }
+.ba-cell { flex:1; padding:9px 14px; display:flex; align-items:center; gap:10px; border-radius:10px; }
+.ba-cell .lbl { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.1em; text-transform:uppercase; white-space:nowrap; }
+.ba-cell .txt { font-size:12px; line-height:1.4; }
+.ba-before { }
+.ba-before .lbl { color: var(--muted); }
+.ba-before .txt { color: var(--muted); }
+.ba-after { border-color: rgba(46,196,182,.32); }
+.ba-after .lbl { color: var(--teal); }
+.ba-after .txt { color: var(--text); }
+.ba-arrow { color: var(--faint); font-size:18px; flex:none; }
+
+/* Hero tank */
+.hero { position:relative; height:430px; margin-bottom:12px; padding:18px; overflow:hidden; }
+.hero-title { position:absolute; top:14px; left:50%; transform:translateX(-50%); font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:18px; letter-spacing:.12em; color:var(--teal); text-transform:uppercase; }
+.temp-col { position:absolute; left:18px; top:60px; bottom:50px; display:flex; flex-direction:column; align-items:center; gap:8px; }
+.temp-label { font-family:'JetBrains Mono',monospace; font-size:9px; color:var(--muted); text-transform:uppercase; letter-spacing:.08em; writing-mode:vertical-lr; transform:rotate(180deg); }
+.temp-bar { flex:1; width:26px; background:rgba(255,255,255,.06); border:1px solid var(--glass-border); border-radius:13px; position:relative; overflow:hidden; }
+.temp-bar > div { position:absolute; bottom:0; left:0; right:0; height:75%; background:linear-gradient(to top, rgba(232,160,32,.85), rgba(232,160,32,.30)); border-radius:13px; }
+.temp-val { font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--amber); text-align:center; font-weight:500; line-height:1.3; }
+.temp-val small { color:var(--muted); font-size:9px; }
+
+.tank { position:absolute; left:88px; right:230px; top:60px; bottom:78px; background:rgba(46,196,182,.04); border:2px solid rgba(46,196,182,.22); border-radius:8px; overflow:hidden; }
+.tank-fill { position:absolute; bottom:0; left:0; right:0; top:14%; background:linear-gradient(to top, rgba(46,196,182,.12), rgba(46,196,182,.04)); }
+.rack { position:absolute; top:0; left:8%; right:8%; height:12px; background:rgba(255,255,255,.18); border-radius:2px; }
+.parts { position:absolute; top:12px; left:0; right:0; display:flex; justify-content:space-around; padding:0 8%; }
+.part-col { display:flex; flex-direction:column; align-items:center; }
+.hanger { width:2px; height:38px; background:rgba(255,255,255,.32); }
+.shape { border:2px solid rgba(255,255,255,.42); background:rgba(255,255,255,.06); position:relative; }
+.shape .soil { position:absolute; width:5px; height:5px; border-radius:50%; background:var(--amber); }
+.shape.rect { width:50px; height:78px; border-radius:3px; }
+.shape.cyl { width:40px; height:86px; border-radius:20px; }
+.shape.lbr { width:60px; height:78px; border:none; background:transparent; }
+.shape.lbr .top { position:absolute; top:0; left:0; right:0; height:20px; border:2px solid rgba(255,255,255,.42); border-radius:3px; background:rgba(255,255,255,.06); }
+.shape.lbr .stem { position:absolute; top:18px; left:0; width:22px; bottom:0; border:2px solid rgba(255,255,255,.42); border-top:none; border-radius:0 0 3px 3px; background:rgba(255,255,255,.06); }
+.shape.flat { width:64px; height:66px; border-radius:3px; }
+.agitate { position:absolute; bottom:24px; font-family:'JetBrains Mono',monospace; color:var(--teal); font-size:11px; opacity:.55; line-height:1.5; }
+.agitate.l { left:14px; }
+.agitate.r { right:14px; text-align:right; }
+.particle { position:absolute; width:6px; height:6px; border-radius:50%; background:var(--amber); opacity:.45; }
+
+.chem-col { position:absolute; right:18px; top:60px; width:200px; display:flex; flex-direction:column; gap:10px; }
+.chem-card { padding:11px 12px; border-radius:8px; background:rgba(46,196,182,.10); border:1px solid rgba(46,196,182,.30); }
+.chem-card .h { font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--teal); letter-spacing:.1em; text-transform:uppercase; margin-bottom:6px; font-weight:600; }
+.chem-card .row { font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--text); line-height:1.7; display:flex; justify-content:space-between; gap:8px; }
+.chem-card .row span:last-child { color:var(--muted); }
+
+.callout-row { position:absolute; left:88px; right:230px; bottom:14px; display:flex; gap:10px; }
+.callout { flex:1; padding:9px 11px; border-radius:8px; }
+.callout.teal { background:rgba(46,196,182,.10); border:1px solid rgba(46,196,182,.30); }
+.callout.amber { background:rgba(232,160,32,.10); border:1px solid rgba(232,160,32,.32); }
+.callout .h { font-family:'JetBrains Mono',monospace; font-size:9.5px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; margin-bottom:3px; }
+.callout.teal .h { color:var(--teal); }
+.callout.amber .h { color:var(--amber); }
+.callout .b { font-size:10.5px; color:var(--text); line-height:1.45; }
+
+/* Param tables */
+.param-row { display:flex; gap:12px; margin-bottom:12px; }
+.param-col { flex:1; }
+.param-table-wrap { padding:0; overflow:hidden; }
+.param-table { width:100%; border-collapse:collapse; }
+.param-table th { font-family:'Barlow',sans-serif; font-weight:700; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); padding:8px 12px; text-align:left; background:rgba(13,16,32,.35); border-bottom:1px solid var(--glass-border); }
+.poster[data-edition="light"] .param-table th { background:rgba(27,32,48,.06); }
+.param-table td { padding:7px 12px; color:var(--text); line-height:1.4; border-bottom:1px solid rgba(255,255,255,.06); font-family:'Inter',sans-serif; font-size:11.5px; }
+.param-table tr:last-child td { border-bottom:none; }
+.param-table tr:nth-child(even) td { background:rgba(255,255,255,.025); }
+.poster[data-edition="light"] .param-table tr:nth-child(even) td { background:rgba(27,32,48,.025); }
+.param-table .mono { font-family:'JetBrains Mono',monospace; font-size:11px; }
+.param-table td.warn { color:var(--coral); font-size:11px; }
+.param-table td.note { color:var(--amber); font-size:11px; }
+
+/* Safety */
+.safety-row { display:flex; gap:12px; margin-bottom:12px; }
+.safety-card { flex:1; padding:14px; border-radius:10px; }
+.safety-card.haz { border:1px solid rgba(224,92,92,.30); }
+.safety-card.ppe { border:1px solid rgba(232,160,32,.30); }
+.safety-h { font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:15px; text-transform:uppercase; letter-spacing:.08em; margin:0 0 9px; }
+.safety-card.haz .safety-h { color:var(--coral); }
+.safety-card.ppe .safety-h { color:var(--amber); }
+.safety-list { font-size:11.5px; color:var(--text); line-height:1.65; margin:0; padding-left:0; list-style:none; }
+.safety-list li { padding-left:14px; position:relative; }
+.safety-list li::before { content:"●"; position:absolute; left:0; color:var(--faint); font-size:9px; top:3px; }
+.safety-list .accent { color:var(--coral); font-weight:600; }
+
+/* Footer — sits inside 36px tack-safe margin */
+.footer { margin:auto 0 0; padding:10px 24px 11px;
+  background-color: rgba(13,16,32,.85);
+  background-image: linear-gradient(180deg, rgba(255,255,255,.04), rgba(0,0,0,0));
+  border:1px solid rgba(255,255,255,.10); border-radius:8px;
+  text-align:center; display:flex; flex-direction:column; gap:3px;
+}
+.poster[data-edition="light"] .footer { background-color: rgba(221,216,206,.95); border-color: rgba(27,32,48,.10); }
+.footer-disclaimer { font-family:'Inter',sans-serif; font-size:10px; line-height:1.4; color:var(--faint); margin:0 auto; max-width:920px; }
+.footer-title { font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:14px; color:var(--text); letter-spacing:.04em; text-transform:uppercase; margin:0; }
+.footer-brand { font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--muted); letter-spacing:.14em; text-transform:uppercase; }
+
+/* Tweaks */
+.tweaks { position:fixed; bottom:16px; right:16px; z-index:100; background:rgba(13,16,32,.92); border:1px solid rgba(255,255,255,.12); border-radius:10px; padding:10px 14px; display:flex; flex-direction:column; gap:8px; font-family:'Inter',sans-serif; font-size:12px; color:#F0EDE8; }
+.tweaks-row { display:flex; gap:8px; align-items:center; }
+.tweaks button { padding:4px 11px; border-radius:5px; cursor:pointer; font-size:11px; font-family:'Inter',sans-serif; }
+.tweaks .label { color:rgba(240,237,232,.5); font-size:11px; letter-spacing:.06em; text-transform:uppercase; }
+.tweaks .b-on { background:#E8A020; color:#1A1F2E; border:1px solid #E8A020; }
+.tweaks .b-off { background:transparent; color:#F0EDE8; border:1px solid rgba(255,255,255,.2); }
+
+@media print {
+  @page { size: 12.5in 18.75in; margin: 0; }
+  html, body { background:#1A1F2E !important; -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; }
+  * { -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; }
+  .stage { position:static; padding:0; display:block; overflow:visible; }
+  .poster-wrap { transform:none !important; }
+  .poster { box-shadow:none !important; width:1200px !important; height:1800px !important; overflow:hidden !important; }
+  .glass, .safety-card { backdrop-filter:none !important; -webkit-backdrop-filter:none !important; }
+  .tweaks { display:none !important; }
+}
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="poster-wrap" id="posterWrap">
+    <div class="poster" id="poster">
+
+      <!-- Tack markers -->
+      <span class="tack tl" aria-hidden="true"></span>
+      <span class="tack tr" aria-hidden="true"></span>
+      <span class="tack bl" aria-hidden="true"></span>
+      <span class="tack br" aria-hidden="true"></span>
+
+      <!-- Header -->
+      <header class="header-band">
+        <div class="header-left">
+          <div class="eyebrow">Electroless Nickel — Stage 1 of 7</div>
+          <h1 class="headline">CLEANING</h1>
+          <p class="subhead">Alkaline Soak Clean — EN Low Phosphorus</p>
+          <p class="tagline">EN is autocatalytic — it plates itself. But only on a truly clean surface. Contamination doesn&rsquo;t reduce quality. It stops deposition entirely.</p>
+        </div>
+        <aside class="glass logo-card">
+          <div class="logo-tile"><span>PP</span></div>
+          <div class="logo-word"><span class="a">Plating</span> <span class="b">Posters</span></div>
+          <div class="logo-inc">www.platingposters.com</div>
+        </aside>
+      </header>
+
+      <!-- Orientation strip -->
+      <div class="orient-strip glass">
+        <div class="orient-stage active teal"><span class="stage-num">01</span>CLEAN</div>
+        <div class="orient-arrow">›</div>
+        <div class="orient-stage"><span class="stage-num">02</span>RINSE</div>
+        <div class="orient-arrow">›</div>
+        <div class="orient-stage"><span class="stage-num">03</span>ACTIVATE</div>
+        <div class="orient-arrow">›</div>
+        <div class="orient-stage"><span class="stage-num">04</span>RINSE</div>
+        <div class="orient-arrow">›</div>
+        <div class="orient-stage"><span class="stage-num">05</span>EN BATH</div>
+        <div class="orient-arrow">›</div>
+        <div class="orient-stage"><span class="stage-num">06</span>RINSE</div>
+        <div class="orient-arrow">›</div>
+        <div class="orient-stage"><span class="stage-num">07</span>POST-TX</div>
+      </div>
+
+      <!-- Before / After -->
+      <div class="ba-row">
+        <div class="glass ba-cell ba-before">
+          <span class="lbl">Before</span>
+          <span class="txt">Incoming parts (as-received) &mdash; oil, grease, shop soil, oxides</span>
+        </div>
+        <span class="ba-arrow">→</span>
+        <div class="glass ba-cell ba-after">
+          <span class="lbl">After</span>
+          <span class="txt">Oil-free, water-break-free surface ready for activation</span>
+        </div>
+      </div>
+
+      <!-- Hero tank diagram -->
+      <section class="glass hero">
+        <div class="hero-title">Alkaline Soak Clean Tank</div>
+
+        <div class="temp-col">
+          <span class="temp-label">Temperature</span>
+          <div class="temp-bar"><div></div></div>
+          <div class="temp-val">60–80°C<br><small>140–176°F</small></div>
+        </div>
+
+        <div class="tank">
+          <div class="tank-fill"></div>
+          <div class="rack"></div>
+
+          <div class="parts">
+            <div class="part-col">
+              <div class="hanger"></div>
+              <div class="shape rect">
+                <span class="soil" style="top:5px;left:5px;opacity:.85"></span>
+                <span class="soil" style="top:20px;right:5px;opacity:.6"></span>
+                <span class="soil" style="bottom:10px;left:8px;opacity:.5"></span>
+              </div>
+            </div>
+            <div class="part-col">
+              <div class="hanger"></div>
+              <div class="shape cyl">
+                <span class="soil" style="top:8px;left:6px;opacity:.7"></span>
+                <span class="soil" style="bottom:14px;right:6px;opacity:.5"></span>
+              </div>
+            </div>
+            <div class="part-col">
+              <div class="hanger"></div>
+              <div class="shape lbr">
+                <div class="top"></div>
+                <div class="stem"></div>
+                <span class="soil" style="top:6px;left:32px;opacity:.8"></span>
+                <span class="soil" style="top:32px;left:6px;opacity:.55"></span>
+              </div>
+            </div>
+            <div class="part-col">
+              <div class="hanger"></div>
+              <div class="shape flat">
+                <span class="soil" style="top:8px;right:8px;opacity:.85"></span>
+                <span class="soil" style="bottom:10px;left:8px;opacity:.5"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="agitate l">↑↑↑<br>↑↑↑<br>↑↑↑</div>
+          <div class="agitate r">↑↑↑<br>↑↑↑<br>↑↑↑</div>
+
+          <span class="particle" style="top:24%;left:22%;"></span>
+          <span class="particle" style="top:38%;right:28%;width:5px;height:5px;"></span>
+          <span class="particle" style="top:55%;left:42%;"></span>
+          <span class="particle" style="top:48%;right:18%;width:5px;height:5px;"></span>
+          <span class="particle" style="bottom:32%;left:58%;"></span>
+          <span class="particle" style="bottom:22%;right:42%;width:5px;height:5px;"></span>
+        </div>
+
+        <div class="chem-col">
+          <div class="chem-card">
+            <div class="h">Bath Chemistry</div>
+            <div class="row"><span>NaOH</span><span>30–60 g/L</span></div>
+            <div class="row"><span>Na₂CO₃</span><span>15–30 g/L</span></div>
+            <div class="row"><span>Surfactants</span><span>1–5 mL/L</span></div>
+            <div class="row"><span>Time</span><span>3–10 min</span></div>
+            <div class="row"><span>pH</span><span>11–13</span></div>
+          </div>
+        </div>
+
+        <div class="callout-row">
+          <div class="callout teal">
+            <div class="h">Submersion</div>
+            <div class="b">Parts must be fully submerged. Air pockets trap soil and cause skip plating.</div>
+          </div>
+          <div class="callout amber">
+            <div class="h">Electroclean Option</div>
+            <div class="b">Cathodic then anodic, 3–6 V, 30–60 sec each, for stubborn soils.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Parameter tables -->
+      <div class="param-row">
+        <div class="param-col">
+          <div class="section-title">Soak Clean Parameters <span class="sub">Stage 1 / Bath</span></div>
+          <div class="glass param-table-wrap">
+            <table class="param-table">
+              <thead><tr><th>Parameter</th><th>Value</th></tr></thead>
+              <tbody>
+                <tr><td>Cleaner type</td><td class="mono">Alkaline soak</td></tr>
+                <tr><td>NaOH</td><td class="mono">30–60 g/L</td></tr>
+                <tr><td>Na₂CO₃</td><td class="mono">15–30 g/L</td></tr>
+                <tr><td>Surfactants</td><td class="mono">1–5 mL/L</td></tr>
+                <tr><td>Temperature</td><td class="mono">60–80°C (140–176°F)</td></tr>
+                <tr><td>Time</td><td class="mono">3–10 min</td></tr>
+                <tr><td>pH</td><td class="mono">11–13</td></tr>
+                <tr><td>Agitation</td><td class="mono">Air or mechanical</td></tr>
+                <tr><td>Water-break test</td><td>Continuous film = clean</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="param-col">
+          <div class="section-title">Electroclean &amp; Substrate Notes <span class="sub">Stage 1 / Variants</span></div>
+          <div class="glass param-table-wrap">
+            <table class="param-table">
+              <thead><tr><th>Parameter</th><th>Value / Note</th></tr></thead>
+              <tbody>
+                <tr><td>Cathodic EC</td><td class="mono">3–6 V / 30–60 sec</td></tr>
+                <tr><td>Anodic EC</td><td class="mono">3–6 V / 15–30 sec</td></tr>
+                <tr><td>HTS steel (&gt;1000 MPa)</td><td class="warn">⚠ Cathodic H absorption risk</td></tr>
+                <tr><td>Aluminum</td><td class="mono">Non-etch cleaner, pH &lt;10.5</td></tr>
+                <tr><td>Silicate cleaners</td><td class="note">Rinse thoroughly — residue poisons EN</td></tr>
+                <tr><td>Steel / iron</td><td class="mono">Standard alkaline soak, OK at pH 13</td></tr>
+                <tr><td>Copper / brass</td><td class="mono">Mild alkaline, 50–65°C</td></tr>
+                <tr><td>Stainless</td><td class="mono">Alkaline soak + cathodic EC</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Problems table -->
+      <div class="param-row" style="margin-bottom:12px;">
+        <div class="param-col">
+          <div class="section-title">Cleaning Problems — Root Causes &amp; Fixes <span class="sub">Troubleshooting</span></div>
+          <div class="glass param-table-wrap">
+            <table class="param-table">
+              <thead><tr><th>Problem</th><th>Downstream Symptom</th><th>Root Cause</th><th>Fix</th></tr></thead>
+              <tbody>
+                <tr><td class="warn">Water break</td><td>Parts bead up after rinse</td><td>Residual oil/grease on surface</td><td>Extend clean time; raise temp or concentration</td></tr>
+                <tr><td class="warn">Skip plating</td><td>Bare spots in EN deposit</td><td>Contamination reached EN bath</td><td>Full re-clean; verify water-break before proceeding</td></tr>
+                <tr><td class="warn">Pitting in EN</td><td>Holes or pits in deposit</td><td>Particulate or H₂ from EC</td><td>Filter cleaner; cathodic-then-anodic EC sequence</td></tr>
+                <tr><td class="warn">Poor adhesion</td><td>Blistering or peel after HT</td><td>Oxide or smut not removed</td><td>Add acid desmut or pre-clean step</td></tr>
+                <tr><td class="warn">Rough deposit</td><td>Nodular EN surface</td><td>Particulate in cleaner</td><td>Filter cleaner bath; replace if contaminated</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Safety -->
+      <div class="param-row" style="margin-bottom:0;">
+        <div class="param-col">
+          <div class="section-title">Safety <span class="sub">Hazards &amp; PPE</span></div>
+          <div class="safety-row" style="margin-bottom:0;">
+            <div class="glass safety-card haz">
+              <h4 class="safety-h">Chemical Hazards</h4>
+              <ul class="safety-list">
+                <li>NaOH — severe skin/eye burns on contact</li>
+                <li>Hot solution (60–80°C) — thermal burn risk</li>
+                <li>Mist and vapor — irritates respiratory tract</li>
+                <li><span class="accent">NEVER add water to NaOH concentrate</span> — add caustic to water</li>
+                <li>H₂ gas evolved during electrocleaning — ventilate</li>
+              </ul>
+            </div>
+            <div class="glass safety-card ppe">
+              <h4 class="safety-h">PPE Required</h4>
+              <ul class="safety-list">
+                <li>Chemical splash goggles (not safety glasses)</li>
+                <li>Chemical-resistant gloves — nitrile or neoprene</li>
+                <li>Chemical-resistant apron or lab coat</li>
+                <li>Eyewash station within 10 seconds of tank</li>
+                <li>SDS posted at point of use and in safety binder</li>
+                <li>Overhead ventilation at tank line</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <p class="footer-disclaimer">Technical reference only. Values shown are typical operating ranges &mdash; consult your chemistry supplier for bath-specific parameters. ASTM B733 governs EN plating specifications.</p>
+        <p class="footer-title">Electroless Nickel Low Phosphorus &mdash; Cleaning, Stage 1 of 7</p>
+        <span class="footer-brand">Plating Posters &middot; Metal Finishing Reference Series &middot; v1.0 / 2026</span>
+      </footer>
+
+    </div>
+  </div>
+</div>
+
+<div class="tweaks">
+  <div class="tweaks-row">
+    <span class="label">Edition</span>
+    <button class="b-on" id="edDark">Dark</button>
+    <button class="b-off" id="edLight">Light</button>
+  </div>
+  <button class="b-off" onclick="window.print()">Print / PDF</button>
+</div>
+
+<script>
+  const posterWrap = document.getElementById('posterWrap');
+  const poster = document.getElementById('poster');
+  function scalePoster() {
+    const s = Math.min(window.innerWidth / 1200, window.innerHeight / 1800);
+    posterWrap.style.transform = 'scale(' + s + ')';
+  }
+  scalePoster();
+  window.addEventListener('resize', scalePoster);
+
+  const dark = document.getElementById('edDark');
+  const light = document.getElementById('edLight');
+  function setEd(mode) {
+    if (mode === 'light') { poster.dataset.edition = 'light'; light.className = 'b-on'; dark.className = 'b-off'; }
+    else { poster.dataset.edition = ''; dark.className = 'b-on'; light.className = 'b-off'; }
+  }
+  dark.addEventListener('click', () => setEd('dark'));
+  light.addEventListener('click', () => setEd('light'));
+</script>
+</body>
+</html>

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zinc-N&iacute;quel &Aacute;cido &mdash; Paso 02 Activaci&oacute;n &Aacute;cida &mdash; Piso de Producci&oacute;n | Plating Posters Inc</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Barlow:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#1A1F2E; --navy:#0D1020; --text:#F0EDE8; --muted:rgba(240,237,232,.62);
+  --faint:rgba(240,237,232,.38);
+  --amber:#E8A020; --teal:#2EC4B6; --emerald:#27AE60; --coral:#E05C5C;
+  --slate:#3A4055; --glass-bg:rgba(30,36,53,.55); --glass-border:rgba(255,255,255,.12);
+  --glass-shadow:inset 0 1px 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(0,0,0,.2),0 4px 12px rgba(0,0,0,.25);
+  --tack:24px;
+}
+.poster[data-edition="light"] {
+  --bg:#F5F4F0; --navy:#DDD8CE; --text:#1B2030; --muted:rgba(27,32,48,.78);
+  --amber:#8C5A00; --teal:#0F6B62; --emerald:#15693B; --coral:#9B2825;
+  --faint:rgba(27,32,48,.42);
+  --slate:#C5C0B5;
+  --glass-bg:rgba(255,253,247,.82); --glass-border:rgba(27,32,48,.18);
+  --glass-shadow: inset 0 1px 0 rgba(255,255,255,.6), 0 4px 12px rgba(27,32,48,.08);
+}
+.poster[data-edition="light"] .logo-url { color:rgba(27,32,48,.62); }
+.poster[data-edition="light"] .logo-word .a { color:#1B2030; }
+
+html,body{margin:0;padding:0;background:#0a0c14;}
+.stage{width:100vw;height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.poster-wrap{transform-origin:center center;}
+.poster{
+  width:900px;height:1200px;position:relative;overflow:hidden;
+  background:
+    radial-gradient(700px 500px at 10% 8%,rgba(46,196,182,.15),transparent 60%),
+    radial-gradient(600px 450px at 92% 20%,rgba(232,160,32,.13),transparent 55%),
+    radial-gradient(550px 500px at 50% 88%,rgba(224,92,92,.10),transparent 60%),
+    var(--bg);
+  font-family:'Inter',sans-serif;color:var(--text);
+  display:flex;flex-direction:column;
+  padding:var(--tack);box-sizing:border-box;
+}
+.poster::before{
+  content:'';position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+  background-size:50px 50px;
+  mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);
+  -webkit-mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);
+  pointer-events:none;z-index:0;
+}
+.poster>*{position:relative;z-index:1;}
+.glass{
+  background-color:var(--glass-bg);
+  background-image:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));
+  border:1px solid var(--glass-border);
+  backdrop-filter:blur(18px) saturate(140%);
+  -webkit-backdrop-filter:blur(18px) saturate(140%);
+  box-shadow:var(--glass-shadow);
+  border-radius:12px;
+}
+.tack{position:absolute;width:18px;height:18px;border-radius:50%;border:1.5px solid rgba(232,160,32,.28);z-index:2;pointer-events:none;}
+.tack::before,.tack::after{content:"";position:absolute;background:rgba(232,160,32,.28);}
+.tack::before{left:50%;top:-2px;bottom:-2px;width:1px;transform:translateX(-50%);}
+.tack::after{top:50%;left:-2px;right:-2px;height:1px;transform:translateY(-50%);}
+.tack.tl{top:6px;left:6px;}.tack.tr{top:6px;right:6px;}.tack.bl{bottom:6px;left:6px;}.tack.br{bottom:6px;right:6px;}
+
+.poster-header{flex-shrink:0;}
+.poster-body{flex:1;overflow:hidden;display:flex;flex-direction:column;gap:5px;justify-content:space-between;}
+.poster-footer{flex-shrink:0;margin-top:4px;}
+
+.header-row{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:8px;}
+.header-left{flex:1;min-width:0;}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--amber);letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px;}
+.headline{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:56px;color:var(--text);line-height:.92;letter-spacing:-.01em;margin-bottom:4px;}
+.headline em{font-style:normal;color:var(--amber);}
+.subhead{font-family:'Barlow',sans-serif;font-weight:700;font-size:17px;color:var(--amber);margin-bottom:4px;}
+.tagline{font-family:'Inter',sans-serif;font-weight:500;font-size:11px;color:var(--muted);line-height:1.3;max-width:520px;}
+.logo-card{flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:6px;padding:10px 12px;min-width:140px;
+  background-color:var(--glass-bg);background-image:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));
+  border:1px solid var(--glass-border);border-radius:12px;
+  backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 4px 12px rgba(0,0,0,.25);
+}
+.logo-mark{width:60px;height:60px;border-radius:11px;background:linear-gradient(135deg,#E8A020,#2EC4B6);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -2px 4px rgba(0,0,0,.15),0 4px 14px rgba(0,0,0,.35);}
+.logo-mark span{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:22px;color:#1A1F2E;letter-spacing:.02em;line-height:1;}
+.logo-word{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;letter-spacing:.04em;text-transform:uppercase;line-height:1;text-align:center;white-space:nowrap;}
+.logo-word .a{color:#F0EDE8;}.logo-word .b{color:#E8A020;}
+.logo-url{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.06em;color:rgba(240,237,232,.45);margin-top:-1px;}
+
+.section-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:20px;letter-spacing:.07em;text-transform:uppercase;color:var(--amber);margin-bottom:6px;}
+.section-title.coral{color:var(--coral);}
+
+.key-card{padding:10px 24px;background:rgba(232,160,32,.07);border-radius:12px;display:flex;align-items:center;gap:16px;}
+.key-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:40px;color:var(--amber);line-height:1;white-space:nowrap;}
+.key-body{flex:1;}
+.key-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;color:var(--amber);letter-spacing:.06em;text-transform:uppercase;}
+.key-text{font-family:'Inter',sans-serif;font-size:11.5px;color:var(--muted);line-height:1.4;margin-top:2px;}
+
+/* Data table */
+.data-table{width:100%;border-collapse:collapse;}
+.data-table th{font-family:'Barlow',sans-serif;font-weight:700;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);padding:7px 10px;text-align:left;background:rgba(13,16,32,.35);border-bottom:1px solid var(--glass-border);}
+.poster[data-edition="light"] .data-table th{background:rgba(27,32,48,.06);}
+.data-table td{padding:4px 10px;color:var(--text);line-height:1.3;border-bottom:1px solid rgba(255,255,255,.05);font-family:'Inter',sans-serif;font-size:11.5px;}
+.data-table tr:last-child td{border-bottom:none;}
+.data-table tr:nth-child(even) td{background:rgba(255,255,255,.02);}
+.poster[data-edition="light"] .data-table tr:nth-child(even) td{background:rgba(27,32,48,.025);}
+.data-table .mono{font-family:'JetBrains Mono',monospace;font-size:11px;}
+
+/* Numbered steps */
+.numbered-list{display:flex;flex-direction:column;gap:2px;}
+.numbered-item{display:flex;align-items:flex-start;gap:8px;}
+.num-bullet{width:26px;height:26px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:13px;color:#1A1F2E;margin-top:1px;}
+.num-text{font-family:'Inter',sans-serif;font-weight:500;font-size:11.5px;color:var(--text);line-height:1.35;}
+.num-text strong{font-weight:700;}
+
+/* Do / Don't cards */
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.compare-card{padding:5px 14px;}
+.compare-card h4{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:15px;color:var(--text);margin:0 0 4px;text-transform:uppercase;letter-spacing:.04em;}
+.compare-card h4 .tag{font-size:9px;padding:2px 6px;border-radius:4px;margin-left:6px;font-family:'JetBrains Mono',monospace;font-weight:500;letter-spacing:.06em;}
+.compare-card h4 .tag.good{background:rgba(39,174,96,.15);color:var(--emerald);}
+.compare-card h4 .tag.bad{background:rgba(224,92,92,.15);color:var(--coral);}
+.compare-card ul{list-style:none;padding:0;margin:0;}
+.compare-card li{font-size:11.5px;line-height:1.35;padding:2px 0;display:flex;gap:6px;align-items:flex-start;}
+.compare-card li::before{content:"";width:5px;height:5px;border-radius:50%;margin-top:5px;flex-shrink:0;}
+.compare-card.do li::before{background:var(--emerald);}
+.compare-card.dont li::before{background:var(--coral);}
+
+/* Safety callout */
+.safety-card{padding:10px 14px;background:rgba(224,92,92,.06);border-radius:12px;}
+.safety-text{font-family:'Inter',sans-serif;font-weight:500;font-size:11.5px;color:var(--text);line-height:1.45;}
+.safety-text strong{font-weight:700;color:var(--coral);}
+
+/* Footer */
+.footer-panel{padding:8px 18px;text-align:center;border-radius:10px;}
+.footer-disclaimer{font-family:'Inter',sans-serif;font-weight:400;font-size:9px;color:var(--muted);line-height:1.4;margin-bottom:3px;}
+.footer-title{font-family:'Barlow',sans-serif;font-weight:600;font-size:11px;color:var(--text);margin-bottom:2px;}
+.footer-brand{font-family:'JetBrains Mono',monospace;font-size:8.5px;color:var(--muted);}
+
+@media print {
+  @page{size:9.375in 12.5in;margin:0;}
+  html,body{background:#1A1F2E !important;-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
+  *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
+  .stage{position:static;display:block;overflow:visible;}
+  .poster-wrap{transform:none !important;width:auto !important;height:auto !important;}
+  .poster{box-shadow:none !important;width:900px !important;height:1200px !important;overflow:hidden !important;}
+  .glass,.safety-card{backdrop-filter:none !important;-webkit-backdrop-filter:none !important;padding:10px 14px;border-radius:12px;background:rgba(224,92,92,.06);}
+  .tweaks{display:none !important;}
+}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="poster-wrap" id="posterWrap">
+<div class="poster" id="poster">
+  <span class="tack tl"></span><span class="tack tr"></span><span class="tack bl"></span><span class="tack br"></span>
+
+  <!-- ===== HEADER ===== -->
+  <div class="poster-header">
+    <div class="header-row">
+      <div class="header-left">
+        <div class="eyebrow">Plating Posters &middot; Serie Zinc-N&iacute;quel &Aacute;cido &middot; Paso 02</div>
+        <div class="headline">ACTIVACI&Oacute;N<br><em>&Aacute;CIDA</em></div>
+        <div class="subhead">Elimine el &Oacute;xido &mdash; Exponga el Metal Base para el Recubrimiento</div>
+        <div class="tagline">30 segundos en HCl al 5% disuelve la capa de &oacute;xido sin atacar el metal base. Si la activaci&oacute;n es insuficiente, el &oacute;xido permanece; si es excesiva, se ataca el sustrato y se carga el &aacute;cido con hierro disuelto.</div>
+      </div>
+      <div class="logo-card">
+        <div class="logo-mark"><span>PP</span></div>
+        <div class="logo-word"><span class="a">Plating</span> <span class="b">Posters</span></div>
+        <div class="logo-url">www.platingposters.com</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== BODY ===== -->
+  <div class="poster-body">
+
+    <!-- 30-SEC RULE CARD -->
+    <div class="glass key-card">
+      <div class="key-num">30 seg</div>
+      <div class="key-body">
+        <div class="key-label">Tiempo M&aacute;ximo de Activaci&oacute;n &mdash; Acero al Carbono</div>
+        <div class="key-text">El HCl al 5% disuelve la capa de &oacute;xido sin atacar el metal base &mdash; pero solo dentro de la ventana de tiempo. La sobreactivaci&oacute;n ataca el sustrato, rugosiza la superficie y carga el &aacute;cido con hierro disuelto que se arrastra al ba&ntilde;o de Zn-Ni. La activaci&oacute;n &aacute;cida remueve la pel&iacute;cula de &oacute;xido pasivo para que el zinc-n&iacute;quel se adhiera directamente al metal base. Esto debe hacerse inmediatamente antes del recubrimiento.</div>
+      </div>
+    </div>
+
+    <!-- KEY PROCEDURES + GRAPHIC -->
+    <div class="glass" style="display:flex;gap:16px;align-items:flex-start;padding:12px 16px;">
+      <div style="flex:1;min-width:0;">
+        <div class="section-title">Procedimientos Clave</div>
+        <div class="numbered-list">
+          <div class="numbered-item"><div class="num-bullet">1</div><div class="num-text"><strong>Verifique el HCl a 50 g/L (5% v/v)</strong> por titulaci&oacute;n antes de cada turno.</div></div>
+          <div class="numbered-item"><div class="num-bullet">2</div><div class="num-text"><strong>Confirme la temperatura del tanque a 18&ndash;30&deg;C</strong> &mdash; NUNCA caliente este tanque.</div></div>
+          <div class="numbered-item"><div class="num-bullet">3</div><div class="num-text"><strong>Sumerja acero dulce 15&ndash;45 s,</strong> acero de alta resistencia 10&ndash;20 s m&aacute;x.</div></div>
+          <div class="numbered-item"><div class="num-bullet">4</div><div class="num-text"><strong>Observe el burbujeo fino y uniforme</strong> &mdash; eso indica que el &oacute;xido se est&aacute; disolviendo.</div></div>
+          <div class="numbered-item"><div class="num-bullet">5</div><div class="num-text"><strong>Retire inmediatamente;</strong> transfiera al enjuague en menos de 30 s &mdash; el Fe disuelto se arrastra al ba&ntilde;o de Zn-Ni.</div></div>
+          <div class="numbered-item"><div class="num-bullet">6</div><div class="num-text"><strong>Flujo de enjuague &gt;4 L/min</strong> &mdash; eliminaci&oacute;n completa del &aacute;cido y el Fe antes del recubrimiento.</div></div>
+          <div class="numbered-item"><div class="num-bullet">7</div><div class="num-text"><strong>Monitoree el Fe disuelto semanalmente</strong> &mdash; descarte a 50 g/L; mantenga &lt;30 g/L.</div></div>
+        </div>
+      </div>
+      <div style="flex-shrink:0;display:flex;align-items:center;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 200" width="300" height="250">
+          <rect x="0" y="0" width="240" height="200" rx="12" fill="rgba(255,255,255,.15)" stroke="rgba(232,160,32,0.3)" stroke-width="1"/>
+          <text x="60" y="20" font-family="Arial, sans-serif" font-size="10" fill="#E8A020" text-anchor="middle" font-weight="bold">ANTES</text>
+          <text x="180" y="20" font-family="Arial, sans-serif" font-size="10" fill="#2EC4B6" text-anchor="middle" font-weight="bold">DESPU&#xC9;S</text>
+          <line x1="120" y1="25" x2="120" y2="185" stroke="#F0EDE8" stroke-width="0.5" stroke-dasharray="3,3" opacity="0.4"/>
+          <polygon points="125,100 135,95 135,97 150,97 150,103 135,103 135,105" fill="#E8A020" opacity="0.8"/>
+          <rect x="15" y="130" width="90" height="40" rx="2" fill="#8A8A9A"/>
+          <text x="60" y="155" font-family="Arial, sans-serif" font-size="9" fill="#1a1a2e" text-anchor="middle" font-weight="bold">ACERO</text>
+          <path d="M15,130 Q25,125 35,128 Q45,124 55,127 Q65,123 75,126 Q85,122 95,125 L105,125 L105,130 L15,130 Z" fill="#3D2B1F"/>
+          <path d="M15,125 Q30,121 45,124 Q60,119 75,122 Q90,118 105,121 L105,125 L15,130 Z" fill="#5C3D2E" opacity="0.7"/>
+          <text x="60" y="120" font-family="Arial, sans-serif" font-size="8" fill="#E05C5C" text-anchor="middle">Capa de &#xD3;xido</text>
+          <ellipse cx="40" cy="80" rx="4" ry="6" fill="#E05C5C" opacity="0.7"/>
+          <ellipse cx="70" cy="70" rx="3" ry="5" fill="#E05C5C" opacity="0.6"/>
+          <ellipse cx="55" cy="90" rx="3" ry="5" fill="#E05C5C" opacity="0.5"/>
+          <text x="60" y="60" font-family="Arial, sans-serif" font-size="8" fill="#E05C5C" text-anchor="middle">5% HCl</text>
+          <rect x="135" y="130" width="90" height="40" rx="2" fill="#B0B0C0"/>
+          <line x1="145" y1="135" x2="155" y2="135" stroke="#D0D0E0" stroke-width="0.5" opacity="0.6"/>
+          <line x1="160" y1="142" x2="175" y2="142" stroke="#D0D0E0" stroke-width="0.5" opacity="0.6"/>
+          <line x1="150" y1="150" x2="168" y2="150" stroke="#D0D0E0" stroke-width="0.5" opacity="0.6"/>
+          <line x1="180" y1="138" x2="195" y2="138" stroke="#D0D0E0" stroke-width="0.5" opacity="0.6"/>
+          <text x="180" y="155" font-family="Arial, sans-serif" font-size="9" fill="#1a1a2e" text-anchor="middle" font-weight="bold">METAL BASE</text>
+          <line x1="135" y1="130" x2="225" y2="130" stroke="#2EC4B6" stroke-width="1.5"/>
+          <circle cx="155" cy="115" r="3" fill="none" stroke="#2EC4B6" stroke-width="0.8" opacity="0.8"/>
+          <circle cx="170" cy="105" r="2.5" fill="none" stroke="#2EC4B6" stroke-width="0.8" opacity="0.6"/>
+          <circle cx="185" cy="95" r="2" fill="none" stroke="#2EC4B6" stroke-width="0.8" opacity="0.7"/>
+          <circle cx="165" cy="85" r="3.5" fill="none" stroke="#2EC4B6" stroke-width="0.8" opacity="0.5"/>
+          <circle cx="195" cy="80" r="2" fill="none" stroke="#2EC4B6" stroke-width="0.8" opacity="0.6"/>
+          <circle cx="150" cy="95" r="2" fill="none" stroke="#2EC4B6" stroke-width="0.8" opacity="0.5"/>
+          <circle cx="200" cy="108" r="2.5" fill="none" stroke="#2EC4B6" stroke-width="0.8" opacity="0.7"/>
+          <text x="180" y="72" font-family="Arial, sans-serif" font-size="8" fill="#2EC4B6" text-anchor="middle">Burbujas H&#x2082;</text>
+          <text x="120" y="195" font-family="Arial, sans-serif" font-size="9" fill="#F0EDE8" text-anchor="middle" opacity="0.8">&#xD3;xido eliminado en &#x2264;30 seg</text>
+        </svg>
+      </div>
+    </div>
+
+    <!-- PARAMETER TABLE -->
+    <div>
+      <div class="section-title">Par&aacute;metros de Operaci&oacute;n</div>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table">
+          <thead><tr><th>Par&aacute;metro</th><th>Rango</th><th>Notas</th></tr></thead>
+          <tbody>
+            <tr><td>Concentraci&oacute;n de HCl</td><td class="mono">30&ndash;75 g/L</td><td>Est&aacute;ndar para la mayor&iacute;a de sustratos de acero</td></tr>
+            <tr><td>Temperatura</td><td class="mono">18&ndash;30&deg;C (ambiente)</td><td>Nunca caliente &mdash; acelera el ataque al metal base</td></tr>
+            <tr><td>Tiempo (acero dulce)</td><td class="mono">15&ndash;45 s</td><td>Visual: burbujeo fino y uniforme</td></tr>
+            <tr><td>Tiempo (alta resistencia)</td><td class="mono">10&ndash;20 s</td><td>Minimice la absorci&oacute;n de hidr&oacute;geno</td></tr>
+            <tr><td>Fe disuelto</td><td class="mono">&lt;30 g/L &oacute;ptimo</td><td>Descarte a 50 g/L &mdash; el Fe contamina el ba&ntilde;o de Zn-Ni</td></tr>
+            <tr><td>Inhibidor</td><td class="mono">Opcional</td><td>Recomendado para sustratos &gt;40 HRC</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- DO / DON'T -->
+    <div class="compare-grid">
+      <div class="glass compare-card do">
+        <h4>Correcto <span class="tag good">mejor</span></h4>
+        <ul>
+          <li>Use un temporizador en cada inmersi&oacute;n</li>
+          <li>Verifique el Fe disuelto semanalmente por titulaci&oacute;n</li>
+          <li>Asegure un enjuague con flujo continuo despu&eacute;s de la activaci&oacute;n</li>
+          <li>Use inhibidor para acero de alta resistencia</li>
+        
+          <li>Transferir al recubrimiento dentro de 30 segundos de la activaci&oacute;n</li>
+        </ul>
+      </div>
+      <div class="glass compare-card dont">
+        <h4>Incorrecto <span class="tag bad">evite</span></h4>
+        <ul>
+          <li>Calentar el tanque de &aacute;cido &mdash; jam&aacute;s</li>
+          <li>Reciclar el &aacute;cido indefinidamente &mdash; el Fe arruina el recubrimiento</li>
+          <li>Permitir &gt;30 s de exposici&oacute;n al aire antes del enjuague</li>
+          <li>Omitir el temporizador &mdash; la sobreactivaci&oacute;n causa ataque qu&iacute;mico</li>
+        
+          <li>Dejar piezas activadas al aire &mdash; la reoxidaci&oacute;n comienza inmediatamente</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SAFETY -->
+    <div class="glass safety-card">
+      <div class="section-title coral">&#9888; Seguridad &mdash; Vapores &Aacute;cidos + Hidr&oacute;geno</div>
+      <div class="safety-text"><strong>Los vapores de HCl son corrosivos</strong> &mdash; PEL 5 ppm techo (OSHA). Se requiere ventilaci&oacute;n local por extracci&oacute;n en todo momento. <strong>Se genera gas hidr&oacute;geno</strong> durante la disoluci&oacute;n &mdash; explosivo al 4&ndash;75% en aire; ninguna fuente de ignici&oacute;n cerca del tanque. EPP: lentes antisalpicaduras para &aacute;cido, careta facial, guantes resistentes a &aacute;cidos, mandil. <strong>Regadera de emergencia y lavaojos a menos de 10 s de distancia.</strong> El &aacute;cido clorh&iacute;drico produce vapores corrosivos. Asegure ventilaci&oacute;n adecuada del tanque. Use guantes resistentes a &aacute;cido y lentes antisalpicaduras en todo momento cerca del tanque de &aacute;cido.</div>
+    </div>
+
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <div class="glass footer-panel poster-footer">
+    <div class="footer-disclaimer">Solo como referencia para el operador. Siga los procedimientos de su planta. Reporte cualquier desviaci&oacute;n del proceso a su supervisor.</div>
+    <div class="footer-title">Activaci&oacute;n &Aacute;cida &mdash; Serie Zinc-N&iacute;quel &Aacute;cido</div>
+    <div class="footer-brand">Plating Posters &middot; Referencia de Piso de Producci&oacute;n &middot; PP-ZnNi-A-02-SF / v1.0 / 2026</div>
+  </div>
+
+</div>
+</div>
+</div>
+
+<div class="tweaks" style="position:fixed;bottom:16px;right:16px;z-index:100;background:rgba(13,16,32,.92);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:12px 16px;display:flex;flex-direction:column;gap:8px;font-family:'Inter',sans-serif;font-size:12px;color:#F0EDE8;">
+  <div style="display:flex;gap:8px;align-items:center;">
+    <span style="color:rgba(240,237,232,.5);">Edici&oacute;n</span>
+    <button id="btnDark" onclick="setEdition('')" style="padding:3px 10px;border-radius:4px;border:1px solid #E8A020;background:#E8A020;color:#1A1F2E;cursor:pointer;font-size:11px;">Oscuro</button>
+    <button id="btnLight" onclick="setEdition('light')" style="padding:3px 10px;border-radius:4px;border:1px solid rgba(255,255,255,.2);background:transparent;color:#F0EDE8;cursor:pointer;font-size:11px;">Claro</button>
+  </div>
+  <button onclick="window.print()" style="padding:4px 12px;border-radius:4px;border:1px solid rgba(255,255,255,.2);background:transparent;color:#F0EDE8;cursor:pointer;font-size:11px;">Imprimir / PDF</button>
+</div>
+
+<script>
+const posterWrap=document.getElementById('posterWrap');
+const poster=document.getElementById('poster');
+function scalePoster(){const s=Math.min((window.innerWidth-24)/900,(window.innerHeight-24)/1200);posterWrap.style.transform='scale('+s+')';posterWrap.style.transformOrigin='top center';posterWrap.style.width='900px';posterWrap.style.height=(1200*s)+'px';}
+function setEdition(e){if(e)poster.dataset.edition=e;else delete poster.dataset.edition;document.getElementById('btnDark').style.background=e?'transparent':'#E8A020';document.getElementById('btnDark').style.color=e?'#F0EDE8':'#1A1F2E';document.getElementById('btnDark').style.borderColor=e?'rgba(255,255,255,.2)':'#E8A020';document.getElementById('btnLight').style.background=e?'#E8A020':'transparent';document.getElementById('btnLight').style.color=e?'#1A1F2E':'#F0EDE8';document.getElementById('btnLight').style.borderColor=e?'#E8A020':'rgba(255,255,255,.2)';}
+scalePoster();window.addEventListener('resize',scalePoster);
+</script>
+</body>
+</html>

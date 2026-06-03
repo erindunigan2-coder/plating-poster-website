@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anodizado &mdash; Paso 05 Enjuague Post-Anodizado &mdash; T&eacute;cnico | Plating Posters Inc</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Barlow:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#1A1F2E;--navy:#0D1020;--text:#F0EDE8;--muted:rgba(240,237,232,.62);--faint:rgba(240,237,232,.38);--amber:#E8A020;--teal:#2EC4B6;--emerald:#27AE60;--coral:#E05C5C;--slate:#3A4055;--callout:#1E2435;--altrow:#252B3D;--glass-bg:rgba(30,36,53,.55);--glass-border:rgba(255,255,255,.12);--glass-shadow:inset 0 1px 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(0,0,0,.2),0 4px 12px rgba(0,0,0,.25);}
+.poster[data-edition="light"]{--bg:#F5F4F0;--navy:#DDD8CE;--text:#1B2030;--muted:rgba(27,32,48,.66);--faint:rgba(27,32,48,.42);--amber:#B8770D;--teal:#1A8C82;--emerald:#1E8449;--coral:#B7322F;--slate:#C5C0B5;--callout:#ECEAE1;--altrow:#E4E1D6;--glass-bg:rgba(255,253,247,.66);--glass-border:rgba(27,32,48,.10);--glass-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 4px 12px rgba(27,32,48,.08);}
+html,body{margin:0;padding:0;background:#0a0c14;}.stage{width:100vw;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;overflow:visible;padding:12px 0;box-sizing:border-box;}.poster-wrap{transform-origin:center center;}.poster{width:1200px;height:1800px;position:relative;overflow:hidden;background:radial-gradient(1200px 800px at 15% 8%,rgba(46,196,182,.14),transparent 60%),radial-gradient(1000px 700px at 90% 25%,rgba(232,160,32,.12),transparent 55%),radial-gradient(900px 900px at 50% 80%,rgba(224,92,92,.10),transparent 60%),var(--bg);font-family:'Inter',sans-serif;color:var(--text);display:flex;flex-direction:column;padding:26px 28px;box-sizing:border-box;}.poster::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:50px 50px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);pointer-events:none;z-index:0;}.poster>*{position:relative;z-index:1;}
+.glass{background-color:var(--glass-bg);background-image:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));border:1px solid var(--glass-border);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);box-shadow:var(--glass-shadow);border-radius:12px;}
+.tack{position:absolute;width:24px;height:24px;border-radius:50%;border:1.5px solid rgba(232,160,32,.28);z-index:2;pointer-events:none;}.tack::before,.tack::after{content:"";position:absolute;background:rgba(232,160,32,.28);}.tack::before{left:50%;top:-3px;bottom:-3px;width:1px;transform:translateX(-50%);}.tack::after{top:50%;left:-3px;right:-3px;height:1px;transform:translateY(-50%);}.tack.tl{top:12px;left:12px;}.tack.tr{top:12px;right:12px;}.tack.bl{bottom:12px;left:12px;}.tack.br{bottom:12px;right:12px;}
+.poster-header{flex-shrink:0;}.poster-body{flex:1;overflow:visible;display:flex;flex-direction:column;gap:6px;justify-content:space-between;}.poster-footer{flex-shrink:0;margin-top:2px;}
+.header-band{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:4px;}.header-left{flex:1;min-width:0;}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--amber);letter-spacing:.16em;text-transform:uppercase;margin-bottom:4px;display:flex;align-items:center;gap:12px;}.eyebrow::before{content:"";display:inline-block;width:30px;height:3px;background:var(--amber);}
+.headline{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:72px;color:var(--text);line-height:.92;margin:4px 0;letter-spacing:-.01em;text-transform:uppercase;}.headline em{font-style:normal;color:var(--amber);}
+.subhead{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;color:var(--teal);margin:0 0 3px;letter-spacing:.02em;text-transform:uppercase;}
+.tagline{font-family:'Inter',sans-serif;font-style:italic;font-size:13px;color:var(--muted);line-height:1.45;max-width:700px;margin:0;}
+.logo-card{flex-shrink:0;padding:12px 10px;display:flex;flex-direction:column;align-items:center;gap:8px;align-self:flex-start;}.logo-tile{width:68px;height:68px;border-radius:12px;background:linear-gradient(135deg,#E8A020,#2EC4B6);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -2px 4px rgba(0,0,0,.15),0 4px 14px rgba(0,0,0,.35);}.logo-tile span{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:26px;color:#1A1F2E;letter-spacing:.02em;line-height:1;}.logo-word{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;letter-spacing:.04em;text-transform:uppercase;line-height:1;text-align:center;white-space:nowrap;}.logo-word .a{color:var(--text);}.logo-word .b{color:var(--amber);}.logo-inc{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.05em;text-transform:lowercase;color:var(--muted);margin-top:-2px;}
+.section-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:24px;letter-spacing:.08em;text-transform:uppercase;color:var(--text);margin:0 0 3px;display:flex;align-items:center;gap:8px;}.section-title::before{content:"";width:6px;height:6px;background:var(--amber);border-radius:50%;}.section-title .sub{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;color:var(--muted);margin-left:auto;font-weight:500;}
+.rule-card{display:flex;align-items:center;gap:12px;padding:10px 18px;background:rgba(232,160,32,.07);}
+.rule-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:52px;color:var(--amber);line-height:1;letter-spacing:-.02em;white-space:nowrap;}
+.rule-body{flex:1;}.rule-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:17px;color:var(--amber);letter-spacing:.08em;text-transform:uppercase;}.rule-text{font-family:'Inter',sans-serif;font-size:12px;color:var(--muted);line-height:1.35;margin-top:3px;}
+.data-table{width:100%;border-collapse:collapse;}.data-table th{font-family:'Barlow',sans-serif;font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);padding:4px 8px;text-align:left;background:rgba(13,16,32,.35);border-bottom:1px solid var(--glass-border);}.poster[data-edition="light"] .data-table th{background:rgba(27,32,48,.06);}.data-table td{padding:3px 8px;color:var(--text);line-height:1.3;border-bottom:1px solid rgba(255,255,255,.05);font-family:'Inter',sans-serif;font-size:11.5px;}.data-table tr:last-child td{border-bottom:none;}.data-table tr:nth-child(even) td{background:rgba(255,255,255,.02);}.poster[data-edition="light"] .data-table tr:nth-child(even) td{background:rgba(27,32,48,.025);}.data-table .mono{font-family:'JetBrains Mono',monospace;font-size:13px;}
+.numbered-list{display:flex;flex-direction:column;gap:4px;}.numbered-item{display:flex;align-items:flex-start;gap:10px;}.num-bullet{width:24px;height:24px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:13px;color:#1A1F2E;margin-top:1px;}.num-text{font-family:'Inter',sans-serif;font-weight:500;font-size:11.5px;color:var(--text);line-height:1.4;}.num-text strong{font-weight:700;}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}.compare-card{padding:8px 14px;}.compare-card h4{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:21px;color:var(--text);margin:0 0 6px;text-transform:uppercase;letter-spacing:.04em;}.compare-card h4 .tag{font-size:11px;padding:2px 8px;border-radius:4px;margin-left:8px;font-family:'JetBrains Mono',monospace;font-weight:500;letter-spacing:.06em;}.compare-card h4 .tag.good{background:rgba(39,174,96,.15);color:var(--emerald);}.compare-card h4 .tag.bad{background:rgba(224,92,92,.15);color:var(--coral);}.compare-card ul{list-style:none;padding:0;margin:0;}.compare-card li{font-size:14.5px;line-height:1.5;padding:3px 0;display:flex;gap:8px;align-items:flex-start;}.compare-card li::before{content:"";width:5px;height:5px;border-radius:50%;margin-top:7px;flex-shrink:0;}.compare-card.do li::before{background:var(--emerald);}.compare-card.dont li::before{background:var(--coral);}
+.trouble-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}.trouble-card{padding:6px 14px;border-radius:10px;border-left:3px solid var(--coral);display:flex;flex-direction:column;gap:4px;}.trouble-card h5{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;color:var(--coral);margin:0;text-transform:uppercase;letter-spacing:.06em;line-height:1.15;}.trouble-card p{font-size:11.5px;color:var(--muted);margin:0;line-height:1.5;}
+.insight-card{padding:20px 24px;background:rgba(46,196,182,.06);border:1px solid rgba(46,196,182,.18);border-radius:12px;}.insight-head{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px;color:var(--teal);letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px;}.insight-body{font-size:14.5px;color:var(--text);line-height:1.5;}.insight-body strong{font-weight:700;color:var(--teal);}
+.safety-card{padding:18px 24px;background:rgba(224,92,92,.08);border:1px solid rgba(224,92,92,.25);border-radius:12px;}.safety-head{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px;color:var(--coral);letter-spacing:.06em;text-transform:uppercase;margin-bottom:2px;}.safety-body{font-size:14px;color:var(--text);line-height:1.55;}.safety-body strong{font-weight:700;color:var(--coral);}
+.bottom-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:10px;}
+.footer{padding:10px 20px;background-color:rgba(13,16,32,.85);background-image:linear-gradient(180deg,rgba(255,255,255,.04),rgba(0,0,0,0));border:1px solid rgba(255,255,255,.10);border-radius:8px;text-align:center;display:flex;flex-direction:column;gap:2px;}.poster[data-edition="light"] .footer{background-color:rgba(221,216,206,.95);border-color:rgba(27,32,48,.10);}.footer-disclaimer{font-family:'Inter',sans-serif;font-size:9px;line-height:1.35;color:var(--faint);margin:0 auto;max-width:900px;}.footer-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:13px;color:var(--text);letter-spacing:.04em;text-transform:uppercase;margin:0;}.footer-brand{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;}
+.tweaks{position:fixed;bottom:16px;right:16px;z-index:100;background:rgba(13,16,32,.92);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:10px 14px;display:flex;flex-direction:column;gap:8px;font-family:'Inter',sans-serif;font-size:12px;color:#F0EDE8;}
+@media print{@page{size:12.5in 18.75in;margin:0;}html,body{background:#1A1F2E !important;-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}*{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}.stage{position:static;padding:0;display:block;overflow:visible;}.poster-wrap{transform:none !important;width:auto !important;height:auto !important;}.poster{box-shadow:none !important;width:1200px !important;height:1800px !important;overflow:hidden !important;}.glass,.trouble-card,.safety-card,.insight-card{backdrop-filter:none !important;-webkit-backdrop-filter:none !important;}.tweaks{display:none !important;}}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="poster-wrap" id="posterWrap">
+<div class="poster" id="poster">
+  <span class="tack tl" aria-hidden="true"></span><span class="tack tr" aria-hidden="true"></span>
+  <span class="tack bl" aria-hidden="true"></span><span class="tack br" aria-hidden="true"></span>
+
+  <div class="poster-header">
+    <header class="header-band">
+      <div class="header-left">
+        <div class="eyebrow"><span>Plating Posters &nbsp;&middot;&nbsp; Serie de Anodizado &nbsp;&middot;&nbsp; Etapa 5 de 8</span></div>
+        <h1 class="headline">ENJUAGUE<br><em>POST-ANODIZADO</em></h1>
+        <h2 class="subhead">Elimine el &Aacute;cido Antes del Tinte o Sellado &mdash; Proteja los Poros</h2>
+        <p class="tagline">El arrastre de &aacute;cido al tanque de tinte mata el color. Al tanque de sellado, impide la hidrataci&oacute;n. Enjuague a fondo.</p>
+      </div>
+      <aside class="glass logo-card">
+        <div class="logo-tile"><span>PP</span></div>
+        <div class="logo-word"><span class="a">Plating</span> <span class="b">Posters</span></div>
+        <div class="logo-inc">www.platingposters.com</div>
+      </aside>
+    </header>
+  </div>
+
+  <div class="poster-body">
+
+    <div class="glass rule-card">
+      <div class="rule-num">&lt;100</div>
+      <div class="rule-body">
+        <div class="rule-label">&micro;S/cm &mdash; El Enjuague M&aacute;s Estricto de la L&iacute;nea</div>
+        <div class="rule-text">Este es el enjuague m&aacute;s cr&iacute;tico en el proceso de anodizado. El &aacute;cido sulf&uacute;rico residual en los poros inhibir&aacute; la absorci&oacute;n de tinte e interferir&aacute; con el sellado. Se recomienda enf&aacute;ticamente agua DI. Enjuague doble o triple en cascada para mejores resultados.</div>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="section-title">Procedimientos Clave <span class="sub">6 pasos</span></h3>
+      <div class="numbered-list">
+        <div class="numbered-item"><div class="num-bullet">1</div><div class="num-text"><strong>Transfiera del anodizado inmediatamente.</strong> No deje que el &oacute;xido se seque &mdash; el &aacute;cido seco en los poros causa manchas.</div></div>
+        <div class="numbered-item"><div class="num-bullet">2</div><div class="num-text"><strong>Sumerja completamente y agite vigorosamente</strong> &mdash; 10+ movimientos verticales. El &aacute;cido se esconde en agujeros ciegos y poros.</div></div>
+        <div class="numbered-item"><div class="num-bullet">3</div><div class="num-text"><strong>Enjuague doble o triple.</strong> La primera etapa captura el &aacute;cido grueso; la etapa final debe ser de calidad cercana a DI.</div></div>
+        <div class="numbered-item"><div class="num-bullet">4</div><div class="num-text"><strong>Verifique conductividad &lt;100 &micro;S/cm</strong> en la etapa final de enjuague. Esto es innegociable para trabajo de tinte.</div></div>
+        <div class="numbered-item"><div class="num-bullet">5</div><div class="num-text"><strong>Revise pH 5&ndash;7</strong> en el enjuague final. Por debajo de 4 = arrastre excesivo de &aacute;cido.</div></div>
+        <div class="numbered-item"><div class="num-bullet">6</div><div class="num-text"><strong>Transfiera al tinte o sellado inmediatamente.</strong> Los poros abiertos comienzan a hidratarse en el aire &mdash; la absorci&oacute;n de tinte disminuye con la demora.</div></div>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="section-title">Par&aacute;metros Operativos <span class="sub">Enjuague post-anodizado</span></h3>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table">
+          <thead><tr><th>Par&aacute;metro</th><th>Rango</th><th>Notas</th></tr></thead>
+          <tbody>
+            <tr><td>Temperatura</td><td class="mono">Ambiente (60&ndash;85&deg;F / 16&ndash;29&deg;C)</td><td>No caliente &mdash; el agua tibia puede iniciar el sellado prematuramente</td></tr>
+            <tr><td>Tiempo</td><td class="mono">30&ndash;60 seg por etapa</td><td>Cascada triple para trabajo de tinte</td></tr>
+            <tr><td>Fuente de Agua</td><td class="mono">Agua DI (etapa final)</td><td>Cr&iacute;tico para consistencia de color del tinte</td></tr>
+            <tr><td>Conductividad</td><td class="mono">&lt;100 &micro;S/cm (etapa final)</td><td>La m&aacute;s estricta de la l&iacute;nea</td></tr>
+            <tr><td>pH</td><td class="mono">5&ndash;7 (etapa final)</td><td>Por debajo de 4 = problema de arrastre de &aacute;cido</td></tr>
+            <tr><td>Tasa de Desborde</td><td class="mono">3&ndash;5 gal/min (DI final)</td><td>Se recomienda cascada a contracorriente</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="bottom-grid">
+      <div>
+        <div class="compare-grid">
+          <div class="glass compare-card do">
+            <h4>S&iacute; Haga <span class="tag good">buena</span></h4>
+            <ul>
+              <li>Use agua DI en la etapa final de enjuague</li>
+              <li>Opere cascada a contracorriente</li>
+              <li>Transfiera al tinte dentro de 5 min del enjuague</li>
+              <li>Monitoree conductividad cada 2 horas</li>
+            </ul>
+          </div>
+          <div class="glass compare-card dont">
+            <h4>No Haga <span class="tag bad">evitar</span></h4>
+            <ul>
+              <li>Usar agua tibia/caliente (cierre prematuro de poros)</li>
+              <li>Dejar piezas al aire despu&eacute;s de enjuagar</li>
+              <li>Omitir DI en la etapa final para trabajo de tinte</li>
+              <li>Ignorar lecturas de conductividad en aumento</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="insight-card">
+          <div class="insight-head">Por Qu&eacute; Este Enjuague Es Diferente</div>
+          <div class="insight-body">
+            <strong>Los poros abiertos son reactivos.</strong> La capa de &oacute;xido reci&eacute;n anodizada tiene millones de poros microsc&oacute;picos por pulgada cuadrada. Estos poros:<br><br>
+            &bull; <strong>Absorben tinte</strong> &mdash; pero solo si est&aacute;n limpios y libres de &aacute;cido<br>
+            &bull; <strong>Se hidratan durante el sellado</strong> &mdash; pero solo si se elimina el sulfato<br>
+            &bull; <strong>Comienzan a cerrarse en el aire</strong> &mdash; reduciendo la absorci&oacute;n de tinte con cada minuto de demora<br><br>
+            Este enjuague no se trata solo de eliminar el arrastre. Se trata de <strong>preservar la estructura porosa</strong> para los siguientes dos pasos.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DIAGRAMA + SOLUCION DE PROBLEMAS lado a lado -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+      <!-- CASCADA DE ENJUAGUE A CONTRACORRIENTE (izquierda) -->
+      <div class="glass" style="padding:8px 12px;display:flex;align-items:center;">
+        <svg viewBox="0 0 520 210" width="100%" xmlns="http://www.w3.org/2000/svg" style="display:block;">
+          <!-- Title -->
+          <text x="260" y="16" fill="#E8A020" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="12" letter-spacing=".08em" text-anchor="middle">CASCADA DE ENJUAGUE A CONTRACORRIENTE</text>
+          <!-- Tank 1 (dirtiest) -->
+          <rect x="20" y="34" width="140" height="50" rx="4" fill="rgba(224,92,92,.12)" stroke="rgba(224,92,92,.3)" stroke-width="1.5"/>
+          <text x="90" y="54" fill="#E05C5C" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="11" text-anchor="middle">ETAPA 1 (M&Aacute;S SUCIA)</text>
+          <text x="90" y="68" fill="rgba(240,237,232,.5)" font-family="JetBrains Mono,monospace" font-size="9" text-anchor="middle">500+ &micro;S/cm</text>
+          <text x="90" y="80" fill="rgba(240,237,232,.35)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle">&#x2192; AL DRENAJE</text>
+          <!-- Tank 2 (middle) -->
+          <rect x="190" y="34" width="140" height="50" rx="4" fill="rgba(232,160,32,.10)" stroke="rgba(232,160,32,.25)" stroke-width="1.5"/>
+          <text x="260" y="54" fill="#E8A020" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="11" text-anchor="middle">ETAPA 2 (INTERMEDIA)</text>
+          <text x="260" y="68" fill="rgba(240,237,232,.5)" font-family="JetBrains Mono,monospace" font-size="9" text-anchor="middle">~200 &micro;S/cm</text>
+          <!-- Tank 3 (cleanest) -->
+          <rect x="360" y="34" width="140" height="50" rx="4" fill="rgba(46,196,182,.10)" stroke="rgba(46,196,182,.25)" stroke-width="1.5"/>
+          <text x="430" y="54" fill="#2EC4B6" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="11" text-anchor="middle">ETAPA 3 (M&Aacute;S LIMPIA)</text>
+          <text x="430" y="68" fill="rgba(240,237,232,.5)" font-family="JetBrains Mono,monospace" font-size="9" text-anchor="middle">&lt;100 &micro;S/cm</text>
+          <!-- DI Water inlet arrow -->
+          <line x1="510" y1="59" x2="505" y2="59" stroke="#2EC4B6" stroke-width="2" opacity=".7"/>
+          <polygon points="505,59 509,55 509,63" fill="#2EC4B6" opacity=".7"/>
+          <text x="512" y="56" fill="#2EC4B6" font-family="JetBrains Mono,monospace" font-size="8" font-weight="500">DI</text>
+          <!-- Water overflow arrows (right to left) -->
+          <line x1="360" y1="44" x2="335" y2="44" stroke="#2EC4B6" stroke-width="1.5" stroke-dasharray="5,3" opacity=".5"/>
+          <polygon points="335,44 340,41 340,47" fill="#2EC4B6" opacity=".5"/>
+          <line x1="190" y1="44" x2="165" y2="44" stroke="#2EC4B6" stroke-width="1.5" stroke-dasharray="5,3" opacity=".5"/>
+          <polygon points="165,44 170,41 170,47" fill="#2EC4B6" opacity=".5"/>
+          <!-- Part movement arrows (left to right) -->
+          <line x1="165" y1="72" x2="185" y2="72" stroke="#E8A020" stroke-width="1.5" opacity=".5"/>
+          <polygon points="185,72 180,69 180,75" fill="#E8A020" opacity=".5"/>
+          <line x1="335" y1="72" x2="355" y2="72" stroke="#E8A020" stroke-width="1.5" opacity=".5"/>
+          <polygon points="355,72 350,69 350,75" fill="#E8A020" opacity=".5"/>
+          <!-- Legend -->
+          <line x1="100" y1="102" x2="130" y2="102" stroke="#2EC4B6" stroke-width="1.5" stroke-dasharray="5,3" opacity=".6"/>
+          <text x="136" y="105" fill="rgba(240,237,232,.5)" font-family="Inter,sans-serif" font-size="9">Flujo de agua (limpia &#x2192; sucia)</text>
+          <line x1="310" y1="102" x2="340" y2="102" stroke="#E8A020" stroke-width="1.5" opacity=".6"/>
+          <text x="346" y="105" fill="rgba(240,237,232,.5)" font-family="Inter,sans-serif" font-size="9">Movimiento de piezas (sucia &#x2192; limpia)</text>
+        </svg>
+      </div>
+
+      <!-- Solucion de Problemas (derecha) -->
+      <div>
+        <h3 class="section-title">Soluci&oacute;n de Problemas</h3>
+        <div class="trouble-grid">
+          <div class="glass trouble-card"><h5>Color de Tinte Desigual</h5><p>Residuo de &aacute;cido bloqueando poros en algunas superficies. Mejore la agitaci&oacute;n del enjuague; agregue etapa de cascada; revise calidad del DI.</p></div>
+          <div class="glass trouble-card"><h5>Mala Calidad de Sellado</h5><p>Arrastre de sulfato interfiriendo con la hidrataci&oacute;n. Ajuste el objetivo de conductividad a &lt;50 &micro;S/cm.</p></div>
+          <div class="glass trouble-card"><h5>Neblina Blanca / Velo</h5><p>Minerales de agua dura deposit&aacute;ndose sobre el &oacute;xido. Cambie la etapa final a DI; revise el ablandador de agua.</p></div>
+          <div class="glass trouble-card"><h5>Decoloraci&oacute;n Despu&eacute;s del Sellado</h5><p>Poros parcialmente cerrados antes del tinte. Transfiera m&aacute;s r&aacute;pido; no use agua tibia de enjuague antes del paso de tinte.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="safety-card">
+      <div class="safety-head">&#9888; Seguridad &mdash; &Aacute;cido Residual</div>
+      <div class="safety-body"><strong>El agua de enjuague contiene H&sub2;SO&sub4; residual.</strong> Aunque diluida, el agua de enjuague de la primera etapa puede tener pH 2&ndash;3 &mdash; suficiente para causar irritaci&oacute;n cut&aacute;nea y da&ntilde;o ocular. Use guantes qu&iacute;micos al manipular piezas. <strong>Los pisos est&aacute;n mojados y resbalosos</strong> &mdash; se requiere calzado antideslizante. Mantenga la estaci&oacute;n lavaojos accesible.</div>
+    </div>
+
+  </div>
+
+  <footer class="footer poster-footer">
+    <p class="footer-disclaimer">Solo referencia t&eacute;cnica. Verifique todos los par&aacute;metros contra la TDS de su proveedor qu&iacute;mico, especificaciones del cliente y requisitos regulatorios aplicables antes del uso en producci&oacute;n. Consulte siempre a su proveedor qu&iacute;mico para los rangos operativos m&aacute;s actuales y las hojas de datos de seguridad.</p>
+    <p class="footer-title">Enjuague Post-Anodizado &mdash; Serie de Anodizado con &Aacute;cido Sulf&uacute;rico</p>
+    <span class="footer-brand">Plating Posters &middot; Serie de Referencia de Acabado de Metales &middot; PP-Anod-05-T / v1.0 / 2026</span>
+  </footer>
+</div>
+</div>
+</div>
+<div class="tweaks"><div style="display:flex;gap:8px;align-items:center;"><span style="color:rgba(240,237,232,.5);font-size:11px;letter-spacing:.06em;text-transform:uppercase;">Edici&oacute;n</span><button id="btnDark" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:#E8A020;color:#1A1F2E;border:1px solid #E8A020;" onclick="setEdition('')">Oscuro</button><button id="btnLight" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);" onclick="setEdition('light')">Claro</button></div><button onclick="window.print()" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);">Imprimir / PDF</button></div>
+<script>const posterWrap=document.getElementById('posterWrap');const poster=document.getElementById('poster');function scalePoster(){const sW=(window.innerWidth-24)/1200;const sH=(window.innerHeight-24)/1800;const s=Math.min(sW,sH);posterWrap.style.transform='scale('+s+')';posterWrap.style.transformOrigin='top center';posterWrap.style.width='1200px';posterWrap.style.height=(1800*s)+'px';}function setEdition(e){if(e)poster.dataset.edition=e;else delete poster.dataset.edition;document.getElementById('btnDark').style.background=e?'transparent':'#E8A020';document.getElementById('btnDark').style.color=e?'#F0EDE8':'#1A1F2E';document.getElementById('btnDark').style.borderColor=e?'rgba(255,255,255,.2)':'#E8A020';document.getElementById('btnLight').style.background=e?'#E8A020':'transparent';document.getElementById('btnLight').style.color=e?'#1A1F2E':'#F0EDE8';document.getElementById('btnLight').style.borderColor=e?'#E8A020':'rgba(255,255,255,.2)';}scalePoster();window.addEventListener('resize',scalePoster);</script>
+</body>
+</html>

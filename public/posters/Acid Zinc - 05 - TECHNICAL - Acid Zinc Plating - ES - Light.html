@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zinc &Aacute;cido Cloruro &mdash; Paso 05 Recubrimiento de Zinc &Aacute;cido &mdash; T&eacute;cnico | Plating Posters Inc</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Barlow:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#1A1F2E;--navy:#0D1020;--text:#F0EDE8;--muted:rgba(240,237,232,.62);--faint:rgba(240,237,232,.38);--amber:#E8A020;--teal:#2EC4B6;--emerald:#27AE60;--coral:#E05C5C;--slate:#3A4055;--callout:#1E2435;--altrow:#252B3D;--glass-bg:rgba(30,36,53,.55);--glass-border:rgba(255,255,255,.12);--glass-shadow:inset 0 1px 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(0,0,0,.2),0 4px 12px rgba(0,0,0,.25);}
+.poster[data-edition="light"]{--bg:#F5F4F0;--navy:#DDD8CE;--text:#1B2030;--muted:rgba(27,32,48,.66);--faint:rgba(27,32,48,.42);--amber:#B8770D;--teal:#1A8C82;--emerald:#1E8449;--coral:#B7322F;--slate:#C5C0B5;--callout:#ECEAE1;--altrow:#E4E1D6;--glass-bg:rgba(255,253,247,.66);--glass-border:rgba(27,32,48,.10);--glass-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 4px 12px rgba(27,32,48,.08);}
+html,body{margin:0;padding:0;background:#0a0c14;}
+.stage{width:100vw;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;overflow:visible;padding:12px 0;box-sizing:border-box;}
+.poster-wrap{transform-origin:center center;}
+.poster{width:1200px;height:1800px;position:relative;overflow:hidden;background:radial-gradient(1200px 800px at 15% 8%,rgba(46,196,182,.14),transparent 60%),radial-gradient(1000px 700px at 90% 25%,rgba(232,160,32,.12),transparent 55%),radial-gradient(900px 900px at 50% 80%,rgba(224,92,92,.10),transparent 60%),var(--bg);font-family:'Inter',sans-serif;color:var(--text);display:flex;flex-direction:column;padding:28px 32px;box-sizing:border-box;}
+.poster::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:50px 50px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);pointer-events:none;z-index:0;}
+.poster>*{position:relative;z-index:1;}
+.glass{background-color:var(--glass-bg);background-image:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));border:1px solid var(--glass-border);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);box-shadow:var(--glass-shadow);border-radius:12px;}
+.tack{position:absolute;width:24px;height:24px;border-radius:50%;border:1.5px solid rgba(232,160,32,.28);z-index:2;pointer-events:none;}.tack::before,.tack::after{content:"";position:absolute;background:rgba(232,160,32,.28);}.tack::before{left:50%;top:-3px;bottom:-3px;width:1px;transform:translateX(-50%);}.tack::after{top:50%;left:-3px;right:-3px;height:1px;transform:translateY(-50%);}.tack.tl{top:12px;left:12px;}.tack.tr{top:12px;right:12px;}.tack.bl{bottom:12px;left:12px;}.tack.br{bottom:12px;right:12px;}
+.poster-header{flex-shrink:0;}.poster-body{flex:1;overflow:hidden;display:flex;flex-direction:column;gap:6px;}.poster-footer{flex-shrink:0;margin-top:auto;}
+.header-band{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:2px;}.header-left{flex:1;min-width:0;}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--amber);letter-spacing:.16em;text-transform:uppercase;margin-bottom:3px;display:flex;align-items:center;gap:12px;}.eyebrow::before{content:"";display:inline-block;width:30px;height:3px;background:var(--amber);}
+.headline{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:68px;color:var(--text);line-height:.90;margin:2px 0;letter-spacing:-.01em;text-transform:uppercase;}.headline em{font-style:normal;color:var(--amber);}
+.subhead{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:20px;color:var(--teal);margin:0 0 2px;letter-spacing:.02em;text-transform:uppercase;}
+.tagline{font-family:'Inter',sans-serif;font-style:italic;font-size:11.5px;color:var(--muted);line-height:1.35;max-width:700px;margin:0;}
+.logo-card{flex-shrink:0;padding:10px 10px;display:flex;flex-direction:column;align-items:center;gap:6px;align-self:flex-start;}.logo-tile{width:60px;height:60px;border-radius:10px;background:linear-gradient(135deg,#E8A020,#2EC4B6);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -2px 4px rgba(0,0,0,.15),0 4px 14px rgba(0,0,0,.35);}.logo-tile span{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:24px;color:#1A1F2E;letter-spacing:.02em;line-height:1;}.logo-word{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;letter-spacing:.04em;text-transform:uppercase;line-height:1;text-align:center;white-space:nowrap;}.logo-word .a{color:var(--text);}.logo-word .b{color:var(--amber);}.logo-inc{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.05em;text-transform:lowercase;color:var(--muted);margin-top:-2px;}
+.section-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:24px;letter-spacing:.08em;text-transform:uppercase;color:var(--text);margin:0 0 4px;display:flex;align-items:center;gap:8px;}.section-title::before{content:"";width:5px;height:5px;background:var(--amber);border-radius:50%;}.section-title .sub{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;color:var(--muted);margin-left:auto;font-weight:500;}
+.rule-card{display:flex;align-items:center;gap:16px;padding:12px 24px;background:rgba(232,160,32,.07);}
+.rule-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:52px;color:var(--amber);line-height:1;letter-spacing:-.02em;white-space:nowrap;}
+.rule-body{flex:1;}.rule-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;color:var(--amber);letter-spacing:.08em;text-transform:uppercase;}.rule-text{font-family:'Inter',sans-serif;font-size:12.5px;color:var(--muted);line-height:1.4;margin-top:2px;}
+.data-table{width:100%;border-collapse:collapse;}.data-table th{font-family:'Barlow',sans-serif;font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);padding:5px 8px;text-align:left;background:rgba(13,16,32,.35);border-bottom:1px solid var(--glass-border);}.poster[data-edition="light"] .data-table th{background:rgba(27,32,48,.06);}.data-table td{padding:4px 8px;color:var(--text);line-height:1.4;border-bottom:1px solid rgba(255,255,255,.05);font-family:'Inter',sans-serif;font-size:12px;}.data-table tr:last-child td{border-bottom:none;}.data-table tr:nth-child(even) td{background:rgba(255,255,255,.02);}.poster[data-edition="light"] .data-table tr:nth-child(even) td{background:rgba(27,32,48,.025);}.data-table .mono{font-family:'JetBrains Mono',monospace;font-size:11px;}
+.orient-strip{display:flex;justify-content:center;gap:0;padding:4px 0;}.orient-step{display:flex;flex-direction:column;align-items:center;gap:2px;padding:3px 11px;position:relative;}.orient-step .step-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:16px;color:var(--faint);line-height:1;}.orient-step .step-label{font-family:'JetBrains Mono',monospace;font-size:7px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);text-align:center;line-height:1.15;white-space:nowrap;}.orient-step.active .step-num{color:var(--amber);}.orient-step.active .step-label{color:var(--amber);}.orient-step.active::after{content:'';position:absolute;bottom:-1px;left:25%;right:25%;height:2px;background:var(--amber);border-radius:1px;}.orient-step+.orient-step::before{content:'';position:absolute;left:-2px;top:50%;width:4px;height:1px;background:var(--faint);}
+.trouble-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;}.trouble-card{padding:8px 10px;border-radius:8px;border-left:3px solid var(--coral);display:flex;flex-direction:column;gap:2px;}.trouble-card h5{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;color:var(--coral);margin:0;text-transform:uppercase;letter-spacing:.06em;line-height:1.1;}.trouble-card .tc-cause{font-size:11px;color:var(--muted);margin:0;line-height:1.35;}.trouble-card .tc-fix{font-size:11px;color:var(--emerald);margin:0;line-height:1.35;}
+.safety-card{padding:10px 18px;background:rgba(224,92,92,.08);border:1px solid rgba(224,92,92,.25);border-radius:10px;}.safety-head{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:16px;color:var(--coral);letter-spacing:.06em;text-transform:uppercase;margin-bottom:3px;}.safety-body{font-size:11.5px;color:var(--text);line-height:1.4;}.safety-body strong{font-weight:700;color:var(--coral);}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.three-col{display:grid;grid-template-columns:1.15fr 1fr 1fr;gap:8px;}
+.footer{padding:7px 20px;background-color:rgba(13,16,32,.85);background-image:linear-gradient(180deg,rgba(255,255,255,.04),rgba(0,0,0,0));border:1px solid rgba(255,255,255,.10);border-radius:8px;text-align:center;display:flex;flex-direction:column;gap:1px;}.poster[data-edition="light"] .footer{background-color:rgba(221,216,206,.95);border-color:rgba(27,32,48,.10);}.footer-disclaimer{font-family:'Inter',sans-serif;font-size:7.5px;line-height:1.25;color:var(--faint);margin:0 auto;max-width:900px;}.footer-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:11px;color:var(--text);letter-spacing:.04em;text-transform:uppercase;margin:0;}.footer-brand{font-family:'JetBrains Mono',monospace;font-size:7.5px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;}
+.tweaks{position:fixed;bottom:16px;right:16px;z-index:100;background:rgba(13,16,32,.92);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:10px 14px;display:flex;flex-direction:column;gap:8px;font-family:'Inter',sans-serif;font-size:12px;color:#F0EDE8;}
+@media print{@page{size:12.5in 18.75in;margin:0;}html,body{background:#1A1F2E !important;-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}*{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}.stage{position:static;padding:0;display:block;overflow:visible;}.poster-wrap{transform:none !important;width:auto !important;height:auto !important;}.poster{box-shadow:none !important;width:1200px !important;height:1800px !important;overflow:hidden !important;}.glass,.trouble-card,.safety-card{backdrop-filter:none !important;-webkit-backdrop-filter:none !important;}.tweaks{display:none !important;}}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="poster-wrap" id="posterWrap">
+<div class="poster" id="poster" data-edition="light">
+  <span class="tack tl" aria-hidden="true"></span><span class="tack tr" aria-hidden="true"></span>
+  <span class="tack bl" aria-hidden="true"></span><span class="tack br" aria-hidden="true"></span>
+
+  <!-- ===== HEADER ===== -->
+  <div class="poster-header">
+    <header class="header-band">
+      <div class="header-left">
+        <div class="eyebrow"><span>Zinc &Aacute;cido Cloruro &nbsp;&middot;&nbsp; Paso 5 de 8</span></div>
+        <h1 class="headline">ZINC / <em>&Aacute;CIDO</em></h1>
+        <h2 class="subhead">El ba&ntilde;o principal &mdash; dep&oacute;sito de zinc de alta eficiencia impulsado por qu&iacute;mica de cloruro</h2>
+        <p class="tagline">&ldquo;95% de eficiencia significa que el 95% de su corriente genera dinero. Controle el otro 5%.&rdquo;</p>
+      </div>
+      <aside class="glass logo-card">
+        <div class="logo-tile"><span>PP</span></div>
+        <div class="logo-word"><span class="a">Plating</span> <span class="b">Posters</span></div>
+        <div class="logo-inc">www.platingposters.com</div>
+      </aside>
+    </header>
+  </div>
+
+  <!-- ===== BODY ===== -->
+  <div class="poster-body">
+
+    <!-- RULE CARD -->
+    <div class="glass rule-card">
+      <div class="rule-num">95&ndash;98%</div>
+      <div class="rule-body">
+        <div class="rule-label">Eficiencia Cat&oacute;dica</div>
+        <div class="rule-text">Casi cada amperio-hora deposita zinc. Esa es la ventaja del zinc &aacute;cido &mdash; velocidad y eficiencia. Pero la alta eficiencia tambi&eacute;n significa que el ba&ntilde;o casi no tolera contaminaci&oacute;n.</div>
+      </div>
+    </div>
+
+    <!-- Orient Strip: 8 stages, #5 active (AMBER) -->
+    <div class="orient-strip">
+      <div class="orient-step"><span class="step-num">01</span><span class="step-label">Limpieza</span></div>
+      <div class="orient-step"><span class="step-num">02</span><span class="step-label">Enjuague</span></div>
+      <div class="orient-step"><span class="step-num">03</span><span class="step-label">Activaci&oacute;n</span></div>
+      <div class="orient-step"><span class="step-num">04</span><span class="step-label">Enjuague</span></div>
+      <div class="orient-step active"><span class="step-num">05</span><span class="step-label">Recubri-<br>miento</span></div>
+      <div class="orient-step"><span class="step-num">06</span><span class="step-label">Enjuague</span></div>
+      <div class="orient-step"><span class="step-num">07</span><span class="step-label">Pasivado</span></div>
+      <div class="orient-step"><span class="step-num">08</span><span class="step-label">Final</span></div>
+    </div>
+
+    <!-- ESQUEMA DE CELDA ELECTROQUÍMICA -->
+    <div class="svg-diagram">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 100" width="100%" height="auto" style="display:block;max-width:100%;">
+        <defs>
+          <marker id="arrT05ion" markerWidth="6" markerHeight="4" refX="5" refY="2" orient="auto"><polygon points="0,0 6,2 0,4" fill="var(--amber)"/></marker>
+          <marker id="arrT05elec" markerWidth="6" markerHeight="4" refX="5" refY="2" orient="auto"><polygon points="0,0 6,2 0,4" fill="var(--teal)"/></marker>
+        </defs>
+        <!-- Fuente de poder DC / Rectificador -->
+        <rect x="270" y="2" width="160" height="18" rx="4" fill="var(--coral)" opacity="0.85"/>
+        <text x="350" y="14" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-weight="800" font-size="9" fill="var(--text)" letter-spacing="0.08em">FUENTE DC / RECTIFICADOR</text>
+        <!-- Ánodo de zinc -->
+        <rect x="40" y="30" width="100" height="40" rx="6" fill="var(--amber)" opacity="0.2" stroke="var(--amber)" stroke-width="1.5"/>
+        <text x="90" y="47" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-weight="800" font-size="9" fill="var(--amber)" letter-spacing="0.06em">&Aacute;NODO DE ZINC</text>
+        <text x="90" y="60" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="var(--muted)">(+) Oxidaci&oacute;n</text>
+        <!-- Cátodo de acero -->
+        <rect x="560" y="30" width="100" height="40" rx="6" fill="var(--teal)" opacity="0.2" stroke="var(--teal)" stroke-width="1.5"/>
+        <text x="610" y="47" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-weight="800" font-size="9" fill="var(--teal)" letter-spacing="0.06em">C&Aacute;TODO DE ACERO</text>
+        <text x="610" y="60" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="var(--muted)">(&minus;) Reducci&oacute;n</text>
+        <!-- Electrolito -->
+        <rect x="190" y="34" width="320" height="32" rx="4" fill="var(--emerald)" opacity="0.08" stroke="var(--emerald)" stroke-width="0.8" stroke-dasharray="4,3"/>
+        <text x="350" y="48" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="8" fill="var(--emerald)" letter-spacing="0.04em">ELECTROLITO: ZnCl&#x2082; + KCl</text>
+        <text x="350" y="59" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="var(--muted)">Soluci&oacute;n acuosa &aacute;cida</text>
+        <!-- Circuito externo: Ánodo al rectificador -->
+        <line x1="90" y1="30" x2="90" y2="11" stroke="var(--teal)" stroke-width="1.2"/>
+        <line x1="90" y1="11" x2="270" y2="11" stroke="var(--teal)" stroke-width="1.2" marker-end="url(#arrT05elec)"/>
+        <!-- Circuito externo: Rectificador al cátodo -->
+        <line x1="430" y1="11" x2="610" y2="11" stroke="var(--teal)" stroke-width="1.2"/>
+        <line x1="610" y1="11" x2="610" y2="30" stroke="var(--teal)" stroke-width="1.2" marker-end="url(#arrT05elec)"/>
+        <!-- Etiqueta flujo de electrones -->
+        <text x="180" y="9" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="var(--teal)">flujo e&minus; &#x2192;</text>
+        <!-- Flechas de flujo iónico: Zn2+ del ánodo al cátodo -->
+        <line x1="155" y1="50" x2="185" y2="50" stroke="var(--amber)" stroke-width="1.2" marker-end="url(#arrT05ion)"/>
+        <line x1="515" y1="50" x2="555" y2="50" stroke="var(--amber)" stroke-width="1.2" marker-end="url(#arrT05ion)"/>
+        <!-- Etiqueta iones -->
+        <text x="350" y="42" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="var(--amber)">Zn&#xB2;&#x207A; &#x2192; &#x2192; &#x2192;</text>
+        <!-- Leyenda -->
+        <text x="350" y="82" text-anchor="middle" font-family="'Inter',sans-serif" font-style="italic" font-size="7.5" fill="var(--muted)">&Aacute;nodo soluble repone Zn&#xB2;&#x207A; autom&aacute;ticamente &mdash; 95&ndash;98% eficiencia cat&oacute;dica</text>
+      </svg>
+    </div>
+
+    <!-- OPERATING PARAMETERS TABLE -->
+    <div>
+      <h3 class="section-title">Par&aacute;metros de Operaci&oacute;n <span class="sub">Bastidor vs Tambor</span></h3>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table">
+          <thead><tr><th>Par&aacute;metro</th><th>Bastidor</th><th>Tambor</th><th>Notas</th></tr></thead>
+          <tbody>
+            <tr><td>Temperatura</td><td class="mono">70&ndash;95&deg;F (21&ndash;35&deg;C)</td><td class="mono">70&ndash;95&deg;F</td><td>Objetivo 80&ndash;85&deg;F; puede requerir enfriamiento</td></tr>
+            <tr><td>Zinc (metal)</td><td class="mono">15&ndash;45 g/L</td><td class="mono">20&ndash;45 g/L</td><td>M&aacute;s alto para tambor</td></tr>
+            <tr><td>KCl (o NH&#x2084;Cl)</td><td class="mono">120&ndash;250 g/L</td><td class="mono">150&ndash;250 g/L</td><td>Conductividad y corrosi&oacute;n del &aacute;nodo</td></tr>
+            <tr><td>&Aacute;cido B&oacute;rico</td><td class="mono">20&ndash;35 g/L</td><td class="mono">25&ndash;35 g/L</td><td>Amortiguador de pH &mdash; no lo descuide</td></tr>
+            <tr><td>pH</td><td class="mono">4.8&ndash;5.8</td><td class="mono">4.8&ndash;5.8</td><td>HCl (bajar) o KOH (subir)</td></tr>
+            <tr><td>Densidad de Corriente</td><td class="mono">1&ndash;6 A/dm&sup2; (10&ndash;60 ASF)</td><td class="mono">0.3&ndash;1.5 A/dm&sup2;</td><td>Rango m&aacute;s alto que alcalino</td></tr>
+            <tr><td>Eficiencia Cat&oacute;dica</td><td class="mono">95&ndash;98%</td><td class="mono">95&ndash;98%</td><td>Evoluci&oacute;n m&iacute;nima de H&#x2082;</td></tr>
+            <tr><td>Agitaci&oacute;n</td><td class="mono">Aire + barra cat&oacute;dica</td><td class="mono">Tambor 6&ndash;12 RPM</td><td>Agitaci&oacute;n por aire est&aacute;ndar</td></tr>
+            <tr><td>Filtraci&oacute;n</td><td class="mono">Continua, 2&ndash;4 ciclos/hr</td><td class="mono">Continua</td><td>Cartucho de carb&oacute;n para org&aacute;nicos</td></tr>
+            <tr><td>&Aacute;nodos</td><td class="mono">Zinc 99.99% SHG (solubles)</td><td class="mono">Zinc 99.99% SHG</td><td>Solubles &mdash; reponen zinc autom&aacute;ticamente</td></tr>
+            <tr><td>Bolsas de &Aacute;nodo</td><td class="mono">Polipropileno, siempre</td><td class="mono">Siempre</td><td>Previene lodos del &aacute;nodo</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- TWO-COLUMN: Brightener System + Metallic Contamination -->
+    <div class="two-col">
+
+      <!-- BRIGHTENER SYSTEM -->
+      <div>
+        <h3 class="section-title">Sistema de Abrillantadores <span class="sub">3 Componentes</span></h3>
+        <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+          <table class="data-table">
+            <thead><tr><th>Componente</th><th>Funci&oacute;n</th><th>Si Bajo</th><th>Si Alto</th></tr></thead>
+            <tbody>
+              <tr><td style="font-weight:600;">Transportador</td><td>Refinamiento de grano, anti-picadura, humectaci&oacute;n</td><td>Picaduras, rugosidad, opacidad</td><td>Opacidad, brillo reducido, espuma</td></tr>
+              <tr><td style="font-weight:600;">Abrillantador Primario</td><td>Brillo en todo el rango de CD</td><td>Opaco, especialmente en CD medio</td><td>Quebradizo, desprendimiento, alto estr&eacute;s</td></tr>
+              <tr><td style="font-weight:600;">Abrillantador Secundario</td><td>Brillo en alta CD, nivelaci&oacute;n</td><td>Opaco en alta CD (bordes/puntas)</td><td>Quemado en baja CD, bordes quebradizos</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- METALLIC CONTAMINATION -->
+      <div>
+        <h3 class="section-title">Contaminaci&oacute;n Met&aacute;lica <span class="sub">L&iacute;mites</span></h3>
+        <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+          <table class="data-table">
+            <thead><tr><th>Metal</th><th>L&iacute;mite</th><th>Efecto</th><th>Fuente</th></tr></thead>
+            <tbody>
+              <tr><td style="font-weight:600;">Hierro (Fe)</td><td class="mono">10 ppm</td><td>Opacidad, dep&oacute;sitos oscuros</td><td>Arrastre de decapado, equipo corroído</td></tr>
+              <tr><td style="font-weight:600;">Cobre (Cu)</td><td class="mono">0.5 ppm</td><td>Puntos negros, falla de adherencia</td><td>Accesorios de lat&oacute;n, corrosi&oacute;n de barras</td></tr>
+              <tr><td style="font-weight:600;">Plomo (Pb)</td><td class="mono">0.5 ppm</td><td>Dep&oacute;sito oscuro, dendritas</td><td>&Aacute;nodos impuros (&lt;99.99%)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- HULL CELL QUICK REFERENCE -->
+    <div>
+      <h3 class="section-title">Referencia R&aacute;pida de Celda Hull <span class="sub">267 mL / 2A / 10 min</span></h3>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table">
+          <thead><tr><th style="width:55%;">Observaci&oacute;n</th><th>Diagn&oacute;stico</th></tr></thead>
+          <tbody>
+            <tr><td>Brillante en todo el panel</td><td>Ba&ntilde;o en equilibrio</td></tr>
+            <tr><td>Opaco en rango medio, brillante en alta CD</td><td>Abrillantador primario bajo</td></tr>
+            <tr><td>Opaco solo en alta CD</td><td>Abrillantador secundario bajo</td></tr>
+            <tr><td>Opacidad general</td><td>Contaminaci&oacute;n org&aacute;nica o met&aacute;lica</td></tr>
+            <tr><td>Oscuro en alta CD (quemado)</td><td>pH muy bajo; zinc muy bajo</td></tr>
+            <tr><td>Picaduras en todo el panel</td><td>Transportador bajo; filtraci&oacute;n deficiente</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- TROUBLESHOOTING (8 cards, 4x2 grid) -->
+    <div>
+      <h3 class="section-title">Soluci&oacute;n de Problemas <span class="sub">8 problemas comunes</span></h3>
+      <div class="trouble-grid">
+        <div class="glass trouble-card">
+          <h5>Quemado en Alta CD</h5>
+          <p class="tc-cause">pH muy bajo; zinc muy bajo; exceso de secundario</p>
+          <p class="tc-fix">&#x2192; Subir pH; agregar zinc; verificar Celda Hull</p>
+        </div>
+        <div class="glass trouble-card">
+          <h5>Dep&oacute;sito Opaco</h5>
+          <p class="tc-cause">Abrillantador primario agotado; temp. muy baja; org&aacute;nicos</p>
+          <p class="tc-fix">&#x2192; Agregar primario por amp-hr; verificar temp.; tratar con carb&oacute;n</p>
+        </div>
+        <div class="glass trouble-card">
+          <h5>Picaduras</h5>
+          <p class="tc-cause">Transportador bajo; agitaci&oacute;n deficiente; piezas sucias</p>
+          <p class="tc-fix">&#x2192; Agregar transportador; aumentar aire; verificar limpieza</p>
+        </div>
+        <div class="glass trouble-card">
+          <h5>Opacidad</h5>
+          <p class="tc-cause">Contaminaci&oacute;n de hierro; org&aacute;nicos; exceso de transportador</p>
+          <p class="tc-fix">&#x2192; Analizar Fe; tratar con carb&oacute;n; verificar transportador; dummy</p>
+        </div>
+        <div class="glass trouble-card">
+          <h5>Rayas / Puntos Oscuros</h5>
+          <p class="tc-cause">Contaminaci&oacute;n de Cu o Pb; lodos del &aacute;nodo</p>
+          <p class="tc-fix">&#x2192; Analizar metales; dummy; verificar bolsas de &aacute;nodo</p>
+        </div>
+        <div class="glass trouble-card">
+          <h5>Rugosidad</h5>
+          <p class="tc-cause">Part&iacute;culas; Pb; filtraci&oacute;n deficiente</p>
+          <p class="tc-fix">&#x2192; Verificar filtro; analizar Pb; embolsar &aacute;nodos</p>
+        </div>
+        <div class="glass trouble-card">
+          <h5>Desprendimiento</h5>
+          <p class="tc-cause">Estr&eacute;s excesivo; desequilibrio de abrillantadores</p>
+          <p class="tc-fix">&#x2192; Prueba de doblez en Celda Hull; reducir primario; analizar Cu</p>
+        </div>
+        <div class="glass trouble-card">
+          <h5>Bajo Poder de Penetraci&oacute;n</h5>
+          <p class="tc-cause">Normal para zinc &aacute;cido (3:1&ndash;5:1); pH muy bajo</p>
+          <p class="tc-fix">&#x2192; Optimizar pH; aceptar cierta variaci&oacute;n vs alcalino</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SAFETY -->
+    <div class="safety-card">
+      <div class="safety-head">&#9888; Seguridad &mdash; Ba&ntilde;o de Zinc &Aacute;cido Cloruro</div>
+      <div class="safety-body"><strong>Soluci&oacute;n &aacute;cida de cloruro (pH 4.8&ndash;5.8)</strong> &mdash; causa quemaduras. <strong>Rectificador = alto amperaje</strong> &mdash; riesgo de descarga/arco el&eacute;ctrico. La agitaci&oacute;n por aire genera <strong>niebla de cloruro de zinc</strong> &mdash; se requiere ventilaci&oacute;n. <strong>LOTO</strong> para todo mantenimiento de rectificadores. El cloruro es corrosivo &mdash; use tanques de PP/PVC, no acero al carb&oacute;n.</div>
+    </div>
+
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer poster-footer">
+    <p class="footer-disclaimer">Solo referencia t&eacute;cnica. Verifique todos los par&aacute;metros contra la hoja t&eacute;cnica de su proveedor de qu&iacute;micos, especificaciones del cliente y requisitos regulatorios aplicables antes de su uso en producci&oacute;n.</p>
+    <p class="footer-title">Paso 05 &mdash; Recubrimiento de Zinc &Aacute;cido &mdash; Serie de Zinc &Aacute;cido Cloruro</p>
+    <span class="footer-brand">Plating Posters &middot; Serie de Referencia de Acabado de Metales &middot; PP-AcZn-05-T / v1.0 / 2026</span>
+  </footer>
+
+</div>
+</div>
+</div>
+
+<div class="tweaks"><div style="display:flex;gap:8px;align-items:center;"><span style="color:rgba(240,237,232,.5);font-size:11px;letter-spacing:.06em;text-transform:uppercase;">Edici&oacute;n</span><button id="btnDark" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:#E8A020;color:#1A1F2E;border:1px solid #E8A020;" onclick="setEdition('')">Oscuro</button><button id="btnLight" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);" onclick="setEdition('light')">Claro</button></div><button onclick="window.print()" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);">Imprimir / PDF</button></div>
+
+<script>const posterWrap=document.getElementById('posterWrap');const poster=document.getElementById('poster');function scalePoster(){const sW=(window.innerWidth-24)/1200;const sH=(window.innerHeight-24)/1800;const s=Math.min(sW,sH);posterWrap.style.transform='scale('+s+')';posterWrap.style.transformOrigin='top center';posterWrap.style.width='1200px';posterWrap.style.height=(1800*s)+'px';}function setEdition(e){if(e)poster.dataset.edition=e;else delete poster.dataset.edition;document.getElementById('btnDark').style.background=e?'transparent':'#E8A020';document.getElementById('btnDark').style.color=e?'#F0EDE8':'#1A1F2E';document.getElementById('btnDark').style.borderColor=e?'rgba(255,255,255,.2)':'#E8A020';document.getElementById('btnLight').style.background=e?'#E8A020':'transparent';document.getElementById('btnLight').style.color=e?'#1A1F2E':'#F0EDE8';document.getElementById('btnLight').style.borderColor=e?'#E8A020':'rgba(255,255,255,.2)';}scalePoster();window.addEventListener('resize',scalePoster);</script>
+</body>
+</html>

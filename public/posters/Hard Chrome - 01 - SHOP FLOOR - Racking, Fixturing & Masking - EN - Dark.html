@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hard Chrome &mdash; Racking, Fixturing & Masking &mdash; Shop Floor | Plating Posters Inc</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Barlow:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#1A1F2E;--navy:#0D1020;--text:#F0EDE8;--muted:rgba(240,237,232,.62);--faint:rgba(240,237,232,.38);--amber:#E8A020;--teal:#2EC4B6;--emerald:#27AE60;--coral:#E05C5C;--slate:#3A4055;--glass-bg:rgba(30,36,53,.55);--glass-border:rgba(255,255,255,.12);--glass-shadow:inset 0 1px 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(0,0,0,.2),0 4px 12px rgba(0,0,0,.25);--tack:24px;}
+body[data-edition="light"]{--bg:#F5F4F0;--navy:#DDD8CE;--text:#1B2030;--muted:rgba(27,32,48,.78);--amber:#8C5A00;--teal:#0F6B62;--emerald:#15693B;--coral:#9B2825;--faint:rgba(27,32,48,.42);--slate:#C5C0B5;--glass-bg:rgba(255,253,247,.82);--glass-border:rgba(27,32,48,.18);--glass-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 4px 12px rgba(27,32,48,.08);}body[data-edition="light"] .logo-url{color:rgba(27,32,48,.62);}body[data-edition="light"] .logo-word .a{color:#1B2030;}
+html,body{margin:0;padding:0;background:#0a0c14;}.stage{width:100vw;height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;}.poster-wrap{transform-origin:center center;}.poster{width:900px;height:1200px;position:relative;overflow:hidden;background:radial-gradient(700px 500px at 10% 8%,rgba(46,196,182,.15),transparent 60%),radial-gradient(600px 450px at 92% 20%,rgba(232,160,32,.13),transparent 55%),radial-gradient(550px 500px at 50% 88%,rgba(224,92,92,.10),transparent 60%),var(--bg);font-family:'Inter',sans-serif;color:var(--text);display:flex;flex-direction:column;padding:var(--tack);box-sizing:border-box;}.poster::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:50px 50px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);pointer-events:none;z-index:0;}.poster>*{position:relative;z-index:1;}
+.glass{background-color:var(--glass-bg);background-image:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));border:1px solid var(--glass-border);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);box-shadow:var(--glass-shadow);border-radius:12px;}
+.tack{position:absolute;width:18px;height:18px;border-radius:50%;border:1.5px solid rgba(232,160,32,.28);z-index:2;pointer-events:none;}.tack::before,.tack::after{content:"";position:absolute;background:rgba(232,160,32,.28);}.tack::before{left:50%;top:-2px;bottom:-2px;width:1px;transform:translateX(-50%);}.tack::after{top:50%;left:-2px;right:-2px;height:1px;transform:translateY(-50%);}.tack.tl{top:6px;left:6px;}.tack.tr{top:6px;right:6px;}.tack.bl{bottom:6px;left:6px;}.tack.br{bottom:6px;right:6px;}
+.poster-header{flex-shrink:0;}.poster-body{flex:1;overflow:hidden;display:flex;flex-direction:column;gap:10px;}.poster-footer{flex-shrink:0;margin-top:8px;}
+.header-row{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:8px;}.header-left{flex:1;min-width:0;}.eyebrow{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--amber);letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px;}.headline{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:56px;color:var(--text);line-height:.92;letter-spacing:-.01em;margin-bottom:4px;}.headline em{font-style:normal;color:var(--amber);}.subhead{font-family:'Barlow',sans-serif;font-weight:700;font-size:17px;color:var(--amber);margin-bottom:4px;}.tagline{font-family:'Inter',sans-serif;font-weight:500;font-size:11px;color:var(--muted);line-height:1.3;max-width:520px;}
+.logo-card{flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:6px;padding:10px 12px;min-width:140px;background-color:var(--glass-bg);background-image:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));border:1px solid var(--glass-border);border-radius:12px;backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 4px 12px rgba(0,0,0,.25);}.logo-mark{width:60px;height:60px;border-radius:11px;background:linear-gradient(135deg,#E8A020,#2EC4B6);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -2px 4px rgba(0,0,0,.15),0 4px 14px rgba(0,0,0,.35);}.logo-mark span{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:22px;color:#1A1F2E;letter-spacing:.02em;line-height:1;}.logo-word{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;letter-spacing:.04em;text-transform:uppercase;line-height:1;text-align:center;white-space:nowrap;}.logo-word .a{color:#F0EDE8;}.logo-word .b{color:#E8A020;}.logo-url{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.06em;color:rgba(240,237,232,.45);margin-top:-1px;}
+.section-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;letter-spacing:.07em;text-transform:uppercase;color:var(--amber);margin-bottom:6px;}.section-title.coral{color:var(--coral);}
+.key-card{padding:12px 16px;background:rgba(232,160,32,.07);border-radius:12px;}.key-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:40px;color:var(--amber);line-height:1;margin-bottom:2px;}.key-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;color:var(--amber);letter-spacing:.06em;text-transform:uppercase;}.key-text{font-family:'Inter',sans-serif;font-size:12px;color:var(--muted);line-height:1.4;margin-top:4px;}
+.flow-table{width:100%;border-collapse:collapse;}.flow-table th{font-family:'Barlow',sans-serif;font-weight:700;font-size:10px;color:var(--amber);letter-spacing:.06em;text-transform:uppercase;padding:3px 6px;text-align:left;border-bottom:1px solid var(--glass-border);}.flow-table td{font-family:'Inter',sans-serif;font-weight:500;font-size:11px;color:var(--text);padding:3px 6px;border-bottom:1px solid rgba(255,255,255,.05);line-height:1.3;}.flow-table td.mono{font-family:'JetBrains Mono',monospace;font-size:10px;}.flow-table tr:nth-child(even) td{background:rgba(255,255,255,.02);}body[data-edition="light"] .flow-table tr:nth-child(even) td{background:rgba(27,32,48,.025);}
+.compare-row{display:flex;gap:10px;}.compare-card{flex:1;padding:8px 10px;}.compare-head{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px;display:flex;align-items:center;gap:8px;}.compare-head.good{color:var(--emerald);}.compare-head.bad{color:var(--coral);}.compare-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:2px;}.compare-list li{font-size:10.5px;line-height:1.4;display:flex;gap:6px;align-items:flex-start;}.compare-list li::before{content:"";width:5px;height:5px;border-radius:50%;margin-top:5px;flex-shrink:0;}.compare-card.do .compare-list li::before{background:var(--emerald);}.compare-card.dont .compare-list li::before{background:var(--coral);}
+.safety-card{padding:8px 10px;background:rgba(224,92,92,.06);border-radius:12px;}.safety-text{font-family:'Inter',sans-serif;font-weight:500;font-size:11.5px;color:var(--text);line-height:1.45;}.safety-text strong{font-weight:700;color:var(--coral);}
+.footer-panel{padding:8px 18px;text-align:center;border-radius:10px;}.footer-disclaimer{font-family:'Inter',sans-serif;font-weight:400;font-size:9px;color:var(--muted);line-height:1.4;margin-bottom:3px;}.footer-title{font-family:'Barlow',sans-serif;font-weight:600;font-size:11px;color:var(--text);margin-bottom:2px;}.footer-brand{font-family:'JetBrains Mono',monospace;font-size:8.5px;color:var(--muted);}
+@media print{@page{size:9.375in 12.5in;margin:0;}html,body{background:#1A1F2E !important;-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}*{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}.stage{position:static;display:block;overflow:visible;}.poster-wrap{transform:none !important;width:auto !important;height:auto !important;}.poster{box-shadow:none !important;width:900px !important;height:1200px !important;overflow:hidden !important;}.glass,.safety-card,.compare-card{backdrop-filter:none !important;-webkit-backdrop-filter:none !important;}.tweaks{display:none !important;}}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="poster-wrap" id="posterWrap">
+<div class="poster" id="poster">
+  <span class="tack tl"></span><span class="tack tr"></span><span class="tack bl"></span><span class="tack br"></span>
+  <div class="poster-header">
+    <div class="header-row">
+      <div class="header-left">
+        <div class="eyebrow">Plating Posters Inc &mdash; Shop Floor &mdash; Hard Chrome &mdash; Stage 1</div>
+        <div class="headline">RACKING &amp;<br><em>MASKING</em></div>
+        <div class="subhead">Fixture Design Determines Deposit Uniformity</div>
+        <div class="tagline">Chrome has poor throwing power. Without proper fixturing, edges burn and recesses starve.</div>
+      </div>
+      <div class="logo-card">
+        <div class="logo-mark"><span>PP</span></div>
+        <div class="logo-word"><span class="a">Plating</span> <span class="b">Posters</span></div>
+        <div class="logo-url">www.platingposters.com</div>
+      </div>
+    </div>
+  </div>
+  <div class="poster-body" style="gap:6px;">
+    <div class="glass key-card">
+      <div class="key-num">&lt;0.01 &ohm;</div>
+      <div class="key-label">Maximum Contact Resistance</div>
+      <div class="key-text">Every fixture contact must read below 0.01 ohms. Higher resistance means uneven current, uneven deposit, and parts that fail inspection.</div>
+    </div>
+    <div class="glass" style="padding:8px 10px;">
+      <div class="section-title">Operating Parameters</div>
+      <table class="flow-table">
+        <thead><tr><th>Parameter</th><th>Target</th><th>Notes</th></tr></thead>
+        <tbody><tr><td>Contact Resistance</td><td>&lt;0.01 &ohm;</td><td>Test with milliohmmeter</td></tr>
+<tr><td>Anode-to-Cathode Distance</td><td>1&ndash;6 in</td><td>Closer = heavier deposit</td></tr>
+<tr><td>Masking Temp Rating</td><td>&ge;160 &deg;F</td><td>Must exceed bath temp</td></tr>
+<tr><td>Conforming Anodes</td><td>Lead-tin or Pb-Sb</td><td>Required for bores/recesses</td></tr>
+<tr><td>Shield Material</td><td>PVC / polypropylene</td><td>Resist chromic acid at temp</td></tr>
+</tbody>
+      </table>
+    </div>
+    <div class="glass" style="padding:8px 10px;">
+      <div class="section-title">Masking Materials Quick Reference</div>
+      <table class="flow-table">
+        <thead><tr><th>Material</th><th>Max Temp</th><th>Best For</th><th>Limitation</th></tr></thead>
+        <tbody><tr><td>Plater&rsquo;s tape (vinyl)</td><td>200 &deg;F</td><td>Flat surfaces, quick mask</td><td>Dissolves in chromic acid &gt;4 hr</td></tr>
+<tr><td>Lead tape</td><td>300+ &deg;F</td><td>Tight radii, complex shapes</td><td>Lead exposure &mdash; PPE required</td></tr>
+<tr><td>Stop-off lacquer</td><td>250 &deg;F</td><td>Bores, threads, blind holes</td><td>Cure time; solvent PPE</td></tr>
+<tr><td>Wax (hot-dip)</td><td>180 &deg;F</td><td>Large flat non-plate areas</td><td>Soft; poor for long immersions</td></tr>
+<tr><td>Custom fixtures (PVC)</td><td>160 &deg;F</td><td>Repeat jobs, high volume</td><td>Initial cost; design lead time</td></tr>
+</tbody>
+      </table>
+    </div>
+<div class="glass" style="padding:8px 10px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 852 105" width="852" height="75" style="display:block;"><style>text{font-family:Inter,sans-serif;font-size:10px;fill:var(--text);}</style><!-- Cylindrical bore cross-section --><rect x="120" y="10" width="600" height="95" rx="8" fill="none" stroke="var(--text)" stroke-width="2" /><!-- Inner anode rod --><rect x="320" y="30" width="200" height="55" rx="6" fill="rgba(232,160,32,.15)" stroke="var(--amber)" stroke-width="1.5" /><text x="420" y="62" text-anchor="middle" fill="var(--amber)" font-weight="600" font-size="11">Conforming Anode (Pb-Sn)</text><!-- Current flow arrows from anode to cathode --><line x1="320" y1="45" x2="200" y2="25" stroke="var(--teal)" stroke-width="1" stroke-dasharray="4,3" /><line x1="320" y1="70" x2="200" y2="90" stroke="var(--teal)" stroke-width="1" stroke-dasharray="4,3" /><line x1="520" y1="45" x2="640" y2="25" stroke="var(--teal)" stroke-width="1" stroke-dasharray="4,3" /><line x1="520" y1="70" x2="640" y2="90" stroke="var(--teal)" stroke-width="1" stroke-dasharray="4,3" /><polygon points="200,22 206,28 194,28" fill="var(--teal)" /><polygon points="200,93 206,87 194,87" fill="var(--teal)" /><polygon points="640,22 646,28 634,28" fill="var(--teal)" /><polygon points="640,93 646,87 634,87" fill="var(--teal)" /><!-- High CD label at bore opening --><text x="710" y="35" font-size="11" fill="var(--coral)" font-weight="700">High CD</text><text x="710" y="50" font-size="8" fill="var(--muted)">(bore opening)</text><!-- Low CD label deep in bore --><text x="135" y="35" font-size="11" fill="var(--teal)" font-weight="700">Low CD</text><text x="135" y="50" font-size="8" fill="var(--muted)">(deep in bore)</text><!-- Masking zone (hatched) on non-plate surfaces --><rect x="20" y="10" width="100" height="95" rx="4" fill="url(#hatch)" stroke="var(--muted)" stroke-width="1" stroke-dasharray="3,2" /><text x="70" y="115" text-anchor="middle" font-size="9" fill="var(--muted)">Masked Zone</text><rect x="720" y="10" width="110" height="95" rx="4" fill="url(#hatch)" stroke="var(--muted)" stroke-width="1" stroke-dasharray="3,2" /><text x="775" y="115" text-anchor="middle" font-size="9" fill="var(--muted)">Masked Zone</text><!-- Part label --><text x="420" y="108" text-anchor="middle" font-size="9" fill="var(--muted)">Part / Cathode (bore wall)</text><defs><pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="var(--muted)" stroke-width="0.8" opacity=".4" /></pattern></defs></svg></div>
+    <div class="compare-row">
+      <div class="compare-card glass do"><div class="compare-head good">&#10003; Do</div><ul class="compare-list"><li>Clean contacts to bare metal before every use</li><li>Mask all non-plate surfaces completely</li><li>Install conforming anodes for bores and recesses</li><li>Verify contact resistance with meter before plating</li></ul></div>
+      <div class="compare-card glass dont"><div class="compare-head bad">&#10007; Don&rsquo;t</div><ul class="compare-list"><li>Use corroded or chrome-coated contacts</li><li>Leave gaps or pinholes in masking</li><li>Assume the main anode will reach deep cavities</li><li>Start plating without confirming thickness requirements</li></ul></div>
+    </div>
+    <div class="glass" style="padding:8px 10px;">
+      <div class="section-title">&#9881; Operator Tips</div>
+      <div style="font-family:'Inter',sans-serif;font-size:11.5px;color:var(--text);line-height:1.45;">
+        <strong style="color:var(--teal);">Pre-plate checklist:</strong> Verify anode-to-cathode spacing matches the job traveler. Check that all masking is sealed at edges &mdash; chromic acid will wick under loose tape. For ID chrome, confirm the conforming anode is centered and supported to prevent contact with the bore wall. Log contact resistance readings on the batch record.</div>
+    </div>
+    <div class="glass safety-card">
+      <div class="section-title coral">&#9888; Safety &mdash; Stage 1</div>
+      <div class="safety-text"><strong>Heavy parts and sharp fixtures</strong> &mdash; cut-resistant gloves (ANSI A4+), mechanical assists for parts &gt;35 lbs. <strong>Lead tape and lead anodes</strong> &mdash; OSHA PEL 50 &micro;g/m&sup3;; nitrile gloves, no eating/drinking in work area, dispose as hazardous waste. <strong>Solvent-based lacquers</strong> &mdash; apply in ventilated area with organic-vapor respirator. When working near active chrome tank, full Cr(VI) PPE required.</div>
+    </div>
+  </div>
+  <div class="glass footer-panel poster-footer">
+    <div class="footer-disclaimer">Operator reference only. Follow your facility SOPs. Report any process deviations to your supervisor.</div>
+    <div class="footer-title">Racking, Fixturing & Masking &mdash; Hard Chrome Plating Series</div>
+    <div class="footer-brand">Plating Posters Inc &middot; Shop Floor Reference &middot; PP-HC-01-SF / v1.0 / 2026</div>
+  </div>
+</div>
+</div>
+</div>
+<div class="tweaks" style="position:fixed;bottom:16px;right:16px;z-index:100;background:rgba(13,16,32,.92);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:12px 16px;display:flex;flex-direction:column;gap:8px;font-family:'Inter',sans-serif;font-size:12px;color:#F0EDE8;">
+  <div style="display:flex;gap:8px;align-items:center;"><span style="color:rgba(240,237,232,.5);">Edition</span><button id="btnDark" onclick="setEdition('')" style="padding:3px 10px;border-radius:4px;border:1px solid #E8A020;background:#E8A020;color:#1A1F2E;cursor:pointer;font-size:11px;">Dark</button><button id="btnLight" onclick="setEdition('light')" style="padding:3px 10px;border-radius:4px;border:1px solid rgba(255,255,255,.2);background:transparent;color:#F0EDE8;cursor:pointer;font-size:11px;">Light</button></div>
+  <button onclick="window.print()" style="padding:4px 12px;border-radius:4px;border:1px solid rgba(255,255,255,.2);background:transparent;color:#F0EDE8;cursor:pointer;font-size:11px;">Print / PDF</button>
+</div>
+<script>
+const posterWrap=document.getElementById('posterWrap');const poster=document.getElementById('poster');function scalePoster(){const s=Math.min((window.innerWidth-24)/900,(window.innerHeight-24)/1200);posterWrap.style.transform='scale('+s+')';posterWrap.style.transformOrigin='top center';posterWrap.style.width='900px';posterWrap.style.height=(1200*s)+'px';}function setEdition(e){if(e)document.body.dataset.edition=e;else delete document.body.dataset.edition;document.getElementById('btnDark').style.background=e?'transparent':'#E8A020';document.getElementById('btnDark').style.color=e?'#F0EDE8':'#1A1F2E';document.getElementById('btnDark').style.borderColor=e?'rgba(255,255,255,.2)':'#E8A020';document.getElementById('btnLight').style.background=e?'#E8A020':'transparent';document.getElementById('btnLight').style.color=e?'#1A1F2E':'#F0EDE8';document.getElementById('btnLight').style.borderColor=e?'#E8A020':'rgba(255,255,255,.2)';}scalePoster();window.addEventListener('resize',scalePoster);
+</script>
+</body>
+</html>

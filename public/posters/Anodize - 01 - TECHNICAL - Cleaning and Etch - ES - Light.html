@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anodizado &mdash; Paso 01 Limpieza y Decapado Alcalino &mdash; T&eacute;cnico | Plating Posters Inc</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Barlow:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#1A1F2E;--navy:#0D1020;--text:#F0EDE8;--muted:rgba(240,237,232,.62);--faint:rgba(240,237,232,.38);--amber:#E8A020;--teal:#2EC4B6;--emerald:#27AE60;--coral:#E05C5C;--slate:#3A4055;--callout:#1E2435;--altrow:#252B3D;--glass-bg:rgba(30,36,53,.55);--glass-border:rgba(255,255,255,.12);--glass-shadow:inset 0 1px 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(0,0,0,.2),0 4px 12px rgba(0,0,0,.25);}
+.poster[data-edition="light"]{--bg:#F5F4F0;--navy:#DDD8CE;--text:#1B2030;--muted:rgba(27,32,48,.66);--faint:rgba(27,32,48,.42);--amber:#B8770D;--teal:#1A8C82;--emerald:#1E8449;--coral:#B7322F;--slate:#C5C0B5;--callout:#ECEAE1;--altrow:#E4E1D6;--glass-bg:rgba(255,253,247,.66);--glass-border:rgba(27,32,48,.10);--glass-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 4px 12px rgba(27,32,48,.08);}
+html,body{margin:0;padding:0;background:#0a0c14;}.stage{width:100vw;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;overflow:visible;padding:12px 0;box-sizing:border-box;}.poster-wrap{transform-origin:center center;}.poster{width:1200px;height:1800px;position:relative;overflow:hidden;background:radial-gradient(1200px 800px at 15% 8%,rgba(46,196,182,.14),transparent 60%),radial-gradient(1000px 700px at 90% 25%,rgba(232,160,32,.12),transparent 55%),radial-gradient(900px 900px at 50% 80%,rgba(224,92,92,.10),transparent 60%),var(--bg);font-family:'Inter',sans-serif;color:var(--text);display:flex;flex-direction:column;padding:26px 28px;box-sizing:border-box;}.poster::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:50px 50px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);pointer-events:none;z-index:0;}.poster>*{position:relative;z-index:1;}
+.glass{background-color:var(--glass-bg);background-image:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));border:1px solid var(--glass-border);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);box-shadow:var(--glass-shadow);border-radius:12px;}
+.tack{position:absolute;width:24px;height:24px;border-radius:50%;border:1.5px solid rgba(232,160,32,.28);z-index:2;pointer-events:none;}.tack::before,.tack::after{content:"";position:absolute;background:rgba(232,160,32,.28);}.tack::before{left:50%;top:-3px;bottom:-3px;width:1px;transform:translateX(-50%);}.tack::after{top:50%;left:-3px;right:-3px;height:1px;transform:translateY(-50%);}.tack.tl{top:12px;left:12px;}.tack.tr{top:12px;right:12px;}.tack.bl{bottom:12px;left:12px;}.tack.br{bottom:12px;right:12px;}
+.poster-header{flex-shrink:0;}.poster-body{flex:1;overflow:visible;display:flex;flex-direction:column;gap:6px;justify-content:space-between;}.poster-footer{flex-shrink:0;margin-top:2px;}
+.header-band{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:4px;}.header-left{flex:1;min-width:0;}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--amber);letter-spacing:.16em;text-transform:uppercase;margin-bottom:4px;display:flex;align-items:center;gap:12px;}.eyebrow::before{content:"";display:inline-block;width:30px;height:3px;background:var(--amber);}
+.headline{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:72px;color:var(--text);line-height:.92;margin:4px 0;letter-spacing:-.01em;text-transform:uppercase;}.headline em{font-style:normal;color:var(--amber);}
+.subhead{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;color:var(--teal);margin:0 0 3px;letter-spacing:.02em;text-transform:uppercase;}
+.tagline{font-family:'Inter',sans-serif;font-style:italic;font-size:13px;color:var(--muted);line-height:1.45;max-width:700px;margin:0;}
+.logo-card{flex-shrink:0;padding:12px 10px;display:flex;flex-direction:column;align-items:center;gap:8px;align-self:flex-start;}.logo-tile{width:68px;height:68px;border-radius:12px;background:linear-gradient(135deg,#E8A020,#2EC4B6);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -2px 4px rgba(0,0,0,.15),0 4px 14px rgba(0,0,0,.35);}.logo-tile span{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:26px;color:#1A1F2E;letter-spacing:.02em;line-height:1;}.logo-word{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;letter-spacing:.04em;text-transform:uppercase;line-height:1;text-align:center;white-space:nowrap;}.logo-word .a{color:var(--text);}.logo-word .b{color:var(--amber);}.logo-inc{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.05em;text-transform:lowercase;color:var(--muted);margin-top:-2px;}
+.section-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:24px;letter-spacing:.08em;text-transform:uppercase;color:var(--text);margin:0 0 3px;display:flex;align-items:center;gap:8px;}.section-title::before{content:"";width:6px;height:6px;background:var(--amber);border-radius:50%;}.section-title .sub{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;color:var(--muted);margin-left:auto;font-weight:500;}
+.rule-card{display:flex;align-items:center;gap:12px;padding:10px 18px;background:rgba(232,160,32,.07);}
+.rule-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:52px;color:var(--amber);line-height:1;letter-spacing:-.02em;white-space:nowrap;}
+.rule-body{flex:1;}.rule-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:17px;color:var(--amber);letter-spacing:.08em;text-transform:uppercase;}.rule-text{font-family:'Inter',sans-serif;font-size:12px;color:var(--muted);line-height:1.35;margin-top:3px;}
+.data-table{width:100%;border-collapse:collapse;}.data-table th{font-family:'Barlow',sans-serif;font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);padding:4px 8px;text-align:left;background:rgba(13,16,32,.35);border-bottom:1px solid var(--glass-border);}.poster[data-edition="light"] .data-table th{background:rgba(27,32,48,.06);}.data-table td{padding:3px 8px;color:var(--text);line-height:1.3;border-bottom:1px solid rgba(255,255,255,.05);font-family:'Inter',sans-serif;font-size:11.5px;}.data-table tr:last-child td{border-bottom:none;}.data-table tr:nth-child(even) td{background:rgba(255,255,255,.02);}.poster[data-edition="light"] .data-table tr:nth-child(even) td{background:rgba(27,32,48,.025);}.data-table .mono{font-family:'JetBrains Mono',monospace;font-size:13px;}
+.numbered-list{display:flex;flex-direction:column;gap:4px;}.numbered-item{display:flex;align-items:flex-start;gap:10px;}.num-bullet{width:24px;height:24px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:13px;color:#1A1F2E;margin-top:1px;}.num-text{font-family:'Inter',sans-serif;font-weight:500;font-size:11.5px;color:var(--text);line-height:1.4;}.num-text strong{font-weight:700;}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}.compare-card{padding:8px 14px;}.compare-card h4{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:20px;color:var(--text);margin:0 0 6px;text-transform:uppercase;letter-spacing:.04em;}.compare-card h4 .tag{font-size:11px;padding:2px 8px;border-radius:4px;margin-left:8px;font-family:'JetBrains Mono',monospace;font-weight:500;letter-spacing:.06em;}.compare-card h4 .tag.good{background:rgba(39,174,96,.15);color:var(--emerald);}.compare-card h4 .tag.bad{background:rgba(224,92,92,.15);color:var(--coral);}.compare-card ul{list-style:none;padding:0;margin:0;}.compare-card li{font-size:13.5px;line-height:1.5;padding:3px 0;display:flex;gap:8px;align-items:flex-start;}.compare-card li::before{content:"";width:5px;height:5px;border-radius:50%;margin-top:7px;flex-shrink:0;}.compare-card.do li::before{background:var(--emerald);}.compare-card.dont li::before{background:var(--coral);}
+.trouble-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}.trouble-card{padding:6px 14px;border-radius:10px;border-left:3px solid var(--coral);display:flex;flex-direction:column;gap:4px;}.trouble-card h5{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;color:var(--coral);margin:0;text-transform:uppercase;letter-spacing:.06em;line-height:1.15;}.trouble-card p{font-size:11.5px;color:var(--muted);margin:0;line-height:1.45;}
+.svg-diagram{display:block;padding:8px 0;width:100%;}
+.safety-card{padding:18px 24px;background:rgba(224,92,92,.08);border:1px solid rgba(224,92,92,.25);border-radius:12px;}.safety-head{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px;color:var(--coral);letter-spacing:.06em;text-transform:uppercase;margin-bottom:2px;}.safety-body{font-size:14px;color:var(--text);line-height:1.55;}.safety-body strong{font-weight:700;color:var(--coral);}
+.bottom-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.footer{padding:10px 20px;background-color:rgba(13,16,32,.85);background-image:linear-gradient(180deg,rgba(255,255,255,.04),rgba(0,0,0,0));border:1px solid rgba(255,255,255,.10);border-radius:8px;text-align:center;display:flex;flex-direction:column;gap:2px;}.poster[data-edition="light"] .footer{background-color:rgba(221,216,206,.95);border-color:rgba(27,32,48,.10);}.footer-disclaimer{font-family:'Inter',sans-serif;font-size:9px;line-height:1.35;color:var(--faint);margin:0 auto;max-width:900px;}.footer-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:13px;color:var(--text);letter-spacing:.04em;text-transform:uppercase;margin:0;}.footer-brand{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;}
+.tweaks{position:fixed;bottom:16px;right:16px;z-index:100;background:rgba(13,16,32,.92);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:10px 14px;display:flex;flex-direction:column;gap:8px;font-family:'Inter',sans-serif;font-size:12px;color:#F0EDE8;}
+@media print{@page{size:12.5in 18.75in;margin:0;}html,body{background:#1A1F2E !important;-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}*{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}.stage{position:static;padding:0;display:block;overflow:visible;}.poster-wrap{transform:none !important;width:auto !important;height:auto !important;}.poster{box-shadow:none !important;width:1200px !important;height:1800px !important;overflow:hidden !important;}.glass,.trouble-card,.safety-card{backdrop-filter:none !important;-webkit-backdrop-filter:none !important;}.tweaks{display:none !important;}}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="poster-wrap" id="posterWrap">
+<div class="poster" id="poster" data-edition="light">
+  <span class="tack tl" aria-hidden="true"></span><span class="tack tr" aria-hidden="true"></span>
+  <span class="tack bl" aria-hidden="true"></span><span class="tack br" aria-hidden="true"></span>
+
+  <div class="poster-header">
+    <header class="header-band">
+      <div class="header-left">
+        <div class="eyebrow"><span>Plating Posters &nbsp;&middot;&nbsp; Serie de Anodizado &nbsp;&middot;&nbsp; Etapa 1 de 8</span></div>
+        <h1 class="headline">LIMPIEZA &amp;<br><em>DECAPADO</em></h1>
+        <h2 class="subhead">Limpieza por Inmersi&oacute;n + Decapado Alcalino &mdash; Dos Pasos, Un P&oacute;ster</h2>
+        <p class="tagline">Ning&uacute;n tiempo de anodizado corrige una pieza sucia. Primero limpie, luego decape, enjuague entre cada paso.</p>
+      </div>
+      <aside class="glass logo-card">
+        <div class="logo-tile"><span>PP</span></div>
+        <div class="logo-word"><span class="a">Plating</span> <span class="b">Posters</span></div>
+        <div class="logo-inc">www.platingposters.com</div>
+      </aside>
+    </header>
+  </div>
+
+  <div class="poster-body">
+
+    <div class="glass rule-card">
+      <div class="rule-num">2&times;</div>
+      <div class="rule-body">
+        <div class="rule-label">Dos Etapas &mdash; Primero Limpiar, Luego Decapar</div>
+        <div class="rule-text">La limpieza por inmersi&oacute;n elimina aceites y suciedades del taller sin atacar el sustrato. El decapado alcalino (NaOH) es un ataque qu&iacute;mico controlado que remueve el &oacute;xido natural y produce un acabado mate uniforme. Son secuenciales &mdash; nunca omita la limpieza. La velocidad de decapado depende de la aleaci&oacute;n, la temperatura, la concentraci&oacute;n de NaOH y el aluminio disuelto. Siempre realice pruebas con cupones al cambiar aleaciones o despu&eacute;s del mantenimiento del ba&ntilde;o.</div>
+      </div>
+    </div>
+
+    <!-- SVG: Clean → Etch Flow -->
+    <div class="svg-diagram">
+      <svg viewBox="0 0 1100 90" width="100%" height="auto" fill="none" style="display:block;">
+        <!-- Tank 1: Soak Clean -->
+        <rect x="30" y="18" width="280" height="54" rx="8" stroke="var(--teal)" stroke-width="2" fill="none"/>
+        <rect x="30" y="18" width="280" height="54" rx="8" fill="var(--teal)" opacity=".05"/>
+        <text x="170" y="12" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="14" fill="var(--teal)" letter-spacing=".06em">LIMPIEZA POR INMERSI&Oacute;N</text>
+        <text x="170" y="50" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="12" fill="var(--teal)" opacity=".7">Alcalino suave / Surfactante</text>
+        <!-- Arrow 1 -->
+        <line x1="316" y1="45" x2="404" y2="45" stroke="var(--emerald)" stroke-width="2.4" marker-end="url(#arrA1)"/>
+        <text x="360" y="38" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="var(--faint)">ENJUAGUE</text>
+        <!-- Tank 2: Alkaline Etch -->
+        <rect x="410" y="18" width="280" height="54" rx="8" stroke="var(--amber)" stroke-width="2.4" fill="none"/>
+        <rect x="410" y="18" width="280" height="54" rx="8" fill="var(--amber)" opacity=".05"/>
+        <text x="550" y="12" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-weight="900" font-size="14" fill="var(--amber)" letter-spacing=".06em">DECAPADO ALCALINO</text>
+        <text x="550" y="50" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="12" fill="var(--amber)" opacity=".7">NaOH 40&ndash;60 g/L</text>
+        <!-- Arrow 2 -->
+        <line x1="696" y1="45" x2="784" y2="45" stroke="var(--emerald)" stroke-width="2.4" marker-end="url(#arrA2)"/>
+        <!-- Tank 3: To Rinse Post-Etch -->
+        <rect x="790" y="18" width="280" height="54" rx="8" stroke="var(--slate)" stroke-width="1.6" fill="none"/>
+        <text x="930" y="12" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="14" fill="var(--muted)" letter-spacing=".06em">A ENJUAGUE (PASO 02)</text>
+        <text x="930" y="50" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="12" fill="var(--faint)">Remover arrastre c&aacute;ustico</text>
+        <defs>
+          <marker id="arrA1" viewBox="0 0 6 6" refX="5" refY="3" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="var(--emerald)"/></marker>
+          <marker id="arrA2" viewBox="0 0 6 6" refX="5" refY="3" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="var(--emerald)"/></marker>
+        </defs>
+      </svg>
+    </div>
+
+    <!-- SOAK CLEAN PARAMETERS -->
+    <div>
+      <h3 class="section-title">Etapa A &mdash; Limpieza por Inmersi&oacute;n <span class="sub">Sin decapado</span></h3>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table">
+          <thead><tr><th>Par&aacute;metro</th><th>Rango</th><th>Notas</th></tr></thead>
+          <tbody>
+            <tr><td>Qu&iacute;mica</td><td class="mono">Alcalino suave / mezcla con surfactante</td><td>Preferible sin silicatos (los silicatos inhiben el decapado)</td></tr>
+            <tr><td>Concentraci&oacute;n</td><td class="mono">4&ndash;8 oz/gal (30&ndash;60 g/L)</td><td>Seg&uacute;n TDS del proveedor</td></tr>
+            <tr><td>Temperatura</td><td class="mono">130&ndash;160&deg;F (54&ndash;71&deg;C)</td><td>Mayor temperatura = remoci&oacute;n m&aacute;s r&aacute;pida de suciedad</td></tr>
+            <tr><td>Tiempo</td><td class="mono">3&ndash;10 min (inmersi&oacute;n o aspersi&oacute;n)</td><td>Aceite pesado: extender a 10 min</td></tr>
+            <tr><td>Agitaci&oacute;n</td><td class="mono">Aire o mec&aacute;nica</td><td>Ayuda a levantar suciedades de cavidades</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ALKALINE ETCH PARAMETERS -->
+    <div>
+      <h3 class="section-title">Etapa B &mdash; Decapado Alcalino <span class="sub">Ataque c&aacute;ustico</span></h3>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table">
+          <thead><tr><th>Par&aacute;metro</th><th>Rango</th><th>Notas</th></tr></thead>
+          <tbody>
+            <tr><td>Qu&iacute;mica</td><td class="mono">NaOH (hidr&oacute;xido de sodio)</td><td>Decapante propietario puede agregar secuestrantes</td></tr>
+            <tr><td>Concentraci&oacute;n</td><td class="mono">40&ndash;60 g/L (5&ndash;8 oz/gal)</td><td>Mayor = decapado m&aacute;s agresivo</td></tr>
+            <tr><td>Temperatura</td><td class="mono">122&ndash;160&deg;F (50&ndash;71&deg;C)</td><td>Controla la velocidad de decapado; reducir para aleaciones 2xxx</td></tr>
+            <tr><td>Tiempo</td><td class="mono">1&ndash;5 min (t&iacute;pico 2&ndash;3)</td><td>Decapado excesivo = p&eacute;rdida dimensional + smut</td></tr>
+            <tr><td>Al Disuelto</td><td class="mono">&lt;50 g/L (rastrear por titulaci&oacute;n)</td><td>Arriba de 50: velocidad de decapado baja, vaciar o decantar</td></tr>
+            <tr><td>Velocidad de Decapado</td><td class="mono">~0.001 in/lado/min</td><td>Depende de la aleaci&oacute;n; probar en cupones</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="bottom-grid">
+      <div>
+        <h3 class="section-title">Soluci&oacute;n de Problemas</h3>
+        <div class="trouble-grid" style="grid-template-columns:1fr;">
+          <div class="glass trouble-card"><h5>Decapado Irregular / Rayas</h5><p>Limpieza incompleta &mdash; aceite o huellas dactilares bloquean el decapado. Extienda el tiempo de limpieza; verifique la concentraci&oacute;n del limpiador. Siempre enjuague entre limpieza y decapado.</p></div>
+          <div class="glass trouble-card"><h5>P&eacute;rdida Excesiva de Metal</h5><p>Temperatura o tiempo de decapado demasiado altos. Reduzca al m&iacute;nimo necesario para acabado mate. Cr&iacute;tico en piezas de pared delgada.</p></div>
+          <div class="glass trouble-card"><h5>Smut Pesado Despu&eacute;s del Decapado</h5><p>Normal para aleaciones con alto Si o alto Cu &mdash; el paso de desmut (03) lo remueve. Si es excesivo, verifique la segregaci&oacute;n de aleaci&oacute;n o la concentraci&oacute;n del decapado.</p></div>
+          <div class="glass trouble-card"><h5>Velocidad de Decapado Disminuyendo</h5><p>Al disuelto por encima de 50 g/L. Titule el contenido de Al; decante o reemplace el ba&ntilde;o. El Al alto desacelera la reacci&oacute;n y produce un acabado inconsistente.</p></div>
+          <div class="glass trouble-card"><h5>Espuma / Burbujeo en el Limpiador</h5><p>Normal con limpiadores con surfactantes. La espuma excesiva puede indicar contaminaci&oacute;n por arrastre o concentraci&oacute;n incorrecta del producto.</p></div>
+          <div class="glass trouble-card"><h5>Puntos Brillantes (Sin Decapado)</h5><p>Aceite residual, adhesivo de cinta o marcas de manipulaci&oacute;n. Mejore la pre-limpieza o agregue agitaci&oacute;n ultras&oacute;nica.</p></div>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="section-title">S&iacute; Haga / No Haga</h3>
+        <div class="compare-grid" style="grid-template-columns:1fr;">
+          <div class="glass compare-card do">
+            <h4>S&iacute; Haga <span class="tag good">buena</span></h4>
+            <ul>
+              <li>Enjuague entre la limpieza por inmersi&oacute;n y el decapado</li>
+              <li>Use limpiador sin silicatos para l&iacute;neas de anodizado</li>
+              <li>Rastree el Al disuelto en el ba&ntilde;o de decapado</li>
+              <li>Use EPP completo en el tanque de decapado (NaOH quema)</li>
+            
+              <li>Verificar la concentraci&oacute;n del limpiador por titulaci&oacute;n al inicio de cada turno</li>
+            </ul>
+          </div>
+          <div class="glass compare-card dont">
+            <h4>No Haga <span class="tag bad">evitar</span></h4>
+            <ul>
+              <li>Omitir la limpieza e ir directo al decapado</li>
+              <li>Usar limpiadores con silicatos (inhibe uniformidad del decapado)</li>
+              <li>Dejar que las piezas se sequen entre tanques</li>
+              <li>Decapar aleaciones 2xxx a alta temperatura sin probar</li>
+            
+              <li>Neutralizar quemaduras c&aacute;usticas con &aacute;cido &mdash; lave solo con agua por 15+ minutos</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="safety-card">
+      <div class="safety-head">&#9888; Seguridad &mdash; C&aacute;ustico Caliente (NaOH)</div>
+      <div class="safety-body"><strong>El hidr&oacute;xido de sodio causa quemaduras qu&iacute;micas severas al contacto.</strong> El tanque de decapado opera a 122&ndash;160&deg;F &mdash; las salpicaduras causan quemaduras inmediatas. La reacci&oacute;n con aluminio genera gas hidr&oacute;geno (H&sub2;) &mdash; inflamable en espacios confinados. EPP: gafas antisalpicaduras + careta facial, guantes qu&iacute;micos hasta el codo, mandil, botas qu&iacute;micas. Se requiere ventilaci&oacute;n continua sobre el tanque de decapado. <strong>Lavaojos y regadera de seguridad a no m&aacute;s de 10 segundos de distancia caminando.</strong> Si el c&aacute;ustico salpica la piel, lave inmediatamente con agua durante al menos 15 minutos. No aplique vinagre ni &aacute;cido &mdash; esto empeora la quemadura.</div>
+    </div>
+
+  </div>
+
+  <footer class="footer poster-footer">
+    <p class="footer-disclaimer">Solo referencia t&eacute;cnica. Verifique todos los par&aacute;metros contra la TDS de su proveedor qu&iacute;mico, especificaciones del cliente y requisitos regulatorios aplicables antes del uso en producci&oacute;n. Consulte siempre a su proveedor qu&iacute;mico para los rangos operativos m&aacute;s actuales y las hojas de datos de seguridad.</p>
+    <p class="footer-title">Limpieza y Decapado Alcalino &mdash; Serie de Anodizado con &Aacute;cido Sulf&uacute;rico</p>
+    <span class="footer-brand">Plating Posters &middot; Serie de Referencia de Acabado de Metales &middot; PP-Anod-01-T / v1.0 / 2026</span>
+  </footer>
+</div>
+</div>
+</div>
+<div class="tweaks"><div style="display:flex;gap:8px;align-items:center;"><span style="color:rgba(240,237,232,.5);font-size:11px;letter-spacing:.06em;text-transform:uppercase;">Edici&oacute;n</span><button id="btnDark" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:#E8A020;color:#1A1F2E;border:1px solid #E8A020;" onclick="setEdition('')">Oscuro</button><button id="btnLight" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);" onclick="setEdition('light')">Claro</button></div><button onclick="window.print()" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);">Imprimir / PDF</button></div>
+<script>const posterWrap=document.getElementById('posterWrap');const poster=document.getElementById('poster');function scalePoster(){const sW=(window.innerWidth-24)/1200;const sH=(window.innerHeight-24)/1800;const s=Math.min(sW,sH);posterWrap.style.transform='scale('+s+')';posterWrap.style.transformOrigin='top center';posterWrap.style.width='1200px';posterWrap.style.height=(1800*s)+'px';}function setEdition(e){if(e)poster.dataset.edition=e;else delete poster.dataset.edition;document.getElementById('btnDark').style.background=e?'transparent':'#E8A020';document.getElementById('btnDark').style.color=e?'#F0EDE8':'#1A1F2E';document.getElementById('btnDark').style.borderColor=e?'rgba(255,255,255,.2)':'#E8A020';document.getElementById('btnLight').style.background=e?'#E8A020':'transparent';document.getElementById('btnLight').style.color=e?'#1A1F2E':'#F0EDE8';document.getElementById('btnLight').style.borderColor=e?'#E8A020':'rgba(255,255,255,.2)';}scalePoster();window.addEventListener('resize',scalePoster);</script>
+</body>
+</html>

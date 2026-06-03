@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EN High Phos &mdash; Activation &mdash; Technical | Plating Posters Inc</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Barlow:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#1A1F2E;--navy:#0D1020;--text:#F0EDE8;--muted:rgba(240,237,232,.62);
+  --faint:rgba(240,237,232,.38);
+  --amber:#E8A020;--teal:#2EC4B6;--emerald:#27AE60;--coral:#E05C5C;
+  --slate:#3A4055;--callout:#1E2435;--altrow:#252B3D;
+  --glass-bg:rgba(30,36,53,.55);--glass-border:rgba(255,255,255,.12);
+  --glass-shadow:inset 0 1px 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(0,0,0,.2),0 4px 12px rgba(0,0,0,.25);
+}
+.poster[data-edition="light"]{
+  --bg:#F5F4F0;--navy:#DDD8CE;--text:#1B2030;--muted:rgba(27,32,48,.66);
+  --faint:rgba(27,32,48,.42);
+  --amber:#B8770D;--teal:#1A8C82;--emerald:#1E8449;--coral:#B7322F;
+  --slate:#C5C0B5;--callout:#ECEAE1;--altrow:#E4E1D6;
+  --glass-bg:rgba(255,253,247,.66);--glass-border:rgba(27,32,48,.10);
+  --glass-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 4px 12px rgba(27,32,48,.08);
+}
+html,body{margin:0;padding:0;background:#0a0c14;}
+.stage{width:100vw;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;overflow:visible;padding:12px 0;box-sizing:border-box;}
+.poster-wrap{transform-origin:center center;}
+.poster{width:1200px;height:1800px;position:relative;overflow:hidden;background:radial-gradient(1200px 800px at 15% 8%,rgba(46,196,182,.14),transparent 60%),radial-gradient(1000px 700px at 90% 25%,rgba(232,160,32,.12),transparent 55%),radial-gradient(900px 900px at 50% 80%,rgba(224,92,92,.10),transparent 60%),var(--bg);font-family:'Inter',sans-serif;color:var(--text);display:flex;flex-direction:column;padding:32px;box-sizing:border-box;}
+.poster::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:50px 50px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);pointer-events:none;z-index:0;}
+.poster>*{position:relative;z-index:1;}
+.glass{background-color:var(--glass-bg);background-image:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));border:1px solid var(--glass-border);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);box-shadow:var(--glass-shadow);border-radius:12px;}
+.tack{position:absolute;width:24px;height:24px;border-radius:50%;border:1.5px solid rgba(232,160,32,.28);z-index:2;pointer-events:none;}.tack::before,.tack::after{content:"";position:absolute;background:rgba(232,160,32,.28);}.tack::before{left:50%;top:-3px;bottom:-3px;width:1px;transform:translateX(-50%);}.tack::after{top:50%;left:-3px;right:-3px;height:1px;transform:translateY(-50%);}.tack.tl{top:12px;left:12px;}.tack.tr{top:12px;right:12px;}.tack.bl{bottom:12px;left:12px;}.tack.br{bottom:12px;right:12px;}
+.poster-header{flex-shrink:0;}.poster-body{flex:1;min-height:0;overflow:hidden;display:flex;flex-direction:column;gap:5px;justify-content:space-between;}.poster-footer{flex-shrink:0;margin-top:8px;}
+.header-band{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:8px;}.header-left{flex:1;min-width:0;}.eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--amber);letter-spacing:.16em;text-transform:uppercase;margin-bottom:4px;display:flex;align-items:center;gap:12px;}.eyebrow::before{content:"";display:inline-block;width:30px;height:3px;background:var(--amber);}.headline{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:72px;color:var(--text);line-height:.92;margin:4px 0;letter-spacing:-.01em;text-transform:uppercase;}.headline em{font-style:normal;color:var(--amber);}.subhead{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;color:var(--teal);margin:0 0 3px;letter-spacing:.02em;text-transform:uppercase;}.tagline{font-family:'Inter',sans-serif;font-style:italic;font-size:13px;color:var(--muted);line-height:1.45;max-width:700px;margin:0;}
+.logo-card{flex-shrink:0;padding:12px 10px;display:flex;flex-direction:column;align-items:center;gap:8px;align-self:flex-start;}.logo-tile{width:68px;height:68px;border-radius:12px;background:linear-gradient(135deg,#E8A020,#2EC4B6);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -2px 4px rgba(0,0,0,.15),0 4px 14px rgba(0,0,0,.35);}.logo-tile span{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:26px;color:#1A1F2E;letter-spacing:.02em;line-height:1;}.logo-word{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;letter-spacing:.04em;text-transform:uppercase;line-height:1;text-align:center;white-space:nowrap;}.logo-word .a{color:var(--text);}.logo-word .b{color:var(--amber);}.logo-inc{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.05em;text-transform:lowercase;color:var(--muted);margin-top:-2px;}
+.section-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:28px;letter-spacing:.08em;text-transform:uppercase;color:var(--text);margin:0 0 6px;display:flex;align-items:center;gap:8px;}.section-title::before{content:"";width:6px;height:6px;background:var(--amber);border-radius:50%;}.section-title .sub{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;color:var(--muted);margin-left:auto;font-weight:500;}
+.rule-card{display:flex;align-items:center;gap:16px;padding:14px 24px;background:rgba(232,160,32,.07);}.rule-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:68px;color:var(--amber);line-height:1;letter-spacing:-.02em;}.rule-body{flex:1;}.rule-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:19px;color:var(--amber);letter-spacing:.08em;text-transform:uppercase;}.rule-text{font-family:'Inter',sans-serif;font-size:13px;color:var(--muted);line-height:1.45;margin-top:3px;}
+.data-table{width:100%;border-collapse:collapse;}.data-table th{font-family:'Barlow',sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);padding:8px 12px;text-align:left;background:rgba(13,16,32,.35);border-bottom:1px solid var(--glass-border);}.poster[data-edition="light"] .data-table th{background:rgba(27,32,48,.06);}.data-table td{padding:8px 12px;color:var(--text);line-height:1.5;border-bottom:1px solid rgba(255,255,255,.05);font-family:'Inter',sans-serif;font-size:14px;}.data-table tr:last-child td{border-bottom:none;}.data-table tr:nth-child(even) td{background:rgba(255,255,255,.02);}.poster[data-edition="light"] .data-table tr:nth-child(even) td{background:rgba(27,32,48,.025);}.data-table .mono{font-family:'JetBrains Mono',monospace;font-size:13px;}.data-table.compact th{font-size:12px;padding:7px 10px;}.data-table.compact td{padding:6px 10px;font-size:13px;line-height:1.45;}.data-table.compact .mono{font-size:12.5px;}.data-table.bath th{font-size:12px;padding:6px 8px;}.data-table.bath td{padding:5px 8px;font-size:13px;line-height:1.4;}.data-table.bath .mono{font-size:12px;}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}.compare-card{padding:10px 14px;}.compare-card h4{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:21px;color:var(--text);margin:0 0 8px;text-transform:uppercase;letter-spacing:.04em;}.compare-card h4 .tag{font-size:12px;padding:2px 8px;border-radius:4px;margin-left:8px;font-family:'JetBrains Mono',monospace;font-weight:500;letter-spacing:.06em;}.compare-card h4 .tag.good{background:rgba(39,174,96,.15);color:var(--emerald);}.compare-card h4 .tag.bad{background:rgba(224,92,92,.15);color:var(--coral);}.compare-card ul{list-style:none;padding:0;margin:0;}.compare-card li{font-size:13.5px;line-height:1.5;padding:2px 0;display:flex;gap:8px;align-items:flex-start;}.compare-card li::before{content:"";width:5px;height:5px;border-radius:50%;margin-top:7px;flex-shrink:0;}.compare-card.do li::before{background:var(--emerald);}.compare-card.dont li::before{background:var(--coral);}
+.bottom-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:10px;}
+.insight-card{padding:12px 18px;border-left:3px solid var(--teal);background:rgba(46,196,182,.06);border-radius:0 12px 12px 0;}.insight-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;color:var(--teal);letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px;}.insight-text{font-family:'Inter',sans-serif;font-size:13px;color:var(--text);line-height:1.45;}
+.safety-card{padding:12px 18px;background:rgba(224,92,92,.08);border:1px solid rgba(224,92,92,.25);border-radius:12px;}.safety-head{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px;color:var(--coral);letter-spacing:.06em;text-transform:uppercase;margin-bottom:5px;}.safety-body{font-size:13px;color:var(--text);line-height:1.45;}.safety-body strong{font-weight:700;color:var(--coral);}
+.process-flow{display:flex;align-items:center;justify-content:space-between;padding:10px 16px;height:80px;gap:4px;}
+.footer{padding:10px 20px;background-color:rgba(13,16,32,.85);background-image:linear-gradient(180deg,rgba(255,255,255,.04),rgba(0,0,0,0));border:1px solid rgba(255,255,255,.10);border-radius:8px;text-align:center;display:flex;flex-direction:column;gap:2px;}.poster[data-edition="light"] .footer{background-color:rgba(221,216,206,.95);border-color:rgba(27,32,48,.10);}.footer-disclaimer{font-family:'Inter',sans-serif;font-size:9px;line-height:1.35;color:var(--faint);margin:0 auto;max-width:900px;}.footer-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:13px;color:var(--text);letter-spacing:.04em;text-transform:uppercase;margin:0;}.footer-brand{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;}
+.tweaks{position:fixed;bottom:16px;right:16px;z-index:100;background:rgba(13,16,32,.92);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:10px 14px;display:flex;flex-direction:column;gap:8px;font-family:'Inter',sans-serif;font-size:12px;color:#F0EDE8;}
+@media print{@page{size:12.5in 18.75in;margin:0;}html,body{background:#1A1F2E !important;-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}*{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}.stage{position:static;padding:0;display:block;overflow:visible;}.poster-wrap{transform:none !important;width:auto !important;height:auto !important;}.poster{box-shadow:none !important;width:1200px !important;height:1800px !important;overflow:hidden !important;}.glass,.insight-card,.safety-card{backdrop-filter:none !important;-webkit-backdrop-filter:none !important;}.tweaks{display:none !important;}}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="poster-wrap" id="posterWrap">
+<div class="poster" id="poster">
+  <span class="tack tl" aria-hidden="true"></span><span class="tack tr" aria-hidden="true"></span>
+  <span class="tack bl" aria-hidden="true"></span><span class="tack br" aria-hidden="true"></span>
+  <div class="poster-header">
+    <header class="header-band">
+      <div class="header-left">
+        <div class="eyebrow"><span>Plating Posters &nbsp;&middot;&nbsp; EN High Phos (10&ndash;13% P) &nbsp;&middot;&nbsp; 7-Stage Process &nbsp;&middot;&nbsp; Activation</span></div>
+        <h1 class="headline">ELECTROLESS<br><em>NICKEL</em></h1>
+        <h2 class="subhead">High Phosphorus (10&ndash;13% P) &mdash; Maximum Corrosion Resistance, Non-Magnetic</h2>
+        <p class="tagline">No current, no anode &mdash; the bath plates itself. High-phos is the corrosion champion of the EN family.</p>
+      </div>
+      <aside class="glass logo-card">
+        <div class="logo-tile"><span>PP</span></div>
+        <div class="logo-word"><span class="a">Plating</span> <span class="b">Posters</span></div>
+        <div class="logo-inc">www.platingposters.com</div>
+      </aside>
+    </header>
+  </div>
+  <div class="poster-body">
+
+    <div class="glass rule-card">
+      <div class="rule-num">03</div>
+      <div class="rule-body">
+        <div class="rule-label">Stage 3 &mdash; Acid Activation</div>
+        <div class="rule-text">Acid activation removes the thin oxide layer that forms on the substrate after cleaning. This exposes fresh, catalytically active metal that initiates the autocatalytic EN reaction. The activation chemistry must match the substrate: steel, aluminum, and copper alloys each require different acids and procedures. Getting activation wrong is the #1 cause of adhesion failures in electroless nickel plating.</div>
+      </div>
+    </div>
+
+    <!-- ACTIVATION CHEMISTRY TABLE -->
+    <div>
+      <h3 class="section-title">Activation Chemistry by Acid Type <span class="sub">common options</span></h3>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table compact">
+          <thead><tr><th>Acid</th><th>Concentration</th><th>Temp</th><th>Time</th><th>Best For</th></tr></thead>
+          <tbody>
+            <tr><td style="font-weight:600;color:var(--amber);">Hydrochloric (HCl)</td><td class="mono">10&ndash;20% v/v</td><td class="mono">Ambient</td><td class="mono">30&ndash;60 s</td><td>Steel, stainless steel, iron alloys</td></tr>
+            <tr><td style="font-weight:600;color:var(--amber);">Sulfuric (H&#8322;SO&#8324;)</td><td class="mono">10&ndash;25% v/v</td><td class="mono">Ambient</td><td class="mono">30&ndash;60 s</td><td>Steel (alternative to HCl); less fume</td></tr>
+            <tr><td style="font-weight:600;color:var(--amber);">Nitric (HNO&#8323;)</td><td class="mono">30&ndash;50% v/v</td><td class="mono">Ambient</td><td class="mono">15&ndash;30 s</td><td>Stainless steel (passivation break); copper alloys</td></tr>
+            <tr><td style="font-weight:600;color:var(--amber);">Zincate (NaOH + ZnO)</td><td class="mono">Per supplier</td><td class="mono">70&ndash;80&deg;F (21&ndash;27&deg;C)</td><td class="mono">30&ndash;60 s</td><td>Aluminum &amp; aluminum alloys (immersion Zn layer)</td></tr>
+            <tr><td style="font-weight:600;color:var(--amber);">Phosphoric (H&#8323;PO&#8324;)</td><td class="mono">5&ndash;15% v/v</td><td class="mono">Ambient</td><td class="mono">30&ndash;60 s</td><td>Mild activation; sensitive substrates</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- SUBSTRATE ROUTING TABLE -->
+    <div>
+      <h3 class="section-title">Substrate Routing Guide <span class="sub">which path for which metal</span></h3>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table compact">
+          <thead><tr><th>Substrate</th><th>Activation Sequence</th><th>Critical Notes</th></tr></thead>
+          <tbody>
+            <tr><td style="font-weight:600;">Carbon Steel</td><td>HCl 10&ndash;20% &rarr; Rinse &rarr; DI Rinse &rarr; EN</td><td>Standard path; watch for flash rust</td></tr>
+            <tr><td style="font-weight:600;">Stainless Steel</td><td>HCl 20% or HNO&#8323; 30% &rarr; Rinse &rarr; DI Rinse &rarr; EN (or Wood&rsquo;s Ni strike)</td><td>Must break passive CrO layer; Wood&rsquo;s strike recommended for 300-series</td></tr>
+            <tr><td style="font-weight:600;">Aluminum (wrought)</td><td>NaOH etch &rarr; Rinse &rarr; Zincate &rarr; Strip &rarr; Double Zincate &rarr; Rinse &rarr; EN</td><td>Double zincate is mandatory for adhesion; single zincate = peeling risk</td></tr>
+            <tr><td style="font-weight:600;">Aluminum (cast)</td><td>NaOH etch &rarr; Desmut (HNO&#8323;+HF) &rarr; Zincate &rarr; Strip &rarr; Double Zincate &rarr; EN</td><td>High-Si castings need HF desmut; use fuming acid caution</td></tr>
+            <tr><td style="font-weight:600;">Copper / Brass</td><td>H&#8322;SO&#8324; 10% or HCl 5&ndash;10% &rarr; Rinse &rarr; EN</td><td>Mild acid; avoid over-etch on thin substrates</td></tr>
+            <tr><td style="font-weight:600;">High-Strength Steel (&ge;40 HRC)</td><td>HCl 10% (max 120 s) &rarr; Rinse &rarr; EN &rarr; HE Bake within 4 hr</td><td>Minimize acid exposure; hydrogen embrittlement risk; mandatory HE bake per ASTM B849</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ACTIVATION MECHANISM SVG -->
+    <div class="glass" style="padding:10px 14px;">
+      <h3 class="section-title" style="margin-bottom:4px;">Activation Mechanism <span class="sub">oxide removal &rarr; catalytic surface</span></h3>
+      <svg viewBox="0 0 1100 90" width="100%" height="72" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Before activation -->
+        <rect x="30" y="5" width="320" height="80" rx="8" fill="rgba(224,92,92,.05)" stroke="var(--coral)" stroke-width="1"/>
+        <text x="190" y="18" text-anchor="middle" fill="var(--coral)" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="11" letter-spacing=".06em">BEFORE ACTIVATION</text>
+        <rect x="60" y="55" width="260" height="14" rx="3" fill="rgba(232,160,32,.12)" stroke="var(--amber)" stroke-width=".8"/>
+        <text x="190" y="65" text-anchor="middle" fill="var(--amber)" font-family="Inter,sans-serif" font-size="7" font-weight="600">BASE METAL (Fe / Al / Cu)</text>
+        <rect x="60" y="38" width="260" height="14" rx="3" fill="rgba(224,92,92,.2)" stroke="var(--coral)" stroke-width=".8"/>
+        <text x="190" y="48" text-anchor="middle" fill="var(--coral)" font-family="Inter,sans-serif" font-size="7" font-weight="600">OXIDE LAYER (passive, non-catalytic)</text>
+        <text x="190" y="30" text-anchor="middle" fill="var(--muted)" font-family="Inter,sans-serif" font-size="7" font-style="italic">EN cannot initiate on oxide &mdash; no catalytic activity</text>
+
+        <!-- Arrow -->
+        <line x1="360" y1="45" x2="420" y2="45" stroke="var(--amber)" stroke-width="2"/><polygon points="416,40 425,45 416,50" fill="var(--amber)"/>
+        <text x="392" y="38" text-anchor="middle" fill="var(--amber)" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="10">ACID</text>
+
+        <!-- After activation -->
+        <rect x="430" y="5" width="320" height="80" rx="8" fill="rgba(39,174,96,.05)" stroke="var(--emerald)" stroke-width="1"/>
+        <text x="590" y="18" text-anchor="middle" fill="var(--emerald)" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="11" letter-spacing=".06em">AFTER ACTIVATION</text>
+        <rect x="460" y="50" width="260" height="14" rx="3" fill="rgba(232,160,32,.12)" stroke="var(--amber)" stroke-width=".8"/>
+        <text x="590" y="60" text-anchor="middle" fill="var(--amber)" font-family="Inter,sans-serif" font-size="7" font-weight="600">CLEAN BASE METAL (catalytically active)</text>
+        <text x="590" y="30" text-anchor="middle" fill="var(--emerald)" font-family="Inter,sans-serif" font-size="7" font-weight="600">Oxide dissolved &rarr; fresh metal surface exposed</text>
+        <text x="590" y="42" text-anchor="middle" fill="var(--emerald)" font-family="Inter,sans-serif" font-size="7">Fe/Ni/Cu surface catalyzes Ni&sup2;&#8314; reduction by hypophosphite</text>
+
+        <!-- Al zincate path -->
+        <rect x="780" y="5" width="280" height="80" rx="8" fill="rgba(46,196,182,.05)" stroke="var(--teal)" stroke-width="1"/>
+        <text x="920" y="18" text-anchor="middle" fill="var(--teal)" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="11" letter-spacing=".06em">ALUMINUM PATH (ZINCATE)</text>
+        <rect x="810" y="50" width="220" height="14" rx="3" fill="rgba(232,160,32,.12)" stroke="var(--amber)" stroke-width=".8"/>
+        <text x="920" y="60" text-anchor="middle" fill="var(--amber)" font-family="Inter,sans-serif" font-size="7" font-weight="600">ALUMINUM SUBSTRATE</text>
+        <rect x="810" y="33" width="220" height="14" rx="3" fill="rgba(46,196,182,.2)" stroke="var(--teal)" stroke-width=".8"/>
+        <text x="920" y="43" text-anchor="middle" fill="var(--teal)" font-family="Inter,sans-serif" font-size="7" font-weight="600">IMMERSION ZINC LAYER (catalytic)</text>
+        <text x="920" y="30" text-anchor="middle" fill="var(--muted)" font-family="Inter,sans-serif" font-size="7" font-style="italic">Double zincate: strip first zinc &rarr; reapply for adhesion</text>
+      </svg>
+    </div>
+
+
+    <!-- SUBSTRATE ACTIVATION ROUTING FLOWCHART -->
+    <div class="glass" style="padding:10px 14px;">
+      <h3 class="section-title" style="margin-bottom:4px;">Substrate-Specific Activation Routing <span class="sub">match the acid to the metal</span></h3>
+      <svg viewBox="0 0 1100 160" width="100%" height="130" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Start node -->
+        <rect x="10" y="55" width="110" height="40" rx="20" fill="rgba(232,160,32,.12)" stroke="var(--amber)" stroke-width="1.5"/>
+        <text x="65" y="79" text-anchor="middle" fill="var(--amber)" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="13">SUBSTRATE?</text>
+        <!-- Branch arrows from start -->
+        <line x1="120" y1="60" x2="175" y2="20" stroke="var(--teal)" stroke-width="1.2"/><polygon points="173,16 180,20 173,24" fill="var(--teal)"/>
+        <line x1="120" y1="68" x2="175" y2="55" stroke="var(--amber)" stroke-width="1.2"/><polygon points="173,51 180,55 173,59" fill="var(--amber)"/>
+        <line x1="120" y1="82" x2="175" y2="100" stroke="var(--coral)" stroke-width="1.2"/><polygon points="173,96 180,100 173,104" fill="var(--coral)"/>
+        <line x1="120" y1="90" x2="175" y2="140" stroke="var(--emerald)" stroke-width="1.2"/><polygon points="173,136 180,140 173,144" fill="var(--emerald)"/>
+        <!-- Row 1: Carbon Steel (teal) -->
+        <rect x="180" y="5" width="120" height="28" rx="6" fill="rgba(46,196,182,.08)" stroke="var(--teal)" stroke-width="1"/>
+        <text x="240" y="23" text-anchor="middle" fill="var(--teal)" font-family="Inter,sans-serif" font-size="8" font-weight="700">Carbon Steel</text>
+        <line x1="300" y1="19" x2="340" y2="19" stroke="var(--teal)" stroke-width="1"/><polygon points="337,15 344,19 337,23" fill="var(--teal)"/>
+        <rect x="345" y="5" width="155" height="28" rx="6" fill="rgba(46,196,182,.05)" stroke="var(--teal)" stroke-width=".8"/>
+        <text x="422" y="23" text-anchor="middle" fill="var(--text)" font-family="Inter,sans-serif" font-size="7.5" font-weight="600">HCl 10&ndash;20% / 15&ndash;30s</text>
+        <line x1="500" y1="19" x2="540" y2="19" stroke="var(--teal)" stroke-width="1"/><polygon points="537,15 544,19 537,23" fill="var(--teal)"/>
+        <rect x="545" y="5" width="80" height="28" rx="6" fill="rgba(46,196,182,.05)" stroke="var(--teal)" stroke-width=".8"/>
+        <text x="585" y="23" text-anchor="middle" fill="var(--text)" font-family="Inter,sans-serif" font-size="7.5" font-weight="600">Rinse</text>
+        <line x1="625" y1="19" x2="665" y2="19" stroke="var(--teal)" stroke-width="1"/><polygon points="662,15 669,19 662,23" fill="var(--teal)"/>
+        <rect x="670" y="5" width="90" height="28" rx="6" fill="rgba(46,196,182,.15)" stroke="var(--teal)" stroke-width="1.2"/>
+        <text x="715" y="23" text-anchor="middle" fill="var(--teal)" font-family="Barlow Condensed,sans-serif" font-size="10" font-weight="800">EN BATH</text>
+        <!-- Row 2: Stainless Steel (amber) -->
+        <rect x="180" y="40" width="120" height="28" rx="6" fill="rgba(232,160,32,.08)" stroke="var(--amber)" stroke-width="1"/>
+        <text x="240" y="58" text-anchor="middle" fill="var(--amber)" font-family="Inter,sans-serif" font-size="8" font-weight="700">Stainless Steel</text>
+        <line x1="300" y1="54" x2="340" y2="54" stroke="var(--amber)" stroke-width="1"/><polygon points="337,50 344,54 337,58" fill="var(--amber)"/>
+        <rect x="345" y="40" width="155" height="28" rx="6" fill="rgba(232,160,32,.05)" stroke="var(--amber)" stroke-width=".8"/>
+        <text x="422" y="52" text-anchor="middle" fill="var(--text)" font-family="Inter,sans-serif" font-size="7" font-weight="600">HCl + HNO&#8323; or</text>
+        <text x="422" y="62" text-anchor="middle" fill="var(--text)" font-family="Inter,sans-serif" font-size="7" font-weight="600">Wood&rsquo;s Strike</text>
+        <line x1="500" y1="54" x2="540" y2="54" stroke="var(--amber)" stroke-width="1"/><polygon points="537,50 544,54 537,58" fill="var(--amber)"/>
+        <rect x="545" y="40" width="80" height="28" rx="6" fill="rgba(232,160,32,.05)" stroke="var(--amber)" stroke-width=".8"/>
+        <text x="585" y="58" text-anchor="middle" fill="var(--text)" font-family="Inter,sans-serif" font-size="7.5" font-weight="600">Rinse</text>
+        <line x1="625" y1="54" x2="665" y2="54" stroke="var(--amber)" stroke-width="1"/><polygon points="662,50 669,54 662,58" fill="var(--amber)"/>
+        <rect x="670" y="40" width="90" height="28" rx="6" fill="rgba(232,160,32,.15)" stroke="var(--amber)" stroke-width="1.2"/>
+        <text x="715" y="58" text-anchor="middle" fill="var(--amber)" font-family="Barlow Condensed,sans-serif" font-size="10" font-weight="800">EN BATH</text>
+        <!-- Row 3: Aluminum (coral) -->
+        <rect x="180" y="85" width="120" height="28" rx="6" fill="rgba(224,92,92,.08)" stroke="var(--coral)" stroke-width="1"/>
+        <text x="240" y="103" text-anchor="middle" fill="var(--coral)" font-family="Inter,sans-serif" font-size="8" font-weight="700">Aluminum</text>
+        <line x1="300" y1="99" x2="340" y2="99" stroke="var(--coral)" stroke-width="1"/><polygon points="337,95 344,99 337,103" fill="var(--coral)"/>
+        <rect x="345" y="85" width="90" height="28" rx="6" fill="rgba(224,92,92,.05)" stroke="var(--coral)" stroke-width=".8"/>
+        <text x="390" y="103" text-anchor="middle" fill="var(--text)" font-family="Inter,sans-serif" font-size="7.5" font-weight="600">Zincate</text>
+        <line x1="435" y1="99" x2="465" y2="99" stroke="var(--coral)" stroke-width="1"/><polygon points="462,95 469,99 462,103" fill="var(--coral)"/>
+        <rect x="470" y="85" width="70" height="28" rx="6" fill="rgba(224,92,92,.05)" stroke="var(--coral)" stroke-width=".8"/>
+        <text x="505" y="103" text-anchor="middle" fill="var(--text)" font-family="Inter,sans-serif" font-size="7.5" font-weight="600">Strip</text>
+        <line x1="540" y1="99" x2="570" y2="99" stroke="var(--coral)" stroke-width="1"/><polygon points="567,95 574,99 567,103" fill="var(--coral)"/>
+        <rect x="575" y="85" width="100" height="28" rx="6" fill="rgba(224,92,92,.05)" stroke="var(--coral)" stroke-width=".8"/>
+        <text x="625" y="103" text-anchor="middle" fill="var(--text)" font-family="Inter,sans-serif" font-size="7.5" font-weight="600">Re-Zincate</text>
+        <line x1="675" y1="99" x2="705" y2="99" stroke="var(--coral)" stroke-width="1"/><polygon points="702,95 709,99 702,103" fill="var(--coral)"/>
+        <rect x="710" y="85" width="65" height="28" rx="6" fill="rgba(224,92,92,.05)" stroke="var(--coral)" stroke-width=".8"/>
+        <text x="742" y="103" text-anchor="middle" fill="var(--text)" font-family="Inter,sans-serif" font-size="7.5" font-weight="600">Rinse</text>
+        <line x1="775" y1="99" x2="805" y2="99" stroke="var(--coral)" stroke-width="1"/><polygon points="802,95 809,99 802,103" fill="var(--coral)"/>
+        <rect x="810" y="85" width="90" height="28" rx="6" fill="rgba(224,92,92,.15)" stroke="var(--coral)" stroke-width="1.2"/>
+        <text x="855" y="103" text-anchor="middle" fill="var(--coral)" font-family="Barlow Condensed,sans-serif" font-size="10" font-weight="800">EN BATH</text>
+        <!-- Loop arrow label -->
+        <text x="505" y="80" text-anchor="middle" fill="var(--coral)" font-family="Inter,sans-serif" font-size="6.5" font-style="italic" font-weight="600">double zincate loop</text>
+        <!-- Row 4: Copper Alloy (emerald) -->
+        <rect x="180" y="125" width="120" height="28" rx="6" fill="rgba(39,174,96,.08)" stroke="var(--emerald)" stroke-width="1"/>
+        <text x="240" y="143" text-anchor="middle" fill="var(--emerald)" font-family="Inter,sans-serif" font-size="8" font-weight="700">Copper Alloy</text>
+        <line x1="300" y1="139" x2="340" y2="139" stroke="var(--emerald)" stroke-width="1"/><polygon points="337,135 344,139 337,143" fill="var(--emerald)"/>
+        <rect x="345" y="125" width="155" height="28" rx="6" fill="rgba(39,174,96,.05)" stroke="var(--emerald)" stroke-width=".8"/>
+        <text x="422" y="143" text-anchor="middle" fill="var(--text)" font-family="Inter,sans-serif" font-size="7.5" font-weight="600">Mild acid dip (H&#8322;SO&#8324; 5%)</text>
+        <line x1="500" y1="139" x2="540" y2="139" stroke="var(--emerald)" stroke-width="1"/><polygon points="537,135 544,139 537,143" fill="var(--emerald)"/>
+        <rect x="545" y="125" width="80" height="28" rx="6" fill="rgba(39,174,96,.05)" stroke="var(--emerald)" stroke-width=".8"/>
+        <text x="585" y="143" text-anchor="middle" fill="var(--text)" font-family="Inter,sans-serif" font-size="7.5" font-weight="600">Rinse</text>
+        <line x1="625" y1="139" x2="665" y2="139" stroke="var(--emerald)" stroke-width="1"/><polygon points="662,135 669,139 662,143" fill="var(--emerald)"/>
+        <rect x="670" y="125" width="90" height="28" rx="6" fill="rgba(39,174,96,.15)" stroke="var(--emerald)" stroke-width="1.2"/>
+        <text x="715" y="143" text-anchor="middle" fill="var(--emerald)" font-family="Barlow Condensed,sans-serif" font-size="10" font-weight="800">EN BATH</text>
+      </svg>
+    </div>
+
+    <div class="compare-grid">
+      <div class="glass compare-card do" style="padding:8px 14px;">
+        <h4 style="font-size:18px;margin-bottom:5px;">Proper Activation <span class="tag good">Result</span></h4>
+        <ul>
+          <li>Uniform matte-gray or bright surface after acid dip</li>
+          <li>No rainbow tints, dark spots, or powder residue</li>
+          <li>Part goes to rinse immediately &mdash; no air drying</li>
+          <li>Excellent EN adhesion (&gt;35 MPa pull test typical)</li>
+        </ul>
+      </div>
+      <div class="glass compare-card dont" style="padding:8px 14px;">
+        <h4 style="font-size:18px;margin-bottom:5px;">Over-Activation / Wrong Acid <span class="tag bad">Failure</span></h4>
+        <ul>
+          <li>Excessive etching roughens surface &rarr; nodular EN deposit</li>
+          <li>Flash rust on steel from delayed transfer &rarr; poor adhesion</li>
+          <li>Wrong acid on Al (no zincate) &rarr; immediate oxide reform &rarr; peeling EN</li>
+          <li>Extended acid time on high-strength steel &rarr; hydrogen embrittlement</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="insight-card">
+      <div class="insight-label">The Double Zincate: Why It Matters for Aluminum</div>
+      <div class="insight-text">Aluminum instantly reforms its oxide when exposed to air or water. A single zincate dip deposits a zinc layer over this oxide &mdash; and the EN plates on the zinc. But the bond is only as strong as the oxide beneath it. The double zincate process strips the first zinc layer (which lifts the original oxide with it), then re-applies zinc directly onto fresh aluminum. This produces adhesion values <strong>3&ndash;5&times; higher</strong> than single zincate. For any critical Al application, double zincate is mandatory.</div>
+    </div>
+
+    <div class="safety-card">
+      <div class="safety-head">&#9888; Safety &mdash; Acid Activation</div>
+      <div class="safety-body"><strong>Hydrochloric acid</strong>: corrosive, fuming at concentrations &gt;20%. HCl mist irritates lungs &mdash; TLV-C 2 ppm. <strong>Sulfuric acid</strong>: severely corrosive; exothermic when mixing with water (always add acid to water, never reverse). <strong>Nitric acid</strong>: strong oxidizer; reacts violently with organics; produces NO&#8322; fumes. <strong>Hydrofluoric acid</strong> (Al desmut): extremely dangerous &mdash; penetrates skin and binds calcium in blood; can be fatal even from small skin exposure. HF requires specialized first-aid (calcium gluconate gel). Full PPE including face shield, acid-resistant gloves, and chemical apron at all acid stations. OSHA PEL for HCl: 5 ppm ceiling. Emergency shower and eyewash within 10 seconds.</div>
+    </div>
+
+  </div>
+  <footer class="footer poster-footer">
+    <p class="footer-disclaimer">Technical reference only. Verify all parameters against your chemistry supplier&rsquo;s TDS, customer specifications, and applicable regulatory requirements before production use.</p>
+    <p class="footer-title">Activation &mdash; EN High Phos Plating Series</p>
+    <span class="footer-brand">Plating Posters &middot; Metal Finishing Reference Series &middot; PP-ENhp-04-T / v1.0 / 2026</span>
+  </footer>
+</div>
+</div>
+</div>
+<div class="tweaks">
+  <div style="display:flex;gap:8px;align-items:center;">
+    <span style="color:rgba(240,237,232,.5);font-size:11px;letter-spacing:.06em;text-transform:uppercase;">Edition</span>
+    <button id="btnDark" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:#E8A020;color:#1A1F2E;border:1px solid #E8A020;" onclick="setEdition('')">Dark</button>
+    <button id="btnLight" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);" onclick="setEdition('light')">Light</button>
+  </div>
+  <button onclick="window.print()" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);">Print / PDF</button>
+</div>
+<script>
+const posterWrap=document.getElementById('posterWrap');const poster=document.getElementById('poster');function scalePoster(){const sW=(window.innerWidth-24)/1200;const sH=(window.innerHeight-24)/1800;const s=Math.min(sW,sH);posterWrap.style.transform='scale('+s+')';posterWrap.style.transformOrigin='top center';posterWrap.style.width='1200px';posterWrap.style.height=(1800*s)+'px';}function setEdition(e){if(e)poster.dataset.edition=e;else delete poster.dataset.edition;document.getElementById('btnDark').style.background=e?'transparent':'#E8A020';document.getElementById('btnDark').style.color=e?'#F0EDE8':'#1A1F2E';document.getElementById('btnDark').style.borderColor=e?'rgba(255,255,255,.2)':'#E8A020';document.getElementById('btnLight').style.background=e?'#E8A020':'transparent';document.getElementById('btnLight').style.color=e?'#1A1F2E':'#F0EDE8';document.getElementById('btnLight').style.borderColor=e?'#E8A020':'rgba(255,255,255,.2)';}scalePoster();window.addEventListener('resize',scalePoster);
+</script>
+</body>
+</html>

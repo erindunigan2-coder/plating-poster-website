@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EN High Phos &mdash; Flujo de Proceso &mdash; Technical | Plating Posters Inc</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Barlow:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#1A1F2E;--navy:#0D1020;--text:#F0EDE8;--muted:rgba(240,237,232,.62);
+  --faint:rgba(240,237,232,.38);
+  --amber:#E8A020;--teal:#2EC4B6;--emerald:#27AE60;--coral:#E05C5C;
+  --slate:#3A4055;--callout:#1E2435;--altrow:#252B3D;
+  --glass-bg:rgba(30,36,53,.55);--glass-border:rgba(255,255,255,.12);
+  --glass-shadow:inset 0 1px 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(0,0,0,.2),0 4px 12px rgba(0,0,0,.25);
+}
+.poster[data-edition="light"]{
+  --bg:#F5F4F0;--navy:#DDD8CE;--text:#1B2030;--muted:rgba(27,32,48,.66);
+  --faint:rgba(27,32,48,.42);
+  --amber:#B8770D;--teal:#1A8C82;--emerald:#1E8449;--coral:#B7322F;
+  --slate:#C5C0B5;--callout:#ECEAE1;--altrow:#E4E1D6;
+  --glass-bg:rgba(255,253,247,.66);--glass-border:rgba(27,32,48,.10);
+  --glass-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 4px 12px rgba(27,32,48,.08);
+}
+html,body{margin:0;padding:0;background:#0a0c14;}
+.stage{width:100vw;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;overflow:visible;padding:12px 0;box-sizing:border-box;}
+.poster-wrap{transform-origin:center center;}
+.poster{width:1200px;height:1800px;position:relative;overflow:hidden;background:radial-gradient(1200px 800px at 15% 8%,rgba(46,196,182,.14),transparent 60%),radial-gradient(1000px 700px at 90% 25%,rgba(232,160,32,.12),transparent 55%),radial-gradient(900px 900px at 50% 80%,rgba(224,92,92,.10),transparent 60%),var(--bg);font-family:'Inter',sans-serif;color:var(--text);display:flex;flex-direction:column;padding:32px;box-sizing:border-box;}
+.poster::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:50px 50px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);pointer-events:none;z-index:0;}
+.poster>*{position:relative;z-index:1;}
+.glass{background-color:var(--glass-bg);background-image:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));border:1px solid var(--glass-border);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);box-shadow:var(--glass-shadow);border-radius:12px;}
+.tack{position:absolute;width:24px;height:24px;border-radius:50%;border:1.5px solid rgba(232,160,32,.28);z-index:2;pointer-events:none;}.tack::before,.tack::after{content:"";position:absolute;background:rgba(232,160,32,.28);}.tack::before{left:50%;top:-3px;bottom:-3px;width:1px;transform:translateX(-50%);}.tack::after{top:50%;left:-3px;right:-3px;height:1px;transform:translateY(-50%);}.tack.tl{top:12px;left:12px;}.tack.tr{top:12px;right:12px;}.tack.bl{bottom:12px;left:12px;}.tack.br{bottom:12px;right:12px;}
+.poster-header{flex-shrink:0;}.poster-body{flex:1;min-height:0;overflow:hidden;display:flex;flex-direction:column;gap:5px;justify-content:space-between;}.poster-footer{flex-shrink:0;margin-top:8px;}
+.header-band{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:4px;}.header-left{flex:1;min-width:0;}.eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--amber);letter-spacing:.16em;text-transform:uppercase;margin-bottom:4px;display:flex;align-items:center;gap:12px;}.eyebrow::before{content:"";display:inline-block;width:30px;height:3px;background:var(--amber);}.headline{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:60px;color:var(--text);line-height:.92;margin:2px 0;letter-spacing:-.01em;text-transform:uppercase;}.headline em{font-style:normal;color:var(--amber);}.subhead{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;color:var(--teal);margin:0 0 3px;letter-spacing:.02em;text-transform:uppercase;}.tagline{font-family:'Inter',sans-serif;font-style:italic;font-size:13px;color:var(--muted);line-height:1.45;max-width:700px;margin:0;}
+.logo-card{flex-shrink:0;padding:12px 10px;display:flex;flex-direction:column;align-items:center;gap:8px;align-self:flex-start;}.logo-tile{width:68px;height:68px;border-radius:12px;background:linear-gradient(135deg,#E8A020,#2EC4B6);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -2px 4px rgba(0,0,0,.15),0 4px 14px rgba(0,0,0,.35);}.logo-tile span{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:26px;color:#1A1F2E;letter-spacing:.02em;line-height:1;}.logo-word{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;letter-spacing:.04em;text-transform:uppercase;line-height:1;text-align:center;white-space:nowrap;}.logo-word .a{color:var(--text);}.logo-word .b{color:var(--amber);}.logo-inc{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.05em;text-transform:lowercase;color:var(--muted);margin-top:-2px;}
+.section-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;letter-spacing:.08em;text-transform:uppercase;color:var(--text);margin:0 0 3px;display:flex;align-items:center;gap:8px;}.section-title::before{content:"";width:6px;height:6px;background:var(--amber);border-radius:50%;}.section-title .sub{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;color:var(--muted);margin-left:auto;font-weight:500;}
+.rule-card{display:flex;align-items:center;gap:12px;padding:10px 20px;background:rgba(232,160,32,.07);}.rule-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:52px;color:var(--amber);line-height:1;letter-spacing:-.02em;}.rule-body{flex:1;}.rule-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:19px;color:var(--amber);letter-spacing:.08em;text-transform:uppercase;}.rule-text{font-family:'Inter',sans-serif;font-size:13px;color:var(--muted);line-height:1.45;margin-top:3px;}
+.data-table{width:100%;border-collapse:collapse;}.data-table th{font-family:'Barlow',sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);padding:8px 12px;text-align:left;background:rgba(13,16,32,.35);border-bottom:1px solid var(--glass-border);}.poster[data-edition="light"] .data-table th{background:rgba(27,32,48,.06);}.data-table td{padding:8px 12px;color:var(--text);line-height:1.5;border-bottom:1px solid rgba(255,255,255,.05);font-family:'Inter',sans-serif;font-size:14px;}.data-table tr:last-child td{border-bottom:none;}.data-table tr:nth-child(even) td{background:rgba(255,255,255,.02);}.poster[data-edition="light"] .data-table tr:nth-child(even) td{background:rgba(27,32,48,.025);}.data-table .mono{font-family:'JetBrains Mono',monospace;font-size:13px;}.data-table.compact th{font-size:11px;padding:5px 8px;}.data-table.compact td{padding:4px 8px;font-size:12px;line-height:1.35;}.data-table.compact .mono{font-size:11.5px;}.data-table.bath th{font-size:12px;padding:6px 8px;}.data-table.bath td{padding:5px 8px;font-size:13px;line-height:1.4;}.data-table.bath .mono{font-size:12px;}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;}.compare-card{padding:8px 12px;}.compare-card h4{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:17px;color:var(--text);margin:0 0 4px;text-transform:uppercase;letter-spacing:.04em;}.compare-card h4 .tag{font-size:12px;padding:2px 8px;border-radius:4px;margin-left:8px;font-family:'JetBrains Mono',monospace;font-weight:500;letter-spacing:.06em;}.compare-card h4 .tag.good{background:rgba(39,174,96,.15);color:var(--emerald);}.compare-card h4 .tag.bad{background:rgba(224,92,92,.15);color:var(--coral);}.compare-card ul{list-style:none;padding:0;margin:0;}.compare-card li{font-size:12px;line-height:1.4;padding:1px 0;display:flex;gap:6px;align-items:flex-start;}.compare-card li::before{content:"";width:5px;height:5px;border-radius:50%;margin-top:7px;flex-shrink:0;}.compare-card.do li::before{background:var(--emerald);}.compare-card.dont li::before{background:var(--coral);}
+.bottom-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:6px;}
+.insight-card{padding:8px 14px;border-left:3px solid var(--teal);background:rgba(46,196,182,.06);border-radius:0 12px 12px 0;}.insight-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;color:var(--teal);letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px;}.insight-text{font-family:'Inter',sans-serif;font-size:12px;color:var(--text);line-height:1.35;}
+.safety-card{padding:12px 18px;background:rgba(224,92,92,.08);border:1px solid rgba(224,92,92,.25);border-radius:12px;}.safety-head{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px;color:var(--coral);letter-spacing:.06em;text-transform:uppercase;margin-bottom:5px;}.safety-body{font-size:13px;color:var(--text);line-height:1.45;}.safety-body strong{font-weight:700;color:var(--coral);}
+.process-flow{display:flex;align-items:center;justify-content:space-between;padding:10px 16px;height:80px;gap:4px;}
+.footer{padding:10px 20px;background-color:rgba(13,16,32,.85);background-image:linear-gradient(180deg,rgba(255,255,255,.04),rgba(0,0,0,0));border:1px solid rgba(255,255,255,.10);border-radius:8px;text-align:center;display:flex;flex-direction:column;gap:2px;}.poster[data-edition="light"] .footer{background-color:rgba(221,216,206,.95);border-color:rgba(27,32,48,.10);}.footer-disclaimer{font-family:'Inter',sans-serif;font-size:9px;line-height:1.35;color:var(--faint);margin:0 auto;max-width:900px;}.footer-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:13px;color:var(--text);letter-spacing:.04em;text-transform:uppercase;margin:0;}.footer-brand{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;}
+.tweaks{position:fixed;bottom:16px;right:16px;z-index:100;background:rgba(13,16,32,.92);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:10px 14px;display:flex;flex-direction:column;gap:8px;font-family:'Inter',sans-serif;font-size:12px;color:#F0EDE8;}
+@media print{@page{size:12.5in 18.75in;margin:0;}html,body{background:#1A1F2E !important;-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}*{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}.stage{position:static;padding:0;display:block;overflow:visible;}.poster-wrap{transform:none !important;width:auto !important;height:auto !important;}.poster{box-shadow:none !important;width:1200px !important;height:1800px !important;overflow:hidden !important;}.glass,.insight-card,.safety-card{backdrop-filter:none !important;-webkit-backdrop-filter:none !important;}.tweaks{display:none !important;}}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="poster-wrap" id="posterWrap">
+<div class="poster" id="poster">
+  <span class="tack tl" aria-hidden="true"></span><span class="tack tr" aria-hidden="true"></span>
+  <span class="tack bl" aria-hidden="true"></span><span class="tack br" aria-hidden="true"></span>
+  <div class="poster-header">
+    <header class="header-band">
+      <div class="header-left">
+        <div class="eyebrow"><span>Plating Posters &nbsp;&middot;&nbsp; EN Alto F&oacute;sforo (10&ndash;13% P) &nbsp;&middot;&nbsp; Proceso de 7 Etapas &nbsp;&middot;&nbsp; Flujo de Proceso</span></div>
+        <h1 class="headline">N&Iacute;QUEL<br><em>QU&Iacute;MICO</em></h1>
+        <h2 class="subhead">Alto F&oacute;sforo (10&ndash;13% P) &mdash; M&aacute;xima Resistencia a Corrosi&oacute;n, No Magn&eacute;tico</h2>
+        <p class="tagline">Sin corriente, sin &aacute;nodo &mdash; el ba&ntilde;o deposita por s&iacute; solo. Alto f&oacute;sforo es el campe&oacute;n anticorrosi&oacute;n de la familia EN.</p>
+      </div>
+      <aside class="glass logo-card">
+        <div class="logo-tile"><span>PP</span></div>
+        <div class="logo-word"><span class="a">Plating</span> <span class="b">Posters</span></div>
+        <div class="logo-inc">www.platingposters.com</div>
+      </aside>
+    </header>
+  </div>
+  <div class="poster-body">
+
+    <!-- FLUJO DE PROCESO EXPANDIDO SVG -->
+    <div class="glass process-flow" style="height:auto;padding:12px 16px;">
+      <svg viewBox="0 0 1100 130" width="100%" height="108" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="60" cy="28" r="18" stroke="var(--amber)" stroke-width="1.6" fill="rgba(232,160,32,.12)"/>
+        <text x="60" y="33" text-anchor="middle" fill="var(--amber)" font-family="Barlow Condensed,sans-serif" font-weight="900" font-size="14">1</text>
+        <text x="60" y="55" text-anchor="middle" fill="currentColor" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="8" letter-spacing=".04em" opacity=".62">LIMP.</text>
+        <text x="60" y="63" text-anchor="middle" fill="currentColor" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="8" letter-spacing=".04em" opacity=".62">INMER.</text>
+        <line x1="80" y1="28" x2="106" y2="28" stroke="currentColor" stroke-width="1.2" opacity=".35"/><polygon points="106,25 112,28 106,31" fill="currentColor" opacity=".35"/>
+        <circle cx="135" cy="28" r="14" stroke="var(--teal)" stroke-width="1.2" fill="rgba(46,196,182,.10)"/>
+        <text x="135" y="32" text-anchor="middle" fill="var(--teal)" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="11">R1</text>
+        <text x="135" y="55" text-anchor="middle" fill="currentColor" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="7" opacity=".5">ENJ.</text>
+        <line x1="151" y1="28" x2="177" y2="28" stroke="currentColor" stroke-width="1.2" opacity=".35"/><polygon points="177,25 183,28 177,31" fill="currentColor" opacity=".35"/>
+        <circle cx="206" cy="28" r="18" stroke="var(--amber)" stroke-width="1.6" fill="rgba(232,160,32,.12)"/>
+        <text x="206" y="33" text-anchor="middle" fill="var(--amber)" font-family="Barlow Condensed,sans-serif" font-weight="900" font-size="14">2</text>
+        <text x="206" y="55" text-anchor="middle" fill="currentColor" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="8" letter-spacing=".04em" opacity=".62">ELECTRO</text>
+        <text x="206" y="63" text-anchor="middle" fill="currentColor" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="8" letter-spacing=".04em" opacity=".62">LIMP.</text>
+        <line x1="226" y1="28" x2="252" y2="28" stroke="currentColor" stroke-width="1.2" opacity=".35"/><polygon points="252,25 258,28 252,31" fill="currentColor" opacity=".35"/>
+        <circle cx="281" cy="28" r="14" stroke="var(--teal)" stroke-width="1.2" fill="rgba(46,196,182,.10)"/>
+        <text x="281" y="32" text-anchor="middle" fill="var(--teal)" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="11">R2</text>
+        <text x="281" y="55" text-anchor="middle" fill="currentColor" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="7" opacity=".5">ENJ.</text>
+        <line x1="297" y1="28" x2="323" y2="28" stroke="currentColor" stroke-width="1.2" opacity=".35"/><polygon points="323,25 329,28 323,31" fill="currentColor" opacity=".35"/>
+        <circle cx="352" cy="28" r="18" stroke="var(--coral)" stroke-width="1.6" fill="rgba(224,92,92,.12)"/>
+        <text x="352" y="33" text-anchor="middle" fill="var(--coral)" font-family="Barlow Condensed,sans-serif" font-weight="900" font-size="14">3</text>
+        <text x="352" y="55" text-anchor="middle" fill="currentColor" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="8" letter-spacing=".04em" opacity=".62">ACTIV.</text>
+        <text x="352" y="63" text-anchor="middle" fill="currentColor" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="8" letter-spacing=".04em" opacity=".62">&Aacute;CIDA</text>
+        <line x1="372" y1="28" x2="398" y2="28" stroke="currentColor" stroke-width="1.2" opacity=".35"/><polygon points="398,25 404,28 398,31" fill="currentColor" opacity=".35"/>
+        <circle cx="427" cy="28" r="14" stroke="var(--teal)" stroke-width="1.2" fill="rgba(46,196,182,.10)"/>
+        <text x="427" y="32" text-anchor="middle" fill="var(--teal)" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="11">R3</text>
+        <text x="427" y="55" text-anchor="middle" fill="currentColor" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="7" opacity=".5">ENJ.</text>
+        <line x1="443" y1="28" x2="469" y2="28" stroke="currentColor" stroke-width="1.2" opacity=".35"/><polygon points="469,25 475,28 469,31" fill="currentColor" opacity=".35"/>
+        <circle cx="498" cy="28" r="14" stroke="var(--teal)" stroke-width="1.2" fill="rgba(46,196,182,.10)"/>
+        <text x="498" y="32" text-anchor="middle" fill="var(--teal)" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="11">R4</text>
+        <text x="498" y="55" text-anchor="middle" fill="currentColor" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="7" opacity=".5">DI</text>
+        <line x1="514" y1="28" x2="540" y2="28" stroke="currentColor" stroke-width="1.2" opacity=".35"/><polygon points="540,25 546,28 540,31" fill="currentColor" opacity=".35"/>
+        <circle cx="585" cy="28" r="22" stroke="var(--coral)" stroke-width="2.2" fill="rgba(224,92,92,.12)"/>
+        <text x="585" y="22" text-anchor="middle" fill="var(--coral)" font-family="Barlow Condensed,sans-serif" font-weight="900" font-size="10">EN</text>
+        <text x="585" y="35" text-anchor="middle" fill="var(--coral)" font-family="Barlow Condensed,sans-serif" font-weight="900" font-size="14">5</text>
+        <text x="585" y="60" text-anchor="middle" fill="currentColor" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="8" letter-spacing=".04em" opacity=".62">BA&Ntilde;O EN</text>
+        <line x1="609" y1="28" x2="635" y2="28" stroke="currentColor" stroke-width="1.2" opacity=".35"/><polygon points="635,25 641,28 635,31" fill="currentColor" opacity=".35"/>
+        <circle cx="664" cy="28" r="14" stroke="var(--teal)" stroke-width="1.2" fill="rgba(46,196,182,.10)"/>
+        <text x="664" y="32" text-anchor="middle" fill="var(--teal)" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="11">R5</text>
+        <text x="664" y="55" text-anchor="middle" fill="currentColor" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="7" opacity=".5">ENJ.</text>
+        <line x1="680" y1="28" x2="706" y2="28" stroke="currentColor" stroke-width="1.2" opacity=".35"/><polygon points="706,25 712,28 706,31" fill="currentColor" opacity=".35"/>
+        <circle cx="735" cy="28" r="14" stroke="var(--teal)" stroke-width="1.2" fill="rgba(46,196,182,.10)"/>
+        <text x="735" y="32" text-anchor="middle" fill="var(--teal)" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="11">R6</text>
+        <text x="735" y="55" text-anchor="middle" fill="currentColor" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="7" opacity=".5">DI</text>
+        <line x1="751" y1="28" x2="777" y2="28" stroke="currentColor" stroke-width="1.2" opacity=".35"/><polygon points="777,25 783,28 777,31" fill="currentColor" opacity=".35"/>
+        <circle cx="812" cy="28" r="18" stroke="var(--emerald)" stroke-width="1.6" fill="rgba(39,174,96,.12)"/>
+        <text x="812" y="33" text-anchor="middle" fill="var(--emerald)" font-family="Barlow Condensed,sans-serif" font-weight="900" font-size="14">6</text>
+        <text x="812" y="55" text-anchor="middle" fill="currentColor" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="8" letter-spacing=".04em" opacity=".62">SECAR</text>
+        <line x1="832" y1="28" x2="858" y2="28" stroke="currentColor" stroke-width="1.2" opacity=".35"/><polygon points="858,25 864,28 858,31" fill="currentColor" opacity=".35"/>
+        <circle cx="893" cy="28" r="18" stroke="var(--emerald)" stroke-width="1.6" fill="rgba(39,174,96,.12)"/>
+        <text x="893" y="33" text-anchor="middle" fill="var(--emerald)" font-family="Barlow Condensed,sans-serif" font-weight="900" font-size="14">7</text>
+        <text x="893" y="55" text-anchor="middle" fill="currentColor" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="8" letter-spacing=".04em" opacity=".62">ALIVIO HE</text>
+        <line x1="913" y1="28" x2="939" y2="28" stroke="currentColor" stroke-width="1.2" opacity=".35"/><polygon points="939,25 945,28 939,31" fill="currentColor" opacity=".35"/>
+        <circle cx="974" cy="28" r="18" stroke="var(--emerald)" stroke-width="1.6" fill="rgba(39,174,96,.12)"/>
+        <text x="974" y="33" text-anchor="middle" fill="var(--emerald)" font-family="Barlow Condensed,sans-serif" font-weight="900" font-size="14">8</text>
+        <text x="974" y="55" text-anchor="middle" fill="currentColor" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="8" letter-spacing=".04em" opacity=".62">SELLADO /</text>
+        <text x="974" y="63" text-anchor="middle" fill="currentColor" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="8" letter-spacing=".04em" opacity=".62">CROMATO</text>
+        <rect x="30" y="82" width="1040" height="40" rx="6" fill="rgba(255,255,255,.03)" stroke="rgba(255,255,255,.06)" stroke-width=".8"/>
+        <circle cx="60" cy="102" r="5" fill="rgba(232,160,32,.3)"/>
+        <text x="72" y="106" fill="var(--muted)" font-family="Inter,sans-serif" font-size="8" font-weight="500">Etapa Qu&iacute;mica</text>
+        <circle cx="190" cy="102" r="5" fill="rgba(46,196,182,.3)"/>
+        <text x="202" y="106" fill="var(--muted)" font-family="Inter,sans-serif" font-size="8" font-weight="500">Enjuague</text>
+        <circle cx="280" cy="102" r="5" fill="rgba(224,92,92,.3)"/>
+        <text x="292" y="106" fill="var(--muted)" font-family="Inter,sans-serif" font-size="8" font-weight="500">Proceso Cr&iacute;tico</text>
+        <circle cx="410" cy="102" r="5" fill="rgba(39,174,96,.3)"/>
+        <text x="422" y="106" fill="var(--muted)" font-family="Inter,sans-serif" font-size="8" font-weight="500">Post-Tratamiento</text>
+        <text x="600" y="106" fill="var(--faint)" font-family="Inter,sans-serif" font-size="8" font-style="italic">Secuencia expandida &mdash; cada enjuague mostrado. N&uacute;mero real de tanques var&iacute;a seg&uacute;n instalaci&oacute;n.</text>
+      </svg>
+    </div>
+
+    <!-- TABLA DE SECUENCIA DETALLADA -->
+    <div>
+      <h3 class="section-title">Secuencia de Proceso Expandida <span class="sub">todas las etapas + enjuagues</span></h3>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table compact">
+          <thead><tr><th style="width:32px;">Paso</th><th>Etapa</th><th>Temp</th><th>Tiempo</th><th>Control Clave</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">1</td><td>Limpieza Alcalina por Inmersi&oacute;n</td><td class="mono">60&ndash;80&deg;C</td><td class="mono">3&ndash;10 min</td><td>Superficie libre de ruptura de agua</td></tr>
+            <tr><td class="mono">R1</td><td>Enjuague por Rebose</td><td class="mono">Ambiente</td><td class="mono">30&ndash;60 s</td><td>Remover alcalino residual; &lt;200 &micro;S/cm</td></tr>
+            <tr><td class="mono">2</td><td>Electrolimpieza (cat&oacute;dica o an&oacute;dica)</td><td class="mono">60&ndash;71&deg;C</td><td class="mono">1&ndash;3 min</td><td>3&ndash;6 V; acci&oacute;n de arrastre mec&aacute;nico por gas</td></tr>
+            <tr><td class="mono">R2</td><td>Enjuague en Cascada (2 etapas)</td><td class="mono">Ambiente</td><td class="mono">30&ndash;60 s/etapa</td><td>Conductividad &lt;50 &micro;S/cm saliendo</td></tr>
+            <tr><td class="mono">3</td><td>Activaci&oacute;n &Aacute;cida</td><td class="mono">Ambiente</td><td class="mono">30&ndash;120 s</td><td>HCl 10&ndash;20% v/v (acero); HNO&#8323; o doble zincado (Al)</td></tr>
+            <tr><td class="mono">R3</td><td>Enjuague</td><td class="mono">Ambiente</td><td class="mono">30 s</td><td>Remover arrastre de &aacute;cido</td></tr>
+            <tr><td class="mono">R4</td><td>Enjuague DI Cr&iacute;tico (Pre-EN)</td><td class="mono">Ambiente</td><td class="mono">30&ndash;60 s</td><td>Conductividad &lt;20 &micro;S/cm; solo agua DI</td></tr>
+            <tr><td class="mono">5</td><td style="font-weight:600;">Ba&ntilde;o EN Alto F&oacute;sforo</td><td class="mono">85&ndash;91&deg;C</td><td class="mono">60&ndash;180 min</td><td>pH 4.2&ndash;4.8; Ni&sup2;&#8314; 4.5&ndash;6.5 g/L</td></tr>
+            <tr><td class="mono">R5</td><td>Enjuague de Recuperaci&oacute;n</td><td class="mono">Ambiente</td><td class="mono">15&ndash;30 s</td><td>Transferencia en &lt;10 s; captura Ni para retorno</td></tr>
+            <tr><td class="mono">R6</td><td>Enjuague Final DI</td><td class="mono">Fr&iacute;o / tibio</td><td class="mono">30&ndash;60 s</td><td>Superficie sin manchas; &lt;10 &micro;S/cm</td></tr>
+            <tr><td class="mono">6</td><td>Secado con Aire Caliente</td><td class="mono">65&ndash;82&deg;C</td><td class="mono">2&ndash;5 min</td><td>Sin manchas de agua; soplado o horno</td></tr>
+            <tr><td class="mono">7</td><td>Horneado HE (si se requiere)</td><td class="mono">190&deg;C</td><td class="mono">4+ hr</td><td>Dentro de 4 hr del dep&oacute;sito para acero de alta resistencia</td></tr>
+            <tr><td class="mono">8</td><td>Cromato / Sellador (si se requiere)</td><td class="mono">Seg&uacute;n espec.</td><td class="mono">Seg&uacute;n espec.</td><td>Protecci&oacute;n adicional contra corrosi&oacute;n o acabado cosm&eacute;tico</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- COMPARACI&Oacute;N DE FORMULACIONES EN -->
+    <div>
+      <h3 class="section-title">Comparaci&oacute;n de Formulaciones EN <span class="sub">bajo &bull; medio &bull; alto f&oacute;sforo</span></h3>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table compact">
+          <thead><tr><th>Propiedad</th><th>Bajo P (2&ndash;4%)</th><th>Medio P (6&ndash;9%)</th><th style="background:rgba(46,196,182,.12);">Alto P (10&ndash;13%)</th></tr></thead>
+          <tbody>
+            <tr><td style="font-weight:600;">Estructura</td><td>Microcristalino</td><td>Amorfo/cristalino mixto</td><td style="color:var(--teal);font-weight:600;">Completamente amorfo</td></tr>
+            <tr><td style="font-weight:600;">Dureza (tal cual)</td><td class="mono">620&ndash;750 HV</td><td class="mono">500&ndash;600 HV</td><td class="mono">450&ndash;550 HV</td></tr>
+            <tr><td style="font-weight:600;">Niebla Salina (25 &micro;m)</td><td class="mono">200&ndash;500 hr</td><td class="mono">500&ndash;1000 hr</td><td class="mono" style="color:var(--teal);font-weight:600;">&gt;1000 hr</td></tr>
+            <tr><td style="font-weight:600;">&iquest;Magn&eacute;tico?</td><td>Magn&eacute;tico</td><td>D&eacute;bilmente magn&eacute;tico</td><td style="color:var(--teal);font-weight:600;">No magn&eacute;tico</td></tr>
+            <tr><td style="font-weight:600;">Soldabilidad</td><td>Excelente</td><td>Buena</td><td>Pobre sin activaci&oacute;n</td></tr>
+            <tr><td style="font-weight:600;">pH del Ba&ntilde;o</td><td class="mono">4.2&ndash;5.0</td><td class="mono">4.4&ndash;5.0</td><td class="mono">4.2&ndash;4.8</td></tr>
+            <tr><td style="font-weight:600;">Temp del Ba&ntilde;o</td><td class="mono">85&ndash;93&deg;C</td><td class="mono">85&ndash;91&deg;C</td><td class="mono">85&ndash;91&deg;C</td></tr>
+            <tr><td style="font-weight:600;">Velocidad</td><td class="mono">15&ndash;25 &micro;m/hr</td><td class="mono">12&ndash;20 &micro;m/hr</td><td class="mono">8&ndash;15 &micro;m/hr</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- MTO + POR QU&Eacute; IMPORTA EL ORDEN -->
+    <div class="bottom-grid">
+      <div>
+        <h3 class="section-title">Gu&iacute;a R&aacute;pida de Soluci&oacute;n de Problemas <span class="sub">fallas comunes</span></h3>
+        <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+          <table class="data-table compact">
+            <thead><tr><th>S&iacute;ntoma</th><th>Causa Probable</th><th>Etapa</th></tr></thead>
+            <tbody>
+              <tr><td>Falta de dep&oacute;sito / &aacute;reas desnudas</td><td>Limpieza o activaci&oacute;n inadecuada</td><td class="mono">1&ndash;3</td></tr>
+              <tr><td>Ampollas / desprendimiento</td><td>&Oacute;xido en superficie; sobre-activaci&oacute;n</td><td class="mono">3</td></tr>
+              <tr><td>Dep&oacute;sito rugoso / nodular</td><td>Part&iacute;culas en ba&ntilde;o EN; filtraci&oacute;n deficiente</td><td class="mono">5</td></tr>
+              <tr><td>Velocidad lenta</td><td>Temp baja, Ni bajo, exceso de estabilizador</td><td class="mono">5</td></tr>
+              <tr><td>Picaduras</td><td>Burbujas de H&#8322; adheridas; agente humectante bajo</td><td class="mono">5</td></tr>
+              <tr><td>F&oacute;sforo bajo</td><td>pH muy alto; Ni muy alto</td><td class="mono">5</td></tr>
+              <tr><td>Plate-out / descomposici&oacute;n</td><td>Pico de temp; sin estabilizador; contaminaci&oacute;n</td><td class="mono">5</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div>
+        <div class="insight-card" style="margin-bottom:8px;">
+          <div class="insight-label">Rotaci&oacute;n de Metal (MTO)</div>
+          <div class="insight-text">Los ba&ntilde;os de alto f&oacute;sforo t&iacute;picamente funcionan <strong>5&ndash;7 MTO</strong> antes de que el rendimiento se degrade. Cada MTO = el ba&ntilde;o ha depositado y reemplazado 100% de su contenido original de n&iacute;quel. Monitoree MTO por consumo acumulado de n&iacute;quel (kg Ni repuesto). M&aacute;s all&aacute; de 7 MTO, la acumulaci&oacute;n de ortofosfito reduce la velocidad y estrecha la ventana operativa. Algunas instalaciones descartan y reconstruyen a 5 MTO para consistencia.</div>
+        </div>
+        <div class="insight-card">
+          <div class="insight-label">Por Qu&eacute; Importa el Orden de la Secuencia</div>
+          <div class="insight-text">EN es una reacci&oacute;n autocatal&iacute;tica &mdash; el dep&oacute;sito cataliza su propio crecimiento. Si la superficie no est&aacute; perfectamente limpia y activada, la reacci&oacute;n no inicia o inicia de forma desigual. Cada enjuague entre etapas qu&iacute;micas previene contaminaci&oacute;n cruzada que degrada la vida del ba&ntilde;o y la calidad del dep&oacute;sito. Omitir un solo enjuague puede costar un ba&ntilde;o entero.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="safety-card">
+      <div class="safety-head">&#9888; Seguridad &mdash; L&iacute;nea de Proceso Completa</div>
+      <div class="safety-body"><strong>Limpiadores alcalinos</strong> (Etapas 1&ndash;2): quemaduras c&aacute;usticas, soluci&oacute;n caliente 60&ndash;80&deg;C. <strong>Activaci&oacute;n &aacute;cida</strong> (Etapa 3): vapores de HCl, quemaduras por &aacute;cido mineral. <strong>Ba&ntilde;o EN</strong> (Etapa 5): soluci&oacute;n &aacute;cida de n&iacute;quel a 85&ndash;91&deg;C; compuestos de n&iacute;quel son carcin&oacute;geno GHS Categor&iacute;a 1A (IARC Grupo 1 &mdash; carcin&oacute;geno conocido por inhalaci&oacute;n); sensibilizante cut&aacute;neo. OSHA PEL: 1 mg/m&sup3; como Ni. <strong>Riesgo de fosfina</strong>: un ba&ntilde;o en descomposici&oacute;n puede liberar gas PH&#8323; (TLV 0.05 ppm) &mdash; olor a ajo/pescado = EVACUE. <strong>Post-tratamiento</strong> (Etapas 7&ndash;8): riesgo de quemaduras por hornos. EPP completo en cada estaci&oacute;n. Regadera y lavaojos a 10 segundos.</div>
+    </div>
+
+  </div>
+  <footer class="footer poster-footer">
+    <p class="footer-disclaimer">Referencia t&eacute;cnica solamente. Verifique todos los par&aacute;metros contra la FTS de su proveedor, especificaciones del cliente y requisitos regulatorios antes de usar en producci&oacute;n.</p>
+    <p class="footer-title">Flujo de Proceso &mdash; Serie EN Alto F&oacute;sforo</p>
+    <span class="footer-brand">Plating Posters &middot; Serie de Referencia de Acabados Met&aacute;licos &middot; PP-ENhp-01-T / v1.0 / 2026</span>
+  </footer>
+</div>
+</div>
+</div>
+<div class="tweaks">
+  <div style="display:flex;gap:8px;align-items:center;">
+    <span style="color:rgba(240,237,232,.5);font-size:11px;letter-spacing:.06em;text-transform:uppercase;">Edition</span>
+    <button id="btnDark" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:#E8A020;color:#1A1F2E;border:1px solid #E8A020;" onclick="setEdition('')">Dark</button>
+    <button id="btnLight" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);" onclick="setEdition('light')">Light</button>
+  </div>
+  <button onclick="window.print()" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);">Print / PDF</button>
+</div>
+<script>
+const posterWrap=document.getElementById('posterWrap');const poster=document.getElementById('poster');function scalePoster(){const sW=(window.innerWidth-24)/1200;const sH=(window.innerHeight-24)/1800;const s=Math.min(sW,sH);posterWrap.style.transform='scale('+s+')';posterWrap.style.transformOrigin='top center';posterWrap.style.width='1200px';posterWrap.style.height=(1800*s)+'px';}function setEdition(e){if(e)poster.dataset.edition=e;else delete poster.dataset.edition;document.getElementById('btnDark').style.background=e?'transparent':'#E8A020';document.getElementById('btnDark').style.color=e?'#F0EDE8':'#1A1F2E';document.getElementById('btnDark').style.borderColor=e?'rgba(255,255,255,.2)':'#E8A020';document.getElementById('btnLight').style.background=e?'#E8A020':'transparent';document.getElementById('btnLight').style.color=e?'#1A1F2E':'#F0EDE8';document.getElementById('btnLight').style.borderColor=e?'#E8A020':'rgba(255,255,255,.2)';}scalePoster();window.addEventListener('resize',scalePoster);
+</script>
+</body>
+</html>

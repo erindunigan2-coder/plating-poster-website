@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Electroless Nickel Low Phos — Rinse Pre-Plate Stage 4 | Plating Posters</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Barlow:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #1A1F2E; --navy: #0D1020; --text: #F0EDE8; --muted: rgba(240,237,232,.62);
+  --amber: #E8A020; --teal: #2EC4B6; --emerald: #27AE60; --coral: #E05C5C;
+  --slate: #3A4055; --callout: #1E2435; --altrow: #252B3D;
+  --glass-bg: rgba(30,36,53,.55);
+  --glass-border: rgba(255,255,255,.12);
+  --glass-shadow: inset 0 1px 0 rgba(255,255,255,.14), inset 0 -1px 0 rgba(0,0,0,.2), 0 4px 12px rgba(0,0,0,.25);
+  --tack: 36px;
+}
+.poster[data-edition="light"] {
+  --bg:#F5F4F0; --navy:#DDD8CE; --text:#1B2030; --muted:rgba(27,32,48,.66);
+  --amber:#B8770D; --teal:#1A8C82; --emerald:#1E8449; --coral:#B7322F;
+  --slate:#C5C0B5; --callout:#ECEAE1; --altrow:#E4E1D6;
+  --glass-bg: rgba(255,253,247,.66); --glass-border: rgba(27,32,48,.10);
+}
+html, body { margin: 0; padding: 0; background: #0a0c14; }
+.stage { width: 100vw; height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.poster-wrap { transform-origin: center center; }
+.poster {
+  width: 1200px; height: 1800px; position: relative; overflow: hidden;
+  background:
+    radial-gradient(1200px 800px at 15% 8%, rgba(46,196,182,.14), transparent 60%),
+    radial-gradient(1000px 700px at 90% 25%, rgba(224,92,92,.12), transparent 55%),
+    radial-gradient(900px 900px at 50% 80%, rgba(232,160,32,.10), transparent 60%),
+    var(--bg);
+  font-family: 'Inter', sans-serif; color: var(--text);
+  display: flex; flex-direction: column;
+  padding: var(--tack);
+  box-sizing: border-box;
+}
+.glass {
+  background-color: var(--glass-bg);
+  background-image: linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.015));
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  box-shadow: var(--glass-shadow);
+  border-radius: 12px;
+}
+
+/* Tack markers — series-standard */
+.tack { position:absolute; width:24px; height:24px; border-radius:50%;
+  border:1.5px solid rgba(232,160,32,.28); z-index:2; pointer-events:none; }
+.tack::before,.tack::after { content:""; position:absolute; background:rgba(232,160,32,.28); }
+.tack::before { left:50%; top:-3px; bottom:-3px; width:1px; transform:translateX(-50%); }
+.tack::after  { top:50%; left:-3px; right:-3px; height:1px; transform:translateY(-50%); }
+.tack.tl { top:12px; left:12px; }
+.tack.tr { top:12px; right:12px; }
+.tack.bl { bottom:12px; left:12px; }
+.tack.br { bottom:12px; right:12px; }
+
+/* Header */
+.header-row { display:flex; align-items:flex-start; justify-content:space-between; gap:20px; margin-bottom:14px; }
+.header-left { flex:1; min-width:0; }
+.eyebrow { font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--teal); letter-spacing:.12em; text-transform:uppercase; margin-bottom:6px; }
+.headline { font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:96px; color:var(--text); line-height:1; letter-spacing:-.01em; }
+.subhead { font-family:'Barlow',sans-serif; font-weight:700; font-size:28px; color:var(--teal); margin:4px 0 6px; }
+.tagline { font-family:'Barlow',sans-serif; font-weight:600; font-size:15px; color:var(--muted); line-height:1.45; max-width:780px; }
+
+.logo-card { flex-shrink:0; display:flex; flex-direction:column; align-items:center; gap:8px; padding:14px 16px; min-width:185px; align-self:flex-start; margin-top:4px; background-color:var(--glass-bg); background-image:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015)); border:1px solid var(--glass-border); border-radius:12px; backdrop-filter:blur(18px) saturate(140%); -webkit-backdrop-filter:blur(18px) saturate(140%); box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 4px 12px rgba(0,0,0,.25); }
+.logo-mark { width:78px; height:78px; border-radius:13px; background:linear-gradient(135deg,#E8A020,#2EC4B6); display:flex; align-items:center; justify-content:center; box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -2px 4px rgba(0,0,0,.15),0 4px 14px rgba(0,0,0,.35); }
+.logo-mark span { font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:30px; color:#1A1F2E; letter-spacing:.02em; line-height:1; }
+.logo-word { font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:22px; letter-spacing:.04em; text-transform:uppercase; line-height:1; text-align:center; white-space:nowrap; }
+.logo-word .a { color:#F0EDE8; }
+.logo-word .b { color:#E8A020; }
+.logo-url { font-family:'JetBrains Mono',monospace; font-size:9px; letter-spacing:.06em; color:rgba(240,237,232,.45); margin-top:-2px; }
+
+/* Orientation strip */
+.orient-strip { padding:12px 16px; display:flex; align-items:center; gap:6px; height:60px; box-sizing:border-box; margin-bottom:14px; }
+.orient-stage { display:flex; align-items:center; justify-content:center; flex-direction:column; gap:2px; padding:7px 12px; border-radius:6px; font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:500; letter-spacing:.05em; background:var(--slate); color:var(--muted); opacity:0.4; flex:1; text-align:center; }
+.orient-stage.active.teal { opacity:1; background:rgba(46,196,182,.25); border:1px solid var(--teal); color:var(--teal); }
+.orient-arrow { color:var(--muted); font-size:14px; opacity:0.5; }
+.stage-num { font-size:9px; opacity:.7; }
+
+.section-title { font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:20px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); margin-bottom:10px; }
+.section { margin-bottom:14px; }
+
+/* Threat cards */
+.threat-row { display:flex; gap:10px; margin-bottom:10px; }
+.threat-card { flex:1; padding:12px; }
+.threat-card.coral { border:1px solid rgba(224,92,92,.4); }
+.threat-card.amber { border:1px solid rgba(232,160,32,.4); }
+.threat-title { font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:13px; text-transform:uppercase; letter-spacing:.06em; margin-bottom:5px; }
+.threat-title.coral { color:var(--coral); }
+.threat-title.amber { color:var(--amber); }
+.threat-body { font-size:12px; color:var(--text); line-height:1.45; }
+.threat-body strong.coral { color:var(--coral); }
+.threat-kill { margin-top:6px; font-family:'JetBrains Mono',monospace; font-size:10px; }
+.threat-kill.coral { color:var(--coral); }
+.threat-kill.amber { color:var(--amber); }
+
+/* Cascade diagram */
+.cascade { padding:18px; height:340px; position:relative; overflow:hidden; border:1px solid rgba(46,196,182,.2); }
+.cascade-water { position:absolute; top:14px; left:20px; right:20px; display:flex; align-items:center; gap:6px; }
+.cascade-water-line { flex:1; height:2px; background:linear-gradient(to left,rgba(46,196,182,.6),transparent); }
+.cascade-water-label { font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--teal); white-space:nowrap; }
+.cascade-parts { position:absolute; bottom:18px; left:20px; right:20px; display:flex; align-items:center; gap:6px; }
+.cascade-parts-line { flex:1; height:2px; background:linear-gradient(to right,var(--muted),transparent); opacity:.4; }
+.cascade-parts-label { font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--muted); white-space:nowrap; }
+.cascade-parts-label.green { color:var(--emerald); }
+.cascade-tanks { display:flex; gap:16px; margin-top:36px; height:230px; align-items:flex-start; }
+.cascade-tank { flex:1; height:100%; display:flex; flex-direction:column; gap:6px; }
+.cascade-tank-title { text-align:center; font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:13px; text-transform:uppercase; }
+.cascade-tank-title.coral { color:var(--coral); }
+.cascade-tank-title.text { color:var(--text); }
+.cascade-tank-title.teal { color:var(--teal); }
+.cascade-tank-body { flex:1; border-radius:8px; position:relative; overflow:hidden; }
+.cascade-tank-body.coral { background:rgba(224,92,92,.08); border:2px solid rgba(224,92,92,.3); }
+.cascade-tank-body.mid { background:rgba(255,255,255,.04); border:2px solid var(--glass-border); }
+.cascade-tank-body.teal { background:rgba(46,196,182,.06); border:2px solid rgba(46,196,182,.4); }
+.cascade-fill { position:absolute; bottom:0; left:0; right:0; top:25%; }
+.cascade-fill.coral { background:linear-gradient(to top,rgba(224,92,92,.15),rgba(224,92,92,.03)); }
+.cascade-fill.mid { background:linear-gradient(to top,rgba(255,255,255,.08),rgba(255,255,255,.02)); }
+.cascade-fill.teal { background:linear-gradient(to top,rgba(46,196,182,.15),rgba(46,196,182,.03)); }
+.cascade-part { position:absolute; top:40%; left:50%; transform:translateX(-50%); width:30px; height:45px; border:2px solid rgba(255,255,255,.35); border-radius:3px; background:rgba(255,255,255,.05); }
+.cascade-part.teal { border-color:rgba(46,196,182,.5); background:rgba(46,196,182,.08); }
+.cascade-tag-top { position:absolute; top:8px; left:50%; transform:translateX(-50%); font-size:9px; white-space:nowrap; }
+.cascade-tag-bot { position:absolute; bottom:6px; left:0; right:0; text-align:center; font-family:'JetBrains Mono',monospace; font-size:9px; }
+.cascade-cond { text-align:center; font-family:'JetBrains Mono',monospace; font-size:9px; }
+.cascade-arrow { display:flex; align-items:center; margin-top:50px; font-size:20px; color:var(--muted); opacity:.5; }
+.cascade-warning { position:absolute; bottom:38px; left:20px; right:20px; padding:8px 14px; background:rgba(224,92,92,.12); border:1px solid rgba(224,92,92,.3); border-radius:8px; display:flex; align-items:center; gap:12px; }
+.cascade-warning-icon { font-size:18px; }
+.cascade-warning-body { font-size:12px; color:var(--text); line-height:1.4; }
+
+/* Tables */
+.param-table { width:100%; border-collapse:collapse; }
+.param-table th { font-family:'Barlow',sans-serif; font-weight:700; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); padding:9px 12px; text-align:left; border-bottom:1px solid var(--glass-border); }
+.param-table td { padding:9px 12px; color:var(--text); line-height:1.4; border-bottom:1px solid rgba(255,255,255,.05); font-size:12px; }
+.param-table tr:nth-child(even) td { background:rgba(255,255,255,.025); }
+.mono { font-family:'JetBrains Mono',monospace; font-size:11px; }
+
+.row-2 { display:flex; gap:12px; }
+.row-2 > div { flex:1; }
+
+/* Zincate timing */
+.zincate-card { padding:18px; border:2px solid rgba(232,160,32,.5); }
+.zincate-title { font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:18px; color:var(--amber); text-transform:uppercase; letter-spacing:.08em; margin-bottom:8px; }
+.zincate-intro { font-size:12px; color:var(--text); line-height:1.65; margin-bottom:10px; }
+.timeline-bar { display:flex; height:24px; border-radius:6px; overflow:hidden; margin-bottom:10px; }
+.timeline-ok { flex:3; background:rgba(39,174,96,.4); display:flex; align-items:center; justify-content:center; font-family:'JetBrains Mono',monospace; font-size:9px; color:var(--emerald); }
+.timeline-risk { flex:7; background:rgba(224,92,92,.3); display:flex; align-items:center; justify-content:center; font-family:'JetBrains Mono',monospace; font-size:9px; color:var(--coral); }
+.zincate-body { font-size:11px; color:var(--text); line-height:1.7; }
+
+/* Safety */
+.safety-card { padding:16px; border:1px solid rgba(232,160,32,.3); }
+.safety-title { font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:15px; color:var(--amber); text-transform:uppercase; letter-spacing:.08em; margin-bottom:10px; }
+.safety-body { font-size:11px; color:var(--text); line-height:1.7; }
+.safety-body .danger { color:var(--coral); font-weight:600; }
+
+/* Footer */
+.footer-panel { margin-top:auto; padding:14px 22px; text-align:center; border-radius:10px; }
+.footer-disclaimer { font-size:11px; color:var(--muted); line-height:1.5; margin-bottom:6px; }
+.footer-title { font-family:'Barlow',sans-serif; font-weight:600; font-size:15px; color:var(--text); margin-bottom:4px; }
+.footer-brand { font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--muted); }
+
+@media print {
+  @page { size: 12.5in 18.75in; margin: 0; }
+  html, body { background: #1A1F2E !important; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  .stage { position: static; padding: 0; display: block; overflow: visible; }
+  .poster-wrap { transform: none !important; }
+  .poster { box-shadow: none !important; width: 1200px !important; height: 1800px !important; overflow: hidden !important; }
+  .glass { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
+  .tweaks { display: none !important; }
+}
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="poster-wrap" id="posterWrap">
+    <div class="poster" id="poster" data-screen-label="Stage 4 Rinse Pre-Plate">
+      <span class="tack tl" aria-hidden="true"></span>
+      <span class="tack tr" aria-hidden="true"></span>
+      <span class="tack bl" aria-hidden="true"></span>
+      <span class="tack br" aria-hidden="true"></span>
+
+      <!-- Header -->
+      <div class="header-row">
+        <div class="header-left">
+          <div class="eyebrow">Electroless Nickel — Stage 4 of 7</div>
+          <div class="headline">RINSE</div>
+          <div class="subhead">EN (Low Phos) — Pre-Plate — Stage 4 of 7</div>
+          <div class="tagline">The most critical rinse in the EN line. Chloride pits the deposit. Chromate kills the bath. Speed saves the zincate.</div>
+        </div>
+        <div class="logo-card">
+          <div class="logo-mark"><span>PP</span></div>
+          <div class="logo-word"><span class="a">Plating</span> <span class="b">Posters</span></div>
+          <div class="logo-url">www.platingposters.com</div>
+        </div>
+      </div>
+
+      <!-- Orientation Strip -->
+      <div class="orient-strip glass">
+        <div class="orient-stage"><span class="stage-num">01</span>CLEAN</div>
+        <div class="orient-arrow">›</div>
+        <div class="orient-stage"><span class="stage-num">02</span>RINSE</div>
+        <div class="orient-arrow">›</div>
+        <div class="orient-stage"><span class="stage-num">03</span>ACTIVATE</div>
+        <div class="orient-arrow">›</div>
+        <div class="orient-stage active teal"><span class="stage-num">04</span>RINSE</div>
+        <div class="orient-arrow">›</div>
+        <div class="orient-stage"><span class="stage-num">05</span>EN BATH</div>
+        <div class="orient-arrow">›</div>
+        <div class="orient-stage"><span class="stage-num">06</span>RINSE</div>
+        <div class="orient-arrow">›</div>
+        <div class="orient-stage"><span class="stage-num">07</span>POST-TX</div>
+      </div>
+
+      <!-- Hero: Cascade + Threat callouts -->
+      <div class="section">
+        <div class="section-title">Cascade Rinse + Contamination Threats</div>
+
+        <div class="threat-row">
+          <div class="glass threat-card coral">
+            <div class="threat-title coral">THREAT 1: CHLORIDE</div>
+            <div class="threat-body">From HCl activation. Cl⁻ &gt;5 ppm causes pitting in EN bath. <strong class="coral">DI rinse essential.</strong></div>
+            <div class="threat-kill coral">KILL THRESHOLD: Cl⁻ &gt;5 ppm = pitting</div>
+          </div>
+          <div class="glass threat-card coral">
+            <div class="threat-title coral">THREAT 2: CHROMATE</div>
+            <div class="threat-body">From plastic etch process. Poisons EN bath at trace ppm levels. <strong class="coral">Cr6+ = bath death.</strong></div>
+            <div class="threat-kill coral">KILL THRESHOLD: Cr⁶⁺ &gt;0.5 ppm = bath inert</div>
+          </div>
+          <div class="glass threat-card amber">
+            <div class="threat-title amber">THREAT 3: ZN OXIDATION</div>
+            <div class="threat-body">Zincated aluminum surface. Transfer to EN bath within 30 sec. Oxidized Zn = no initiation.</div>
+            <div class="threat-kill amber">TIME LIMIT: &lt;30 sec rinse-to-EN</div>
+          </div>
+        </div>
+
+        <div class="glass cascade">
+          <div class="cascade-water">
+            <div class="cascade-water-line"></div>
+            <div class="cascade-water-label">← COUNTER-CURRENT — FRESH WATER IN (right)</div>
+          </div>
+          <div class="cascade-parts">
+            <div class="cascade-parts-label">PARTS →</div>
+            <div class="cascade-parts-line"></div>
+            <div class="cascade-parts-label green">→ TO EN BATH (within 30 sec for Al)</div>
+          </div>
+
+          <div class="cascade-tanks">
+            <div class="cascade-tank">
+              <div class="cascade-tank-title coral">STAGE 1</div>
+              <div class="cascade-tank-body coral">
+                <div class="cascade-fill coral"></div>
+                <div class="cascade-part"></div>
+                <div class="cascade-tag-top" style="color:var(--coral);opacity:.7;">ACID DRAG-IN</div>
+                <div class="cascade-tag-bot" style="color:var(--coral);">HIGH CONTAM</div>
+              </div>
+              <div class="cascade-cond" style="color:var(--coral);">~100–300 µS/cm</div>
+            </div>
+
+            <div class="cascade-arrow">›</div>
+
+            <div class="cascade-tank">
+              <div class="cascade-tank-title text">STAGE 2</div>
+              <div class="cascade-tank-body mid">
+                <div class="cascade-fill mid"></div>
+                <div class="cascade-part"></div>
+                <div class="cascade-tag-bot" style="color:var(--muted);">MED CONTAM</div>
+              </div>
+              <div class="cascade-cond" style="color:var(--muted);">~20–100 µS/cm</div>
+            </div>
+
+            <div class="cascade-arrow">›</div>
+
+            <div class="cascade-tank">
+              <div class="cascade-tank-title teal">STAGE 3 (FINAL)</div>
+              <div class="cascade-tank-body teal">
+                <div class="cascade-fill teal"></div>
+                <div class="cascade-part teal"></div>
+                <div class="cascade-tag-top" style="color:var(--teal);opacity:.9;">← DI/RO IN</div>
+                <div class="cascade-tag-bot" style="color:var(--teal);">CLEAN EXIT</div>
+              </div>
+              <div class="cascade-cond" style="color:var(--teal);font-weight:500;">TARGET &lt;20 µS/cm</div>
+            </div>
+          </div>
+
+          <div class="cascade-warning">
+            <div class="cascade-warning-icon">⚠</div>
+            <div class="cascade-warning-body">Target: <strong style="color:var(--coral);">&lt;20 µS/cm</strong> for critical EN work. DI rinse is essential — not optional — for EN lines. Municipal water is insufficient for final stage.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Parameters + Kill Thresholds -->
+      <div class="section row-2">
+        <div>
+          <div class="section-title">Rinse Parameters</div>
+          <div class="glass" style="padding:0;overflow:hidden;">
+            <table class="param-table">
+              <thead><tr><th>Parameter</th><th>Value</th></tr></thead>
+              <tbody>
+                <tr><td>Water source</td><td class="mono" style="color:var(--coral);">DI mandatory for critical EN</td></tr>
+                <tr><td>Temperature</td><td class="mono">Ambient</td></tr>
+                <tr><td>Stages</td><td class="mono">Single or double counterflow</td></tr>
+                <tr><td>Immersion time</td><td class="mono">30–60 sec per stage</td></tr>
+                <tr><td>Conductivity target</td><td class="mono" style="color:var(--teal);">&lt;20 µS/cm critical / &lt;50 µS/cm minimum</td></tr>
+                <tr><td>Zincated Al transfer</td><td class="mono" style="color:var(--amber);">&lt;30 sec rinse-to-EN bath</td></tr>
+                <tr><td>Agitation</td><td class="mono">Gentle — avoid disturbing Zn layer</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div>
+          <div class="section-title">Contamination Kill Thresholds</div>
+          <div class="glass" style="padding:0;overflow:hidden;">
+            <table class="param-table">
+              <thead><tr><th>Contaminant</th><th>Threshold</th><th>Effect on EN Bath</th></tr></thead>
+              <tbody>
+                <tr><td style="color:var(--coral);">Cl⁻ (chloride)</td><td class="mono" style="color:var(--coral);">&gt;5 ppm</td><td>Pitting in deposit</td></tr>
+                <tr><td style="color:var(--coral);">Cr⁶⁺ (chromate)</td><td class="mono" style="color:var(--coral);">&gt;0.5 ppm</td><td>Bath goes inert — stops plating</td></tr>
+                <tr><td style="color:var(--amber);">SO₄²⁻ (sulfate)</td><td class="mono" style="color:var(--amber);">&gt;50 ppm</td><td>Reduced deposition rate</td></tr>
+                <tr><td style="color:var(--amber);">Organics</td><td class="mono">Trace</td><td>Pitting and bath instability</td></tr>
+                <tr><td>Conductivity</td><td class="mono" style="color:var(--coral);">&gt;50 µS/cm</td><td>General contamination risk</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Problems Table -->
+      <div class="section">
+        <div class="section-title">Pre-Plate Rinse Problems</div>
+        <div class="glass" style="padding:0;overflow:hidden;">
+          <table class="param-table">
+            <thead><tr><th>Problem</th><th>Symptom in EN</th><th>Root Cause</th><th>Fix</th></tr></thead>
+            <tbody>
+              <tr><td style="color:var(--coral);">Chloride carry-over</td><td>Pitting throughout deposit</td><td>HCl drag-in through city water rinse</td><td>Switch to DI final rinse; increase stages</td></tr>
+              <tr><td style="color:var(--coral);">Chromate poisoning</td><td>Bath stops plating — total inertness</td><td>Trace Cr6+ from plastic etch process</td><td>Dedicated DI rinse tank after Cr etch; test bath Cr</td></tr>
+              <tr><td style="color:var(--coral);">Skip on Al</td><td>No initiation on zincated parts</td><td>Zn oxidized in rinse or air</td><td>Shorten transfer; verify Zn bath freshness</td></tr>
+              <tr><td style="color:var(--amber);">Watermarks</td><td>Stains visible after drying</td><td>High mineral content in rinse water</td><td>DI water in final rinse; prevent air-drying between stages</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Zincate Timing + Safety -->
+      <div class="section row-2">
+        <div class="glass zincate-card">
+          <div class="zincate-title">CRITICAL TIMING — ZINCATED ALUMINUM</div>
+          <div class="zincate-intro">The zincate layer oxidizes immediately on leaving the bath. Oxidized zinc will not initiate the EN reaction.</div>
+          <div class="timeline-bar">
+            <div class="timeline-ok">0–30 sec: OK WINDOW</div>
+            <div class="timeline-risk">RISK ZONE — Zn oxidizes &gt;30 sec</div>
+          </div>
+          <div class="zincate-body">
+            <div>● <strong>RULE:</strong> Transfer from pre-plate rinse to EN bath within 30 seconds</div>
+            <div>● Never allow zincated parts to air-dry between stations</div>
+            <div>● Stage tanks to minimize travel time — physical layout matters</div>
+          </div>
+        </div>
+        <div class="glass safety-card">
+          <div class="safety-title">Safety &amp; Waste</div>
+          <div class="safety-body">
+            <div>● Rinse water is mildly acidic — pH 4–7 from activator drag-out</div>
+            <div>● <span class="danger">Chromate rinse water = Cr6+ hazardous waste</span> — dedicated sump, permitted treatment</div>
+            <div>● Acid rinse overflow to waste treatment — not direct drain</div>
+            <div>● Wet floor hazard — non-slip matting required</div>
+            <div>● Check pH of overflow periodically</div>
+            <div>● Nitrile gloves and splash goggles at all rinse stations</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="glass footer-panel">
+        <div class="footer-disclaimer">Technical reference only. Values are typical operating ranges — consult chemistry supplier for bath-specific parameters. ASTM B733 governs EN plating specifications.</div>
+        <div class="footer-title">Electroless Nickel Low Phos — Rinse Pre-Plate Stage 4 of 7</div>
+        <div class="footer-brand">Plating Posters — Metal Finishing Reference Series · v1.0 2026 · www.platingposters.com</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="tweaks" style="position:fixed;bottom:16px;right:16px;z-index:100;background:rgba(13,16,32,.92);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:12px 16px;display:flex;flex-direction:column;gap:8px;font-family:'Inter',sans-serif;font-size:12px;color:#F0EDE8;">
+  <div style="display:flex;gap:8px;align-items:center;">
+    <span style="color:rgba(240,237,232,.5);">Edition</span>
+    <button onclick="document.getElementById('poster').dataset.edition=''" style="padding:3px 10px;border-radius:4px;border:1px solid #E8A020;background:#E8A020;color:#1A1F2E;cursor:pointer;font-size:11px;">Dark</button>
+    <button onclick="document.getElementById('poster').dataset.edition='light'" style="padding:3px 10px;border-radius:4px;border:1px solid rgba(255,255,255,.2);background:transparent;color:#F0EDE8;cursor:pointer;font-size:11px;">Light</button>
+  </div>
+  <button onclick="window.print()" style="padding:4px 12px;border-radius:4px;border:1px solid rgba(255,255,255,.2);background:transparent;color:#F0EDE8;cursor:pointer;font-size:11px;">Print / PDF</button>
+</div>
+
+<script>
+  const posterWrap = document.getElementById('posterWrap');
+  function scalePoster() {
+    const s = Math.min(window.innerWidth / 1200, window.innerHeight / 1800);
+    posterWrap.style.transform = 'scale(' + s + ')';
+  }
+  scalePoster();
+  window.addEventListener('resize', scalePoster);
+</script>
+</body>
+</html>
