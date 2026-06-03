@@ -209,6 +209,12 @@ async function main() {
         await page.goto(fileUrl, { waitUntil: "networkidle0", timeout: 30000 });
         await page.evaluate(() => document.fonts.ready);
 
+        // Hide the tweaks panel so it doesn't appear in previews
+        await page.evaluate(() => {
+          const tweaks = document.querySelector('.tweaks');
+          if (tweaks) tweaks.style.display = 'none';
+        });
+
         // Small delay for rendering
         await new Promise((r) => setTimeout(r, 500));
 
