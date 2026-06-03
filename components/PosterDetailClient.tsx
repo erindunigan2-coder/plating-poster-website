@@ -12,8 +12,17 @@ type Props = {
 
 export default function PosterDetailClient({ poster, variantMap }: Props) {
   const [edition, setEdition] = useState<"Dark" | "Light">("Dark");
+  const [language, setLanguage] = useState<"en" | "es">("en");
 
   const hasLight = !!poster.previewImageLight;
+
+  // Pick the correct preview images based on language
+  const darkImg = language === "es" && poster.previewImageEs
+    ? poster.previewImageEs
+    : poster.previewImage;
+  const lightImg = language === "es" && poster.previewImageEsLight
+    ? poster.previewImageEsLight
+    : poster.previewImageLight;
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -22,7 +31,7 @@ export default function PosterDetailClient({ poster, variantMap }: Props) {
         <div className="relative aspect-[2/3] overflow-hidden" style={{ background: "#1e1e1c" }}>
           {/* Dark edition — always mounted */}
           <Image
-            src={poster.previewImage}
+            src={darkImg}
             alt={`${poster.title} — dark edition`}
             fill
             sizes="(max-width: 1024px) 100vw, 50vw"
@@ -31,9 +40,9 @@ export default function PosterDetailClient({ poster, variantMap }: Props) {
             style={{ opacity: edition === "Dark" ? 1 : 0, transition: "opacity 0.25s ease" }}
           />
           {/* Light edition — always mounted, fades in */}
-          {poster.previewImageLight && (
+          {lightImg && (
             <Image
-              src={poster.previewImageLight}
+              src={lightImg}
               alt={`${poster.title} — light edition`}
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
@@ -112,6 +121,8 @@ export default function PosterDetailClient({ poster, variantMap }: Props) {
             variantMap={variantMap}
             edition={edition}
             onEditionChange={setEdition}
+            language={language}
+            onLanguageChange={setLanguage}
           />
         </div>
       </div>

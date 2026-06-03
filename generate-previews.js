@@ -77,19 +77,20 @@ function toSlug(s) {
     .replace(/^-|-$/g, "");
 }
 
-// ── Parse new-format: "Series - ## - TYPE - Step - EN - Dark.html" ──
+// ── Parse new-format: "Series - ## - TYPE - Step - EN/ES - Dark.html" ──
 function parseNewFormat(filename) {
   const m = filename.match(
-    /^(.+?) - (\d+) - (SHOP FLOOR|TECHNICAL) - (.+?) - EN - (Dark|Light)\.html$/
+    /^(.+?) - (\d+) - (SHOP FLOOR|TECHNICAL) - (.+?) - (EN|ES) - (Dark|Light)\.html$/
   );
   if (!m) return null;
-  const [, series, , type, stepName, edition] = m;
+  const [, series, , type, stepName, lang, edition] = m;
   const seriesSlug = toSlug(series);
   let stepSlug = toSlug(stepName);
   const sfPrefix = type === "SHOP FLOOR" ? "sf-" : "";
   const key = `${seriesSlug}|${stepSlug}`;
   if (STEP_OVERRIDES[key]) stepSlug = STEP_OVERRIDES[key];
-  return { posterId: `${seriesSlug}-${sfPrefix}${stepSlug}`, edition: edition.toLowerCase() };
+  const langPrefix = lang === "ES" ? "es-" : "";
+  return { posterId: `${seriesSlug}-${sfPrefix}${stepSlug}`, edition: `${langPrefix}${edition.toLowerCase()}` };
 }
 
 // ── Parse EN Low Phos shop floor: "EN Low Phos - ## - SHOP FLOOR - Step - Claude Design Ready - Dark.html" ──
@@ -98,7 +99,7 @@ function parseENLowPhosShopFloor(filename) {
     /^EN Low Phos - (\d+) - SHOP FLOOR - (.+?) - Claude Design Ready - (Dark|Light)\.html$/
   );
   if (!m) return null;
-  const [, stepNum, stepName, edition] = m;
+  const [, , stepName, edition] = m;
   const stepMap = {
     "Electroless Nickel Demystified": "demystified",
     "Process Flow": "process-flow",
@@ -136,24 +137,24 @@ function buildFileMap() {
   return fileMap;
 }
 
-function getPlaceholderPosterIds() {
+function getAllPosterIds() {
   const content = fs.readFileSync(path.join(__dirname, "lib", "posters.ts"), "utf8");
   const ids = [];
-  const regex = /id:\s*"([^"]+)"[^}]*?previewImage:\s*"\/posters\/poster-placeholder\.svg"/g;
+  const regex = /id:\s*"([^"]+)"/g;
   let m;
   while ((m = regex.exec(content)) !== null) ids.push(m[1]);
   return new Set(ids);
 }
 
 async function main() {
-  const placeholderIds = getPlaceholderPosterIds();
-  console.log(`${placeholderIds.size} posters need previews`);
+  const allIds = getAllPosterIds();
+  console.log(`${allIds.size} posters in registry`);
 
   const fileMap = buildFileMap();
 
   const toProcess = [];
   const missing = [];
-  for (const id of placeholderIds) {
+  for (const id of allIds) {
     if (fileMap[id]) {
       toProcess.push({ id, files: fileMap[id] });
     } else {
@@ -183,7 +184,13 @@ async function main() {
 
   for (const { id, files } of toProcess) {
     for (const [edition, filename] of Object.entries(files)) {
-      const suffix = edition === "dark" ? "-preview.jpg" : "-light-preview.jpg";
+      const SUFFIX_MAP = {
+        "dark": "-preview.jpg",
+        "light": "-light-preview.jpg",
+        "es-dark": "-es-preview.jpg",
+        "es-light": "-es-light-preview.jpg",
+      };
+      const suffix = SUFFIX_MAP[edition] || "-preview.jpg";
       const outPath = path.join(POSTERS_DIR, `${id}${suffix}`);
       done++;
 

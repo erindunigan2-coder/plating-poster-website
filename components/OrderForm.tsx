@@ -9,6 +9,8 @@ type Props = {
   variantMap: Record<string, string>;
   edition?: "Dark" | "Light";
   onEditionChange?: (edition: "Dark" | "Light") => void;
+  language?: "en" | "es";
+  onLanguageChange?: (language: "en" | "es") => void;
 };
 
 const FINISHES = [
@@ -29,8 +31,13 @@ const EDITIONS: { id: "Dark" | "Light"; label: string; description: string }[] =
   { id: "Light", label: "Light Edition", description: "Warm off-white background — bright environments." },
 ];
 
-export default function OrderForm({ poster, variantMap, edition: editionProp, onEditionChange }: Props) {
-  const [language, setLanguage] = useState<"en" | "es">("en");
+export default function OrderForm({ poster, variantMap, edition: editionProp, onEditionChange, language: languageProp, onLanguageChange }: Props) {
+  const [languageInternal, setLanguageInternal] = useState<"en" | "es">("en");
+  const language = languageProp ?? languageInternal;
+  const setLanguage = (lang: "en" | "es") => {
+    setLanguageInternal(lang);
+    onLanguageChange?.(lang);
+  };
   const [size, setSize] = useState(poster.sizes[0]);
   const [finish, setFinish] = useState("Matte Laminate");
   const [editionInternal, setEditionInternal] = useState<"Dark" | "Light">("Dark");
