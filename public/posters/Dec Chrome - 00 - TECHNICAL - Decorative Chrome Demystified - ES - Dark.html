@@ -25,25 +25,43 @@
 html,body{margin:0;padding:0;background:#0a0c14;}
 .stage{width:100vw;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;overflow:visible;padding:12px 0;box-sizing:border-box;}
 .poster-wrap{transform-origin:center center;}
-.poster{width:1200px;height:1800px;position:relative;overflow:hidden;background:radial-gradient(1200px 800px at 15% 8%,rgba(46,196,182,.14),transparent 60%),radial-gradient(1000px 700px at 90% 25%,rgba(232,160,32,.12),transparent 55%),radial-gradient(900px 900px at 50% 80%,rgba(224,92,92,.10),transparent 60%),var(--bg);font-family:'Inter',sans-serif;color:var(--text);display:flex;flex-direction:column;padding:32px;box-sizing:border-box;}
+.poster{width:1200px;height:1800px;position:relative;overflow:hidden;background:radial-gradient(1200px 800px at 15% 8%,rgba(46,196,182,.14),transparent 60%),radial-gradient(1000px 700px at 90% 25%,rgba(232,160,32,.12),transparent 55%),radial-gradient(900px 900px at 50% 80%,rgba(224,92,92,.10),transparent 60%),var(--bg);font-family:'Inter',sans-serif;color:var(--text);display:flex;flex-direction:column;padding:28px;box-sizing:border-box;}
 .poster::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:50px 50px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);pointer-events:none;z-index:0;}
 .poster>*{position:relative;z-index:1;}
 .glass{background-color:var(--glass-bg);background-image:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));border:1px solid var(--glass-border);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);box-shadow:var(--glass-shadow);border-radius:12px;}
 .tack{position:absolute;width:24px;height:24px;border-radius:50%;border:1.5px solid rgba(232,160,32,.28);z-index:2;pointer-events:none;}.tack::before,.tack::after{content:"";position:absolute;background:rgba(232,160,32,.28);}.tack::before{left:50%;top:-3px;bottom:-3px;width:1px;transform:translateX(-50%);}.tack::after{top:50%;left:-3px;right:-3px;height:1px;transform:translateY(-50%);}.tack.tl{top:12px;left:12px;}.tack.tr{top:12px;right:12px;}.tack.bl{bottom:12px;left:12px;}.tack.br{bottom:12px;right:12px;}
-.poster-header{flex-shrink:0;}.poster-body{flex:1;overflow:hidden;display:flex;flex-direction:column;gap:7px;justify-content:space-between;}.poster-footer{flex-shrink:0;margin-top:8px;}
-.header-band{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:8px;}.header-left{flex:1;min-width:0;}.eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--amber);letter-spacing:.16em;text-transform:uppercase;margin-bottom:4px;display:flex;align-items:center;gap:12px;}.eyebrow::before{content:"";display:inline-block;width:30px;height:3px;background:var(--amber);}.headline{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:72px;color:var(--text);line-height:.92;margin:4px 0;letter-spacing:-.01em;text-transform:uppercase;}.headline em{font-style:normal;color:var(--amber);}.subhead{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;color:var(--teal);margin:0 0 3px;letter-spacing:.02em;text-transform:uppercase;}.tagline{font-family:'Inter',sans-serif;font-style:italic;font-size:13px;color:var(--muted);line-height:1.45;max-width:700px;margin:0;}
+.poster-header{flex-shrink:0;}.poster-body{flex:1;overflow:hidden;display:flex;flex-direction:column;gap:4px;justify-content:space-between;}.poster-footer{flex-shrink:0;margin-top:4px;}
+.header-band{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:4px;}.header-left{flex:1;min-width:0;}.eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--amber);letter-spacing:.16em;text-transform:uppercase;margin-bottom:4px;display:flex;align-items:center;gap:12px;}.eyebrow::before{content:"";display:inline-block;width:30px;height:3px;background:var(--amber);}.headline{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:72px;color:var(--text);line-height:.92;margin:4px 0;letter-spacing:-.01em;text-transform:uppercase;}.headline em{font-style:normal;color:var(--amber);}.subhead{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;color:var(--teal);margin:0 0 3px;letter-spacing:.02em;text-transform:uppercase;}.tagline{font-family:'Inter',sans-serif;font-style:italic;font-size:13px;color:var(--muted);line-height:1.45;max-width:700px;margin:0;}
 .logo-card{flex-shrink:0;padding:12px 10px;display:flex;flex-direction:column;align-items:center;gap:8px;align-self:flex-start;}.logo-tile{width:68px;height:68px;border-radius:12px;background:linear-gradient(135deg,#E8A020,#2EC4B6);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -2px 4px rgba(0,0,0,.15),0 4px 14px rgba(0,0,0,.35);}.logo-tile span{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:26px;color:#1A1F2E;letter-spacing:.02em;line-height:1;}.logo-word{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;letter-spacing:.04em;text-transform:uppercase;line-height:1;text-align:center;white-space:nowrap;}.logo-word .a{color:var(--text);}.logo-word .b{color:var(--amber);}.logo-inc{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.05em;text-transform:lowercase;color:var(--muted);margin-top:-2px;}
-.section-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:28px;letter-spacing:.08em;text-transform:uppercase;color:var(--text);margin:0 0 6px;display:flex;align-items:center;gap:8px;}.section-title::before{content:"";width:6px;height:6px;background:var(--amber);border-radius:50%;}.section-title .sub{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;color:var(--muted);margin-left:auto;font-weight:500;}
-.rule-card{display:flex;align-items:center;gap:20px;padding:18px 28px;background:rgba(232,160,32,.07);}.rule-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:68px;color:var(--amber);line-height:1;letter-spacing:-.02em;}.rule-body{flex:1;}.rule-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:19px;color:var(--amber);letter-spacing:.08em;text-transform:uppercase;}.rule-text{font-family:'Inter',sans-serif;font-size:14px;color:var(--muted);line-height:1.5;margin-top:4px;}
-.data-table{width:100%;border-collapse:collapse;}.data-table th{font-family:'Barlow',sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);padding:8px 12px;text-align:left;background:rgba(13,16,32,.35);border-bottom:1px solid var(--glass-border);}.poster[data-edition="light"] .data-table th{background:rgba(27,32,48,.06);}.data-table td{padding:8px 12px;color:var(--text);line-height:1.5;border-bottom:1px solid rgba(255,255,255,.05);font-family:'Inter',sans-serif;font-size:14px;}.data-table tr:last-child td{border-bottom:none;}.data-table tr:nth-child(even) td{background:rgba(255,255,255,.02);}.poster[data-edition="light"] .data-table tr:nth-child(even) td{background:rgba(27,32,48,.025);}.data-table .mono{font-family:'JetBrains Mono',monospace;font-size:13px;}.data-table.compact th{font-size:12px;padding:7px 10px;}.data-table.compact td{padding:6px 10px;font-size:13px;line-height:1.45;}.data-table.compact .mono{font-size:12.5px;}.data-table.bath th{font-size:12px;padding:6px 8px;}.data-table.bath td{padding:5px 8px;font-size:13px;line-height:1.4;}.data-table.bath .mono{font-size:12px;}
-.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}.compare-card{padding:18px 24px;}.compare-card h4{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:21px;color:var(--text);margin:0 0 8px;text-transform:uppercase;letter-spacing:.04em;}.compare-card h4 .tag{font-size:12px;padding:2px 8px;border-radius:4px;margin-left:8px;font-family:'JetBrains Mono',monospace;font-weight:500;letter-spacing:.06em;}.compare-card h4 .tag.good{background:rgba(39,174,96,.15);color:var(--emerald);}.compare-card h4 .tag.bad{background:rgba(224,92,92,.15);color:var(--coral);}.compare-card ul{list-style:none;padding:0;margin:0;}.compare-card li{font-size:13.5px;line-height:1.5;padding:2px 0;display:flex;gap:8px;align-items:flex-start;}.compare-card li::before{content:"";width:5px;height:5px;border-radius:50%;margin-top:7px;flex-shrink:0;}.compare-card.do li::before{background:var(--emerald);}.compare-card.dont li::before{background:var(--coral);}
-.bottom-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:10px;}
-.insight-card{padding:20px 24px;border-left:3px solid var(--teal);background:rgba(46,196,182,.06);border-radius:0 12px 12px 0;}.insight-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;color:var(--teal);letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px;}.insight-text{font-family:'Inter',sans-serif;font-size:14.5px;color:var(--text);line-height:1.5;}
-.safety-card{padding:18px 24px;background:rgba(224,92,92,.08);border:1px solid rgba(224,92,92,.25);border-radius:12px;}.safety-head{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px;color:var(--coral);letter-spacing:.06em;text-transform:uppercase;margin-bottom:5px;}.safety-body{font-size:14px;color:var(--text);line-height:1.55;}.safety-body strong{font-weight:700;color:var(--coral);}
-.process-flow{display:flex;align-items:center;justify-content:space-between;padding:10px 16px;height:80px;gap:4px;}
+.section-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:28px;letter-spacing:.08em;text-transform:uppercase;color:var(--text);margin:0 0 3px;display:flex;align-items:center;gap:8px;}.section-title::before{content:"";width:6px;height:6px;background:var(--amber);border-radius:50%;}.section-title .sub{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;color:var(--muted);margin-left:auto;font-weight:500;}
+.rule-card{display:flex;align-items:center;gap:20px;padding:12px 22px;background:rgba(232,160,32,.07);}.rule-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:56px;color:var(--amber);line-height:1;letter-spacing:-.02em;}.rule-body{flex:1;}.rule-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:19px;color:var(--amber);letter-spacing:.08em;text-transform:uppercase;}.rule-text{font-family:'Inter',sans-serif;font-size:14px;color:var(--muted);line-height:1.5;margin-top:4px;}
+.data-table{width:100%;border-collapse:collapse;}.data-table th{font-family:'Barlow',sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);padding:6px 10px;text-align:left;background:rgba(13,16,32,.35);border-bottom:1px solid var(--glass-border);}.poster[data-edition="light"] .data-table th{background:rgba(27,32,48,.06);}.data-table td{padding:6px 10px;color:var(--text);line-height:1.5;border-bottom:1px solid rgba(255,255,255,.05);font-family:'Inter',sans-serif;font-size:14px;}.data-table tr:last-child td{border-bottom:none;}.data-table tr:nth-child(even) td{background:rgba(255,255,255,.02);}.poster[data-edition="light"] .data-table tr:nth-child(even) td{background:rgba(27,32,48,.025);}.data-table .mono{font-family:'JetBrains Mono',monospace;font-size:13px;}.data-table.compact th{font-size:12px;padding:7px 10px;}.data-table.compact td{padding:6px 10px;font-size:13px;line-height:1.45;}.data-table.compact .mono{font-size:12.5px;}.data-table.bath th{font-size:12px;padding:6px 8px;}.data-table.bath td{padding:5px 8px;font-size:13px;line-height:1.4;}.data-table.bath .mono{font-size:12px;}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;}.compare-card{padding:10px 16px;}.compare-card h4{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:21px;color:var(--text);margin:0 0 8px;text-transform:uppercase;letter-spacing:.04em;}.compare-card h4 .tag{font-size:12px;padding:2px 8px;border-radius:4px;margin-left:8px;font-family:'JetBrains Mono',monospace;font-weight:500;letter-spacing:.06em;}.compare-card h4 .tag.good{background:rgba(39,174,96,.15);color:var(--emerald);}.compare-card h4 .tag.bad{background:rgba(224,92,92,.15);color:var(--coral);}.compare-card ul{list-style:none;padding:0;margin:0;}.compare-card li{font-size:13.5px;line-height:1.5;padding:2px 0;display:flex;gap:8px;align-items:flex-start;}.compare-card li::before{content:"";width:5px;height:5px;border-radius:50%;margin-top:7px;flex-shrink:0;}.compare-card.do li::before{background:var(--emerald);}.compare-card.dont li::before{background:var(--coral);}
+.bottom-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:6px;}
+.insight-card{padding:14px 18px;border-left:3px solid var(--teal);background:rgba(46,196,182,.06);border-radius:0 12px 12px 0;}.insight-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;color:var(--teal);letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px;}.insight-text{font-family:'Inter',sans-serif;font-size:14.5px;color:var(--text);line-height:1.5;}
+.safety-card{padding:12px 18px;background:rgba(224,92,92,.08);border:1px solid rgba(224,92,92,.25);border-radius:12px;}.safety-head{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px;color:var(--coral);letter-spacing:.06em;text-transform:uppercase;margin-bottom:5px;}.safety-body{font-size:14px;color:var(--text);line-height:1.55;}.safety-body strong{font-weight:700;color:var(--coral);}
+.process-flow{display:flex;align-items:center;justify-content:space-between;padding:6px 16px;height:58px;gap:4px;}
 .footer{padding:10px 20px;background-color:rgba(13,16,32,.85);background-image:linear-gradient(180deg,rgba(255,255,255,.04),rgba(0,0,0,0));border:1px solid rgba(255,255,255,.10);border-radius:8px;text-align:center;display:flex;flex-direction:column;gap:2px;}.poster[data-edition="light"] .footer{background-color:rgba(221,216,206,.95);border-color:rgba(27,32,48,.10);}.footer-disclaimer{font-family:'Inter',sans-serif;font-size:9px;line-height:1.35;color:var(--faint);margin:0 auto;max-width:900px;}.footer-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:13px;color:var(--text);letter-spacing:.04em;text-transform:uppercase;margin:0;}.footer-brand{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;}
 .tweaks{position:fixed;bottom:16px;right:16px;z-index:100;background:rgba(13,16,32,.92);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:10px 14px;display:flex;flex-direction:column;gap:8px;font-family:'Inter',sans-serif;font-size:12px;color:#F0EDE8;}
 @media print{@page{size:12.5in 18.75in;margin:0;}html,body{background:#1A1F2E !important;-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}*{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}.stage{position:static;padding:0;display:block;overflow:visible;}.poster-wrap{transform:none !important;width:auto !important;height:auto !important;}.poster{box-shadow:none !important;width:1200px !important;height:1800px !important;overflow:hidden !important;}.glass,.insight-card,.safety-card{backdrop-filter:none !important;-webkit-backdrop-filter:none !important;}.tweaks{display:none !important;}}
+
+/* Dec Chrome density overrides */
+.headline{font-size:60px;}
+.rule-card{padding:8px 18px;}
+.rule-num{font-size:44px;}
+.rule-text{font-size:12.5px;line-height:1.4;margin-top:2px;}
+.rule-label{font-size:17px;}
+.section-title{font-size:22px;margin:0 0 2px;}
+.data-table.compact td{padding:4px 8px;font-size:12px;line-height:1.35;}
+.data-table.compact th{padding:5px 8px;font-size:11px;}
+.data-table.compact .mono{font-size:11.5px;}
+.insight-card{padding:8px 14px;}
+.insight-label{font-size:14px;}
+.insight-text{font-size:12.5px;line-height:1.4;}
+.compare-card{padding:6px 12px;}
+.compare-card li{font-size:12px;line-height:1.4;padding:1px 0;}
+.compare-card h4{font-size:16px;margin:0 0 4px;}
+.poster-body{gap:3px;}
 </style>
 </head>
 <body>
@@ -78,7 +96,7 @@ html,body{margin:0;padding:0;background:#0a0c14;}
 
     <!-- FLUJO MULTICAPA -->
     <div class="glass process-flow">
-      <svg viewBox="0 0 1100 70" width="100%" height="70" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 1100 70" width="100%" height="58" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="60" cy="28" r="18" stroke="var(--teal)" stroke-width="1.8" fill="rgba(46,196,182,.12)"/>
         <text x="60" y="34" text-anchor="middle" fill="var(--teal)" font-family="Barlow Condensed,sans-serif" font-weight="900" font-size="16">01</text>
         <text x="60" y="60" text-anchor="middle" fill="currentColor" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="9.5" letter-spacing=".04em" opacity=".62">LIMPIAR</text>
@@ -136,9 +154,9 @@ html,body{margin:0;padding:0;background:#0a0c14;}
     </div>
 
     <!-- DIAGRAMA CORTE TRANSVERSAL SVG -->
-    <div class="glass" style="padding:8px 16px;">
-      <h3 class="section-title" style="margin-bottom:4px;">Diagrama de Corte Transversal <span class="sub">no a escala</span></h3>
-      <svg viewBox="0 0 1060 155" width="100%" height="130" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <div class="glass" style="padding:5px 16px;">
+      <h3 class="section-title" style="margin-bottom:2px;">Diagrama de Corte Transversal <span class="sub">no a escala</span></h3>
+      <svg viewBox="0 0 1060 155" width="100%" height="100" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect x="40" y="130" width="700" height="40" rx="0" fill="rgba(120,120,140,.15)" stroke="var(--muted)" stroke-width="1"/>
         <text x="390" y="155" text-anchor="middle" fill="var(--muted)" font-family="Barlow,sans-serif" font-weight="600" font-size="12">SUSTRATO (acero / zamak / ABS)</text>
         <rect x="40" y="105" width="700" height="25" rx="0" fill="rgba(232,160,32,.12)" stroke="var(--amber)" stroke-width="1"/>
@@ -163,9 +181,9 @@ html,body{margin:0;padding:0;background:#0a0c14;}
     </div>
 
     <!-- V&Iacute;A DE CORROSI&Oacute;N -->
-    <div class="glass" style="padding:8px 16px;">
-      <h3 class="section-title" style="margin-bottom:4px;">V&iacute;a de Corrosi&oacute;n <span class="sub">n&iacute;quel d&uacute;plex + cromo microporoso</span></h3>
-      <svg viewBox="0 0 1060 110" width="100%" height="95" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <div class="glass" style="padding:5px 16px;">
+      <h3 class="section-title" style="margin-bottom:2px;">V&iacute;a de Corrosi&oacute;n <span class="sub">n&iacute;quel d&uacute;plex + cromo microporoso</span></h3>
+      <svg viewBox="0 0 1060 110" width="100%" height="75" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect x="20" y="10" width="220" height="95" rx="8" fill="rgba(39,174,96,.04)" stroke="var(--emerald)" stroke-width="1"/>
         <text x="130" y="28" text-anchor="middle" fill="var(--emerald)" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="12" letter-spacing=".04em">1. PORO EN CROMO</text>
         <rect x="40" y="74" width="180" height="14" rx="0" fill="rgba(46,196,182,.08)"/><text x="130" y="84" text-anchor="middle" fill="var(--teal)" font-family="Inter,sans-serif" font-size="8">Ni Semi-Brillante</text>
@@ -196,7 +214,7 @@ html,body{margin:0;padding:0;background:#0a0c14;}
     <!-- POR QU&Eacute; EL N&Iacute;QUEL IMPORTA -->
     <div class="insight-card">
       <div class="insight-label">Por Qu&eacute; el Sistema de N&iacute;quel Importa M&aacute;s Que el Cromo</div>
-      <div class="insight-text">En un sistema d&uacute;plex, el Ni brillante (con azufre) es an&oacute;dico respecto al Ni semi-brillante, propagando la corrosi&oacute;n lateralmente en vez de penetrar al sustrato. El Ni microporoso multiplica esto distribuyendo &gt;10,000 celdas/cm&sup2;; el cromo microagrietado (&gt;250 grietas/cm) logra distribuci&oacute;n similar. El Ni semi-brillante debe ser &ge;60% del espesor total de Ni para mantener el &Delta;E STEP de 100&ndash;200 mV que impulsa la corrosi&oacute;n lateral. El cromo es puramente cosm&eacute;tico &mdash; la arquitectura del n&iacute;quel determina la vida de la pieza.</div>
+      <div class="insight-text">El Ni brillante (con azufre) es an&oacute;dico respecto al Ni semi-brillante, propagando la corrosi&oacute;n lateralmente en vez de penetrar al sustrato. El Ni microporoso distribuye &gt;10,000 celdas/cm&sup2; en la superficie. El Ni semi-brillante debe ser &ge;60% del espesor total para mantener el &Delta;E STEP de 100&ndash;200 mV. El cromo es puramente cosm&eacute;tico &mdash; la arquitectura del n&iacute;quel determina la vida de la pieza.</div>
     </div>
 
     <!-- CUADR&Iacute;CULA INFERIOR -->
@@ -217,6 +235,11 @@ html,body{margin:0;padding:0;background:#0a0c14;}
             </tbody>
           </table>
         </div>
+      
+        <div class="glass" style="padding:10px 16px;border-left:3px solid var(--amber);margin-top:8px;">
+      <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;color:var(--amber);letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px;">&iquest;Sab&iacute;a Usted?</div>
+      <div style="font-family:'Inter',sans-serif;font-size:12.5px;color:var(--text);line-height:1.5;">El primer cromado decorativo fue logrado en 1924 por Colin Fink y Charles Eldridge en la Universidad de Columbia. En menos de una d&eacute;cada, los parachoques cromados definieron el autom&oacute;vil estadounidense. La paradoja: la capa de cromo es m&aacute;s delgada que un gl&oacute;bulo rojo (~7 &micro;m), y proporciona el acabado de espejo ic&oacute;nico. La verdadera ingenier&iacute;a est&aacute; en el n&iacute;quel debajo.</div>
+    </div>
       </div>
       <div>
         <h3 class="section-title">Ba&ntilde;o de Cromo <span class="sub">hex vs tri</span></h3>
@@ -270,9 +293,9 @@ html,body{margin:0;padding:0;background:#0a0c14;}
       </div>
     </div>
 
-  </div>
+    </div>
   <footer class="footer poster-footer">
-    <p class="footer-disclaimer">Solo referencia técnica. Verifique todos los parámetros contra la ficha técnica de su proveedor, especificaciones del cliente y requisitos regulatorios aplicables antes del uso en producción.</p>
+    <p class="footer-disclaimer">Solo referencia t&eacute;cnica. Verifique todos los par&aacute;metros contra la ficha t&eacute;cnica de su proveedor, especificaciones del cliente y requisitos regulatorios aplicables antes del uso en producci&oacute;n.</p>
     <p class="footer-title">Cromo Decorativo Desmitificado &mdash; Serie de Cromado Decorativo</p>
     <span class="footer-brand">Plating Posters &middot; Metal Finishing Reference Series &middot; PP-DC-00-T / v1.0 / 2026</span>
   </footer>
