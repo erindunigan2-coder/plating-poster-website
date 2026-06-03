@@ -84,13 +84,22 @@ export default function PosterDetailClient({ poster, variantMap }: Props) {
           >
             🇺🇸 English
           </span>
-          <span
-            className="text-xs font-bold uppercase tracking-wider px-3 py-1 border"
-            style={{ borderColor: "#ddd8cc", color: "#bbb8b0" }}
-          >
-            🇪🇸 Español —{" "}
-            <span style={{ color: "#E8A020" }}>Coming Soon</span>
-          </span>
+          {poster.languages.includes("es") ? (
+            <span
+              className="text-xs font-bold uppercase tracking-wider px-3 py-1 border"
+              style={{ borderColor: "#ddd8cc", color: "#7a7a72" }}
+            >
+              🇪🇸 Español
+            </span>
+          ) : (
+            <span
+              className="text-xs font-bold uppercase tracking-wider px-3 py-1 border"
+              style={{ borderColor: "#ddd8cc", color: "#bbb8b0" }}
+            >
+              🇪🇸 Español —{" "}
+              <span style={{ color: "#E8A020" }}>Coming Soon</span>
+            </span>
+          )}
         </div>
 
         <p className="text-sm leading-relaxed mb-6" style={{ color: "#7a7a72" }}>

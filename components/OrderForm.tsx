@@ -45,10 +45,10 @@ export default function OrderForm({ poster, variantMap, edition: editionProp, on
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  // Price table matches the Shopify CSV: Matte $75/99/169, Shop Tough $85/115/189
+  // Retail pricing — finalized 2026-05-18. Free shipping on orders $99+, $9.95 flat rate under $99.
   const PRICES: Record<string, Record<string, number>> = {
-    "Matte Laminate": { "18×24": 75, "24×36": 99, "36×48": 169 },
-    "Shop Tough":     { "18×24": 85, "24×36": 115, "36×48": 189 },
+    "Matte Laminate": { "18×24": 59, "24×36": 99, "36×48": 169 },
+    "Shop Tough":     { "18×24": 69, "24×36": 115, "36×48": 189 },
   };
   const unitPrice = PRICES[finish]?.[size] ?? poster.price;
   const total = (unitPrice + (logoUpgrade ? poster.logoUpgradePrice : 0)) * quantity;
@@ -117,21 +117,27 @@ export default function OrderForm({ poster, variantMap, edition: editionProp, on
           <button onClick={() => setLanguage("en")} className={btnBase} style={language === "en" ? btnActive : btnInactive}>
             🇺🇸 English
           </button>
-          <div className="relative">
-            <button
-              disabled
-              className={btnBase}
-              style={{ ...btnInactive, color: "#bbb8b0", borderColor: "#ede9e0", cursor: "not-allowed", paddingRight: "80px" }}
-            >
+          {poster.languages.includes("es") ? (
+            <button onClick={() => setLanguage("es")} className={btnBase} style={language === "es" ? btnActive : btnInactive}>
               🇪🇸 Español
             </button>
-            <span
-              className="absolute right-2 top-1/2 -translate-y-1/2 text-xs font-black uppercase tracking-wider px-2 py-0.5"
-              style={{ background: "#FFF3D6", color: "#E8A020", borderRadius: "3px", whiteSpace: "nowrap" }}
-            >
-              Coming Soon
-            </span>
-          </div>
+          ) : (
+            <div className="relative">
+              <button
+                disabled
+                className={btnBase}
+                style={{ ...btnInactive, color: "#bbb8b0", borderColor: "#ede9e0", cursor: "not-allowed", paddingRight: "80px" }}
+              >
+                🇪🇸 Español
+              </button>
+              <span
+                className="absolute right-2 top-1/2 -translate-y-1/2 text-xs font-black uppercase tracking-wider px-2 py-0.5"
+                style={{ background: "#FFF3D6", color: "#E8A020", borderRadius: "3px", whiteSpace: "nowrap" }}
+              >
+                Coming Soon
+              </span>
+            </div>
+          )}
         </div>
       </div>
 
@@ -223,6 +229,17 @@ export default function OrderForm({ poster, variantMap, edition: editionProp, on
       {error && (
         <p className="text-sm font-semibold" style={{ color: "#E05C5C" }}>{error}</p>
       )}
+
+      {/* Shipping */}
+      <div className="flex items-center gap-2 px-3 py-2 rounded text-xs" style={{ background: "#F0FAF8", border: "1px solid #D0EDE8" }}>
+        <span style={{ color: "#2EC4B6" }}>✓</span>
+        <span style={{ color: "#1A1F2E" }}>
+          {total >= 99
+            ? <strong>Free shipping</strong>
+            : <><strong>$9.95 flat rate shipping</strong> · Free on orders $99+</>
+          }
+        </span>
+      </div>
 
       {/* Total + CTA */}
       <div className="pt-2">
