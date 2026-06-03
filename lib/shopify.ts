@@ -5,7 +5,7 @@ const STOREFRONT_TOKEN = process.env.NEXT_PUBLIC_SHOPIFY_STOREFRONT_TOKEN!;
 const API_URL = `https://${STORE_DOMAIN}/api/2024-01/graphql.json`;
 
 // Logo Upgrade variant ID (from Shopify)
-export const LOGO_UPGRADE_VARIANT_ID = "gid://shopify/ProductVariant/43670257893442";
+export const LOGO_UPGRADE_VARIANT_ID = "gid://shopify/ProductVariant/43816137195586";
 
 async function shopifyFetch(query: string, variables?: object) {
   const res = await fetch(API_URL, {
