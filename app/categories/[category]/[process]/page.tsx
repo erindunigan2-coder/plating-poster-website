@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getCategory, getProcess, CATEGORIES } from "@/lib/catalog";
-import { getPostersByProcess } from "@/lib/posters";
+import { getPostersByProcess, getPostersByProcessAndType } from "@/lib/posters";
 import PosterCard from "@/components/PosterCard";
 import PosterPlaceholder from "@/components/PosterPlaceholder";
 
@@ -152,6 +152,9 @@ export default async function ProcessSeriesPage({ params }: Props) {
 
   const seriesTitles = getSeriesTitles(cat.id, proc.title);
   const availablePosters = getPostersByProcess(proc.id);
+  const technicalPosters = getPostersByProcessAndType(proc.id, "technical");
+  const shopFloorPosters = getPostersByProcessAndType(proc.id, "shop-floor");
+  const hasSections = technicalPosters.length > 0 || shopFloorPosters.length > 0;
   const isAvailable = proc.available && availablePosters.length > 0;
 
   return (
@@ -232,60 +235,108 @@ export default async function ProcessSeriesPage({ params }: Props) {
 
       {/* Poster series grid */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="flex items-center justify-between mb-8" style={{ borderBottom: "2px solid #1A1F2E", paddingBottom: "0.75rem" }}>
-          <h2
-            className="font-black uppercase text-xl"
-            style={{ fontFamily: "var(--font-barlow-condensed)", color: "#1A1F2E" }}
-          >
-            Poster Series
-          </h2>
-          <span className="font-mono text-xs" style={{ color: "#6B7080" }}>
-            {proc.posterCount} designs · EN / ES · Dark / Light
-          </span>
-        </div>
-
-        {isAvailable ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {availablePosters.map((poster) => (
-              <PosterCard key={poster.id} poster={poster} />
-            ))}
-          </div>
-        ) : (
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-            {seriesTitles.map((title, i) => (
-              <div
-                key={i}
-                className="flex flex-col overflow-hidden"
-                style={{ borderRadius: "10px", border: "1px solid #2A3048" }}
-              >
-                <div className="aspect-[3/4] overflow-hidden" style={{ background: "#1A1F2E" }}>
-                  <PosterPlaceholder
-                    categoryTitle={cat.title}
-                    processTitle={proc.title}
-                    posterTitle={title}
-                    accentColor={cat.accentColor}
-                    isMainSummary={i === 0}
-                  />
-                </div>
-                <div
-                  className="p-3"
-                  style={{ background: "#1A1F2E", borderTop: "1px solid #2A3048" }}
-                >
-                  <p
-                    className="font-bold uppercase leading-tight text-xs"
-                    style={{ color: "#F0EDE8", fontFamily: "var(--font-barlow-condensed)" }}
+        {hasSections ? (
+          <>
+            {/* Technical Reference Posters */}
+            {technicalPosters.length > 0 && (
+              <div className="mb-12">
+                <div className="flex items-center justify-between mb-8" style={{ borderBottom: "2px solid #1A1F2E", paddingBottom: "0.75rem" }}>
+                  <h2
+                    className="font-black uppercase text-xl"
+                    style={{ fontFamily: "var(--font-barlow-condensed)", color: "#1A1F2E" }}
                   >
-                    {title}
-                  </p>
-                  {i === 0 && (
-                    <p className="font-mono text-xs mt-1" style={{ color: cat.accentColor }}>
-                      Main Summary
-                    </p>
-                  )}
+                    Technical Reference Posters
+                  </h2>
+                  <span className="font-mono text-xs" style={{ color: "#6B7080" }}>
+                    {technicalPosters.length} designs · EN / ES · Dark / Light
+                  </span>
+                </div>
+                <p className="text-sm mb-6" style={{ color: "#6B7080" }}>
+                  Deep-dive engineering references — chemistry, specifications, and operating parameters for engineers, chemists, and lead operators.
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {technicalPosters.map((poster) => (
+                    <PosterCard key={poster.id} poster={poster} />
+                  ))}
                 </div>
               </div>
-            ))}
-          </div>
+            )}
+
+            {/* Shop Floor Posters */}
+            {shopFloorPosters.length > 0 && (
+              <div className="mb-12">
+                <div className="flex items-center justify-between mb-8" style={{ borderBottom: "2px solid #1A1F2E", paddingBottom: "0.75rem" }}>
+                  <h2
+                    className="font-black uppercase text-xl"
+                    style={{ fontFamily: "var(--font-barlow-condensed)", color: "#1A1F2E" }}
+                  >
+                    Shop Floor Posters
+                  </h2>
+                  <span className="font-mono text-xs" style={{ color: "#6B7080" }}>
+                    {shopFloorPosters.length} designs · EN / ES · Dark / Light
+                  </span>
+                </div>
+                <p className="text-sm mb-6" style={{ color: "#6B7080" }}>
+                  Clean, visual quick-reference for operators — key parameters at a glance, built to hang right on the line.
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {shopFloorPosters.map((poster) => (
+                    <PosterCard key={poster.id} poster={poster} />
+                  ))}
+                </div>
+              </div>
+            )}
+          </>
+        ) : (
+          <>
+            <div className="flex items-center justify-between mb-8" style={{ borderBottom: "2px solid #1A1F2E", paddingBottom: "0.75rem" }}>
+              <h2
+                className="font-black uppercase text-xl"
+                style={{ fontFamily: "var(--font-barlow-condensed)", color: "#1A1F2E" }}
+              >
+                Poster Series
+              </h2>
+              <span className="font-mono text-xs" style={{ color: "#6B7080" }}>
+                {proc.posterCount} designs · EN / ES · Dark / Light
+              </span>
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+              {seriesTitles.map((title, i) => (
+                <div
+                  key={i}
+                  className="flex flex-col overflow-hidden"
+                  style={{ borderRadius: "10px", border: "1px solid #2A3048" }}
+                >
+                  <div className="aspect-[3/4] overflow-hidden" style={{ background: "#1A1F2E" }}>
+                    <PosterPlaceholder
+                      categoryTitle={cat.title}
+                      processTitle={proc.title}
+                      posterTitle={title}
+                      accentColor={cat.accentColor}
+                      isMainSummary={i === 0}
+                    />
+                  </div>
+                  <div
+                    className="p-3"
+                    style={{ background: "#1A1F2E", borderTop: "1px solid #2A3048" }}
+                  >
+                    <p
+                      className="font-bold uppercase leading-tight text-xs"
+                      style={{ color: "#F0EDE8", fontFamily: "var(--font-barlow-condensed)" }}
+                    >
+                      {title}
+                    </p>
+                    {i === 0 && (
+                      <p className="font-mono text-xs mt-1" style={{ color: cat.accentColor }}>
+                        Main Summary
+                      </p>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </>
         )}
 
         {/* What's in every series */}

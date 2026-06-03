@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useState } from "react";
 
 export default function Header() {
-  const [lang, setLang] = useState<"en" | "es">("en");
   const [menuOpen, setMenuOpen] = useState(false);
 
   const amber = "#E8A020";
@@ -57,9 +56,10 @@ export default function Header() {
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8">
             {[
-              { href: "/categories", label: lang === "en" ? "Browse Catalog" : "Catálogo" },
-              { href: "/custom", label: lang === "en" ? "Custom Logo" : "Logo Personalizado" },
-              { href: "/about", label: lang === "en" ? "About" : "Nosotros" },
+              { href: "/categories", label: "Catalogue" },
+              { href: "/build", label: "Build Your Line" },
+              { href: "/contact", label: "Custom Series" },
+              { href: "/about", label: "About" },
             ].map((item) => (
               <Link
                 key={item.href}
@@ -76,34 +76,14 @@ export default function Header() {
 
           {/* Right side */}
           <div className="flex items-center gap-3">
-            {/* Language toggle */}
-            <div
-              className="flex items-center overflow-hidden text-xs font-bold tracking-widest uppercase"
-              style={{ border: `1px solid ${borderDark}` }}
+            {/* Contact Us button */}
+            <a
+              href="mailto:info@platingposters.com"
+              className="hidden md:inline-flex items-center justify-center px-4 py-1.5 font-black text-xs tracking-widest uppercase transition-opacity hover:opacity-90"
+              style={{ background: amber, color: gunmetal }}
             >
-              <button
-                onClick={() => setLang("en")}
-                className="px-3 py-1.5 transition-colors"
-                style={
-                  lang === "en"
-                    ? { background: amber, color: gunmetal }
-                    : { color: "#555", background: "transparent" }
-                }
-              >
-                EN
-              </button>
-              <button
-                onClick={() => setLang("es")}
-                className="px-3 py-1.5 transition-colors"
-                style={
-                  lang === "es"
-                    ? { background: amber, color: gunmetal }
-                    : { color: "#555", background: "transparent" }
-                }
-              >
-                ES
-              </button>
-            </div>
+              Contact Us
+            </a>
 
             {/* Mobile menu button */}
             <button
@@ -132,9 +112,10 @@ export default function Header() {
         >
           <nav className="flex flex-col gap-4">
             {[
-              { href: "/categories", label: lang === "en" ? "Browse Catalog" : "Catálogo" },
-              { href: "/custom", label: lang === "en" ? "Custom Logo" : "Logo Personalizado" },
-              { href: "/about", label: lang === "en" ? "About" : "Nosotros" },
+              { href: "/categories", label: "Catalogue" },
+              { href: "/build", label: "Build Your Line" },
+              { href: "/contact", label: "Custom Series" },
+              { href: "/about", label: "About" },
             ].map((item) => (
               <Link
                 key={item.href}

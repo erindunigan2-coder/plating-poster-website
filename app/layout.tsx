@@ -47,6 +47,7 @@ export default function RootLayout({
       <body
         className="min-h-full flex flex-col antialiased"
         style={{ background: "#F5F4F0", color: "#1A1F2E" }}
+        suppressHydrationWarning
       >
         <Header />
         <main className="flex-1">{children}</main>

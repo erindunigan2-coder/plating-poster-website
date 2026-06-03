@@ -2,6 +2,21 @@
 // Key format: "Edition / Size / Finish"  (e.g. "Dark / 18x24 / Matte Laminate")
 
 export const VARIANT_MAP: Record<string, Record<string, string>> = {
+  "surface-preparation": {
+    // Shopify has Language-based variants; map both editions to English variants for now
+    "Dark / 18x24 / Matte Laminate": "gid://shopify/ProductVariant/43670257041474",
+    "Dark / 18x24 / Shop Tough": "gid://shopify/ProductVariant/43670257107010",
+    "Dark / 24x36 / Matte Laminate": "gid://shopify/ProductVariant/43670257139778",
+    "Dark / 24x36 / Shop Tough": "gid://shopify/ProductVariant/43670257205314",
+    "Dark / 36x48 / Matte Laminate": "gid://shopify/ProductVariant/43670257238082",
+    "Dark / 36x48 / Shop Tough": "gid://shopify/ProductVariant/43670257303618",
+    "Light / 18x24 / Matte Laminate": "gid://shopify/ProductVariant/43670257041474",
+    "Light / 18x24 / Shop Tough": "gid://shopify/ProductVariant/43670257107010",
+    "Light / 24x36 / Matte Laminate": "gid://shopify/ProductVariant/43670257139778",
+    "Light / 24x36 / Shop Tough": "gid://shopify/ProductVariant/43670257205314",
+    "Light / 36x48 / Matte Laminate": "gid://shopify/ProductVariant/43670257238082",
+    "Light / 36x48 / Shop Tough": "gid://shopify/ProductVariant/43670257303618",
+  },
   "en-low-phos-demystified": {
     "Dark / 18x24 / Matte Laminate": "gid://shopify/ProductVariant/43714448261186",
     "Dark / 18x24 / Shop Tough": "gid://shopify/ProductVariant/43714448293954",
