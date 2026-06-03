@@ -1,12 +1,10 @@
 import Link from "next/link";
-import { CATEGORIES, TOTAL_ENGLISH_DESIGNS } from "@/lib/catalog";
-import { getAvailablePosters } from "@/lib/posters";
+import { TOTAL_ENGLISH_DESIGNS } from "@/lib/catalog";
+
+const amber = "#E8A020";
+const gunmetal = "#1A1F2E";
 
 export default function Home() {
-  const availablePosters = getAvailablePosters();
-  const amber = "#E8A020";
-  const gunmetal = "#1A1F2E";
-
   return (
     <>
       {/* Hero */}
@@ -43,7 +41,7 @@ export default function Home() {
               className="font-semibold italic mb-2"
               style={{ color: "#9098A8", fontSize: "1.1rem" }}
             >
-              The Foundation of Every Flawless Finish
+              Your Process. Your Posters.
             </p>
             <p
               className="text-sm mb-8 pt-4 mt-4"
@@ -52,7 +50,7 @@ export default function Home() {
                 borderTop: "1px solid #2A3048",
               }}
             >
-              Professional process reference posters for metal finishing and electroplating facilities. {TOTAL_ENGLISH_DESIGNS}+ designs across 9 process categories. English and Spanish. Dark and light editions.
+              Build your actual process line — step by step, tank by tank — and get a custom poster set that matches your shop floor. {TOTAL_ENGLISH_DESIGNS}+ designs across 9 process categories. English and Spanish. Dark and light editions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
@@ -60,7 +58,14 @@ export default function Home() {
                 className="inline-flex items-center justify-center px-7 py-3 font-black text-sm tracking-widest uppercase transition-opacity hover:opacity-90"
                 style={{ background: amber, color: gunmetal }}
               >
-                Browse Catalog
+                Browse Our Catalogue
+              </Link>
+              <Link
+                href="/build"
+                className="inline-flex items-center justify-center px-7 py-3 font-black text-sm tracking-widest uppercase transition-colors"
+                style={{ border: "1px solid #2A3048", color: "#9098A8" }}
+              >
+                Build Your Line
               </Link>
               <Link
                 href="/custom"
@@ -92,143 +97,67 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Value props */}
-      <section style={{ background: "#F5F4F0", borderBottom: "1px solid #DDD9D0" }}>
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div
-            className="grid grid-cols-1 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x"
-            style={{ borderColor: "#DDD9D0" }}
-          >
-            {[
-              { eyebrow: "Scope", title: "9 Categories", body: "Electroplating, anodizing, coating, heat treatment, specialty processes and more." },
-              { eyebrow: "Bilingual", title: "EN & ES", body: "Every poster available in English and Spanish to serve your full team." },
-              { eyebrow: "Editions", title: "Dark & Light", body: "Flagship dark edition and light edition — choose what works for your environment." },
-              { eyebrow: "Branding", title: "Logo Upgrade", body: "Add your company logo for a professional, facility-specific look." },
-            ].map((item, i) => (
-              <div key={i} className={`py-6 md:py-0 ${i === 0 ? "md:pr-8" : i === 3 ? "md:pl-8" : "md:px-8"}`}>
-                <p className="font-mono font-black uppercase text-xs tracking-widest mb-2" style={{ color: "#A06C00" }}>
-                  {item.eyebrow}
-                </p>
-                <h3 className="font-black text-lg mb-1" style={{ color: gunmetal }}>{item.title}</h3>
-                <p className="text-sm" style={{ color: "#6B7080" }}>{item.body}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Category preview grid */}
+      {/* How it works */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div
-          className="flex items-end justify-between mb-8"
-          style={{ borderBottom: `2px solid ${gunmetal}`, paddingBottom: "0.75rem" }}
-        >
-          <div>
-            <p className="font-mono text-xs tracking-widest uppercase mb-1" style={{ color: "#A06C00" }}>
-              Full Catalog
-            </p>
-            <h2
-              className="font-black uppercase text-2xl tracking-wide"
-              style={{ color: gunmetal, fontFamily: "var(--font-barlow-condensed)" }}
-            >
-              Browse by Process Category
-            </h2>
-          </div>
-          <Link
-            href="/categories"
-            className="font-black text-xs tracking-widest uppercase"
-            style={{ color: amber }}
+        <div className="mb-8">
+          <p className="font-mono text-xs tracking-widest uppercase mb-1" style={{ color: "#A06C00" }}>
+            New
+          </p>
+          <h2
+            className="font-black uppercase text-2xl tracking-wide"
+            style={{ color: gunmetal, fontFamily: "var(--font-barlow-condensed)" }}
           >
-            View all →
-          </Link>
+            Build Your Line
+          </h2>
         </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {CATEGORIES.map((cat) => (
-            <Link
-              key={cat.id}
-              href={`/categories/${cat.slug}`}
-              className="group flex items-center gap-4 p-4 transition-shadow hover:shadow-md"
-              style={{
-                background: "#fff",
-                border: "1px solid #DDD9D0",
-                borderRadius: "8px",
-                borderLeft: `4px solid ${cat.accentColor}`,
-              }}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
+          {[
+            {
+              step: "1",
+              title: "Pick Your Steps",
+              body: "Choose process steps from our library — cleaning, plating, rinsing, coating, heat treatment, and more. Mix chemistries freely.",
+            },
+            {
+              step: "2",
+              title: "Arrange Your Line",
+              body: "Drag steps into the order your shop actually runs. Rename them to match your team\u2019s terminology. Duplicate rinses, skip steps \u2014 your line, your way.",
+            },
+            {
+              step: "3",
+              title: "Order Your Set",
+              body: "Preview your custom poster set, pick size and finish, and check out. Your posters ship in the order your line runs \u2014 ready to hang.",
+            },
+          ].map((item) => (
+            <div
+              key={item.step}
+              className="p-6"
+              style={{ background: "#fff", border: "1px solid #DDD9D0", borderRadius: "8px" }}
             >
-              <div className="flex-1 min-w-0">
-                <p className="font-mono text-xs mb-0.5" style={{ color: cat.accentColor }}>
-                  {cat.processes.length} processes
-                </p>
-                <h3
-                  className="font-black uppercase leading-tight"
-                  style={{ color: gunmetal, fontFamily: "var(--font-barlow-condensed)", fontSize: "1.05rem" }}
-                >
-                  {cat.title}
-                </h3>
-                <p className="text-xs mt-0.5" style={{ color: "#6B7080" }}>
-                  {cat.totalPosters}+ designs
-                </p>
+              <div
+                className="w-10 h-10 mb-4 flex items-center justify-center rounded-full font-black text-sm"
+                style={{ background: amber, color: gunmetal }}
+              >
+                {item.step}
               </div>
-              <span className="font-black text-xs shrink-0" style={{ color: cat.accentColor }}>→</span>
-            </Link>
+              <h3 className="font-black uppercase text-sm tracking-wider mb-2" style={{ color: gunmetal }}>
+                {item.title}
+              </h3>
+              <p className="text-sm" style={{ color: "#6B7080" }}>
+                {item.body}
+              </p>
+            </div>
           ))}
         </div>
+        <div className="text-center">
+          <Link
+            href="/build"
+            className="inline-flex items-center justify-center px-8 py-3 font-black text-sm tracking-widest uppercase transition-opacity hover:opacity-90"
+            style={{ background: amber, color: gunmetal }}
+          >
+            Start Building
+          </Link>
+        </div>
       </section>
-
-      {/* Available now */}
-      {availablePosters.length > 0 && (
-        <section style={{ background: "#F5F4F0", borderTop: "1px solid #DDD9D0" }}>
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
-            <div className="flex items-end justify-between mb-8" style={{ borderBottom: `2px solid ${gunmetal}`, paddingBottom: "0.75rem" }}>
-              <div>
-                <p className="font-mono text-xs tracking-widest uppercase mb-1" style={{ color: "#A06C00" }}>
-                  Available Now
-                </p>
-                <h2
-                  className="font-black uppercase text-2xl"
-                  style={{ color: gunmetal, fontFamily: "var(--font-barlow-condensed)" }}
-                >
-                  Ready to Order
-                </h2>
-              </div>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {availablePosters.map((poster) => (
-                <Link
-                  key={poster.id}
-                  href={`/posters/${poster.id}`}
-                  className="group flex flex-col overflow-hidden transition-shadow hover:shadow-lg"
-                  style={{ background: "#fff", border: "1px solid #DDD9D0", borderRadius: "8px" }}
-                >
-                  <div className="aspect-[3/4] overflow-hidden" style={{ background: gunmetal }}>
-                    <div className="w-full h-full flex flex-col items-center justify-center gap-3 p-6">
-                      <p className="font-mono text-xs tracking-widest uppercase" style={{ color: amber }}>
-                        {poster.category}
-                      </p>
-                      <p
-                        className="font-black uppercase text-center leading-tight text-2xl"
-                        style={{ color: "#F0EDE8", fontFamily: "var(--font-barlow-condensed)" }}
-                      >
-                        {poster.title}
-                      </p>
-                      <p className="font-medium italic text-center text-sm" style={{ color: "#6B7080" }}>
-                        {poster.titleEs}
-                      </p>
-                    </div>
-                  </div>
-                  <div className="p-4 flex items-center justify-between" style={{ borderTop: "1px solid #DDD9D0" }}>
-                    <span className="font-black text-xl" style={{ color: gunmetal }}>From ${poster.price}</span>
-                    <span className="font-black text-xs uppercase tracking-widest" style={{ color: amber }}>
-                      Order →
-                    </span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
 
       {/* Logo CTA */}
       <section style={{ background: gunmetal }}>
