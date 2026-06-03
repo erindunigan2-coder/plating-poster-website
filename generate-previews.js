@@ -57,14 +57,6 @@ const STEP_OVERRIDES = {
   "genknow|chemical-safety-in-the-plating-shop": "chemical-safety",
   "genknow|conversion-coatings-and-passivation-overview": "conversion-coatings",
   "genknow|specifications-and-standards-quick-reference": "specifications",
-  "type-ii|sulfuric-acid-anodizing-type-ii-demystified": "demystified",
-  "hardcoat|hardcoat-anodizing-type-iii-demystified": "demystified",
-  "type-i|chromic-acid-anodizing-type-i-demystified": "demystified",
-  "bsaa|boric-sulfuric-acid-anodizing-bsaa-demystified": "demystified",
-  "paa|phosphoric-acid-anodizing-paa-demystified": "demystified",
-  "bright-anod|bright-anodizing-demystified": "demystified",
-  "integ-color|integral-color-anodizing-demystified": "demystified",
-  "2-step-color|two-step-electrolytic-color-anodizing-demystified": "demystified",
 };
 
 function toSlug(s) {
