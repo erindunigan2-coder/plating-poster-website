@@ -2,11 +2,10 @@
 
 import { useState } from "react";
 import { Poster } from "@/lib/posters";
-import { createCartAndCheckout, LOGO_UPGRADE_VARIANT_ID, toShopifySize, toShopifyLanguage } from "@/lib/shopify";
+import { getUnitPrice, LOGO_UPGRADE_PRICE } from "@/lib/pricing";
 
 type Props = {
   poster: Poster;
-  variantMap: Record<string, string>;
   edition?: "Dark" | "Light";
   onEditionChange?: (edition: "Dark" | "Light") => void;
   language?: "en" | "es";
@@ -31,7 +30,7 @@ const EDITIONS: { id: "Dark" | "Light"; label: string; description: string }[] =
   { id: "Light", label: "Light Edition", description: "Warm off-white background — bright environments." },
 ];
 
-export default function OrderForm({ poster, variantMap, edition: editionProp, onEditionChange, language: languageProp, onLanguageChange }: Props) {
+export default function OrderForm({ poster, edition: editionProp, onEditionChange, language: languageProp, onLanguageChange }: Props) {
   const [languageInternal, setLanguageInternal] = useState<"en" | "es">("en");
   const language = languageProp ?? languageInternal;
   const setLanguage = (lang: "en" | "es") => {
@@ -52,33 +51,32 @@ export default function OrderForm({ poster, variantMap, edition: editionProp, on
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  // Retail pricing — finalized 2026-05-18. Free shipping on orders $99+, $9.95 flat rate under $99.
-  const PRICES: Record<string, Record<string, number>> = {
-    "Matte Laminate": { "18×24": 59, "24×36": 99, "36×48": 169 },
-    "Shop Tough":     { "18×24": 69, "24×36": 115, "36×48": 189 },
-  };
-  const unitPrice = PRICES[finish]?.[size] ?? poster.price;
-  const total = (unitPrice + (logoUpgrade ? poster.logoUpgradePrice : 0)) * quantity;
-
-  const shopifySize = toShopifySize(size);
-  // Key format matches Shopify variant titles: "Edition / Size / Finish"
-  const variantKey = `${edition} / ${shopifySize} / ${finish}`;
-  const variantId = variantMap[variantKey];
+  const unitPrice = getUnitPrice(finish, size) ?? poster.price;
+  const total = (unitPrice + (logoUpgrade ? LOGO_UPGRADE_PRICE : 0)) * quantity;
 
   async function handleAddToCart() {
-    if (!variantId) {
-      setError("This combination is not yet available. Please try different options or contact us.");
-      return;
-    }
     setLoading(true);
     setError("");
     try {
-      const lineItems = [{ merchandiseId: variantId, quantity }];
-      if (logoUpgrade) {
-        lineItems.push({ merchandiseId: LOGO_UPGRADE_VARIANT_ID, quantity: 1 });
-      }
-      const cart = await createCartAndCheckout(lineItems);
-      window.location.href = cart.checkoutUrl;
+      const res = await fetch("/api/checkout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          items: [{
+            posterId: poster.id,
+            posterTitle: poster.title,
+            edition,
+            size,
+            finish,
+            language,
+            quantity,
+          }],
+          logoUpgrade,
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || "Checkout failed");
+      window.location.href = data.url;
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
       setLoading(false);
@@ -124,7 +122,7 @@ export default function OrderForm({ poster, variantMap, edition: editionProp, on
           <button onClick={() => setLanguage("en")} className={btnBase} style={language === "en" ? btnActive : btnInactive}>
             🇺🇸 English
           </button>
-          {poster.languages.includes("es") ? (
+          {poster.languages.includes("es") && poster.previewImageEs ? (
             <button onClick={() => setLanguage("es")} className={btnBase} style={language === "es" ? btnActive : btnInactive}>
               🇪🇸 Español
             </button>
@@ -220,7 +218,7 @@ export default function OrderForm({ poster, variantMap, edition: editionProp, on
           <div>
             <span className="font-black uppercase text-sm text-white block tracking-wide">
               Add Custom Logo{" "}
-              <span style={{ color: amber }}>+${poster.logoUpgradePrice}</span>
+              <span style={{ color: amber }}>+${LOGO_UPGRADE_PRICE}</span>
             </span>
             <span className="text-xs leading-relaxed block mt-1" style={{ color: "#9098A8" }}>
               We&apos;ll place your company logo on the poster. You&apos;ll receive a digital proof for approval before anything prints.
@@ -264,11 +262,11 @@ export default function OrderForm({ poster, variantMap, edition: editionProp, on
           className="w-full py-3 font-black text-sm tracking-widest uppercase transition-opacity"
           style={{ background: amber, color: gunmetal, opacity: loading ? 0.6 : 1 }}
         >
-          {loading ? "Redirecting to checkout…" : "Add to Cart"}
+          {loading ? "Redirecting to checkout…" : "Buy Now"}
         </button>
 
         <p className="text-xs text-center mt-3" style={{ color: "#6B7080" }}>
-          Secure checkout via Shopify. Printed and shipped by our print partner.
+          Secure checkout via Stripe. Printed and shipped by our print partner.
         </p>
       </div>
     </div>

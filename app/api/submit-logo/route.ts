@@ -23,19 +23,14 @@ export async function POST(req: NextRequest) {
 
     // 1. Create the order record in Airtable
     const orderRecord = await createOrder({
-      "Shopify Order Number": orderId,
       "Customer Name": customerName,
       "Customer Email": customerEmail,
-      "Poster Title": posterTitle,
-      Language: language,
+      "Product Description": `${posterTitle} — ${language === "es" ? "Spanish" : "English"} — Custom Logo`,
       Size: size,
       Quantity: quantity,
-      "Order Type": "Custom Logo",
-      "Unit Price": 75,
-      "Total Price": (75 + 35) * quantity,
-      "Order Date": new Date().toISOString().split("T")[0],
-      Status: "Logo Received",
-      "Order Source": "Website",
+      Status: "In Progress",
+      Source: "Website",
+      "Order Notes": orderId ? `Order Reference: ${orderId}\nCustomer Notes: ${customerNotes || "None"}` : "",
     });
 
     // 2. Create a linked Logo & Proof Workflow record

@@ -127,7 +127,7 @@ export default function SubmitLogoPage() {
       <form onSubmit={handleSubmit} className="space-y-5">
         {/* Order ID */}
         <div>
-          <label style={labelStyle}>Shopify Order Number</label>
+          <label style={labelStyle}>Order Number</label>
           <input
             name="orderId"
             required

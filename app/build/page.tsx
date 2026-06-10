@@ -99,7 +99,7 @@ export default function BuildPage() {
               {
                 step: "3",
                 title: "Order Your Set",
-                body: "Check out securely via Shopify. Your custom poster set ships ready to hang — in the order your line runs.",
+                body: "Check out securely via Stripe. Your custom poster set ships ready to hang — in the order your line runs.",
               },
             ].map((item) => (
               <div key={item.step} className="text-center">

@@ -65,6 +65,30 @@ const STEP_OVERRIDES = {
   "bright-anod|bright-anodizing-demystified": "demystified",
   "integ-color|integral-color-anodizing-demystified": "demystified",
   "2-step-color|two-step-electrolytic-color-anodizing-demystified": "demystified",
+  // ── EN Low Phos demystified (TECHNICAL) ──
+  "en-low-phos|electroless-nickel-demystified": "demystified",
+  // ── Conversion coating demystified (English step names in ES files) ──
+  "alodine|aluminum-conversion-coating-chem-film-demystified": "demystified",
+  "black-oxide|black-oxide-steel-demystified": "demystified",
+  "hex-chrome|hexavalent-chromate-conversion-demystified": "demystified",
+  "iron-phos|iron-phosphate-demystified": "demystified",
+  "mn-phos|manganese-phosphate-demystified": "demystified",
+  "passivation|passivation-stainless-steel-demystified": "demystified",
+  "tri-chrome|trivalent-chromate-conversion-demystified": "demystified",
+  "zinc-phos|zinc-phosphate-demystified": "demystified",
+  // ── Spanish-titled demystified (Desmitificado) in ES HTML files ──
+  "type-ii|anodizado-con-acido-sulfurico-tipo-ii-desmitificado": "demystified",
+  "hardcoat|anodizado-hardcoat-tipo-iii-desmitificado": "demystified",
+  "type-i|anodizado-con-acido-cromico-tipo-i-desmitificado": "demystified",
+  "bsaa|anodizado-borico-sulfurico-bsaa-desmitificado": "demystified",
+  "paa|anodizado-con-acido-fosforico-paa-desmitificado": "demystified",
+  "bright-anod|anodizado-brillante-desmitificado": "demystified",
+  "integ-color|anodizado-color-integral-desmitificado": "demystified",
+  "2-step-color|anodizado-color-electrolitico-dos-pasos-desmitificado": "demystified",
+  "zinc-alk|zinc-alcalino-desmitificado": "demystified",
+  "acid-zinc|zinc-acido-desmitificado": "demystified",
+  "znni|zinc-niquel-desmitificado": "demystified",
+  "bright-nickel|niquel-brillante-desmitificado": "demystified",
 };
 
 function toSlug(s) {
@@ -122,13 +146,82 @@ function parseOldShopFloor(filename) {
   return { posterId: m[1], edition: "dark" }; // single edition, treat as dark
 }
 
+// ── Parse old shop floor Spanish: "shop-{slug}-es.html" ──
+function parseOldShopFloorEs(filename) {
+  const m = filename.match(/^shop-(.+)-es\.html$/);
+  if (!m) return null;
+  return { posterId: m[1], edition: "es-dark" }; // single edition, treat as es-dark
+}
+
+// ── Parse "Claude Design Ready" ES format ──
+// e.g. "EN Low Phos - 01 - SHOP FLOOR - Process Flow - ES - Claude Design Ready - Dark.html"
+// Also handles em-dash variants: "EN Low Phos — 01 — Process Flow — ES — Claude Design Ready — Dark.html"
+function parseClaudeDesignReadyEs(filename) {
+  // Standard hyphen-dash format
+  const m = filename.match(
+    /^(.+?) - (\d+) - SHOP FLOOR - (.+?) - ES - Claude Design Ready - (Dark|Light)\.html$/
+  );
+  if (m) {
+    const [, series, , stepName, edition] = m;
+    const seriesSlug = toSlug(series);
+    const stepSlug = toSlug(stepName);
+
+    // EN Low Phos shop floor
+    if (seriesSlug === "en-low-phos") {
+      const stepMap = {
+        "process-flow": "process-flow",
+        "cleaning": "cleaning",
+        "rinse-pre-activation": "rinse-pre-activation",
+        "activation": "activation",
+        "critical-rinse": "critical-rinse",
+        "en-bath": "en-bath",
+        "final-rinse": "final-rinse",
+        "post-treatment": "post-treatment",
+        "electroless-nickel-demystified": "demystified",
+      };
+      const slug = stepMap[stepSlug] || stepSlug;
+      return { posterId: `en-low-phos-sf-${slug}`, edition: `es-${edition.toLowerCase()}` };
+    }
+
+    // Generic: not used for poster ID mapping currently but future-proof
+    return null;
+  }
+
+  // Em-dash variant: "EN Low Phos — 01 — Process Flow — ES — Claude Design Ready — Dark.html"
+  const m2 = filename.match(
+    /^(.+?) \u2014 (\d+) \u2014 (.+?) \u2014 ES \u2014 Claude Design Ready \u2014 (Dark|Light)\.html$/
+  );
+  if (m2) {
+    const [, series, , stepName, edition] = m2;
+    const seriesSlug = toSlug(series);
+    const stepSlug = toSlug(stepName);
+    if (seriesSlug === "en-low-phos") {
+      const stepMap = {
+        "process-flow": "process-flow",
+        "cleaning": "cleaning",
+        "rinse-pre-activation": "rinse-pre-activation",
+        "activation": "activation",
+        "critical-rinse": "critical-rinse",
+        "en-bath": "en-bath",
+        "final-rinse": "final-rinse",
+        "post-treatment": "post-treatment",
+      };
+      const slug = stepMap[stepSlug] || stepSlug;
+      return { posterId: `en-low-phos-sf-${slug}`, edition: `es-${edition.toLowerCase()}` };
+    }
+    return null;
+  }
+
+  return null;
+}
+
 function buildFileMap() {
   const allFiles = fs.readdirSync(POSTERS_DIR).filter((f) => f.endsWith(".html"));
   const fileMap = {}; // posterId -> { dark: filename, light: filename }
 
   for (const f of allFiles) {
     let result =
-      parseNewFormat(f) || parseENLowPhosShopFloor(f) || parseOldShopFloor(f);
+      parseNewFormat(f) || parseENLowPhosShopFloor(f) || parseOldShopFloor(f) || parseOldShopFloorEs(f) || parseClaudeDesignReadyEs(f);
     if (!result) continue;
     const { posterId, edition } = result;
     if (!fileMap[posterId]) fileMap[posterId] = {};

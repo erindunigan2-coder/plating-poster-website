@@ -1,5 +1,4 @@
 import { getPoster, getAvailablePosters } from "@/lib/posters";
-import { VARIANT_MAP } from "@/lib/variants";
 import { notFound } from "next/navigation";
 import PosterDetailClient from "@/components/PosterDetailClient";
 
@@ -16,11 +15,9 @@ export default async function PosterDetailPage({ params }: Props) {
   const poster = getPoster(id);
   if (!poster) notFound();
 
-  const variantMap = VARIANT_MAP[id] ?? {};
-
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <PosterDetailClient poster={poster} variantMap={variantMap} />
+      <PosterDetailClient poster={poster} />
     </div>
   );
 }

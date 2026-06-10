@@ -1,8 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { createCartAndCheckout, LOGO_UPGRADE_VARIANT_ID, toShopifySize } from "@/lib/shopify";
-import { VARIANT_MAP } from "@/lib/variants";
+import { getUnitPrice, LOGO_UPGRADE_PRICE } from "@/lib/pricing";
 import { getGroupInfo, type ProcessStep } from "@/lib/steps";
 
 type LineStep = {
@@ -25,10 +24,7 @@ const EDITIONS: { id: "Dark" | "Light"; label: string }[] = [
   { id: "Light", label: "Light Edition" },
 ];
 
-const PRICES: Record<string, Record<string, number>> = {
-  "Matte Laminate": { "18×24": 59, "24×36": 99, "36×48": 169 },
-  "Shop Tough":     { "18×24": 69, "24×36": 115, "36×48": 189 },
-};
+// Pricing imported from lib/pricing.ts
 
 const amber = "#E8A020";
 const gunmetal = "#1A1F2E";
@@ -110,9 +106,9 @@ export default function LineOrderForm({ lineSteps }: Props) {
   const orderableSteps = lineSteps.filter((ls) => ls.step.posterId);
   const comingSoonSteps = lineSteps.filter((ls) => !ls.step.posterId);
 
-  const unitPrice = PRICES[finish]?.[size] ?? 75;
+  const unitPrice = getUnitPrice(finish, size) ?? 75;
   const subtotal = unitPrice * orderableSteps.length;
-  const logoPrice = logoUpgrade ? 35 : 0;
+  const logoPrice = logoUpgrade ? LOGO_UPGRADE_PRICE : 0;
   const total = subtotal + logoPrice;
 
   const btnBase = "px-4 py-2 text-sm font-bold uppercase tracking-wider border transition-colors cursor-pointer";
@@ -128,34 +124,24 @@ export default function LineOrderForm({ lineSteps }: Props) {
     setError("");
 
     try {
-      const shopifySize = toShopifySize(size);
-      const variantKey = `${edition} / ${shopifySize} / ${finish}`;
+      const items = orderableSteps.map((ls) => ({
+        posterId: ls.step.posterId!,
+        posterTitle: ls.customName || ls.step.name,
+        edition,
+        size,
+        finish,
+        language: "en",
+        quantity: 1,
+      }));
 
-      const lineItems: { merchandiseId: string; quantity: number }[] = [];
-
-      for (const ls of orderableSteps) {
-        const posterId = ls.step.posterId!;
-        const posterVariants = VARIANT_MAP[posterId];
-        if (!posterVariants) {
-          setError(`Variant data not found for "${ls.step.name}". Please contact us.`);
-          setLoading(false);
-          return;
-        }
-        const variantId = posterVariants[variantKey];
-        if (!variantId) {
-          setError(`"${ls.step.name}" is not available in ${edition} / ${size} / ${finish}. Try different options.`);
-          setLoading(false);
-          return;
-        }
-        lineItems.push({ merchandiseId: variantId, quantity: 1 });
-      }
-
-      if (logoUpgrade) {
-        lineItems.push({ merchandiseId: LOGO_UPGRADE_VARIANT_ID, quantity: 1 });
-      }
-
-      const cart = await createCartAndCheckout(lineItems);
-      window.location.href = cart.checkoutUrl;
+      const res = await fetch("/api/checkout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ items, logoUpgrade }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || "Checkout failed");
+      window.location.href = data.url;
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong.");
       setLoading(false);
@@ -587,7 +573,7 @@ export default function LineOrderForm({ lineSteps }: Props) {
               </div>
 
               <p className="text-xs text-center mt-3" style={{ color: "#6B7080" }}>
-                Secure checkout via Shopify. Printed and shipped by our print partner.
+                Secure checkout via Stripe. Printed and shipped by our print partner.
               </p>
             </div>
           </div>

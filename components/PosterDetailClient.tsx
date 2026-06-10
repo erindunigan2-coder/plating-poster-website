@@ -7,10 +7,9 @@ import { Poster } from "@/lib/posters";
 
 type Props = {
   poster: Poster;
-  variantMap: Record<string, string>;
 };
 
-export default function PosterDetailClient({ poster, variantMap }: Props) {
+export default function PosterDetailClient({ poster }: Props) {
   const [edition, setEdition] = useState<"Dark" | "Light">("Dark");
   const [language, setLanguage] = useState<"en" | "es">("en");
 
@@ -93,7 +92,7 @@ export default function PosterDetailClient({ poster, variantMap }: Props) {
           >
             🇺🇸 English
           </span>
-          {poster.languages.includes("es") ? (
+          {poster.languages.includes("es") && poster.previewImageEs ? (
             <span
               className="text-xs font-bold uppercase tracking-wider px-3 py-1 border"
               style={{ borderColor: "#ddd8cc", color: "#7a7a72" }}
@@ -118,7 +117,6 @@ export default function PosterDetailClient({ poster, variantMap }: Props) {
         <div style={{ borderTop: "2px solid #1e1e1c" }} className="pt-6">
           <OrderForm
             poster={poster}
-            variantMap={variantMap}
             edition={edition}
             onEditionChange={setEdition}
             language={language}
