@@ -61,3 +61,33 @@ body {
   background-color: rgba(224, 92, 92, 0.12);
   border: 1px solid rgba(224, 92, 92, 0.22);
 }
+
+/* ── Image protection ── */
+/* Prevent right-click save, drag-to-desktop, and long-press save on mobile */
+img[src*="/posters/"] {
+  -webkit-user-drag: none;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Watermark overlay on poster preview containers */
+.poster-protected {
+  position: relative;
+  user-select: none;
+}
+.poster-protected::after {
+  content: "PLATING POSTERS INC";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: 0.3em;
+  color: rgba(255, 255, 255, 0.07);
+  pointer-events: none;
+  text-transform: uppercase;
+  transform: rotate(-30deg);
+  z-index: 5;
+}

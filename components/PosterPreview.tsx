@@ -16,7 +16,7 @@ export default function PosterPreview({ title, previewImage, previewImageLight }
 
   return (
     <div>
-      <div className="relative aspect-[2/3] overflow-hidden" style={{ background: "#1e1e1c" }}>
+      <div className="poster-protected relative aspect-[2/3] overflow-hidden" style={{ background: "#1e1e1c" }}>
         <Image
           src={src}
           alt={`${title} — ${edition} edition preview`}

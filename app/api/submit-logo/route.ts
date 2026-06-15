@@ -1,7 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createOrder, createProofWorkflow } from "@/lib/airtable";
+import { rateLimit } from "@/lib/rate-limit";
 
 export async function POST(req: NextRequest) {
+  const ip = req.headers.get("x-forwarded-for")?.split(",")[0] || "unknown";
+  const blocked = rateLimit(ip, "submit-logo", { maxRequests: 5, windowMs: 60_000 });
+  if (blocked) return blocked;
+
   try {
     const formData = await req.formData();
 
@@ -19,6 +24,17 @@ export async function POST(req: NextRequest) {
         { error: "Missing required fields" },
         { status: 400 }
       );
+    }
+
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(customerEmail)) {
+      return NextResponse.json({ error: "Invalid email address" }, { status: 400 });
+    }
+
+    // Enforce length limits
+    if (customerName.length > 100 || customerEmail.length > 254 || posterTitle.length > 200 || (customerNotes && customerNotes.length > 5000)) {
+      return NextResponse.json({ error: "One or more fields exceed maximum length" }, { status: 400 });
     }
 
     // 1. Create the order record in Airtable

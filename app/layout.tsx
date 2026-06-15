@@ -52,6 +52,12 @@ export default function RootLayout({
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+        {/* Block right-click save on poster images */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `document.addEventListener("contextmenu",function(e){if(e.target&&e.target.tagName==="IMG"&&e.target.src&&e.target.src.includes("/posters/")){e.preventDefault()}})`,
+          }}
+        />
       </body>
     </html>
   );

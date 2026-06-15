@@ -9,8 +9,12 @@ type Step = "review" | "submitting" | "approved" | "changes" | "error";
 function ProofReviewForm() {
   const searchParams = useSearchParams();
   const recordId = searchParams.get("id") || "";
-  const proofUrl = searchParams.get("proof") || "";
+  const rawProofUrl = searchParams.get("proof") || "";
   const customerName = searchParams.get("name") || "there";
+  const token = searchParams.get("token") || "";
+
+  // Only allow real HTTPS URLs for the proof image — block javascript: and data: schemes
+  const proofUrl = rawProofUrl.startsWith("https://") ? rawProofUrl : "";
 
   const [step, setStep] = useState<Step>("review");
   const [feedback, setFeedback] = useState("");
@@ -26,7 +30,7 @@ function ProofReviewForm() {
       const res = await fetch("/api/approve-proof", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ recordId, decision, feedback }),
+        body: JSON.stringify({ recordId, decision, feedback, token }),
       });
       const json = await res.json();
       if (!res.ok) throw new Error(json.error || "Unknown error");

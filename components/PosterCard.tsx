@@ -14,7 +14,7 @@ export default function PosterCard({ poster }: Props) {
       style={{ background: "#fff", border: "1px solid #ddd8cc" }}
     >
       {/* Preview */}
-      <div className="relative aspect-[2/3] overflow-hidden" style={{ background: "#1e1e1c" }}>
+      <div className="poster-protected relative aspect-[2/3] overflow-hidden" style={{ background: "#1e1e1c" }}>
         {poster.previewImage ? (
           <Image
             src={poster.previewImage}

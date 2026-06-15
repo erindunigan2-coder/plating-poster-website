@@ -1,9 +1,21 @@
 import { NextRequest, NextResponse } from "next/server";
 import { updateProofWorkflow, updateOrder } from "@/lib/airtable";
+import { rateLimit } from "@/lib/rate-limit";
+import { verifyProofToken } from "@/lib/proof-token";
 
 export async function POST(req: NextRequest) {
+  const ip = req.headers.get("x-forwarded-for")?.split(",")[0] || "unknown";
+  const blocked = rateLimit(ip, "approve-proof", { maxRequests: 10, windowMs: 60_000 });
+  if (blocked) return blocked;
+
   try {
-    const { proofRecordId, orderRecordId, decision, feedback } = await req.json();
+    const body = await req.json();
+    // Accept both "recordId" (from frontend) and "proofRecordId" for backwards compat
+    const proofRecordId = body.proofRecordId || body.recordId;
+    const orderRecordId = body.orderRecordId;
+    const decision = body.decision;
+    const token = body.token;
+    const feedback = typeof body.feedback === "string" ? body.feedback.slice(0, 5000) : "";
 
     if (!proofRecordId || !decision) {
       return NextResponse.json(
@@ -14,6 +26,11 @@ export async function POST(req: NextRequest) {
 
     if (!["approved", "changes"].includes(decision)) {
       return NextResponse.json({ error: "Invalid decision" }, { status: 400 });
+    }
+
+    // Verify signed token — if a token is provided, it must match
+    if (token && !verifyProofToken(proofRecordId, token)) {
+      return NextResponse.json({ error: "Invalid or expired link" }, { status: 403 });
     }
 
     const isApproved = decision === "approved";
