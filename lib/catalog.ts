@@ -211,6 +211,18 @@ export const CATEGORIES: CategoryEntry[] = [
       { id: pid("Wire Combustion Spray"), title: "Wire Combustion Spray", posterCount: 10 },
     ],
   },
+  {
+    id: "safety",
+    slug: "safety",
+    title: "Safety",
+    description:
+      "Process-specific safety posters for hazardous chemical and electrical operations in surface finishing. Covers cyanide, hexavalent chromium, acid burns, confined spaces, ventilation, spill response, and more. OSHA-aligned, bilingual English and Spanish.",
+    accentColor: "#E05C5C",
+    totalPosters: 18,
+    processes: [
+      { id: "safety-posters", title: "Shop Floor Safety", posterCount: 18, available: true },
+    ],
+  },
 ];
 
 export function getCategory(slug: string): CategoryEntry | undefined {
