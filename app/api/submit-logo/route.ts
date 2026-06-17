@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { createOrder, createProofWorkflow, uploadAttachment } from "@/lib/airtable";
+import { createOrder, createProofWorkflow, uploadLogoToProof } from "@/lib/airtable";
 import { rateLimit } from "@/lib/rate-limit";
 
 export async function POST(req: NextRequest) {
@@ -68,11 +68,7 @@ export async function POST(req: NextRequest) {
     // 3. Upload logo file to the proof workflow record
     if (logoFile && logoFile.size > 0) {
       try {
-        await uploadAttachment(
-          proofRecord.id,
-          "Customer Logo File",
-          logoFile
-        );
+        await uploadLogoToProof(proofRecord.id, logoFile);
       } catch (uploadErr) {
         // Log but don't fail the whole submission — the order and proof records are already created
         console.error("Logo file upload failed:", uploadErr);

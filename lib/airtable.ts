@@ -84,37 +84,24 @@ export async function createProofWorkflow(data: NewProofWorkflow) {
   });
 }
 
-// Upload a file attachment to a specific record and field
-export async function uploadAttachment(
-  recordId: string,
-  fieldName: string,
+// Upload a logo file to a proof workflow record as an Airtable attachment
+// Step 1: Upload to Vercel Blob for a public URL
+// Step 2: Attach the public URL to the Airtable record
+export async function uploadLogoToProof(
+  proofRecordId: string,
   file: File
 ) {
-  const url = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${recordId}/${encodeURIComponent(fieldName)}/uploadAttachment`;
-
-  // Convert file to base64
-  const arrayBuffer = await file.arrayBuffer();
-  const base64 = Buffer.from(arrayBuffer).toString("base64");
-
-  const res = await fetch(url, {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${AIRTABLE_API_KEY}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      contentType: file.type || "application/octet-stream",
-      file: base64,
-      filename: file.name,
-    }),
+  const { put } = await import("@vercel/blob");
+  const blob = await put(`logos/${Date.now()}-${file.name}`, file, {
+    access: "public",
+    contentType: file.type || "application/octet-stream",
   });
 
-  if (!res.ok) {
-    const error = await res.text();
-    throw new Error(`Airtable attachment upload error: ${error}`);
-  }
-
-  return res.json();
+  return airtableRequest("PATCH", PROOF_TABLE, `/${proofRecordId}`, {
+    fields: {
+      "Customer Logo File": [{ url: blob.url, filename: file.name }],
+    },
+  });
 }
 
 export async function getProofWorkflow(recordId: string) {
