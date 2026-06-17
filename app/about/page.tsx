@@ -1,5 +1,11 @@
 import Link from "next/link";
 
+export const metadata = {
+  title: "About Us",
+  description:
+    "Plating Posters creates professional process and safety posters for the surface finishing industry. Built by industry professionals for the shop floor.",
+};
+
 const values = [
   {
     icon: "🏭",

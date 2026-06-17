@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Return Policy — Plating Posters Inc",
+  title: "Return & Refund Policy",
+  description: "Return and refund policy for Plating Posters Inc. All posters are printed to order. Damaged or defective items reprinted free within 14 days.",
 };
 
 export default function ReturnsPage() {

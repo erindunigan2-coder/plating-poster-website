@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms of Service — Plating Posters Inc",
+  title: "Terms of Service",
+  description: "Terms of Service for Plating Posters Inc. Covers orders, custom logo upgrades, shipping, returns, and intellectual property.",
 };
 
 export default function TermsPage() {

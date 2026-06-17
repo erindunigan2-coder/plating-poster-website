@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Disallow: /api/
+Disallow: /checkout/
+
+Sitemap: https://www.platingposters.com/sitemap.xml

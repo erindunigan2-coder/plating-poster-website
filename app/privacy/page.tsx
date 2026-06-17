@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — Plating Posters Inc",
+  title: "Privacy Policy",
+  description: "Privacy Policy for Plating Posters Inc. How we collect, use, and protect your information when you shop with us.",
 };
 
 export default function PrivacyPage() {

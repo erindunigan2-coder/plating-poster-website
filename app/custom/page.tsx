@@ -1,5 +1,11 @@
 import Link from "next/link";
 
+export const metadata = {
+  title: "Custom Logo Upgrade",
+  description:
+    "Add your company logo to any Plating Posters design. We handle the artwork and send a digital proof before printing. $35 per order.",
+};
+
 const steps = [
   {
     number: "01",

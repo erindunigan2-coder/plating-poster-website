@@ -1,6 +1,12 @@
 import { getAvailablePosters } from "@/lib/posters";
 import PosterCard from "@/components/PosterCard";
 
+export const metadata = {
+  title: "All Posters",
+  description:
+    "Browse all professional surface finishing and metal plating posters. Technical references and shop floor guides in English and Spanish.",
+};
+
 export default function PostersPage() {
   const posters = getAvailablePosters();
 

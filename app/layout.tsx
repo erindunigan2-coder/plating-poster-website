@@ -29,10 +29,37 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Plating Posters Inc — Metal Finishing Reference Series",
+  title: {
+    default: "Plating Posters Inc — Metal Finishing Reference Series",
+    template: "%s — Plating Posters Inc",
+  },
   description:
     "Professional process and safety posters for the surface finishing and metal plating industry. 9 categories, 80+ processes. Available in English and Spanish with custom logo upgrade.",
+  metadataBase: new URL("https://www.platingposters.com"),
+  openGraph: {
+    type: "website",
+    siteName: "Plating Posters Inc",
+    title: "Plating Posters Inc — Metal Finishing Reference Series",
+    description:
+      "Professional process and safety posters for the surface finishing and metal plating industry. Available in English and Spanish.",
+    url: "https://www.platingposters.com",
+  },
+  twitter: {
+    card: "summary",
+    title: "Plating Posters Inc — Metal Finishing Reference Series",
+    description:
+      "Professional process and safety posters for the surface finishing and metal plating industry.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: "https://www.platingposters.com",
+  },
 };
+
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
 export default function RootLayout({
   children,
@@ -44,6 +71,16 @@ export default function RootLayout({
       lang="en"
       className={`${barlow.variable} ${barlowCondensed.variable} ${inter.variable} ${jetbrainsMono.variable} h-full`}
     >
+      {GA_ID && (
+        <head>
+          <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','${GA_ID}');`,
+            }}
+          />
+        </head>
+      )}
       <body
         className="min-h-full flex flex-col antialiased"
         style={{ background: "#F5F4F0", color: "#1A1F2E" }}
