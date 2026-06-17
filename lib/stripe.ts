@@ -119,7 +119,7 @@ export async function createCheckoutSession(params: {
     shipping_address_collection: {
       allowed_countries: ["US"],
     },
-    // automatic_tax: { enabled: true }, // Re-enable after configuring head office address in Stripe Dashboard > Tax
+    automatic_tax: { enabled: true },
     success_url: `${successUrl}?session_id={CHECKOUT_SESSION_ID}`,
     cancel_url: cancelUrl,
     metadata: {
