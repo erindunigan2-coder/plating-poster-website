@@ -87,6 +87,9 @@ export default function Footer() {
                 { href: "/contact", label: "Contact" },
                 { href: "/submit-logo", label: "Submit Your Logo" },
                 { href: "/review-proof", label: "Review a Proof" },
+                { href: "/terms", label: "Terms of Service" },
+                { href: "/privacy", label: "Privacy Policy" },
+                { href: "/returns", label: "Return Policy" },
               ].map((item) => (
                 <li key={item.href}>
                   <Link
