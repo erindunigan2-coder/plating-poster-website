@@ -69,7 +69,6 @@ export async function POST(req: NextRequest) {
     if (logoFile && logoFile.size > 0) {
       try {
         await uploadAttachment(
-          "Logo & Proof Workflow",
           proofRecord.id,
           "Customer Logo File",
           logoFile

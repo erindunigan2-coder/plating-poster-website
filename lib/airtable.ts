@@ -86,21 +86,27 @@ export async function createProofWorkflow(data: NewProofWorkflow) {
 
 // Upload a file attachment to a specific record and field
 export async function uploadAttachment(
-  table: string,
   recordId: string,
   fieldName: string,
   file: File
 ) {
-  const url = `https://content.airtable.com/v0/${AIRTABLE_BASE_ID}/${encodeURIComponent(table)}/${recordId}/${encodeURIComponent(fieldName)}/uploadAttachment`;
-  const formData = new FormData();
-  formData.append("file", file, file.name);
+  const url = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${recordId}/${encodeURIComponent(fieldName)}/uploadAttachment`;
+
+  // Convert file to base64
+  const arrayBuffer = await file.arrayBuffer();
+  const base64 = Buffer.from(arrayBuffer).toString("base64");
 
   const res = await fetch(url, {
     method: "POST",
     headers: {
       Authorization: `Bearer ${AIRTABLE_API_KEY}`,
+      "Content-Type": "application/json",
     },
-    body: formData,
+    body: JSON.stringify({
+      contentType: file.type || "application/octet-stream",
+      file: base64,
+      filename: file.name,
+    }),
   });
 
   if (!res.ok) {
