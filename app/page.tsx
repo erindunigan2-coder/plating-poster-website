@@ -50,7 +50,7 @@ const FEATURED_COLLECTIONS = [
     subtitle: "15 posters",
     description:
       "Foundational topics every plating shop needs — surface prep, water quality, hydrogen embrittlement, bath analysis, troubleshooting, and more.",
-    href: "/categories",
+    href: "/collections/general-knowledge",
     accentColor: "#E8A020",
     tag: "Popular",
   },
@@ -59,7 +59,7 @@ const FEATURED_COLLECTIONS = [
     subtitle: "Process overviews",
     description:
       "The big-picture overview for each process. One poster that breaks down the chemistry, specs, and applications — perfect for training and orientation.",
-    href: "/categories",
+    href: "/collections/demystified",
     accentColor: "#27AE60",
     tag: "Essential",
   },
@@ -68,7 +68,7 @@ const FEATURED_COLLECTIONS = [
     subtitle: "18 topics",
     description:
       "PPE, chemical handling, emergency response, ventilation, and more. English and Spanish. Dark and light editions for every shop environment.",
-    href: "/categories",
+    href: "/collections/safety",
     accentColor: "#E05C5C",
     tag: "New",
   },
