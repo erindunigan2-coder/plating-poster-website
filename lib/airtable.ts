@@ -84,6 +84,33 @@ export async function createProofWorkflow(data: NewProofWorkflow) {
   });
 }
 
+// Upload a file attachment to a specific record and field
+export async function uploadAttachment(
+  table: string,
+  recordId: string,
+  fieldName: string,
+  file: File
+) {
+  const url = `https://content.airtable.com/v0/${AIRTABLE_BASE_ID}/${encodeURIComponent(table)}/${recordId}/${encodeURIComponent(fieldName)}/uploadAttachment`;
+  const formData = new FormData();
+  formData.append("file", file, file.name);
+
+  const res = await fetch(url, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${AIRTABLE_API_KEY}`,
+    },
+    body: formData,
+  });
+
+  if (!res.ok) {
+    const error = await res.text();
+    throw new Error(`Airtable attachment upload error: ${error}`);
+  }
+
+  return res.json();
+}
+
 export async function getProofWorkflow(recordId: string) {
   return airtableRequest("GET", PROOF_TABLE, `/${recordId}`);
 }

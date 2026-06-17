@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { createOrder, createProofWorkflow } from "@/lib/airtable";
+import { createOrder, createProofWorkflow, uploadAttachment } from "@/lib/airtable";
 import { rateLimit } from "@/lib/rate-limit";
 
 export async function POST(req: NextRequest) {
@@ -59,11 +59,26 @@ export async function POST(req: NextRequest) {
     });
 
     // 2. Create a linked Logo & Proof Workflow record
-    await createProofWorkflow({
+    const proofRecord = await createProofWorkflow({
       Order: [orderRecord.id],
       "Customer Logo Notes": customerNotes || "",
       "Logo Submitted Date": new Date().toISOString().split("T")[0],
     });
+
+    // 3. Upload logo file to the proof workflow record
+    if (logoFile && logoFile.size > 0) {
+      try {
+        await uploadAttachment(
+          "Logo & Proof Workflow",
+          proofRecord.id,
+          "Customer Logo File",
+          logoFile
+        );
+      } catch (uploadErr) {
+        // Log but don't fail the whole submission — the order and proof records are already created
+        console.error("Logo file upload failed:", uploadErr);
+      }
+    }
 
     return NextResponse.json({ success: true, recordId: orderRecord.id });
   } catch (err) {
