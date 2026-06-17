@@ -21,7 +21,7 @@ export async function POST(req: NextRequest) {
 
     if (!orderId || !customerName || !customerEmail || !posterTitle) {
       return NextResponse.json(
-        { error: "Missing required fields" },
+        { error: "Please fill in all required fields: order number, name, email, and poster title." },
         { status: 400 }
       );
     }
@@ -29,12 +29,21 @@ export async function POST(req: NextRequest) {
     // Validate email format
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(customerEmail)) {
-      return NextResponse.json({ error: "Invalid email address" }, { status: 400 });
+      return NextResponse.json({ error: "Please enter a valid email address — we need it to send your proof." }, { status: 400 });
     }
 
     // Enforce length limits
     if (customerName.length > 100 || customerEmail.length > 254 || posterTitle.length > 200 || (customerNotes && customerNotes.length > 5000)) {
-      return NextResponse.json({ error: "One or more fields exceed maximum length" }, { status: 400 });
+      return NextResponse.json({ error: "One or more fields are too long. Please shorten and try again." }, { status: 400 });
+    }
+
+    // Check file size (if present)
+    const logoFile = formData.get("logoFile") as File | null;
+    if (logoFile && logoFile.size > 10 * 1024 * 1024) {
+      return NextResponse.json(
+        { error: `Your logo file is too large (${(logoFile.size / 1024 / 1024).toFixed(1)} MB). Maximum is 10 MB. Try saving as a high-quality PNG.` },
+        { status: 400 }
+      );
     }
 
     // 1. Create the order record in Airtable
@@ -60,7 +69,7 @@ export async function POST(req: NextRequest) {
   } catch (err) {
     console.error("Logo submission error:", err);
     return NextResponse.json(
-      { error: "Something went wrong. Please try again." },
+      { error: "We couldn't process your submission. Please try again, or email your logo directly to info@platingposters.com with your order number." },
       { status: 500 }
     );
   }

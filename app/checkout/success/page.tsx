@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { getStripe } from "@/lib/stripe";
 
 export const metadata = {
   title: "Order Confirmed — Plating Posters Inc",
@@ -10,6 +11,33 @@ export default async function CheckoutSuccessPage({
   searchParams: Promise<{ session_id?: string }>;
 }) {
   const { session_id } = await searchParams;
+
+  // Fetch Stripe session to pre-fill logo submission form
+  let logoLinkParams = "";
+  let orderSummary = "";
+  if (session_id) {
+    try {
+      const session = await getStripe().checkout.sessions.retrieve(session_id, {
+        expand: ["line_items"],
+      });
+      const name = session.customer_details?.name || "";
+      const email = session.customer_details?.email || "";
+      const items = session.line_items?.data || [];
+      const posterNames = items
+        .filter((li) => li.description !== "Custom Logo Upgrade")
+        .map((li) => li.description?.split(" · ")[0] || li.description || "")
+        .filter(Boolean);
+      orderSummary = posterNames.join(", ");
+      const params = new URLSearchParams();
+      if (session_id) params.set("order", session_id.slice(-8).toUpperCase());
+      if (name) params.set("name", name);
+      if (email) params.set("email", email);
+      if (posterNames.length > 0) params.set("poster", posterNames.join(", "));
+      logoLinkParams = `?${params.toString()}`;
+    } catch {
+      // If session lookup fails, just link without pre-fill
+    }
+  }
 
   return (
     <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
@@ -30,6 +58,15 @@ export default async function CheckoutSuccessPage({
       <p className="text-base mb-6" style={{ color: "#6B7080" }}>
         Thank you for your order! You&apos;ll receive a receipt at the email address you provided during checkout.
       </p>
+
+      {orderSummary && (
+        <div className="p-4 mb-6 text-left" style={{ background: "#fff", border: "1px solid #DDD9D0" }}>
+          <p className="font-black uppercase text-xs tracking-widest mb-2" style={{ color: "#6B7080" }}>
+            Your Order
+          </p>
+          <p className="text-sm" style={{ color: "#3A4055" }}>{orderSummary}</p>
+        </div>
+      )}
 
       <div
         className="p-6 mb-8 text-left"
@@ -68,7 +105,7 @@ export default async function CheckoutSuccessPage({
           Upload your logo file and we&apos;ll send you a digital proof for approval before printing.
         </p>
         <Link
-          href="/submit-logo"
+          href={`/submit-logo${logoLinkParams}`}
           className="inline-block px-6 py-2 font-black text-sm uppercase tracking-widest"
           style={{ background: "#E8A020", color: "#1A1F2E" }}
         >
