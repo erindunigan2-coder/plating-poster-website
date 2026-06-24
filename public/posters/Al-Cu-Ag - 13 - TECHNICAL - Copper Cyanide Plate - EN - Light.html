@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Al-Cu-Ag Busbar &mdash; Copper Cyanide Plate &mdash; Technical | Plating Posters Inc</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Barlow:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#1A1F2E;--navy:#0D1020;--text:#F0EDE8;--muted:rgba(240,237,232,.62);
+  --faint:rgba(240,237,232,.38);
+  --amber:#E8A020;--teal:#2EC4B6;--emerald:#27AE60;--coral:#E05C5C;
+  --slate:#3A4055;--callout:#1E2435;--altrow:#252B3D;
+  --glass-bg:rgba(30,36,53,.55);--glass-border:rgba(255,255,255,.12);
+  --glass-shadow:inset 0 1px 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(0,0,0,.2),0 4px 12px rgba(0,0,0,.25);
+}
+.poster[data-edition="light"]{
+  --bg:#F5F4F0;--navy:#DDD8CE;--text:#1B2030;--muted:rgba(27,32,48,.66);
+  --faint:rgba(27,32,48,.42);
+  --amber:#B8770D;--teal:#1A8C82;--emerald:#1E8449;--coral:#B7322F;
+  --slate:#C5C0B5;--callout:#ECEAE1;--altrow:#E4E1D6;
+  --glass-bg:rgba(255,253,247,.66);--glass-border:rgba(27,32,48,.10);
+  --glass-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 4px 12px rgba(27,32,48,.08);
+}
+html,body{margin:0;padding:0;background:#e8e6df;}
+.stage{width:100vw;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;overflow:visible;padding:12px 0;box-sizing:border-box;}
+.poster-wrap{transform-origin:top left;}
+.poster{
+  width:1200px;height:1800px;position:relative;overflow:hidden;
+  background:
+    radial-gradient(1200px 800px at 15% 8%,rgba(46,196,182,.14),transparent 60%),
+    radial-gradient(1000px 700px at 90% 25%,rgba(232,160,32,.12),transparent 55%),
+    radial-gradient(900px 900px at 50% 80%,rgba(224,92,92,.10),transparent 60%),
+    var(--bg);
+  font-family:'Inter',sans-serif;color:var(--text);
+  display:flex;flex-direction:column;padding:32px;box-sizing:border-box;
+}
+.glass{background-color:var(--glass-bg);background-image:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));border:1px solid var(--glass-border);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);box-shadow:var(--glass-shadow);border-radius:12px;}
+.tack{position:absolute;width:24px;height:24px;border-radius:50%;border:1.5px solid rgba(232,160,32,.28);z-index:2;pointer-events:none;}
+.tack::before,.tack::after{content:"";position:absolute;background:rgba(232,160,32,.28);}
+.tack::before{left:50%;top:-3px;bottom:-3px;width:1px;transform:translateX(-50%);}
+.tack::after{top:50%;left:-3px;right:-3px;height:1px;transform:translateY(-50%);}
+.tack.tl{top:12px;left:12px;}.tack.tr{top:12px;right:12px;}.tack.bl{bottom:12px;left:12px;}.tack.br{bottom:12px;right:12px;}
+
+.poster-header{flex-shrink:0;}
+.poster-body{flex:1;overflow:hidden;display:flex;flex-direction:column;gap:10px;justify-content:space-between;}
+.poster-footer{flex-shrink:0;margin-top:8px;}
+
+.header-band{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:8px;}
+.header-left{flex:1;min-width:0;}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--amber);letter-spacing:.16em;text-transform:uppercase;margin-bottom:4px;display:flex;align-items:center;gap:12px;}
+.eyebrow::before{content:"";display:inline-block;width:30px;height:3px;background:var(--amber);}
+.headline{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:72px;color:var(--text);line-height:.92;margin:4px 0;letter-spacing:-.01em;text-transform:uppercase;}
+.headline em{font-style:normal;color:var(--amber);}
+.subhead{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:20px;color:var(--teal);margin:0 0 3px;letter-spacing:.02em;text-transform:uppercase;}
+.tagline{font-family:'Inter',sans-serif;font-style:italic;font-size:11px;color:var(--muted);line-height:1.35;max-width:700px;margin:0;}
+.logo-card{flex-shrink:0;padding:12px 10px;display:flex;flex-direction:column;align-items:center;gap:8px;align-self:flex-start;}
+.logo-tile{width:68px;height:68px;border-radius:12px;background:linear-gradient(135deg,#E8A020,#2EC4B6);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -2px 4px rgba(0,0,0,.15),0 4px 14px rgba(0,0,0,.35);}
+.logo-tile span{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:26px;color:#1A1F2E;letter-spacing:.02em;line-height:1;}
+.logo-word{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;letter-spacing:.04em;text-transform:uppercase;line-height:1;text-align:center;white-space:nowrap;}
+.logo-word .a{color:var(--text);}.logo-word .b{color:var(--amber);}
+.logo-inc{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.05em;text-transform:lowercase;color:var(--muted);margin-top:-2px;}
+
+.orient-strip{display:flex;align-items:center;gap:4px;padding:6px 10px;margin-bottom:0;flex-wrap:wrap;}
+.orient-stage{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;padding:5px 8px;border-radius:5px;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:11px;letter-spacing:.05em;text-transform:uppercase;background:rgba(58,64,85,.4);border:1px solid rgba(255,255,255,.06);color:var(--muted);}
+.orient-stage.active{background:rgba(232,160,32,.22);border-color:rgba(232,160,32,.5);color:var(--amber);box-shadow:0 0 12px rgba(232,160,32,.15);}
+.poster[data-edition="light"] .orient-stage{background:rgba(27,32,48,.06);border-color:rgba(27,32,48,.12);}
+.poster[data-edition="light"] .orient-stage.active{background:rgba(232,160,32,.18);border-color:rgba(232,160,32,.55);}
+.orient-arrow{color:var(--faint);font-size:11px;flex:none;}
+
+.section-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;letter-spacing:.08em;text-transform:uppercase;color:var(--text);margin:0 0 6px;display:flex;align-items:center;gap:8px;}
+.section-title::before{content:"";width:5px;height:5px;background:var(--amber);border-radius:50%;}
+.section-title .sub{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.14em;color:var(--muted);margin-left:auto;font-weight:500;}
+
+.rule-card{display:flex;align-items:center;gap:18px;padding:14px 20px;background:rgba(232,160,32,.07);}
+.rule-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:42px;color:var(--amber);line-height:1;letter-spacing:-.02em;}
+.rule-body{flex:1;}
+.rule-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:15px;color:var(--amber);letter-spacing:.08em;text-transform:uppercase;}
+.rule-text{font-family:'Inter',sans-serif;font-size:11px;color:var(--muted);line-height:1.4;margin-top:3px;}
+
+.insight-card{padding:14px 18px;border-left:3px solid var(--teal);background:rgba(46,196,182,.06);border-radius:0 12px 12px 0;}
+.insight-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;color:var(--teal);letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px;}
+.insight-text{font-family:'Inter',sans-serif;font-size:12px;color:var(--text);line-height:1.5;}
+
+.data-table{width:100%;border-collapse:collapse;}
+.data-table th{font-family:'Barlow',sans-serif;font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);padding:8px 12px;text-align:left;background:rgba(13,16,32,.35);border-bottom:1px solid var(--glass-border);}
+.poster[data-edition="light"] .data-table th{background:rgba(27,32,48,.06);}
+.data-table td{padding:6px 12px;color:var(--text);line-height:1.35;border-bottom:1px solid rgba(255,255,255,.05);font-family:'Inter',sans-serif;font-size:12px;}
+.poster[data-edition="light"] .data-table td{border-bottom-color:rgba(27,32,48,.08);}
+.data-table tr:last-child td{border-bottom:none;}
+.data-table tr:nth-child(even) td{background:rgba(255,255,255,.02);}
+.poster[data-edition="light"] .data-table tr:nth-child(even) td{background:rgba(27,32,48,.025);}
+.data-table .mono{font-family:'JetBrains Mono',monospace;font-size:11px;}
+
+.safety-card{padding:14px 18px;border-left:3px solid var(--coral);background:rgba(224,92,92,.06);border-radius:12px;}
+.safety-head{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;color:var(--coral);letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px;}
+.safety-body{font-family:'Inter',sans-serif;font-size:12px;color:var(--text);line-height:1.5;}
+.safety-body strong{color:var(--coral);font-weight:700;}
+
+.trouble-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.trouble-card{padding:12px 14px;border-radius:10px;border-left:3px solid var(--coral);display:flex;flex-direction:column;gap:4px;}
+.trouble-card h4{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;color:var(--coral);margin:0;text-transform:uppercase;letter-spacing:.06em;line-height:1.1;}
+.trouble-card p{font-size:11px;color:var(--muted);margin:0;line-height:1.4;}
+
+.context-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.context-card{padding:14px 16px;}
+.context-card h4{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;margin:0 0 6px;letter-spacing:.04em;text-transform:uppercase;}
+.context-card h4.teal{color:var(--teal);}
+.context-card h4.amber{color:var(--amber);}
+.context-card h4.coral{color:var(--coral);}
+.context-card p{font-size:12px;line-height:1.5;color:var(--text);margin:0;}
+.context-card .detail{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--muted);margin-top:6px;}
+
+/* current-density process-window strip infographic */
+.cd-card{padding:12px 18px;}
+.cd-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:9px;}
+.cd-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);}
+.cd-scale-note{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.10em;text-transform:uppercase;color:var(--faint);}
+.cd-bar{position:relative;height:24px;border-radius:6px;overflow:hidden;border:1px solid var(--glass-border);}
+.cd-zone{position:absolute;top:0;bottom:0;display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:10px;letter-spacing:.04em;text-transform:uppercase;color:#fff;}
+.cd-here{position:absolute;top:-1px;width:0;height:26px;border-left:2px dashed var(--text);transform:translateX(-50%);z-index:3;}
+.cd-here::after{content:"THIS BATH";position:absolute;top:-13px;left:50%;transform:translateX(-50%);white-space:nowrap;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:9px;letter-spacing:.10em;color:var(--amber);}
+.cd-ticks{position:relative;height:13px;margin-top:3px;}
+.cd-tick{position:absolute;transform:translateX(-50%);font-family:'JetBrains Mono',monospace;font-size:8px;color:var(--muted);letter-spacing:.04em;}
+.cd-legend{display:flex;align-items:center;gap:16px;margin-top:8px;flex-wrap:wrap;}
+.cd-leg{display:flex;align-items:center;gap:5px;font-family:'Inter',sans-serif;font-size:9.5px;color:var(--muted);line-height:1.2;}
+.cd-leg .sw{width:10px;height:10px;border-radius:2px;flex:none;}
+.cd-note{font-family:'JetBrains Mono',monospace;font-size:9.5px;color:var(--text);letter-spacing:.01em;margin-top:9px;padding-top:8px;border-top:1px solid var(--glass-border);}
+.cd-note strong{color:var(--amber);font-weight:500;}
+
+.footer{padding:10px 20px;background-color:rgba(13,16,32,.85);background-image:linear-gradient(180deg,rgba(255,255,255,.04),rgba(0,0,0,0));border:1px solid rgba(255,255,255,.10);border-radius:8px;text-align:center;display:flex;flex-direction:column;gap:2px;}
+.poster[data-edition="light"] .footer{background-color:rgba(221,216,206,.95);border-color:rgba(27,32,48,.10);}
+.footer-disclaimer{font-family:'Inter',sans-serif;font-size:8.5px;line-height:1.35;color:var(--faint);margin:0 auto;max-width:900px;}
+.footer-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:12px;color:var(--text);letter-spacing:.04em;text-transform:uppercase;margin:0;}
+.footer-brand{font-family:'JetBrains Mono',monospace;font-size:8.5px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;}
+
+.tweaks{position:fixed;bottom:16px;right:16px;z-index:100;background:rgba(13,16,32,.92);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:10px 14px;display:flex;flex-direction:column;gap:8px;font-family:'Inter',sans-serif;font-size:12px;color:#F0EDE8;}
+@media print{
+  @page{size:12.5in 18.75in;margin:0;}
+  html,body{background:#F5F4F0 !important;-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
+  *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
+  .stage{position:static;padding:0;display:block;overflow:visible;}
+  .poster-wrap{transform:none !important;width:auto !important;height:auto !important;}
+  .poster{box-shadow:none !important;width:1200px !important;height:1800px !important;overflow:hidden !important;}
+  .glass,.trouble-card,.insight-card,.safety-card,.context-card{backdrop-filter:none !important;-webkit-backdrop-filter:none !important;}
+  .tweaks{display:none !important;}
+}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="poster-wrap" id="posterWrap">
+<div class="poster" id="poster" data-edition="light">
+  <span class="tack tl" aria-hidden="true"></span><span class="tack tr" aria-hidden="true"></span>
+  <span class="tack bl" aria-hidden="true"></span><span class="tack br" aria-hidden="true"></span>
+
+  <!-- HEADER -->
+  <div class="poster-header">
+    <header class="header-band">
+      <div class="header-left">
+        <div class="eyebrow"><span>Plating Posters Inc &nbsp;&middot;&nbsp; Al-Cu-Ag Busbar Series &nbsp;&middot;&nbsp; Copper Cyanide Plate</span></div>
+        <h1 class="headline">COPPER CYANIDE<br><em>PLATE</em></h1>
+        <h2 class="subhead">Full Copper Build &mdash; Conductivity and Stress-Absorbing Interlayer</h2>
+        <p class="tagline">Build the required copper thickness for electrical conductivity and a ductile stress-absorbing interlayer beneath the silver. This is the workhorse plating step &mdash; thick enough for conductivity, compliant enough to absorb thermal cycling stresses between aluminum and silver.</p>
+      </div>
+      <aside class="glass logo-card">
+        <div class="logo-tile"><span>PP</span></div>
+        <div class="logo-word"><span class="a">Plating</span> <span class="b">Posters</span></div>
+        <div class="logo-inc">www.platingposters.com</div>
+      </aside>
+    </header>
+
+    <div class="orient-strip glass">
+      <div class="orient-stage">Clean</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Rinse</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Etch</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Rinse</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Zinc&nbsp;1</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Rinse</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Strip</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Rinse</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Zinc&nbsp;2</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Rinse</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Cu&nbsp;Str</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Rinse</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage active">Cu&nbsp;Plt</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Rinse</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Ag&nbsp;Str</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Ag&nbsp;Plt</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Rinse</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">A-Tar</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Dry</div>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="poster-body">
+
+    <!-- RULE CARD -->
+    <div class="glass rule-card">
+      <div class="rule-num">15&ndash;25 &micro;m</div>
+      <div class="rule-body">
+        <div class="rule-label">Standard Thickness Target (15&ndash;25 &micro;m) &mdash; up to 25&ndash;50 &micro;m for High-Reliability</div>
+        <div class="rule-text">The copper layer is the workhorse of this stack. Standard applications require 15&ndash;25 &micro;m (the figure shown); high-reliability or high-thermal-cycling applications may require 25&ndash;50 &micro;m. At 3 A/dm&sup2; with near-theoretical efficiency the plating rate is approximately 1.2&ndash;1.3 &micro;m/min, so a 15&ndash;25 &micro;m build takes roughly 12&ndash;20 minutes. Calculate your plating time based on the thickness target and measured plating rate for your bath.</div>
+      </div>
+    </div>
+
+    <!-- CHEMISTRY TABLE -->
+    <div>
+      <h3 class="section-title">Bath Chemistry <span class="sub">High-concentration copper cyanide</span></h3>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table">
+          <thead><tr><th>Component</th><th>Range</th><th>Function</th></tr></thead>
+          <tbody>
+            <tr><td>Copper Cyanide (CuCN)</td><td class="mono">60&ndash;90 g/L</td><td>Source of copper metal (Cu metal: 40&ndash;60 g/L)</td></tr>
+            <tr><td>Sodium Cyanide (NaCN) &mdash; Total</td><td class="mono">75&ndash;105 g/L</td><td>Complexes copper, maintains conductivity</td></tr>
+            <tr><td>Free NaCN</td><td class="mono">8&ndash;15 g/L</td><td>Lower ratio than strike &mdash; optimized for deposition efficiency</td></tr>
+            <tr><td>Sodium Hydroxide (NaOH)</td><td class="mono">15&ndash;30 g/L</td><td>Alkalinity, conductivity, anode corrosion control</td></tr>
+            <tr><td>Sodium Carbonate (Na&#8322;CO&#8323;)</td><td class="mono">&lt;60 g/L</td><td>Contaminant &mdash; remove by freezing crystallization if excessive</td></tr>
+            <tr><td>Rochelle Salt (optional)</td><td class="mono">15&ndash;60 g/L</td><td>Grain refiner, brightener &mdash; improves ductility and leveling</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- OPERATING PARAMETERS -->
+    <div>
+      <h3 class="section-title">Operating Parameters <span class="sub">Electrolytic &mdash; hot bath</span></h3>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table">
+          <thead><tr><th>Parameter</th><th>Value</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td>Temperature</td><td class="mono">60&ndash;71&deg;C (140&ndash;160&deg;F)</td><td>Hot bath &mdash; significantly higher than strike</td></tr>
+            <tr><td>Current Density</td><td class="mono">2&ndash;5 A/dm&sup2; (20&ndash;50 ASF)</td><td>Higher CD than strike for faster build</td></tr>
+            <tr><td>Voltage</td><td class="mono">4&ndash;6 V</td><td>Adjust to maintain target current density</td></tr>
+            <tr><td>Anode</td><td class="mono">OFHC Copper, bagged</td><td>Polypropylene bags, 2:1 to 1:1 anode-to-cathode ratio</td></tr>
+            <tr><td>Agitation</td><td class="mono">Air (oil-free) or cathode rod</td><td>Required for uniform deposition at higher CD</td></tr>
+            <tr><td>Plating Rate</td><td class="mono">~1.2&ndash;1.3 &micro;m/min @ 3 A/dm&sup2;</td><td>Cu(I), 1-electron deposition at ~99% efficiency; adjust time to thickness target</td></tr>
+            <tr><td>Cathode Efficiency</td><td class="mono">~99%</td><td>Near-theoretical &mdash; cyanide copper deposits as monovalent Cu(I)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- PROCESS INSIGHT -->
+    <div class="insight-card glass">
+      <div class="insight-label">Why Copper Thickness Matters</div>
+      <div class="insight-text">The copper layer serves dual functions: electrical conductivity and mechanical stress absorption. Aluminum and silver have different coefficients of thermal expansion. During thermal cycling, the interface between them experiences significant shear stress. The ductile copper interlayer absorbs this stress, preventing cracking and delamination. Insufficient copper thickness leads to premature failure under thermal cycling. Maintain carbonate below 60 g/L &mdash; high carbonate reduces throwing power and deposit quality.</div>
+    </div>
+
+    <!-- CONTEXT CARDS -->
+    <div class="context-grid">
+      <div class="context-card glass">
+        <h4 class="teal">Anode Management</h4>
+        <p>Use OFHC (Oxygen-Free High Conductivity) copper anodes in polypropylene or Dynel bags. The bags trap anode sludge/particles and keep them out of solution, preventing rough deposits. Maintain anode-to-cathode area ratio between 2:1 and 1:1. Dissolving copper anodes replenish the bath &mdash; unlike the strike bath which uses inert steel anodes.</p>
+        <div class="detail">A:C ratio 2:1 to 1:1. Replace anode bags when torn or clogged.</div>
+      </div>
+      <div class="context-card glass">
+        <h4 class="amber">Carbonate Control</h4>
+        <p>Sodium carbonate builds continuously from CO&#8322; absorption (accelerated at high temperature) and cyanide oxidation. Keep below 60 g/L. High carbonate reduces conductivity, current efficiency, and throwing power. Remove by cooling the solution to crystallize Na&#8322;CO&#8323; &mdash; filter and discard the crystals.</p>
+        <div class="detail">Na&#8322;CO&#8323; &lt;60 g/L. Freezing crystallization at &lt;0&deg;C is standard removal method.</div>
+      </div>
+    </div>
+
+    <!-- CURRENT-DENSITY PROCESS WINDOW -->
+    <div class="glass cd-card">
+      <div class="cd-head">
+        <span class="cd-title">Current-Density Process Window (A/dm&sup2;)</span>
+        <span class="cd-scale-note">Representative &mdash; not to scale</span>
+      </div>
+      <div class="cd-bar">
+        <span class="cd-zone" style="left:0%;width:28.57%;background:var(--amber);">Thin / Low Eff</span>
+        <span class="cd-zone" style="left:28.57%;width:42.86%;background:var(--emerald);">Usable 2&ndash;5 &mdash; Sweet Spot</span>
+        <span class="cd-zone" style="left:71.43%;width:28.57%;background:var(--coral);">Burnt / High-CD</span>
+        <span class="cd-here" style="left:42.86%;"></span>
+      </div>
+      <div class="cd-ticks">
+        <span class="cd-tick" style="left:0%;">0</span>
+        <span class="cd-tick" style="left:14.29%;">1</span>
+        <span class="cd-tick" style="left:28.57%;">2</span>
+        <span class="cd-tick" style="left:42.86%;">3</span>
+        <span class="cd-tick" style="left:57.14%;">4</span>
+        <span class="cd-tick" style="left:71.43%;">5</span>
+        <span class="cd-tick" style="left:85.71%;">6</span>
+        <span class="cd-tick" style="left:100%;">7</span>
+      </div>
+      <div class="cd-legend">
+        <span class="cd-leg"><span class="sw" style="background:var(--amber);"></span>Below ~2: thin deposit, low cathode efficiency</span>
+        <span class="cd-leg"><span class="sw" style="background:var(--emerald);"></span>2&ndash;5: full build &mdash; faster than strike</span>
+        <span class="cd-leg"><span class="sw" style="background:var(--coral);"></span>Above ~5: burnt high-CD &mdash; free CN&minus; too low or temp too low</span>
+      </div>
+      <div class="cd-note"><strong>~1.2&ndash;1.3 &micro;m/min @ 3 A/dm&sup2; &middot; ~99% cathode efficiency (Cu(I), 1-electron deposition).</strong> Raise free NaCN or temperature before reducing current if high-CD areas burn.</div>
+    </div>
+
+    <!-- TROUBLESHOOTING -->
+    <div>
+      <h3 class="section-title">Troubleshooting <span class="sub">Copper plate issues</span></h3>
+      <div class="trouble-grid">
+        <div class="trouble-card glass">
+          <h4>Thin or Uneven Deposit</h4>
+          <p>Low copper concentration, insufficient agitation, or poor current distribution. Check Cu metal level. Verify anode condition and A:C ratio. Improve agitation &mdash; air or cathode rod movement.</p>
+        </div>
+        <div class="trouble-card glass">
+          <h4>Rough or Nodular Deposit</h4>
+          <p>Particulate contamination from anode bags (torn), high carbonate, or organic contamination. Check anode bags. Carbon-treat solution if organics suspected. Check carbonate level.</p>
+        </div>
+        <div class="trouble-card glass">
+          <h4>Dark or Burned High-CD Areas</h4>
+          <p>Current density too high, free cyanide too low, or temperature too low. Reduce current or increase free NaCN. Verify bath temperature is 60&ndash;71&deg;C.</p>
+        </div>
+        <div class="trouble-card glass">
+          <h4>Low Current Efficiency</h4>
+          <p>Free cyanide too high, carbonate excessive, or temperature too low. Optimize free NaCN to 8&ndash;15 g/L. Remove carbonate. Increase temperature to target range.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SAFETY -->
+    <div class="safety-card glass">
+      <div class="safety-head">&#9888; Safety</div>
+      <div class="safety-body"><strong>CYANIDE BATH operating at elevated temperature (140&ndash;160&deg;F).</strong> High temperature increases HCN vapor pressure &mdash; ventilation is critical. Maintain slot ventilation at minimum 100 fpm face velocity. <strong>Never mix with acid &mdash; generates lethal HCN gas.</strong> Maintain pH &gt;10. HCN monitors must be calibrated and operational. Cyanide antidote kit accessible within 30 seconds. Thermal burns are an additional hazard at this temperature &mdash; wear heat-resistant chemical gloves. Know emergency shower and eyewash locations.</div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer poster-footer">
+    <p class="footer-disclaimer">Technical reference only. Verify all parameters against your chemistry supplier&rsquo;s TDS, customer specifications, and applicable regulatory requirements before production use.</p>
+    <p class="footer-title">Copper Cyanide Plate (Full Build) &mdash; Al &rarr; Cu &rarr; Ag Busbar Plating Series</p>
+    <span class="footer-brand">Plating Posters Inc &middot; Metal Finishing Reference Series &middot; platingposters.com / v1.0 / 2026</span>
+  </footer>
+
+</div>
+</div>
+</div>
+
+<div class="tweaks">
+  <div style="display:flex;gap:8px;align-items:center;">
+    <span style="color:rgba(240,237,232,.5);font-size:11px;letter-spacing:.06em;text-transform:uppercase;">Edition</span>
+    <button id="btnDark" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);" onclick="setEdition('')">Dark</button>
+    <button id="btnLight" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:#E8A020;color:#1A1F2E;border:1px solid #E8A020;" onclick="setEdition('light')">Light</button>
+  </div>
+  <button onclick="window.print()" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);">Print / PDF</button>
+</div>
+
+<script>
+const posterWrap=document.getElementById('posterWrap');
+const poster=document.getElementById('poster');
+function scalePoster(){const sW=(window.innerWidth-24)/1200;const sH=(window.innerHeight-24)/1800;const s=Math.min(sW,sH);posterWrap.style.transform='scale('+s+')';posterWrap.style.transformOrigin='top left';posterWrap.style.width=(1200*s)+'px';posterWrap.style.height=(1800*s)+'px';}
+function setEdition(e){if(e)poster.dataset.edition=e;else delete poster.dataset.edition;document.getElementById('btnDark').style.background=e?'transparent':'#E8A020';document.getElementById('btnDark').style.color=e?'#F0EDE8':'#1A1F2E';document.getElementById('btnDark').style.borderColor=e?'rgba(255,255,255,.2)':'#E8A020';document.getElementById('btnLight').style.background=e?'#E8A020':'transparent';document.getElementById('btnLight').style.color=e?'#1A1F2E':'#F0EDE8';document.getElementById('btnLight').style.borderColor=e?'#E8A020':'rgba(255,255,255,.2)';}
+scalePoster();window.addEventListener('resize',scalePoster);
+</script>
+</body>
+</html>

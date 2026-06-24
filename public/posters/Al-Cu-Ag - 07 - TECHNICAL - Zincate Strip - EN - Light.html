@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Al-Cu-Ag Busbar &mdash; Zincate Strip &mdash; Technical | Plating Posters Inc</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Barlow:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#1A1F2E;--navy:#0D1020;--text:#F0EDE8;--muted:rgba(240,237,232,.62);
+  --faint:rgba(240,237,232,.38);
+  --amber:#E8A020;--teal:#2EC4B6;--emerald:#27AE60;--coral:#E05C5C;
+  --slate:#3A4055;--callout:#1E2435;--altrow:#252B3D;
+  --glass-bg:rgba(30,36,53,.55);--glass-border:rgba(255,255,255,.12);
+  --glass-shadow:inset 0 1px 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(0,0,0,.2),0 4px 12px rgba(0,0,0,.25);
+}
+.poster[data-edition="light"]{
+  --bg:#F5F4F0;--navy:#DDD8CE;--text:#1B2030;--muted:rgba(27,32,48,.74);
+  --faint:rgba(27,32,48,.42);
+  --amber:#B8770D;--teal:#1A8C82;--emerald:#1E8449;--coral:#B7322F;
+  --slate:#C5C0B5;--callout:#ECEAE1;--altrow:#E4E1D6;
+  --glass-bg:rgba(255,253,247,.78);--glass-border:rgba(27,32,48,.16);
+  --glass-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 4px 12px rgba(27,32,48,.08);
+}
+html,body{margin:0;padding:0;background:#e8e6df;}
+.stage{width:100vw;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;overflow:visible;padding:12px 0;box-sizing:border-box;}
+.poster-wrap{transform-origin:top left;}
+.poster{
+  width:1200px;height:1800px;position:relative;overflow:hidden;
+  background:
+    radial-gradient(1200px 800px at 15% 8%,rgba(46,196,182,.14),transparent 60%),
+    radial-gradient(1000px 700px at 90% 25%,rgba(232,160,32,.12),transparent 55%),
+    radial-gradient(900px 900px at 50% 80%,rgba(224,92,92,.10),transparent 60%),
+    var(--bg);
+  font-family:'Inter',sans-serif;color:var(--text);
+  display:flex;flex-direction:column;padding:32px;box-sizing:border-box;
+}
+.glass{background-color:var(--glass-bg);background-image:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));border:1px solid var(--glass-border);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);box-shadow:var(--glass-shadow);border-radius:12px;}
+.tack{position:absolute;width:24px;height:24px;border-radius:50%;border:1.5px solid rgba(232,160,32,.28);z-index:2;pointer-events:none;}
+.tack::before,.tack::after{content:"";position:absolute;background:rgba(232,160,32,.28);}
+.tack::before{left:50%;top:-3px;bottom:-3px;width:1px;transform:translateX(-50%);}
+.tack::after{top:50%;left:-3px;right:-3px;height:1px;transform:translateY(-50%);}
+.tack.tl{top:12px;left:12px;}.tack.tr{top:12px;right:12px;}.tack.bl{bottom:12px;left:12px;}.tack.br{bottom:12px;right:12px;}
+
+.poster-header{flex-shrink:0;}
+.poster-body{flex:1;overflow:hidden;display:flex;flex-direction:column;gap:10px;justify-content:space-between;}
+.poster-footer{flex-shrink:0;margin-top:8px;}
+
+.header-band{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:8px;}
+.header-left{flex:1;min-width:0;}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--amber);letter-spacing:.16em;text-transform:uppercase;margin-bottom:4px;display:flex;align-items:center;gap:12px;}
+.eyebrow::before{content:"";display:inline-block;width:30px;height:3px;background:var(--amber);}
+.headline{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:72px;color:var(--text);line-height:.92;margin:4px 0;letter-spacing:-.01em;text-transform:uppercase;}
+.headline em{font-style:normal;color:var(--amber);}
+.subhead{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:20px;color:var(--teal);margin:0 0 3px;letter-spacing:.02em;text-transform:uppercase;}
+.tagline{font-family:'Inter',sans-serif;font-style:italic;font-size:11px;color:var(--muted);line-height:1.35;max-width:700px;margin:0;}
+.logo-card{flex-shrink:0;padding:12px 10px;display:flex;flex-direction:column;align-items:center;gap:8px;align-self:flex-start;}
+.logo-tile{width:68px;height:68px;border-radius:12px;background:linear-gradient(135deg,#E8A020,#2EC4B6);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -2px 4px rgba(0,0,0,.15),0 4px 14px rgba(0,0,0,.35);}
+.logo-tile span{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:26px;color:#1A1F2E;letter-spacing:.02em;line-height:1;}
+.logo-word{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;letter-spacing:.04em;text-transform:uppercase;line-height:1;text-align:center;white-space:nowrap;}
+.logo-word .a{color:var(--text);}.logo-word .b{color:var(--amber);}
+.logo-inc{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.05em;text-transform:lowercase;color:var(--muted);margin-top:-2px;}
+
+.orient-strip{display:flex;align-items:center;gap:4px;padding:6px 10px;margin-bottom:0;flex-wrap:wrap;}
+.orient-stage{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;padding:5px 8px;border-radius:5px;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:11px;letter-spacing:.05em;text-transform:uppercase;background:rgba(58,64,85,.4);border:1px solid rgba(255,255,255,.06);color:var(--muted);}
+.orient-stage.active{background:rgba(232,160,32,.22);border-color:rgba(232,160,32,.5);color:var(--amber);box-shadow:0 0 12px rgba(232,160,32,.15);}
+.poster[data-edition="light"] .orient-stage.active{background:rgba(184,119,13,.20);border-color:rgba(184,119,13,.55);box-shadow:none;}
+.orient-arrow{color:var(--faint);font-size:11px;flex:none;}
+
+.section-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;letter-spacing:.08em;text-transform:uppercase;color:var(--text);margin:0 0 6px;display:flex;align-items:center;gap:8px;}
+.section-title::before{content:"";width:5px;height:5px;background:var(--amber);border-radius:50%;}
+.section-title .sub{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.14em;color:var(--muted);margin-left:auto;font-weight:500;}
+
+.rule-card{display:flex;align-items:center;gap:18px;padding:14px 20px;background:rgba(232,160,32,.07);}
+.rule-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:42px;color:var(--amber);line-height:1;letter-spacing:-.02em;}
+.rule-body{flex:1;}
+.rule-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:15px;color:var(--amber);letter-spacing:.08em;text-transform:uppercase;}
+.rule-text{font-family:'Inter',sans-serif;font-size:11px;color:var(--muted);line-height:1.4;margin-top:3px;}
+
+.insight-card{padding:14px 18px;border-left:3px solid var(--teal);background:rgba(46,196,182,.06);border-radius:0 12px 12px 0;}
+.insight-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;color:var(--teal);letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px;}
+.insight-text{font-family:'Inter',sans-serif;font-size:12px;color:var(--text);line-height:1.5;}
+
+.data-table{width:100%;border-collapse:collapse;}
+.data-table th{font-family:'Barlow',sans-serif;font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);padding:8px 12px;text-align:left;background:rgba(13,16,32,.35);border-bottom:1px solid var(--glass-border);}
+.poster[data-edition="light"] .data-table th{background:rgba(27,32,48,.06);}
+.data-table td{padding:8px 12px;color:var(--text);line-height:1.4;border-bottom:1px solid rgba(255,255,255,.05);font-family:'Inter',sans-serif;font-size:12px;}
+.poster[data-edition="light"] .data-table td{border-bottom-color:rgba(27,32,48,.08);}
+.data-table tr:last-child td{border-bottom:none;}
+.data-table tr:nth-child(even) td{background:rgba(255,255,255,.02);}
+.poster[data-edition="light"] .data-table tr:nth-child(even) td{background:rgba(27,32,48,.025);}
+.data-table .mono{font-family:'JetBrains Mono',monospace;font-size:11px;}
+
+.safety-card{padding:14px 18px;border-left:3px solid var(--coral);background:rgba(224,92,92,.06);border-radius:12px;}
+.safety-head{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;color:var(--coral);letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px;}
+.safety-body{font-family:'Inter',sans-serif;font-size:12px;color:var(--text);line-height:1.5;}
+.safety-body strong{color:var(--coral);font-weight:700;}
+
+.trouble-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.trouble-card{padding:12px 14px;border-radius:10px;border-left:3px solid var(--coral);display:flex;flex-direction:column;gap:4px;}
+.trouble-card h4{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;color:var(--coral);margin:0;text-transform:uppercase;letter-spacing:.06em;line-height:1.1;}
+.trouble-card p{font-size:11px;color:var(--muted);margin:0;line-height:1.4;}
+
+.context-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.context-card{padding:14px 16px;}
+.context-card h4{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;margin:0 0 6px;letter-spacing:.04em;text-transform:uppercase;}
+.context-card h4.teal{color:var(--teal);}
+.context-card h4.amber{color:var(--amber);}
+.context-card h4.coral{color:var(--coral);}
+.context-card p{font-size:12px;line-height:1.5;color:var(--text);margin:0;}
+.context-card .detail{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--muted);margin-top:6px;}
+
+/* zincate strip before/after schematic */
+.zinc-card{padding:11px 18px;}
+.zinc-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:10px;}
+.zinc-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);}
+.zinc-scale-note{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.10em;text-transform:uppercase;color:var(--faint);}
+.zinc-flow{display:flex;align-items:stretch;gap:10px;}
+.zinc-stage{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;}
+.zinc-swatch{width:100%;height:54px;border-radius:8px;border:1px solid var(--glass-border);position:relative;overflow:hidden;background:#C5C0B5;}
+.zinc-base{position:absolute;left:0;right:0;bottom:0;height:20px;background:repeating-linear-gradient(135deg,rgba(27,32,48,.10) 0 4px,rgba(27,32,48,.04) 4px 8px),#C5C0B5;border-top:1px solid rgba(27,32,48,.25);}
+.zinc-base::after{content:"Al";position:absolute;left:6px;bottom:3px;font-family:'JetBrains Mono',monospace;font-size:8px;color:var(--muted);}
+.zinc-coat-coarse{position:absolute;left:0;right:0;bottom:20px;height:22px;background:repeating-linear-gradient(90deg,#9aa6b8 0 7px,#7e8aa0 7px 13px);}
+.zinc-coat-fine{position:absolute;left:0;right:0;bottom:20px;height:11px;background:repeating-linear-gradient(90deg,#9aa6b8 0 2px,#7e8aa0 2px 4px);}
+.zinc-bare{position:absolute;left:0;right:0;bottom:20px;height:0;}
+.zinc-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:12px;line-height:1.05;letter-spacing:.03em;text-transform:uppercase;color:var(--text);text-align:center;}
+.zinc-sub{font-family:'JetBrains Mono',monospace;font-size:8.5px;color:var(--muted);line-height:1.2;text-align:center;}
+.zinc-arrow{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;flex:0 0 auto;width:58px;align-self:center;}
+.zinc-arrow .ar{font-size:18px;color:var(--amber);line-height:1;}
+.zinc-arrow .at{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:9px;letter-spacing:.04em;text-transform:uppercase;color:var(--amber);text-align:center;line-height:1.05;}
+.zinc-eqn{margin-top:8px;padding:6px 12px;border-radius:8px;background:rgba(184,119,13,.08);border:1px solid rgba(184,119,13,.20);font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text);text-align:center;letter-spacing:.01em;}
+.zinc-eqn-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--amber);margin-right:6px;}
+
+.footer{padding:10px 20px;background-color:rgba(13,16,32,.85);background-image:linear-gradient(180deg,rgba(255,255,255,.04),rgba(0,0,0,0));border:1px solid rgba(255,255,255,.10);border-radius:8px;text-align:center;display:flex;flex-direction:column;gap:2px;}
+.poster[data-edition="light"] .footer{background-color:rgba(221,216,206,.95);border-color:rgba(27,32,48,.10);}
+.poster[data-edition="light"] .footer-disclaimer{color:rgba(27,32,48,.62);}
+.footer-disclaimer{font-family:'Inter',sans-serif;font-size:8.5px;line-height:1.35;color:var(--faint);margin:0 auto;max-width:900px;}
+.footer-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:12px;color:var(--text);letter-spacing:.04em;text-transform:uppercase;margin:0;}
+.footer-brand{font-family:'JetBrains Mono',monospace;font-size:8.5px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;}
+
+.tweaks{position:fixed;bottom:16px;right:16px;z-index:100;background:rgba(13,16,32,.92);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:10px 14px;display:flex;flex-direction:column;gap:8px;font-family:'Inter',sans-serif;font-size:12px;color:#F0EDE8;}
+@media print{
+  @page{size:12.5in 18.75in;margin:0;}
+  html,body{background:#F5F4F0 !important;-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
+  *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
+  .stage{position:static;padding:0;display:block;overflow:visible;}
+  .poster-wrap{transform:none !important;width:auto !important;height:auto !important;}
+  .poster{box-shadow:none !important;width:1200px !important;height:1800px !important;overflow:hidden !important;}
+  .glass,.trouble-card,.insight-card,.safety-card,.context-card{backdrop-filter:none !important;-webkit-backdrop-filter:none !important;}
+  .tweaks{display:none !important;}
+}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="poster-wrap" id="posterWrap">
+<div class="poster" id="poster" data-edition="light">
+  <span class="tack tl" aria-hidden="true"></span><span class="tack tr" aria-hidden="true"></span>
+  <span class="tack bl" aria-hidden="true"></span><span class="tack br" aria-hidden="true"></span>
+
+  <!-- HEADER -->
+  <div class="poster-header">
+    <header class="header-band">
+      <div class="header-left">
+        <div class="eyebrow"><span>Plating Posters Inc &nbsp;&middot;&nbsp; Al-Cu-Ag Busbar Series</span></div>
+        <h1 class="headline">ZINCATE<br><em>STRIP</em></h1>
+        <h2 class="subhead">50% Nitric Acid &mdash; Remove First Zincate for Crystal Refinement</h2>
+        <p class="tagline">The first zinc layer served its purpose &mdash; it conditioned the aluminum surface. Now strip it completely so the second zincate deposits a thinner, finer-grained, more uniform layer that dramatically improves adhesion reliability.</p>
+      </div>
+      <aside class="glass logo-card">
+        <div class="logo-tile"><span>PP</span></div>
+        <div class="logo-word"><span class="a">Plating</span> <span class="b">Posters</span></div>
+        <div class="logo-inc">www.platingposters.com</div>
+      </aside>
+    </header>
+
+    <div class="orient-strip glass">
+      <div class="orient-stage">Clean</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Rinse</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Etch</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Rinse</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Zinc&nbsp;1</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Rinse</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage active">Strip</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Rinse</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Zinc&nbsp;2</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Rinse</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Cu&nbsp;Str</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Rinse</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Cu&nbsp;Plt</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Rinse</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Ag&nbsp;Str</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Ag&nbsp;Plt</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Rinse</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">A-Tar</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Dry</div>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="poster-body">
+
+    <!-- RULE CARD -->
+    <div class="glass rule-card">
+      <div class="rule-num">10&ndash;15s</div>
+      <div class="rule-body">
+        <div class="rule-label">Complete Strip Required &mdash; No Residual Zinc Permitted</div>
+        <div class="rule-text">Immerse in 50% HNO&#8323; for 10&ndash;15 seconds until all zinc is dissolved and bare bright aluminum is visible. Any residual zinc patches cause uneven second zincate deposition and localized adhesion failures in the copper and silver layers above. The endpoint is visual &mdash; zinc dissolves and bright aluminum appears.</div>
+      </div>
+    </div>
+
+    <!-- CHEMISTRY TABLE -->
+    <div>
+      <h3 class="section-title">Bath Chemistry <span class="sub">Nitric acid strip</span></h3>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table">
+          <thead><tr><th>Component</th><th>Concentration</th><th>Function</th></tr></thead>
+          <tbody>
+            <tr><td>Nitric Acid (HNO&#8323;)</td><td class="mono">50% v/v (~7.5 M)</td><td>Dissolves zinc by oxidation without attacking the aluminum substrate significantly at ambient temperature and short immersion</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ZINCATE STRIP BEFORE / AFTER -->
+    <div class="glass zinc-card">
+      <div class="zinc-head">
+        <span class="zinc-title">Double-Zincate &mdash; Coarse &rarr; Strip &rarr; Fine</span>
+        <span class="zinc-scale-note">Representative &mdash; not to scale</span>
+      </div>
+      <div class="zinc-flow">
+        <div class="zinc-stage">
+          <div class="zinc-swatch"><div class="zinc-coat-coarse"></div><div class="zinc-base"></div></div>
+          <div class="zinc-label">First<br>Zincate</div>
+          <div class="zinc-sub">Coarse, thick<br>zinc crystals</div>
+        </div>
+        <div class="zinc-arrow"><span class="ar">&rarr;</span><span class="at">Strip<br>50% HNO&#8323;<br>10&ndash;15s</span></div>
+        <div class="zinc-stage">
+          <div class="zinc-swatch"><div class="zinc-bare"></div><div class="zinc-base"></div></div>
+          <div class="zinc-label">Bare Al<br>(Stripped)</div>
+          <div class="zinc-sub">Zinc fully<br>dissolved, bright</div>
+        </div>
+        <div class="zinc-arrow"><span class="ar">&rarr;</span><span class="at">Second<br>Zincate</span></div>
+        <div class="zinc-stage">
+          <div class="zinc-swatch"><div class="zinc-coat-fine"></div><div class="zinc-base"></div></div>
+          <div class="zinc-label">Second<br>Zincate</div>
+          <div class="zinc-sub">Fine, thin,<br>0.10&ndash;0.50 &micro;m</div>
+        </div>
+      </div>
+      <div class="zinc-eqn"><span class="zinc-eqn-label">Zincate deposition (both immersions):</span> 2 Al + 3 Zn(OH)&#8324;&sup2;&#8315; &rarr; 2 Al(OH)&#8324;&#8315; + 3 Zn + 4 OH&#8315;</div>
+    </div>
+
+    <!-- OPERATING PARAMETERS -->
+    <div>
+      <h3 class="section-title">Operating Parameters <span class="sub">Immersion strip &mdash; no current</span></h3>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table">
+          <thead><tr><th>Parameter</th><th>Value</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td>Temperature</td><td class="mono">Ambient (18&ndash;27&deg;C / 65&ndash;80&deg;F)</td><td>No heating required &mdash; reaction is fast at room temperature</td></tr>
+            <tr><td>Immersion Time</td><td class="mono">10&ndash;15 seconds</td><td>Until zinc is fully dissolved and aluminum is bright</td></tr>
+            <tr><td>Agitation</td><td class="mono">Gentle rack movement</td><td>Ensures all surfaces contact fresh acid</td></tr>
+            <tr><td>Endpoint (Visual)</td><td class="mono">Zinc dissolves, bare bright aluminum</td><td>No gray patches remaining &mdash; strip must be 100% complete</td></tr>
+            <tr><td>Over-immersion Risk</td><td class="mono">Low at &le;15 seconds</td><td>Extended immersion (&gt;30 sec) begins to micro-etch aluminum &mdash; avoid</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- PROCESS INSIGHT -->
+    <div class="insight-card glass">
+      <div class="insight-label">Why Strip and Re-Apply?</div>
+      <div class="insight-text">The first zincate conditions the aluminum surface but produces a relatively coarse zinc crystal structure. Stripping this first layer and re-applying a second zincate produces a dramatically thinner, finer-grained, more uniform zinc deposit. This double-zincate process is mandatory for reliable adhesion in critical applications. Single zincate adhesion is inconsistent &mdash; the second zincate is what gives the process its reliability. The first zincate&rsquo;s real job was to prepare the aluminum surface for the second application.</div>
+    </div>
+
+    <!-- VISUAL ENDPOINT -->
+    <div class="context-grid">
+      <div class="context-card glass">
+        <h4 class="teal">Correct Endpoint</h4>
+        <p>All zinc dissolved. Bare aluminum visible with a bright, clean appearance across all surfaces. No gray patches, no dark residue, no powdery remnants. The aluminum should look similar to how it appeared after the acid etch &mdash; uniformly bright.</p>
+        <div class="detail">Transfer immediately to the DI rinse that follows. Freshly stripped aluminum is as reactive as freshly etched &mdash; oxide begins forming immediately.</div>
+      </div>
+      <div class="context-card glass">
+        <h4 class="coral">Incomplete Strip &mdash; Do Not Proceed</h4>
+        <p>Any remaining gray patches indicate residual zinc. These patches will cause uneven deposition in the second zincate, resulting in localized thick and thin zones. Adhesion failures in the copper and silver layers above will trace back to this stage. Re-immerse in the nitric acid until all zinc is fully dissolved.</p>
+        <div class="detail">If zinc persists after 30 seconds, check acid strength &mdash; may be exhausted or diluted by excess dragout.</div>
+      </div>
+    </div>
+
+    <!-- TROUBLESHOOTING -->
+    <div>
+      <h3 class="section-title">Troubleshooting <span class="sub">Zincate strip issues</span></h3>
+      <div class="trouble-grid">
+        <div class="trouble-card glass">
+          <h4>Zinc Not Dissolving</h4>
+          <p>Acid concentration too low (diluted by repeated use or excessive dragout). Check acid strength. Replace or fortify with fresh 50% HNO&#8323;. Also verify that the coating is actually zinc &mdash; dark deposits may indicate contaminated zincate bath.</p>
+        </div>
+        <div class="trouble-card glass">
+          <h4>Gray Patches Remaining</h4>
+          <p>Incomplete strip. Re-immerse for additional 5&ndash;10 seconds. If patches persist, the zincate bath may have deposited an abnormally thick or alloyed layer &mdash; investigate the first zincate parameters.</p>
+        </div>
+        <div class="trouble-card glass">
+          <h4>Aluminum Surface Pitting</h4>
+          <p>Over-immersion in nitric acid or acid temperature too high. Limit immersion to 15 seconds maximum. Verify ambient temperature. Pitting creates nucleation defects that propagate through all subsequent layers.</p>
+        </div>
+        <div class="trouble-card glass">
+          <h4>Second Zincate Non-Uniform</h4>
+          <p>Root cause often traces to an incomplete strip at this stage. Verify visual endpoint: no gray patches. Also check that the following DI rinse is adequate &mdash; acid carryover into the alkaline zincate bath degrades performance.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SAFETY -->
+    <div class="safety-card glass">
+      <div class="safety-head">&#9888; Safety</div>
+      <div class="safety-body"><strong>Nitric acid (50% v/v) is a strong oxidizer and is corrosive to skin, eyes, and respiratory tract.</strong> Produces toxic brown NOx fumes, especially when dissolving metals. Wear face shield, chemical-resistant gloves, apron, and rubber boots. Work under slot ventilation. <strong>Do not store or use near organic solvents, oils, or combustible materials</strong> &mdash; nitric acid is a powerful oxidizer that can cause fire or explosion on contact with organics. If acid contacts skin, flush immediately with water for 15 minutes.</div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer poster-footer">
+    <p class="footer-disclaimer">Technical reference only. Verify all parameters against your chemistry supplier&rsquo;s TDS, customer specifications, and applicable regulatory requirements before production use.</p>
+    <p class="footer-title">Zincate Strip (50% Nitric Acid) &mdash; Al &rarr; Cu &rarr; Ag Busbar Plating Series</p>
+    <span class="footer-brand">Plating Posters Inc &middot; Metal Finishing Reference Series &middot; platingposters.com &middot; v1.0 / 2026</span>
+  </footer>
+
+</div>
+</div>
+</div>
+
+<div class="tweaks">
+  <div style="display:flex;gap:8px;align-items:center;">
+    <span style="color:rgba(240,237,232,.5);font-size:11px;letter-spacing:.06em;text-transform:uppercase;">Edition</span>
+    <button id="btnDark" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);" onclick="setEdition('')">Dark</button>
+    <button id="btnLight" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:#E8A020;color:#1A1F2E;border:1px solid #E8A020;" onclick="setEdition('light')">Light</button>
+  </div>
+  <button onclick="window.print()" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);">Print / PDF</button>
+</div>
+
+<script>
+const posterWrap=document.getElementById('posterWrap');
+const poster=document.getElementById('poster');
+function scalePoster(){const sW=(window.innerWidth-24)/1200;const sH=(window.innerHeight-24)/1800;const s=Math.min(sW,sH);posterWrap.style.transform='scale('+s+')';posterWrap.style.transformOrigin='top left';posterWrap.style.width=(1200*s)+'px';posterWrap.style.height=(1800*s)+'px';}
+function setEdition(e){if(e)poster.dataset.edition=e;else delete poster.dataset.edition;document.getElementById('btnDark').style.background=e?'transparent':'#E8A020';document.getElementById('btnDark').style.color=e?'#F0EDE8':'#1A1F2E';document.getElementById('btnDark').style.borderColor=e?'rgba(255,255,255,.2)':'#E8A020';document.getElementById('btnLight').style.background=e?'#E8A020':'transparent';document.getElementById('btnLight').style.color=e?'#1A1F2E':'#F0EDE8';document.getElementById('btnLight').style.borderColor=e?'#E8A020':'rgba(255,255,255,.2)';}
+scalePoster();window.addEventListener('resize',scalePoster);
+</script>
+</body>
+</html>

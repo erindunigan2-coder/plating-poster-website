@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Al-Cu-Ag Busbar &mdash; DI Rinse Post-Clean &mdash; Technical | Plating Posters Inc</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Barlow:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#1A1F2E;--navy:#0D1020;--text:#F0EDE8;--muted:rgba(240,237,232,.62);
+  --faint:rgba(240,237,232,.38);
+  --amber:#E8A020;--teal:#2EC4B6;--emerald:#27AE60;--coral:#E05C5C;
+  --slate:#3A4055;--callout:#1E2435;--altrow:#252B3D;
+  --glass-bg:rgba(30,36,53,.55);--glass-border:rgba(255,255,255,.12);
+  --glass-shadow:inset 0 1px 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(0,0,0,.2),0 4px 12px rgba(0,0,0,.25);
+}
+.poster[data-edition="light"]{
+  --bg:#F5F4F0;--navy:#DDD8CE;--text:#1B2030;--muted:rgba(27,32,48,.74);
+  --faint:rgba(27,32,48,.42);
+  --amber:#B8770D;--teal:#1A8C82;--emerald:#1E8449;--coral:#B7322F;
+  --slate:#C5C0B5;--callout:#ECEAE1;--altrow:#E4E1D6;
+  --glass-bg:rgba(255,253,247,.78);--glass-border:rgba(27,32,48,.16);
+  --glass-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 4px 12px rgba(27,32,48,.08);
+}
+.poster[data-edition="light"] .orient-stage{background:rgba(27,32,48,.06);border-color:rgba(27,32,48,.12);}
+.poster[data-edition="light"] .data-table td{border-bottom-color:rgba(27,32,48,.08);}
+html,body{margin:0;padding:0;background:#e8e6df;}
+.stage{width:100vw;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;overflow:visible;padding:12px 0;box-sizing:border-box;}
+.poster-wrap{transform-origin:top left;}
+.poster{
+  width:1200px;height:1800px;position:relative;overflow:hidden;
+  background:
+    radial-gradient(1200px 800px at 15% 8%,rgba(46,196,182,.14),transparent 60%),
+    radial-gradient(1000px 700px at 90% 25%,rgba(232,160,32,.12),transparent 55%),
+    radial-gradient(900px 900px at 50% 80%,rgba(224,92,92,.10),transparent 60%),
+    var(--bg);
+  font-family:'Inter',sans-serif;color:var(--text);
+  display:flex;flex-direction:column;padding:32px;box-sizing:border-box;
+}
+.glass{background-color:var(--glass-bg);background-image:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));border:1px solid var(--glass-border);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);box-shadow:var(--glass-shadow);border-radius:12px;}
+.tack{position:absolute;width:24px;height:24px;border-radius:50%;border:1.5px solid rgba(232,160,32,.28);z-index:2;pointer-events:none;}
+.tack::before,.tack::after{content:"";position:absolute;background:rgba(232,160,32,.28);}
+.tack::before{left:50%;top:-3px;bottom:-3px;width:1px;transform:translateX(-50%);}
+.tack::after{top:50%;left:-3px;right:-3px;height:1px;transform:translateY(-50%);}
+.tack.tl{top:12px;left:12px;}.tack.tr{top:12px;right:12px;}.tack.bl{bottom:12px;left:12px;}.tack.br{bottom:12px;right:12px;}
+
+/* THREE-PART FLEX LAYOUT */
+.poster-header{flex-shrink:0;}
+.poster-body{flex:1;overflow:hidden;display:flex;flex-direction:column;gap:10px;justify-content:space-between;}
+.poster-footer{flex-shrink:0;margin-top:8px;}
+
+.header-band{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:8px;}
+.header-left{flex:1;min-width:0;}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--amber);letter-spacing:.16em;text-transform:uppercase;margin-bottom:4px;display:flex;align-items:center;gap:12px;}
+.eyebrow::before{content:"";display:inline-block;width:30px;height:3px;background:var(--amber);}
+.headline{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:72px;color:var(--text);line-height:.92;margin:4px 0;letter-spacing:-.01em;text-transform:uppercase;}
+.headline em{font-style:normal;color:var(--amber);}
+.subhead{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:20px;color:var(--teal);margin:0 0 3px;letter-spacing:.02em;text-transform:uppercase;}
+.tagline{font-family:'Inter',sans-serif;font-style:italic;font-size:11px;color:var(--muted);line-height:1.35;max-width:700px;margin:0;}
+.logo-card{flex-shrink:0;padding:12px 10px;display:flex;flex-direction:column;align-items:center;gap:8px;align-self:flex-start;}
+.logo-tile{width:68px;height:68px;border-radius:12px;background:linear-gradient(135deg,#E8A020,#2EC4B6);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -2px 4px rgba(0,0,0,.15),0 4px 14px rgba(0,0,0,.35);}
+.logo-tile span{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:26px;color:#1A1F2E;letter-spacing:.02em;line-height:1;}
+.logo-word{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;letter-spacing:.04em;text-transform:uppercase;line-height:1;text-align:center;white-space:nowrap;}
+.logo-word .a{color:var(--text);}.logo-word .b{color:var(--amber);}
+.logo-inc{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.05em;text-transform:lowercase;color:var(--muted);margin-top:-2px;}
+
+.orient-strip{display:flex;align-items:center;gap:4px;padding:6px 10px;margin-bottom:0;flex-wrap:wrap;}
+.orient-stage{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;padding:5px 8px;border-radius:5px;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:11px;letter-spacing:.05em;text-transform:uppercase;background:rgba(58,64,85,.4);border:1px solid rgba(255,255,255,.06);color:var(--muted);}
+.orient-stage.active{background:rgba(46,196,182,.22);border-color:rgba(46,196,182,.5);color:var(--teal);box-shadow:0 0 12px rgba(46,196,182,.15);}
+.orient-arrow{color:var(--faint);font-size:11px;flex:none;}
+
+.section-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;letter-spacing:.08em;text-transform:uppercase;color:var(--text);margin:0 0 6px;display:flex;align-items:center;gap:8px;}
+.section-title::before{content:"";width:5px;height:5px;background:var(--amber);border-radius:50%;}
+.section-title .sub{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.14em;color:var(--muted);margin-left:auto;font-weight:500;}
+
+.rule-card{display:flex;align-items:center;gap:18px;padding:14px 20px;background:rgba(46,196,182,.07);}
+.rule-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:52px;color:var(--teal);line-height:1;letter-spacing:-.02em;}
+.rule-body{flex:1;}
+.rule-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:15px;color:var(--teal);letter-spacing:.08em;text-transform:uppercase;}
+.rule-text{font-family:'Inter',sans-serif;font-size:11px;color:var(--muted);line-height:1.4;margin-top:3px;}
+
+.insight-card{padding:14px 18px;border-left:3px solid var(--teal);background:rgba(46,196,182,.06);border-radius:0 12px 12px 0;}
+.insight-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;color:var(--teal);letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px;}
+.insight-text{font-family:'Inter',sans-serif;font-size:12px;color:var(--text);line-height:1.5;}
+
+.data-table{width:100%;border-collapse:collapse;}
+.data-table th{font-family:'Barlow',sans-serif;font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);padding:8px 12px;text-align:left;background:rgba(13,16,32,.35);border-bottom:1px solid var(--glass-border);}
+.poster[data-edition="light"] .data-table th{background:rgba(27,32,48,.06);}
+.data-table td{padding:8px 12px;color:var(--text);line-height:1.4;border-bottom:1px solid rgba(255,255,255,.05);font-family:'Inter',sans-serif;font-size:12px;}
+.data-table tr:last-child td{border-bottom:none;}
+.data-table tr:nth-child(even) td{background:rgba(255,255,255,.02);}
+.poster[data-edition="light"] .data-table tr:nth-child(even) td{background:rgba(27,32,48,.025);}
+.data-table .mono{font-family:'JetBrains Mono',monospace;font-size:11px;}
+
+.safety-card{padding:14px 18px;border-left:3px solid var(--coral);background:rgba(224,92,92,.06);border-radius:12px;}
+.safety-head{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;color:var(--coral);letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px;}
+.safety-body{font-family:'Inter',sans-serif;font-size:12px;color:var(--text);line-height:1.5;}
+.safety-body strong{color:var(--coral);font-weight:700;}
+
+.trouble-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.trouble-card{padding:12px 14px;border-radius:10px;border-left:3px solid var(--coral);display:flex;flex-direction:column;gap:4px;}
+.trouble-card h4{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;color:var(--coral);margin:0;text-transform:uppercase;letter-spacing:.06em;line-height:1.1;}
+.trouble-card p{font-size:11px;color:var(--muted);margin:0;line-height:1.4;}
+
+.context-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.context-card{padding:14px 16px;}
+.context-card h4{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;margin:0 0 6px;letter-spacing:.04em;text-transform:uppercase;}
+.context-card h4.teal{color:var(--teal);}
+.context-card h4.amber{color:var(--amber);}
+.context-card p{font-size:12px;line-height:1.5;color:var(--text);margin:0;}
+.context-card .detail{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--muted);margin-top:6px;}
+
+
+.footer{padding:10px 20px;background-color:rgba(13,16,32,.85);background-image:linear-gradient(180deg,rgba(255,255,255,.04),rgba(0,0,0,0));border:1px solid rgba(255,255,255,.10);border-radius:8px;text-align:center;display:flex;flex-direction:column;gap:2px;}
+.poster[data-edition="light"] .footer{background-color:rgba(221,216,206,.95);border-color:rgba(27,32,48,.10);}
+.poster[data-edition="light"] .footer-disclaimer{color:rgba(27,32,48,.62);}
+.footer-disclaimer{font-family:'Inter',sans-serif;font-size:8.5px;line-height:1.35;color:var(--faint);margin:0 auto;max-width:900px;}
+.footer-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:12px;color:var(--text);letter-spacing:.04em;text-transform:uppercase;margin:0;}
+.footer-brand{font-family:'JetBrains Mono',monospace;font-size:8.5px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;}
+
+.tweaks{position:fixed;bottom:16px;right:16px;z-index:100;background:rgba(255,253,247,.95);border:1px solid rgba(27,32,48,.18);border-radius:10px;padding:10px 14px;display:flex;flex-direction:column;gap:8px;font-family:'Inter',sans-serif;font-size:12px;color:#1B2030;box-shadow:0 4px 12px rgba(27,32,48,.12);}
+@media print{
+  @page{size:12.5in 18.75in;margin:0;}
+  html,body{background:#F5F4F0 !important;-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
+  *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
+  .stage{position:static;padding:0;display:block;overflow:visible;}
+  .poster-wrap{transform:none !important;width:auto !important;height:auto !important;}
+  .poster{box-shadow:none !important;width:1200px !important;height:1800px !important;overflow:hidden !important;}
+  .glass,.trouble-card,.insight-card,.safety-card,.context-card{backdrop-filter:none !important;-webkit-backdrop-filter:none !important;}
+  .tweaks{display:none !important;}
+}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="poster-wrap" id="posterWrap">
+<div class="poster" id="poster">
+  <span class="tack tl" aria-hidden="true"></span><span class="tack tr" aria-hidden="true"></span>
+  <span class="tack bl" aria-hidden="true"></span><span class="tack br" aria-hidden="true"></span>
+
+  <!-- HEADER -->
+  <div class="poster-header">
+    <header class="header-band">
+      <div class="header-left">
+        <div class="eyebrow"><span>Plating Posters Inc &nbsp;&middot;&nbsp; Al-Cu-Ag Busbar Series</span></div>
+        <h1 class="headline">DI WATER<br><em>RINSE</em></h1>
+        <h2 class="subhead">Post-Clean Rinse &mdash; Remove All Alkaline Cleaner Residue</h2>
+        <p class="tagline">Cleaner dragout contaminates the acid etch. This rinse is the barrier between alkaline and acid zones.</p>
+      </div>
+      <aside class="glass logo-card">
+        <div class="logo-tile"><span>PP</span></div>
+        <div class="logo-word"><span class="a">Plating</span> <span class="b">Posters</span></div>
+        <div class="logo-inc">www.platingposters.com</div>
+      </aside>
+    </header>
+
+    <div class="orient-strip glass">
+      <div class="orient-stage">Clean</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage active">Rinse</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Etch</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Rinse</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Zinc&nbsp;1</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Rinse</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Strip</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Rinse</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Zinc&nbsp;2</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Rinse</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Cu&nbsp;Str</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Rinse</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Cu&nbsp;Plt</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Rinse</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Ag&nbsp;Str</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Ag&nbsp;Plt</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Rinse</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">A-Tar</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Dry</div>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="poster-body">
+
+    <!-- RULE CARD -->
+    <div class="glass rule-card">
+      <div class="rule-num">&lt;50 &micro;S</div>
+      <div class="rule-body">
+        <div class="rule-label">Conductivity Target &mdash; Final Rinse Stage</div>
+        <div class="rule-text">The rinse water leaving this station must read below 50 &micro;S/cm on a conductivity meter. Above that, alkaline cleaner residue will neutralize the acid etch, shorten its effective life, and produce an inconsistent oxide removal that propagates through the zincate and every plating layer.</div>
+      </div>
+    </div>
+
+    <!-- OPERATING PARAMETERS -->
+    <div>
+      <h3 class="section-title">Rinse Parameters <span class="sub">Post-clean DI rinse</span></h3>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table">
+          <thead><tr><th>Parameter</th><th>Value</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td>Water Source</td><td class="mono">DI or high-quality RO</td><td>Municipal water introduces chlorides and hardness &mdash; avoid</td></tr>
+            <tr><td>Rinse Type</td><td class="mono">Counterflow (2-stage preferred)</td><td>Fresh DI enters final stage, overflows to first stage</td></tr>
+            <tr><td>Temperature</td><td class="mono">Ambient (18&ndash;27&deg;C / 65&ndash;80&deg;F)</td><td>No heating required</td></tr>
+            <tr><td>Immersion Time</td><td class="mono">30&ndash;60 seconds minimum</td><td>With agitation &mdash; air or part movement</td></tr>
+            <tr><td>Conductivity Target</td><td class="mono">&lt;50 &micro;S/cm (final stage)</td><td>Measure at rinse overflow or on pulled part</td></tr>
+            <tr><td>Flow Rate</td><td class="mono">Sufficient for 2&ndash;3 turnovers/hour</td><td>Higher flow = faster conductivity drop</td></tr>
+            <tr><td>Tank Volume</td><td class="mono">Sized for full rack immersion</td><td>Parts must be fully submerged &mdash; no dry spots</td></tr>
+            <tr><td>Drain Time Before Entry</td><td class="mono">10&ndash;15 sec over cleaner tank</td><td>Reduces dragout volume by 50%+ &mdash; extends rinse tank life</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- WHY THIS RINSE MATTERS + WHAT IT REMOVES side by side -->
+    <div class="context-grid">
+      <div class="context-card glass">
+        <h4 class="teal">Why This Rinse Matters</h4>
+        <p>Alkaline cleaner residue (silicates, surfactants, NaOH) carried into the acid etch neutralizes acid, raises pH, and shortens bath life. A contaminated etch produces uneven oxide removal, which means uneven zincate, which means localized adhesion failures in every layer above.</p>
+        <div class="detail">Silicate carryover is especially problematic &mdash; dissolved silicates precipitate as insoluble SiO&#8322; gel in the acid etch, creating persistent haze on the aluminum surface that resists zincate wetting.</div>
+      </div>
+      <div class="context-card glass">
+        <h4 class="amber">What Gets Removed Here</h4>
+        <p>This rinse strips away the residual alkaline cleaner film, dissolved soils, and surfactant traces from the alkaline clean. It also begins cooling the part from the 54&ndash;66&deg;C cleaner temperature down to ambient, preventing thermal shock in the room-temperature etch.</p>
+        <div class="detail">Dragout volume from alkaline clean: ~50&ndash;150 mL/m&sup2; depending on part geometry and withdrawal speed. Counterflow rinse reduces contamination by 99%+ in two stages.</div>
+      </div>
+    </div>
+
+    <!-- CONTAMINATION RISKS -->
+    <div>
+      <h3 class="section-title">Contamination Prevention <span class="sub">What NOT to carry forward</span></h3>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table">
+          <thead><tr><th>Contaminant</th><th>Source</th><th>Effect if Carried to Acid Etch</th></tr></thead>
+          <tbody>
+            <tr><td>Residual NaOH</td><td>Alkaline cleaner dragout</td><td>Neutralizes acid etch &mdash; raises pH, shortens bath life</td></tr>
+            <tr><td>Silicates</td><td>Silicated cleaner formulation</td><td>Precipitates as SiO&#8322; gel in acid &mdash; creates haze on Al surface</td></tr>
+            <tr><td>Surfactants</td><td>Cleaner wetting agents</td><td>Foaming in acid etch, uneven wetting, streaky oxide removal</td></tr>
+            <tr><td>Dissolved oils</td><td>Emulsified soil from cleaning</td><td>Re-deposits on part surface, creates localized adhesion voids</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- VISUAL CHECKS -->
+    <div class="insight-card glass">
+      <div class="insight-label">Visual &amp; Analytical Checks</div>
+      <div class="insight-text"><strong>Rinse water clarity:</strong> Should be clear and colorless. Milky or cloudy rinse water indicates excessive cleaner carryover &mdash; increase flow rate or add a rinse stage.<br><strong>Part surface:</strong> After rinse, the aluminum should appear water-wet with no visible residue or streaking. Run a finger over the surface &mdash; it should feel smooth and water-wet, not soapy or filmy.<br><strong>Conductivity:</strong> Test with a handheld meter at the overflow. At or below 50 &micro;S/cm means the rinse is doing its job. Above 50 &micro;S/cm, increase DI flow or dump and refill.</div>
+    </div>
+
+    <!-- TROUBLESHOOTING -->
+    <div>
+      <h3 class="section-title">Troubleshooting <span class="sub">Rinse station issues</span></h3>
+      <div class="trouble-grid">
+        <div class="trouble-card glass">
+          <h4>Conductivity Won&rsquo;t Drop</h4>
+          <p>Excessive dragout from cleaner. Check if parts are dripping adequately before entering rinse. Increase DI flow rate. Consider adding a spray rinse between cleaner and immersion rinse.</p>
+        </div>
+        <div class="trouble-card glass">
+          <h4>Rinse Water Cloudy / Milky</h4>
+          <p>Emulsified oils or precipitated silicates. Dump and refill if persistent. Check if cleaner concentration is too high (over-dosing increases dragout load).</p>
+        </div>
+        <div class="trouble-card glass">
+          <h4>Parts Feel Soapy After Rinse</h4>
+          <p>Insufficient rinse time or flow. Extend immersion to 60+ seconds. Verify counterflow direction is correct (fresh DI enters final stage).</p>
+        </div>
+        <div class="trouble-card glass">
+          <h4>Water Spots on Parts</h4>
+          <p>Hard water supply or DI system failure. Test incoming water quality. These spots become adhesion defects at zincate. Switch to verified DI source.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SAFETY -->
+    <div class="safety-card glass">
+      <div class="safety-head">&#9888; Safety</div>
+      <div class="safety-body">Rinse water is <strong>alkaline from cleaner dragout</strong>. Wear chemical-resistant gloves when handling parts. If rinse water contacts eyes, flush with clean water for 15 minutes. Keep overflow drain clear &mdash; blocked drains cause flooding and contamination buildup.</div>
+    </div>
+
+    <!-- TRANSFER NOTE -->
+    <div class="insight-card glass">
+      <div class="insight-label">Transfer Handling</div>
+      <div class="insight-text">Once conductivity passes, move the rack to the acid etch without delay. <strong>Do not allow rinsed parts to dry</strong> &mdash; a dried aluminum surface re-oxidizes within minutes, undermining the clean, water-wet condition this rinse just established and producing uneven oxide removal downstream.</div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer poster-footer">
+    <p class="footer-disclaimer">Technical reference only. Verify all parameters against your chemistry supplier&rsquo;s TDS, customer specifications, and applicable regulatory requirements before production use.</p>
+    <p class="footer-title">DI Water Rinse (Post-Clean) &mdash; Al &rarr; Cu &rarr; Ag Busbar Plating Series</p>
+    <span class="footer-brand">Plating Posters Inc &middot; Metal Finishing Reference Series &middot; v1.0 / 2026</span>
+  </footer>
+
+</div>
+</div>
+</div>
+
+<div class="tweaks">
+  <div style="display:flex;gap:8px;align-items:center;">
+    <span style="color:rgba(27,32,48,.6);font-size:11px;letter-spacing:.06em;text-transform:uppercase;">Edition</span>
+    <button id="btnDark" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#1B2030;border:1px solid rgba(27,32,48,.25);" onclick="setEdition('')">Dark</button>
+    <button id="btnLight" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:#E8A020;color:#1A1F2E;border:1px solid #E8A020;" onclick="setEdition('light')">Light</button>
+  </div>
+  <button onclick="window.print()" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#1B2030;border:1px solid rgba(27,32,48,.25);">Print / PDF</button>
+</div>
+
+<script>
+const posterWrap=document.getElementById('posterWrap');
+const poster=document.getElementById('poster');
+function scalePoster(){const sW=(window.innerWidth-24)/1200;const sH=(window.innerHeight-24)/1800;const s=Math.min(sW,sH);posterWrap.style.transform='scale('+s+')';posterWrap.style.transformOrigin='top left';posterWrap.style.width=(1200*s)+'px';posterWrap.style.height=(1800*s)+'px';}
+function setEdition(e){if(e)poster.dataset.edition=e;else delete poster.dataset.edition;document.getElementById('btnDark').style.background=e?'transparent':'#E8A020';document.getElementById('btnDark').style.color=e?'#F0EDE8':'#1A1F2E';document.getElementById('btnDark').style.borderColor=e?'rgba(255,255,255,.2)':'#E8A020';document.getElementById('btnLight').style.background=e?'#E8A020':'transparent';document.getElementById('btnLight').style.color=e?'#1A1F2E':'#F0EDE8';document.getElementById('btnLight').style.borderColor=e?'#E8A020':'rgba(255,255,255,.2)';}
+scalePoster();window.addEventListener('resize',scalePoster);
+</script>
+</body>
+</html>
