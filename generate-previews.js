@@ -5,6 +5,9 @@ const path = require("path");
 const POSTERS_DIR = path.join(__dirname, "public", "posters");
 const OUTPUT_WIDTH = 1200;
 const OUTPUT_HEIGHT = 1800;
+// Set FORCE=1 to regenerate every preview even if the .jpg already exists
+// (use after changing the screenshot/hide logic so stale previews get refreshed).
+const FORCE = process.env.FORCE === "1";
 
 // ── ID overrides for step names that don't match simple kebab ──
 const STEP_OVERRIDES = {
@@ -132,6 +135,11 @@ function parseNewFormat(filename) {
   const sfPrefix = type === "SHOP FLOOR" ? "sf-" : "";
   const key = `${seriesSlug}|${stepSlug}`;
   if (STEP_OVERRIDES[key]) stepSlug = STEP_OVERRIDES[key];
+  // The "00" overview poster of every series is the Demystified poster. Its step
+  // name varies ("Acid Zinc Plating Demystified", "Zinc Acido Desmitificado",
+  // etc.); normalize any EN/ES "...demystified/desmitificado" step to the
+  // canonical "demystified" slug so every series maps without a per-series override.
+  if (/(demystified|desmitificado)$/.test(stepSlug)) stepSlug = "demystified";
   const langPrefix = lang === "ES" ? "es-" : "";
   return { posterId: `${seriesSlug}-${sfPrefix}${stepSlug}`, edition: `${langPrefix}${edition.toLowerCase()}` };
 }
@@ -306,7 +314,7 @@ async function main() {
       const outPath = path.join(POSTERS_DIR, `${id}${suffix}`);
       done++;
 
-      if (fs.existsSync(outPath)) continue;
+      if (!FORCE && fs.existsSync(outPath)) continue;
 
       const htmlPath = path.join(POSTERS_DIR, filename);
       const fileUrl = `file:///${htmlPath.replace(/\\/g, "/")}`;
@@ -321,14 +329,17 @@ async function main() {
         await page.goto(fileUrl, { waitUntil: "networkidle0", timeout: 30000 });
         await page.evaluate(() => document.fonts.ready);
 
-        // Hide the tweaks panel so it doesn't appear in previews
-        await page.evaluate(() => {
-          const tweaks = document.querySelector('.tweaks');
-          if (tweaks) tweaks.style.display = 'none';
-        });
-
-        // Small delay for rendering
+        // Small delay for rendering (let React-based panels mount first)
         await new Promise((r) => setTimeout(r, 500));
+
+        // Hide the edition/print toggle panel so it doesn't appear in previews.
+        // Standard template uses .tweaks; "Claude Design Ready" React template
+        // mounts its panel into #tweaks-root. Hide both, after React has mounted.
+        await page.evaluate(() => {
+          document
+            .querySelectorAll('.tweaks, #tweaks-root')
+            .forEach((el) => { el.style.display = 'none'; });
+        });
 
         await page.screenshot({
           path: outPath,

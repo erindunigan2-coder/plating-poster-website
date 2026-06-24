@@ -10,10 +10,12 @@ type Props = {
 };
 
 export default function PosterDetailClient({ poster }: Props) {
-  const [edition, setEdition] = useState<"Dark" | "Light">("Dark");
-  const [language, setLanguage] = useState<"en" | "es">("en");
-
   const hasLight = !!poster.previewImageLight;
+  // Safety series leads with the light edition
+  const defaultEdition =
+    poster.category === "Safety" && hasLight ? "Light" : "Dark";
+  const [edition, setEdition] = useState<"Dark" | "Light">(defaultEdition);
+  const [language, setLanguage] = useState<"en" | "es">("en");
 
   // Pick the correct preview images based on language
   const darkImg = language === "es" && poster.previewImageEs

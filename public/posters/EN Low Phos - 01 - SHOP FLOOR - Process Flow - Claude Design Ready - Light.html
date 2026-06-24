@@ -244,7 +244,7 @@ body[data-edition="light"] .zone-foot{background-color:rgba(221,216,206,.95);bor
 <div id="tweaks-root"></div>
 <script type="text/babel">
 function TweaksApp(){
-  const [edition,setEdition]=React.useState('dark');
+  const [edition,setEdition]=React.useState('light');
   const [grid,setGrid]=React.useState('on');
   React.useEffect(()=>{document.body.setAttribute('data-edition',edition)},[edition]);
   React.useEffect(()=>{document.body.setAttribute('data-grid',grid)},[grid]);

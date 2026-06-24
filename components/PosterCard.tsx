@@ -7,6 +7,12 @@ type Props = {
 };
 
 export default function PosterCard({ poster }: Props) {
+  // Safety series leads with the light edition
+  const displayImage =
+    poster.category === "Safety" && poster.previewImageLight
+      ? poster.previewImageLight
+      : poster.previewImage;
+
   return (
     <Link
       href={`/posters/${poster.id}`}
@@ -15,9 +21,9 @@ export default function PosterCard({ poster }: Props) {
     >
       {/* Preview */}
       <div className="poster-protected relative aspect-[2/3] overflow-hidden" style={{ background: "#1e1e1c" }}>
-        {poster.previewImage ? (
+        {displayImage ? (
           <Image
-            src={poster.previewImage}
+            src={displayImage}
             alt={`${poster.title} poster preview`}
             fill
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
