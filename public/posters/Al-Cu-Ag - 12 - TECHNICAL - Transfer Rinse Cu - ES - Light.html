@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barra Colectora Al-Cu-Ag &mdash; Enjuague de Transferencia Cu &mdash; T&eacute;cnico | Plating Posters Inc</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Barlow:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#1A1F2E;--navy:#0D1020;--text:#F0EDE8;--muted:rgba(240,237,232,.62);
+  --faint:rgba(240,237,232,.38);
+  --amber:#E8A020;--teal:#2EC4B6;--emerald:#27AE60;--coral:#E05C5C;
+  --slate:#3A4055;--callout:#1E2435;--altrow:#252B3D;
+  --glass-bg:rgba(30,36,53,.55);--glass-border:rgba(255,255,255,.12);
+  --glass-shadow:inset 0 1px 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(0,0,0,.2),0 4px 12px rgba(0,0,0,.25);
+}
+.poster[data-edition="light"]{
+  --bg:#F5F4F0;--navy:#DDD8CE;--text:#1B2030;--muted:rgba(27,32,48,.66);
+  --faint:rgba(27,32,48,.42);
+  --amber:#B8770D;--teal:#1A8C82;--emerald:#1E8449;--coral:#B7322F;
+  --slate:#C5C0B5;--callout:#ECEAE1;--altrow:#E4E1D6;
+  --glass-bg:rgba(255,253,247,.66);--glass-border:rgba(27,32,48,.10);
+  --glass-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 4px 12px rgba(27,32,48,.08);
+}
+html,body{margin:0;padding:0;background:#e8e6df;}
+.stage{width:100vw;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;overflow:visible;padding:12px 0;box-sizing:border-box;}
+.poster-wrap{transform-origin:top left;}
+.poster{
+  width:1200px;height:1800px;position:relative;overflow:hidden;
+  background:
+    radial-gradient(1200px 800px at 15% 8%,rgba(46,196,182,.14),transparent 60%),
+    radial-gradient(1000px 700px at 90% 25%,rgba(232,160,32,.12),transparent 55%),
+    radial-gradient(900px 900px at 50% 80%,rgba(224,92,92,.10),transparent 60%),
+    var(--bg);
+  font-family:'Inter',sans-serif;color:var(--text);
+  display:flex;flex-direction:column;padding:32px;box-sizing:border-box;
+}
+.glass{background-color:var(--glass-bg);background-image:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));border:1px solid var(--glass-border);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);box-shadow:var(--glass-shadow);border-radius:12px;}
+.tack{position:absolute;width:24px;height:24px;border-radius:50%;border:1.5px solid rgba(232,160,32,.28);z-index:2;pointer-events:none;}
+.tack::before,.tack::after{content:"";position:absolute;background:rgba(232,160,32,.28);}
+.tack::before{left:50%;top:-3px;bottom:-3px;width:1px;transform:translateX(-50%);}
+.tack::after{top:50%;left:-3px;right:-3px;height:1px;transform:translateY(-50%);}
+.tack.tl{top:12px;left:12px;}.tack.tr{top:12px;right:12px;}.tack.bl{bottom:12px;left:12px;}.tack.br{bottom:12px;right:12px;}
+
+.poster-header{flex-shrink:0;}
+.poster-body{flex:1;overflow:hidden;display:flex;flex-direction:column;gap:10px;justify-content:space-between;}
+.poster-footer{flex-shrink:0;margin-top:8px;}
+
+.header-band{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:8px;}
+.header-left{flex:1;min-width:0;}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--teal);letter-spacing:.16em;text-transform:uppercase;margin-bottom:4px;display:flex;align-items:center;gap:12px;}
+.eyebrow::before{content:"";display:inline-block;width:30px;height:3px;background:var(--teal);}
+.headline{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:72px;color:var(--text);line-height:.92;margin:4px 0;letter-spacing:-.01em;text-transform:uppercase;}
+.headline em{font-style:normal;color:var(--teal);}
+.subhead{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:20px;color:var(--teal);margin:0 0 3px;letter-spacing:.02em;text-transform:uppercase;}
+.tagline{font-family:'Inter',sans-serif;font-style:italic;font-size:11px;color:var(--muted);line-height:1.35;max-width:700px;margin:0;}
+.logo-card{flex-shrink:0;padding:12px 10px;display:flex;flex-direction:column;align-items:center;gap:8px;align-self:flex-start;}
+.logo-tile{width:68px;height:68px;border-radius:12px;background:linear-gradient(135deg,#E8A020,#2EC4B6);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -2px 4px rgba(0,0,0,.15),0 4px 14px rgba(0,0,0,.35);}
+.logo-tile span{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:26px;color:#1A1F2E;letter-spacing:.02em;line-height:1;}
+.logo-word{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;letter-spacing:.04em;text-transform:uppercase;line-height:1;text-align:center;white-space:nowrap;}
+.logo-word .a{color:var(--text);}.logo-word .b{color:var(--amber);}
+.logo-inc{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.05em;text-transform:lowercase;color:var(--muted);margin-top:-2px;}
+
+.orient-strip{display:flex;align-items:center;gap:4px;padding:6px 10px;margin-bottom:0;flex-wrap:wrap;}
+.orient-stage{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;padding:5px 8px;border-radius:5px;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:11px;letter-spacing:.05em;text-transform:uppercase;background:rgba(58,64,85,.4);border:1px solid rgba(255,255,255,.06);color:var(--muted);}
+.orient-stage.active{background:rgba(46,196,182,.22);border-color:rgba(46,196,182,.5);color:var(--teal);box-shadow:0 0 12px rgba(46,196,182,.15);}
+.poster[data-edition="light"] .orient-stage{background:rgba(27,32,48,.06);border-color:rgba(27,32,48,.12);}
+.orient-arrow{color:var(--faint);font-size:11px;flex:none;}
+
+.section-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;letter-spacing:.08em;text-transform:uppercase;color:var(--text);margin:0 0 6px;display:flex;align-items:center;gap:8px;}
+.section-title::before{content:"";width:5px;height:5px;background:var(--teal);border-radius:50%;}
+.section-title .sub{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.14em;color:var(--muted);margin-left:auto;font-weight:500;}
+
+.rule-card{display:flex;align-items:center;gap:18px;padding:14px 20px;background:rgba(46,196,182,.07);}
+.rule-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:42px;color:var(--teal);line-height:1;letter-spacing:-.02em;}
+.rule-body{flex:1;}
+.rule-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:15px;color:var(--teal);letter-spacing:.08em;text-transform:uppercase;}
+.rule-text{font-family:'Inter',sans-serif;font-size:11px;color:var(--muted);line-height:1.4;margin-top:3px;}
+
+.insight-card{padding:14px 18px;border-left:3px solid var(--teal);background:rgba(46,196,182,.06);border-radius:0 12px 12px 0;}
+.insight-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;color:var(--teal);letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px;}
+.insight-text{font-family:'Inter',sans-serif;font-size:12px;color:var(--text);line-height:1.5;}
+
+.data-table{width:100%;border-collapse:collapse;}
+.data-table th{font-family:'Barlow',sans-serif;font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--teal);padding:8px 12px;text-align:left;background:rgba(13,16,32,.35);border-bottom:1px solid var(--glass-border);}
+.poster[data-edition="light"] .data-table th{background:rgba(27,32,48,.06);}
+.data-table td{padding:8px 12px;color:var(--text);line-height:1.4;border-bottom:1px solid rgba(255,255,255,.05);font-family:'Inter',sans-serif;font-size:12px;}
+.poster[data-edition="light"] .data-table td{border-bottom-color:rgba(27,32,48,.08);}
+.data-table tr:last-child td{border-bottom:none;}
+.data-table tr:nth-child(even) td{background:rgba(255,255,255,.02);}
+.poster[data-edition="light"] .data-table tr:nth-child(even) td{background:rgba(27,32,48,.025);}
+.data-table .mono{font-family:'JetBrains Mono',monospace;font-size:11px;}
+
+.safety-card{padding:14px 18px;border-left:3px solid var(--coral);background:rgba(224,92,92,.06);border-radius:12px;}
+.safety-head{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;color:var(--coral);letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px;}
+.safety-body{font-family:'Inter',sans-serif;font-size:12px;color:var(--text);line-height:1.5;}
+.safety-body strong{color:var(--coral);font-weight:700;}
+
+.trouble-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.trouble-card{padding:12px 14px;border-radius:10px;border-left:3px solid var(--coral);display:flex;flex-direction:column;gap:4px;}
+.trouble-card h4{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;color:var(--coral);margin:0;text-transform:uppercase;letter-spacing:.06em;line-height:1.1;}
+.trouble-card p{font-size:11px;color:var(--muted);margin:0;line-height:1.4;}
+
+.context-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.context-card{padding:14px 16px;}
+.context-card h4{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;margin:0 0 6px;letter-spacing:.04em;text-transform:uppercase;}
+.context-card h4.teal{color:var(--teal);}
+.context-card h4.amber{color:var(--amber);}
+.context-card h4.coral{color:var(--coral);}
+.context-card p{font-size:12px;line-height:1.5;color:var(--text);margin:0;}
+.context-card .detail{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--muted);margin-top:6px;}
+
+/* pH / hazard-zone strip infographic */
+.ph-card{padding:14px 18px;}
+.ph-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:10px;}
+.ph-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;letter-spacing:.06em;text-transform:uppercase;color:var(--teal);}
+.ph-scale-note{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.10em;text-transform:uppercase;color:var(--faint);}
+.ph-bar{position:relative;height:26px;border-radius:6px;overflow:hidden;border:1px solid var(--glass-border);background:linear-gradient(90deg,#B7322F 0%,#B8770D 28%,#1E8449 48%,#1A8C82 64%,#1A8C82 78%,#5B3A8C 100%);}
+.ph-ticks{position:relative;height:14px;margin-top:3px;}
+.ph-tick{position:absolute;transform:translateX(-50%);font-family:'JetBrains Mono',monospace;font-size:8px;color:var(--muted);letter-spacing:.04em;}
+.ph-markers{position:relative;height:46px;margin-top:6px;}
+.ph-marker{position:absolute;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:2px;text-align:center;width:120px;}
+.ph-marker .dot{width:9px;height:9px;border-radius:50%;border:1.5px solid var(--text);}
+.ph-marker .lbl{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:11px;line-height:1;letter-spacing:.03em;text-transform:uppercase;color:var(--text);}
+.ph-marker .val{font-family:'JetBrains Mono',monospace;font-size:8.5px;color:var(--muted);letter-spacing:.02em;}
+.ph-here{position:absolute;top:-1px;width:0;height:28px;border-left:2px dashed var(--text);transform:translateX(-50%);}
+.ph-here::after{content:"ESTE ENJUAGUE";position:absolute;top:-13px;left:50%;transform:translateX(-50%);white-space:nowrap;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:9px;letter-spacing:.10em;color:var(--teal);}
+
+.footer{padding:10px 20px;background-color:rgba(13,16,32,.85);background-image:linear-gradient(180deg,rgba(255,255,255,.04),rgba(0,0,0,0));border:1px solid rgba(255,255,255,.10);border-radius:8px;text-align:center;display:flex;flex-direction:column;gap:2px;}
+.poster[data-edition="light"] .footer{background-color:rgba(221,216,206,.95);border-color:rgba(27,32,48,.10);}
+.footer-disclaimer{font-family:'Inter',sans-serif;font-size:8.5px;line-height:1.35;color:var(--faint);margin:0 auto;max-width:900px;}
+.footer-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:12px;color:var(--text);letter-spacing:.04em;text-transform:uppercase;margin:0;}
+.footer-brand{font-family:'JetBrains Mono',monospace;font-size:8.5px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;}
+
+.tweaks{position:fixed;bottom:16px;right:16px;z-index:100;background:rgba(13,16,32,.92);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:10px 14px;display:flex;flex-direction:column;gap:8px;font-family:'Inter',sans-serif;font-size:12px;color:#F0EDE8;}
+@media print{
+  @page{size:12.5in 18.75in;margin:0;}
+  html,body{background:#F5F4F0 !important;-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
+  *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
+  .stage{position:static;padding:0;display:block;overflow:visible;}
+  .poster-wrap{transform:none !important;width:auto !important;height:auto !important;}
+  .poster{box-shadow:none !important;width:1200px !important;height:1800px !important;overflow:hidden !important;}
+  .glass,.trouble-card,.insight-card,.safety-card,.context-card{backdrop-filter:none !important;-webkit-backdrop-filter:none !important;}
+  .tweaks{display:none !important;}
+}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="poster-wrap" id="posterWrap">
+<div class="poster" id="poster" data-edition="light">
+  <span class="tack tl" aria-hidden="true"></span><span class="tack tr" aria-hidden="true"></span>
+  <span class="tack bl" aria-hidden="true"></span><span class="tack br" aria-hidden="true"></span>
+
+  <!-- ENCABEZADO -->
+  <div class="poster-header">
+    <header class="header-band">
+      <div class="header-left">
+        <div class="eyebrow"><span>Plating Posters Inc &nbsp;&middot;&nbsp; Serie Barra Colectora Al-Cu-Ag</span></div>
+        <h1 class="headline">ENJUAGUE DE<br><em>TRANSFERENCIA</em></h1>
+        <h2 class="subhead">Golpe de Cobre a Recubrimiento de Cobre &mdash; Transferencia Segura Cianuro-a-Cianuro</h2>
+        <p class="tagline">Remueva el arrastre del ba&ntilde;o de golpe antes de entrar al ba&ntilde;o de recubrimiento de cobre. Ambos ba&ntilde;os son a base de cianuro, por lo que el riesgo de contaminaci&oacute;n cruzada es m&iacute;nimo, pero el arrastre a&uacute;n diluye el ba&ntilde;o de recubrimiento y desperdicia qu&iacute;mica. Este es un enjuague rutinario &mdash; sin peligro de frontera &aacute;cido/cianuro.</p>
+      </div>
+      <aside class="glass logo-card">
+        <div class="logo-tile"><span>PP</span></div>
+        <div class="logo-word"><span class="a">Plating</span> <span class="b">Posters</span></div>
+        <div class="logo-inc">www.platingposters.com</div>
+      </aside>
+    </header>
+
+    <div class="orient-strip glass">
+      <div class="orient-stage">Limp</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Enj</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Grab</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Enj</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Zinc&nbsp;1</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Enj</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Dec</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Enj</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Zinc&nbsp;2</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Enj</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Cu&nbsp;Gol</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage active">Enj</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Cu&nbsp;Rec</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Enj</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Ag&nbsp;Gol</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Ag&nbsp;Rec</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Enj</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">A-Tar</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Sec</div>
+    </div>
+  </div>
+
+  <!-- CUERPO -->
+  <div class="poster-body">
+
+    <!-- TARJETA DE REGLA -->
+    <div class="glass rule-card">
+      <div class="rule-num">30&ndash;60s</div>
+      <div class="rule-body">
+        <div class="rule-label">Enjuague de Transferencia Rutinario &mdash; Transferencia Segura CN-a-CN</div>
+        <div class="rule-text">Sumerja las piezas en agua corriente a temperatura ambiente durante 30&ndash;60 segundos con agitaci&oacute;n suave. Este enjuague remueve el arrastre del golpe de cobre para prevenir la diluci&oacute;n y contaminaci&oacute;n del ba&ntilde;o de recubrimiento de cobre. Tanto el ba&ntilde;o anterior como el siguiente son a base de cianuro, por lo que no hay peligro de mezcla &aacute;cido/cianuro en este punto de transferencia.</div>
+      </div>
+    </div>
+
+    <!-- PAR&Aacute;METROS DE OPERACI&Oacute;N -->
+    <div>
+      <h3 class="section-title">Par&aacute;metros de Operaci&oacute;n <span class="sub">Enjuague por inmersi&oacute;n &mdash; sin corriente</span></h3>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table">
+          <thead><tr><th>Par&aacute;metro</th><th>Valor</th><th>Notas</th></tr></thead>
+          <tbody>
+            <tr><td>Agua</td><td class="mono">Ambiente, corriente</td><td>Desborde continuo para mantener la calidad del enjuague</td></tr>
+            <tr><td>Temperatura</td><td class="mono">Ambiente (18&ndash;27&deg;C / 65&ndash;80&deg;F)</td><td>No se requiere calentamiento</td></tr>
+            <tr><td>Tiempo de Inmersi&oacute;n</td><td class="mono">30&ndash;60 segundos</td><td>Suficiente para remover el arrastre del golpe</td></tr>
+            <tr><td>Agitaci&oacute;n</td><td class="mono">Movimiento suave del bastidor</td><td>Asegura que todas las superficies contacten agua limpia</td></tr>
+            <tr><td>Riesgo de Contaminaci&oacute;n Cruzada</td><td class="mono">Bajo</td><td>Tanto el ba&ntilde;o de golpe como el de recubrimiento son a base de cianuro &mdash; qu&iacute;mica compatible</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- PERSPECTIVA DEL PROCESO -->
+    <div class="insight-card glass">
+      <div class="insight-label">Por Qu&eacute; Importa Este Enjuague a Pesar de la Qu&iacute;mica Compatible</div>
+      <div class="insight-text">Aunque los ba&ntilde;os de golpe de cobre y de recubrimiento de cobre son ambos a base de cianuro, el ba&ntilde;o de golpe tiene concentraciones muy distintas (menor cobre, mayor relaci&oacute;n de cianuro libre). Arrastrar soluci&oacute;n de golpe al ba&ntilde;o de recubrimiento lo diluye y altera la relaci&oacute;n cobre-a-cianuro, lo que afecta la calidad del dep&oacute;sito, la eficiencia de corriente y el poder de penetraci&oacute;n. Enjuagar de manera constante entre ambos ba&ntilde;os mantiene estable la qu&iacute;mica del ba&ntilde;o de recubrimiento y reduce la frecuencia de adiciones correctivas.</div>
+    </div>
+
+    <!-- TARJETAS DE CONTEXTO -->
+    <div class="context-grid">
+      <div class="context-card glass">
+        <h4 class="teal">Punto de Transferencia Seguro</h4>
+        <p>Esta es una transferencia cianuro-a-cianuro. Tanto el ba&ntilde;o anterior (el golpe de cobre) como el siguiente (el recubrimiento de cobre) son soluciones alcalinas de cianuro. No hay riesgo de frontera &aacute;cido/cianuro en esta estaci&oacute;n de enjuague. Sin embargo, el agua de enjuague misma contiene cianuro y debe dirigirse al sistema de tratamiento de residuos de cianuro &mdash; nunca a drenajes de residuos &aacute;cidos.</p>
+        <div class="detail">Efluente de enjuague &rarr; sistema de destrucci&oacute;n de cianuro. Nunca mezclar con residuos &aacute;cidos.</div>
+      </div>
+      <div class="context-card glass">
+        <h4 class="amber">Reducci&oacute;n de Arrastre</h4>
+        <p>Permita que las piezas escurran sobre el tanque de golpe durante 5&ndash;10 segundos antes de transferir a este enjuague. Esta sencilla pr&aacute;ctica reduce el arrastre qu&iacute;mico en un 50&ndash;70%, extiende la vida del agua de enjuague, reduce la carga de tratamiento de residuos y ahorra cianuro de cobre &mdash; que es costoso y regulado.</p>
+        <div class="detail">Tiempo de escurrido sobre tanque de golpe: 5&ndash;10 seg antes de la inmersi&oacute;n en enjuague.</div>
+      </div>
+    </div>
+
+    <!-- TIRA DE pH / ZONAS DE PELIGRO -->
+    <div class="glass ph-card">
+      <div class="ph-head">
+        <span class="ph-title">pH y Zonas de Peligro &mdash; D&oacute;nde Se Ubica Este Enjuague</span>
+        <span class="ph-scale-note">Representativo &mdash; no a escala</span>
+      </div>
+      <div class="ph-bar">
+        <span class="ph-here" style="left:64.3%;"></span>
+      </div>
+      <div class="ph-ticks">
+        <span class="ph-tick" style="left:0%;">0</span>
+        <span class="ph-tick" style="left:14.3%;">2</span>
+        <span class="ph-tick" style="left:28.6%;">4</span>
+        <span class="ph-tick" style="left:50%;">7</span>
+        <span class="ph-tick" style="left:71.4%;">10</span>
+        <span class="ph-tick" style="left:92.9%;">13</span>
+        <span class="ph-tick" style="left:100%;">14</span>
+      </div>
+      <div class="ph-markers">
+        <span class="ph-marker" style="left:3.6%;"><span class="dot" style="background:var(--coral);"></span><span class="lbl">Grabado &Aacute;cido</span><span class="val">pH &lt; 1</span></span>
+        <span class="ph-marker" style="left:50%;"><span class="dot" style="background:var(--emerald);"></span><span class="lbl">Enjuague Neutro</span><span class="val">pH 6&ndash;8</span></span>
+        <span class="ph-marker" style="left:64.3%;"><span class="dot" style="background:var(--teal);"></span><span class="lbl">Este Enjuague (CN&minus;)</span><span class="val">pH &gt; 8 alcalino</span></span>
+        <span class="ph-marker" style="left:78.6%;"><span class="dot" style="background:#5B3A8C;"></span><span class="lbl">Ba&ntilde;os de Cianuro</span><span class="val">pH &gt; 10</span></span>
+        <span class="ph-marker" style="left:96.4%;"><span class="dot" style="background:#5B3A8C;"></span><span class="lbl">Zincato</span><span class="val">pH &gt; 13</span></span>
+      </div>
+    </div>
+
+    <!-- SOLUCI&Oacute;N DE PROBLEMAS -->
+    <div>
+      <h3 class="section-title">Soluci&oacute;n de Problemas <span class="sub">Problemas del enjuague de transferencia</span></h3>
+      <div class="trouble-grid">
+        <div class="trouble-card glass">
+          <h4>Qu&iacute;mica del Ba&ntilde;o de Recubrimiento Desvi&aacute;ndose</h4>
+          <p>Arrastre excesivo del ba&ntilde;o de golpe. Aumente el tiempo de enjuague. Aseg&uacute;rese de que las piezas escurran sobre el tanque de golpe antes de transferir. Verifique el caudal &mdash; el agua de enjuague puede estar estancada o ser insuficiente.</p>
+        </div>
+        <div class="trouble-card glass">
+          <h4>Agua de Enjuague Torn&aacute;ndose Azul/Verde</h4>
+          <p>Anormal &mdash; el arrastre de cobre cianuro es incoloro a paja p&aacute;lido. Un tinte azul/verde indica contaminaci&oacute;n con cobre c&uacute;prico (Cu&sup2;&#8314;) o cobre &aacute;cido, o un ba&ntilde;o de golpe fuera de especificaci&oacute;n. Investigue la fuente y revise la qu&iacute;mica del ba&ntilde;o; no lo trate como rutina. Dirija toda el agua de enjuague a destrucci&oacute;n de cianuro.</p>
+        </div>
+        <div class="trouble-card glass">
+          <h4>Dep&oacute;sitos en las Piezas Despu&eacute;s del Enjuague</h4>
+          <p>Agua de enjuague contaminada o flujo insuficiente. Revise el suministro de agua. Las piezas deben salir del enjuague limpias, sin residuos visibles. Aumente el tiempo de inmersi&oacute;n si es necesario.</p>
+        </div>
+        <div class="trouble-card glass">
+          <h4>Manchas o Decoloraci&oacute;n</h4>
+          <p>Las piezas estuvieron demasiado tiempo en el enjuague o el pH del agua de enjuague est&aacute; demasiado bajo. Verifique el pH del agua de enjuague &mdash; debe permanecer alcalino (pH &gt;8) por el arrastre de cianuro. Si est&aacute; &aacute;cido, investigue la fuente de contaminaci&oacute;n &aacute;cida.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SEGURIDAD -->
+    <div class="safety-card glass">
+      <div class="safety-head">&#9888; Seguridad</div>
+      <div class="safety-body"><strong>El agua de enjuague contiene cianuro del arrastre del ba&ntilde;o de golpe.</strong> Trate este tanque de enjuague como una soluci&oacute;n que contiene cianuro. Use guantes resistentes a qu&iacute;micos y careta. <strong>Nunca dirija el agua de enjuague con cianuro a drenajes de residuos &aacute;cidos</strong> &mdash; mezclar cianuro con &aacute;cido genera gas HCN mortal. Todo el efluente de este enjuague debe ir al sistema de tratamiento de destrucci&oacute;n de cianuro. Mantenga ventilaci&oacute;n sobre la estaci&oacute;n de enjuague.</div>
+    </div>
+
+  </div>
+
+  <!-- PIE DE P&Aacute;GINA -->
+  <footer class="footer poster-footer">
+    <p class="footer-disclaimer">Referencia t&eacute;cnica &uacute;nicamente. Verifique todos los par&aacute;metros con la hoja t&eacute;cnica (TDS) de su proveedor de productos qu&iacute;micos, las especificaciones del cliente y los requisitos reglamentarios aplicables antes de su uso en producci&oacute;n.</p>
+    <p class="footer-title">Enjuague de Transferencia (Golpe Cu a Recubrimiento Cu) &mdash; Serie de Recubrimiento de Barra Colectora Al &rarr; Cu &rarr; Ag</p>
+    <span class="footer-brand">Plating Posters Inc &middot; Metal Finishing Reference Series &middot; platingposters.com &middot; v1.0 / 2026</span>
+  </footer>
+
+</div>
+</div>
+</div>
+
+<div class="tweaks">
+  <div style="display:flex;gap:8px;align-items:center;">
+    <span style="color:rgba(240,237,232,.5);font-size:11px;letter-spacing:.06em;text-transform:uppercase;">Edition</span>
+    <button id="btnDark" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);" onclick="setEdition('')">Dark</button>
+    <button id="btnLight" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:#E8A020;color:#1A1F2E;border:1px solid #E8A020;" onclick="setEdition('light')">Light</button>
+  </div>
+  <button onclick="window.print()" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);">Print / PDF</button>
+</div>
+
+<script>
+const posterWrap=document.getElementById('posterWrap');
+const poster=document.getElementById('poster');
+function scalePoster(){const sW=(window.innerWidth-24)/1200;const sH=(window.innerHeight-24)/1800;const s=Math.min(sW,sH);posterWrap.style.transform='scale('+s+')';posterWrap.style.transformOrigin='top left';posterWrap.style.width=(1200*s)+'px';posterWrap.style.height=(1800*s)+'px';}
+function setEdition(e){if(e)poster.dataset.edition=e;else delete poster.dataset.edition;document.getElementById('btnDark').style.background=e?'transparent':'#E8A020';document.getElementById('btnDark').style.color=e?'#F0EDE8':'#1A1F2E';document.getElementById('btnDark').style.borderColor=e?'rgba(255,255,255,.2)':'#E8A020';document.getElementById('btnLight').style.background=e?'#E8A020':'transparent';document.getElementById('btnLight').style.color=e?'#1A1F2E':'#F0EDE8';document.getElementById('btnLight').style.borderColor=e?'#E8A020':'rgba(255,255,255,.2)';}
+scalePoster();window.addEventListener('resize',scalePoster);
+</script>
+</body>
+</html>

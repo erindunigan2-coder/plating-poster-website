@@ -34,7 +34,7 @@ export const CATEGORIES: CategoryEntry[] = [
     description:
       "Electrodeposition of metals onto a conductive substrate using electrical current through an electrolytic bath. Covers zinc, nickel, chrome, copper, tin, gold, silver, cadmium, and more.",
     accentColor: "#E8A020",
-    totalPosters: 152,
+    totalPosters: 172,
     processes: [
       { id: pid("Zinc Plating (Alkaline)"), title: "Zinc Plating (Alkaline)", posterCount: 8, available: true },
       { id: pid("Zinc Plating (Acid)"), title: "Zinc Plating (Acid)", posterCount: 8, available: true },
@@ -55,6 +55,7 @@ export const CATEGORIES: CategoryEntry[] = [
       { id: pid("Cadmium Plating (Cyanide)"), title: "Cadmium Plating (Cyanide)", posterCount: 8 },
       { id: pid("Cadmium Plating (Acid)"), title: "Cadmium Plating (Acid)", posterCount: 8 },
       { id: pid("Tin-Lead Plating"), title: "Tin-Lead Plating", posterCount: 8 },
+      { id: pid("Busbar Plating (Al-Cu-Ag)"), title: "Busbar Plating (Al-Cu-Ag)", posterCount: 20, available: true },
     ],
   },
   {

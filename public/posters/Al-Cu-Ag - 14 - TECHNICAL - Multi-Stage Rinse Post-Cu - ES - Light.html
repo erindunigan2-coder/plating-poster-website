@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barra Colectora Al-Cu-Ag &mdash; Enjuague Multi-Etapa Post-Cu &mdash; T&eacute;cnico | Plating Posters Inc</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Barlow:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#1A1F2E;--navy:#0D1020;--text:#F0EDE8;--muted:rgba(240,237,232,.62);
+  --faint:rgba(240,237,232,.38);
+  --amber:#E8A020;--teal:#2EC4B6;--emerald:#27AE60;--coral:#E05C5C;
+  --slate:#3A4055;--callout:#1E2435;--altrow:#252B3D;
+  --glass-bg:rgba(30,36,53,.55);--glass-border:rgba(255,255,255,.12);
+  --glass-shadow:inset 0 1px 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(0,0,0,.2),0 4px 12px rgba(0,0,0,.25);
+}
+.poster[data-edition="light"]{
+  --bg:#F5F4F0;--navy:#DDD8CE;--text:#1B2030;--muted:rgba(27,32,48,.66);
+  --faint:rgba(27,32,48,.42);
+  --amber:#B8770D;--teal:#1A8C82;--emerald:#1E8449;--coral:#B7322F;
+  --slate:#C5C0B5;--callout:#ECEAE1;--altrow:#E4E1D6;
+  --glass-bg:rgba(255,253,247,.66);--glass-border:rgba(27,32,48,.10);
+  --glass-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 4px 12px rgba(27,32,48,.08);
+}
+html,body{margin:0;padding:0;background:#e8e6df;}
+.stage{width:100vw;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;overflow:visible;padding:12px 0;box-sizing:border-box;}
+.poster-wrap{transform-origin:top left;}
+.poster{
+  width:1200px;height:1800px;position:relative;overflow:hidden;
+  background:
+    radial-gradient(1200px 800px at 15% 8%,rgba(46,196,182,.14),transparent 60%),
+    radial-gradient(1000px 700px at 90% 25%,rgba(232,160,32,.12),transparent 55%),
+    radial-gradient(900px 900px at 50% 80%,rgba(224,92,92,.10),transparent 60%),
+    var(--bg);
+  font-family:'Inter',sans-serif;color:var(--text);
+  display:flex;flex-direction:column;padding:32px;box-sizing:border-box;
+}
+.glass{background-color:var(--glass-bg);background-image:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));border:1px solid var(--glass-border);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);box-shadow:var(--glass-shadow);border-radius:12px;}
+.tack{position:absolute;width:24px;height:24px;border-radius:50%;border:1.5px solid rgba(232,160,32,.28);z-index:2;pointer-events:none;}
+.tack::before,.tack::after{content:"";position:absolute;background:rgba(232,160,32,.28);}
+.tack::before{left:50%;top:-3px;bottom:-3px;width:1px;transform:translateX(-50%);}
+.tack::after{top:50%;left:-3px;right:-3px;height:1px;transform:translateY(-50%);}
+.tack.tl{top:12px;left:12px;}.tack.tr{top:12px;right:12px;}.tack.bl{bottom:12px;left:12px;}.tack.br{bottom:12px;right:12px;}
+
+.poster-header{flex-shrink:0;}
+.poster-body{flex:1;overflow:hidden;display:flex;flex-direction:column;gap:10px;justify-content:space-between;}
+.poster-footer{flex-shrink:0;margin-top:8px;}
+
+.header-band{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:8px;}
+.header-left{flex:1;min-width:0;}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--teal);letter-spacing:.16em;text-transform:uppercase;margin-bottom:4px;display:flex;align-items:center;gap:12px;}
+.eyebrow::before{content:"";display:inline-block;width:30px;height:3px;background:var(--teal);}
+.headline{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:72px;color:var(--text);line-height:.92;margin:4px 0;letter-spacing:-.01em;text-transform:uppercase;}
+.headline em{font-style:normal;color:var(--teal);}
+.subhead{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:20px;color:var(--teal);margin:0 0 3px;letter-spacing:.02em;text-transform:uppercase;}
+.tagline{font-family:'Inter',sans-serif;font-style:italic;font-size:11px;color:var(--muted);line-height:1.35;max-width:700px;margin:0;}
+.logo-card{flex-shrink:0;padding:12px 10px;display:flex;flex-direction:column;align-items:center;gap:8px;align-self:flex-start;}
+.logo-tile{width:68px;height:68px;border-radius:12px;background:linear-gradient(135deg,#E8A020,#2EC4B6);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -2px 4px rgba(0,0,0,.15),0 4px 14px rgba(0,0,0,.35);}
+.logo-tile span{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:26px;color:#1A1F2E;letter-spacing:.02em;line-height:1;}
+.logo-word{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;letter-spacing:.04em;text-transform:uppercase;line-height:1;text-align:center;white-space:nowrap;}
+.logo-word .a{color:var(--text);}.logo-word .b{color:var(--amber);}
+.logo-inc{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.05em;text-transform:lowercase;color:var(--muted);margin-top:-2px;}
+
+.orient-strip{display:flex;align-items:center;gap:4px;padding:6px 10px;margin-bottom:0;flex-wrap:wrap;}
+.orient-stage{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;padding:5px 8px;border-radius:5px;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:11px;letter-spacing:.05em;text-transform:uppercase;background:rgba(58,64,85,.4);border:1px solid rgba(255,255,255,.06);color:var(--muted);}
+.poster[data-edition="light"] .orient-stage{background:rgba(27,32,48,.06);border-color:rgba(27,32,48,.12);}
+.orient-stage.active{background:rgba(46,196,182,.22);border-color:rgba(46,196,182,.5);color:var(--teal);box-shadow:0 0 12px rgba(46,196,182,.15);}
+.orient-arrow{color:var(--faint);font-size:11px;flex:none;}
+
+.section-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;letter-spacing:.08em;text-transform:uppercase;color:var(--text);margin:0 0 6px;display:flex;align-items:center;gap:8px;}
+.section-title::before{content:"";width:5px;height:5px;background:var(--teal);border-radius:50%;}
+.section-title .sub{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.14em;color:var(--muted);margin-left:auto;font-weight:500;}
+
+.rule-card{display:flex;align-items:center;gap:18px;padding:14px 20px;background:rgba(46,196,182,.07);}
+.rule-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:38px;color:var(--teal);line-height:1;letter-spacing:-.02em;}
+.rule-body{flex:1;}
+.rule-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:15px;color:var(--teal);letter-spacing:.08em;text-transform:uppercase;}
+.rule-text{font-family:'Inter',sans-serif;font-size:11px;color:var(--muted);line-height:1.4;margin-top:3px;}
+
+.insight-card{padding:14px 18px;border-left:3px solid var(--teal);background:rgba(46,196,182,.06);border-radius:0 12px 12px 0;}
+.insight-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;color:var(--teal);letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px;}
+.insight-text{font-family:'Inter',sans-serif;font-size:12px;color:var(--text);line-height:1.5;}
+
+.data-table{width:100%;border-collapse:collapse;}
+.data-table th{font-family:'Barlow',sans-serif;font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--teal);padding:8px 12px;text-align:left;background:rgba(13,16,32,.35);border-bottom:1px solid var(--glass-border);}
+.poster[data-edition="light"] .data-table th{background:rgba(27,32,48,.06);}
+.data-table td{padding:8px 12px;color:var(--text);line-height:1.4;border-bottom:1px solid rgba(255,255,255,.05);font-family:'Inter',sans-serif;font-size:12px;}
+.poster[data-edition="light"] .data-table td{border-bottom-color:rgba(27,32,48,.08);}
+.data-table tr:last-child td{border-bottom:none;}
+.data-table tr:nth-child(even) td{background:rgba(255,255,255,.02);}
+.poster[data-edition="light"] .data-table tr:nth-child(even) td{background:rgba(27,32,48,.025);}
+.data-table .mono{font-family:'JetBrains Mono',monospace;font-size:11px;}
+
+.safety-card{padding:14px 18px;border-left:3px solid var(--coral);background:rgba(224,92,92,.06);border-radius:12px;}
+.safety-head{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;color:var(--coral);letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px;}
+.safety-body{font-family:'Inter',sans-serif;font-size:12px;color:var(--text);line-height:1.5;}
+.safety-body strong{color:var(--coral);font-weight:700;}
+
+.trouble-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.trouble-card{padding:12px 14px;border-radius:10px;border-left:3px solid var(--coral);display:flex;flex-direction:column;gap:4px;}
+.trouble-card h4{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;color:var(--coral);margin:0;text-transform:uppercase;letter-spacing:.06em;line-height:1.1;}
+.trouble-card p{font-size:11px;color:var(--muted);margin:0;line-height:1.4;}
+
+.context-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.context-card{padding:14px 16px;}
+.context-card h4{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;margin:0 0 6px;letter-spacing:.04em;text-transform:uppercase;}
+.context-card h4.teal{color:var(--teal);}
+.context-card h4.amber{color:var(--amber);}
+.context-card h4.coral{color:var(--coral);}
+.context-card p{font-size:12px;line-height:1.5;color:var(--text);margin:0;}
+.context-card .detail{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--muted);margin-top:6px;}
+
+/* counterflow rinse + recovery schematic (reusable: 14 Cu, 17 Ag) */
+.cf-card{padding:11px 18px 13px;}
+.cf-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:9px;}
+.cf-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;letter-spacing:.06em;text-transform:uppercase;color:var(--teal);}
+.cf-scale-note{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.10em;text-transform:uppercase;color:var(--faint);}
+.cf-diagram{position:relative;}
+.cf-tanks{display:flex;align-items:stretch;gap:10px;}
+.cf-tank{flex:1;border-radius:8px;border:1px solid var(--glass-border);background:rgba(46,196,182,.05);display:flex;flex-direction:column;overflow:hidden;}
+.cf-tank.recovery{border-color:var(--amber);background:rgba(184,119,13,.10);box-shadow:0 0 0 1px rgba(184,119,13,.18);}
+.cf-tank-top{padding:6px 10px 5px;text-align:center;border-bottom:1px solid rgba(27,32,48,.10);}
+.cf-tank-name{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:13px;line-height:1.05;letter-spacing:.04em;text-transform:uppercase;color:var(--text);}
+.cf-tank-tag{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.06em;text-transform:uppercase;color:var(--teal);margin-top:2px;}
+.cf-tank.recovery .cf-tank-tag{color:var(--amber);}
+.cf-water{position:relative;height:46px;background:linear-gradient(180deg,rgba(46,196,182,.10),rgba(46,196,182,.22));}
+.cf-tank.recovery .cf-water{background:linear-gradient(180deg,rgba(184,119,13,.14),rgba(184,119,13,.30));}
+.cf-water::after{content:"";position:absolute;left:8px;right:8px;top:7px;height:1px;background:rgba(27,32,48,.18);box-shadow:0 4px 0 rgba(27,32,48,.10);}
+.cf-tank-foot{padding:5px 9px 6px;font-family:'Inter',sans-serif;font-size:9px;line-height:1.3;color:var(--muted);text-align:center;min-height:34px;}
+.cf-tank-foot strong{color:var(--amber);font-weight:700;}
+.cf-track{display:flex;align-items:center;gap:10px;margin-top:7px;}
+.cf-track-lbl{flex:0 0 78px;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:10px;letter-spacing:.04em;text-transform:uppercase;line-height:1.1;text-align:right;}
+.cf-track-lbl.water{color:var(--teal);}
+.cf-track-lbl.parts{color:var(--amber);}
+.cf-track-line{flex:1;position:relative;height:18px;}
+.cf-track-line .seg{position:absolute;top:50%;height:2px;transform:translateY(-50%);}
+.cf-water-line .seg{background:var(--teal);}
+.cf-parts-line .seg{background:var(--amber);}
+.cf-water-line .seg{left:34%;right:0;}
+.cf-parts-line .seg{left:0;right:0;}
+.cf-arrowhead{position:absolute;top:50%;transform:translateY(-50%);font-family:'JetBrains Mono',monospace;font-size:13px;line-height:1;}
+.cf-water-line .cf-arrowhead{color:var(--teal);left:31%;}
+.cf-parts-line .cf-arrowhead{color:var(--amber);right:-2px;}
+.cf-track-end{flex:0 0 auto;font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.04em;text-transform:uppercase;}
+.cf-track-end.water{color:var(--teal);}
+.cf-track-end.parts{color:var(--amber);}
+.cf-notes{margin-top:9px;padding:6px 12px;border-radius:8px;background:rgba(46,196,182,.08);border:1px solid rgba(46,196,182,.20);font-family:'JetBrains Mono',monospace;font-size:9.5px;line-height:1.45;color:var(--text);text-align:center;letter-spacing:.01em;}
+.cf-notes strong{color:var(--coral);font-weight:500;}
+
+.footer{padding:10px 20px;background-color:rgba(13,16,32,.85);background-image:linear-gradient(180deg,rgba(255,255,255,.04),rgba(0,0,0,0));border:1px solid rgba(255,255,255,.10);border-radius:8px;text-align:center;display:flex;flex-direction:column;gap:2px;}
+.poster[data-edition="light"] .footer{background-color:rgba(221,216,206,.95);border-color:rgba(27,32,48,.10);}
+.footer-disclaimer{font-family:'Inter',sans-serif;font-size:8.5px;line-height:1.35;color:var(--faint);margin:0 auto;max-width:900px;}
+.footer-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:12px;color:var(--text);letter-spacing:.04em;text-transform:uppercase;margin:0;}
+.footer-brand{font-family:'JetBrains Mono',monospace;font-size:8.5px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;}
+
+.tweaks{position:fixed;bottom:16px;right:16px;z-index:100;background:rgba(13,16,32,.92);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:10px 14px;display:flex;flex-direction:column;gap:8px;font-family:'Inter',sans-serif;font-size:12px;color:#F0EDE8;}
+@media print{
+  @page{size:12.5in 18.75in;margin:0;}
+  html,body{background:#F5F4F0 !important;-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
+  *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
+  .stage{position:static;padding:0;display:block;overflow:visible;}
+  .poster-wrap{transform:none !important;width:auto !important;height:auto !important;}
+  .poster{box-shadow:none !important;width:1200px !important;height:1800px !important;overflow:hidden !important;}
+  .glass,.trouble-card,.insight-card,.safety-card,.context-card{backdrop-filter:none !important;-webkit-backdrop-filter:none !important;}
+  .tweaks{display:none !important;}
+}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="poster-wrap" id="posterWrap">
+<div class="poster" id="poster" data-edition="light">
+  <span class="tack tl" aria-hidden="true"></span><span class="tack tr" aria-hidden="true"></span>
+  <span class="tack bl" aria-hidden="true"></span><span class="tack br" aria-hidden="true"></span>
+
+  <!-- ENCABEZADO -->
+  <div class="poster-header">
+    <header class="header-band">
+      <div class="header-left">
+        <div class="eyebrow"><span>Plating Posters Inc &nbsp;&middot;&nbsp; Serie Barra Colectora Al-Cu-Ag</span></div>
+        <h1 class="headline">ENJUAGUE<br><em>MULTI-ETAPA</em></h1>
+        <h2 class="subhead">Post-Recubrimiento de Cobre &mdash; Enjuague de Recuperaci&oacute;n + Enjuague a Contraflujo</h2>
+        <p class="tagline">Un sistema de enjuague multi-etapa remueve el arrastre del ba&ntilde;o de cobre y a la vez recupera valiosa qu&iacute;mica de cobre en la primera etapa. El enjuague de recuperaci&oacute;n se devuelve al tanque de recubrimiento cada semana. Todo el efluente va a destrucci&oacute;n de cianuro &mdash; nunca a residuos &aacute;cidos.</p>
+      </div>
+      <aside class="glass logo-card">
+        <div class="logo-tile"><span>PP</span></div>
+        <div class="logo-word"><span class="a">Plating</span> <span class="b">Posters</span></div>
+        <div class="logo-inc">www.platingposters.com</div>
+      </aside>
+    </header>
+
+    <div class="orient-strip glass">
+      <div class="orient-stage">Limp</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Enj</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Grab</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Enj</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Zinc&nbsp;1</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Enj</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Dec</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Enj</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Zinc&nbsp;2</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Enj</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Cu&nbsp;Gol</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Enj</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Cu&nbsp;Rec</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage active">Enj</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Ag&nbsp;Gol</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Ag&nbsp;Rec</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Enj</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">A-Tar</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Sec</div>
+    </div>
+  </div>
+
+  <!-- CUERPO -->
+  <div class="poster-body">
+
+    <!-- TARJETA DE REGLA -->
+    <div class="glass rule-card">
+      <div class="rule-num">60 seg/etapa</div>
+      <div class="rule-body">
+        <div class="rule-label">Enjuague de Recuperaci&oacute;n Primero &mdash; No lo Vac&iacute;e &mdash; El Cobre Tiene Valor</div>
+        <div class="rule-text">La Etapa 1 es un enjuague de recuperaci&oacute;n estancado. El arrastre concentrado de cobre que se junta aqu&iacute; se devuelve al tanque de recubrimiento de cobre cada semana &mdash; as&iacute; se recupera la costosa qu&iacute;mica de cianuro de cobre. Las Etapas 2&ndash;3 son enjuagues a contraflujo a temperatura ambiente. M&iacute;nimo 60 segundos de inmersi&oacute;n por etapa. Todo el efluente va a destrucci&oacute;n de cianuro &mdash; nunca a residuos &aacute;cidos.</div>
+      </div>
+    </div>
+
+    <!-- TABLA DE ETAPAS DE ENJUAGUE -->
+    <div>
+      <h3 class="section-title">Configuraci&oacute;n de Etapas de Enjuague <span class="sub">Sistema de 3 etapas</span></h3>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table">
+          <thead><tr><th>Etapa</th><th>Tipo</th><th>Tiempo</th><th>Notas</th></tr></thead>
+          <tbody>
+            <tr><td>Etapa 1</td><td class="mono">Enjuague de recuperaci&oacute;n estancado</td><td class="mono">&ge;60 segundos</td><td>NO lo vac&iacute;e &mdash; devuelva el contenido al tanque de recubrimiento Cu cada semana. La qu&iacute;mica concentrada de cobre tiene valor.</td></tr>
+            <tr><td>Etapa 2</td><td class="mono">Enjuague a contraflujo, ambiente</td><td class="mono">&ge;60 segundos</td><td>El agua fluye de la Etapa 3 a la Etapa 2 (contraflujo). Remueve el arrastre residual.</td></tr>
+            <tr><td>Etapa 3</td><td class="mono">Enjuague a contraflujo, ambiente</td><td class="mono">&ge;60 segundos</td><td>Entrada de agua fresca. Las piezas salen limpias de esta etapa. Desborda a la Etapa 2.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ESQUEMA DE CONTRAFLUJO + RECUPERACION -->
+    <div class="glass cf-card">
+      <div class="cf-head">
+        <span class="cf-title">Enjuague a Contraflujo + Recuperaci&oacute;n de Cobre</span>
+        <span class="cf-scale-note">Representativo &mdash; no a escala</span>
+      </div>
+      <div class="cf-diagram">
+        <div class="cf-tanks">
+          <div class="cf-tank recovery">
+            <div class="cf-tank-top"><div class="cf-tank-name">Etapa 1</div><div class="cf-tank-tag">Recuperaci&oacute;n Estancada</div></div>
+            <div class="cf-water"></div>
+            <div class="cf-tank-foot"><strong>RECUPERACI&Oacute;N &mdash; NO la vac&iacute;e.</strong> Devuelva al tanque de Cu cada semana. Recupera 50&ndash;80% del cobre arrastrado.</div>
+          </div>
+          <div class="cf-tank">
+            <div class="cf-tank-top"><div class="cf-tank-name">Etapa 2</div><div class="cf-tank-tag">Contraflujo</div></div>
+            <div class="cf-water"></div>
+            <div class="cf-tank-foot">Recibe el desborde de la Etapa 3. Remueve el arrastre residual.</div>
+          </div>
+          <div class="cf-tank">
+            <div class="cf-tank-top"><div class="cf-tank-name">Etapa 3</div><div class="cf-tank-tag">Contraflujo</div></div>
+            <div class="cf-water"></div>
+            <div class="cf-tank-foot">Entrada de agua DI fresca. Las piezas salen limpias. Desborda a la Etapa 2.</div>
+          </div>
+        </div>
+        <div class="cf-track cf-water-line">
+          <div class="cf-track-lbl water">Flujo de agua</div>
+          <div class="cf-track-line"><div class="seg"></div><span class="cf-arrowhead">&#9664;</span></div>
+          <div class="cf-track-end water">Agua DI fresca entra en Etapa 3 &rarr; desborda a Etapa 2 &middot; nada a Etapa 1</div>
+        </div>
+        <div class="cf-track cf-parts-line">
+          <div class="cf-track-lbl parts">Flujo de piezas</div>
+          <div class="cf-track-line"><div class="seg"></div><span class="cf-arrowhead">&#9654;</span></div>
+          <div class="cf-track-end parts">Etapa 1 &rarr; 2 &rarr; 3 (opuesto al agua)</div>
+        </div>
+      </div>
+      <div class="cf-notes">&ge;60 s por etapa &middot; el contraflujo usa ~90% menos agua que el desborde de una etapa &middot; todo el efluente (Etapas 2&ndash;3) &rarr; <strong>destrucci&oacute;n de cianuro, NUNCA residuos &aacute;cidos</strong></div>
+    </div>
+
+    <!-- PERSPECTIVA DEL PROCESO -->
+    <div class="insight-card glass">
+      <div class="insight-label">Econom&iacute;a del Enjuague de Recuperaci&oacute;n</div>
+      <div class="insight-text">El primer tanque de enjuague capta la mayor concentraci&oacute;n de arrastre de cianuro de cobre. El cianuro de cobre es costoso y est&aacute; muy regulado como residuo de cianuro. Al juntar este arrastre concentrado y devolverlo al tanque de recubrimiento cada semana, usted reduce tanto el costo de qu&iacute;micos como el volumen de tratamiento de residuos. Este solo tanque de recuperaci&oacute;n puede devolver al proceso el 50&ndash;80% del cobre arrastrado. No diluya el enjuague de recuperaci&oacute;n con agua corriente &mdash; mant&eacute;ngalo estancado para conservar la concentraci&oacute;n.</div>
+    </div>
+
+    <!-- TARJETA DE CONTEXTO -->
+    <div class="context-grid" style="grid-template-columns:1fr;">
+      <div class="context-card glass">
+        <h4 class="teal">Ruta del Efluente</h4>
+        <p>Toda el agua de enjuague de las Etapas 2&ndash;3 contiene cianuro y debe dirigirse al sistema de tratamiento de destrucci&oacute;n de cianuro. El residuo con cianuro nunca debe mezclarse con corrientes de residuos &aacute;cidos &mdash; mezclar cianuro con &aacute;cido genera gas HCN mortal. La destrucci&oacute;n de cianuro suele usar cloraci&oacute;n alcalina u oxidaci&oacute;n UV/per&oacute;xido para descomponer el CN&minus; antes de la descarga. Verifique la ruta de residuos de su planta antes de operar esta estaci&oacute;n de enjuague.</p>
+        <div class="detail">Efluente (Etapas 2&ndash;3) &rarr; destrucci&oacute;n de cianuro. NUNCA al drenaje de residuos &aacute;cidos.</div>
+      </div>
+    </div>
+
+    <!-- SOLUCION DE PROBLEMAS -->
+    <div>
+      <h3 class="section-title">Soluci&oacute;n de Problemas <span class="sub">Fallas del enjuague multi-etapa</span></h3>
+      <div class="trouble-grid">
+        <div class="trouble-card glass">
+          <h4>Enjuague de Recuperaci&oacute;n Desbord&aacute;ndose</h4>
+          <p>Volumen de arrastre excesivo o tanque de recuperaci&oacute;n muy peque&ntilde;o. Verifique que las piezas escurran bien sobre el tanque de Cu antes de transferirlas. Revise que el agua de contraflujo no se est&eacute; filtrando a la etapa de recuperaci&oacute;n.</p>
+        </div>
+        <div class="trouble-card glass">
+          <h4>Piezas Saliendo con Residuo</h4>
+          <p>Tiempo de enjuague insuficiente o caudal de contraflujo muy bajo. Aumente la inmersi&oacute;n a 60+ segundos por etapa. Revise el caudal de agua en las Etapas 2&ndash;3. Verifique que la tuber&iacute;a de contraflujo funcione bien.</p>
+        </div>
+        <div class="trouble-card glass">
+          <h4>Fallas de Adherencia del Golpe de Plata</h4>
+          <p>Un enjuague deficiente aqu&iacute; deja que el arrastre del cobre contamine el ba&ntilde;o de golpe de plata. Aumente el tiempo de enjuague. Revise la conductividad del agua del enjuague final &mdash; debe ser baja.</p>
+        </div>
+        <div class="trouble-card glass">
+          <h4>Cianuro Detectado en Residuos &Aacute;cidos</h4>
+          <p>Error de tuber&iacute;a &mdash; agua de enjuague con cianuro dirigida al drenaje &aacute;cido. DET&Eacute;NGASE de inmediato. Es una emergencia de seguridad &mdash; &aacute;cido + cianuro = gas HCN. Verifique toda la ruta de drenajes. Corrija la tuber&iacute;a antes de reanudar.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SEGURIDAD -->
+    <div class="safety-card glass">
+      <div class="safety-head">&#9888; Seguridad</div>
+      <div class="safety-body"><strong>Todas las etapas de enjuague contienen cianuro del arrastre del recubrimiento de cobre.</strong> Trate cada tanque de este sistema de enjuague como una soluci&oacute;n con cianuro. Use guantes resistentes a qu&iacute;micos y careta. <strong>Nunca dirija el agua de enjuague con cianuro a drenajes de residuos &aacute;cidos &mdash; mezclar cianuro con &aacute;cido genera gas HCN mortal.</strong> Todo el efluente debe ir al sistema de tratamiento de destrucci&oacute;n de cianuro. Mantenga la ventilaci&oacute;n. Si percibe olor a almendras amargas o se activa la alarma del monitor de HCN, evacue el &aacute;rea de inmediato.</div>
+    </div>
+
+  </div>
+
+  <!-- PIE DE PAGINA -->
+  <footer class="footer poster-footer">
+    <p class="footer-disclaimer">Referencia t&eacute;cnica &uacute;nicamente. Verifique todos los par&aacute;metros con la hoja t&eacute;cnica (TDS) de su proveedor de qu&iacute;micos, las especificaciones del cliente y los requisitos reglamentarios aplicables antes de usar en producci&oacute;n.</p>
+    <p class="footer-title">Enjuague Multi-Etapa (Post-Recubrimiento Cu) &mdash; Serie de Recubrimiento de Barra Colectora Al &rarr; Cu &rarr; Ag</p>
+    <span class="footer-brand">Plating Posters Inc &middot; Serie de Referencia de Acabado de Metales &middot; platingposters.com / v1.0 / 2026</span>
+  </footer>
+
+</div>
+</div>
+</div>
+
+<div class="tweaks">
+  <div style="display:flex;gap:8px;align-items:center;">
+    <span style="color:rgba(240,237,232,.5);font-size:11px;letter-spacing:.06em;text-transform:uppercase;">Edition</span>
+    <button id="btnDark" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);" onclick="setEdition('')">Dark</button>
+    <button id="btnLight" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:#E8A020;color:#1A1F2E;border:1px solid #E8A020;" onclick="setEdition('light')">Light</button>
+  </div>
+  <button onclick="window.print()" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);">Print / PDF</button>
+</div>
+
+<script>
+const posterWrap=document.getElementById('posterWrap');
+const poster=document.getElementById('poster');
+function scalePoster(){const sW=(window.innerWidth-24)/1200;const sH=(window.innerHeight-24)/1800;const s=Math.min(sW,sH);posterWrap.style.transform='scale('+s+')';posterWrap.style.transformOrigin='top left';posterWrap.style.width=(1200*s)+'px';posterWrap.style.height=(1800*s)+'px';}
+function setEdition(e){if(e)poster.dataset.edition=e;else delete poster.dataset.edition;document.getElementById('btnDark').style.background=e?'transparent':'#E8A020';document.getElementById('btnDark').style.color=e?'#F0EDE8':'#1A1F2E';document.getElementById('btnDark').style.borderColor=e?'rgba(255,255,255,.2)':'#E8A020';document.getElementById('btnLight').style.background=e?'#E8A020':'transparent';document.getElementById('btnLight').style.color=e?'#1A1F2E':'#F0EDE8';document.getElementById('btnLight').style.borderColor=e?'#E8A020':'rgba(255,255,255,.2)';}
+scalePoster();window.addEventListener('resize',scalePoster);
+</script>
+</body>
+</html>

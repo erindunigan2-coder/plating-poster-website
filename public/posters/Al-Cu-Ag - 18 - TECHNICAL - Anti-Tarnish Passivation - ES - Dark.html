@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barra Colectora Al-Cu-Ag &mdash; Pasivaci&oacute;n Anti-Empa&ntilde;amiento &mdash; T&eacute;cnico | Plating Posters Inc</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Barlow:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#1A1F2E;--navy:#0D1020;--text:#F0EDE8;--muted:rgba(240,237,232,.62);
+  --faint:rgba(240,237,232,.38);
+  --amber:#E8A020;--teal:#2EC4B6;--emerald:#27AE60;--coral:#E05C5C;
+  --slate:#3A4055;--callout:#1E2435;--altrow:#252B3D;
+  --glass-bg:rgba(30,36,53,.55);--glass-border:rgba(255,255,255,.12);
+  --glass-shadow:inset 0 1px 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(0,0,0,.2),0 4px 12px rgba(0,0,0,.25);
+}
+.poster[data-edition="light"]{
+  --bg:#F5F4F0;--navy:#DDD8CE;--text:#1B2030;--muted:rgba(27,32,48,.66);
+  --faint:rgba(27,32,48,.42);
+  --amber:#B8770D;--teal:#1A8C82;--emerald:#1E8449;--coral:#B7322F;
+  --slate:#C5C0B5;--callout:#ECEAE1;--altrow:#E4E1D6;
+  --glass-bg:rgba(255,253,247,.66);--glass-border:rgba(27,32,48,.10);
+  --glass-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 4px 12px rgba(27,32,48,.08);
+}
+html,body{margin:0;padding:0;background:#e8e6df;}
+.stage{width:100vw;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;overflow:visible;padding:12px 0;box-sizing:border-box;}
+.poster-wrap{transform-origin:top left;}
+.poster{
+  width:1200px;height:1800px;position:relative;overflow:hidden;
+  background:
+    radial-gradient(1200px 800px at 15% 8%,rgba(46,196,182,.14),transparent 60%),
+    radial-gradient(1000px 700px at 90% 25%,rgba(232,160,32,.12),transparent 55%),
+    radial-gradient(900px 900px at 50% 80%,rgba(224,92,92,.10),transparent 60%),
+    var(--bg);
+  font-family:'Inter',sans-serif;color:var(--text);
+  display:flex;flex-direction:column;padding:32px;box-sizing:border-box;
+}
+.glass{background-color:var(--glass-bg);background-image:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));border:1px solid var(--glass-border);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);box-shadow:var(--glass-shadow);border-radius:12px;}
+.tack{position:absolute;width:24px;height:24px;border-radius:50%;border:1.5px solid rgba(232,160,32,.28);z-index:2;pointer-events:none;}
+.tack::before,.tack::after{content:"";position:absolute;background:rgba(232,160,32,.28);}
+.tack::before{left:50%;top:-3px;bottom:-3px;width:1px;transform:translateX(-50%);}
+.tack::after{top:50%;left:-3px;right:-3px;height:1px;transform:translateY(-50%);}
+.tack.tl{top:12px;left:12px;}.tack.tr{top:12px;right:12px;}.tack.bl{bottom:12px;left:12px;}.tack.br{bottom:12px;right:12px;}
+
+.poster-header{flex-shrink:0;}
+.poster-body{flex:1;overflow:hidden;display:flex;flex-direction:column;gap:10px;justify-content:space-between;}
+.poster-footer{flex-shrink:0;margin-top:8px;}
+
+.header-band{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:8px;}
+.header-left{flex:1;min-width:0;}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--amber);letter-spacing:.16em;text-transform:uppercase;margin-bottom:4px;display:flex;align-items:center;gap:12px;}
+.eyebrow::before{content:"";display:inline-block;width:30px;height:3px;background:var(--amber);}
+.headline{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:72px;color:var(--text);line-height:.92;margin:4px 0;letter-spacing:-.01em;text-transform:uppercase;}
+.headline em{font-style:normal;color:var(--amber);}
+.subhead{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:20px;color:var(--teal);margin:0 0 3px;letter-spacing:.02em;text-transform:uppercase;}
+.tagline{font-family:'Inter',sans-serif;font-style:italic;font-size:11px;color:var(--muted);line-height:1.35;max-width:700px;margin:0;}
+.logo-card{flex-shrink:0;padding:12px 10px;display:flex;flex-direction:column;align-items:center;gap:8px;align-self:flex-start;}
+.logo-tile{width:68px;height:68px;border-radius:12px;background:linear-gradient(135deg,#E8A020,#2EC4B6);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -2px 4px rgba(0,0,0,.15),0 4px 14px rgba(0,0,0,.35);}
+.logo-tile span{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:26px;color:#1A1F2E;letter-spacing:.02em;line-height:1;}
+.logo-word{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;letter-spacing:.04em;text-transform:uppercase;line-height:1;text-align:center;white-space:nowrap;}
+.logo-word .a{color:var(--text);}.logo-word .b{color:var(--amber);}
+.logo-inc{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.05em;text-transform:lowercase;color:var(--muted);margin-top:-2px;}
+
+.orient-strip{display:flex;align-items:center;gap:4px;padding:6px 10px;margin-bottom:0;flex-wrap:wrap;}
+.orient-stage{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;padding:5px 8px;border-radius:5px;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:11px;letter-spacing:.05em;text-transform:uppercase;background:rgba(58,64,85,.4);border:1px solid rgba(255,255,255,.06);color:var(--muted);}
+.poster[data-edition="light"] .orient-stage{background:rgba(27,32,48,.06);border-color:rgba(27,32,48,.12);}
+.orient-stage.active{background:rgba(232,160,32,.22);border-color:rgba(232,160,32,.5);color:var(--amber);box-shadow:0 0 12px rgba(232,160,32,.15);}
+.poster[data-edition="light"] .orient-stage.active{background:rgba(232,160,32,.22);border-color:rgba(232,160,32,.5);}
+.orient-arrow{color:var(--faint);font-size:11px;flex:none;}
+
+.section-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;letter-spacing:.08em;text-transform:uppercase;color:var(--text);margin:0 0 6px;display:flex;align-items:center;gap:8px;}
+.section-title::before{content:"";width:5px;height:5px;background:var(--amber);border-radius:50%;}
+.section-title .sub{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.14em;color:var(--muted);margin-left:auto;font-weight:500;}
+
+.rule-card{display:flex;align-items:center;gap:18px;padding:14px 20px;background:rgba(232,160,32,.07);}
+.rule-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:32px;color:var(--amber);line-height:1;letter-spacing:-.02em;}
+.rule-body{flex:1;}
+.rule-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:15px;color:var(--amber);letter-spacing:.08em;text-transform:uppercase;}
+.rule-text{font-family:'Inter',sans-serif;font-size:11px;color:var(--muted);line-height:1.4;margin-top:3px;}
+
+.insight-card{padding:14px 18px;border-left:3px solid var(--teal);background:rgba(46,196,182,.06);border-radius:0 12px 12px 0;}
+.insight-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;color:var(--teal);letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px;}
+.insight-text{font-family:'Inter',sans-serif;font-size:12px;color:var(--text);line-height:1.5;}
+
+.data-table{width:100%;border-collapse:collapse;}
+.data-table th{font-family:'Barlow',sans-serif;font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);padding:8px 12px;text-align:left;background:rgba(13,16,32,.35);border-bottom:1px solid var(--glass-border);}
+.poster[data-edition="light"] .data-table th{background:rgba(27,32,48,.06);}
+.data-table td{padding:8px 12px;color:var(--text);line-height:1.4;border-bottom:1px solid rgba(255,255,255,.05);font-family:'Inter',sans-serif;font-size:12px;}
+.poster[data-edition="light"] .data-table td{border-bottom-color:rgba(27,32,48,.08);}
+.data-table tr:last-child td{border-bottom:none;}
+.data-table tr:nth-child(even) td{background:rgba(255,255,255,.02);}
+.poster[data-edition="light"] .data-table tr:nth-child(even) td{background:rgba(27,32,48,.025);}
+.data-table .mono{font-family:'JetBrains Mono',monospace;font-size:11px;}
+
+.safety-card{padding:14px 18px;border-left:3px solid var(--coral);background:rgba(224,92,92,.06);border-radius:12px;}
+.safety-head{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;color:var(--coral);letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px;}
+.safety-body{font-family:'Inter',sans-serif;font-size:12px;color:var(--text);line-height:1.5;}
+.safety-body strong{color:var(--coral);font-weight:700;}
+
+.trouble-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.trouble-card{padding:12px 14px;border-radius:10px;border-left:3px solid var(--coral);display:flex;flex-direction:column;gap:4px;}
+.trouble-card h4{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;color:var(--coral);margin:0;text-transform:uppercase;letter-spacing:.06em;line-height:1.1;}
+.trouble-card p{font-size:11px;color:var(--muted);margin:0;line-height:1.4;}
+
+.context-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.context-card{padding:14px 16px;}
+.context-card h4{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;margin:0 0 6px;letter-spacing:.04em;text-transform:uppercase;}
+.context-card h4.teal{color:var(--teal);}
+.context-card h4.amber{color:var(--amber);}
+.context-card h4.coral{color:var(--coral);}
+.context-card p{font-size:12px;line-height:1.5;color:var(--text);margin:0;}
+.context-card .detail{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--muted);margin-top:6px;}
+
+/* anti-tarnish APPLY / SKIP decision tree infographic */
+.dtree-card{padding:14px 18px;}
+.dtree-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:10px;}
+.dtree-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);}
+.dtree-note{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.10em;text-transform:uppercase;color:var(--faint);}
+.dtree-root{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:15px;letter-spacing:.03em;text-transform:uppercase;color:var(--text);text-align:center;padding:8px 12px;border-radius:8px;background:rgba(13,16,32,.18);border:1px solid var(--glass-border);margin-bottom:4px;}
+.poster[data-edition="light"] .dtree-root{background:rgba(27,32,48,.05);}
+.dtree-stem{display:block;width:0;height:10px;border-left:2px solid var(--faint);margin:0 auto;}
+.dtree-branches{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;}
+.dtree-branch{display:flex;flex-direction:column;border-radius:10px;border:1px solid var(--glass-border);overflow:hidden;background:rgba(13,16,32,.10);}
+.poster[data-edition="light"] .dtree-branch{background:rgba(27,32,48,.03);}
+.dtree-cond{padding:9px 11px;font-family:'Inter',sans-serif;font-size:10.5px;line-height:1.38;color:var(--text);flex:1;}
+.dtree-cond b{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:11.5px;letter-spacing:.03em;text-transform:uppercase;display:block;margin-bottom:3px;}
+.dtree-verdict{padding:7px 11px;display:flex;align-items:center;gap:8px;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:18px;letter-spacing:.06em;text-transform:uppercase;border-top:1px solid var(--glass-border);}
+.dtree-verdict .arrow{font-size:13px;font-weight:700;opacity:.7;}
+.dtree-action{padding:8px 11px;font-family:'JetBrains Mono',monospace;font-size:9px;line-height:1.45;color:var(--muted);letter-spacing:.01em;border-top:1px solid rgba(255,255,255,.05);}
+.poster[data-edition="light"] .dtree-action{border-top-color:rgba(27,32,48,.08);}
+.dtree-branch.skip{border-left:3px solid var(--coral);}
+.dtree-branch.skip .dtree-verdict{color:var(--coral);background:rgba(224,92,92,.07);}
+.dtree-branch.skip2{border-left:3px solid var(--amber);}
+.dtree-branch.skip2 .dtree-verdict{color:var(--amber);background:rgba(232,160,32,.07);}
+.dtree-branch.apply{border-left:3px solid var(--emerald);}
+.dtree-branch.apply .dtree-verdict{color:var(--emerald);background:rgba(39,174,96,.07);}
+.dtree-foot{margin-top:9px;padding:8px 12px;border-radius:8px;border-left:3px solid var(--coral);background:rgba(224,92,92,.06);font-family:'Inter',sans-serif;font-size:11px;line-height:1.4;color:var(--text);}
+.dtree-foot strong{color:var(--coral);font-weight:700;}
+
+.footer{padding:10px 20px;background-color:rgba(13,16,32,.85);background-image:linear-gradient(180deg,rgba(255,255,255,.04),rgba(0,0,0,0));border:1px solid rgba(255,255,255,.10);border-radius:8px;text-align:center;display:flex;flex-direction:column;gap:2px;}
+.poster[data-edition="light"] .footer{background-color:rgba(221,216,206,.95);border-color:rgba(27,32,48,.10);}
+.footer-disclaimer{font-family:'Inter',sans-serif;font-size:8.5px;line-height:1.35;color:var(--faint);margin:0 auto;max-width:900px;}
+.footer-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:12px;color:var(--text);letter-spacing:.04em;text-transform:uppercase;margin:0;}
+.footer-brand{font-family:'JetBrains Mono',monospace;font-size:8.5px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;}
+
+.tweaks{position:fixed;bottom:16px;right:16px;z-index:100;background:rgba(13,16,32,.92);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:10px 14px;display:flex;flex-direction:column;gap:8px;font-family:'Inter',sans-serif;font-size:12px;color:#F0EDE8;}
+@media print{
+  @page{size:12.5in 18.75in;margin:0;}
+  html,body{background:#F5F4F0 !important;-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
+  *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
+  .stage{position:static;padding:0;display:block;overflow:visible;}
+  .poster-wrap{transform:none !important;width:auto !important;height:auto !important;}
+  .poster{box-shadow:none !important;width:1200px !important;height:1800px !important;overflow:hidden !important;}
+  .glass,.trouble-card,.insight-card,.safety-card,.context-card{backdrop-filter:none !important;-webkit-backdrop-filter:none !important;}
+  .tweaks{display:none !important;}
+}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="poster-wrap" id="posterWrap">
+<div class="poster" id="poster">
+  <span class="tack tl" aria-hidden="true"></span><span class="tack tr" aria-hidden="true"></span>
+  <span class="tack bl" aria-hidden="true"></span><span class="tack br" aria-hidden="true"></span>
+
+  <!-- HEADER -->
+  <div class="poster-header">
+    <header class="header-band">
+      <div class="header-left">
+        <div class="eyebrow"><span>Plating Posters Inc &nbsp;&middot;&nbsp; Serie Barra Colectora Al-Cu-Ag</span></div>
+        <h1 class="headline">PASIVACI&Oacute;N<br><em>ANTI-EMPA&Ntilde;AMIENTO</em></h1>
+        <h2 class="subhead">Paso Opcional &mdash; Retarda el Empa&ntilde;amiento de la Plata Durante el Almacenamiento</h2>
+        <p class="tagline">Un inhibidor anti-empa&ntilde;amiento libre de cromato o basado en benzotriazol extiende la ventana de manejo antes de que la plata se empa&ntilde;e. Sin embargo, incluso pel&iacute;culas a escala nanom&eacute;trica pueden aumentar la resistencia de contacto &mdash; muchas especificaciones de barras colectoras de rectificador proh&iacute;ben expl&iacute;citamente los recubrimientos anti-empa&ntilde;amiento en superficies de contacto. Consulte la especificaci&oacute;n del cliente antes de procesar.</p>
+      </div>
+      <aside class="glass logo-card">
+        <div class="logo-tile"><span>PP</span></div>
+        <div class="logo-word"><span class="a">Plating</span> <span class="b">Posters</span></div>
+        <div class="logo-inc">www.platingposters.com</div>
+      </aside>
+    </header>
+
+    <div class="orient-strip glass">
+      <div class="orient-stage">Limp</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Enj</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Grab</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Enj</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Zinc&nbsp;1</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Enj</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Decap</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Enj</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Zinc&nbsp;2</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Enj</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Cu&nbsp;Gol</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Enj</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Cu&nbsp;Dep</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Enj</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Ag&nbsp;Gol</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Ag&nbsp;Dep</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Enj</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage active">A-Emp</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Sec</div>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="poster-body">
+
+    <!-- RULE CARD -->
+    <div class="glass rule-card">
+      <div class="rule-num">CONSULTE LA ESPEC PRIMERO</div>
+      <div class="rule-body">
+        <div class="rule-label">Este Paso Puede Estar Prohibido por la Especificaci&oacute;n del Cliente</div>
+        <div class="rule-text">Muchas especificaciones de barras colectoras de rectificador proh&iacute;ben expl&iacute;citamente los recubrimientos anti-empa&ntilde;amiento o pasivaci&oacute;n en superficies de contacto de plata. Incluso las pel&iacute;culas a escala nanom&eacute;trica aumentan la resistencia de contacto a alta corriente. NO aplique anti-empa&ntilde;amiento a menos que la especificaci&oacute;n del cliente lo permita o lo requiera. En caso de duda, omita este paso y proceda directamente al enjuague final y secado.</div>
+      </div>
+    </div>
+
+    <!-- CHEMISTRY TABLE -->
+    <div>
+      <h3 class="section-title">Qu&iacute;mica del Ba&ntilde;o <span class="sub">Anti-empa&ntilde;amiento / pasivaci&oacute;n</span></h3>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table">
+          <thead><tr><th>Componente</th><th>Rango</th><th>Funci&oacute;n</th></tr></thead>
+          <tbody>
+            <tr><td>Inhibidor basado en benzotriazol (o propietario)</td><td class="mono">2&ndash;5 g/L</td><td>Forma una pel&iacute;cula protectora a escala molecular sobre la plata</td></tr>
+            <tr><td>Alternativa: propietario libre de cromato</td><td class="mono">Seg&uacute;n TDS del proveedor</td><td>Las f&oacute;rmulas modernas sin cromo se prefieren para cumplir RoHS</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- OPERATING PARAMETERS -->
+    <div>
+      <h3 class="section-title">Par&aacute;metros de Operaci&oacute;n <span class="sub">Inmersi&oacute;n &mdash; sin corriente</span></h3>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table">
+          <thead><tr><th>Par&aacute;metro</th><th>Valor</th><th>Notas</th></tr></thead>
+          <tbody>
+            <tr><td>Temperatura</td><td class="mono">Ambiente a 40&deg;C (104&deg;F)</td><td>De temperatura ambiente a ligeramente tibia</td></tr>
+            <tr><td>Tiempo</td><td class="mono">15&ndash;30 segundos</td><td>Inmersi&oacute;n breve &mdash; no sobre-tratar</td></tr>
+            <tr><td>Tipo de Proceso</td><td class="mono">Inmersi&oacute;n (sin corriente)</td><td>Proceso simple de inmersi&oacute;n &mdash; no requiere rectificador</td></tr>
+            <tr><td>Agitaci&oacute;n</td><td class="mono">Movimiento suave del bastidor</td><td>Asegura una cobertura uniforme</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- PROCESS INSIGHT -->
+    <div class="insight-card glass">
+      <div class="insight-label">El Compromiso de la Resistencia de Contacto</div>
+      <div class="insight-text">El anti-empa&ntilde;amiento extiende mucho la vida &uacute;til y la ventana de manejo de las barras colectoras plateadas &mdash; de d&iacute;as a semanas o meses antes de que aparezca empa&ntilde;amiento visible. Sin embargo, la pel&iacute;cula molecular que deposita agrega resistencia de contacto medible. En aplicaciones decorativas o de baja corriente, esto es insignificante. En barras colectoras de rectificador que conducen cientos o miles de amperios, incluso unos pocos micro-ohmios de resistencia de contacto adicional se traducen en vatios reales de calor residual en cada uni&oacute;n atornillada. Por eso muchas especificaciones de barras colectoras de alta corriente proh&iacute;ben expl&iacute;citamente los recubrimientos posteriores al plateado. La alternativa es empacar de inmediato en bolsas de PE selladas y libres de azufre, y reducir al m&iacute;nimo el tiempo de almacenamiento.</div>
+    </div>
+
+    <!-- APPLY / SKIP DECISION TREE -->
+    <div class="glass dtree-card">
+      <div class="dtree-head">
+        <span class="dtree-title">Aplicar u Omitir &mdash; &Aacute;rbol de Decisi&oacute;n</span>
+        <span class="dtree-note">Representativo &mdash; no a escala</span>
+      </div>
+      <div class="dtree-root">&iquest;La espec del cliente trata el anti-empa&ntilde;amiento?</div>
+      <span class="dtree-stem"></span>
+      <div class="dtree-branches">
+        <div class="dtree-branch skip">
+          <div class="dtree-cond"><b>La espec lo proh&iacute;be</b>Recubrimientos prohibidos en superficies de contacto de plata &mdash; com&uacute;n en barras de rectificador.</div>
+          <div class="dtree-verdict"><span class="arrow">&rarr;</span>Omitir</div>
+          <div class="dtree-action">Directo al enjuague final y secado. Empaque en PE sellado libre de azufre en pocas horas.</div>
+        </div>
+        <div class="dtree-branch skip2">
+          <div class="dtree-cond"><b>La espec no lo menciona &mdash; y se da alguna:</b>Servicio de rectificador de alta corriente &middot; espec de resistencia de contacto &lt; 50 &micro;&Omega; &middot; ensamble en 24&ndash;48 h.</div>
+          <div class="dtree-verdict"><span class="arrow">&rarr;</span>Omitir</div>
+          <div class="dtree-action">Por defecto, sin recubrimiento cuando manda la resistencia de contacto. Enjuague, seque y selle en PE libre de azufre.</div>
+        </div>
+        <div class="dtree-branch apply">
+          <div class="dtree-cond"><b>La espec lo permite/requiere &mdash; y se da alguna:</b>Almacenamiento &gt; 48 h &middot; riesgo de exposici&oacute;n a azufre &middot; corriente moderada donde se acepta un leve aumento de RC.</div>
+          <div class="dtree-verdict"><span class="arrow">&rarr;</span>Aplicar</div>
+          <div class="dtree-action">Benzotriazol o propietario sin cromo, 2&ndash;5 g/L, ambiente&ndash;40 &deg;C, inmersi&oacute;n de 15&ndash;30 s.</div>
+        </div>
+      </div>
+      <div class="dtree-foot">Hasta las pel&iacute;culas de escala nm agregan resistencia de contacto &mdash; <strong>micro-ohmios &times; cientos/miles de A = vatios reales de calor en la uni&oacute;n.</strong></div>
+    </div>
+
+    <!-- TROUBLESHOOTING -->
+    <div>
+      <h3 class="section-title">Soluci&oacute;n de Problemas <span class="sub">Problemas del anti-empa&ntilde;amiento</span></h3>
+      <div class="trouble-grid">
+        <div class="trouble-card glass">
+          <h4>Resistencia de Contacto Muy Alta</h4>
+          <p>Pel&iacute;cula anti-empa&ntilde;amiento demasiado gruesa (sobre-tratada) o producto incorrecto para la aplicaci&oacute;n. Reduzca el tiempo de inmersi&oacute;n. Verifique la compatibilidad del producto con la espec del cliente. Puede requerir decapar y volver a platear sin anti-empa&ntilde;amiento.</p>
+        </div>
+        <div class="trouble-card glass">
+          <h4>Aspecto Desigual o Manchado</h4>
+          <p>Un enjuague deficiente antes de este paso arrastr&oacute; contaminantes al ba&ntilde;o anti-empa&ntilde;amiento. Mejore la calidad del enjuague. Revise el ba&ntilde;o por contaminaci&oacute;n. Asegure una agitaci&oacute;n uniforme durante la inmersi&oacute;n.</p>
+        </div>
+        <div class="trouble-card glass">
+          <h4>La Plata A&uacute;n se Empa&ntilde;a R&aacute;pido</h4>
+          <p>Ba&ntilde;o anti-empa&ntilde;amiento agotado o muy diluido. Verifique la concentraci&oacute;n seg&uacute;n el TDS del proveedor. Reponga o reemplace el ba&ntilde;o. Verifique tambi&eacute;n que el empaque posterior sea libre de azufre.</p>
+        </div>
+        <div class="trouble-card glass">
+          <h4>El Cliente Rechaza el Anti-Empa&ntilde;amiento</h4>
+          <p>La espec del cliente proh&iacute;be recubrimientos pero las piezas se trataron de todas formas. Error de proceso &mdash; las piezas pueden requerir decapado y replateado. Verifique los requisitos de la espec ANTES de procesar cualquier lote.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SAFETY -->
+    <div class="safety-card glass">
+      <div class="safety-head">&#9888; Seguridad</div>
+      <div class="safety-body"><strong>El riesgo depende por completo del producto real &mdash; confirme la qu&iacute;mica contra la HDS antes de manipularlo.</strong> Los inhibidores org&aacute;nicos de benzotriazol o libres de cromato son relativamente suaves y causan irritaci&oacute;n de piel y ojos con el contacto prolongado. <strong>Sin embargo, muchos ba&ntilde;os anti-empa&ntilde;amiento para plata son a base de cromato (cromo hexavalente, Cr(VI)), un carcin&oacute;geno humano confirmado y regulado por la norma de Cr(VI) de OSHA, REACH y RoHS.</strong> Si el ba&ntilde;o es de cromato/Cr(VI), tr&aacute;telo como carcin&oacute;geno: evite todo contacto con piel y ojos y la inhalaci&oacute;n de neblina, y siga los controles de exposici&oacute;n de la HDS. <strong>EPP est&aacute;ndar requerido: guantes resistentes a qu&iacute;micos, lentes de seguridad y delantal.</strong> Asegure ventilaci&oacute;n adecuada; si el producto se calienta o genera neblina, use extracci&oacute;n localizada. Siga la HDS del proveedor para los requisitos espec&iacute;ficos de manejo.</div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer poster-footer">
+    <p class="footer-disclaimer">Solo como referencia t&eacute;cnica. Verifique todos los par&aacute;metros contra la hoja t&eacute;cnica (TDS) de su proveedor de qu&iacute;micos, las especificaciones del cliente y los requisitos reglamentarios aplicables antes de usarlo en producci&oacute;n.</p>
+    <p class="footer-title">Anti-Empa&ntilde;amiento / Pasivaci&oacute;n (Opcional) &mdash; Serie de Plateado de Barra Colectora Al &rarr; Cu &rarr; Ag</p>
+    <span class="footer-brand">Plating Posters Inc &middot; platingposters.com &middot; Metal Finishing Reference Series &middot; v1.0 / 2026</span>
+  </footer>
+
+</div>
+</div>
+</div>
+
+<div class="tweaks">
+  <div style="display:flex;gap:8px;align-items:center;">
+    <span style="color:rgba(240,237,232,.5);font-size:11px;letter-spacing:.06em;text-transform:uppercase;">Edici&oacute;n</span>
+    <button id="btnDark" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);" onclick="setEdition('')">Dark</button>
+    <button id="btnLight" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:#E8A020;color:#1A1F2E;border:1px solid #E8A020;" onclick="setEdition('light')">Light</button>
+  </div>
+  <button onclick="window.print()" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);">Imprimir / PDF</button>
+</div>
+
+<script>
+const posterWrap=document.getElementById('posterWrap');
+const poster=document.getElementById('poster');
+function scalePoster(){const sW=(window.innerWidth-24)/1200;const sH=(window.innerHeight-24)/1800;const s=Math.min(sW,sH);posterWrap.style.transform='scale('+s+')';posterWrap.style.transformOrigin='top left';posterWrap.style.width=(1200*s)+'px';posterWrap.style.height=(1800*s)+'px';}
+function setEdition(e){if(e)poster.dataset.edition=e;else delete poster.dataset.edition;document.getElementById('btnDark').style.background=e?'transparent':'#E8A020';document.getElementById('btnDark').style.color=e?'#F0EDE8':'#1A1F2E';document.getElementById('btnDark').style.borderColor=e?'rgba(255,255,255,.2)':'#E8A020';document.getElementById('btnLight').style.background=e?'#E8A020':'transparent';document.getElementById('btnLight').style.color=e?'#1A1F2E':'#F0EDE8';document.getElementById('btnLight').style.borderColor=e?'#E8A020':'rgba(255,255,255,.2)';}
+scalePoster();window.addEventListener('resize',scalePoster);
+</script>
+</body>
+</html>

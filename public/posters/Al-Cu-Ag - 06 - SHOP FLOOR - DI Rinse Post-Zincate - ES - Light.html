@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barra Colectora Al-Cu-Ag &mdash; Enjuague DI Post-Zincado &mdash; Planta | Plating Posters Inc</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Barlow:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#1A1F2E; --navy:#0D1020; --text:#F0EDE8; --muted:rgba(240,237,232,.62);
+  --faint:rgba(240,237,232,.38);
+  --amber:#E8A020; --teal:#2EC4B6; --emerald:#27AE60; --coral:#E05C5C;
+  --slate:#3A4055; --glass-bg:rgba(30,36,53,.55); --glass-border:rgba(255,255,255,.12);
+  --glass-shadow:inset 0 1px 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(0,0,0,.2),0 4px 12px rgba(0,0,0,.25);
+  --tack:30px;
+}
+.poster[data-edition="light"] {
+  --bg:#F5F4F0; --navy:#DDD8CE; --text:#1B2030; --muted:rgba(27,32,48,.78);
+  --amber:#8C5A00; --teal:#0F6B62; --emerald:#15693B; --coral:#9B2825;
+  --faint:rgba(27,32,48,.42);
+  --slate:#C5C0B5;
+  --glass-bg:rgba(255,253,247,.82); --glass-border:rgba(27,32,48,.18);
+  --glass-shadow: inset 0 1px 0 rgba(255,255,255,.6), 0 4px 12px rgba(27,32,48,.08);
+}
+.poster[data-edition="light"] .logo-url { color:rgba(27,32,48,.62); }
+.poster[data-edition="light"] .logo-word .a { color:#1B2030; }
+.poster[data-edition="light"] .logo-mark{background:linear-gradient(135deg,var(--amber),var(--teal));}
+.poster[data-edition="light"] .logo-mark span{color:#F5F4F0;}
+.poster[data-edition="light"] .num-bullet{color:#FFFFFF;}
+.poster[data-edition="light"] .orient-stage{background:rgba(27,32,48,.06);border-color:rgba(27,32,48,.12);}
+.poster[data-edition="light"] .trouble-table td{border-bottom-color:rgba(27,32,48,.08);}
+
+html,body{margin:0;padding:0;background:#e8e6df;}
+.stage{width:100vw;height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.poster-wrap{transform-origin:top left;}
+.poster{
+  width:900px;height:1200px;position:relative;overflow:hidden;
+  background:
+    radial-gradient(700px 500px at 10% 8%,rgba(46,196,182,.15),transparent 60%),
+    radial-gradient(600px 450px at 92% 20%,rgba(232,160,32,.13),transparent 55%),
+    radial-gradient(550px 500px at 50% 88%,rgba(224,92,92,.10),transparent 60%),
+    var(--bg);
+  font-family:'Inter',sans-serif;color:var(--text);
+  display:flex;flex-direction:column;
+  padding:var(--tack);box-sizing:border-box;
+}
+.poster::before{
+  content:'';position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+  background-size:50px 50px;
+  mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);
+  -webkit-mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);
+  pointer-events:none;z-index:0;
+}
+.poster>*{position:relative;z-index:1;}
+.glass{
+  background-color:var(--glass-bg);
+  background-image:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));
+  border:1px solid var(--glass-border);
+  backdrop-filter:blur(18px) saturate(140%);
+  -webkit-backdrop-filter:blur(18px) saturate(140%);
+  box-shadow:var(--glass-shadow);
+  border-radius:12px;
+}
+.tack{position:absolute;width:18px;height:18px;border-radius:50%;border:1.5px solid rgba(232,160,32,.28);z-index:2;pointer-events:none;}
+.tack::before,.tack::after{content:"";position:absolute;background:rgba(232,160,32,.28);}
+.tack::before{left:50%;top:-2px;bottom:-2px;width:1px;transform:translateX(-50%);}
+.tack::after{top:50%;left:-2px;right:-2px;height:1px;transform:translateY(-50%);}
+.tack.tl{top:6px;left:6px;}.tack.tr{top:6px;right:6px;}.tack.bl{bottom:6px;left:6px;}.tack.br{bottom:6px;right:6px;}
+
+.poster-header{flex-shrink:0;}
+.poster-body{flex:1;overflow:hidden;display:flex;flex-direction:column;gap:5px;}
+.poster-footer{flex-shrink:0;margin-top:8px;}
+
+.header-row{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:8px;}
+.header-left{flex:1;min-width:0;}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--amber);letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px;}
+.headline{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:56px;color:var(--text);line-height:.92;letter-spacing:-.01em;margin-bottom:4px;}
+.headline em{font-style:normal;color:var(--teal);}
+.subhead{font-family:'Barlow',sans-serif;font-weight:700;font-size:17px;color:var(--teal);margin-bottom:4px;}
+.tagline{font-family:'Inter',sans-serif;font-weight:500;font-size:11px;color:var(--muted);line-height:1.3;max-width:520px;}
+.logo-card{flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:6px;padding:10px 12px;min-width:140px;
+  background-color:var(--glass-bg);background-image:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));
+  border:1px solid var(--glass-border);border-radius:12px;
+  backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 4px 12px rgba(0,0,0,.25);
+}
+.logo-mark{width:60px;height:60px;border-radius:11px;background:linear-gradient(135deg,#E8A020,#2EC4B6);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -2px 4px rgba(0,0,0,.15),0 4px 14px rgba(0,0,0,.35);}
+.logo-mark span{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:22px;color:#1A1F2E;letter-spacing:.02em;line-height:1;}
+.logo-word{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;letter-spacing:.04em;text-transform:uppercase;line-height:1;text-align:center;white-space:nowrap;}
+.logo-word .a{color:var(--text);}.logo-word .b{color:var(--amber);}
+.logo-url{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.06em;color:rgba(240,237,232,.45);margin-top:-1px;}
+
+.orient-strip{display:flex;align-items:center;gap:3px;padding:5px 8px;flex-wrap:wrap;margin-bottom:0;}
+.orient-stage{padding:3px 5px;border-radius:4px;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:9px;letter-spacing:.04em;text-transform:uppercase;background:rgba(58,64,85,.35);border:1px solid rgba(255,255,255,.05);color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:0;}
+.orient-stage.active{background:rgba(46,196,182,.22);border-color:rgba(46,196,182,.5);color:var(--teal);box-shadow:0 0 10px rgba(46,196,182,.12);}
+.orient-arrow{color:var(--faint);font-size:9px;flex:none;}
+
+.section-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;letter-spacing:.07em;text-transform:uppercase;color:var(--amber);margin-bottom:6px;}
+.section-title.teal{color:var(--teal);}
+.section-title.coral{color:var(--coral);}
+.section-card{padding:8px 14px;}
+
+.key-card{padding:10px 16px;background:rgba(46,196,182,.07);border-radius:12px;}
+.key-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:38px;color:var(--teal);line-height:1;margin-bottom:2px;}
+.key-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;color:var(--teal);letter-spacing:.06em;text-transform:uppercase;}
+.key-text{font-family:'Inter',sans-serif;font-size:12px;color:var(--muted);line-height:1.4;margin-top:4px;}
+
+/* Conductivity PASS/FAIL gauge */
+.gauge{margin-top:6px;padding-top:6px;border-top:1px solid var(--glass-border);}
+.gauge-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:5px;}
+.gauge-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--teal);}
+.gauge-scale{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--faint);letter-spacing:.04em;}
+.gauge-bar{position:relative;height:24px;border-radius:7px;overflow:hidden;display:flex;border:1px solid var(--glass-border);}
+.gauge-zone{display:flex;align-items:center;height:100%;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:12px;letter-spacing:.05em;text-transform:uppercase;white-space:nowrap;overflow:hidden;}
+.gauge-zone .z-tag{display:inline-flex;align-items:center;gap:6px;padding:0 11px;}
+.gauge-zone .z-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.gauge-pass{flex:0 0 42%;background:rgba(21,105,59,.16);color:var(--emerald);}
+.gauge-pass .z-dot{background:var(--emerald);}
+.gauge-fail{flex:1;background:rgba(155,40,37,.14);color:var(--coral);}
+.gauge-fail .z-dot{background:var(--coral);}
+.gauge-thresh{position:absolute;top:-1px;bottom:-1px;left:42%;width:2px;background:var(--text);transform:translateX(-1px);z-index:2;}
+.gauge-thresh::after{content:'50';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'JetBrains Mono',monospace;font-weight:500;font-size:10px;color:var(--text);background:var(--glass-bg);padding:1px 4px;border-radius:3px;border:1px solid var(--glass-border);line-height:1;}
+.gauge-zone-text{display:flex;justify-content:space-between;gap:12px;margin-top:4px;}
+.gauge-zone-text span{font-family:'Inter',sans-serif;font-size:10px;line-height:1.3;font-weight:500;}
+.gauge-zone-text .gz-pass{color:var(--emerald);flex:0 0 40%;}
+.gauge-zone-text .gz-fail{color:var(--coral);flex:1;text-align:right;}
+.gauge-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:5px;}
+.gauge-fallback{font-family:'Inter',sans-serif;font-size:10px;color:var(--muted);line-height:1.35;}
+.gauge-fallback strong{font-weight:700;color:var(--text);}
+.gauge-scalenote{font-family:'JetBrains Mono',monospace;font-size:7.5px;color:var(--faint);letter-spacing:.03em;white-space:nowrap;flex-shrink:0;}
+
+.numbered-list{display:flex;flex-direction:column;gap:4px;}
+.numbered-item{display:flex;align-items:flex-start;gap:10px;}
+.num-bullet{width:22px;height:22px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:12px;color:#1A1F2E;margin-top:1px;}
+.num-text{font-family:'Inter',sans-serif;font-weight:500;font-size:12px;color:var(--text);line-height:1.45;}
+.num-text strong{font-weight:700;}
+
+.compare-row{display:flex;gap:10px;}
+.compare-card{flex:1;padding:8px 14px;}
+.compare-head{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px;display:flex;align-items:center;gap:8px;}
+.compare-head.good{color:var(--emerald);}
+.compare-head.bad{color:var(--coral);}
+.compare-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:4px;}
+.compare-list li{font-size:11.5px;line-height:1.4;display:flex;gap:6px;align-items:flex-start;}
+.compare-list li::before{content:"";width:5px;height:5px;border-radius:50%;margin-top:5px;flex-shrink:0;}
+.compare-card.do .compare-list li::before{background:var(--emerald);}
+.compare-card.dont .compare-list li::before{background:var(--coral);}
+
+.trouble-table{width:100%;border-collapse:collapse;}
+.trouble-table th{font-family:'Barlow',sans-serif;font-weight:700;font-size:10px;color:var(--amber);letter-spacing:.06em;text-transform:uppercase;padding:5px 8px;text-align:left;border-bottom:1px solid var(--glass-border);}
+.trouble-table td{font-family:'Inter',sans-serif;font-weight:500;font-size:11px;color:var(--text);padding:4px 8px;border-bottom:1px solid rgba(255,255,255,.05);line-height:1.32;}
+.trouble-table td.muted{color:var(--muted);}
+.trouble-table tr:nth-child(even) td{background:rgba(255,255,255,.02);}
+.poster[data-edition="light"] .trouble-table tr:nth-child(even) td{background:rgba(27,32,48,.025);}
+
+.safety-card{padding:8px 14px;background:rgba(224,92,92,.06);border-radius:12px;}
+.safety-text{font-family:'Inter',sans-serif;font-weight:500;font-size:11.5px;color:var(--text);line-height:1.45;}
+.safety-text strong{font-weight:700;color:var(--coral);}
+
+.footer-panel{padding:8px 18px;text-align:center;border-radius:10px;}
+.footer-disclaimer{font-family:'Inter',sans-serif;font-weight:400;font-size:9px;color:var(--muted);line-height:1.4;margin-bottom:3px;}
+.footer-title{font-family:'Barlow',sans-serif;font-weight:600;font-size:11px;color:var(--text);margin-bottom:2px;}
+.footer-brand{font-family:'JetBrains Mono',monospace;font-size:8.5px;color:var(--muted);}
+
+@media print {
+  @page{size:9.375in 12.5in;margin:0;}
+  html,body{background:#F5F4F0 !important;-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
+  *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
+  .stage{position:static;display:block;overflow:visible;}
+  .poster-wrap{transform:none !important;width:auto !important;height:auto !important;}
+  .poster{box-shadow:none !important;width:900px !important;height:1200px !important;overflow:hidden !important;}
+  .glass,.safety-card,.compare-card{backdrop-filter:none !important;-webkit-backdrop-filter:none !important;}
+  .tweaks{display:none !important;}
+}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="poster-wrap" id="posterWrap">
+<div class="poster" id="poster" data-edition="light">
+  <span class="tack tl"></span><span class="tack tr"></span><span class="tack bl"></span><span class="tack br"></span>
+
+  <div class="poster-header">
+    <div class="header-row">
+      <div class="header-left">
+        <div class="eyebrow">Plating Posters Inc &mdash; Planta &mdash; Barra Colectora Al&rarr;Cu&rarr;Ag</div>
+        <div class="headline">AGUA DI<br><em>ENJUAGUE</em></div>
+        <div class="subhead">Lave el Zincado &mdash; El Siguiente Tanque Es &Aacute;cido</div>
+        <div class="tagline">El tanque de zincado es alcalino. El siguiente tanque, el decapado del zincado, es &aacute;cido fuerte. Enjuague bien para no contaminar el tanque de &aacute;cido.</div>
+      </div>
+      <div class="logo-card">
+        <div class="logo-mark"><span>PP</span></div>
+        <div class="logo-word"><span class="a">Plating</span> <span class="b">Posters</span></div>
+        <div class="logo-url">www.platingposters.com</div>
+      </div>
+    </div>
+
+    <div class="orient-strip glass">
+      <div class="orient-stage">Limp</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Enj</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Ataq</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Enj</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Zinc1</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage active">Enj</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Decap</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Enj</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Zinc2</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Enj</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">CuStr</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Enj</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">CuRcb</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Enj</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">AgStr</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">AgRcb</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Enj</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">ATar</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Sec</div>
+    </div>
+  </div>
+
+  <div class="poster-body">
+
+    <div class="glass key-card">
+      <div class="key-num">&lt;50 &micro;S/cm</div>
+      <div class="key-label">Enjuague Hasta Que el Medidor Marque Menos de 50</div>
+      <div class="key-text">La soluci&oacute;n de zincado es fuertemente alcalina. El siguiente tanque es &aacute;cido n&iacute;trico. Si arrastra residuo alcalino al tanque de &aacute;cido, lo neutraliza y lo consume, sube su pH y contamina el decapado &mdash; acorta la vida del ba&ntilde;o y causa remoci&oacute;n despareja del zinc. Enjuague hasta que el medidor de conductividad marque menos de 50.</div>
+      <div class="gauge">
+        <div class="gauge-head">
+          <div class="gauge-title">Revisi&oacute;n de Conductividad &mdash; Enjuague Antes del Decapado N&iacute;trico</div>
+          <div class="gauge-scale">&micro;S/cm &middot; 0 &rarr; 50 &rarr; m&aacute;s</div>
+        </div>
+        <div class="gauge-bar">
+          <div class="gauge-zone gauge-pass"><span class="z-tag"><span class="z-dot"></span>Pasa &mdash; menos de 50</span></div>
+          <div class="gauge-zone gauge-fail"><span class="z-tag"><span class="z-dot"></span>Falla &mdash; 50 o m&aacute;s</span></div>
+          <div class="gauge-thresh"></div>
+        </div>
+        <div class="gauge-zone-text">
+          <span class="gz-pass">Puede avanzar al decapado &aacute;cido.</span>
+          <span class="gz-fail">A&uacute;n hay arrastre alcalino de zincado &mdash; enjuague m&aacute;s.</span>
+        </div>
+        <div class="gauge-foot">
+          <div class="gauge-fallback"><strong>&iquest;Sin medidor?</strong> Enjuague 30&ndash;60 s con buen flujo y mantenga las piezas en movimiento.</div>
+          <div class="gauge-scalenote">Representativo &mdash; no a escala</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="glass section-card">
+      <div class="section-title teal">Lo Que Debe Hacer</div>
+      <div class="numbered-list">
+        <div class="numbered-item"><div class="num-bullet">1</div><div class="num-text"><strong>Deje escurrir las piezas 10&ndash;15 segundos sobre el tanque de zincado.</strong> Esto reduce la soluci&oacute;n alcalina que arrastra al enjuague.</div></div>
+        <div class="numbered-item"><div class="num-bullet">2</div><div class="num-text"><strong>Sumerja las piezas suavemente en el enjuague.</strong> La capa de zinc es muy delgada &mdash; no golpee las piezas entre s&iacute; ni las raspe contra el tanque.</div></div>
+        <div class="numbered-item"><div class="num-bullet">3</div><div class="num-text"><strong>Mantenga las piezas en movimiento 30&ndash;60 segundos.</strong> Levante y baje suavemente el bastidor. El agua quieta no enjuaga.</div></div>
+        <div class="numbered-item"><div class="num-bullet">4</div><div class="num-text"><strong>Pase al decapado &aacute;cido r&aacute;pidamente.</strong> Mantenga las piezas h&uacute;medas en todo momento. No las deje secar al aire &mdash; la capa de zinc es fr&aacute;gil.</div></div>
+      </div>
+    </div>
+
+    <div class="compare-row">
+      <div class="compare-card glass do">
+        <div class="compare-head good">&#10003; Forma Correcta</div>
+        <ul class="compare-list">
+          <li>Las piezas permanecen h&uacute;medas siempre</li>
+          <li>Manejo cuidadoso &mdash; capa de zinc intacta</li>
+          <li>Agua de enjuague clara, sin tacto jabonoso</li>
+          <li>Pasadas al decapado &aacute;cido sin demora</li>
+        </ul>
+      </div>
+      <div class="compare-card glass dont">
+        <div class="compare-head bad">&#10007; Forma Incorrecta</div>
+        <ul class="compare-list">
+          <li>Piezas sec&aacute;ndose al aire entre tanques</li>
+          <li>Manejo brusco &mdash; zinc raspado en los bordes</li>
+          <li>Agua de enjuague jabonosa o resbalosa (arrastre alcalino)</li>
+          <li>Demora larga antes de llegar al decapado &aacute;cido</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="glass section-card" style="padding:8px 12px;">
+      <div class="section-title">Problemas Comunes</div>
+      <table class="trouble-table">
+        <thead><tr><th style="width:28%;">Lo Que Ve</th><th style="width:35%;">Causa Probable</th><th>Qu&eacute; Hacer</th></tr></thead>
+        <tbody>
+          <tr><td>Decapado &aacute;cido incompleto</td><td class="muted">Residuo alcalino que neutraliza y contamina el &aacute;cido</td><td>Enjuague m&aacute;s. Aumente el flujo de agua. Avise a su supervisor.</td></tr>
+          <tr><td>Capa de zinc da&ntilde;ada o rayada</td><td class="muted">Piezas golpeadas entre s&iacute; o raspadas contra el tanque</td><td>Manipule con cuidado. Si el zinc est&aacute; da&ntilde;ado, repita el zincado.</td></tr>
+          <tr><td>El agua de enjuague se siente jabonosa o resbalosa</td><td class="muted">Demasiada soluci&oacute;n alcalina arrastrada</td><td>Escurra las piezas m&aacute;s. Aumente el flujo de DI. Avise a su supervisor.</td></tr>
+          <tr><td>El segundo zincado se ve despareja</td><td class="muted">Contaminaci&oacute;n arrastrada por el enjuague</td><td>Avise a su supervisor. El tanque de enjuague puede necesitar vaciarse y rellenarse.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="glass safety-card">
+      <div class="section-title coral">&#9888; Seguridad</div>
+      <div class="safety-text"><strong>El agua de enjuague es fuertemente alcalina por el arrastre del zincado.</strong> Le quemar&aacute; la piel. Use guantes resistentes a qu&iacute;micos al manipular piezas o meter las manos en el enjuague. <strong>Si le cae en la piel, lave con agua durante 15 minutos. Si le cae en los ojos, lave de inmediato y busque ayuda m&eacute;dica.</strong> No se incline sobre el tanque sin careta.</div>
+    </div>
+
+  </div>
+
+  <div class="glass footer-panel poster-footer">
+    <div class="footer-disclaimer">Solo referencia para operadores. Siga los procedimientos (SOP) de su planta. Reporte cualquier desviaci&oacute;n del proceso a su supervisor.</div>
+    <div class="footer-title">Enjuague con Agua DI (Post-Zincado) &mdash; Serie Barra Colectora Al &rarr; Cu &rarr; Ag</div>
+    <div class="footer-brand">Plating Posters Inc &middot; Referencia de Planta &middot; PP-SF / v1.0 / 2026</div>
+  </div>
+
+</div>
+</div>
+</div>
+
+<div class="tweaks" style="position:fixed;bottom:16px;right:16px;z-index:100;background:rgba(13,16,32,.92);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:12px 16px;display:flex;flex-direction:column;gap:8px;font-family:'Inter',sans-serif;font-size:12px;color:#F0EDE8;">
+  <div style="display:flex;gap:8px;align-items:center;">
+    <span style="color:rgba(240,237,232,.5);">Edition</span>
+    <button id="btnDark" onclick="setEdition('')" style="padding:3px 10px;border-radius:4px;border:1px solid rgba(255,255,255,.2);background:transparent;color:#F0EDE8;cursor:pointer;font-size:11px;">Dark</button>
+    <button id="btnLight" onclick="setEdition('light')" style="padding:3px 10px;border-radius:4px;border:1px solid #E8A020;background:#E8A020;color:#1A1F2E;cursor:pointer;font-size:11px;">Light</button>
+  </div>
+  <button onclick="window.print()" style="padding:4px 12px;border-radius:4px;border:1px solid rgba(255,255,255,.2);background:transparent;color:#F0EDE8;cursor:pointer;font-size:11px;">Print / PDF</button>
+</div>
+
+<script>
+const posterWrap=document.getElementById('posterWrap');
+const poster=document.getElementById('poster');
+function scalePoster(){const s=Math.min((window.innerWidth-24)/900,(window.innerHeight-24)/1200);posterWrap.style.transform='scale('+s+')';posterWrap.style.transformOrigin='top left';posterWrap.style.width=(900*s)+'px';posterWrap.style.height=(1200*s)+'px';}
+function setEdition(e){if(e)poster.dataset.edition=e;else delete poster.dataset.edition;document.getElementById('btnDark').style.background=e?'transparent':'#E8A020';document.getElementById('btnDark').style.color=e?'#F0EDE8':'#1A1F2E';document.getElementById('btnDark').style.borderColor=e?'rgba(255,255,255,.2)':'#E8A020';document.getElementById('btnLight').style.background=e?'#E8A020':'transparent';document.getElementById('btnLight').style.color=e?'#1A1F2E':'#F0EDE8';document.getElementById('btnLight').style.borderColor=e?'#E8A020':'rgba(255,255,255,.2)';}
+scalePoster();window.addEventListener('resize',scalePoster);
+</script>
+</body>
+</html>

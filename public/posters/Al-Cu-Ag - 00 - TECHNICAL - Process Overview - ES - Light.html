@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barra Colectora Al-Cu-Ag &mdash; Resumen del Proceso &mdash; T&eacute;cnico | Plating Posters Inc</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Barlow:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#1A1F2E;--navy:#0D1020;--text:#F0EDE8;--muted:rgba(240,237,232,.62);
+  --faint:rgba(240,237,232,.38);
+  --amber:#E8A020;--teal:#2EC4B6;--emerald:#27AE60;--coral:#E05C5C;
+  --slate:#3A4055;--callout:#1E2435;--altrow:#252B3D;
+  --glass-bg:rgba(30,36,53,.55);--glass-border:rgba(255,255,255,.12);
+  --glass-shadow:inset 0 1px 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(0,0,0,.2),0 4px 12px rgba(0,0,0,.25);
+}
+.poster[data-edition="light"]{
+  --bg:#F5F4F0;--navy:#DDD8CE;--text:#1B2030;--muted:rgba(27,32,48,.74);
+  --faint:rgba(27,32,48,.42);
+  --amber:#B8770D;--teal:#1A8C82;--emerald:#1E8449;--coral:#B7322F;
+  --slate:#C5C0B5;--callout:#ECEAE1;--altrow:#E4E1D6;
+  --glass-bg:rgba(255,253,247,.78);--glass-border:rgba(27,32,48,.16);
+  --glass-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 4px 12px rgba(27,32,48,.08);
+}
+html,body{margin:0;padding:0;background:#e8e6df;}
+.stage{width:100vw;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;overflow:visible;padding:12px 0;box-sizing:border-box;}
+.poster-wrap{transform-origin:top left;}
+.poster{
+  width:1200px;height:1800px;position:relative;overflow:hidden;
+  background:
+    radial-gradient(1200px 800px at 15% 8%,rgba(46,196,182,.14),transparent 60%),
+    radial-gradient(1000px 700px at 90% 25%,rgba(232,160,32,.12),transparent 55%),
+    radial-gradient(900px 900px at 50% 80%,rgba(224,92,92,.10),transparent 60%),
+    var(--bg);
+  font-family:'Inter',sans-serif;color:var(--text);
+  display:flex;flex-direction:column;padding:32px;box-sizing:border-box;
+}
+.glass{background-color:var(--glass-bg);background-image:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));border:1px solid var(--glass-border);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);box-shadow:var(--glass-shadow);border-radius:12px;}
+.tack{position:absolute;width:24px;height:24px;border-radius:50%;border:1.5px solid rgba(232,160,32,.28);z-index:2;pointer-events:none;}
+.tack::before,.tack::after{content:"";position:absolute;background:rgba(232,160,32,.28);}
+.tack::before{left:50%;top:-3px;bottom:-3px;width:1px;transform:translateX(-50%);}
+.tack::after{top:50%;left:-3px;right:-3px;height:1px;transform:translateY(-50%);}
+.tack.tl{top:12px;left:12px;}.tack.tr{top:12px;right:12px;}.tack.bl{bottom:12px;left:12px;}.tack.br{bottom:12px;right:12px;}
+
+/* ===== THREE-PART FLEX LAYOUT (footer fix) ===== */
+.poster-header{flex-shrink:0;}
+.poster-body{flex:1;overflow:hidden;display:flex;flex-direction:column;gap:8px;justify-content:space-between;}
+.poster-footer{flex-shrink:0;margin-top:8px;}
+
+/* Header */
+.header-band{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:8px;}
+.header-left{flex:1;min-width:0;}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--amber);letter-spacing:.16em;text-transform:uppercase;margin-bottom:4px;display:flex;align-items:center;gap:12px;}
+.eyebrow::before{content:"";display:inline-block;width:30px;height:3px;background:var(--amber);}
+.headline{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:72px;color:var(--text);line-height:.92;margin:4px 0;letter-spacing:-.01em;text-transform:uppercase;}
+.headline em{font-style:normal;color:var(--amber);}
+.subhead{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:20px;color:var(--teal);margin:0 0 3px;letter-spacing:.02em;text-transform:uppercase;}
+.tagline{font-family:'Inter',sans-serif;font-style:italic;font-size:11px;color:var(--muted);line-height:1.35;max-width:700px;margin:0;}
+.logo-card{flex-shrink:0;padding:12px 10px;display:flex;flex-direction:column;align-items:center;gap:8px;align-self:flex-start;}
+.logo-tile{width:68px;height:68px;border-radius:12px;background:linear-gradient(135deg,#E8A020,#2EC4B6);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -2px 4px rgba(0,0,0,.15),0 4px 14px rgba(0,0,0,.35);}
+.logo-tile span{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:26px;color:#1A1F2E;letter-spacing:.02em;line-height:1;}
+.logo-word{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;letter-spacing:.04em;text-transform:uppercase;line-height:1;text-align:center;white-space:nowrap;}
+.logo-word .a{color:var(--text);}.logo-word .b{color:var(--amber);}
+.logo-inc{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.05em;text-transform:lowercase;color:var(--muted);margin-top:-2px;}
+
+/* Section title */
+.section-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:20px;letter-spacing:.08em;text-transform:uppercase;color:var(--text);margin:0 0 5px;display:flex;align-items:center;gap:8px;}
+.section-title::before{content:"";width:5px;height:5px;background:var(--amber);border-radius:50%;}
+.section-title .sub{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.14em;color:var(--muted);margin-left:auto;font-weight:500;}
+
+/* Rule card */
+.rule-card{display:flex;align-items:center;gap:18px;padding:10px 20px;background:rgba(232,160,32,.07);}
+.rule-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:56px;color:var(--amber);line-height:1;letter-spacing:-.02em;}
+.rule-body{flex:1;}
+.rule-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;color:var(--amber);letter-spacing:.08em;text-transform:uppercase;}
+.rule-text{font-family:'Inter',sans-serif;font-size:10.5px;color:var(--muted);line-height:1.4;margin-top:3px;}
+
+/* Key insight card */
+.insight-card{padding:14px 18px;border-left:3px solid var(--teal);background:rgba(46,196,182,.06);border-radius:0 12px 12px 0;}
+.insight-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;color:var(--teal);letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px;}
+.insight-text{font-family:'Inter',sans-serif;font-size:12px;color:var(--text);line-height:1.5;}
+
+/* Parameter table */
+.data-table{width:100%;border-collapse:collapse;}
+.data-table th{font-family:'Barlow',sans-serif;font-weight:700;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);padding:5px 8px;text-align:left;background:rgba(13,16,32,.35);border-bottom:1px solid var(--glass-border);}
+.poster[data-edition="light"] .data-table th{background:rgba(27,32,48,.06);}
+.data-table td{padding:4px 8px;color:var(--text);line-height:1.35;border-bottom:1px solid rgba(255,255,255,.05);font-family:'Inter',sans-serif;font-size:10.5px;}
+.poster[data-edition="light"] .data-table td{border-bottom-color:rgba(27,32,48,.08);}
+.data-table tr:last-child td{border-bottom:none;}
+.data-table tr:nth-child(even) td{background:rgba(255,255,255,.02);}
+.poster[data-edition="light"] .data-table tr:nth-child(even) td{background:rgba(27,32,48,.025);}
+.data-table .mono{font-family:'JetBrains Mono',monospace;font-size:10px;}
+
+/* Compact table variant for process sequence */
+.data-table.compact th{font-size:9px;padding:4px 6px;}
+.data-table.compact td{padding:3px 6px;font-size:10px;line-height:1.3;}
+.data-table.compact .mono{font-size:9.5px;}
+
+/* Cyanide row highlight */
+.data-table tr.cn-row td{color:var(--coral);border-left:2px solid var(--coral);}
+.data-table tr.cn-row td:first-child{border-left:none;}
+
+/* Bath chemistry mini table */
+.data-table.bath th{font-size:9px;padding:4px 5px;}
+.data-table.bath td{padding:3px 5px;font-size:9.5px;line-height:1.25;}
+.data-table.bath .mono{font-size:9px;}
+
+/* Comparison cards */
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.compare-card{padding:10px 16px;}
+.compare-card h4{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;color:var(--text);margin:0 0 8px;text-transform:uppercase;letter-spacing:.04em;}
+.compare-card h4 .tag{font-size:11px;padding:2px 8px;border-radius:4px;margin-left:8px;font-family:'JetBrains Mono',monospace;font-weight:500;letter-spacing:.06em;}
+.compare-card h4 .tag.good{background:rgba(39,174,96,.15);color:var(--emerald);}
+.compare-card h4 .tag.bad{background:rgba(224,92,92,.15);color:var(--coral);}
+.compare-card ul{list-style:none;padding:0;margin:0;}
+.compare-card li{font-size:12px;line-height:1.5;padding:3px 0;display:flex;gap:8px;align-items:flex-start;}
+.compare-card li::before{content:"";width:5px;height:5px;border-radius:50%;margin-top:6px;flex-shrink:0;}
+.compare-card.do li::before{background:var(--emerald);}
+.compare-card.dont li::before{background:var(--coral);}
+
+/* Trouble cards */
+.trouble-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.trouble-card{padding:12px 14px;border-radius:10px;border-left:3px solid var(--coral);display:flex;flex-direction:column;gap:4px;}
+.trouble-card h5{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;color:var(--coral);margin:0;text-transform:uppercase;letter-spacing:.06em;line-height:1.1;}
+.trouble-card p{font-size:11px;color:var(--muted);margin:0;line-height:1.4;}
+
+/* Safety callout */
+.safety-card{padding:10px 16px;background:rgba(224,92,92,.08);border:1px solid rgba(224,92,92,.25);border-radius:12px;}
+.safety-head{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:15px;color:var(--coral);letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px;}
+.safety-body{font-size:10.5px;color:var(--text);line-height:1.45;}
+.safety-body strong{font-weight:700;color:var(--coral);}
+
+/* Footer */
+.footer{padding:10px 20px;background-color:rgba(13,16,32,.85);background-image:linear-gradient(180deg,rgba(255,255,255,.04),rgba(0,0,0,0));border:1px solid rgba(255,255,255,.10);border-radius:8px;text-align:center;display:flex;flex-direction:column;gap:2px;}
+.poster[data-edition="light"] .footer{background-color:rgba(221,216,206,.95);border-color:rgba(27,32,48,.10);}
+.poster[data-edition="light"] .footer-disclaimer{color:rgba(27,32,48,.62);}
+.footer-disclaimer{font-family:'Inter',sans-serif;font-size:8.5px;line-height:1.35;color:var(--faint);margin:0 auto;max-width:900px;}
+.footer-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:12px;color:var(--text);letter-spacing:.04em;text-transform:uppercase;margin:0;}
+.footer-brand{font-family:'JetBrains Mono',monospace;font-size:8.5px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;}
+
+/* Bottom grid for bath chemistry + spec side by side */
+.bottom-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:10px;}
+
+/* ===== Tri-layer cross-section (slim full-width horizontal slab) ===== */
+.xsec{display:flex;align-items:stretch;gap:14px;padding:11px 16px;}
+.xsec-cap{flex-shrink:0;width:150px;display:flex;flex-direction:column;justify-content:center;gap:5px;}
+.xsec-cap .x-eyebrow{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;color:var(--text);letter-spacing:.06em;text-transform:uppercase;line-height:1.05;}
+.xsec-cap .x-note{font-family:'JetBrains Mono',monospace;font-size:8px;color:var(--muted);letter-spacing:.08em;line-height:1.3;}
+.xsec-cap .x-tie{font-family:'Inter',sans-serif;font-size:9px;color:var(--muted);line-height:1.4;margin-top:1px;}
+.xsec-cap .x-tie b{color:var(--teal);font-weight:700;}
+/* the layered slab */
+.xsec-slab{flex:1;display:flex;align-items:stretch;gap:8px;min-width:0;}
+.x-scale{flex-shrink:0;width:24px;position:relative;font-family:'JetBrains Mono',monospace;}
+.x-scale::before{content:"";position:absolute;right:0;top:2px;bottom:2px;width:1px;background:var(--glass-border);}
+.x-tick{position:absolute;right:0;transform:translateY(-50%);font-size:7px;color:var(--faint);letter-spacing:.02em;padding-right:5px;white-space:nowrap;}
+.x-tick::after{content:"";position:absolute;right:0;top:50%;width:4px;height:1px;background:var(--glass-border);}
+.x-stack{flex:1;display:flex;flex-direction:column-reverse;border-radius:6px;overflow:hidden;border:1px solid var(--glass-border);min-width:0;}
+.x-band{display:flex;align-items:center;gap:12px;padding:0 14px;position:relative;}
+.x-band .b-name{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:#1A1F2E;flex-shrink:0;width:138px;line-height:1.05;}
+.x-band .b-thick{font-family:'JetBrains Mono',monospace;font-size:9px;color:#1A1F2E;flex-shrink:0;width:150px;opacity:.82;}
+.x-band .b-job{font-family:'Inter',sans-serif;font-size:9.5px;color:#1A1F2E;line-height:1.25;opacity:.9;min-width:0;}
+.x-band.b-sub{background:var(--amber);height:46px;}
+.x-band.b-zin{background:var(--coral);height:13px;}
+.x-band.b-zin .b-name,.x-band.b-zin .b-thick,.x-band.b-zin .b-job{color:#FFF;font-size:8px;line-height:1;}
+.x-band.b-zin .b-name{font-size:9px;}
+.x-band.b-cu{background:var(--emerald);height:30px;}
+.x-band.b-ag{background:#D9DCE0;height:28px;border-bottom:1px solid rgba(27,32,48,.12);}
+.x-band.b-cu .b-name,.x-band.b-cu .b-thick,.x-band.b-cu .b-job{color:#FFF;}
+
+.tweaks{position:fixed;bottom:16px;right:16px;z-index:100;background:rgba(255,253,247,.95);border:1px solid rgba(27,32,48,.18);border-radius:10px;padding:10px 14px;display:flex;flex-direction:column;gap:8px;font-family:'Inter',sans-serif;font-size:12px;color:#1B2030;box-shadow:0 4px 14px rgba(27,32,48,.12);}
+@media print{
+  @page{size:12.5in 18.75in;margin:0;}
+  html,body{background:#F5F4F0 !important;-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
+  *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
+  .stage{position:static;padding:0;display:block;overflow:visible;}
+  .poster-wrap{transform:none !important;width:auto !important;height:auto !important;}
+  .poster{box-shadow:none !important;width:1200px !important;height:1800px !important;overflow:hidden !important;}
+  .glass,.trouble-card,.insight-card,.safety-card{backdrop-filter:none !important;-webkit-backdrop-filter:none !important;}
+  .tweaks{display:none !important;}
+}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="poster-wrap" id="posterWrap">
+<div class="poster" id="poster" data-edition="light">
+  <span class="tack tl" aria-hidden="true"></span><span class="tack tr" aria-hidden="true"></span>
+  <span class="tack bl" aria-hidden="true"></span><span class="tack br" aria-hidden="true"></span>
+
+  <!-- ===== HEADER (flex-shrink:0) ===== -->
+  <div class="poster-header">
+    <header class="header-band">
+      <div class="header-left">
+        <div class="eyebrow"><span>Plating Posters Inc &nbsp;&middot;&nbsp; Serie Barra Colectora Al-Cu-Ag &nbsp;&middot;&nbsp; Resumen del Proceso</span></div>
+        <h1 class="headline">ALUMINIO a COBRE a<br><em>PLATA</em></h1>
+        <h2 class="subhead">Recubrimiento Multicapa de Barras Colectoras para Distribuci&oacute;n de Energ&iacute;a de Rectificadores</h2>
+        <p class="tagline">Tres metales, una misi&oacute;n &mdash; eliminar la resistencia de contacto en la barra colectora m&aacute;s ligera del bastidor.</p>
+      </div>
+      <aside class="glass logo-card">
+        <div class="logo-tile"><span>PP</span></div>
+        <div class="logo-word"><span class="a">Plating</span> <span class="b">Posters</span></div>
+        <div class="logo-inc">www.platingposters.com</div>
+      </aside>
+    </header>
+  </div>
+
+  <!-- ===== BODY (flex:1, overflow:hidden) ===== -->
+  <div class="poster-body">
+
+    <!-- RULE CARD -->
+    <div class="glass rule-card">
+      <div class="rule-num">65%</div>
+      <div class="rule-body">
+        <div class="rule-label">Ahorro de Peso vs. Barras Colectoras de Cobre</div>
+        <div class="rule-text">Barras colectoras de aluminio con un tercio de la densidad del cobre. Superficies de contacto de plata al 106% IACS. Intercapa de cobre para adherencia y aumento de conductividad. Lo mejor de tres metales en una sola pieza.</div>
+      </div>
+    </div>
+
+    <!-- WHY THIS MULTI-LAYER APPROACH -->
+    <div>
+      <h3 class="section-title">Por Qu&eacute; Este Enfoque Multicapa <span class="sub">L&oacute;gica tri-metal</span></h3>
+      <p style="font-size:10.5px;color:var(--muted);line-height:1.4;margin:0 0 5px;">Los rectificadores distribuyen corriente de alto amperaje a las l&iacute;neas de proceso electroqu&iacute;mico. Cada micro-ohm de resistencia de contacto convierte corriente en calor residual. Este sistema de tres capas es est&aacute;ndar en equipos de maniobra, interconexiones de bater&iacute;as, distribuci&oacute;n de energ&iacute;a en veh&iacute;culos el&eacute;ctricos e instalaciones de rectificadores electroqu&iacute;micos.</p>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table compact">
+          <thead><tr><th>Capa</th><th>Material</th><th>Funci&oacute;n</th></tr></thead>
+          <tbody>
+            <tr><td>Sustrato</td><td class="mono">Aluminio (6101-T6 o 6061-T6)</td><td>Conductor estructural. ~57% IACS (6101-T6) / ~43% IACS (6061-T6) a 2.70 g/cm&sup3;</td></tr>
+            <tr><td>Intercapa</td><td class="mono">Cobre electrodepositado (ba&ntilde;o de cianuro)</td><td>Puente de adherencia + aumento de conductividad hacia ~100% IACS (Cu puro &asymp; 100% IACS por definici&oacute;n)</td></tr>
+            <tr><td>Capa Final</td><td class="mono">Plata electrodepositada</td><td>106% IACS &mdash; la mayor conductividad de cualquier metal</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- FULL PROCESS SEQUENCE -->
+    <div>
+      <h3 class="section-title">Secuencia Completa del Proceso <span class="sub">Al &rarr; Cu &rarr; Ag, en orden</span></h3>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table compact">
+          <thead><tr><th>Proceso</th><th>Temp</th><th>Tiempo</th><th>Par&aacute;metro Clave</th></tr></thead>
+          <tbody>
+            <tr><td>Limpieza Alcalina por Inmersi&oacute;n</td><td class="mono">54&ndash;66&deg;C (130&ndash;150&deg;F)</td><td class="mono">3&ndash;5 min</td><td>Solo AL-SAFE, pH 9.5&ndash;11</td></tr>
+            <tr><td>Enjuague con Agua DI</td><td class="mono">Ambiente</td><td class="mono">30&ndash;60 s</td><td>&lt;50 &micro;S/cm</td></tr>
+            <tr><td>Decapado &aacute;cido / Desoxidaci&oacute;n</td><td class="mono">21&ndash;38&deg;C (70&ndash;100&deg;F)</td><td class="mono">15&ndash;60 s</td><td>Al brillante, sin lodillo</td></tr>
+            <tr><td>Enjuague con Agua DI</td><td class="mono">Ambiente</td><td class="mono">30&ndash;60 s</td><td>NO secar al aire</td></tr>
+            <tr><td>Primer Zincado</td><td class="mono">18&ndash;27&deg;C (65&ndash;80&deg;F)</td><td class="mono">30&ndash;60 s</td><td>0.25&ndash;0.50 &micro;m, gris uniforme</td></tr>
+            <tr><td>Enjuague con Agua DI</td><td class="mono">Ambiente</td><td class="mono">30&ndash;60 s</td><td>Mantener h&uacute;medo</td></tr>
+            <tr><td>Decapado de Zincado (50% HNO<sub>3</sub>)</td><td class="mono">Ambiente</td><td class="mono">10&ndash;15 s</td><td>Sin zinc, Al brillante</td></tr>
+            <tr><td>Enjuague con Agua DI</td><td class="mono">Ambiente</td><td class="mono">30&ndash;60 s</td><td>Transferencia inmediata</td></tr>
+            <tr><td>Segundo Zincado</td><td class="mono">18&ndash;27&deg;C (65&ndash;80&deg;F)</td><td class="mono">15&ndash;30 s</td><td>0.10&ndash;0.25 &micro;m, grano m&aacute;s fino</td></tr>
+            <tr><td>Enjuague con Agua DI</td><td class="mono">Ambiente</td><td class="mono">30&ndash;60 s</td><td>&Uacute;ltimo enjuague antes de zona CN</td></tr>
+            <tr class="cn-row"><td>Golpe de Cu Cianuro</td><td class="mono">32&ndash;43&deg;C (90&ndash;110&deg;F)</td><td class="mono">1&ndash;3 min</td><td>1&ndash;3 A/dm&sup2;, ENTRADA EN CALIENTE</td></tr>
+            <tr class="cn-row"><td>Enjuague de Transferencia</td><td class="mono">Ambiente</td><td class="mono">30&ndash;60 s</td><td>Transferencia segura CN a CN</td></tr>
+            <tr class="cn-row"><td>Recubrimiento de Cu Cianuro</td><td class="mono">60&ndash;71&deg;C (140&ndash;160&deg;F)</td><td class="mono">Seg&uacute;n espesor</td><td>2&ndash;5 A/dm&sup2;, objetivo 15&ndash;50 &micro;m</td></tr>
+            <tr class="cn-row"><td>Enjuague Multi-Etapa</td><td class="mono">Ambiente</td><td class="mono">60 s/etapa</td><td>Enjuague de recuperaci&oacute;n &rarr; destrucci&oacute;n de CN</td></tr>
+            <tr class="cn-row"><td>Golpe de Ag Cianuro</td><td class="mono">21&ndash;27&deg;C (70&ndash;80&deg;F)</td><td class="mono">30&ndash;90 s</td><td>1&ndash;3 A/dm&sup2;, ENTRADA CON CORRIENTE</td></tr>
+            <tr class="cn-row"><td>Recubrimiento de Ag Cianuro</td><td class="mono">21&ndash;32&deg;C (70&ndash;90&deg;F)</td><td class="mono">Seg&uacute;n espesor</td><td>0.5&ndash;3 A/dm&sup2;, objetivo 8&ndash;25 &micro;m</td></tr>
+            <tr><td>Enjuague DI Multi-Etapa</td><td class="mono">Ambiente</td><td class="mono">30&ndash;60 s c/u</td><td>Recuperaci&oacute;n de Ag, &lt;20 &micro;S/cm</td></tr>
+            <tr><td>Anti-Deslustre (Opcional)</td><td class="mono">Amb&ndash;40&deg;C (Amb&ndash;104&deg;F)</td><td class="mono">15&ndash;30 s</td><td>VERIFIQUE ESPEC. &mdash; puede estar prohibido</td></tr>
+            <tr><td>Enjuague Final y Secado</td><td class="mono">40&ndash;55&deg;C (104&ndash;131&deg;F)</td><td class="mono">Hasta secar</td><td>Guantes limpios, nunca a mano descubierta</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- TRI-LAYER CROSS-SECTION (slim full-width slab) -->
+    <div>
+      <h3 class="section-title">Secci&oacute;n Transversal de la Barra Tri-Capa <span class="sub">Representativa &mdash; sin escala</span></h3>
+      <div class="glass xsec">
+        <div class="xsec-cap">
+          <div class="x-eyebrow">Lo Que Est&aacute; Construyendo</div>
+          <div class="x-note">Abajo &rarr; arriba<br>espesores en &micro;m</div>
+          <div class="x-tie">Resistencia de contacto <b>&lt;100 &micro;&Omega;</b> (Est.) / <b>&lt;50 &micro;&Omega;</b> (Alta Conf.) a 100 A</div>
+        </div>
+        <div class="xsec-slab">
+          <div class="x-scale">
+            <span class="x-tick" style="top:2px;">~75</span>
+            <span class="x-tick" style="top:21px;">50</span>
+            <span class="x-tick" style="top:51px;">25</span>
+            <span class="x-tick" style="bottom:2px;transform:translateY(50%);">0</span>
+          </div>
+          <div class="x-stack">
+            <div class="x-band b-sub">
+              <span class="b-name">Aluminio 6101/6061-T6</span>
+              <span class="b-thick">2.70 g/cm&sup3; &middot; ~57/43% IACS</span>
+              <span class="b-job">Conductor estructural &mdash; 65% m&aacute;s ligero que Cu</span>
+            </div>
+            <div class="x-band b-zin">
+              <span class="b-name">Zincado</span>
+              <span class="b-thick">0.10&ndash;0.50 &micro;m</span>
+              <span class="b-job">Capa de uni&oacute;n sacrificial &mdash; desplaza el &oacute;xido para que el Cu se ancle</span>
+            </div>
+            <div class="x-band b-cu">
+              <span class="b-name">Cu Electrodepositado</span>
+              <span class="b-thick">15&ndash;50 &micro;m &middot; ~100% IACS</span>
+              <span class="b-job">Puente de adherencia + aumento de conductividad</span>
+            </div>
+            <div class="x-band b-ag">
+              <span class="b-name">Ag Electrodepositada</span>
+              <span class="b-thick">8&ndash;25 &micro;m &middot; 106% IACS</span>
+              <span class="b-job">Metal de mayor conductividad &mdash; la cara de contacto</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOTTOM GRID: Bath Chemistry + Specs side by side -->
+    <div class="bottom-grid">
+
+      <!-- BATH CHEMISTRY AT A GLANCE -->
+      <div>
+        <h3 class="section-title">Qu&iacute;mica de Ba&ntilde;os en Resumen <span class="sub">5 ba&ntilde;os</span></h3>
+        <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+          <table class="data-table bath">
+            <thead><tr><th>Par&aacute;metro</th><th>Zincado</th><th>Cu Golpe</th><th>Cu Rcb.</th><th>Ag Golpe</th><th>Ag Rcb.</th><th>Unid.</th></tr></thead>
+            <tbody>
+              <tr><td>Fuente de metal</td><td class="mono">ZnO 20&ndash;30</td><td class="mono">CuCN 22&ndash;30</td><td class="mono">CuCN 60&ndash;90</td><td class="mono">AgCN 3&ndash;6</td><td class="mono">AgCN 30&ndash;45</td><td class="mono">g/L</td></tr>
+              <tr><td>Cianuro libre</td><td class="mono">&mdash;</td><td class="mono">NaCN 11&ndash;15</td><td class="mono">NaCN 8&ndash;15</td><td class="mono">KCN 75&ndash;120</td><td class="mono">KCN 45&ndash;120</td><td class="mono">g/L</td></tr>
+              <tr><td>&Aacute;lcali</td><td class="mono">NaOH 120&ndash;150</td><td class="mono">NaOH 3&ndash;8</td><td class="mono">NaOH 15&ndash;30</td><td class="mono">&mdash;</td><td class="mono">&mdash;</td><td class="mono">g/L</td></tr>
+              <tr><td>Temperatura</td><td class="mono">18&ndash;27&deg;C</td><td class="mono">32&ndash;43&deg;C</td><td class="mono">60&ndash;71&deg;C</td><td class="mono">21&ndash;27&deg;C</td><td class="mono">21&ndash;32&deg;C</td><td class="mono">&deg;C</td></tr>
+              <tr><td>Densidad de corriente</td><td class="mono">Inmersi&oacute;n</td><td class="mono">1&ndash;3</td><td class="mono">2&ndash;5</td><td class="mono">1&ndash;3</td><td class="mono">0.5&ndash;3.0</td><td class="mono">A/dm&sup2;</td></tr>
+              <tr><td>&Aacute;nodos</td><td class="mono">&mdash;</td><td class="mono">Acero (inerte)</td><td class="mono">OFHC Cu</td><td class="mono">SS (inerte)</td><td class="mono">99.99% Ag</td><td class="mono">&mdash;</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- BUSBAR PLATING SPECIFICATIONS -->
+      <div>
+        <h3 class="section-title">Espec. de Recubrimiento <span class="sub">Barra colectora</span></h3>
+        <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+          <table class="data-table bath">
+            <thead><tr><th>Par&aacute;metro</th><th>Servicio Est&aacute;ndar</th><th>Alta Confiabilidad</th></tr></thead>
+            <tbody>
+              <tr><td>Espesor de Cu</td><td class="mono">15&ndash;25 &micro;m</td><td class="mono">25&ndash;50 &micro;m</td></tr>
+              <tr><td>Espesor de Ag</td><td class="mono">8&ndash;15 &micro;m</td><td class="mono">15&ndash;25 &micro;m</td></tr>
+              <tr><td>Adherencia (Doblez)</td><td class="mono">Sin desprendimiento a 90&deg;</td><td class="mono">Sin desprendimiento a 180&deg;</td></tr>
+              <tr><td>Resistencia de Contacto</td><td class="mono">&lt;100 &micro;&Omega; a 100A</td><td class="mono">&lt;50 &micro;&Omega; a 100A</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SAFETY -->
+    <div class="safety-card">
+      <div class="safety-head">&#9888; Seguridad con Cianuro &mdash; La Zona de Cianuro</div>
+      <div class="safety-body"><strong>CUATRO BA&Ntilde;OS DE CIANURO en esta zona &mdash; el golpe de Cu cianuro, el recubrimiento de Cu cianuro, el golpe de Ag cianuro y el recubrimiento de Ag cianuro.</strong> (Los enjuagues de transferencia y multi-etapa entre ellos son solo de agua.) El KCN y el NaCN son letales por ingesti&oacute;n, inhalaci&oacute;n y absorci&oacute;n cut&aacute;nea. <strong>NUNCA mezcle cianuro con &aacute;cido &mdash; el gas HCN es r&aacute;pidamente mortal; 50 ppm es el nivel IDLH (Peligro Inmediato para la Vida o la Salud).</strong> Se requieren monitores continuos de HCN. Los kits de ant&iacute;doto de emergencia deben estar en el sitio.</div>
+    </div>
+
+  </div>
+
+  <!-- ===== FOOTER (flex-shrink:0, margin-top:8px) ===== -->
+  <footer class="footer poster-footer">
+    <p class="footer-disclaimer">Referencia t&eacute;cnica &uacute;nicamente. Verifique todos los par&aacute;metros con la hoja t&eacute;cnica (TDS) de su proveedor de productos qu&iacute;micos, las especificaciones del cliente y los requisitos reglamentarios aplicables antes de su uso en producci&oacute;n.</p>
+    <p class="footer-title">Resumen del Proceso &mdash; Serie de Recubrimiento de Barras Colectoras Al &rarr; Cu &rarr; Ag</p>
+    <span class="footer-brand">Plating Posters Inc &middot; Serie de Referencia de Acabado de Metales &middot; v1.0 / 2026</span>
+  </footer>
+
+</div>
+</div>
+</div>
+
+<div class="tweaks">
+  <div style="display:flex;gap:8px;align-items:center;">
+    <span style="color:rgba(27,32,48,.6);font-size:11px;letter-spacing:.06em;text-transform:uppercase;">Edition</span>
+    <button id="btnDark" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#1B2030;border:1px solid rgba(27,32,48,.2);" onclick="setEdition('')">Dark</button>
+    <button id="btnLight" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:#E8A020;color:#1A1F2E;border:1px solid #E8A020;" onclick="setEdition('light')">Light</button>
+  </div>
+  <button onclick="window.print()" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#1B2030;border:1px solid rgba(27,32,48,.2);">Print / PDF</button>
+</div>
+
+<script>
+const posterWrap=document.getElementById('posterWrap');
+const poster=document.getElementById('poster');
+function scalePoster(){const sW=(window.innerWidth-24)/1200;const sH=(window.innerHeight-24)/1800;const s=Math.min(sW,sH);posterWrap.style.transform='scale('+s+')';posterWrap.style.transformOrigin='top left';posterWrap.style.width=(1200*s)+'px';posterWrap.style.height=(1800*s)+'px';}
+function setEdition(e){if(e)poster.dataset.edition=e;else delete poster.dataset.edition;document.getElementById('btnDark').style.background=e?'transparent':'#E8A020';document.getElementById('btnDark').style.color=e?'#1B2030':'#1A1F2E';document.getElementById('btnDark').style.borderColor=e?'rgba(27,32,48,.2)':'#E8A020';document.getElementById('btnLight').style.background=e?'#E8A020':'transparent';document.getElementById('btnLight').style.color=e?'#1A1F2E':'#1B2030';document.getElementById('btnLight').style.borderColor=e?'#E8A020':'rgba(27,32,48,.2)';}
+scalePoster();window.addEventListener('resize',scalePoster);
+</script>
+</body>
+</html>
