@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { getPoster, getAvailablePosters } from "@/lib/posters";
 import { notFound } from "next/navigation";
 import PosterDetailClient from "@/components/PosterDetailClient";
+import ManualCrossSell from "@/components/ManualCrossSell";
 
 export async function generateStaticParams() {
   return getAvailablePosters().map((p) => ({ id: p.id }));
@@ -56,6 +57,7 @@ export default async function PosterDetailPage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <PosterDetailClient poster={poster} />
+      <ManualCrossSell posterId={poster.id} />
     </div>
   );
 }

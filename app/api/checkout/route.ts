@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { createCheckoutSession, type CheckoutItem } from "@/lib/stripe";
+import { createCheckoutSession, type CheckoutItem, type ManualCheckoutItem } from "@/lib/stripe";
 import { rateLimit } from "@/lib/rate-limit";
 
 export async function POST(req: NextRequest) {
@@ -9,19 +9,23 @@ export async function POST(req: NextRequest) {
 
   try {
     const body = await req.json();
-    const { items, logoUpgrade } = body as {
-      items: CheckoutItem[];
+    const { items, manualItems, logoUpgrade } = body as {
+      items?: CheckoutItem[];
+      manualItems?: ManualCheckoutItem[];
       logoUpgrade: boolean;
     };
 
-    if (!items || !Array.isArray(items) || items.length === 0) {
+    const posterItems = Array.isArray(items) ? items : [];
+    const manuals = Array.isArray(manualItems) ? manualItems : [];
+    if (posterItems.length === 0 && manuals.length === 0) {
       return NextResponse.json({ error: "No items provided" }, { status: 400 });
     }
 
     const origin = req.headers.get("origin") || "https://platingposters.com";
 
     const url = await createCheckoutSession({
-      items,
+      items: posterItems,
+      manualItems: manuals,
       logoUpgrade: !!logoUpgrade,
       successUrl: `${origin}/checkout/success`,
       cancelUrl: `${origin}/checkout/cancel`,

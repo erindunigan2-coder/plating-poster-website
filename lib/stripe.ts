@@ -1,5 +1,6 @@
 import Stripe from "stripe";
 import { getUnitPrice, getShippingCost, LOGO_UPGRADE_PRICE, VALID_SIZES, VALID_FINISHES, VALID_EDITIONS, VALID_LANGUAGES } from "./pricing";
+import { getManual } from "./manuals";
 
 // Lazy init — avoids crash during Next.js static page generation at build time
 let _stripe: Stripe | null = null;
@@ -20,13 +21,21 @@ export type CheckoutItem = {
   quantity: number;
 };
 
+// Training manuals — digital PDF products (no size/finish/edition, no shipping).
+export type ManualCheckoutItem = {
+  manualId: string;
+  language: string;
+  quantity: number;
+};
+
 export async function createCheckoutSession(params: {
   items: CheckoutItem[];
+  manualItems?: ManualCheckoutItem[];
   logoUpgrade: boolean;
   successUrl: string;
   cancelUrl: string;
 }): Promise<string> {
-  const { items, logoUpgrade, successUrl, cancelUrl } = params;
+  const { items, manualItems = [], logoUpgrade, successUrl, cancelUrl } = params;
 
   // Validate and build line items with server-side pricing
   const lineItems: Stripe.Checkout.SessionCreateParams.LineItem[] = [];
@@ -88,8 +97,35 @@ export async function createCheckoutSession(params: {
     });
   }
 
-  // Determine shipping
-  const shippingCost = getShippingCost(subtotal);
+  // Training manuals (digital PDF — no shipping)
+  for (const m of manualItems) {
+    const manual = getManual(m.manualId);
+    if (!manual) throw new Error(`Invalid manual: ${m.manualId}`);
+    if (!VALID_LANGUAGES.includes(m.language as typeof VALID_LANGUAGES[number])) {
+      throw new Error(`Invalid language: ${m.language}`);
+    }
+    const qty = Math.max(1, Math.floor(m.quantity || 1));
+    lineItems.push({
+      price_data: {
+        currency: "usd",
+        product_data: {
+          name: `${manual.title} (Training Manual)`,
+          description: `Digital PDF · ${m.language === "es" ? "Spanish" : "English"}`,
+          metadata: { manualId: manual.id, type: "manual", language: m.language, format: "digital-pdf" },
+        },
+        unit_amount: manual.price * 100,
+      },
+      quantity: qty,
+    });
+  }
+
+  if (lineItems.length === 0) {
+    throw new Error("No line items to check out");
+  }
+
+  // Determine shipping — applies to physical (poster) items only; digital-only ships nothing
+  const hasPhysical = items.length > 0;
+  const shippingCost = hasPhysical ? getShippingCost(subtotal) : 0;
 
   const shippingOptions: Stripe.Checkout.SessionCreateParams.ShippingOption[] = shippingCost === 0
     ? [{
@@ -108,9 +144,10 @@ export async function createCheckoutSession(params: {
       }];
 
   // Store order summary in metadata for webhook processing
-  const orderSummary = items.map(i =>
-    `${i.posterTitle} (${i.edition}/${i.size}/${i.finish}/${i.language}) x${i.quantity}`
-  ).join(" | ");
+  const orderSummary = [
+    ...items.map(i => `${i.posterTitle} (${i.edition}/${i.size}/${i.finish}/${i.language}) x${i.quantity}`),
+    ...manualItems.map(m => { const man = getManual(m.manualId); return `${man ? man.title : m.manualId} [Training Manual/${m.language === "es" ? "ES" : "EN"}] x${m.quantity}`; }),
+  ].join(" | ");
 
   const session = await getStripe().checkout.sessions.create({
     mode: "payment",
@@ -125,7 +162,8 @@ export async function createCheckoutSession(params: {
     metadata: {
       order_summary: orderSummary.slice(0, 500),
       logo_upgrade: logoUpgrade ? "true" : "false",
-      items_json: JSON.stringify(items).slice(0, 500),
+      items_json: JSON.stringify(items).slice(0, 400),
+      manuals_json: JSON.stringify(manualItems).slice(0, 300),
     },
   });
 

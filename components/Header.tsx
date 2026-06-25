@@ -57,6 +57,7 @@ export default function Header() {
           <nav className="hidden md:flex items-center gap-8">
             {[
               { href: "/categories", label: "Catalogue" },
+              { href: "/manuals", label: "Manuals" },
               { href: "/build", label: "Build Your Line" },
               { href: "/contact", label: "Custom Series" },
               { href: "/about", label: "About" },
@@ -113,6 +114,7 @@ export default function Header() {
           <nav className="flex flex-col gap-4">
             {[
               { href: "/categories", label: "Catalogue" },
+              { href: "/manuals", label: "Manuals" },
               { href: "/build", label: "Build Your Line" },
               { href: "/contact", label: "Custom Series" },
               { href: "/about", label: "About" },
