@@ -62,8 +62,8 @@ export default function ManualsPage() {
             <span className="text-3xl mb-3">📚</span>
             <h2 className="font-black text-lg" style={{ color: gunmetal }}>More manuals coming</h2>
             <p className="text-xs mt-2 leading-relaxed" style={{ color: "#6B7080" }}>
-              We&apos;re building a training manual for every finished poster series — Acid Zinc, Hard Chrome,
-              Zinc-Nickel, Anodize, and more. Bright Nickel is first.
+              We&apos;re building a training manual for every finished poster series — Hard Chrome,
+              Zinc-Nickel, Anodize, and more. Bright Nickel and Acid Zinc are live now.
             </p>
           </div>
         </div>

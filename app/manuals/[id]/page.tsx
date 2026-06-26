@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { getManual, getAvailableManuals } from "@/lib/manuals";
 import ManualOrderForm from "@/components/ManualOrderForm";
+import LookInside from "@/components/LookInside";
 
 export function generateStaticParams() {
   return getAvailableManuals().map((m) => ({ id: m.id }));
@@ -101,6 +102,10 @@ export default async function ManualDetailPage({ params }: Props) {
           </p>
         </div>
       </div>
+
+      {manual.samplePages?.length > 0 && (
+        <LookInside pages={manual.samplePages} title={manual.title} />
+      )}
     </div>
   );
 }
