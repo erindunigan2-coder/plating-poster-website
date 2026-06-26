@@ -7,7 +7,8 @@ export type Manual = {
   id: string;                 // e.g. "bright-nickel-manual"
   title: string;
   titleEs: string;
-  seriesId: string;           // poster-id prefix this manual covers, for cart cross-sell (e.g. "bright-nickel")
+  seriesId: string;           // primary poster-id prefix this manual covers, for cart cross-sell (e.g. "bright-nickel")
+  posterPrefixes?: string[];  // extra poster-id prefixes that should cross-sell this manual (poster naming isn't always seriesId)
   seriesLabel: string;        // "Bright Nickel"
   tagline: string;
   description: string;
@@ -112,6 +113,51 @@ export const MANUALS: Manual[] = [
     ],
     available: true,
   },
+  {
+    id: "alkaline-zinc-manual",
+    title: "Alkaline Zinc — The Complete Training Manual",
+    titleEs: "Zinc Alcalino — El Manual de Capacitación Completo",
+    seriesId: "alkaline-zinc",
+    posterPrefixes: ["zinc-alkaline"],
+    seriesLabel: "Alkaline Zinc",
+    tagline: "A full training course for the brand-new operator — assumes you know nothing, teaches you everything.",
+    description:
+      "A 50-page, plain-language training manual for the entire modern cyanide-free alkaline (zincate) zinc line — written in a friendly, “for-dummies” style that assumes zero prior knowledge. Covers every station from cleaning through trivalent-chromate passivation, the steel-anode/zinc-dissolver setup, throwing power, and the hydrogen-embrittlement bake — with the “why” behind each step, integrated safety, teach-back checklists, and common new-hire mistakes. Ends with a 20-question completion test, answer key, and a printable certificate of completion.",
+    descriptionEs:
+      "Un manual de capacitación de 50 páginas, en lenguaje sencillo, para toda la línea moderna de zinc alcalino (zincato) sin cianuro — escrito en un estilo amigable “para principiantes” que no asume conocimientos previos. Cubre cada estación, desde la limpieza hasta el pasivado con cromato trivalente, la configuración de ánodos de acero/disolvedor de zinc, el poder de penetración y el horneado contra la fragilización por hidrógeno — con el “por qué” de cada paso, seguridad integrada, listas de verificación y los errores comunes de los nuevos operadores. Termina con un examen de 20 preguntas, clave de respuestas y un certificado de finalización imprimible.",
+    pages: 50,
+    priceDigital: 199,
+    pricePrint: 329,
+    priceCombo: 369,
+    printVolumeTiers: [
+      { min: 10, price: 199 },
+      { min: 5, price: 239 },
+      { min: 3, price: 279 },
+    ],
+    languages: ["en", "es"],
+    coverImage: "/manuals/alkaline-zinc-manual-cover.jpg",
+    coverImageEs: "/manuals/alkaline-zinc-manual-cover-es.jpg",
+    samplePages: [
+      "/manuals/samples/alkaline-zinc-manual-p1.jpg",
+      "/manuals/samples/alkaline-zinc-manual-p2.jpg",
+      "/manuals/samples/alkaline-zinc-manual-p3.jpg",
+      "/manuals/samples/alkaline-zinc-manual-p4.jpg",
+      "/manuals/samples/alkaline-zinc-manual-p5.jpg",
+      "/manuals/samples/alkaline-zinc-manual-p6.jpg",
+    ],
+    highlights: [
+      "Zero-assumption fundamentals primer — what plating is and how the line works",
+      "All 9 stations: cleaning → rinse → acid activation → alkaline zinc → bright dip → trivalent-chromate passivation",
+      "Why alkaline beats acid zinc on throwing power, distribution, and ductility",
+      "Steel anodes + separate zinc dissolver, NaOH:Zn ratio, and bath control explained",
+      "Safety integrated into every station (caustic burns, hydrogen embrittlement + bake, chromate)",
+      "Teach-back checklists + “top mistakes new operators make”",
+      "20-question completion test, answer key, and certificate of completion",
+      "Available in English and Spanish (professional shop-floor Spanish)",
+      "Instant digital PDF download",
+    ],
+    available: true,
+  },
 ];
 
 export type ManualFormat = "digital" | "print" | "combo";
@@ -145,8 +191,15 @@ export function getAvailableManuals(): Manual[] {
   return MANUALS.filter((m) => m.available);
 }
 
+/** All poster-id prefixes that should associate with this manual (primary seriesId + any extras). */
+export function manualPosterPrefixes(m: Manual): string[] {
+  return [m.seriesId, ...(m.posterPrefixes ?? [])];
+}
+
 /** Cross-sell: given a poster id (e.g. "bright-nickel-plating" or "bright-nickel-sf-cleaning"),
  *  return the matching training manual, if one exists. */
 export function getManualForPoster(posterId: string): Manual | undefined {
-  return MANUALS.find((m) => m.available && posterId.startsWith(m.seriesId + "-"));
+  return MANUALS.find(
+    (m) => m.available && manualPosterPrefixes(m).some((p) => posterId === p || posterId.startsWith(p + "-"))
+  );
 }

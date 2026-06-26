@@ -2,7 +2,8 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { getManual, getAvailableManuals } from "@/lib/manuals";
+import { getManual, getAvailableManuals, manualPosterPrefixes } from "@/lib/manuals";
+import { POSTERS } from "@/lib/posters";
 import ManualOrderForm from "@/components/ManualOrderForm";
 import LookInside from "@/components/LookInside";
 
@@ -30,6 +31,16 @@ export default async function ManualDetailPage({ params }: Props) {
 
   const gunmetal = "#1A1F2E";
   const teal = "#17857A";
+
+  // Find a real poster from this manual's series to link to (defensive — poster naming varies).
+  const prefixes = manualPosterPrefixes(manual);
+  const pairedPoster =
+    POSTERS.find(
+      (p) => p.available && prefixes.some((pre) => p.id === `${pre}-process-overview`)
+    ) ||
+    POSTERS.find(
+      (p) => p.available && prefixes.some((pre) => p.id === pre || p.id.startsWith(`${pre}-`))
+    );
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -93,13 +104,15 @@ export default async function ManualDetailPage({ params }: Props) {
             <ManualOrderForm manual={manual} />
           </div>
 
-          <p className="text-xs mt-4" style={{ color: "#6B7080" }}>
-            Pairs with the{" "}
-            <Link href={`/posters/${manual.seriesId}-process-overview`} className="underline" style={{ color: teal }}>
-              {manual.seriesLabel} poster series
-            </Link>
-            .
-          </p>
+          {pairedPoster && (
+            <p className="text-xs mt-4" style={{ color: "#6B7080" }}>
+              Pairs with the{" "}
+              <Link href={`/posters/${pairedPoster.id}`} className="underline" style={{ color: teal }}>
+                {manual.seriesLabel} poster series
+              </Link>
+              .
+            </p>
+          )}
         </div>
       </div>
 
