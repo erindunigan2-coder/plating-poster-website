@@ -34,7 +34,7 @@ export async function GET(req: NextRequest) {
     if (manualsJson) {
       const purchased = JSON.parse(manualsJson) as Array<{ manualId: string; language: string; format: string }>;
       entitled = purchased.some(
-        (p) => p.manualId === manualId && p.language === language && (p.format ?? "digital") === "digital"
+        (p) => p.manualId === manualId && p.language === language && (p.format === "digital" || p.format === "combo" || p.format == null)
       );
     }
   } catch {

@@ -13,8 +13,10 @@ export type Manual = {
   description: string;
   descriptionEs: string;
   pages: number;
-  priceDigital: number;       // digital PDF download (USD) — lower
-  pricePrint: number;         // printed, coil-bound hard copy, shipped (USD) — higher
+  priceDigital: number;       // digital PDF download (USD) — lowest
+  pricePrint: number;         // printed, coil-bound hard copy, shipped (USD)
+  priceCombo: number;         // printed hard copy + digital PDF (USD)
+  printVolumeTiers: { min: number; price: number }[]; // per-unit print price at quantity breaks (desc by min)
   languages: ("en" | "es")[];
   coverImage: string;         // EN cover
   coverImageEs: string;       // ES cover
@@ -35,8 +37,14 @@ export const MANUALS: Manual[] = [
     descriptionEs:
       "Un manual de capacitación de 47 páginas, en lenguaje sencillo, para toda la línea de recubrimiento de níquel brillante — escrito en un estilo amigable “para principiantes” que no asume conocimientos previos. Cubre cada estación, desde la limpieza hasta el post-tratamiento, con el “por qué” de cada paso, seguridad integrada, listas de verificación y los errores comunes de los nuevos operadores. Termina con un examen de 20 preguntas, clave de respuestas y un certificado de finalización imprimible.",
     pages: 47,
-    priceDigital: 249,
-    pricePrint: 349,
+    priceDigital: 199,
+    pricePrint: 329,
+    priceCombo: 369,
+    printVolumeTiers: [
+      { min: 10, price: 199 },
+      { min: 5, price: 239 },
+      { min: 3, price: 279 },
+    ],
     languages: ["en", "es"],
     coverImage: "/manuals/bright-nickel-manual-cover.jpg",
     coverImageEs: "/manuals/bright-nickel-manual-cover-es.jpg",
@@ -54,16 +62,31 @@ export const MANUALS: Manual[] = [
   },
 ];
 
-export type ManualFormat = "digital" | "print";
+export type ManualFormat = "digital" | "print" | "combo";
 
 export function getManual(id: string): Manual | undefined {
   return MANUALS.find((m) => m.id === id);
 }
 
-export function getManualPrice(manualId: string, format: ManualFormat): number | null {
-  const m = getManual(manualId);
-  if (!m) return null;
-  return format === "print" ? m.pricePrint : m.priceDigital;
+/** Per-unit price for a format at a given quantity (print has volume tiers). */
+export function manualUnitPrice(m: Manual, format: ManualFormat, quantity = 1): number {
+  if (format === "digital") return m.priceDigital;
+  if (format === "combo") return m.priceCombo;
+  const q = Math.max(1, Math.floor(quantity || 1));
+  for (const t of m.printVolumeTiers) {
+    if (q >= t.min) return t.price;
+  }
+  return m.pricePrint;
+}
+
+/** Formats that include the digital PDF download (entitle a download). */
+export function formatIncludesDigital(format: ManualFormat): boolean {
+  return format === "digital" || format === "combo";
+}
+
+/** Formats that ship a physical copy. */
+export function formatIsPhysical(format: ManualFormat): boolean {
+  return format === "print" || format === "combo";
 }
 
 export function getAvailableManuals(): Manual[] {

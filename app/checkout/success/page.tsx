@@ -30,7 +30,7 @@ export default async function CheckoutSuccessPage({
         if (manualsJson) {
           const purchased = JSON.parse(manualsJson) as Array<{ manualId: string; language: string; format?: string }>;
           digitalDownloads = purchased
-            .filter((p) => (p.format ?? "digital") === "digital")
+            .filter((p) => { const f = p.format ?? "digital"; return f === "digital" || f === "combo"; })
             .map((p) => {
               const man = getManual(p.manualId);
               return man ? { manualId: p.manualId, language: p.language, title: man.title } : null;

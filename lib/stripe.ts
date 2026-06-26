@@ -1,6 +1,6 @@
 import Stripe from "stripe";
 import { getUnitPrice, getShippingCost, LOGO_UPGRADE_PRICE, VALID_SIZES, VALID_FINISHES, VALID_EDITIONS, VALID_LANGUAGES } from "./pricing";
-import { getManual } from "./manuals";
+import { getManual, manualUnitPrice, formatIsPhysical, type ManualFormat } from "./manuals";
 
 // Lazy init — avoids crash during Next.js static page generation at build time
 let _stripe: Stripe | null = null;
@@ -21,12 +21,12 @@ export type CheckoutItem = {
   quantity: number;
 };
 
-// Training manuals — digital download or printed hard copy.
+// Training manuals — digital download, printed hard copy, or both (combo).
 export type ManualCheckoutItem = {
   manualId: string;
   language: string;
   quantity: number;
-  format: "digital" | "print";
+  format: "digital" | "print" | "combo";
 };
 
 export async function createCheckoutSession(params: {
@@ -98,7 +98,7 @@ export async function createCheckoutSession(params: {
     });
   }
 
-  // Training manuals — digital download (no shipping) or printed hard copy (ships)
+  // Training manuals — digital download (no shipping), printed hard copy (ships), or combo (both)
   let manualPhysicalSubtotal = 0;
   for (const m of manualItems) {
     const manual = getManual(m.manualId);
@@ -106,19 +106,24 @@ export async function createCheckoutSession(params: {
     if (!VALID_LANGUAGES.includes(m.language as typeof VALID_LANGUAGES[number])) {
       throw new Error(`Invalid language: ${m.language}`);
     }
-    const format = m.format === "print" ? "print" : "digital";
-    const unit = format === "print" ? manual.pricePrint : manual.priceDigital;
+    const format: ManualFormat = m.format === "print" ? "print" : m.format === "combo" ? "combo" : "digital";
     const qty = Math.max(1, Math.floor(m.quantity || 1));
-    if (format === "print") manualPhysicalSubtotal += unit * qty;
+    const unit = manualUnitPrice(manual, format, qty);
+    if (formatIsPhysical(format)) manualPhysicalSubtotal += unit * qty;
+    const lang = m.language === "es" ? "Spanish" : "English";
+    const desc = format === "combo"
+      ? `Printed hard copy + Digital PDF · ${lang}`
+      : format === "print"
+      ? `Printed hard copy · ${lang}`
+      : `Digital PDF download · ${lang}`;
+    const fmtMeta = format === "combo" ? "print+digital" : format === "print" ? "print-hardcopy" : "digital-pdf";
     lineItems.push({
       price_data: {
         currency: "usd",
         product_data: {
           name: `${manual.title} (Training Manual)`,
-          description: format === "print"
-            ? `Printed hard copy · ${m.language === "es" ? "Spanish" : "English"}`
-            : `Digital PDF download · ${m.language === "es" ? "Spanish" : "English"}`,
-          metadata: { manualId: manual.id, type: "manual", language: m.language, format: format === "print" ? "print-hardcopy" : "digital-pdf" },
+          description: desc,
+          metadata: { manualId: manual.id, type: "manual", language: m.language, format: fmtMeta },
         },
         unit_amount: unit * 100,
       },
