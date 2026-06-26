@@ -158,6 +158,51 @@ export const MANUALS: Manual[] = [
     ],
     available: true,
   },
+  {
+    id: "zinc-nickel-manual",
+    title: "Zinc-Nickel — The Complete Training Manual",
+    titleEs: "Zinc-Níquel — El Manual de Capacitación Completo",
+    seriesId: "zinc-nickel",
+    seriesLabel: "Zinc-Nickel",
+    tagline: "A full training course for the brand-new operator — assumes you know nothing, teaches you everything.",
+    description:
+      "A 60-page, plain-language training manual for the entire alkaline zinc-nickel alloy line (12–16% Ni) — written in a friendly, “for-dummies” style that assumes zero prior knowledge. Covers every station from cleaning through trivalent-chromate passivation and sealing, the inert-anode/separate-nickel-feed setup, anomalous codeposition and alloy-composition control, salt-spray performance, and the hydrogen-embrittlement bake — with the “why” behind each step, integrated safety, teach-back checklists, and common new-hire mistakes. Ends with a 20-question completion test, answer key, and a printable certificate of completion.",
+    descriptionEs:
+      "Un manual de capacitación de 60 páginas, en lenguaje sencillo, para toda la línea de aleación de zinc-níquel alcalino (12–16% Ni) — escrito en un estilo amigable “para principiantes” que no asume conocimientos previos. Cubre cada estación, desde la limpieza hasta el pasivado con cromato trivalente y el sellado, la configuración de ánodos inertes/alimentación de níquel, la codeposición anómala y el control de la composición de la aleación, el desempeño en niebla salina y el horneado contra la fragilización por hidrógeno — con el “por qué” de cada paso, seguridad integrada, listas de verificación y los errores comunes de los nuevos operadores. Termina con un examen de 20 preguntas, clave de respuestas y un certificado de finalización imprimible.",
+    pages: 60,
+    priceDigital: 199,
+    pricePrint: 329,
+    priceCombo: 369,
+    printVolumeTiers: [
+      { min: 10, price: 199 },
+      { min: 5, price: 239 },
+      { min: 3, price: 279 },
+    ],
+    languages: ["en", "es"],
+    coverImage: "/manuals/zinc-nickel-manual-cover.jpg",
+    coverImageEs: "/manuals/zinc-nickel-manual-cover-es.jpg",
+    samplePages: [
+      "/manuals/samples/zinc-nickel-manual-p1.jpg",
+      "/manuals/samples/zinc-nickel-manual-p2.jpg",
+      "/manuals/samples/zinc-nickel-manual-p3.jpg",
+      "/manuals/samples/zinc-nickel-manual-p4.jpg",
+      "/manuals/samples/zinc-nickel-manual-p5.jpg",
+      "/manuals/samples/zinc-nickel-manual-p6.jpg",
+    ],
+    highlights: [
+      "Zero-assumption fundamentals primer — what plating is and how the line works",
+      "All 9 stations: cleaning → activation → zinc-nickel alloy plate → activation → trivalent-chromate passivation → seal",
+      "Why 12–16% Ni is the corrosion-resistance sweet spot — and how to control it",
+      "Anomalous codeposition, inert anodes + separate nickel feed / membrane cell explained",
+      "Best-in-class corrosion performance (salt spray) with passivate + sealer",
+      "Safety integrated into every station (caustic, nickel/amine exposure, hydrogen embrittlement + bake, chromate)",
+      "Teach-back checklists + “top mistakes new operators make”",
+      "20-question completion test, answer key, and certificate of completion",
+      "Available in English and Spanish (professional shop-floor Spanish)",
+      "Instant digital PDF download",
+    ],
+    available: true,
+  },
 ];
 
 export type ManualFormat = "digital" | "print" | "combo";
