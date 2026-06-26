@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getStripe } from "@/lib/stripe";
+import { getManual } from "@/lib/manuals";
 
 export const metadata = {
   title: "Order Confirmed — Plating Posters Inc",
@@ -15,6 +16,7 @@ export default async function CheckoutSuccessPage({
   // Fetch Stripe session to pre-fill logo submission form
   let logoLinkParams = "";
   let orderSummary = "";
+  let digitalDownloads: { manualId: string; language: string; title: string }[] = [];
   if (session_id) {
     try {
       const session = await getStripe().checkout.sessions.retrieve(session_id, {
@@ -23,6 +25,19 @@ export default async function CheckoutSuccessPage({
       const name = session.customer_details?.name || "";
       const email = session.customer_details?.email || "";
       const items = session.line_items?.data || [];
+      try {
+        const manualsJson = session.metadata?.manuals_json;
+        if (manualsJson) {
+          const purchased = JSON.parse(manualsJson) as Array<{ manualId: string; language: string; format?: string }>;
+          digitalDownloads = purchased
+            .filter((p) => (p.format ?? "digital") === "digital")
+            .map((p) => {
+              const man = getManual(p.manualId);
+              return man ? { manualId: p.manualId, language: p.language, title: man.title } : null;
+            })
+            .filter((x): x is { manualId: string; language: string; title: string } => x !== null);
+        }
+      } catch {}
       const posterNames = items
         .filter((li) => li.description !== "Custom Logo Upgrade")
         .map((li) => li.description?.split(" · ")[0] || li.description || "")
@@ -65,6 +80,29 @@ export default async function CheckoutSuccessPage({
             Your Order
           </p>
           <p className="text-sm" style={{ color: "#3A4055" }}>{orderSummary}</p>
+        </div>
+      )}
+
+      {digitalDownloads.length > 0 && session_id && (
+        <div className="p-6 mb-6 text-left rounded-lg" style={{ background: "#0E3B36", border: "1px solid #17857A" }}>
+          <p className="font-black uppercase text-xs tracking-widest mb-1" style={{ color: "#2EC4B6" }}>
+            Your Digital Download{digitalDownloads.length > 1 ? "s" : ""}
+          </p>
+          <p className="text-xs mb-4" style={{ color: "#9DC9C3" }}>
+            Click to download your manual (PDF). You can return to this page anytime with your order reference link.
+          </p>
+          <div className="flex flex-col gap-2">
+            {digitalDownloads.map((d, i) => (
+              <a
+                key={i}
+                href={`/api/download?session_id=${encodeURIComponent(session_id)}&manualId=${encodeURIComponent(d.manualId)}&language=${d.language}`}
+                className="inline-flex items-center justify-center gap-2 px-5 py-3 font-black text-sm uppercase tracking-widest rounded"
+                style={{ background: "#2EC4B6", color: "#0E3B36" }}
+              >
+                ⬇ Download — {d.title} ({d.language === "es" ? "ES" : "EN"})
+              </a>
+            ))}
+          </div>
         </div>
       )}
 

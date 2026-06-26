@@ -10,6 +10,10 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
+  // Bundle the private manual PDFs with the gated download route so it can stream them at runtime.
+  outputFileTracingIncludes: {
+    "/api/download": ["./private/manuals/**/*"],
+  },
   async headers() {
     return [
       {

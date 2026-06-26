@@ -21,11 +21,12 @@ export type CheckoutItem = {
   quantity: number;
 };
 
-// Training manuals — digital PDF products (no size/finish/edition, no shipping).
+// Training manuals — digital download or printed hard copy.
 export type ManualCheckoutItem = {
   manualId: string;
   language: string;
   quantity: number;
+  format: "digital" | "print";
 };
 
 export async function createCheckoutSession(params: {
@@ -97,23 +98,29 @@ export async function createCheckoutSession(params: {
     });
   }
 
-  // Training manuals (digital PDF — no shipping)
+  // Training manuals — digital download (no shipping) or printed hard copy (ships)
+  let manualPhysicalSubtotal = 0;
   for (const m of manualItems) {
     const manual = getManual(m.manualId);
     if (!manual) throw new Error(`Invalid manual: ${m.manualId}`);
     if (!VALID_LANGUAGES.includes(m.language as typeof VALID_LANGUAGES[number])) {
       throw new Error(`Invalid language: ${m.language}`);
     }
+    const format = m.format === "print" ? "print" : "digital";
+    const unit = format === "print" ? manual.pricePrint : manual.priceDigital;
     const qty = Math.max(1, Math.floor(m.quantity || 1));
+    if (format === "print") manualPhysicalSubtotal += unit * qty;
     lineItems.push({
       price_data: {
         currency: "usd",
         product_data: {
           name: `${manual.title} (Training Manual)`,
-          description: `Digital PDF · ${m.language === "es" ? "Spanish" : "English"}`,
-          metadata: { manualId: manual.id, type: "manual", language: m.language, format: "digital-pdf" },
+          description: format === "print"
+            ? `Printed hard copy · ${m.language === "es" ? "Spanish" : "English"}`
+            : `Digital PDF download · ${m.language === "es" ? "Spanish" : "English"}`,
+          metadata: { manualId: manual.id, type: "manual", language: m.language, format: format === "print" ? "print-hardcopy" : "digital-pdf" },
         },
-        unit_amount: manual.price * 100,
+        unit_amount: unit * 100,
       },
       quantity: qty,
     });
@@ -123,9 +130,9 @@ export async function createCheckoutSession(params: {
     throw new Error("No line items to check out");
   }
 
-  // Determine shipping — applies to physical (poster) items only; digital-only ships nothing
-  const hasPhysical = items.length > 0;
-  const shippingCost = hasPhysical ? getShippingCost(subtotal) : 0;
+  // Shipping applies to physical items only — posters and printed hard-copy manuals. Digital downloads ship nothing.
+  const hasPhysical = items.length > 0 || manualPhysicalSubtotal > 0;
+  const shippingCost = hasPhysical ? getShippingCost(subtotal + manualPhysicalSubtotal) : 0;
 
   const shippingOptions: Stripe.Checkout.SessionCreateParams.ShippingOption[] = shippingCost === 0
     ? [{

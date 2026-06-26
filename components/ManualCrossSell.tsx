@@ -44,7 +44,7 @@ export default function ManualCrossSell({ posterId }: { posterId: string }) {
               className="px-5 py-2.5 font-black text-xs tracking-widest uppercase rounded"
               style={{ background: amber, color: gunmetal }}
             >
-              View the Manual — ${manual.price}
+              View the Manual — from ${manual.priceDigital}
             </Link>
             <Link href="/manuals" className="text-xs font-bold uppercase tracking-wider" style={{ color: "#9098A8" }}>
               All Training Manuals →

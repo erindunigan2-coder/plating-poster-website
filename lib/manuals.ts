@@ -13,7 +13,8 @@ export type Manual = {
   description: string;
   descriptionEs: string;
   pages: number;
-  price: number;              // digital PDF price (USD)
+  priceDigital: number;       // digital PDF download (USD) — lower
+  pricePrint: number;         // printed, coil-bound hard copy, shipped (USD) — higher
   languages: ("en" | "es")[];
   coverImage: string;         // EN cover
   coverImageEs: string;       // ES cover
@@ -34,7 +35,8 @@ export const MANUALS: Manual[] = [
     descriptionEs:
       "Un manual de capacitación de 47 páginas, en lenguaje sencillo, para toda la línea de recubrimiento de níquel brillante — escrito en un estilo amigable “para principiantes” que no asume conocimientos previos. Cubre cada estación, desde la limpieza hasta el post-tratamiento, con el “por qué” de cada paso, seguridad integrada, listas de verificación y los errores comunes de los nuevos operadores. Termina con un examen de 20 preguntas, clave de respuestas y un certificado de finalización imprimible.",
     pages: 47,
-    price: 349,
+    priceDigital: 249,
+    pricePrint: 349,
     languages: ["en", "es"],
     coverImage: "/manuals/bright-nickel-manual-cover.jpg",
     coverImageEs: "/manuals/bright-nickel-manual-cover-es.jpg",
@@ -52,8 +54,16 @@ export const MANUALS: Manual[] = [
   },
 ];
 
+export type ManualFormat = "digital" | "print";
+
 export function getManual(id: string): Manual | undefined {
   return MANUALS.find((m) => m.id === id);
+}
+
+export function getManualPrice(manualId: string, format: ManualFormat): number | null {
+  const m = getManual(manualId);
+  if (!m) return null;
+  return format === "print" ? m.pricePrint : m.priceDigital;
 }
 
 export function getAvailableManuals(): Manual[] {

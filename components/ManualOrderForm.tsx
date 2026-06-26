@@ -4,12 +4,14 @@ import { useState } from "react";
 import { Manual } from "@/lib/manuals";
 
 export default function ManualOrderForm({ manual }: { manual: Manual }) {
+  const [format, setFormat] = useState<"digital" | "print">("digital");
   const [language, setLanguage] = useState<"en" | "es">("en");
   const [quantity, setQuantity] = useState(1);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  const total = manual.price * quantity;
+  const unit = format === "print" ? manual.pricePrint : manual.priceDigital;
+  const total = unit * quantity;
 
   async function handleBuy() {
     setLoading(true);
@@ -19,7 +21,7 @@ export default function ManualOrderForm({ manual }: { manual: Manual }) {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          manualItems: [{ manualId: manual.id, language, quantity }],
+          manualItems: [{ manualId: manual.id, language, quantity, format }],
           logoUpgrade: false,
         }),
       });
@@ -38,14 +40,31 @@ export default function ManualOrderForm({ manual }: { manual: Manual }) {
   const btnActive = { background: gunmetal, color: "#F0EDE8", borderColor: gunmetal };
   const btnInactive = { background: "#fff", color: "#6B7080", borderColor: "#DDD9D0" };
 
+  const FORMATS: { id: "digital" | "print"; label: string; price: number; desc: string }[] = [
+    { id: "digital", label: "Digital PDF — Download", price: manual.priceDigital, desc: `Instant download · ${manual.pages} pages · print-ready` },
+    { id: "print", label: "Printed Hard Copy", price: manual.pricePrint, desc: "Coil-bound, lays flat at the tank · shipped to you" },
+  ];
+
   return (
     <div className="space-y-6">
       {/* Format */}
       <div>
         <label className="block text-xs font-black uppercase tracking-widest mb-2" style={{ color: gunmetal }}>Format</label>
-        <div className="px-4 py-3 border" style={{ borderColor: "#DDD9D0", background: "#fff" }}>
-          <span className="block font-black text-sm" style={{ color: gunmetal }}>📄 Digital PDF — {manual.pages} pages</span>
-          <span className="block text-xs mt-1" style={{ color: "#6B7080" }}>Instant download after checkout. Print-ready (8.5×11). Single-shop license.</span>
+        <div className="flex flex-col gap-2">
+          {FORMATS.map((f) => (
+            <button
+              key={f.id}
+              onClick={() => setFormat(f.id)}
+              className={btnBase}
+              style={format === f.id ? { ...btnActive, borderLeftColor: amber, borderLeftWidth: "3px" } : btnInactive}
+            >
+              <span className="flex items-center justify-between font-black">
+                <span>{f.label}</span>
+                <span style={{ color: format === f.id ? amber : gunmetal }}>${f.price}</span>
+              </span>
+              <span className="block text-xs font-normal mt-0.5 opacity-70">{f.desc}</span>
+            </button>
+          ))}
         </div>
       </div>
 
@@ -62,7 +81,9 @@ export default function ManualOrderForm({ manual }: { manual: Manual }) {
 
       {/* Quantity */}
       <div>
-        <label className="block text-xs font-black uppercase tracking-widest mb-2" style={{ color: gunmetal }}>Licensed Copies</label>
+        <label className="block text-xs font-black uppercase tracking-widest mb-2" style={{ color: gunmetal }}>
+          {format === "print" ? "Copies" : "Licensed Copies"}
+        </label>
         <div className="flex items-center gap-3">
           <button onClick={() => setQuantity(Math.max(1, quantity - 1))} className="w-9 h-9 font-black text-lg flex items-center justify-center border" style={{ borderColor: "#DDD9D0", color: gunmetal, background: "#fff" }}>−</button>
           <span className="text-xl font-black w-6 text-center" style={{ color: gunmetal }}>{quantity}</span>
@@ -74,7 +95,11 @@ export default function ManualOrderForm({ manual }: { manual: Manual }) {
 
       <div className="flex items-center gap-2 px-3 py-2 rounded text-xs" style={{ background: "#F0FAF8", border: "1px solid #D0EDE8" }}>
         <span style={{ color: "#2EC4B6" }}>✓</span>
-        <span style={{ color: "#1A1F2E" }}><strong>Instant digital delivery</strong> · no shipping</span>
+        <span style={{ color: "#1A1F2E" }}>
+          {format === "digital"
+            ? <><strong>Instant digital delivery</strong> · download after checkout · no shipping</>
+            : <><strong>Free shipping</strong> · printed &amp; shipped in 3–5 business days</>}
+        </span>
       </div>
 
       <div className="pt-2">
@@ -85,7 +110,9 @@ export default function ManualOrderForm({ manual }: { manual: Manual }) {
         <button onClick={handleBuy} disabled={loading} className="w-full py-3 font-black text-sm tracking-widest uppercase transition-opacity" style={{ background: amber, color: gunmetal, opacity: loading ? 0.6 : 1 }}>
           {loading ? "Redirecting to checkout…" : "Buy Now"}
         </button>
-        <p className="text-xs text-center mt-3" style={{ color: "#6B7080" }}>Secure checkout via Stripe. Digital PDF delivered after purchase.</p>
+        <p className="text-xs text-center mt-3" style={{ color: "#6B7080" }}>
+          Secure checkout via Stripe.{format === "digital" ? " Digital PDF delivered after purchase." : " Printed and shipped by our print partner."}
+        </p>
       </div>
     </div>
   );

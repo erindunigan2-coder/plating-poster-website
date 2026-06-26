@@ -40,7 +40,7 @@ export default async function ManualDetailPage({ params }: Props) {
     offers: {
       "@type": "Offer",
       priceCurrency: "USD",
-      price: manual.price.toFixed(2),
+      price: manual.priceDigital.toFixed(2),
       availability: "https://schema.org/InStock",
       url: `https://www.platingposters.com/manuals/${manual.id}`,
     },

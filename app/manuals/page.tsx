@@ -50,7 +50,7 @@ export default function ManualsPage() {
                 <h2 className="font-black text-lg leading-tight" style={{ color: gunmetal }}>{m.seriesLabel} — Training Manual</h2>
                 <p className="text-xs mt-1 leading-relaxed" style={{ color: "#6B7080" }}>{m.tagline}</p>
                 <div className="flex items-center justify-between mt-4">
-                  <span className="font-black text-xl" style={{ color: gunmetal }}>${m.price}</span>
+                  <span className="font-black text-xl" style={{ color: gunmetal }}>from ${m.priceDigital}</span>
                   <span className="text-xs font-black uppercase tracking-widest group-hover:underline" style={{ color: teal }}>View →</span>
                 </div>
               </div>
