@@ -203,6 +203,52 @@ export const MANUALS: Manual[] = [
     ],
     available: true,
   },
+  {
+    id: "hard-chrome-manual",
+    title: "Hard Chrome — The Complete Training Manual",
+    titleEs: "Cromo Duro — El Manual de Capacitación Completo",
+    seriesId: "hard-chrome",
+    posterPrefixes: ["chrome-hard"],
+    seriesLabel: "Hard Chrome",
+    tagline: "A full training course for the brand-new operator — assumes you know nothing, teaches you everything.",
+    description:
+      "A 46-page, plain-language training manual for functional (industrial) hard chromium plating from hexavalent chromic acid — written in a friendly, “for-dummies” style that assumes zero prior knowledge. Covers every station from racking/masking and cleaning through the high-current-density chrome tank, hydrogen-embrittlement bake, and grinding to size — with the “why” behind each step, ampere-hour thickness control, conforming anodes and throwing power, and Cr(VI) waste treatment. Safety is front and center: this is the most hazardous process in the line, so hexavalent-chromium hazard control (mist suppression, ventilation, OSHA Cr VI rule, respiratory protection) is integrated into every station. Ends with a 20-question completion test, answer key, and a printable certificate of completion.",
+    descriptionEs:
+      "Un manual de capacitación de 46 páginas, en lenguaje sencillo, para el cromado duro funcional (industrial) a partir de ácido crómico hexavalente — escrito en un estilo amigable “para principiantes” que no asume conocimientos previos. Cubre cada estación, desde el montaje/enmascarado y la limpieza hasta el tanque de cromo de alta densidad de corriente, el horneado contra la fragilización por hidrógeno y el rectificado a la medida — con el “por qué” de cada paso, el control de espesor por amperios-hora, los ánodos conformados y el poder de penetración, y el tratamiento de residuos de Cr(VI). La seguridad es primordial: este es el proceso más peligroso de la línea, así que el control del peligro del cromo hexavalente (supresión de niebla, ventilación, norma de Cr VI de OSHA, protección respiratoria) está integrado en cada estación. Termina con un examen de 20 preguntas, clave de respuestas y un certificado de finalización imprimible.",
+    pages: 46,
+    priceDigital: 199,
+    pricePrint: 329,
+    priceCombo: 369,
+    printVolumeTiers: [
+      { min: 10, price: 199 },
+      { min: 5, price: 239 },
+      { min: 3, price: 279 },
+    ],
+    languages: ["en", "es"],
+    coverImage: "/manuals/hard-chrome-manual-cover.jpg",
+    coverImageEs: "/manuals/hard-chrome-manual-cover-es.jpg",
+    samplePages: [
+      "/manuals/samples/hard-chrome-manual-p1.jpg",
+      "/manuals/samples/hard-chrome-manual-p2.jpg",
+      "/manuals/samples/hard-chrome-manual-p3.jpg",
+      "/manuals/samples/hard-chrome-manual-p4.jpg",
+      "/manuals/samples/hard-chrome-manual-p5.jpg",
+      "/manuals/samples/hard-chrome-manual-p6.jpg",
+    ],
+    highlights: [
+      "Zero-assumption fundamentals primer — what plating is and how the line works",
+      "Full functional hard-chrome workflow: rack/mask → clean → anodic etch → chrome plate → bake → grind to size",
+      "Ampere-hour thickness control, conforming anodes, robbers, and throwing power explained",
+      "Why hard chrome is a thick, hard, low-friction FUNCTIONAL deposit (wear/salvage), not decorative",
+      "Hexavalent-chromium (Cr VI) safety integrated into every station — the most hazardous process in the line",
+      "Hydrogen embrittlement + mandatory bake, microcracked structure, Cr(VI) waste treatment",
+      "Teach-back checklists + “top mistakes new operators make”",
+      "20-question completion test, answer key, and certificate of completion",
+      "Available in English and Spanish (professional shop-floor Spanish)",
+      "Instant digital PDF download",
+    ],
+    available: true,
+  },
 ];
 
 export type ManualFormat = "digital" | "print" | "combo";
