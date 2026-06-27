@@ -249,6 +249,53 @@ export const MANUALS: Manual[] = [
     ],
     available: true,
   },
+  {
+    id: "decorative-chrome-manual",
+    title: "Decorative Chrome — The Complete Training Manual",
+    titleEs: "Cromo Decorativo — El Manual de Capacitación Completo",
+    seriesId: "decorative-chrome",
+    posterPrefixes: ["dec-chrome", "chrome-decorative"],
+    seriesLabel: "Decorative Chrome",
+    tagline: "A full training course for the brand-new operator — assumes you know nothing, teaches you everything.",
+    description:
+      "A 47-page, plain-language training manual for the bright, mirror decorative chrome finish on a nickel undercoat — covering BOTH traditional hexavalent and modern trivalent chrome — written in a friendly, “for-dummies” style that assumes zero prior knowledge. Teaches the whole line: cleaning, the all-important semi-bright/bright (duplex) nickel undercoat that does the real corrosion protection, the thin micro-discontinuous chrome cap, throwing power and coverage, and quality checks (CASS, salt spray, STEP). Safety is integrated into every station — including full hexavalent-chromium (Cr VI) hazard control where the shop runs hex chrome. Ends with a 20-question completion test, answer key, and a printable certificate of completion.",
+    descriptionEs:
+      "Un manual de capacitación de 47 páginas, en lenguaje sencillo, para el acabado de cromo decorativo brillante tipo espejo sobre una capa base de níquel — que cubre TANTO el cromo hexavalente tradicional COMO el cromo trivalente moderno — escrito en un estilo amigable “para principiantes” que no asume conocimientos previos. Enseña toda la línea: limpieza, la fundamental capa base de níquel semibrillante/brillante (dúplex) que hace el verdadero trabajo contra la corrosión, la delgada capa de cromo micro-discontinuo, el poder de penetración y la cobertura, y los controles de calidad (CASS, niebla salina, STEP). La seguridad está integrada en cada estación — incluido el control completo del peligro del cromo hexavalente (Cr VI) donde el taller usa cromo hexavalente. Termina con un examen de 20 preguntas, clave de respuestas y un certificado de finalización imprimible.",
+    pages: 47,
+    priceDigital: 199,
+    pricePrint: 329,
+    priceCombo: 369,
+    printVolumeTiers: [
+      { min: 10, price: 199 },
+      { min: 5, price: 239 },
+      { min: 3, price: 279 },
+    ],
+    languages: ["en", "es"],
+    coverImage: "/manuals/decorative-chrome-manual-cover.jpg",
+    coverImageEs: "/manuals/decorative-chrome-manual-cover-es.jpg",
+    samplePages: [
+      "/manuals/samples/decorative-chrome-manual-p1.jpg",
+      "/manuals/samples/decorative-chrome-manual-p2.jpg",
+      "/manuals/samples/decorative-chrome-manual-p3.jpg",
+      "/manuals/samples/decorative-chrome-manual-p4.jpg",
+      "/manuals/samples/decorative-chrome-manual-p5.jpg",
+      "/manuals/samples/decorative-chrome-manual-p6.jpg",
+    ],
+    highlights: [
+      "Zero-assumption fundamentals primer — what plating is and how the line works",
+      "Both hexavalent AND trivalent decorative chrome covered",
+      "The duplex/triplex nickel undercoat that does the real corrosion protection",
+      "Micro-discontinuous (microcracked/microporous) chrome — why cracking the top coat helps",
+      "Throwing power, coverage, auxiliary anodes, and appearance control",
+      "Decorative vs hard chrome — thin bright cap vs thick functional deposit",
+      "Cr VI safety integrated where hex chrome is run (OSHA 1910.1026); nickel/boric cautions",
+      "Quality checks: CASS, salt spray, STEP, adhesion",
+      "20-question completion test, answer key, and certificate of completion",
+      "Available in English and Spanish (professional shop-floor Spanish)",
+      "Instant digital PDF download",
+    ],
+    available: true,
+  },
 ];
 
 export type ManualFormat = "digital" | "print" | "combo";
