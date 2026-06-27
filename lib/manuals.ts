@@ -476,6 +476,52 @@ export const MANUALS: Manual[] = [
     ],
     available: true,
   },
+  {
+    id: "anodize-type-iii-manual",
+    title: "Hardcoat Anodizing (Type III) — The Complete Training Manual",
+    titleEs: "Anodizado Duro (Tipo III) — El Manual de Capacitación Completo",
+    seriesId: "anodize-type-iii",
+    seriesLabel: "Hardcoat Anodizing (Type III)",
+    tagline: "A full training course for the brand-new operator — assumes you know nothing, teaches you everything.",
+    description:
+      "A 40-page, plain-language training manual for hardcoat (Type III) anodizing of aluminum — the thick, hard, wear-resistant engineering anodize. Written in a friendly, “for-dummies” style that assumes zero prior knowledge, it re-teaches the anodizing fundamentals (the part is the ANODE; you GROW a dense oxide out of the aluminum) and then makes Type III specific: a cold bath (~ -5 to +10 °C) and higher ramped voltage/current density grow a much thicker, harder coating (~25–100+ µm). Covers the seal-vs-wear tradeoff (sealing improves corrosion but reduces abrasion resistance, so hardcoat for wear is often left unsealed), the large dimensional growth and what it means for tolerances and masking, aluminum-alloy effects (which alloys hardcoat well and which “burn”), and aggressive bath cooling. Safety integrated into every station. Ends with a 20-question completion test, answer key, and a printable certificate of completion.",
+    descriptionEs:
+      "Un manual de capacitación de 40 páginas, en lenguaje sencillo, para el anodizado duro (Tipo III) del aluminio — el anodizado de ingeniería grueso, duro y resistente al desgaste. Escrito en un estilo amigable “para principiantes” que no asume conocimientos previos, vuelve a enseñar los fundamentos del anodizado (la pieza es el ÁNODO; se HACE CRECER un óxido denso a partir del aluminio) y luego lo hace específico del Tipo III: un baño frío (~ -5 a +10 °C) y mayor voltaje/densidad de corriente en rampa hacen crecer una capa mucho más gruesa y dura (~25–100+ µm). Cubre el compromiso sellado-vs-desgaste (sellar mejora la corrosión pero reduce la resistencia a la abrasión, por eso el anodizado duro para desgaste suele dejarse sin sellar), el gran crecimiento dimensional y lo que significa para tolerancias y enmascarado, los efectos de la aleación de aluminio (cuáles anodizan bien y cuáles se “queman”) y el enfriamiento agresivo del baño. La seguridad está integrada en cada estación. Termina con un examen de 20 preguntas, clave de respuestas y un certificado de finalización imprimible.",
+    pages: 40,
+    priceDigital: 199,
+    pricePrint: 329,
+    priceCombo: 369,
+    printVolumeTiers: [
+      { min: 10, price: 199 },
+      { min: 5, price: 239 },
+      { min: 3, price: 279 },
+    ],
+    languages: ["en", "es"],
+    coverImage: "/manuals/anodize-type-iii-manual-cover.jpg",
+    coverImageEs: "/manuals/anodize-type-iii-manual-cover-es.jpg",
+    samplePages: [
+      "/manuals/samples/anodize-type-iii-manual-p1.jpg",
+      "/manuals/samples/anodize-type-iii-manual-p2.jpg",
+      "/manuals/samples/anodize-type-iii-manual-p3.jpg",
+      "/manuals/samples/anodize-type-iii-manual-p4.jpg",
+      "/manuals/samples/anodize-type-iii-manual-p5.jpg",
+      "/manuals/samples/anodize-type-iii-manual-p6.jpg",
+    ],
+    highlights: [
+      "Zero-assumption fundamentals — anodizing GROWS an oxide (part is the ANODE), it doesn't deposit metal",
+      "Type III hardcoat: thick, hard, wear/abrasion-resistant engineering coating (~25–100+ µm)",
+      "Why a COLD bath + higher voltage/current density makes the coating dense and hard",
+      "The seal-vs-wear tradeoff — sealing helps corrosion but reduces abrasion (often left unsealed)",
+      "Big dimensional growth — what it means for tolerances and masking",
+      "Aluminum-alloy effects — which alloys hardcoat well and which “burn”",
+      "Where Type III sits in the family (vs Type I chromic and Type II standard)",
+      "Safety integrated into every station (cold high-power bath, sulfuric acid, hydrogen, hot seal)",
+      "20-question completion test, answer key, and certificate of completion",
+      "Available in English and Spanish (professional shop-floor Spanish)",
+      "Instant digital PDF download",
+    ],
+    available: true,
+  },
 ];
 
 export type ManualFormat = "digital" | "print" | "combo";
