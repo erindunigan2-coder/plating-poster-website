@@ -296,6 +296,51 @@ export const MANUALS: Manual[] = [
     ],
     available: true,
   },
+  {
+    id: "en-low-phos-manual",
+    title: "Electroless Nickel (Low Phosphorus) — The Complete Training Manual",
+    titleEs: "Níquel Químico (Bajo Fósforo) — El Manual de Capacitación Completo",
+    seriesId: "en-low-phos",
+    seriesLabel: "Electroless Nickel — Low Phosphorus",
+    tagline: "A full training course for the brand-new operator — assumes you know nothing, teaches you everything.",
+    description:
+      "A 49-page, plain-language training manual for low-phosphorus electroless nickel (Low-P EN, ~2–5% P) — written in a friendly, “for-dummies” style that assumes zero prior knowledge. Because electroless plating is autocatalytic (NO electric current, no anodes), the fundamentals are re-taught from scratch: how a hot ~90°C bath deposits a perfectly uniform Ni-P alloy on every surface, including bores and blind holes. Covers bath chemistry control (metal turnovers / MTO, replenishment, stabilizers, avoiding decomposition), the hardness/wear/alkaline-service profile of Low-P, heat treatment for hardness vs. hydrogen-embrittlement relief baking, and how Low-P differs from Mid-P and High-P. Safety is integrated into every station — the near-boiling bath and decomposition/phosphine hazard are front and center. Ends with a 20-question completion test, answer key, and a printable certificate of completion.",
+    descriptionEs:
+      "Un manual de capacitación de 49 páginas, en lenguaje sencillo, para el níquel químico de bajo fósforo (Bajo-P, ~2–5% P) — escrito en un estilo amigable “para principiantes” que no asume conocimientos previos. Como el recubrimiento químico es autocatalítico (SIN corriente eléctrica, sin ánodos), los fundamentos se enseñan desde cero: cómo un baño caliente a ~90°C deposita una aleación Ni-P perfectamente uniforme en cada superficie, incluso en barrenos y agujeros ciegos. Cubre el control de la química del baño (recambios metálicos / MTO, reposición, estabilizadores, evitar la descomposición), el perfil de dureza/desgaste/servicio alcalino del Bajo-P, el tratamiento térmico para dureza frente al horneado de alivio de fragilización por hidrógeno, y cómo el Bajo-P difiere del Medio-P y el Alto-P. La seguridad está integrada en cada estación — el baño casi en ebullición y el peligro de descomposición/fosfina son lo primero. Termina con un examen de 20 preguntas, clave de respuestas y un certificado de finalización imprimible.",
+    pages: 49,
+    priceDigital: 199,
+    pricePrint: 329,
+    priceCombo: 369,
+    printVolumeTiers: [
+      { min: 10, price: 199 },
+      { min: 5, price: 239 },
+      { min: 3, price: 279 },
+    ],
+    languages: ["en", "es"],
+    coverImage: "/manuals/en-low-phos-manual-cover.jpg",
+    coverImageEs: "/manuals/en-low-phos-manual-cover-es.jpg",
+    samplePages: [
+      "/manuals/samples/en-low-phos-manual-p1.jpg",
+      "/manuals/samples/en-low-phos-manual-p2.jpg",
+      "/manuals/samples/en-low-phos-manual-p3.jpg",
+      "/manuals/samples/en-low-phos-manual-p4.jpg",
+      "/manuals/samples/en-low-phos-manual-p5.jpg",
+      "/manuals/samples/en-low-phos-manual-p6.jpg",
+    ],
+    highlights: [
+      "Zero-assumption fundamentals — electroless (autocatalytic) plating with NO current, re-taught from scratch",
+      "Why Ni-P plates perfectly uniform on every surface — bores, blind holes, complex shapes",
+      "Low-P identity: high hardness/wear resistance and alkaline-service strength (~2–5% P)",
+      "Bath chemistry control: metal turnovers (MTO), replenishment, stabilizers, avoiding decomposition",
+      "Heat treatment for hardness vs. hydrogen-embrittlement relief baking — both explained",
+      "How Low-P differs from Mid-P and High-P (and when to choose each)",
+      "Safety integrated into every station — near-boiling bath, decomposition/phosphine hazard",
+      "20-question completion test, answer key, and certificate of completion",
+      "Available in English and Spanish (professional shop-floor Spanish)",
+      "Instant digital PDF download",
+    ],
+    available: true,
+  },
 ];
 
 export type ManualFormat = "digital" | "print" | "combo";
