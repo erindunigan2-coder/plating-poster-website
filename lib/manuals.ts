@@ -386,6 +386,51 @@ export const MANUALS: Manual[] = [
     ],
     available: true,
   },
+  {
+    id: "en-high-phos-manual",
+    title: "Electroless Nickel (High Phosphorus) — The Complete Training Manual",
+    titleEs: "Níquel Químico (Fósforo Alto) — El Manual de Capacitación Completo",
+    seriesId: "en-high-phos",
+    seriesLabel: "Electroless Nickel — High Phosphorus",
+    tagline: "A full training course for the brand-new operator — assumes you know nothing, teaches you everything.",
+    description:
+      "A 49-page, plain-language training manual for high-phosphorus electroless nickel (High-P EN, ~10–13% P) — the maximum corrosion-resistance grade, and the choice when a part must survive acid, salt, chloride, marine, or harsh chemical service, or must be non-magnetic. Written in a friendly, “for-dummies” style that assumes zero prior knowledge, it re-teaches the electroless (autocatalytic, NO electric current) fundamentals: how a hot ~90°C bath lays down a perfectly uniform, near-amorphous Ni-P alloy on every surface. Covers bath chemistry control (metal turnovers / MTO, replenishment, stabilizers, avoiding decomposition), the corrosion/non-magnetic profile of High-P, and — critically — the heat-treatment tradeoff (baking for hardness crystallizes the amorphous structure and sacrifices corrosion resistance, so High-P is usually used as-plated). Safety is integrated into every station. Ends with a 20-question completion test, answer key, and a printable certificate of completion.",
+    descriptionEs:
+      "Un manual de capacitación de 49 páginas, en lenguaje sencillo, para el níquel químico de fósforo alto (Alto-P, ~10–13% P) — el grado de máxima resistencia a la corrosión, y la elección cuando una pieza debe sobrevivir al ácido, la sal, el cloruro, el ambiente marino o un servicio químico severo, o debe ser no magnética. Escrito en un estilo amigable “para principiantes” que no asume conocimientos previos, vuelve a enseñar los fundamentos del recubrimiento químico (autocatalítico, SIN corriente eléctrica): cómo un baño caliente a ~90°C deposita una aleación Ni-P casi amorfa y perfectamente uniforme en cada superficie. Cubre el control de la química del baño (recambios metálicos / MTO, reposición, estabilizadores, evitar la descomposición), el perfil de corrosión/no magnético del Alto-P y — de forma crítica — el compromiso del tratamiento térmico (hornear para dureza cristaliza la estructura amorfa y sacrifica la resistencia a la corrosión, por eso el Alto-P normalmente se usa tal como se deposita). La seguridad está integrada en cada estación. Termina con un examen de 20 preguntas, clave de respuestas y un certificado de finalización imprimible.",
+    pages: 49,
+    priceDigital: 199,
+    pricePrint: 329,
+    priceCombo: 369,
+    printVolumeTiers: [
+      { min: 10, price: 199 },
+      { min: 5, price: 239 },
+      { min: 3, price: 279 },
+    ],
+    languages: ["en", "es"],
+    coverImage: "/manuals/en-high-phos-manual-cover.jpg",
+    coverImageEs: "/manuals/en-high-phos-manual-cover-es.jpg",
+    samplePages: [
+      "/manuals/samples/en-high-phos-manual-p1.jpg",
+      "/manuals/samples/en-high-phos-manual-p2.jpg",
+      "/manuals/samples/en-high-phos-manual-p3.jpg",
+      "/manuals/samples/en-high-phos-manual-p4.jpg",
+      "/manuals/samples/en-high-phos-manual-p5.jpg",
+      "/manuals/samples/en-high-phos-manual-p6.jpg",
+    ],
+    highlights: [
+      "Zero-assumption fundamentals — electroless (autocatalytic) plating with NO current, re-taught from scratch",
+      "Why Ni-P plates perfectly uniform on every surface — bores, blind holes, complex shapes",
+      "High-P identity: maximum corrosion resistance, near-amorphous, non-magnetic (~10–13% P)",
+      "The heat-treatment tradeoff — baking for hardness sacrifices corrosion resistance (use as-plated)",
+      "Bath chemistry control: metal turnovers (MTO), replenishment, stabilizers, avoiding decomposition",
+      "How High-P differs from Low-P and Mid-P (and when to choose each)",
+      "Safety integrated into every station — near-boiling bath, decomposition/phosphine hazard",
+      "20-question completion test, answer key, and certificate of completion",
+      "Available in English and Spanish (professional shop-floor Spanish)",
+      "Instant digital PDF download",
+    ],
+    available: true,
+  },
 ];
 
 export type ManualFormat = "digital" | "print" | "combo";
