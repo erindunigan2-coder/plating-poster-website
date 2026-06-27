@@ -567,6 +567,51 @@ export const MANUALS: Manual[] = [
     ],
     available: true,
   },
+  {
+    id: "anodize-bsaa-manual",
+    title: "Boric-Sulfuric Acid Anodizing (BSAA) — The Complete Training Manual",
+    titleEs: "Anodizado Bórico-Sulfúrico (BSAA) — El Manual de Capacitación Completo",
+    seriesId: "anodize-bsaa",
+    seriesLabel: "Boric-Sulfuric Anodizing (BSAA)",
+    tagline: "A full training course for the brand-new operator — assumes you know nothing, teaches you everything.",
+    description:
+      "A 44-page, plain-language training manual for boric-sulfuric acid anodizing (BSAA) — the chromium-free aerospace anodize that replaced chromic-acid (Type I) anodizing. Written in a friendly, “for-dummies” style that assumes zero prior knowledge, it re-teaches the anodizing fundamentals (the part is the ANODE; you GROW an oxide out of the aluminum) and then makes BSAA specific: a boric + (low) sulfuric electrolyte run at low voltage builds a thin coating (~2–7 µm) that's an excellent paint/primer base and is friendly to fatigue-critical aluminum. The big story is safety: BSAA contains NO hexavalent chromium, so it removes the Cr VI carcinogen hazard of chromic anodizing — but it isn't hazard-free (acids, caustic etch, hydrogen, hot seal, DC), and the seal choice matters (a dichromate seal would reintroduce Cr VI; trivalent/non-chromate seals keep it chrome-free). Covers MIL-PRF-8625 Type IC, paint-adhesion and fatigue advantages, and waste handling. Ends with a 20-question completion test, answer key, and a printable certificate of completion.",
+    descriptionEs:
+      "Un manual de capacitación de 44 páginas, en lenguaje sencillo, para el anodizado bórico-sulfúrico (BSAA) — el anodizado aeroespacial sin cromo que reemplazó al anodizado con ácido crómico (Tipo I). Escrito en un estilo amigable “para principiantes” que no asume conocimientos previos, vuelve a enseñar los fundamentos del anodizado (la pieza es el ÁNODO; se HACE CRECER un óxido a partir del aluminio) y luego lo hace específico del BSAA: un electrolito de ácido bórico + sulfúrico (bajo) operado a bajo voltaje forma una capa delgada (~2–7 µm) que es una excelente base para pintura/imprimación y es favorable al aluminio crítico por fatiga. Lo principal es la seguridad: el BSAA NO contiene cromo hexavalente, así que elimina el peligro cancerígeno de Cr VI del anodizado crómico — pero no está libre de peligros (ácidos, grabado cáustico, hidrógeno, sellado caliente, CD), y la elección del sellado importa (un sellado con dicromato reintroduciría Cr VI; los sellos trivalentes/sin cromato lo mantienen libre de cromo). Cubre MIL-PRF-8625 Tipo IC, las ventajas de adhesión de pintura y fatiga, y el manejo de residuos. Termina con un examen de 20 preguntas, clave de respuestas y un certificado de finalización imprimible.",
+    pages: 44,
+    priceDigital: 199,
+    pricePrint: 329,
+    priceCombo: 369,
+    printVolumeTiers: [
+      { min: 10, price: 199 },
+      { min: 5, price: 239 },
+      { min: 3, price: 279 },
+    ],
+    languages: ["en", "es"],
+    coverImage: "/manuals/anodize-bsaa-manual-cover.jpg",
+    coverImageEs: "/manuals/anodize-bsaa-manual-cover-es.jpg",
+    samplePages: [
+      "/manuals/samples/anodize-bsaa-manual-p1.jpg",
+      "/manuals/samples/anodize-bsaa-manual-p2.jpg",
+      "/manuals/samples/anodize-bsaa-manual-p3.jpg",
+      "/manuals/samples/anodize-bsaa-manual-p4.jpg",
+      "/manuals/samples/anodize-bsaa-manual-p5.jpg",
+      "/manuals/samples/anodize-bsaa-manual-p6.jpg",
+    ],
+    highlights: [
+      "Zero-assumption fundamentals — anodizing GROWS an oxide (part is the ANODE), it doesn't deposit metal",
+      "BSAA: the chromium-free aerospace anodize that replaced chromic (Type I)",
+      "No hexavalent chromium — removes the Cr VI carcinogen hazard of chromic anodizing",
+      "Thin coating (~2–7 µm), excellent paint/primer base, fatigue-friendly",
+      "Boric + low-sulfuric electrolyte at low voltage; the seal choice that keeps it chrome-free",
+      "MIL-PRF-8625 Type IC; paint-adhesion, fatigue, and waste-handling advantages",
+      "Honest safety: greener, but still real acid / caustic / hydrogen / hot-seal hazards",
+      "20-question completion test, answer key, and certificate of completion",
+      "Available in English and Spanish (professional shop-floor Spanish)",
+      "Instant digital PDF download",
+    ],
+    available: true,
+  },
 ];
 
 export type ManualFormat = "digital" | "print" | "combo";
