@@ -522,6 +522,51 @@ export const MANUALS: Manual[] = [
     ],
     available: true,
   },
+  {
+    id: "anodize-type-i-manual",
+    title: "Chromic Acid Anodizing (Type I) — The Complete Training Manual",
+    titleEs: "Anodizado con Ácido Crómico (Tipo I) — El Manual de Capacitación Completo",
+    seriesId: "anodize-type-i",
+    seriesLabel: "Chromic Acid Anodizing (Type I)",
+    tagline: "A full training course for the brand-new operator — assumes you know nothing, teaches you everything.",
+    description:
+      "A 46-page, plain-language training manual for chromic acid (Type I) anodizing of aluminum — the thin, gray, corrosion-protecting aerospace anodize. Written in a friendly, “for-dummies” style that assumes zero prior knowledge, it re-teaches the anodizing fundamentals (the part is the ANODE; you GROW an oxide out of the aluminum) and then makes Type I specific: a chromic-acid electrolyte and a stepped low voltage build a very thin coating (~0.5–7.5 µm) with minimal dimensional change. Explains why aerospace specifies it — it does NOT reduce the fatigue strength of the aluminum, any trapped electrolyte in crevices and assemblies is far less corrosive than sulfuric, and it makes an excellent paint/adhesive base. Because the bath is hexavalent chromium (a confirmed carcinogen), Cr VI hazard control is integrated into every station (OSHA 1910.1026, mist control, respiratory protection, Cr⁶⁺→Cr³⁺ waste treatment). Ends with a 20-question completion test, answer key, and a printable certificate of completion.",
+    descriptionEs:
+      "Un manual de capacitación de 46 páginas, en lenguaje sencillo, para el anodizado con ácido crómico (Tipo I) del aluminio — el anodizado aeroespacial delgado, gris y protector contra la corrosión. Escrito en un estilo amigable “para principiantes” que no asume conocimientos previos, vuelve a enseñar los fundamentos del anodizado (la pieza es el ÁNODO; se HACE CRECER un óxido a partir del aluminio) y luego lo hace específico del Tipo I: un electrolito de ácido crómico y un voltaje bajo escalonado forman una capa muy delgada (~0.5–7.5 µm) con cambio dimensional mínimo. Explica por qué la industria aeroespacial lo especifica — NO reduce la resistencia a la fatiga del aluminio, cualquier electrolito atrapado en intersticios y ensambles es mucho menos corrosivo que el sulfúrico, y es una excelente base para pintura/adhesivo. Como el baño es cromo hexavalente (un cancerígeno confirmado), el control del peligro de Cr VI está integrado en cada estación (OSHA 1910.1026, control de niebla, protección respiratoria, tratamiento de residuos Cr⁶⁺→Cr³⁺). Termina con un examen de 20 preguntas, clave de respuestas y un certificado de finalización imprimible.",
+    pages: 46,
+    priceDigital: 199,
+    pricePrint: 329,
+    priceCombo: 369,
+    printVolumeTiers: [
+      { min: 10, price: 199 },
+      { min: 5, price: 239 },
+      { min: 3, price: 279 },
+    ],
+    languages: ["en", "es"],
+    coverImage: "/manuals/anodize-type-i-manual-cover.jpg",
+    coverImageEs: "/manuals/anodize-type-i-manual-cover-es.jpg",
+    samplePages: [
+      "/manuals/samples/anodize-type-i-manual-p1.jpg",
+      "/manuals/samples/anodize-type-i-manual-p2.jpg",
+      "/manuals/samples/anodize-type-i-manual-p3.jpg",
+      "/manuals/samples/anodize-type-i-manual-p4.jpg",
+      "/manuals/samples/anodize-type-i-manual-p5.jpg",
+      "/manuals/samples/anodize-type-i-manual-p6.jpg",
+    ],
+    highlights: [
+      "Zero-assumption fundamentals — anodizing GROWS an oxide (part is the ANODE), it doesn't deposit metal",
+      "Type I chromic: thin, gray, corrosion-protecting aerospace anodize (~0.5–7.5 µm)",
+      "Why aerospace specifies it — preserves fatigue strength; safe in crevices/assemblies; great paint base",
+      "Stepped low-voltage chromic-acid process and minimal dimensional change",
+      "Cr VI safety integrated into every station (OSHA 1910.1026, mist control, respirators, waste treatment)",
+      "MIL-A-8625 Type I / IB / IC and the BSAA/TSA hex-chrome-reduction trend",
+      "Where Type I sits in the family (vs Type II standard and Type III hardcoat)",
+      "20-question completion test, answer key, and certificate of completion",
+      "Available in English and Spanish (professional shop-floor Spanish)",
+      "Instant digital PDF download",
+    ],
+    available: true,
+  },
 ];
 
 export type ManualFormat = "digital" | "print" | "combo";
