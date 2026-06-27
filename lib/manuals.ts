@@ -341,6 +341,51 @@ export const MANUALS: Manual[] = [
     ],
     available: true,
   },
+  {
+    id: "en-mid-phos-manual",
+    title: "Electroless Nickel (Mid Phosphorus) — The Complete Training Manual",
+    titleEs: "Níquel Químico (Fósforo Medio) — El Manual de Capacitación Completo",
+    seriesId: "en-mid-phos",
+    seriesLabel: "Electroless Nickel — Mid Phosphorus",
+    tagline: "A full training course for the brand-new operator — assumes you know nothing, teaches you everything.",
+    description:
+      "A 49-page, plain-language training manual for mid-phosphorus electroless nickel (Mid-P EN, ~6–9% P) — the workhorse, general-purpose, most widely used grade. Written in a friendly, “for-dummies” style that assumes zero prior knowledge, it re-teaches the electroless (autocatalytic, NO electric current) fundamentals: how a hot ~90°C bath lays down a perfectly uniform Ni-P alloy on every surface, including bores and blind holes. Covers bath chemistry control (metal turnovers / MTO, replenishment, stabilizers, avoiding decomposition), the balanced corrosion-plus-hardness profile and fastest deposition rate of Mid-P, heat treatment for hardness vs. hydrogen-embrittlement relief baking, and how Mid-P sits between Low-P and High-P. Safety is integrated into every station. Ends with a 20-question completion test, answer key, and a printable certificate of completion.",
+    descriptionEs:
+      "Un manual de capacitación de 49 páginas, en lenguaje sencillo, para el níquel químico de fósforo medio (Medio-P, ~6–9% P) — el grado caballito de batalla, de propósito general y el más utilizado. Escrito en un estilo amigable “para principiantes” que no asume conocimientos previos, vuelve a enseñar los fundamentos del recubrimiento químico (autocatalítico, SIN corriente eléctrica): cómo un baño caliente a ~90°C deposita una aleación Ni-P perfectamente uniforme en cada superficie, incluso en barrenos y agujeros ciegos. Cubre el control de la química del baño (recambios metálicos / MTO, reposición, estabilizadores, evitar la descomposición), el perfil balanceado de corrosión y dureza y la tasa de depósito más rápida del Medio-P, el tratamiento térmico para dureza frente al horneado de alivio de fragilización por hidrógeno, y cómo el Medio-P se ubica entre el Bajo-P y el Alto-P. La seguridad está integrada en cada estación. Termina con un examen de 20 preguntas, clave de respuestas y un certificado de finalización imprimible.",
+    pages: 49,
+    priceDigital: 199,
+    pricePrint: 329,
+    priceCombo: 369,
+    printVolumeTiers: [
+      { min: 10, price: 199 },
+      { min: 5, price: 239 },
+      { min: 3, price: 279 },
+    ],
+    languages: ["en", "es"],
+    coverImage: "/manuals/en-mid-phos-manual-cover.jpg",
+    coverImageEs: "/manuals/en-mid-phos-manual-cover-es.jpg",
+    samplePages: [
+      "/manuals/samples/en-mid-phos-manual-p1.jpg",
+      "/manuals/samples/en-mid-phos-manual-p2.jpg",
+      "/manuals/samples/en-mid-phos-manual-p3.jpg",
+      "/manuals/samples/en-mid-phos-manual-p4.jpg",
+      "/manuals/samples/en-mid-phos-manual-p5.jpg",
+      "/manuals/samples/en-mid-phos-manual-p6.jpg",
+    ],
+    highlights: [
+      "Zero-assumption fundamentals — electroless (autocatalytic) plating with NO current, re-taught from scratch",
+      "Why Ni-P plates perfectly uniform on every surface — bores, blind holes, complex shapes",
+      "Mid-P identity: the balanced, general-purpose workhorse — good corrosion AND hardness, fastest deposition",
+      "Bath chemistry control: metal turnovers (MTO), replenishment, stabilizers, avoiding decomposition",
+      "Heat treatment for hardness vs. hydrogen-embrittlement relief baking — both explained",
+      "How Mid-P sits between Low-P and High-P (and when to choose each)",
+      "Safety integrated into every station — near-boiling bath, decomposition/phosphine hazard",
+      "20-question completion test, answer key, and certificate of completion",
+      "Available in English and Spanish (professional shop-floor Spanish)",
+      "Instant digital PDF download",
+    ],
+    available: true,
+  },
 ];
 
 export type ManualFormat = "digital" | "print" | "combo";
