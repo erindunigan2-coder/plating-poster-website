@@ -431,6 +431,51 @@ export const MANUALS: Manual[] = [
     ],
     available: true,
   },
+  {
+    id: "anodize-type-ii-manual",
+    title: "Sulfuric Acid Anodizing (Type II) — The Complete Training Manual",
+    titleEs: "Anodizado con Ácido Sulfúrico (Tipo II) — El Manual de Capacitación Completo",
+    seriesId: "anodize-type-ii",
+    seriesLabel: "Sulfuric Anodizing (Type II)",
+    tagline: "A full training course for the brand-new operator — assumes you know nothing, teaches you everything.",
+    description:
+      "A 40-page, plain-language training manual for standard sulfuric acid (Type II) anodizing of aluminum — written in a friendly, “for-dummies” style that assumes zero prior knowledge. Anodizing is a different animal from plating: the part is the ANODE and you GROW a hard, integral aluminum-oxide layer out of the metal itself, rather than depositing a metal onto it. Covers the whole line — clean, etch, desmut, anodize, dye, and seal — with the “why” behind each step: the porous-oxide structure, dyeing into the pores and sealing them shut, dimensional growth (the coating grows ~half in and ~half out), racking and electrical contact, bath cooling, and aluminum-alloy effects. Safety is integrated into every station (sulfuric acid, caustic etch, hydrogen at the cathode, near-boiling seal tanks). Ends with a 20-question completion test, answer key, and a printable certificate of completion.",
+    descriptionEs:
+      "Un manual de capacitación de 40 páginas, en lenguaje sencillo, para el anodizado estándar con ácido sulfúrico (Tipo II) del aluminio — escrito en un estilo amigable “para principiantes” que no asume conocimientos previos. El anodizado es distinto del recubrimiento: la pieza es el ÁNODO y se HACE CRECER una capa dura e integral de óxido de aluminio a partir del propio metal, en lugar de depositar un metal sobre él. Cubre toda la línea — limpiar, grabar, desmanchar, anodizar, teñir y sellar — con el “por qué” de cada paso: la estructura de óxido poroso, el teñido dentro de los poros y su sellado, el crecimiento dimensional (la capa crece ~mitad adentro y ~mitad afuera), el montaje y el contacto eléctrico, el enfriamiento del baño y los efectos de la aleación de aluminio. La seguridad está integrada en cada estación (ácido sulfúrico, grabado cáustico, hidrógeno en el cátodo, tanques de sellado casi en ebullición). Termina con un examen de 20 preguntas, clave de respuestas y un certificado de finalización imprimible.",
+    pages: 40,
+    priceDigital: 199,
+    pricePrint: 329,
+    priceCombo: 369,
+    printVolumeTiers: [
+      { min: 10, price: 199 },
+      { min: 5, price: 239 },
+      { min: 3, price: 279 },
+    ],
+    languages: ["en", "es"],
+    coverImage: "/manuals/anodize-type-ii-manual-cover.jpg",
+    coverImageEs: "/manuals/anodize-type-ii-manual-cover-es.jpg",
+    samplePages: [
+      "/manuals/samples/anodize-type-ii-manual-p1.jpg",
+      "/manuals/samples/anodize-type-ii-manual-p2.jpg",
+      "/manuals/samples/anodize-type-ii-manual-p3.jpg",
+      "/manuals/samples/anodize-type-ii-manual-p4.jpg",
+      "/manuals/samples/anodize-type-ii-manual-p5.jpg",
+      "/manuals/samples/anodize-type-ii-manual-p6.jpg",
+    ],
+    highlights: [
+      "Zero-assumption fundamentals — anodizing GROWS an oxide (part is the ANODE), it doesn't deposit metal",
+      "The whole line: clean → etch → desmut → anodize → dye → seal",
+      "Porous-oxide structure, dyeing into the pores, and sealing them shut",
+      "Dimensional growth — the coating grows ~half in and ~half out (tolerances & masking)",
+      "Racking & electrical contact, bath cooling, and aluminum-alloy effects",
+      "Where Type II sits in the family (vs Type I chromic and Type III hardcoat)",
+      "Safety integrated into every station (sulfuric acid, caustic etch, cathode hydrogen, hot seal)",
+      "20-question completion test, answer key, and certificate of completion",
+      "Available in English and Spanish (professional shop-floor Spanish)",
+      "Instant digital PDF download",
+    ],
+    available: true,
+  },
 ];
 
 export type ManualFormat = "digital" | "print" | "combo";
