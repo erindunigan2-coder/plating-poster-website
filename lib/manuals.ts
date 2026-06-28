@@ -838,6 +838,52 @@ export const MANUALS: Manual[] = [
     ],
     available: true,
   },
+  {
+    id: "zinc-phosphate-manual",
+    title: "Zinc Phosphate — The Complete Training Manual",
+    titleEs: "Fosfato de Zinc — El Manual de Capacitación Completo",
+    seriesId: "zinc-phosphate",
+    seriesLabel: "Zinc Phosphate",
+    tagline: "A full training course for the brand-new operator — assumes you know nothing, teaches you everything.",
+    description:
+      "A 54-page, plain-language training manual for zinc phosphate — the heavy, crystalline conversion coating that does three jobs: corrosion + paint base, a lubricant carrier for cold forming, and rust-proofing under oil. Part of the conversion-coating family (a chemical coating, NO electric current). Written in a friendly, “for-dummies” style that assumes zero prior knowledge, it teaches conversion-coating fundamentals, then zinc phosphate specifically: the crystalline coating (~150–1,000+ mg/ft²), the all-important ACTIVATION grain-refiner pre-dip (titanium colloid) that nucleates fine, tight crystals, free-acid/total-acid “points” control, nitrite/nitrate accelerators, tri-cation (Zn/Ni/Mn) automotive versions, and the heavier sludge/maintenance tradeoff. Explains where it sits between iron phosphate (lighter) and manganese phosphate (heavier). Safety integrated into every station. Ends with a 20-question completion test, answer key, and a printable certificate of completion.",
+    descriptionEs:
+      "Un manual de capacitación de 54 páginas, en lenguaje sencillo, para el fosfato de zinc — el recubrimiento de conversión pesado y cristalino que cumple tres funciones: base de corrosión + pintura, portador de lubricante para conformado en frío, y antioxidante bajo aceite. Parte de la familia de recubrimientos de conversión (un recubrimiento químico, SIN corriente eléctrica). Escrito en un estilo amigable “para principiantes” que no asume conocimientos previos, enseña los fundamentos de los recubrimientos de conversión, y luego el fosfato de zinc en concreto: el recubrimiento cristalino (~150–1,000+ mg/ft²), el fundamental pre-baño de ACTIVACIÓN afinador de grano (coloide de titanio) que nuclea cristales finos y apretados, el control de ácido libre/ácido total (“puntos”), los aceleradores de nitrito/nitrato, las versiones tri-catión (Zn/Ni/Mn) automotrices, y el mayor compromiso de lodo/mantenimiento. Explica dónde se ubica entre el fosfato de hierro (más ligero) y el de manganeso (más pesado). La seguridad está integrada en cada estación. Termina con un examen de 20 preguntas, clave de respuestas y un certificado de finalización imprimible.",
+    pages: 54,
+    priceDigital: 199,
+    pricePrint: 329,
+    priceCombo: 369,
+    printVolumeTiers: [
+      { min: 10, price: 199 },
+      { min: 5, price: 239 },
+      { min: 3, price: 279 },
+    ],
+    languages: ["en", "es"],
+    coverImage: "/manuals/zinc-phosphate-manual-cover.jpg",
+    coverImageEs: "/manuals/zinc-phosphate-manual-cover-es.jpg",
+    samplePages: [
+      "/manuals/samples/zinc-phosphate-manual-p1.jpg",
+      "/manuals/samples/zinc-phosphate-manual-p2.jpg",
+      "/manuals/samples/zinc-phosphate-manual-p3.jpg",
+      "/manuals/samples/zinc-phosphate-manual-p4.jpg",
+      "/manuals/samples/zinc-phosphate-manual-p5.jpg",
+      "/manuals/samples/zinc-phosphate-manual-p6.jpg",
+    ],
+    highlights: [
+      "Zero-assumption fundamentals — a CHEMICAL conversion coating with NO electric current",
+      "Zinc phosphate: the heavy, crystalline coating (~150–1,000+ mg/ft²)",
+      "Three use-modes: corrosion + paint base, cold-forming lubricant carrier, rust-proof under oil",
+      "The all-important ACTIVATION grain-refiner pre-dip and why fine crystals matter",
+      "Free-acid/total-acid “points” control, nitrite/nitrate accelerators, tri-cation (Zn/Ni/Mn)",
+      "The heavier sludge/maintenance tradeoff (handled honestly)",
+      "Where zinc phosphate fits vs iron phosphate (lighter) and manganese phosphate (heavier)",
+      "Safety integrated into every station (alkaline cleaner, accelerator/NOx, sludge, hot solutions)",
+      "20-question completion test, answer key, and certificate of completion",
+      "Available in English and Spanish (professional shop-floor Spanish)",
+      "Instant digital PDF download",
+    ],
+    available: true,
+  },
 ];
 
 export type ManualFormat = "digital" | "print" | "combo";
