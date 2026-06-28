@@ -747,6 +747,51 @@ export const MANUALS: Manual[] = [
     ],
     available: true,
   },
+  {
+    id: "anodize-2step-color-manual",
+    title: "Two-Step Electrolytic Color Anodizing — The Complete Training Manual",
+    titleEs: "Anodizado de Color Electrolítico en Dos Pasos — El Manual de Capacitación Completo",
+    seriesId: "anodize-electrolytic-color",
+    seriesLabel: "Two-Step Electrolytic Color Anodizing",
+    tagline: "A full training course for the brand-new operator — assumes you know nothing, teaches you everything.",
+    description:
+      "A 55-page, plain-language training manual for two-step electrolytic color anodizing — the modern architectural color standard. Written in a friendly, “for-dummies” style that assumes zero prior knowledge, it re-teaches the anodizing fundamentals (the part is the ANODE; you GROW an oxide out of the aluminum) and then teaches the two-step method: (1) a normal clear sulfuric (Type II) anodize, then (2) an AC electrolytic coloring bath that deposits metal (tin, nickel, or cobalt) deep in the pores — giving durable, lightfast colors from champagne through bronzes to a superb black. The defining idea: color depth is set by the coloring TIME and voltage, not by the coating thickness — which is why two-step is far more consistent and alloy-independent than integral color, and why it took over architectural work. Covers the AC-coloring mechanism, the three coloring routes compared, AAMA 611 Class I, and metal-salt-bath safety/waste. Ends with a 20-question completion test, answer key, and a printable certificate of completion.",
+    descriptionEs:
+      "Un manual de capacitación de 55 páginas, en lenguaje sencillo, para el anodizado de color electrolítico en dos pasos — el estándar moderno de color arquitectónico. Escrito en un estilo amigable “para principiantes” que no asume conocimientos previos, vuelve a enseñar los fundamentos del anodizado (la pieza es el ÁNODO; se HACE CRECER un óxido a partir del aluminio) y luego enseña el método de dos pasos: (1) un anodizado sulfúrico claro normal (Tipo II), y luego (2) un baño de coloración electrolítica con corriente alterna que deposita metal (estaño, níquel o cobalto) en el fondo de los poros — dando colores durables y resistentes a la luz, de champaña a bronces y un negro excelente. La idea que lo define: la profundidad del color la fija el TIEMPO y el voltaje de coloración, no el espesor de la capa — por eso el de dos pasos es mucho más consistente e independiente de la aleación que el color integral, y por eso dominó el trabajo arquitectónico. Cubre el mecanismo de coloración con CA, las tres rutas de color comparadas, AAMA 611 Clase I, y la seguridad/residuos del baño de sales metálicas. Termina con un examen de 20 preguntas, clave de respuestas y un certificado de finalización imprimible.",
+    pages: 55,
+    priceDigital: 199,
+    pricePrint: 329,
+    priceCombo: 369,
+    printVolumeTiers: [
+      { min: 10, price: 199 },
+      { min: 5, price: 239 },
+      { min: 3, price: 279 },
+    ],
+    languages: ["en", "es"],
+    coverImage: "/manuals/anodize-2step-color-manual-cover.jpg",
+    coverImageEs: "/manuals/anodize-2step-color-manual-cover-es.jpg",
+    samplePages: [
+      "/manuals/samples/anodize-2step-color-manual-p1.jpg",
+      "/manuals/samples/anodize-2step-color-manual-p2.jpg",
+      "/manuals/samples/anodize-2step-color-manual-p3.jpg",
+      "/manuals/samples/anodize-2step-color-manual-p4.jpg",
+      "/manuals/samples/anodize-2step-color-manual-p5.jpg",
+      "/manuals/samples/anodize-2step-color-manual-p6.jpg",
+    ],
+    highlights: [
+      "Zero-assumption fundamentals — anodizing GROWS an oxide (part is the ANODE), it doesn't deposit metal",
+      "Two-step method: clear sulfuric anodize, then AC electrolytic coloring",
+      "AC deposits metal (tin/nickel/cobalt) in the pore bottoms — durable, lightfast color",
+      "Color depth set by coloring TIME/voltage, NOT coating thickness (consistent, alloy-independent)",
+      "The modern architectural color standard — superb bronzes and blacks",
+      "The three coloring routes compared (dye vs integral vs two-step electrolytic)",
+      "AAMA 611 Class I; metal-salt-bath safety (Ni/Co), AC electrical hazard, and waste",
+      "20-question completion test, answer key, and certificate of completion",
+      "Available in English and Spanish (professional shop-floor Spanish)",
+      "Instant digital PDF download",
+    ],
+    available: true,
+  },
 ];
 
 export type ManualFormat = "digital" | "print" | "combo";
