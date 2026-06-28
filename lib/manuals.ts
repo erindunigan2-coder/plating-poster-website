@@ -792,6 +792,52 @@ export const MANUALS: Manual[] = [
     ],
     available: true,
   },
+  {
+    id: "iron-phosphate-manual",
+    title: "Iron Phosphate — The Complete Training Manual",
+    titleEs: "Fosfato de Hierro — El Manual de Capacitación Completo",
+    seriesId: "iron-phosphate",
+    posterPrefixes: ["iron-phos"],
+    seriesLabel: "Iron Phosphate",
+    tagline: "A full training course for the brand-new operator — assumes you know nothing, teaches you everything.",
+    description:
+      "A 44-page, plain-language training manual for iron phosphate — the light conversion coating that is the workhorse PAINT and powder-coat base. A new process family: this is a chemical CONVERSION COATING, with NO electric current — the steel surface reacts with the solution to form an integral coating. Written in a friendly, “for-dummies” style that assumes zero prior knowledge, it teaches conversion-coating fundamentals from scratch, then iron phosphate specifically: how a light amorphous coating (~30–90 mg/ft²) forms by immersion or spray, the cleaner-coater concept, 3-stage vs 5-stage spray washers, coating-weight/color control, the seal step (chromate vs non-chrome/zirconium), and the modern zirconium/nano pretreatment alternative. Explains where iron phosphate fits versus the heavier zinc and manganese phosphates. Safety integrated into every station. Ends with a 20-question completion test, answer key, and a printable certificate of completion.",
+    descriptionEs:
+      "Un manual de capacitación de 44 páginas, en lenguaje sencillo, para el fosfato de hierro — el recubrimiento de conversión ligero que es la base de PINTURA y recubrimiento en polvo por excelencia. Una nueva familia de procesos: este es un RECUBRIMIENTO DE CONVERSIÓN químico, SIN corriente eléctrica — la superficie de acero reacciona con la solución para formar un recubrimiento integral. Escrito en un estilo amigable “para principiantes” que no asume conocimientos previos, enseña los fundamentos de los recubrimientos de conversión desde cero, y luego el fosfato de hierro en concreto: cómo se forma un recubrimiento amorfo ligero (~30–90 mg/ft²) por inmersión o aspersión, el concepto de limpiador-recubridor, las lavadoras de aspersión de 3 vs 5 etapas, el control de peso/color del recubrimiento, el sellado (cromato vs sin cromo/circonio), y la alternativa moderna de pretratamiento de circonio/nano. Explica dónde encaja el fosfato de hierro frente a los fosfatos de zinc y manganeso más pesados. La seguridad está integrada en cada estación. Termina con un examen de 20 preguntas, clave de respuestas y un certificado de finalización imprimible.",
+    pages: 44,
+    priceDigital: 199,
+    pricePrint: 329,
+    priceCombo: 369,
+    printVolumeTiers: [
+      { min: 10, price: 199 },
+      { min: 5, price: 239 },
+      { min: 3, price: 279 },
+    ],
+    languages: ["en", "es"],
+    coverImage: "/manuals/iron-phosphate-manual-cover.jpg",
+    coverImageEs: "/manuals/iron-phosphate-manual-cover-es.jpg",
+    samplePages: [
+      "/manuals/samples/iron-phosphate-manual-p1.jpg",
+      "/manuals/samples/iron-phosphate-manual-p2.jpg",
+      "/manuals/samples/iron-phosphate-manual-p3.jpg",
+      "/manuals/samples/iron-phosphate-manual-p4.jpg",
+      "/manuals/samples/iron-phosphate-manual-p5.jpg",
+      "/manuals/samples/iron-phosphate-manual-p6.jpg",
+    ],
+    highlights: [
+      "Zero-assumption fundamentals — a CHEMICAL conversion coating with NO electric current",
+      "Iron phosphate: the light, amorphous workhorse paint & powder-coat base (~30–90 mg/ft²)",
+      "How the coating forms by immersion or spray; the cleaner-coater concept",
+      "3-stage vs 5-stage spray washers; coating-weight and color control",
+      "The seal step (chromate vs non-chrome/zirconium) and the modern zirconium/nano alternative",
+      "Where iron phosphate fits vs the heavier zinc and manganese phosphates",
+      "Safety integrated into every station (alkaline cleaner, hot solutions, dry-off oven, washer tunnels)",
+      "20-question completion test, answer key, and certificate of completion",
+      "Available in English and Spanish (professional shop-floor Spanish)",
+      "Instant digital PDF download",
+    ],
+    available: true,
+  },
 ];
 
 export type ManualFormat = "digital" | "print" | "combo";
