@@ -612,6 +612,51 @@ export const MANUALS: Manual[] = [
     ],
     available: true,
   },
+  {
+    id: "anodize-paa-manual",
+    title: "Phosphoric Acid Anodizing (PAA) — The Complete Training Manual",
+    titleEs: "Anodizado con Ácido Fosfórico (PAA) — El Manual de Capacitación Completo",
+    seriesId: "anodize-paa",
+    seriesLabel: "Phosphoric Acid Anodizing (PAA)",
+    tagline: "A full training course for the brand-new operator — assumes you know nothing, teaches you everything.",
+    description:
+      "A 44-page, plain-language training manual for phosphoric acid anodizing (PAA) — the aerospace surface preparation for durable STRUCTURAL ADHESIVE BONDING. Written in a friendly, “for-dummies” style that assumes zero prior knowledge, it re-teaches the anodizing fundamentals (the part is the ANODE; you GROW an oxide out of the aluminum) and then makes PAA specific: a phosphoric-acid electrolyte at low voltage builds a very thin oxide with a distinctive open, whisker-like pore structure that adhesives and bond primers lock into — giving exceptionally durable, humidity-resistant bonds. The defining rule: PAA is left UNSEALED (sealing would close the pores the adhesive needs) and is primed/bonded within a time window, not painted or sealed. Covers the FPL/P2 pre-etch (with the Cr VI flag on the dichromate FPL etch), Boeing BAC5555, ASTM D3933, and the wedge-crack durability test (ASTM D3762). Safety integrated throughout. Ends with a 20-question completion test, answer key, and a printable certificate of completion.",
+    descriptionEs:
+      "Un manual de capacitación de 44 páginas, en lenguaje sencillo, para el anodizado con ácido fosfórico (PAA) — la preparación de superficie aeroespacial para el PEGADO ADHESIVO ESTRUCTURAL durable. Escrito en un estilo amigable “para principiantes” que no asume conocimientos previos, vuelve a enseñar los fundamentos del anodizado (la pieza es el ÁNODO; se HACE CRECER un óxido a partir del aluminio) y luego lo hace específico del PAA: un electrolito de ácido fosfórico a bajo voltaje forma un óxido muy delgado con una estructura de poros abiertos tipo “bigotes” en la que el adhesivo y la imprimación se anclan — dando uniones excepcionalmente durables y resistentes a la humedad. La regla que lo define: el PAA se deja SIN SELLAR (sellar cerraría los poros que el adhesivo necesita) y se imprima/pega dentro de una ventana de tiempo, no se pinta ni se sella. Cubre el grabado previo FPL/P2 (con la advertencia de Cr VI en el grabado FPL con dicromato), Boeing BAC5555, ASTM D3933 y la prueba de cuña/agrietamiento (ASTM D3762). La seguridad está integrada. Termina con un examen de 20 preguntas, clave de respuestas y un certificado de finalización imprimible.",
+    pages: 44,
+    priceDigital: 199,
+    pricePrint: 329,
+    priceCombo: 369,
+    printVolumeTiers: [
+      { min: 10, price: 199 },
+      { min: 5, price: 239 },
+      { min: 3, price: 279 },
+    ],
+    languages: ["en", "es"],
+    coverImage: "/manuals/anodize-paa-manual-cover.jpg",
+    coverImageEs: "/manuals/anodize-paa-manual-cover-es.jpg",
+    samplePages: [
+      "/manuals/samples/anodize-paa-manual-p1.jpg",
+      "/manuals/samples/anodize-paa-manual-p2.jpg",
+      "/manuals/samples/anodize-paa-manual-p3.jpg",
+      "/manuals/samples/anodize-paa-manual-p4.jpg",
+      "/manuals/samples/anodize-paa-manual-p5.jpg",
+      "/manuals/samples/anodize-paa-manual-p6.jpg",
+    ],
+    highlights: [
+      "Zero-assumption fundamentals — anodizing GROWS an oxide (part is the ANODE), it doesn't deposit metal",
+      "PAA: the aerospace pretreatment for durable STRUCTURAL ADHESIVE BONDING",
+      "Open whisker-like pore structure that adhesives and bond primers lock into",
+      "The defining rule — leave it UNSEALED; prime/bond within a time window (never seal)",
+      "Phosphoric-acid, low-voltage process; very thin oxide; FPL/P2 pre-etch (Cr VI flag on FPL)",
+      "Boeing BAC5555, ASTM D3933, and the wedge-crack durability test (ASTM D3762)",
+      "Where PAA fits vs the other anodizes (bonding prep, not corrosion/wear/decoration)",
+      "20-question completion test, answer key, and certificate of completion",
+      "Available in English and Spanish (professional shop-floor Spanish)",
+      "Instant digital PDF download",
+    ],
+    available: true,
+  },
 ];
 
 export type ManualFormat = "digital" | "print" | "combo";
