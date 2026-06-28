@@ -702,6 +702,51 @@ export const MANUALS: Manual[] = [
     ],
     available: true,
   },
+  {
+    id: "anodize-integral-manual",
+    title: "Integral Color Anodizing — The Complete Training Manual",
+    titleEs: "Anodizado de Color Integral — El Manual de Capacitación Completo",
+    seriesId: "anodize-integral",
+    seriesLabel: "Integral Color Anodizing",
+    tagline: "A full training course for the brand-new operator — assumes you know nothing, teaches you everything.",
+    description:
+      "A 48-page, plain-language training manual for integral color anodizing — the architectural anodize where the color is produced BY the anodizing itself, in one step, with no dye. Written in a friendly, “for-dummies” style that assumes zero prior knowledge, it re-teaches the anodizing fundamentals (the part is the ANODE; you GROW an oxide out of the aluminum) and then makes integral color specific: a sulfuric + organic-acid electrolyte (Kalcolor/Duranodic-type) run at higher energy grows a hard, inherently colored oxide — champagne through bronzes to gray and black — that's extremely lightfast and abrasion-resistant because there's no dye to fade. Explains how color deepens with coating thickness/amp-hours, why the aluminum alloy and temper drive the color (and the lot-to-lot color-matching challenge), the three coloring routes compared (dye vs integral vs two-step electrolytic), and AAMA 611 Class I architectural requirements. Safety integrated throughout. Ends with a 20-question completion test, answer key, and a printable certificate of completion.",
+    descriptionEs:
+      "Un manual de capacitación de 48 páginas, en lenguaje sencillo, para el anodizado de color integral — el anodizado arquitectónico donde el color lo produce el anodizado mismo, en un solo paso, sin anilina. Escrito en un estilo amigable “para principiantes” que no asume conocimientos previos, vuelve a enseñar los fundamentos del anodizado (la pieza es el ÁNODO; se HACE CRECER un óxido a partir del aluminio) y luego lo hace específico del color integral: un electrolito de ácido sulfúrico + ácido orgánico (tipo Kalcolor/Duranodic) operado a mayor energía hace crecer un óxido duro con color inherente — de champaña a bronces, gris y negro — que es muy resistente a la luz y a la abrasión porque no hay anilina que se desvanezca. Explica cómo el color se oscurece con el espesor/amperios-hora, por qué la aleación y el temple del aluminio determinan el color (y el reto de igualar color entre lotes), las tres rutas de color comparadas (teñido vs color integral vs color electrolítico de dos pasos), y los requisitos arquitectónicos AAMA 611 Clase I. La seguridad está integrada. Termina con un examen de 20 preguntas, clave de respuestas y un certificado de finalización imprimible.",
+    pages: 48,
+    priceDigital: 199,
+    pricePrint: 329,
+    priceCombo: 369,
+    printVolumeTiers: [
+      { min: 10, price: 199 },
+      { min: 5, price: 239 },
+      { min: 3, price: 279 },
+    ],
+    languages: ["en", "es"],
+    coverImage: "/manuals/anodize-integral-manual-cover.jpg",
+    coverImageEs: "/manuals/anodize-integral-manual-cover-es.jpg",
+    samplePages: [
+      "/manuals/samples/anodize-integral-manual-p1.jpg",
+      "/manuals/samples/anodize-integral-manual-p2.jpg",
+      "/manuals/samples/anodize-integral-manual-p3.jpg",
+      "/manuals/samples/anodize-integral-manual-p4.jpg",
+      "/manuals/samples/anodize-integral-manual-p5.jpg",
+      "/manuals/samples/anodize-integral-manual-p6.jpg",
+    ],
+    highlights: [
+      "Zero-assumption fundamentals — anodizing GROWS an oxide (part is the ANODE), it doesn't deposit metal",
+      "Integral color: architectural color produced BY the anodizing itself — in one step, no dye",
+      "Sulfuric + organic-acid electrolyte (Kalcolor/Duranodic-type); higher-energy colored hardcoat",
+      "Lightfast bronzes/gray/black that don't fade — color is in the oxide, not a dye",
+      "Color deepens with thickness/amp-hours; alloy & temper drive the color (lot-to-lot matching)",
+      "The three coloring routes compared (dye vs integral vs two-step electrolytic)",
+      "AAMA 611 Class I architectural anodizing requirements",
+      "20-question completion test, answer key, and certificate of completion",
+      "Available in English and Spanish (professional shop-floor Spanish)",
+      "Instant digital PDF download",
+    ],
+    available: true,
+  },
 ];
 
 export type ManualFormat = "digital" | "print" | "combo";
