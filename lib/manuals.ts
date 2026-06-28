@@ -657,6 +657,51 @@ export const MANUALS: Manual[] = [
     ],
     available: true,
   },
+  {
+    id: "anodize-bright-manual",
+    title: "Bright Anodizing — The Complete Training Manual",
+    titleEs: "Anodizado Brillante — El Manual de Capacitación Completo",
+    seriesId: "anodize-bright",
+    seriesLabel: "Bright Anodizing",
+    tagline: "A full training course for the brand-new operator — assumes you know nothing, teaches you everything.",
+    description:
+      "A 44-page, plain-language training manual for bright anodizing — the decorative anodize whose whole product is brilliance: a mirror, specular finish on aluminum. Written in a friendly, “for-dummies” style that assumes zero prior knowledge, it re-teaches the anodizing fundamentals (the part is the ANODE; you GROW an oxide out of the aluminum) and then makes bright anodizing specific: a two-stage process where a hot phosphoric-nitric chemical bright dip levels the surface to a mirror, then a thin CLEAR (transparent) sulfuric anodize locks the shine in. Explains why it needs high-purity aluminum (alloying inclusions scatter light and dull the finish), why the matte etch is deliberately skipped, and how to keep the clear coat transparent. The standout safety lesson: the hot bright dip evolves NOx (brown nitrogen-oxide fume) — a serious, delayed-onset inhalation hazard requiring strong ventilation — taught at full prominence. Ends with a 20-question completion test, answer key, and a printable certificate of completion.",
+    descriptionEs:
+      "Un manual de capacitación de 44 páginas, en lenguaje sencillo, para el anodizado brillante — el anodizado decorativo cuyo producto entero es el brillo: un acabado espejo y especular sobre aluminio. Escrito en un estilo amigable “para principiantes” que no asume conocimientos previos, vuelve a enseñar los fundamentos del anodizado (la pieza es el ÁNODO; se HACE CRECER un óxido a partir del aluminio) y luego lo hace específico del anodizado brillante: un proceso de dos etapas donde un abrillantado químico fosfórico-nítrico caliente nivela la superficie a espejo, y luego un anodizado sulfúrico CLARO (transparente) delgado fija el brillo. Explica por qué necesita aluminio de alta pureza (las inclusiones de aleación dispersan la luz y opacan el acabado), por qué se omite a propósito el grabado mate, y cómo mantener la capa clara transparente. La lección de seguridad destacada: el abrillantado caliente desprende NOx (humo pardo de óxidos de nitrógeno) — un peligro de inhalación grave y de efecto retardado que requiere ventilación fuerte — enseñada con plena prominencia. Termina con un examen de 20 preguntas, clave de respuestas y un certificado de finalización imprimible.",
+    pages: 44,
+    priceDigital: 199,
+    pricePrint: 329,
+    priceCombo: 369,
+    printVolumeTiers: [
+      { min: 10, price: 199 },
+      { min: 5, price: 239 },
+      { min: 3, price: 279 },
+    ],
+    languages: ["en", "es"],
+    coverImage: "/manuals/anodize-bright-manual-cover.jpg",
+    coverImageEs: "/manuals/anodize-bright-manual-cover-es.jpg",
+    samplePages: [
+      "/manuals/samples/anodize-bright-manual-p1.jpg",
+      "/manuals/samples/anodize-bright-manual-p2.jpg",
+      "/manuals/samples/anodize-bright-manual-p3.jpg",
+      "/manuals/samples/anodize-bright-manual-p4.jpg",
+      "/manuals/samples/anodize-bright-manual-p5.jpg",
+      "/manuals/samples/anodize-bright-manual-p6.jpg",
+    ],
+    highlights: [
+      "Zero-assumption fundamentals — anodizing GROWS an oxide (part is the ANODE), it doesn't deposit metal",
+      "Bright anodizing: a mirror/specular decorative finish on aluminum",
+      "Two-stage process — hot phosphoric-nitric chemical bright dip, then a thin CLEAR sulfuric anodize",
+      "Why it needs high-purity aluminum, and why the matte etch is deliberately skipped",
+      "Standout safety: the bright dip evolves NOx (brown fume) — a delayed inhalation hazard; ventilation first",
+      "Keeping the clear coat transparent; gloss/distinctness-of-image quality checks",
+      "Where bright anodizing fits in the anodize family (a brightened, clear Type II)",
+      "20-question completion test, answer key, and certificate of completion",
+      "Available in English and Spanish (professional shop-floor Spanish)",
+      "Instant digital PDF download",
+    ],
+    available: true,
+  },
 ];
 
 export type ManualFormat = "digital" | "print" | "combo";
