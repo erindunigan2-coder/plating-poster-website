@@ -1110,6 +1110,51 @@ export const MANUALS: Manual[] = [
     ],
     available: true,
   },
+  {
+    id: "passivation-manual",
+    title: "Passivation (Stainless Steel) — The Complete Training Manual",
+    titleEs: "Pasivación (Acero Inoxidable) — El Manual de Capacitación Completo",
+    seriesId: "passivation",
+    seriesLabel: "Passivation (Stainless Steel)",
+    tagline: "A full training course for the brand-new operator — assumes you know nothing, teaches you everything.",
+    description:
+      "A 49-page, plain-language training manual for passivation of stainless steel. Important: passivation is NOT a coating — it's a chemical treatment that removes free iron and surface contamination and lets the stainless steel's OWN chromium-oxide passive layer reform stronger and more uniform. Written in a friendly, “for-dummies” style that assumes zero prior knowledge, it reframes the fundamentals (nothing is deposited — the steel protects itself) and then covers both chemistries — nitric acid (classic) and citric acid (the greener, safer modern trend); the make-or-break pre-clean; grade-dependence and flash-attack risk on free-machining and martensitic stainless; the pickling-vs-passivation distinction; ASTM A967 / AMS 2700 (nitric Method 1 / citric Method 2); and — crucially — the verification TESTS (water immersion, humidity, salt spray, copper sulfate, ferroxyl) that prove it worked, since there's no visible coating to look at. Safety front-loads the nitric-acid NOx (brown-fume) inhalation hazard. Ends with a 20-question completion test, answer key, and a printable certificate of completion.",
+    descriptionEs:
+      "Un manual de capacitación de 49 páginas, en lenguaje sencillo, para la pasivación del acero inoxidable. Importante: la pasivación NO es un recubrimiento — es un tratamiento químico que elimina el hierro libre y la contaminación de la superficie y deja que la propia capa pasiva de óxido de cromo del acero inoxidable se reforme más fuerte y uniforme. Escrito en un estilo amigable “para principiantes” que no asume conocimientos previos, replantea los fundamentos (no se deposita nada — el acero se protege solo) y luego cubre ambas químicas — ácido nítrico (clásico) y ácido cítrico (la tendencia moderna más verde y segura); la pre-limpieza decisiva; la dependencia del grado y el riesgo de ataque flash en inoxidables de libre maquinado y martensíticos; la distinción decapado vs. pasivación; ASTM A967 / AMS 2700 (nítrico Método 1 / cítrico Método 2); y — fundamental — las PRUEBAS de verificación (inmersión en agua, humedad, niebla salina, sulfato de cobre, ferroxyl) que demuestran que funcionó, ya que no hay recubrimiento visible que mirar. La seguridad pone por delante el peligro de inhalación de NOx (humos pardos) del ácido nítrico. Termina con un examen de 20 preguntas, clave de respuestas y un certificado de finalización imprimible.",
+    pages: 49,
+    priceDigital: 199,
+    pricePrint: 329,
+    priceCombo: 369,
+    printVolumeTiers: [
+      { min: 10, price: 199 },
+      { min: 5, price: 239 },
+      { min: 3, price: 279 },
+    ],
+    languages: ["en", "es"],
+    coverImage: "/manuals/passivation-manual-cover.jpg",
+    coverImageEs: "/manuals/passivation-manual-cover-es.jpg",
+    samplePages: [
+      "/manuals/samples/passivation-manual-p1.jpg",
+      "/manuals/samples/passivation-manual-p2.jpg",
+      "/manuals/samples/passivation-manual-p3.jpg",
+      "/manuals/samples/passivation-manual-p4.jpg",
+      "/manuals/samples/passivation-manual-p5.jpg",
+      "/manuals/samples/passivation-manual-p6.jpg",
+    ],
+    highlights: [
+      "Zero-assumption fundamentals — passivation is NOT a coating (nothing is deposited)",
+      "Removes free iron + lets the stainless's own chromium-oxide passive layer reform stronger",
+      "Both chemistries: nitric acid (classic) and citric acid (greener, safer modern trend)",
+      "The make-or-break pre-clean; grade-dependence and flash-attack risk",
+      "Pickling vs passivation; ASTM A967 / AMS 2700 (nitric Method 1 / citric Method 2)",
+      "The verification TESTS that prove it worked (water immersion, humidity, salt spray, copper sulfate, ferroxyl)",
+      "Safety front-loads the nitric-acid NOx (brown-fume) inhalation hazard",
+      "20-question completion test, answer key, and certificate of completion",
+      "Available in English and Spanish (professional shop-floor Spanish)",
+      "Instant digital PDF download",
+    ],
+    available: true,
+  },
 ];
 
 export type ManualFormat = "digital" | "print" | "combo";
