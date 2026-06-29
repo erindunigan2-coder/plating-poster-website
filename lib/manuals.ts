@@ -1065,6 +1065,51 @@ export const MANUALS: Manual[] = [
     ],
     available: true,
   },
+  {
+    id: "black-oxide-manual",
+    title: "Black Oxide (Steel) — The Complete Training Manual",
+    titleEs: "Óxido Negro (Acero) — El Manual de Capacitación Completo",
+    seriesId: "black-oxide",
+    seriesLabel: "Black Oxide (Steel)",
+    tagline: "A full training course for the brand-new operator — assumes you know nothing, teaches you everything.",
+    description:
+      "A 56-page, plain-language training manual for black oxide (blackening) of steel — the classic black finish that converts the surface to black magnetite (Fe₃O₄). A conversion coating (a chemical film, NO electric current). Written in a friendly, “for-dummies” style that assumes zero prior knowledge, it teaches conversion-coating fundamentals, then black oxide specifically: the thin, dimensionally-neutral coating (a key advantage for tight-tolerance parts); the THREE temperature classes — hot caustic-nitrate (~285–310 °F, true magnetite, the classic), mid-temperature, and room-temp/cold (a copper-selenium film, NOT true magnetite, thinner/less durable); and the mandatory oil/wax/lacquer post-dip that actually provides the corrosion resistance (bare oxide is minimal). Safety is front-loaded: the hot bath is boiling concentrated caustic, with the critical water-flashes-to-steam eruption hazard taught up front. Covers uses (tools, fasteners, firearms, gears, optical anti-glare), MIL-DTL-13924 / AMS 2485, and quality/troubleshooting. Ends with a 20-question completion test, answer key, and a printable certificate of completion.",
+    descriptionEs:
+      "Un manual de capacitación de 56 páginas, en lenguaje sencillo, para el óxido negro (ennegrecido) del acero — el clásico acabado negro que convierte la superficie en magnetita negra (Fe₃O₄). Es un recubrimiento de conversión (una película química, SIN corriente eléctrica). Escrito en un estilo amigable “para principiantes” que no asume conocimientos previos, enseña los fundamentos de los recubrimientos de conversión, y luego el óxido negro en concreto: el recubrimiento delgado y dimensionalmente neutro (una ventaja clave para piezas de tolerancia cerrada); las TRES clases de temperatura — caliente de sosa cáustica-nitrato (~285–310 °F, magnetita verdadera, el clásico), temperatura media, y temperatura ambiente/frío (una película de cobre-selenio, NO magnetita verdadera, más delgada/menos durable); y el post-baño obligatorio de aceite/cera/laca que en realidad da la resistencia a la corrosión (el óxido desnudo protege poco). La seguridad va por delante: el baño caliente es sosa cáustica concentrada hirviente, con el peligro crítico de que el agua se convierta en vapor instantáneo y cause erupción, enseñado desde el principio. Cubre usos (herramientas, sujetadores, armas de fuego, engranes, partes ópticas antirreflejo), MIL-DTL-13924 / AMS 2485, y calidad/solución de problemas. Termina con un examen de 20 preguntas, clave de respuestas y un certificado de finalización imprimible.",
+    pages: 56,
+    priceDigital: 199,
+    pricePrint: 329,
+    priceCombo: 369,
+    printVolumeTiers: [
+      { min: 10, price: 199 },
+      { min: 5, price: 239 },
+      { min: 3, price: 279 },
+    ],
+    languages: ["en", "es"],
+    coverImage: "/manuals/black-oxide-manual-cover.jpg",
+    coverImageEs: "/manuals/black-oxide-manual-cover-es.jpg",
+    samplePages: [
+      "/manuals/samples/black-oxide-manual-p1.jpg",
+      "/manuals/samples/black-oxide-manual-p2.jpg",
+      "/manuals/samples/black-oxide-manual-p3.jpg",
+      "/manuals/samples/black-oxide-manual-p4.jpg",
+      "/manuals/samples/black-oxide-manual-p5.jpg",
+      "/manuals/samples/black-oxide-manual-p6.jpg",
+    ],
+    highlights: [
+      "Zero-assumption fundamentals — a CHEMICAL conversion coating with NO electric current",
+      "Black oxide: converts steel to black magnetite (Fe₃O₄) — thin and dimensionally neutral",
+      "The three temperature classes (hot true-magnetite vs cold copper-selenium film)",
+      "The mandatory oil/wax/lacquer post-dip that actually provides corrosion resistance",
+      "Safety front-loaded: boiling caustic + the water-flashes-to-steam eruption hazard",
+      "Uses: tools, fasteners, firearms, gears, optical anti-glare; MIL-DTL-13924 / AMS 2485",
+      "Where black oxide fits vs the phosphates and platings",
+      "20-question completion test, answer key, and certificate of completion",
+      "Available in English and Spanish (professional shop-floor Spanish)",
+      "Instant digital PDF download",
+    ],
+    available: true,
+  },
 ];
 
 export type ManualFormat = "digital" | "print" | "combo";
