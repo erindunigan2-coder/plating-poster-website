@@ -929,6 +929,51 @@ export const MANUALS: Manual[] = [
     ],
     available: true,
   },
+  {
+    id: "hex-chromate-manual",
+    title: "Chromate Conversion Coating (Hexavalent) — The Complete Training Manual",
+    titleEs: "Recubrimiento de Conversión de Cromato (Hexavalente) — El Manual de Capacitación Completo",
+    seriesId: "chromate-hex",
+    seriesLabel: "Chromate Conversion (Hexavalent)",
+    tagline: "A full training course for the brand-new operator — assumes you know nothing, teaches you everything.",
+    description:
+      "A 49-page, plain-language training manual for hexavalent chromate conversion coatings — the classic clear/blue, yellow/gold, olive-drab, and black “chromates” that passivate zinc-plated parts. A conversion coating (a chemical film, NO electric current). Written in a friendly, “for-dummies” style that assumes zero prior knowledge, it teaches conversion-coating fundamentals, then hex chromate specifically: the self-healing hexavalent-chromium film that dramatically boosts corrosion resistance and re-protects scratches; the color/type palette (color ≈ thickness ≈ protection); the dilute acidic bath, short immersion, and the critical low-temperature dry that preserves self-healing. Because the bath is hexavalent chromium — a confirmed carcinogen — Cr VI hazard control is integrated throughout (OSHA 1910.1026, mist control, respiratory protection, Cr⁶⁺→Cr³⁺ waste treatment), along with the RoHS/ELV/REACH restriction that's driving the move to trivalent chromate. Ends with a 20-question completion test, answer key, and a printable certificate of completion.",
+    descriptionEs:
+      "Un manual de capacitación de 49 páginas, en lenguaje sencillo, para los recubrimientos de conversión de cromato hexavalente — los clásicos “cromatos” transparente/azul, amarillo/oro, verde olivo y negro que pasivan las piezas recubiertas de zinc. Es un recubrimiento de conversión (una película química, SIN corriente eléctrica). Escrito en un estilo amigable “para principiantes” que no asume conocimientos previos, enseña los fundamentos de los recubrimientos de conversión, y luego el cromato hexavalente en concreto: la película auto-reparable de cromo hexavalente que aumenta mucho la resistencia a la corrosión y vuelve a proteger los rayones; la paleta de colores/tipos (color ≈ espesor ≈ protección); el baño ácido diluido, la inmersión corta, y el secado a baja temperatura crítico que preserva la auto-reparación. Como el baño es cromo hexavalente — un cancerígeno confirmado — el control del peligro de Cr VI está integrado (OSHA 1910.1026, control de niebla, protección respiratoria, tratamiento de residuos Cr⁶⁺→Cr³⁺), junto con la restricción RoHS/ELV/REACH que impulsa la migración al cromato trivalente. Termina con un examen de 20 preguntas, clave de respuestas y un certificado de finalización imprimible.",
+    pages: 49,
+    priceDigital: 199,
+    pricePrint: 329,
+    priceCombo: 369,
+    printVolumeTiers: [
+      { min: 10, price: 199 },
+      { min: 5, price: 239 },
+      { min: 3, price: 279 },
+    ],
+    languages: ["en", "es"],
+    coverImage: "/manuals/hex-chromate-manual-cover.jpg",
+    coverImageEs: "/manuals/hex-chromate-manual-cover-es.jpg",
+    samplePages: [
+      "/manuals/samples/hex-chromate-manual-p1.jpg",
+      "/manuals/samples/hex-chromate-manual-p2.jpg",
+      "/manuals/samples/hex-chromate-manual-p3.jpg",
+      "/manuals/samples/hex-chromate-manual-p4.jpg",
+      "/manuals/samples/hex-chromate-manual-p5.jpg",
+      "/manuals/samples/hex-chromate-manual-p6.jpg",
+    ],
+    highlights: [
+      "Zero-assumption fundamentals — a CHEMICAL conversion coating with NO electric current",
+      "The classic chromates (clear/blue, yellow/gold, olive-drab, black) that passivate zinc",
+      "Self-healing hexavalent film that re-protects scratches — color ≈ thickness ≈ protection",
+      "The dilute acidic bath, short immersion, and the critical low-temp dry that preserves self-healing",
+      "Cr VI safety integrated throughout (OSHA 1910.1026, mist control, respirators, waste treatment)",
+      "The RoHS/ELV/REACH restriction driving the move to trivalent chromate",
+      "Where hex chromate fits as the finishing passivate after zinc plating",
+      "20-question completion test, answer key, and certificate of completion",
+      "Available in English and Spanish (professional shop-floor Spanish)",
+      "Instant digital PDF download",
+    ],
+    available: true,
+  },
 ];
 
 export type ManualFormat = "digital" | "print" | "combo";
