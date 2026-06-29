@@ -1019,6 +1019,52 @@ export const MANUALS: Manual[] = [
     ],
     available: true,
   },
+  {
+    id: "chem-film-manual",
+    title: "Aluminum Conversion Coating (Chem Film / Alodine) — The Complete Training Manual",
+    titleEs: "Recubrimiento de Conversión de Aluminio (Película Química / Alodine) — El Manual de Capacitación Completo",
+    seriesId: "chem-film",
+    posterPrefixes: ["alodine"],
+    seriesLabel: "Chem Film / Alodine",
+    tagline: "A full training course for the brand-new operator — assumes you know nothing, teaches you everything.",
+    description:
+      "A 51-page, plain-language training manual for chem film (chemical film / Alodine / Iridite) — chromate conversion coating on ALUMINUM, MIL-DTL-5541. A conversion coating (a chemical film, NO electric current). Written in a friendly, “for-dummies” style that assumes zero prior knowledge, it teaches conversion-coating fundamentals, then chem film specifically: its two defining jobs — corrosion protection + paint/adhesive base, AND staying electrically CONDUCTIVE (low contact resistance) so it protects aluminum while still allowing grounding/EMI bonds, the signature difference from insulating anodize. Covers Type I (hexavalent, gold/tan, best corrosion) vs Type II (trivalent/chrome-free, clear, RoHS), Class 1A (max corrosion) vs Class 3 (low electrical resistance), the make-or-break DEOXIDIZE step, brush/immersion/spray application including aircraft field touch-up, and coverage verification for clear Type II. Cr VI hazard control is integrated for Type I (OSHA 1910.1026, mist control, respirators, Cr⁶⁺→Cr³⁺ waste), with the RoHS/REACH move to Type II. Ends with a 20-question completion test, answer key, and a printable certificate of completion.",
+    descriptionEs:
+      "Un manual de capacitación de 51 páginas, en lenguaje sencillo, para la película química (chem film / Alodine / Iridite) — recubrimiento de conversión de cromato sobre ALUMINIO, MIL-DTL-5541. Es un recubrimiento de conversión (una película química, SIN corriente eléctrica). Escrito en un estilo amigable “para principiantes” que no asume conocimientos previos, enseña los fundamentos de los recubrimientos de conversión, y luego la película química en concreto: sus dos funciones que la definen — protección contra la corrosión + base para pintura/adhesivo, Y mantenerse eléctricamente CONDUCTIVA (baja resistencia de contacto) para proteger el aluminio sin dejar de permitir la conexión a tierra/EMI, la diferencia clave frente al anodizado aislante. Cubre el Tipo I (hexavalente, oro/dorado, máxima corrosión) vs el Tipo II (trivalente/sin cromo, transparente, RoHS), la Clase 1A (máx. corrosión) vs la Clase 3 (baja resistencia eléctrica), el paso decisivo de DESOXIDADO, la aplicación por brocha/inmersión/aspersión incluido el retoque en campo de aeronaves, y la verificación de cobertura para el Tipo II transparente. El control del peligro de Cr VI está integrado para el Tipo I (OSHA 1910.1026, control de niebla, respiradores, residuos Cr⁶⁺→Cr³⁺), con la migración RoHS/REACH al Tipo II. Termina con un examen de 20 preguntas, clave de respuestas y un certificado de finalización imprimible.",
+    pages: 51,
+    priceDigital: 199,
+    pricePrint: 329,
+    priceCombo: 369,
+    printVolumeTiers: [
+      { min: 10, price: 199 },
+      { min: 5, price: 239 },
+      { min: 3, price: 279 },
+    ],
+    languages: ["en", "es"],
+    coverImage: "/manuals/chem-film-manual-cover.jpg",
+    coverImageEs: "/manuals/chem-film-manual-cover-es.jpg",
+    samplePages: [
+      "/manuals/samples/chem-film-manual-p1.jpg",
+      "/manuals/samples/chem-film-manual-p2.jpg",
+      "/manuals/samples/chem-film-manual-p3.jpg",
+      "/manuals/samples/chem-film-manual-p4.jpg",
+      "/manuals/samples/chem-film-manual-p5.jpg",
+      "/manuals/samples/chem-film-manual-p6.jpg",
+    ],
+    highlights: [
+      "Zero-assumption fundamentals — a CHEMICAL conversion coating on aluminum, NO electric current",
+      "Chem film / Alodine: corrosion + paint/adhesive base that stays electrically CONDUCTIVE",
+      "The signature difference vs insulating anodize — protects aluminum yet allows grounding/EMI bonds",
+      "Type I (hex, gold, best corrosion) vs Type II (trivalent, clear, RoHS); Class 1A vs Class 3 (conductive)",
+      "The make-or-break DEOXIDIZE step; brush/immersion/spray incl. aircraft field touch-up",
+      "Coverage verification for clear Type II; MIL-DTL-5541 / MIL-DTL-81706",
+      "Cr VI safety for Type I (OSHA 1910.1026, mist control, respirators, waste) + RoHS move to Type II",
+      "20-question completion test, answer key, and certificate of completion",
+      "Available in English and Spanish (professional shop-floor Spanish)",
+      "Instant digital PDF download",
+    ],
+    available: true,
+  },
 ];
 
 export type ManualFormat = "digital" | "print" | "combo";
