@@ -974,6 +974,51 @@ export const MANUALS: Manual[] = [
     ],
     available: true,
   },
+  {
+    id: "tri-chromate-manual",
+    title: "Chromate Conversion Coating (Trivalent) — The Complete Training Manual",
+    titleEs: "Recubrimiento de Conversión de Cromato (Trivalente) — El Manual de Capacitación Completo",
+    seriesId: "chromate-tri",
+    seriesLabel: "Chromate Conversion (Trivalent)",
+    tagline: "A full training course for the brand-new operator — assumes you know nothing, teaches you everything.",
+    description:
+      "A 49-page, plain-language training manual for trivalent (Cr³⁺) chromate conversion coatings — the RoHS-compliant modern passivate for zinc-plated parts that replaced hexavalent chromate. A conversion coating (a chemical film, NO electric current). Written in a friendly, “for-dummies” style that assumes zero prior knowledge, it teaches conversion-coating fundamentals, then trivalent specifically: built on trivalent chromium (no hexavalent) to meet RoHS/ELV/REACH; the central operator lesson that trivalent is a passive barrier (NOT self-healing like hex), so it relies on a thicker, uniform passivate PLUS a topcoat/sealer system to match hex salt-spray; the clear/blue, iridescent, and black color options; and the care points (drag-in, pH, and not letting Cr³⁺ oxidize to Cr⁶⁺). Safety is reframed honestly — trivalent chromium is not a carcinogen like Cr VI, but it's still an acidic bath with cobalt-bearing topcoats, so PPE and ventilation still apply. Ends with a 20-question completion test, answer key, and a printable certificate of completion.",
+    descriptionEs:
+      "Un manual de capacitación de 49 páginas, en lenguaje sencillo, para los recubrimientos de conversión de cromato trivalente (Cr³⁺) — el pasivado moderno que cumple con RoHS y reemplazó al cromato hexavalente en piezas recubiertas de zinc. Es un recubrimiento de conversión (una película química, SIN corriente eléctrica). Escrito en un estilo amigable “para principiantes” que no asume conocimientos previos, enseña los fundamentos de los recubrimientos de conversión, y luego el trivalente en concreto: basado en cromo trivalente (sin hexavalente) para cumplir RoHS/ELV/REACH; la lección central de que el trivalente es una barrera pasiva (NO auto-reparable como el hex), así que depende de un pasivado más grueso y uniforme MÁS un sistema de capa superior/sellador para igualar la niebla salina del hex; las opciones de color transparente/azul, iridiscente y negro; y los puntos de cuidado (arrastre, pH, y no dejar que el Cr³⁺ se oxide a Cr⁶⁺). La seguridad se reformula con honestidad — el cromo trivalente no es cancerígeno como el Cr VI, pero sigue siendo un baño ácido con capas superiores que contienen cobalto, así que el EPP y la ventilación siguen aplicando. Termina con un examen de 20 preguntas, clave de respuestas y un certificado de finalización imprimible.",
+    pages: 49,
+    priceDigital: 199,
+    pricePrint: 329,
+    priceCombo: 369,
+    printVolumeTiers: [
+      { min: 10, price: 199 },
+      { min: 5, price: 239 },
+      { min: 3, price: 279 },
+    ],
+    languages: ["en", "es"],
+    coverImage: "/manuals/tri-chromate-manual-cover.jpg",
+    coverImageEs: "/manuals/tri-chromate-manual-cover-es.jpg",
+    samplePages: [
+      "/manuals/samples/tri-chromate-manual-p1.jpg",
+      "/manuals/samples/tri-chromate-manual-p2.jpg",
+      "/manuals/samples/tri-chromate-manual-p3.jpg",
+      "/manuals/samples/tri-chromate-manual-p4.jpg",
+      "/manuals/samples/tri-chromate-manual-p5.jpg",
+      "/manuals/samples/tri-chromate-manual-p6.jpg",
+    ],
+    highlights: [
+      "Zero-assumption fundamentals — a CHEMICAL conversion coating with NO electric current",
+      "Trivalent (Cr³⁺) chromate: the RoHS-compliant modern passivate that replaced hexavalent",
+      "The key lesson: trivalent is a passive barrier (NOT self-healing) — needs a topcoat/sealer system",
+      "Clear/blue, iridescent, and black options; the passivate + topcoat that hits hex-level salt spray",
+      "Care points: drag-in, pH, and keeping Cr³⁺ from oxidizing to Cr⁶⁺",
+      "Safety reframed honestly — not a Cr VI carcinogen, but still an acidic bath with cobalt topcoats",
+      "Where trivalent fits vs hexavalent chromate (RoHS, performance, cost)",
+      "20-question completion test, answer key, and certificate of completion",
+      "Available in English and Spanish (professional shop-floor Spanish)",
+      "Instant digital PDF download",
+    ],
+    available: true,
+  },
 ];
 
 export type ManualFormat = "digital" | "print" | "combo";
