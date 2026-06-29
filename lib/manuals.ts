@@ -884,6 +884,51 @@ export const MANUALS: Manual[] = [
     ],
     available: true,
   },
+  {
+    id: "manganese-phosphate-manual",
+    title: "Manganese Phosphate — The Complete Training Manual",
+    titleEs: "Fosfato de Manganeso — El Manual de Capacitación Completo",
+    seriesId: "manganese-phosphate",
+    seriesLabel: "Manganese Phosphate",
+    tagline: "A full training course for the brand-new operator — assumes you know nothing, teaches you everything.",
+    description:
+      "A 54-page, plain-language training manual for manganese phosphate — the heaviest, black, crystalline conversion coating, used for WEAR, break-in, anti-galling, and oil retention (not as a paint base). Part of the conversion-coating family (a chemical coating, NO electric current). Written in a friendly, “for-dummies” style that assumes zero prior knowledge, it teaches conversion-coating fundamentals, then manganese phosphate specifically: the heavy crystalline coating (~1,000–2,000+ mg/ft²) that holds oil and provides sacrificial break-in lubrication for engine parts, gears, bearings, fasteners, and firearms (“parkerizing”); the hot bath (~190–210 °F) that's the standout scald hazard; the manganese-based activation; and the mandatory oil/wax finish (the oil does the corrosion protection and lubrication). Explains where it sits as the heaviest member of the phosphate family (vs iron and zinc). MIL-DTL-16232 Type M. Safety integrated into every station. Ends with a 20-question completion test, answer key, and a printable certificate of completion.",
+    descriptionEs:
+      "Un manual de capacitación de 54 páginas, en lenguaje sencillo, para el fosfato de manganeso — el recubrimiento de conversión cristalino negro más pesado, usado para DESGASTE, asentamiento, anti-rayadura y retención de aceite (no como base para pintura). Parte de la familia de recubrimientos de conversión (un recubrimiento químico, SIN corriente eléctrica). Escrito en un estilo amigable “para principiantes” que no asume conocimientos previos, enseña los fundamentos de los recubrimientos de conversión, y luego el fosfato de manganeso en concreto: el recubrimiento cristalino pesado (~1,000–2,000+ mg/ft²) que retiene aceite y da lubricación sacrificial de asentamiento a partes de motor, engranes, cojinetes, sujetadores y armas de fuego (“parkerizado”); el baño caliente (~190–210 °F) que es el peligro de escaldadura destacado; la activación a base de manganeso; y el acabado obligatorio de aceite/cera (el aceite da la protección anticorrosiva y la lubricación). Explica dónde se ubica como el miembro más pesado de la familia de fosfatos (vs hierro y zinc). MIL-DTL-16232 Tipo M. La seguridad está integrada en cada estación. Termina con un examen de 20 preguntas, clave de respuestas y un certificado de finalización imprimible.",
+    pages: 54,
+    priceDigital: 199,
+    pricePrint: 329,
+    priceCombo: 369,
+    printVolumeTiers: [
+      { min: 10, price: 199 },
+      { min: 5, price: 239 },
+      { min: 3, price: 279 },
+    ],
+    languages: ["en", "es"],
+    coverImage: "/manuals/manganese-phosphate-manual-cover.jpg",
+    coverImageEs: "/manuals/manganese-phosphate-manual-cover-es.jpg",
+    samplePages: [
+      "/manuals/samples/manganese-phosphate-manual-p1.jpg",
+      "/manuals/samples/manganese-phosphate-manual-p2.jpg",
+      "/manuals/samples/manganese-phosphate-manual-p3.jpg",
+      "/manuals/samples/manganese-phosphate-manual-p4.jpg",
+      "/manuals/samples/manganese-phosphate-manual-p5.jpg",
+      "/manuals/samples/manganese-phosphate-manual-p6.jpg",
+    ],
+    highlights: [
+      "Zero-assumption fundamentals — a CHEMICAL conversion coating with NO electric current",
+      "Manganese phosphate: the heaviest, black, crystalline coating (~1,000–2,000+ mg/ft²)",
+      "For WEAR, break-in, anti-galling, and oil retention — NOT a paint base",
+      "Engine parts, gears, bearings, fasteners, and firearms (“parkerizing”)",
+      "The hot bath (~190–210 °F) — the standout scald hazard, taught up front",
+      "Manganese-based activation and the mandatory oil/wax finish",
+      "Where it sits as the heaviest member of the phosphate family (vs iron and zinc); MIL-DTL-16232 Type M",
+      "20-question completion test, answer key, and certificate of completion",
+      "Available in English and Spanish (professional shop-floor Spanish)",
+      "Instant digital PDF download",
+    ],
+    available: true,
+  },
 ];
 
 export type ManualFormat = "digital" | "print" | "combo";
