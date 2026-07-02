@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cobre Ácido, Sin Misterios &mdash; Técnico | Plating Posters Inc</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Barlow:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#1A1F2E;--navy:#0D1020;--text:#F0EDE8;--muted:rgba(240,237,232,.62);
+  --faint:rgba(240,237,232,.38);
+  --amber:#E8A020;--teal:#2EC4B6;--emerald:#27AE60;--coral:#E05C5C;
+  --slate:#3A4055;--callout:#1E2435;--altrow:#252B3D;
+  --glass-bg:rgba(30,36,53,.55);--glass-border:rgba(255,255,255,.12);
+  --glass-shadow:inset 0 1px 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(0,0,0,.2),0 4px 12px rgba(0,0,0,.25);
+}
+.poster[data-edition="light"]{
+  --bg:#F5F4F0;--navy:#DDD8CE;--text:#1B2030;--muted:rgba(27,32,48,.74);
+  --faint:rgba(27,32,48,.42);
+  --amber:#B8770D;--teal:#1A8C82;--emerald:#1E8449;--coral:#B7322F;
+  --slate:#C5C0B5;--callout:#ECEAE1;--altrow:#E4E1D6;
+  --glass-bg:rgba(255,253,247,.78);--glass-border:rgba(27,32,48,.16);
+  --glass-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 4px 12px rgba(27,32,48,.08);
+}
+html,body{margin:0;padding:0;background:#e8e6df;}
+.stage{width:100vw;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;overflow:visible;padding:12px 0;box-sizing:border-box;}
+.poster-wrap{transform-origin:top left;}
+.poster{
+  width:1200px;height:1800px;position:relative;overflow:hidden;
+  background:
+    radial-gradient(1200px 800px at 15% 8%,rgba(46,196,182,.14),transparent 60%),
+    radial-gradient(1000px 700px at 90% 25%,rgba(232,160,32,.12),transparent 55%),
+    radial-gradient(900px 900px at 50% 80%,rgba(224,92,92,.10),transparent 60%),
+    var(--bg);
+  font-family:'Inter',sans-serif;color:var(--text);
+  display:flex;flex-direction:column;padding:32px;box-sizing:border-box;
+}
+.poster::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(27,32,48,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(27,32,48,.03) 1px,transparent 1px);background-size:50px 50px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);pointer-events:none;z-index:0;}
+.poster>*{position:relative;z-index:1;}
+.glass{background-color:var(--glass-bg);background-image:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));border:1px solid var(--glass-border);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);box-shadow:var(--glass-shadow);border-radius:12px;}
+.tack{position:absolute;width:24px;height:24px;border-radius:50%;border:1.5px solid rgba(232,160,32,.28);z-index:2;pointer-events:none;}
+.tack::before,.tack::after{content:"";position:absolute;background:rgba(232,160,32,.28);}
+.tack::before{left:50%;top:-3px;bottom:-3px;width:1px;transform:translateX(-50%);}
+.tack::after{top:50%;left:-3px;right:-3px;height:1px;transform:translateY(-50%);}
+.tack.tl{top:12px;left:12px;}.tack.tr{top:12px;right:12px;}.tack.bl{bottom:12px;left:12px;}.tack.br{bottom:12px;right:12px;}
+
+.poster-header{flex-shrink:0;}
+.poster-body{flex:1;overflow:hidden;display:flex;flex-direction:column;gap:7px;justify-content:space-between;}
+.poster-footer{flex-shrink:0;margin-top:8px;}
+
+.header-band{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:6px;}
+.header-left{flex:1;min-width:0;}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--amber);letter-spacing:.16em;text-transform:uppercase;margin-bottom:4px;display:flex;align-items:center;gap:12px;}
+.eyebrow::before{content:"";display:inline-block;width:30px;height:3px;background:var(--amber);}
+.headline{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:70px;color:var(--text);line-height:.92;margin:4px 0;letter-spacing:-.01em;text-transform:uppercase;}
+.headline em{font-style:normal;color:var(--amber);}
+.subhead{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:21px;color:var(--teal);margin:0 0 3px;letter-spacing:.02em;text-transform:uppercase;}
+.tagline{font-family:'Inter',sans-serif;font-style:italic;font-size:12px;color:var(--muted);line-height:1.4;max-width:760px;margin:0;}
+.logo-card{flex-shrink:0;padding:12px 10px;display:flex;flex-direction:column;align-items:center;gap:8px;align-self:flex-start;}
+.logo-tile{width:68px;height:68px;border-radius:12px;background:linear-gradient(135deg,#E8A020,#2EC4B6);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -2px 4px rgba(0,0,0,.15),0 4px 14px rgba(0,0,0,.35);}
+.logo-tile span{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:26px;color:#1A1F2E;letter-spacing:.02em;line-height:1;}
+.logo-word{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;letter-spacing:.04em;text-transform:uppercase;line-height:1;text-align:center;white-space:nowrap;}
+.logo-word .a{color:var(--text);}.logo-word .b{color:var(--amber);}
+.logo-inc{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.05em;text-transform:lowercase;color:var(--muted);margin-top:-2px;}
+
+.section-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:21px;letter-spacing:.08em;text-transform:uppercase;color:var(--text);margin:0 0 5px;display:flex;align-items:center;gap:8px;}
+.section-title::before{content:"";width:5px;height:5px;background:var(--amber);border-radius:50%;flex-shrink:0;}
+.section-title .sub{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.14em;color:var(--muted);margin-left:auto;font-weight:500;text-align:right;}
+
+.rule-card{display:flex;align-items:center;gap:20px;padding:14px 24px;background:rgba(232,160,32,.07);}
+.rule-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:58px;color:var(--amber);line-height:1;letter-spacing:-.02em;flex-shrink:0;}
+.rule-body{flex:1;min-width:0;}
+.rule-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;color:var(--amber);letter-spacing:.08em;text-transform:uppercase;}
+.rule-text{font-family:'Inter',sans-serif;font-size:12px;color:var(--muted);line-height:1.45;margin-top:3px;}
+
+.insight-card{padding:14px 18px;border-left:3px solid var(--teal);background:rgba(46,196,182,.06);border-radius:0 12px 12px 0;}
+.insight-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;color:var(--teal);letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px;}
+.insight-text{font-family:'Inter',sans-serif;font-size:11.5px;color:var(--text);line-height:1.45;}
+.insight-text .vf{color:var(--coral);font-family:'JetBrains Mono',monospace;font-size:10px;font-style:normal;letter-spacing:.04em;}
+
+.data-table{width:100%;border-collapse:collapse;}
+.data-table th{font-family:'Barlow',sans-serif;font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);padding:7px 11px;text-align:left;background:rgba(13,16,32,.35);border-bottom:1px solid var(--glass-border);}
+.poster[data-edition="light"] .data-table th{background:rgba(27,32,48,.06);}
+.data-table td{padding:7px 11px;color:var(--text);line-height:1.4;border-bottom:1px solid rgba(255,255,255,.05);font-family:'Inter',sans-serif;font-size:12px;}
+.poster[data-edition="light"] .data-table td{border-bottom-color:rgba(27,32,48,.08);}
+.data-table tr:last-child td{border-bottom:none;}
+.data-table tr:nth-child(even) td{background:rgba(255,255,255,.02);}
+.poster[data-edition="light"] .data-table tr:nth-child(even) td{background:rgba(27,32,48,.025);}
+.data-table .mono{font-family:'JetBrains Mono',monospace;font-size:11px;}
+.data-table.compact th{font-size:10px;padding:5px 8px;}
+.data-table.compact td{padding:4px 8px;font-size:10.5px;line-height:1.32;}
+.data-table.compact .mono{font-size:10px;}
+.data-table.bath th{font-size:9.5px;padding:4px 6px;}
+.data-table.bath td{padding:3.5px 6px;font-size:10px;line-height:1.3;}
+.data-table.bath .mono{font-size:9.5px;}
+.data-table tr.hot-row td{color:var(--coral);}
+.vflag{color:var(--coral);font-family:'JetBrains Mono',monospace;font-size:9.5px;font-weight:500;letter-spacing:.03em;white-space:nowrap;}
+
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.compare-card{padding:14px 20px;}
+.compare-card h4{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;color:var(--text);margin:0 0 7px;text-transform:uppercase;letter-spacing:.04em;}
+.compare-card h4 .tag{font-size:11px;padding:2px 8px;border-radius:4px;margin-left:8px;font-family:'JetBrains Mono',monospace;font-weight:500;letter-spacing:.06em;}
+.compare-card h4 .tag.good{background:rgba(39,174,96,.15);color:var(--emerald);}
+.compare-card h4 .tag.bad{background:rgba(224,92,92,.15);color:var(--coral);}
+.compare-card ul{list-style:none;padding:0;margin:0;}
+.compare-card li{font-size:11.5px;line-height:1.45;padding:2.5px 0;display:flex;gap:8px;align-items:flex-start;}
+.compare-card li::before{content:"";width:5px;height:5px;border-radius:50%;margin-top:6px;flex-shrink:0;}
+.compare-card.do li::before{background:var(--emerald);}
+.compare-card.dont li::before{background:var(--coral);}
+
+.trouble-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.trouble-card{padding:12px 16px;border-radius:10px;border-left:3px solid var(--coral);display:flex;flex-direction:column;gap:4px;}
+.trouble-card h4{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:15px;color:var(--coral);margin:0;text-transform:uppercase;letter-spacing:.05em;line-height:1.12;}
+.trouble-card p{font-size:11.5px;color:var(--muted);margin:0;line-height:1.42;}
+.trouble-card p b{color:var(--text);font-weight:600;}
+
+.context-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.context-card{padding:14px 18px;}
+.context-card h4{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;margin:0 0 6px;letter-spacing:.04em;text-transform:uppercase;}
+.context-card h4.teal{color:var(--teal);}.context-card h4.amber{color:var(--amber);}.context-card h4.coral{color:var(--coral);}.context-card h4.emerald{color:var(--emerald);}
+.context-card p{font-size:12px;line-height:1.5;color:var(--text);margin:0;}
+.context-card .detail{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted);margin-top:6px;}
+
+.safety-card{padding:14px 20px;background:rgba(224,92,92,.08);border:1px solid rgba(224,92,92,.25);border-radius:12px;}
+.safety-head{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:18px;color:var(--coral);letter-spacing:.05em;text-transform:uppercase;margin-bottom:5px;}
+.safety-body{font-size:12px;color:var(--text);line-height:1.5;}
+.safety-body strong{font-weight:700;color:var(--coral);}
+.safety-body .vf{color:var(--coral);font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.03em;}
+
+.bottom-grid{display:grid;grid-template-columns:1.55fr 1fr;gap:10px;}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+
+.process-flow{display:flex;align-items:center;justify-content:space-between;padding:10px 16px;height:82px;gap:2px;}
+.flow-step{flex:1;min-width:0;text-align:center;padding:7px 5px;border-radius:9px;background-color:var(--glass-bg);border:1px solid var(--glass-border);font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:12.5px;letter-spacing:.02em;text-transform:uppercase;line-height:1.05;color:var(--text);display:flex;align-items:center;justify-content:center;min-height:52px;}
+.flow-step.key{border-color:rgba(232,160,32,.5);background-color:rgba(232,160,32,.12);color:var(--amber);}
+.flow-arrow{flex:0 0 auto;color:var(--faint);font-size:15px;font-weight:700;padding:0 1px;}
+.hero-badge{flex-shrink:0;width:96px;min-height:70px;border-radius:12px;background:rgba(232,160,32,.12);border:1px solid rgba(232,160,32,.32);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:8px 6px;text-align:center;}
+.hero-badge .sym{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:34px;line-height:.85;color:var(--amber);}
+.hero-badge .sub{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.05em;color:var(--muted);text-transform:uppercase;line-height:1.25;}
+.mini-note{font-family:'Inter',sans-serif;font-size:10px;font-style:italic;color:var(--muted);line-height:1.4;margin-top:5px;}
+.mini-note .vf{color:var(--coral);font-family:'JetBrains Mono',monospace;font-size:9px;font-style:normal;letter-spacing:.03em;}
+.didyou-card{padding:13px 16px;border-radius:12px;border-left:3px solid var(--amber);background:rgba(232,160,32,.07);}
+.didyou-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;color:var(--amber);letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px;}
+.didyou-text{font-family:'Inter',sans-serif;font-size:11.5px;line-height:1.5;color:var(--text);}
+
+.triad-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;}
+.triad-pillar{position:relative;padding:14px 18px 15px;display:flex;flex-direction:column;gap:5px;overflow:hidden;}
+.triad-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:72px;line-height:.78;color:var(--faint);letter-spacing:-.03em;margin-bottom:1px;}
+.triad-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:24px;letter-spacing:.02em;text-transform:uppercase;line-height:1;}
+.triad-title .triad-spec{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;letter-spacing:.01em;color:var(--muted);text-transform:none;margin-left:5px;}
+.triad-note{font-family:'Inter',sans-serif;font-size:12px;line-height:1.44;color:var(--muted);}
+.triad-note b{color:var(--text);font-weight:600;}
+.triad-detail{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.02em;color:var(--amber);margin-top:auto;padding-top:4px;}
+.triad-rule{display:flex;align-items:center;gap:16px;margin-top:12px;padding:12px 22px;background:rgba(224,92,92,.08);border:1px solid rgba(224,92,92,.28);border-radius:12px;}
+.triad-rule-tag{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:16px;letter-spacing:.10em;text-transform:uppercase;color:var(--coral);flex-shrink:0;padding-right:16px;border-right:1px solid rgba(224,92,92,.32);line-height:1;}
+.triad-rule-text{font-family:'Inter',sans-serif;font-size:13px;line-height:1.4;color:var(--text);}
+.triad-rule-text b{color:var(--coral);font-weight:700;}
+.triad-rule-sub{color:var(--muted);font-size:11.5px;}
+
+.footer{padding:10px 20px;background-color:rgba(13,16,32,.85);background-image:linear-gradient(180deg,rgba(255,255,255,.04),rgba(0,0,0,0));border:1px solid rgba(255,255,255,.10);border-radius:8px;text-align:center;display:flex;flex-direction:column;gap:2px;}
+.poster[data-edition="light"] .footer{background-color:rgba(221,216,206,.95);border-color:rgba(27,32,48,.10);}
+.poster[data-edition="light"] .footer-disclaimer{color:rgba(27,32,48,.62);}
+.footer-disclaimer{font-family:'Inter',sans-serif;font-size:8.5px;line-height:1.35;color:var(--faint);margin:0 auto;max-width:940px;}
+.footer-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:12px;color:var(--text);letter-spacing:.04em;text-transform:uppercase;margin:0;}
+.footer-brand{font-family:'JetBrains Mono',monospace;font-size:8.5px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;}
+
+.tweaks{position:fixed;bottom:16px;right:16px;z-index:100;background:rgba(255,253,247,.95);border:1px solid rgba(27,32,48,.18);border-radius:10px;padding:10px 14px;display:flex;flex-direction:column;gap:8px;font-family:'Inter',sans-serif;font-size:12px;color:#1B2030;box-shadow:0 4px 14px rgba(27,32,48,.12);}
+@media print{
+  @page{size:12.5in 18.75in;margin:0;}
+  html,body{background:#F5F4F0 !important;-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
+  *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
+  .stage{position:static;padding:0;display:block;overflow:visible;}
+  .poster-wrap{transform:none !important;width:auto !important;height:auto !important;}
+  .poster{box-shadow:none !important;width:1200px !important;height:1800px !important;overflow:hidden !important;}
+  .glass,.trouble-card,.insight-card,.safety-card,.context-card{backdrop-filter:none !important;-webkit-backdrop-filter:none !important;}
+  .tweaks{display:none !important;}
+}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="poster-wrap" id="posterWrap">
+<div class="poster" id="poster" data-edition="light">
+  <span class="tack tl" aria-hidden="true"></span><span class="tack tr" aria-hidden="true"></span>
+  <span class="tack bl" aria-hidden="true"></span><span class="tack br" aria-hidden="true"></span>
+
+  <!-- ===== HEADER ===== -->
+  <div class="poster-header">
+    <header class="header-band">
+      <div class="header-left">
+        <div class="eyebrow"><span>Plating Posters Inc &nbsp;&middot;&nbsp; Serie Sulfato de Cobre Ácido &nbsp;&middot;&nbsp; Sin Misterios</span></div>
+        <h1 class="headline">COBRE ÁCIDO,<br><em>SIN MISTERIOS</em></h1>
+        <h2 class="subhead">Qué Es, Por Qué lo Usan los Talleres y las Tres Cosas Que Realmente lo Controlan</h2>
+        <p class="tagline">&ldquo;El baño con mejor nivelación del taller &mdash; y el que más castiga el descuido en cloruro, filtración y ánodos.&rdquo;</p>
+      </div>
+      <aside class="glass logo-card">
+        <div class="logo-tile"><span>PP</span></div>
+        <div class="logo-word"><span class="a">Plating</span> <span class="b">Posters</span></div>
+        <div class="logo-inc">www.platingposters.com</div>
+      </aside>
+    </header>
+  </div>
+
+  <!-- ===== BODY ===== -->
+  <div class="poster-body">
+
+    <!-- WHAT IT IS (hero) -->
+    <div class="glass insight-card" style="border-left:none;border-radius:12px;display:flex;gap:16px;align-items:center;">
+      <div class="hero-badge">
+        <span class="sym">Cu<sup style="font-size:17px;">2+</sup></span>
+        <span class="sub">CuSO&#8324; &middot; H&#8322;SO&#8324; &middot; Cl&#8315;</span>
+      </div>
+      <div>
+        <div class="insight-label">Qué Es</div>
+        <div class="insight-text">Un baño ácido de sulfato de cobre (CuSO&#8324;) y ácido sulfúrico (H&#8322;SO&#8324;) con una traza de cloruro (Cl&#8315;) y un paquete de aditivos supresor / acelerador / nivelador. Deposita cobre suave, dúctil y altamente nivelado con eficiencia cercana al 100% y a temperatura ambiente &mdash; que es por lo que va debajo del níquel-cromo decorativo, llena orificios pasantes y vías de PCB, y forma piezas electroformadas gruesas.</div>
+      </div>
+    </div>
+
+    <!-- TYPICAL PROCESS SEQUENCE + FLOW -->
+    <div>
+      <h3 class="section-title">Secuencia Típica del Proceso <span class="sub">sustrato preparado &rarr; cobre brillante y nivelado</span></h3>
+      <table class="data-table bath">
+        <thead><tr><th style="width:30px;">#</th><th>Etapa</th><th>Temp</th><th>Tiempo</th><th>Parámetro Clave</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">01</td><td>Limpieza Alcalina / Electrolimpieza</td><td class="mono">130&ndash;180&deg;F</td><td class="mono">3&ndash;10 min</td><td>Limpiador 4&ndash;8 oz/gal; superficie sin ruptura de agua</td></tr>
+          <tr><td class="mono">02</td><td>Enjuague (Pre-Activación)</td><td class="mono">Ambiente</td><td class="mono">30&ndash;60 s</td><td>Conductividad &lt; 500 &micro;S/cm</td></tr>
+          <tr><td class="mono">03</td><td>Activación Ácida (Inmersión Ácida)</td><td class="mono">Amb&ndash;110&deg;F</td><td class="mono">5&ndash;60 s</td><td>H&#8322;SO&#8324; 5&ndash;15% v/v (o HCl)</td></tr>
+          <tr><td class="mono">04</td><td>Capa de Arranque de Cobre (CN / alc. sin CN / Ni Woods)</td><td class="mono">90&ndash;140&deg;F</td><td class="mono">2&ndash;5 min</td><td>Flash delgado y adherente; barrera vs cobre por inmersión</td></tr>
+          <tr><td class="mono">05</td><td>Recubrimiento de Cobre Ácido</td><td class="mono">70&ndash;90&deg;F</td><td class="mono">5&ndash;60 min</td><td>CuSO&#8324;&middot;5H&#8322;O 180&ndash;250 g/L; Cl&#8315; 50&ndash;80 ppm</td></tr>
+          <tr><td class="mono">06</td><td>Enjuague (Post-Recubrimiento)</td><td class="mono">Ambiente</td><td class="mono">30&ndash;60 s</td><td>Recupere el arrastre; &lt; 200 &micro;S/cm</td></tr>
+          <tr><td class="mono">07</td><td>Post-Tratamiento / QC</td><td class="mono">Varía</td><td class="mono">Varía</td><td>Entrega a Ni-Cr, antiempañante, o inspección</td></tr>
+          <tr><td class="mono">08</td><td>Enjuague Final / Secado</td><td class="mono">Amb&ndash;140&deg;F</td><td class="mono">30&ndash;60 s</td><td>Enjuague DI; secado con aire tibio; sin manchas de agua</td></tr>
+        </tbody>
+      </table>
+      <div class="glass process-flow" style="margin-top:9px;">
+        <div class="flow-step">Limpieza</div>
+        <div class="flow-arrow">&rarr;</div>
+        <div class="flow-step">Enjuague</div>
+        <div class="flow-arrow">&rarr;</div>
+        <div class="flow-step">Activar<br>Ácido</div>
+        <div class="flow-arrow">&rarr;</div>
+        <div class="flow-step key">Arranque<br>Cu</div>
+        <div class="flow-arrow">&rarr;</div>
+        <div class="flow-step key">Cobre<br>Ácido</div>
+        <div class="flow-arrow">&rarr;</div>
+        <div class="flow-step">Enjuague</div>
+        <div class="flow-arrow">&rarr;</div>
+        <div class="flow-step">Post /<br>QC</div>
+        <div class="flow-arrow">&rarr;</div>
+        <div class="flow-step">Secado</div>
+      </div>
+    </div>
+
+    <!-- THE THREE THINGS THAT CONTROL IT -->
+    <div>
+      <h3 class="section-title">Las Tres Cosas Que lo Controlan <span class="sub">toda la serie en un gráfico</span></h3>
+      <div class="triad-grid">
+        <div class="glass triad-pillar">
+          <div class="triad-num">1</div>
+          <div class="triad-title" style="color:var(--teal);">Cloruro <span class="triad-spec">50&ndash;80 ppm</span></div>
+          <div class="triad-note">A nivel de ppm pero define o arruina el depósito <b>y</b> los ánodos &mdash; titúlelo.</div>
+        </div>
+        <div class="glass triad-pillar">
+          <div class="triad-num">2</div>
+          <div class="triad-title" style="color:var(--amber);">Filtración</div>
+          <div class="triad-note">Implacable con el particulado; rugosidad = suciedad o polvo de ánodo.</div>
+          <div class="triad-detail">1&ndash;5 &micro;m &middot; 2&ndash;5 recambios/h</div>
+        </div>
+        <div class="glass triad-pillar">
+          <div class="triad-num">3</div>
+          <div class="triad-title" style="color:var(--teal);">Película de Fósforo del Ánodo</div>
+          <div class="triad-note">Mantenga la película negra; sin película = polvo, pasivada = inanición.</div>
+        </div>
+      </div>
+      <div class="triad-rule">
+        <span class="triad-rule-tag">Una Regla</span>
+        <span class="triad-rule-text">No puede recubrir cobre ácido directamente sobre acero, zinc o aluminio &mdash; <b>aplique capa de arranque primero</b>. <span class="triad-rule-sub">Cianuro, alcalino sin cianuro, o níquel Woods; entre con corriente y confirme cobertura total. El cobre y el latón pueden aceptar directo tras una activación excelente.</span></span>
+      </div>
+    </div>
+
+    <!-- WHY SHOPS USE IT + BATH CHEMISTRY -->
+    <div class="two-col">
+      <div>
+        <h3 class="section-title">Por Qué lo Usan los Talleres <span class="sub">tres trabajos que hace mejor</span></h3>
+        <table class="data-table compact">
+          <thead><tr><th style="width:130px;">Fortaleza</th><th>Por Qué Gana</th></tr></thead>
+          <tbody>
+            <tr><td>Nivelación</td><td>Suaviza rayones y líneas de pulido mejor que cualquier baño común &mdash; la capa base decorativa Cu&rarr;Ni&rarr;Cr</td></tr>
+            <tr><td>Poder de Penetración</td><td>Las fórmulas de alto ácido recubren uniformemente en orificios pasantes y vías &mdash; la base del cobre para PCB</td></tr>
+            <tr><td>Acumulación</td><td>Depósitos gruesos rápidos, dúctiles y de bajo esfuerzo &mdash; cobre pesado y electroformado</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <h3 class="section-title">Química del Baño <span class="sub">de un vistazo</span></h3>
+        <table class="data-table bath">
+          <thead><tr><th>Componente</th><th>Decorativo</th><th>PCB / Alta Penetr.</th></tr></thead>
+          <tbody>
+            <tr><td>CuSO&#8324;&middot;5H&#8322;O</td><td class="mono">180&ndash;250 g/L</td><td class="mono">60&ndash;120 g/L</td></tr>
+            <tr><td>H&#8322;SO&#8324;</td><td class="mono">45&ndash;75 g/L</td><td class="mono">180&ndash;240 g/L</td></tr>
+            <tr><td>Cloruro (Cl&#8315;)</td><td class="mono">50&ndash;80 ppm</td><td class="mono">40&ndash;60 ppm</td></tr>
+            <tr><td>Supresor / Acel. / Nivelador</td><td class="mono">Según TDS</td><td class="mono">Según TDS</td></tr>
+            <tr><td>Temperatura</td><td class="mono">70&ndash;90&deg;F</td><td class="mono">72&ndash;80&deg;F</td></tr>
+          </tbody>
+        </table>
+        <div class="mini-note">La relación cobre:ácido es la palanca maestra &mdash; alto cobre / bajo ácido = nivelación y brillo (decorativo); bajo cobre / alto ácido = poder de penetración (PCB). <span class="vf">[VERIFIQUE los rangos vs la TDS del proveedor.]</span></div>
+      </div>
+    </div>
+
+    <!-- DID YOU KNOW + SPECIFICATIONS -->
+    <div class="two-col">
+      <div class="glass didyou-card">
+        <div class="didyou-label">&#9733; &iquest;Sab&iacute;a Que?</div>
+        <div class="didyou-text">El cobre ácido es uno de los pocos baños de recubrimiento que opera a temperatura ambiente &mdash; sin calentador en el tanque principal &mdash; mientras convierte cerca del 95&ndash;100% de la corriente en metal, lo que ayuda a mantener el depósito de bajo estrés y dúctil.</div>
+      </div>
+      <div>
+        <h3 class="section-title">Especificaciones <span class="sub">verifique la revisión vigente</span></h3>
+        <table class="data-table compact">
+          <thead><tr><th style="width:96px;">Código</th><th>Alcance</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">ASTM B734</td><td>Cobre electrodepositado para usos de ingeniería</td></tr>
+            <tr><td class="mono">ASTM B456</td><td>Sistemas decorativos Cu + Ni + Cr (capa base)</td></tr>
+            <tr><td class="mono">ASTM B571</td><td>Adherencia &mdash; doblez, choque térmico, pelado</td></tr>
+            <tr><td class="mono">ASTM B568</td><td>Espesor del recubrimiento por XRF</td></tr>
+            <tr><td class="mono">IPC-6012</td><td>Calificación y aceptabilidad del cobre en PCB</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- COMMON MISCONCEPTIONS -->
+    <div>
+      <h3 class="section-title">Ideas Equivocadas Comunes <span class="sub">lo que el tanque realmente hace</span></h3>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;">
+        <div class="glass trouble-card">
+          <h4>&ldquo;Es solo sulfato de cobre y ácido, así que es fácil.&rdquo;</h4>
+          <p>La <b>química del metal es simple</b> &mdash; pero el control de aditivos, cloruro y ánodos es trabajo de precisión. Ahí es donde el depósito se gana o se pierde.</p>
+        </div>
+        <div class="glass trouble-card">
+          <h4>&ldquo;Más abrillantador = más brillo.&rdquo;</h4>
+          <p>La sobredosificación <b>fragiliza y da rugosidad</b> al depósito. Equilibre el paquete de aditivos con <b>CVS o una celda Hull</b>, no echando más.</p>
+        </div>
+        <div class="glass trouble-card">
+          <h4>&ldquo;El cobre es seguro.&rdquo;</h4>
+          <p>El ácido sulfúrico <b>quema</b>, el sulfato de cobre es <b>altamente tóxico para la vida acuática</b>, y una capa de arranque de cianuro previa es <b>potencialmente letal</b>.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SAFETY SNAPSHOT -->
+    <div class="safety-card">
+      <div class="safety-head">&#9888; Resumen de Seguridad</div>
+      <div class="safety-body"><strong>Ácido sulfúrico</strong> &mdash; quema; siempre agregue el ácido al agua. <strong>Sulfato de cobre</strong> &mdash; toxicidad acuática; trate el residuo hasta los límites del permiso. <strong>Niebla ácida</strong> por agitación con aire &mdash; ventile. <strong>Capa de arranque de cianuro</strong> (si se usa) &mdash; nunca debe contactar ácido; segregue el flujo de residuos. Regadera de emergencia y lavaojos al alcance; SDS vigente accesible en cada estación. <span class="vf">[VERIFIQUE todos los límites de exposición contra la OSHA/SDS vigente.]</span></div>
+    </div>
+
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer poster-footer">
+    <p class="footer-disclaimer">Solo referencia técnica. Verifique todos los parámetros contra la TDS de su proveedor de químicos, las especificaciones del cliente y los requisitos regulatorios aplicables antes del uso en producción. El ácido sulfúrico causa quemaduras graves; el sulfato de cobre es tóxico para la vida acuática; las químicas de capa de arranque de cianuro son potencialmente letales y nunca deben contactar ácido.</p>
+    <p class="footer-title">Cobre Ácido, Sin Misterios &mdash; Serie de Recubrimiento de Sulfato de Cobre Ácido</p>
+    <span class="footer-brand">Plating Posters Inc &middot; Serie de Referencia de Acabado de Metales &middot; PP-AcCu-DM-T / v1.0 / 2026</span>
+  </footer>
+
+</div>
+</div>
+</div>
+
+<div class="tweaks">
+  <div style="display:flex;gap:8px;align-items:center;">
+    <span style="color:rgba(27,32,48,.6);font-size:11px;letter-spacing:.06em;text-transform:uppercase;">Edición</span>
+    <button id="btnDark" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#1B2030;border:1px solid rgba(27,32,48,.2);" onclick="setEdition('')">Oscuro</button>
+    <button id="btnLight" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:#E8A020;color:#1A1F2E;border:1px solid #E8A020;" onclick="setEdition('light')">Claro</button>
+  </div>
+  <button onclick="window.print()" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#1B2030;border:1px solid rgba(27,32,48,.2);">Imprimir / PDF</button>
+</div>
+
+<script>
+const posterWrap=document.getElementById('posterWrap');
+const poster=document.getElementById('poster');
+function scalePoster(){const sW=(window.innerWidth-24)/1200;const sH=(window.innerHeight-24)/1800;const s=Math.min(sW,sH);posterWrap.style.transform='scale('+s+')';posterWrap.style.transformOrigin='top left';posterWrap.style.width=(1200*s)+'px';posterWrap.style.height=(1800*s)+'px';}
+function setEdition(e){if(e)poster.dataset.edition=e;else delete poster.dataset.edition;document.getElementById('btnDark').style.background=e?'transparent':'#E8A020';document.getElementById('btnDark').style.color=e?'#1B2030':'#1A1F2E';document.getElementById('btnDark').style.borderColor=e?'rgba(27,32,48,.2)':'#E8A020';document.getElementById('btnLight').style.background=e?'#E8A020':'transparent';document.getElementById('btnLight').style.color=e?'#1A1F2E':'#1B2030';document.getElementById('btnLight').style.borderColor=e?'#E8A020':'rgba(27,32,48,.2)';}
+scalePoster();window.addEventListener('resize',scalePoster);
+</script>
+</body>
+</html>

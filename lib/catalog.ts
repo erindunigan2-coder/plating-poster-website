@@ -46,7 +46,7 @@ export const CATEGORIES: CategoryEntry[] = [
       { id: pid("Nickel-Cobalt Plating"), title: "Nickel-Cobalt Plating", posterCount: 8 },
       { id: pid("Chrome Plating (Decorative)"), title: "Chrome Plating (Decorative)", posterCount: 8, available: true },
       { id: pid("Hard Chrome Plating"), title: "Hard Chrome Plating", posterCount: 8, available: true },
-      { id: pid("Copper Plating (Acid)"), title: "Copper Plating (Acid)", posterCount: 8 },
+      { id: pid("Copper Plating (Acid)"), title: "Copper Plating (Acid)", posterCount: 8, available: true },
       { id: pid("Copper Plating (Cyanide)"), title: "Copper Plating (Cyanide)", posterCount: 8 },
       { id: pid("Copper Plating (Pyrophosphate)"), title: "Copper Plating (Pyrophosphate)", posterCount: 8 },
       { id: pid("Tin Plating"), title: "Tin Plating", posterCount: 8 },

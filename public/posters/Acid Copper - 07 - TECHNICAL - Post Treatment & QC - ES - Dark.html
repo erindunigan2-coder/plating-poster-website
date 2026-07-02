@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cobre &Aacute;cido &mdash; Post-Tratamiento y Control de Calidad &mdash; T&eacute;cnico | Plating Posters Inc</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Barlow:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#1A1F2E;--navy:#0D1020;--text:#F0EDE8;--muted:rgba(240,237,232,.62);
+  --faint:rgba(240,237,232,.38);
+  --amber:#E8A020;--teal:#2EC4B6;--emerald:#27AE60;--coral:#E05C5C;
+  --slate:#3A4055;--callout:#1E2435;--altrow:#252B3D;
+  --glass-bg:rgba(30,36,53,.55);--glass-border:rgba(255,255,255,.12);
+  --glass-shadow:inset 0 1px 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(0,0,0,.2),0 4px 12px rgba(0,0,0,.25);
+}
+.poster[data-edition="light"]{
+  --bg:#F5F4F0;--navy:#DDD8CE;--text:#1B2030;--muted:rgba(27,32,48,.74);
+  --faint:rgba(27,32,48,.42);
+  --amber:#B8770D;--teal:#1A8C82;--emerald:#1E8449;--coral:#B7322F;
+  --slate:#C5C0B5;--callout:#ECEAE1;--altrow:#E4E1D6;
+  --glass-bg:rgba(255,253,247,.78);--glass-border:rgba(27,32,48,.16);
+  --glass-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 4px 12px rgba(27,32,48,.08);
+}
+html,body{margin:0;padding:0;background:#e8e6df;}
+.stage{width:100vw;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;overflow:visible;padding:12px 0;box-sizing:border-box;}
+.poster-wrap{transform-origin:top left;}
+.poster{
+  width:1200px;height:1800px;position:relative;overflow:hidden;
+  background:
+    radial-gradient(1200px 800px at 15% 8%,rgba(46,196,182,.14),transparent 60%),
+    radial-gradient(1000px 700px at 90% 25%,rgba(232,160,32,.12),transparent 55%),
+    radial-gradient(900px 900px at 50% 80%,rgba(224,92,92,.10),transparent 60%),
+    var(--bg);
+  font-family:'Inter',sans-serif;color:var(--text);
+  display:flex;flex-direction:column;padding:32px;box-sizing:border-box;
+}
+.poster::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(27,32,48,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(27,32,48,.03) 1px,transparent 1px);background-size:50px 50px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);pointer-events:none;z-index:0;}
+.poster>*{position:relative;z-index:1;}
+.glass{background-color:var(--glass-bg);background-image:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));border:1px solid var(--glass-border);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);box-shadow:var(--glass-shadow);border-radius:12px;}
+.tack{position:absolute;width:24px;height:24px;border-radius:50%;border:1.5px solid rgba(232,160,32,.28);z-index:2;pointer-events:none;}
+.tack::before,.tack::after{content:"";position:absolute;background:rgba(232,160,32,.28);}
+.tack::before{left:50%;top:-3px;bottom:-3px;width:1px;transform:translateX(-50%);}
+.tack::after{top:50%;left:-3px;right:-3px;height:1px;transform:translateY(-50%);}
+.tack.tl{top:12px;left:12px;}.tack.tr{top:12px;right:12px;}.tack.bl{bottom:12px;left:12px;}.tack.br{bottom:12px;right:12px;}
+
+.poster-header{flex-shrink:0;}
+.poster-body{flex:1;overflow:hidden;display:flex;flex-direction:column;gap:9px;justify-content:space-between;}
+.poster-footer{flex-shrink:0;margin-top:8px;}
+
+.header-band{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:6px;}
+.header-left{flex:1;min-width:0;}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--amber);letter-spacing:.16em;text-transform:uppercase;margin-bottom:4px;display:flex;align-items:center;gap:12px;}
+.eyebrow::before{content:"";display:inline-block;width:30px;height:3px;background:var(--amber);}
+.headline{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:70px;color:var(--text);line-height:.92;margin:4px 0;letter-spacing:-.01em;text-transform:uppercase;}
+.headline em{font-style:normal;color:var(--amber);}
+.subhead{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:21px;color:var(--teal);margin:0 0 3px;letter-spacing:.02em;text-transform:uppercase;}
+.tagline{font-family:'Inter',sans-serif;font-style:italic;font-size:12px;color:var(--muted);line-height:1.4;max-width:760px;margin:0;}
+.logo-card{flex-shrink:0;padding:12px 10px;display:flex;flex-direction:column;align-items:center;gap:8px;align-self:flex-start;}
+.logo-tile{width:68px;height:68px;border-radius:12px;background:linear-gradient(135deg,#E8A020,#2EC4B6);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -2px 4px rgba(0,0,0,.15),0 4px 14px rgba(0,0,0,.35);}
+.logo-tile span{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:26px;color:#1A1F2E;letter-spacing:.02em;line-height:1;}
+.logo-word{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;letter-spacing:.04em;text-transform:uppercase;line-height:1;text-align:center;white-space:nowrap;}
+.logo-word .a{color:var(--text);}.logo-word .b{color:var(--amber);}
+.logo-inc{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.05em;text-transform:lowercase;color:var(--muted);margin-top:-2px;}
+
+.section-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:21px;letter-spacing:.08em;text-transform:uppercase;color:var(--text);margin:0 0 5px;display:flex;align-items:center;gap:8px;}
+.section-title::before{content:"";width:5px;height:5px;background:var(--amber);border-radius:50%;flex-shrink:0;}
+.section-title .sub{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.14em;color:var(--muted);margin-left:auto;font-weight:500;text-align:right;}
+
+.rule-card{display:flex;align-items:center;gap:20px;padding:14px 24px;background:rgba(232,160,32,.07);}
+.rule-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:58px;color:var(--amber);line-height:1;letter-spacing:-.02em;flex-shrink:0;}
+.rule-body{flex:1;min-width:0;}
+.rule-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;color:var(--amber);letter-spacing:.08em;text-transform:uppercase;}
+.rule-text{font-family:'Inter',sans-serif;font-size:12px;color:var(--muted);line-height:1.45;margin-top:3px;}
+
+.insight-card{padding:14px 18px;border-left:3px solid var(--teal);background:rgba(46,196,182,.06);border-radius:0 12px 12px 0;}
+.insight-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;color:var(--teal);letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px;}
+.insight-text{font-family:'Inter',sans-serif;font-size:12px;color:var(--text);line-height:1.5;}
+.insight-text .vf{color:var(--coral);font-family:'JetBrains Mono',monospace;font-size:10px;font-style:normal;letter-spacing:.04em;}
+
+.data-table{width:100%;border-collapse:collapse;}
+.data-table th{font-family:'Barlow',sans-serif;font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);padding:7px 11px;text-align:left;background:rgba(13,16,32,.35);border-bottom:1px solid var(--glass-border);}
+.poster[data-edition="light"] .data-table th{background:rgba(27,32,48,.06);}
+.data-table td{padding:7px 11px;color:var(--text);line-height:1.4;border-bottom:1px solid rgba(255,255,255,.05);font-family:'Inter',sans-serif;font-size:12px;}
+.poster[data-edition="light"] .data-table td{border-bottom-color:rgba(27,32,48,.08);}
+.data-table tr:last-child td{border-bottom:none;}
+.data-table tr:nth-child(even) td{background:rgba(255,255,255,.02);}
+.poster[data-edition="light"] .data-table tr:nth-child(even) td{background:rgba(27,32,48,.025);}
+.data-table .mono{font-family:'JetBrains Mono',monospace;font-size:11px;}
+.data-table.compact th{font-size:10px;padding:5px 8px;}
+.data-table.compact td{padding:4px 8px;font-size:10.5px;line-height:1.32;}
+.data-table.compact .mono{font-size:10px;}
+.data-table.bath th{font-size:9.5px;padding:4px 6px;}
+.data-table.bath td{padding:3.5px 6px;font-size:10px;line-height:1.3;}
+.data-table.bath .mono{font-size:9.5px;}
+.data-table tr.hot-row td{color:var(--coral);}
+.vflag{color:var(--coral);font-family:'JetBrains Mono',monospace;font-size:9.5px;font-weight:500;letter-spacing:.03em;white-space:nowrap;}
+
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.compare-card{padding:14px 20px;}
+.compare-card h4{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;color:var(--text);margin:0 0 7px;text-transform:uppercase;letter-spacing:.04em;}
+.compare-card h4 .tag{font-size:11px;padding:2px 8px;border-radius:4px;margin-left:8px;font-family:'JetBrains Mono',monospace;font-weight:500;letter-spacing:.06em;}
+.compare-card h4 .tag.good{background:rgba(39,174,96,.15);color:var(--emerald);}
+.compare-card h4 .tag.bad{background:rgba(224,92,92,.15);color:var(--coral);}
+.compare-card ul{list-style:none;padding:0;margin:0;}
+.compare-card li{font-size:11.5px;line-height:1.45;padding:2.5px 0;display:flex;gap:8px;align-items:flex-start;}
+.compare-card li::before{content:"";width:5px;height:5px;border-radius:50%;margin-top:6px;flex-shrink:0;}
+.compare-card.do li::before{background:var(--emerald);}
+.compare-card.dont li::before{background:var(--coral);}
+
+.trouble-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.trouble-card{padding:12px 16px;border-radius:10px;border-left:3px solid var(--coral);display:flex;flex-direction:column;gap:4px;}
+.trouble-card h4{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:15px;color:var(--coral);margin:0;text-transform:uppercase;letter-spacing:.05em;line-height:1.12;}
+.trouble-card p{font-size:11.5px;color:var(--muted);margin:0;line-height:1.42;}
+.trouble-card p b{color:var(--text);font-weight:600;}
+
+.context-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.context-card{padding:14px 18px;}
+.context-card h4{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;margin:0 0 6px;letter-spacing:.04em;text-transform:uppercase;}
+.context-card h4.teal{color:var(--teal);}.context-card h4.amber{color:var(--amber);}.context-card h4.coral{color:var(--coral);}.context-card h4.emerald{color:var(--emerald);}
+.context-card p{font-size:12px;line-height:1.5;color:var(--text);margin:0;}
+.context-card .detail{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted);margin-top:6px;}
+
+.safety-card{padding:14px 20px;background:rgba(224,92,92,.08);border:1px solid rgba(224,92,92,.25);border-radius:12px;}
+.safety-head{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:18px;color:var(--coral);letter-spacing:.05em;text-transform:uppercase;margin-bottom:5px;}
+.safety-body{font-size:12px;color:var(--text);line-height:1.5;}
+.safety-body strong{font-weight:700;color:var(--coral);}
+.safety-body .vf{color:var(--coral);font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.03em;}
+
+.bottom-grid{display:grid;grid-template-columns:1.55fr 1fr;gap:10px;}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+
+.process-flow{display:flex;align-items:center;justify-content:space-between;padding:10px 16px;height:82px;gap:2px;}
+
+/* ROUTING TREE — What Copper Does Next */
+.route-wrap{display:grid;grid-template-columns:1fr 296px;gap:10px;align-items:stretch;}
+.route-tree{display:flex;flex-direction:column;gap:8px;}
+.route-root{text-align:center;padding:8px 14px;border-radius:8px;background:rgba(232,160,32,.10);border:1px solid var(--glass-border);}
+.route-root .q{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px;letter-spacing:.03em;text-transform:uppercase;color:var(--text);}
+.route-root .q em{font-style:normal;color:var(--amber);}
+.route-branches{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
+.route-card{padding:10px 12px;border-radius:10px;border-top:3px solid var(--slate);display:flex;flex-direction:column;gap:4px;}
+.route-card.teal{border-top-color:var(--teal);}
+.route-card.amber{border-top-color:var(--amber);}
+.route-card h4{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:15px;margin:0;text-transform:uppercase;letter-spacing:.04em;line-height:1.05;}
+.route-card.teal h4{color:var(--teal);}
+.route-card.amber h4{color:var(--amber);}
+.route-dest{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--text);font-weight:500;line-height:1.3;display:flex;gap:5px;}
+.route-dest::before{content:"\2192";color:var(--muted);font-weight:700;}
+.route-action{font-family:'Inter',sans-serif;font-size:10.5px;color:var(--muted);line-height:1.4;}
+.route-tag{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.05em;color:var(--faint);margin-top:auto;padding-top:3px;}
+.route-teach{font-family:'Inter',sans-serif;font-style:italic;font-size:11px;color:var(--muted);line-height:1.4;}
+.route-gate{padding:12px 14px;border-radius:10px;background:rgba(224,92,92,.10);border:1px solid rgba(224,92,92,.30);display:flex;flex-direction:column;gap:6px;justify-content:center;}
+.route-gate .gh{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:15px;color:var(--coral);letter-spacing:.04em;text-transform:uppercase;line-height:1.08;}
+.route-gate .gt{font-family:'Inter',sans-serif;font-size:11px;color:var(--text);line-height:1.45;}
+.route-gate .gv{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--coral);font-weight:500;}
+
+.footer{padding:10px 20px;background-color:rgba(13,16,32,.85);background-image:linear-gradient(180deg,rgba(255,255,255,.04),rgba(0,0,0,0));border:1px solid rgba(255,255,255,.10);border-radius:8px;text-align:center;display:flex;flex-direction:column;gap:2px;}
+.poster[data-edition="light"] .footer{background-color:rgba(221,216,206,.95);border-color:rgba(27,32,48,.10);}
+.poster[data-edition="light"] .footer-disclaimer{color:rgba(27,32,48,.62);}
+.footer-disclaimer{font-family:'Inter',sans-serif;font-size:8.5px;line-height:1.35;color:var(--faint);margin:0 auto;max-width:940px;}
+.footer-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:12px;color:var(--text);letter-spacing:.04em;text-transform:uppercase;margin:0;}
+.footer-brand{font-family:'JetBrains Mono',monospace;font-size:8.5px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;}
+
+.tweaks{position:fixed;bottom:16px;right:16px;z-index:100;background:rgba(255,253,247,.95);border:1px solid rgba(27,32,48,.18);border-radius:10px;padding:10px 14px;display:flex;flex-direction:column;gap:8px;font-family:'Inter',sans-serif;font-size:12px;color:#1B2030;box-shadow:0 4px 14px rgba(27,32,48,.12);}
+@media print{
+  @page{size:12.5in 18.75in;margin:0;}
+  html,body{background:#F5F4F0 !important;-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
+  *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
+  .stage{position:static;padding:0;display:block;overflow:visible;}
+  .poster-wrap{transform:none !important;width:auto !important;height:auto !important;}
+  .poster{box-shadow:none !important;width:1200px !important;height:1800px !important;overflow:hidden !important;}
+  .glass,.trouble-card,.insight-card,.safety-card,.context-card{backdrop-filter:none !important;-webkit-backdrop-filter:none !important;}
+  .tweaks{display:none !important;}
+}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="poster-wrap" id="posterWrap">
+<div class="poster" id="poster">
+  <span class="tack tl" aria-hidden="true"></span><span class="tack tr" aria-hidden="true"></span>
+  <span class="tack bl" aria-hidden="true"></span><span class="tack br" aria-hidden="true"></span>
+
+  <!-- ===== HEADER ===== -->
+  <div class="poster-header">
+    <header class="header-band">
+      <div class="header-left">
+        <div class="eyebrow"><span>Plating Posters Inc &nbsp;&middot;&nbsp; Serie de Cobre &Aacute;cido Sulfato &nbsp;&middot;&nbsp; Post-Tratamiento y Control de Calidad</span></div>
+        <h1 class="headline">POST-TRATAMIENTO<br>Y <em>QC</em></h1>
+        <h2 class="subhead">Entregue al N&iacute;quel-Cromo, Proteja un Acabado de Cobre Desnudo o Verifique el Dep&oacute;sito &mdash; El Cobre Rara Vez Va Solo</h2>
+        <p class="tagline">&ldquo;El cobre desnudo es hermoso por un d&iacute;a. Lo que sigue decide si perdura.&rdquo;</p>
+      </div>
+      <aside class="glass logo-card">
+        <div class="logo-tile"><span>PP</span></div>
+        <div class="logo-word"><span class="a">Plating</span> <span class="b">Posters</span></div>
+        <div class="logo-inc">www.platingposters.com</div>
+      </aside>
+    </header>
+  </div>
+
+  <!-- ===== BODY ===== -->
+  <div class="poster-body">
+
+    <!-- RULE CARD -->
+    <div class="glass rule-card">
+      <div class="rule-num">3</div>
+      <div class="rule-body">
+        <div class="rule-label">Funciones &mdash; Qu&eacute; Hace el Cobre Despu&eacute;s</div>
+        <div class="rule-text">El cobre &aacute;cido suele ser una <b style="color:var(--text);">capa base</b> (pasa a n&iacute;quel brillante + cromo en la tr&iacute;ada decorativa), un <b style="color:var(--text);">dep&oacute;sito funcional / de PCB</b> (verificado y terminado), o un <b style="color:var(--text);">acabado decorativo de cobre desnudo / envejecido</b> (que debe protegerse porque el cobre se empa&ntilde;a r&aacute;pido). Sepa qu&eacute; funci&oacute;n aplica antes de dejar esta etapa.</div>
+      </div>
+    </div>
+
+    <!-- WHAT COPPER DOES NEXT — ROUTING TREE (converted from handoff options table) -->
+    <div>
+      <h3 class="section-title">Qu&eacute; Hace el Cobre Despu&eacute;s <span class="sub">3 funciones &middot; mapa de rutas</span></h3>
+      <div class="route-wrap">
+        <div class="route-tree">
+          <div class="route-root"><span class="q">&iquest;Qu&eacute; es este <em>cobre</em>?</span></div>
+          <div class="route-branches">
+            <div class="route-card teal glass">
+              <h4>Capa Base</h4>
+              <div class="route-dest">N&iacute;quel Brillante + Cromo</div>
+              <div class="route-action">Active primero el cobre, luego proceda &mdash; el nivelado del cobre sostiene la tr&iacute;ada decorativa.</div>
+              <div class="route-tag">Tr&iacute;ada decorativa seg&uacute;n ASTM B456</div>
+            </div>
+            <div class="route-card amber glass">
+              <h4>Cobre Desnudo</h4>
+              <div class="route-dest">Proteja el acabado</div>
+              <div class="route-action">Anti-empa&ntilde;amiento (benzotriazol / cromatado) &middot; laca &middot; ennegrecido envejecido.</div>
+              <div class="route-tag">El cobre se empa&ntilde;a en un d&iacute;a</div>
+            </div>
+            <div class="route-card teal glass">
+              <h4>PCB / Funcional</h4>
+              <div class="route-dest">QC + acabado</div>
+              <div class="route-action">ENIG / OSP, o pase a imagen / grabado seg&uacute;n el proceso.</div>
+              <div class="route-tag">Verifique antes del acabado final</div>
+            </div>
+          </div>
+          <div class="route-teach">El cobre rara vez va solo &mdash; decida el destino antes de dejar la etapa.</div>
+        </div>
+        <div class="route-gate glass">
+          <div class="gh">&#9888; Horneado Anti-Fragilizaci&oacute;n por H &mdash; Puerta Lateral</div>
+          <div class="gt">Acero endurecido <span class="gv">&gt;40 HRC</span> &rarr; hornee a <span class="gv">375 &plusmn;25&deg;F</span>, <span class="gv">&ge;8 h</span>, inicie dentro de <span class="gv">4 h</span>.</div>
+          <div class="gt" style="color:var(--muted);font-size:10px;">Seg&uacute;n ASTM B850 &middot; corre en paralelo con cualquier ruta anterior.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- QUALITY CONTROL CHECKS -->
+    <div>
+      <h3 class="section-title">Verificaciones de Control de Calidad <span class="sub">verifique el dep&oacute;sito</span></h3>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table compact">
+          <thead><tr><th style="width:30%;">Verificaci&oacute;n</th><th style="width:38%;">M&eacute;todo</th><th>Referencia</th></tr></thead>
+          <tbody>
+            <tr><td style="font-weight:600;">Espesor</td><td>XRF; microsecci&oacute;n</td><td class="mono">ASTM B568; ASTM B487</td></tr>
+            <tr><td style="font-weight:600;">Adherencia</td><td>Doblez, choque t&eacute;rmico, pelado</td><td class="mono">ASTM B571</td></tr>
+            <tr><td style="font-weight:600;">Nivelado / brillo</td><td>Visual + perfil&oacute;metro; Celda Hull</td><td>Interno / spec. cliente</td></tr>
+            <tr><td style="font-weight:600;">Ductilidad / elongaci&oacute;n (PCB)</td><td>Tensi&oacute;n / elongaci&oacute;n de l&aacute;mina</td><td class="mono">IPC-TM-650</td></tr>
+            <tr><td style="font-weight:600;">Soldabilidad (PCB / electr&oacute;nica)</td><td>Balanza de humectaci&oacute;n / inmersi&oacute;n</td><td class="mono">J-STD-002 <span class="vf">[VERIFICAR rev. actual]</span></td></tr>
+            <tr><td style="font-weight:600;">Porosidad (cobre desnudo)</td><td>Prueba de corrosi&oacute;n / porosidad</td><td>Seg&uacute;n spec.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- H-EMBRITTLEMENT + FINAL RINSE -->
+    <div class="context-grid">
+      <div class="insight-card glass">
+        <div class="insight-label">Punto de Decisi&oacute;n: Horneado Anti-Fragilizaci&oacute;n por H</div>
+        <div class="insight-text" style="font-size:11.5px;line-height:1.45;">Para sustratos de acero endurecido (&gt;40 HRC): hornee dentro de <b>4 horas</b> del &uacute;ltimo paso de recubrimiento a <b>375 &plusmn;25&deg;F</b> por un m&iacute;nimo de <b>8 horas</b> seg&uacute;n <b>ASTM B850</b>. Verifique la spec. del cliente sobre si el horneado ocurre antes del n&iacute;quel/cromo posterior. El reloj de 4 horas inicia al completar el &uacute;ltimo paso de recubrimiento.</div>
+      </div>
+      <div class="context-card glass">
+        <h4 class="teal">Enjuague Final y Secado <span style="font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:400;color:var(--muted);letter-spacing:.08em;">Anexo &mdash; Etapa 8</span></h4>
+        <p style="font-size:11.5px;line-height:1.5;">Enjuague con agua desionizada (DI), ambiente, inmersi&oacute;n suave 15&ndash;30 s &middot; secado con aire caliente <b>120&ndash;140&deg;F</b> m&aacute;x &middot; mantenga el cobre brillante protegido con anti-empa&ntilde;amiento o una capa superior inmediata si el acabado es cobre desnudo &middot; manipule solo con guantes limpios, secos y sin pelusa &mdash; las huellas dactilares graban permanentemente el cobre fresco.</p>
+      </div>
+    </div>
+
+    <!-- TROUBLESHOOTING -->
+    <div>
+      <h3 class="section-title">Soluci&oacute;n de Problemas <span class="sub">problemas de entrega y acabado</span></h3>
+      <div class="trouble-grid">
+        <div class="trouble-card glass">
+          <h4>El Cobre se Empa&ntilde;a / Oscurece</h4>
+          <p><b>Causa:</b> Esperado &mdash; el cobre se oxida r&aacute;pido. <b>Soluci&oacute;n:</b> Aplique anti-empa&ntilde;amiento / laca; reduzca la exposici&oacute;n.</p>
+        </div>
+        <div class="trouble-card glass">
+          <h4>Velo de N&iacute;quel Sobre el Cobre</h4>
+          <p><b>Causa:</b> Cobre oxidado antes del n&iacute;quel; transferencia lenta. <b>Soluci&oacute;n:</b> Active el cobre; acelere la transferencia; mant&eacute;ngalo h&uacute;medo.</p>
+        </div>
+        <div class="trouble-card glass">
+          <h4>El N&iacute;quel se Despega del Cobre</h4>
+          <p><b>Causa:</b> Superficie de cobre pasiva / oxidada. <b>Soluci&oacute;n:</b> Active el cobre con &aacute;cido antes del n&iacute;quel.</p>
+        </div>
+        <div class="trouble-card glass">
+          <h4>Huellas Grabadas en el Cobre</h4>
+          <p><b>Causa:</b> Manipulaci&oacute;n del cobre fresco con manos desnudas. <b>Soluci&oacute;n:</b> Solo con guantes limpios.</p>
+        </div>
+        <div class="trouble-card glass">
+          <h4>Mala Soldabilidad (PCB)</h4>
+          <p><b>Causa:</b> Oxidaci&oacute;n; residuo org&aacute;nico; acabado incorrecto. <b>Soluci&oacute;n:</b> Verifique el acabado / OSP; limpie; vuelva a probar.</p>
+        </div>
+        <div class="trouble-card glass">
+          <h4>Cobre en Aumento en el Ba&ntilde;o de N&iacute;quel</h4>
+          <p><b>Causa:</b> Arrastre de entrada de cobre en la entrega. <b>Soluci&oacute;n:</b> Refuerce el enjuague posterior; agregue recuperaci&oacute;n + segundo enjuague.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SAFETY -->
+    <div class="safety-card">
+      <div class="safety-head">&#9888; Resumen de Seguridad &mdash; Depende de la Ruta</div>
+      <div class="safety-body"><strong>Las qu&iacute;micas anti-empa&ntilde;amiento / de ennegrecido</strong> var&iacute;an &mdash; algunas contienen <strong>compuestos de selenio o sulfuro</strong>; consulte la SDS antes de usar. Si se usa un anti-empa&ntilde;amiento de cromato hexavalente, <strong>el Cr&#8310; / Cr(VI) es un carcin&oacute;geno confirmado</strong> (OSHA PEL 5 &micro;g/m&sup3; <span class="vf">[VERIFICAR]</span>) &mdash; aplican protecci&oacute;n respiratoria completa y controles de ingenier&iacute;a. <strong>Los solventes de laca</strong> &mdash; inflamables; se requiere ventilaci&oacute;n, sin fuentes de ignici&oacute;n. EPP qu&iacute;mico est&aacute;ndar (goggles, guantes, mandil) en todo momento; SDS actual accesible en cada estaci&oacute;n.</div>
+    </div>
+
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer poster-footer">
+    <p class="footer-disclaimer">Solo referencia t&eacute;cnica. Verifique todos los par&aacute;metros contra la TDS de su proveedor de qu&iacute;micos, las especificaciones del cliente y los requisitos regulatorios aplicables antes del uso en producci&oacute;n. Las qu&iacute;micas anti-empa&ntilde;amiento, de ennegrecido y de cromato hexavalente conllevan riesgos distintos; el cobre se empa&ntilde;a r&aacute;pidamente y los sustratos de acero endurecido pueden requerir horneado posterior al recubrimiento &mdash; consulte siempre la SDS actual y las especificaciones del cliente.</p>
+    <p class="footer-title">Post-Tratamiento y Control de Calidad &mdash; Serie de Recubrimiento de Cobre &Aacute;cido Sulfato</p>
+    <span class="footer-brand">Plating Posters Inc &middot; Serie de Referencia de Acabado de Metales &middot; PP-AcCu-07-T / v1.0 / 2026</span>
+  </footer>
+
+</div>
+</div>
+</div>
+
+<div class="tweaks">
+  <div style="display:flex;gap:8px;align-items:center;">
+    <span style="color:rgba(240,237,232,.5);font-size:11px;letter-spacing:.06em;text-transform:uppercase;">Edici&oacute;n</span>
+    <button id="btnDark" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:#E8A020;color:#1A1F2E;border:1px solid #E8A020;" onclick="setEdition('')">Oscuro</button>
+    <button id="btnLight" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);" onclick="setEdition('light')">Claro</button>
+  </div>
+  <button onclick="window.print()" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);">Imprimir / PDF</button>
+</div>
+
+<script>
+const posterWrap=document.getElementById('posterWrap');
+const poster=document.getElementById('poster');
+function scalePoster(){const sW=(window.innerWidth-24)/1200;const sH=(window.innerHeight-24)/1800;const s=Math.min(sW,sH);posterWrap.style.transform='scale('+s+')';posterWrap.style.transformOrigin='top left';posterWrap.style.width=(1200*s)+'px';posterWrap.style.height=(1800*s)+'px';}
+function setEdition(e){if(e)poster.dataset.edition=e;else delete poster.dataset.edition;document.getElementById('btnDark').style.background=e?'transparent':'#E8A020';document.getElementById('btnDark').style.color=e?'#1B2030':'#1A1F2E';document.getElementById('btnDark').style.borderColor=e?'rgba(27,32,48,.2)':'#E8A020';document.getElementById('btnLight').style.background=e?'#E8A020':'transparent';document.getElementById('btnLight').style.color=e?'#1A1F2E':'#1B2030';document.getElementById('btnLight').style.borderColor=e?'#E8A020':'rgba(27,32,48,.2)';}
+scalePoster();window.addEventListener('resize',scalePoster);
+</script>
+</body>
+</html>
