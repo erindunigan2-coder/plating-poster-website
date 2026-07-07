@@ -1,13 +1,21 @@
 import { createHmac } from "crypto";
 
-const SECRET = process.env.PROOF_TOKEN_SECRET || process.env.STRIPE_WEBHOOK_SECRET || "fallback-proof-secret";
+// No hardcoded fallback: a committed default secret would make every proof
+// token forgeable. Fail loudly if the environment is missing the secret.
+function getSecret(): string {
+  const secret = process.env.PROOF_TOKEN_SECRET || process.env.STRIPE_WEBHOOK_SECRET;
+  if (!secret) {
+    throw new Error("PROOF_TOKEN_SECRET (or STRIPE_WEBHOOK_SECRET) is not configured");
+  }
+  return secret;
+}
 
 /**
  * Generate a signed token for a proof review link.
  * Include this as a `token` query param in the proof review URL.
  */
 export function generateProofToken(recordId: string): string {
-  return createHmac("sha256", SECRET).update(recordId).digest("hex").slice(0, 32);
+  return createHmac("sha256", getSecret()).update(recordId).digest("hex").slice(0, 32);
 }
 
 /**

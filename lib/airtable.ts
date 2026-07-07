@@ -63,6 +63,23 @@ export async function getOrder(recordId: string) {
   return airtableRequest("GET", ORDERS_TABLE, `/${recordId}`);
 }
 
+/**
+ * Webhook idempotency: find an existing order created from a given Stripe
+ * checkout session (the session id is embedded in Order Notes at creation).
+ * Session ids are alphanumeric/underscore, so embedding in the formula is safe.
+ */
+export async function findOrderBySessionId(sessionId: string) {
+  const safeId = sessionId.replace(/[^a-zA-Z0-9_]/g, "");
+  if (!safeId) return null;
+  const formula = encodeURIComponent(`SEARCH("${safeId}", {Order Notes})`);
+  const res = await airtableRequest(
+    "GET",
+    ORDERS_TABLE,
+    `?filterByFormula=${formula}&maxRecords=1`
+  );
+  return res.records?.[0] ?? null;
+}
+
 export async function updateOrder(recordId: string, fields: Partial<NewOrder>) {
   return airtableRequest("PATCH", ORDERS_TABLE, `/${recordId}`, { fields });
 }

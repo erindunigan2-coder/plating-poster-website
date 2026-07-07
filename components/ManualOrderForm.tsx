@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { Manual, ManualFormat, manualUnitPrice, formatIsPhysical } from "@/lib/manuals";
+import type { Manual } from "@/lib/manuals";
+import { type ManualFormat, manualUnitPrice, formatIsPhysical } from "@/lib/manual-pricing";
 
 export default function ManualOrderForm({ manual }: { manual: Manual }) {
   const [format, setFormat] = useState<ManualFormat>("digital");

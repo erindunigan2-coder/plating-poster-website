@@ -39,7 +39,9 @@ export const POSTERS: Poster[] = [
     price: 59,
     logoUpgradePrice: 35,
     sizes: ["18×24", "24×36", "36×48"],
-    available: true,
+    // Legacy stub retired 2026-07-07: no poster HTML was ever built for this entry
+    // (real surface-prep content lives in genknow-surface-preparation).
+    available: false,
     previewImage: "/posters/poster-placeholder.svg",
     languages: ["en"],
   },

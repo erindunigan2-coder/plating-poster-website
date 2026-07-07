@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getStripe } from "@/lib/stripe";
-import { createOrder } from "@/lib/airtable";
+import { createOrder, findOrderBySessionId } from "@/lib/airtable";
 
 export async function POST(req: NextRequest) {
   const body = await req.text();
@@ -27,6 +27,15 @@ export async function POST(req: NextRequest) {
     const session = event.data.object;
 
     try {
+      // Idempotency: Stripe can deliver the same event more than once (and we
+      // now return 500 on transient failures so it retries). Skip if an order
+      // for this session already exists.
+      const existing = await findOrderBySessionId(session.id).catch(() => null);
+      if (existing) {
+        console.log(`Order already recorded for session ${session.id} — skipping duplicate webhook`);
+        return NextResponse.json({ received: true });
+      }
+
       // Retrieve line items for the order details
       const lineItems = await getStripe().checkout.sessions.listLineItems(session.id, {
         limit: 100,
@@ -115,9 +124,11 @@ export async function POST(req: NextRequest) {
       console.log(`Order created for session ${session.id}`);
     } catch (err) {
       const errMsg = err instanceof Error ? err.message : String(err);
-      console.error(`Failed to create Airtable order: ${errMsg}`);
-      // Return 200 anyway to prevent Stripe retries — log the error for investigation
-      // A failed Airtable write shouldn't cause Stripe to retry the webhook
+      console.error(`Failed to create Airtable order for session ${session.id}: ${errMsg}`);
+      // Return 500 so Stripe RETRIES the delivery — otherwise a transient
+      // Airtable failure silently drops the order from fulfillment. The
+      // idempotency check above makes retries safe (no duplicate orders).
+      return NextResponse.json({ error: "Order recording failed" }, { status: 500 });
     }
   }
 

@@ -52,7 +52,8 @@ export default function OrderForm({ poster, edition: editionProp, onEditionChang
   const [error, setError] = useState("");
 
   const unitPrice = getUnitPrice(finish, size) ?? poster.price;
-  const total = (unitPrice + (logoUpgrade ? LOGO_UPGRADE_PRICE : 0)) * quantity;
+  // Logo upgrade is a flat per-order fee (charged once server-side) — do not multiply by quantity
+  const total = unitPrice * quantity + (logoUpgrade ? LOGO_UPGRADE_PRICE : 0);
 
   async function handleAddToCart() {
     setLoading(true);

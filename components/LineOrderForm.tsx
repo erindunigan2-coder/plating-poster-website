@@ -67,16 +67,14 @@ function PosterLightbox({ posterId, label, edition, onClose }: { posterId: strin
         style={{ width: scaledW, height: scaledH }}
         onClick={(e) => e.stopPropagation()}
       >
-        <iframe
-          src={`/posters/shop-${posterId}-en.html${edition === "Light" ? "#light" : ""}`}
-          title={label}
-          className="absolute top-0 left-0 border-0"
-          style={{
-            width: "900px",
-            height: "1200px",
-            transformOrigin: "top left",
-            transform: `scale(${scale})`,
-          }}
+        {/* Screen-resolution preview image — the poster artwork itself is not
+            served to the browser (protects the sellable HTML/vector source). */}
+        <img
+          src={`/posters/${posterId}${edition === "Light" ? "-light" : ""}-preview.jpg`}
+          alt={label}
+          className="absolute top-0 left-0 w-full h-full object-cover select-none"
+          draggable={false}
+          onContextMenu={(e) => e.preventDefault()}
         />
       </div>
 
@@ -126,7 +124,9 @@ export default function LineOrderForm({ lineSteps }: Props) {
     try {
       const items = orderableSteps.map((ls) => ({
         posterId: ls.step.posterId!,
-        posterTitle: ls.customName || ls.step.name,
+        // Server names the product from the registry; customName travels
+        // separately and appears as "Station: ..." in the line description.
+        customName: ls.customName || undefined,
         edition,
         size,
         finish,
@@ -359,12 +359,11 @@ export default function LineOrderForm({ lineSteps }: Props) {
                       >
                         {hasHtml ? (
                           <div className="w-full h-full relative overflow-hidden pointer-events-none">
-                            <iframe
-                              src={`/posters/shop-${ls.step.posterId}-en.html${edition === "Light" ? "#light" : ""}`}
-                              title={displayName}
-                              className="absolute top-0 left-0 border-0"
-                              style={{ width: "900px", height: "1200px", transform: "scale(0.1422)", transformOrigin: "top left" }}
-                              tabIndex={-1}
+                            <img
+                              src={`/posters/${ls.step.posterId}${edition === "Light" ? "-light" : ""}-preview.jpg`}
+                              alt={displayName}
+                              className="absolute top-0 left-0 w-full h-full object-cover select-none"
+                              draggable={false}
                             />
                           </div>
                         ) : (
@@ -456,12 +455,11 @@ export default function LineOrderForm({ lineSteps }: Props) {
                         >
                           {hasHtml2 ? (
                             <div className="w-full h-full relative overflow-hidden pointer-events-none">
-                              <iframe
-                                src={`/posters/shop-${ls.step.posterId}-en.html${edition === "Light" ? "#light" : ""}`}
-                                title={displayName}
-                                className="absolute top-0 left-0 border-0"
-                                style={{ width: "900px", height: "1200px", transform: "scale(0.0444)", transformOrigin: "top left" }}
-                                tabIndex={-1}
+                              <img
+                                src={`/posters/${ls.step.posterId}${edition === "Light" ? "-light" : ""}-preview.jpg`}
+                                alt={displayName}
+                                className="absolute top-0 left-0 w-full h-full object-cover select-none"
+                                draggable={false}
                               />
                             </div>
                           ) : (

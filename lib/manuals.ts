@@ -162,7 +162,7 @@ export const MANUALS: Manual[] = [
     title: "Alkaline Zinc — The Complete Training Manual",
     titleEs: "Zinc Alcalino — El Manual de Capacitación Completo",
     seriesId: "alkaline-zinc",
-    posterPrefixes: ["zinc-alkaline"],
+    posterPrefixes: ["zinc-alkaline", "zinc-alk"],
     seriesLabel: "Alkaline Zinc",
     tagline: "A full training course for the brand-new operator — assumes you know nothing, teaches you everything.",
     description:
@@ -207,6 +207,7 @@ export const MANUALS: Manual[] = [
     title: "Zinc-Nickel — The Complete Training Manual",
     titleEs: "Zinc-Níquel — El Manual de Capacitación Completo",
     seriesId: "zinc-nickel",
+    posterPrefixes: ["znni"],
     seriesLabel: "Zinc-Nickel",
     tagline: "A full training course for the brand-new operator — assumes you know nothing, teaches you everything.",
     description:
@@ -1201,31 +1202,12 @@ export const MANUALS: Manual[] = [
   },
 ];
 
-export type ManualFormat = "digital" | "print" | "combo";
+// Pricing/format helpers live in lib/manual-pricing.ts (small module, safe for
+// client bundles). This registry module should only be imported server-side or
+// in server components.
 
 export function getManual(id: string): Manual | undefined {
   return MANUALS.find((m) => m.id === id);
-}
-
-/** Per-unit price for a format at a given quantity (print has volume tiers). */
-export function manualUnitPrice(m: Manual, format: ManualFormat, quantity = 1): number {
-  if (format === "digital") return m.priceDigital;
-  if (format === "combo") return m.priceCombo;
-  const q = Math.max(1, Math.floor(quantity || 1));
-  for (const t of m.printVolumeTiers) {
-    if (q >= t.min) return t.price;
-  }
-  return m.pricePrint;
-}
-
-/** Formats that include the digital PDF download (entitle a download). */
-export function formatIncludesDigital(format: ManualFormat): boolean {
-  return format === "digital" || format === "combo";
-}
-
-/** Formats that ship a physical copy. */
-export function formatIsPhysical(format: ManualFormat): boolean {
-  return format === "print" || format === "combo";
 }
 
 export function getAvailableManuals(): Manual[] {

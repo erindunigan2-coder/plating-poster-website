@@ -1,6 +1,8 @@
 import Stripe from "stripe";
 import { getUnitPrice, getShippingCost, LOGO_UPGRADE_PRICE, VALID_SIZES, VALID_FINISHES, VALID_EDITIONS, VALID_LANGUAGES } from "./pricing";
-import { getManual, manualUnitPrice, formatIsPhysical, type ManualFormat } from "./manuals";
+import { getManual } from "./manuals";
+import { getPoster } from "./posters";
+import { manualUnitPrice, formatIsPhysical, encodePurchasedManuals, type ManualFormat } from "./manual-pricing";
 
 // Lazy init — avoids crash during Next.js static page generation at build time
 let _stripe: Stripe | null = null;
@@ -13,7 +15,10 @@ export function getStripe(): Stripe {
 
 export type CheckoutItem = {
   posterId: string;
-  posterTitle: string;
+  /** Ignored server-side — the product name always comes from the registry. */
+  posterTitle?: string;
+  /** Optional customer label (e.g. a renamed line station); shown in the description. */
+  customName?: string;
   edition: string;
   size: string;
   finish: string;
@@ -43,6 +48,12 @@ export async function createCheckoutSession(params: {
   let subtotal = 0;
 
   for (const item of items) {
+    // The poster must exist in the registry and be purchasable — the client is
+    // never trusted for product identity or naming.
+    const poster = getPoster(item.posterId);
+    if (!poster || !poster.available) {
+      throw new Error(`Unknown or unavailable poster: ${item.posterId}`);
+    }
     if (!VALID_EDITIONS.includes(item.edition as typeof VALID_EDITIONS[number])) {
       throw new Error(`Invalid edition: ${item.edition}`);
     }
@@ -61,16 +72,23 @@ export async function createCheckoutSession(params: {
       throw new Error(`No price for ${item.finish} / ${item.size}`);
     }
 
-    subtotal += unitPrice * item.quantity;
+    const qty = Math.min(99, Math.max(1, Math.floor(item.quantity || 1)));
+    const name = item.language === "es" && poster.titleEs ? poster.titleEs : poster.title;
+    const stationNote =
+      item.customName && String(item.customName).trim() && String(item.customName).trim() !== name
+        ? ` · Station: ${String(item.customName).trim().slice(0, 80)}`
+        : "";
+
+    subtotal += unitPrice * qty;
 
     lineItems.push({
       price_data: {
         currency: "usd",
         product_data: {
-          name: item.posterTitle,
-          description: `${item.edition} Edition · ${item.size} · ${item.finish} · ${item.language === "es" ? "Spanish" : "English"}`,
+          name,
+          description: `${item.edition} Edition · ${item.size} · ${item.finish} · ${item.language === "es" ? "Spanish" : "English"}${stationNote}`,
           metadata: {
-            posterId: item.posterId,
+            posterId: poster.id,
             edition: item.edition,
             size: item.size,
             finish: item.finish,
@@ -79,7 +97,7 @@ export async function createCheckoutSession(params: {
         },
         unit_amount: unitPrice * 100, // Stripe uses cents
       },
-      quantity: item.quantity,
+      quantity: qty,
     });
   }
 
@@ -100,6 +118,9 @@ export async function createCheckoutSession(params: {
 
   // Training manuals — digital download (no shipping), printed hard copy (ships), or combo (both)
   let manualPhysicalSubtotal = 0;
+  // Normalized (validated) manual purchases — this is what gets encoded into
+  // session metadata and later drives download entitlement. Never raw client input.
+  const purchasedManuals: { manualId: string; language: string; format: string }[] = [];
   for (const m of manualItems) {
     const manual = getManual(m.manualId);
     if (!manual) throw new Error(`Invalid manual: ${m.manualId}`);
@@ -108,6 +129,7 @@ export async function createCheckoutSession(params: {
     }
     const format: ManualFormat = m.format === "print" ? "print" : m.format === "combo" ? "combo" : "digital";
     const qty = Math.max(1, Math.floor(m.quantity || 1));
+    purchasedManuals.push({ manualId: manual.id, language: m.language === "es" ? "es" : "en", format });
     const unit = manualUnitPrice(manual, format, qty);
     if (formatIsPhysical(format)) manualPhysicalSubtotal += unit * qty;
     const lang = m.language === "es" ? "Spanish" : "English";
@@ -161,6 +183,14 @@ export async function createCheckoutSession(params: {
     ...manualItems.map(m => { const man = getManual(m.manualId); return `${man ? man.title : m.manualId} [Training Manual/${m.language === "es" ? "ES" : "EN"}] x${m.quantity}`; }),
   ].join(" | ");
 
+  // Compact, never-truncated encoding ("id:lang:format,..."). Stripe caps
+  // metadata values at 500 chars; if an order somehow exceeds that, fail the
+  // checkout NOW (before payment) rather than break the download after payment.
+  const manualsMeta = encodePurchasedManuals(purchasedManuals);
+  if (manualsMeta.length > 490) {
+    throw new Error("Too many training manuals in a single order — please split into two orders.");
+  }
+
   const session = await getStripe().checkout.sessions.create({
     mode: "payment",
     line_items: lineItems,
@@ -174,8 +204,7 @@ export async function createCheckoutSession(params: {
     metadata: {
       order_summary: orderSummary.slice(0, 500),
       logo_upgrade: logoUpgrade ? "true" : "false",
-      items_json: JSON.stringify(items).slice(0, 400),
-      manuals_json: JSON.stringify(manualItems).slice(0, 300),
+      manuals_json: manualsMeta,
     },
   });
 

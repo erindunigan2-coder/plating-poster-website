@@ -28,8 +28,10 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Invalid decision" }, { status: 400 });
     }
 
-    // Verify signed token — if a token is provided, it must match
-    if (token && !verifyProofToken(proofRecordId, token)) {
+    // Verify signed token — REQUIRED. Every proof link must carry a valid
+    // HMAC token (generated with generateProofToken / _make-proof-link.js);
+    // without this, anyone with a record ID could approve proofs.
+    if (!token || typeof token !== "string" || !verifyProofToken(proofRecordId, token)) {
       return NextResponse.json({ error: "Invalid or expired link" }, { status: 403 });
     }
 

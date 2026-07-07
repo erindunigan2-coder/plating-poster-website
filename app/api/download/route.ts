@@ -3,6 +3,7 @@ import { readFile } from "fs/promises";
 import path from "path";
 import { getStripe } from "@/lib/stripe";
 import { getManual } from "@/lib/manuals";
+import { parsePurchasedManuals } from "@/lib/manual-pricing";
 
 export const runtime = "nodejs";
 
@@ -30,13 +31,11 @@ export async function GET(req: NextRequest) {
     if (session.payment_status !== "paid") {
       return NextResponse.json({ error: "Order not paid" }, { status: 403 });
     }
-    const manualsJson = session.metadata?.manuals_json;
-    if (manualsJson) {
-      const purchased = JSON.parse(manualsJson) as Array<{ manualId: string; language: string; format: string }>;
-      entitled = purchased.some(
-        (p) => p.manualId === manualId && p.language === language && (p.format === "digital" || p.format === "combo" || p.format == null)
-      );
-    }
+    // Handles both the compact "id:lang:format" encoding and legacy JSON metadata
+    const purchased = parsePurchasedManuals(session.metadata?.manuals_json);
+    entitled = purchased.some(
+      (p) => p.manualId === manualId && p.language === language && (p.format === "digital" || p.format === "combo")
+    );
   } catch {
     return NextResponse.json({ error: "Could not verify order" }, { status: 403 });
   }

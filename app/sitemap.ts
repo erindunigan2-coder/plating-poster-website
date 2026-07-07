@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import { getAvailablePosters } from "@/lib/posters";
+import { getAvailableManuals } from "@/lib/manuals";
 import { CATEGORIES } from "@/lib/catalog";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -10,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages: MetadataRoute.Sitemap = [
     { url: baseUrl, lastModified: now, changeFrequency: "weekly", priority: 1.0 },
     { url: `${baseUrl}/posters`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${baseUrl}/manuals`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     { url: `${baseUrl}/categories`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/about`, lastModified: now, changeFrequency: "monthly", priority: 0.5 },
     { url: `${baseUrl}/contact`, lastModified: now, changeFrequency: "monthly", priority: 0.5 },
@@ -44,5 +46,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticPages, ...collectionPages, ...categoryPages, ...posterPages];
+  // Individual training-manual pages — the highest-priced products on the site
+  const manualPages: MetadataRoute.Sitemap = getAvailableManuals().map((manual) => ({
+    url: `${baseUrl}/manuals/${manual.id}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }));
+
+  return [...staticPages, ...collectionPages, ...categoryPages, ...manualPages, ...posterPages];
 }

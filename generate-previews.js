@@ -2,7 +2,12 @@ const puppeteer = require("puppeteer");
 const fs = require("fs");
 const path = require("path");
 
-const POSTERS_DIR = path.join(__dirname, "public", "posters");
+// Poster HTML sources live OUTSIDE the web root (poster-sources/) so the
+// sellable artwork is never served to browsers — only the generated
+// screen-resolution preview JPGs in public/posters/ are public.
+// (Files in poster-sources/_wip/ are in-progress rebuilds and are not scanned.)
+const SOURCES_DIR = path.join(__dirname, "poster-sources");
+const OUTPUT_DIR = path.join(__dirname, "public", "posters");
 const OUTPUT_WIDTH = 1200;
 const OUTPUT_HEIGHT = 1800;
 // Set FORCE=1 to regenerate every preview even if the .jpg already exists
@@ -243,7 +248,7 @@ function parseClaudeDesignReadyEs(filename) {
 }
 
 function buildFileMap() {
-  const allFiles = fs.readdirSync(POSTERS_DIR).filter((f) => f.endsWith(".html"));
+  const allFiles = fs.readdirSync(SOURCES_DIR).filter((f) => f.endsWith(".html"));
   const fileMap = {}; // posterId -> { dark: filename, light: filename }
 
   for (const f of allFiles) {
@@ -311,12 +316,12 @@ async function main() {
         "es-light": "-es-light-preview.jpg",
       };
       const suffix = SUFFIX_MAP[edition] || "-preview.jpg";
-      const outPath = path.join(POSTERS_DIR, `${id}${suffix}`);
+      const outPath = path.join(OUTPUT_DIR, `${id}${suffix}`);
       done++;
 
       if (!FORCE && fs.existsSync(outPath)) continue;
 
-      const htmlPath = path.join(POSTERS_DIR, filename);
+      const htmlPath = path.join(SOURCES_DIR, filename);
       const fileUrl = `file:///${htmlPath.replace(/\\/g, "/")}`;
 
       try {

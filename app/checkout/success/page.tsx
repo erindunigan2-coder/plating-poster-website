@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getStripe } from "@/lib/stripe";
 import { getManual } from "@/lib/manuals";
+import { parsePurchasedManuals } from "@/lib/manual-pricing";
 
 export const metadata = {
   title: "Order Confirmed — Plating Posters Inc",
@@ -25,19 +26,14 @@ export default async function CheckoutSuccessPage({
       const name = session.customer_details?.name || "";
       const email = session.customer_details?.email || "";
       const items = session.line_items?.data || [];
-      try {
-        const manualsJson = session.metadata?.manuals_json;
-        if (manualsJson) {
-          const purchased = JSON.parse(manualsJson) as Array<{ manualId: string; language: string; format?: string }>;
-          digitalDownloads = purchased
-            .filter((p) => { const f = p.format ?? "digital"; return f === "digital" || f === "combo"; })
-            .map((p) => {
-              const man = getManual(p.manualId);
-              return man ? { manualId: p.manualId, language: p.language, title: man.title } : null;
-            })
-            .filter((x): x is { manualId: string; language: string; title: string } => x !== null);
-        }
-      } catch {}
+      // Handles both the compact "id:lang:format" encoding and legacy JSON metadata
+      digitalDownloads = parsePurchasedManuals(session.metadata?.manuals_json)
+        .filter((p) => p.format === "digital" || p.format === "combo")
+        .map((p) => {
+          const man = getManual(p.manualId);
+          return man ? { manualId: p.manualId, language: p.language, title: man.title } : null;
+        })
+        .filter((x): x is { manualId: string; language: string; title: string } => x !== null);
       const posterNames = items
         .filter((li) => li.description !== "Custom Logo Upgrade")
         .map((li) => li.description?.split(" · ")[0] || li.description || "")
