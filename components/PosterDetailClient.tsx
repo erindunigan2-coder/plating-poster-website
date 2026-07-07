@@ -29,7 +29,7 @@ export default function PosterDetailClient({ poster }: Props) {
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
       {/* Left: Preview */}
       <div>
-        <div className="relative aspect-[2/3] overflow-hidden" style={{ background: "#1e1e1c" }}>
+        <div className="poster-protected relative aspect-[2/3] overflow-hidden" style={{ background: "#1e1e1c" }}>
           {/* Dark edition — always mounted */}
           <Image
             src={darkImg}

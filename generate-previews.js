@@ -1,6 +1,8 @@
 const puppeteer = require("puppeteer");
 const fs = require("fs");
 const path = require("path");
+const { applyWatermark } = require("./watermark-previews");
+const { createCanvas, loadImage } = require("canvas");
 
 // Poster HTML sources live OUTSIDE the web root (poster-sources/) so the
 // sellable artwork is never served to browsers — only the generated
@@ -352,6 +354,17 @@ async function main() {
           quality: 85,
           clip: { x: 0, y: 0, width: OUTPUT_WIDTH, height: OUTPUT_HEIGHT },
         });
+
+        // Watermark every preview — captured/saved previews must be obviously
+        // previews, not usable poster reproductions (artwork protection).
+        {
+          const img = await loadImage(outPath);
+          const canvas = createCanvas(img.width, img.height);
+          const ctx = canvas.getContext("2d");
+          ctx.drawImage(img, 0, 0);
+          applyWatermark(ctx, img.width, img.height);
+          fs.writeFileSync(outPath, canvas.toBuffer("image/jpeg", { quality: 0.85 }));
+        }
 
         await page.close();
         generated++;

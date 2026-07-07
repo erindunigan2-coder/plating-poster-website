@@ -75,6 +75,13 @@ img[src*="/posters/"] {
   position: relative;
   user-select: none;
 }
+/* Right-click on the preview hits the wrapper, not the image — removes the
+   "Save image as…" path. (The real protection is the watermark baked into
+   every preview JPG; this only deters the casual grab.) */
+.poster-protected img {
+  pointer-events: none;
+  -webkit-user-drag: none;
+}
 .poster-protected::after {
   content: "PLATING POSTERS INC";
   position: absolute;
