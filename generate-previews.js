@@ -9,12 +9,20 @@ const { createCanvas, loadImage } = require("canvas");
 // screen-resolution preview JPGs in public/posters/ are public.
 // (Files in poster-sources/_wip/ are in-progress rebuilds and are not scanned.)
 const SOURCES_DIR = path.join(__dirname, "poster-sources");
-const OUTPUT_DIR = path.join(__dirname, "public", "posters");
+// OUTPUT_DIR can be overridden (e.g. to a temp dir) for test renders that must
+// not touch the public previews.
+const OUTPUT_DIR = process.env.OUTPUT_DIR || path.join(__dirname, "public", "posters");
 const OUTPUT_WIDTH = 1200;
 const OUTPUT_HEIGHT = 1800;
 // Set FORCE=1 to regenerate every preview even if the .jpg already exists
 // (use after changing the screenshot/hide logic so stale previews get refreshed).
 const FORCE = process.env.FORCE === "1";
+// Set DRY_RUN=1 to print the filename -> posterId/edition mapping and exit
+// without launching a browser (use to verify parser changes).
+const DRY_RUN = process.env.DRY_RUN === "1";
+// Set ONLY=id1,id2 to restrict processing to specific posterIds (targeted
+// regeneration / test renders).
+const ONLY = process.env.ONLY ? new Set(process.env.ONLY.split(",")) : null;
 
 // ── ID overrides for step names that don't match simple kebab ──
 const STEP_OVERRIDES = {
@@ -152,7 +160,12 @@ function parseNewFormat(filename) {
 }
 
 // ── Parse EN Low Phos shop floor: "EN Low Phos - ## - SHOP FLOOR - Step - Claude Design Ready - Dark.html" ──
+// English files only — Spanish variants ("... - Step - ES - Claude Design
+// Ready - ...") belong to parseClaudeDesignReadyEs. Without this guard the
+// lazy (.+?) step group swallows the " - ES" token and produces bogus
+// posterIds like "en-low-phos-sf-process-flow-es".
 function parseENLowPhosShopFloor(filename) {
+  if (/ - ES - /.test(filename)) return null;
   const m = filename.match(
     /^EN Low Phos - (\d+) - SHOP FLOOR - (.+?) - Claude Design Ready - (Dark|Light)\.html$/
   );
@@ -251,15 +264,26 @@ function parseClaudeDesignReadyEs(filename) {
 
 function buildFileMap() {
   const allFiles = fs.readdirSync(SOURCES_DIR).filter((f) => f.endsWith(".html"));
-  const fileMap = {}; // posterId -> { dark: filename, light: filename }
+  const fileMap = {}; // posterId -> { dark: filename, light: "filename#light", ... }
 
   for (const f of allFiles) {
+    // Order matters: parseClaudeDesignReadyEs must run before
+    // parseENLowPhosShopFloor so ES low-phos filenames are claimed by the ES
+    // parser (the EN parser also guards against " - ES - " internally).
     let result =
-      parseNewFormat(f) || parseENLowPhosShopFloor(f) || parseOldShopFloor(f) || parseOldShopFloorEs(f) || parseClaudeDesignReadyEs(f);
+      parseNewFormat(f) || parseClaudeDesignReadyEs(f) || parseENLowPhosShopFloor(f) || parseOldShopFloor(f) || parseOldShopFloorEs(f);
     if (!result) continue;
     const { posterId, edition } = result;
     if (!fileMap[posterId]) fileMap[posterId] = {};
     fileMap[posterId][edition] = f;
+
+    // Old-format singletons ("shop-*-en.html") carry both editions in one
+    // file: the light edition is the standard data-edition="light" variant,
+    // toggled at load time by the file's own "#light" hash handler. Register
+    // it so -light-preview.jpg files are regenerable by this pipeline.
+    if (parseOldShopFloor(f) && edition === "dark") {
+      fileMap[posterId]["light"] = `${f}#light`;
+    }
   }
   return fileMap;
 }
@@ -282,6 +306,7 @@ async function main() {
   const toProcess = [];
   const missing = [];
   for (const id of allIds) {
+    if (ONLY && !ONLY.has(id)) continue;
     if (fileMap[id]) {
       toProcess.push({ id, files: fileMap[id] });
     } else {
@@ -293,6 +318,15 @@ async function main() {
   if (missing.length > 0) {
     console.log(`Unmatched (${missing.length}):`);
     missing.forEach((id) => console.log(`  - ${id}`));
+  }
+
+  if (DRY_RUN) {
+    for (const { id, files } of toProcess) {
+      for (const [edition, filename] of Object.entries(files)) {
+        console.log(`  ${id} [${edition}] <- ${filename}`);
+      }
+    }
+    return;
   }
 
   if (toProcess.length === 0) return;
@@ -323,8 +357,11 @@ async function main() {
 
       if (!FORCE && fs.existsSync(outPath)) continue;
 
-      const htmlPath = path.join(SOURCES_DIR, filename);
-      const fileUrl = `file:///${htmlPath.replace(/\\/g, "/")}`;
+      // Old-format light editions are registered as "filename.html#light" —
+      // the hash triggers the file's own data-edition="light" toggle.
+      const [fname, hash] = filename.split("#");
+      const htmlPath = path.join(SOURCES_DIR, fname);
+      const fileUrl = `file:///${htmlPath.replace(/\\/g, "/")}${hash ? "#" + hash : ""}`;
 
       try {
         const page = await browser.newPage();
@@ -348,11 +385,60 @@ async function main() {
             .forEach((el) => { el.style.display = 'none'; });
         });
 
+        // ── Fit normalization (2026-07-28) ──────────────────────────────────
+        // Several older stage templates mis-place the poster in the capture
+        // viewport (same transform-origin class of bug fixed for the Busbar
+        // series on 2026-06-24):
+        //   * old singletons ("shop-*", "Claude Design Ready") flex-center the
+        //     UNSCALED 900x1200 layout box, then scale from transform-origin
+        //     top — poster renders y=300..1900: ~16% black band on top, footer
+        //     cropped off the bottom;
+        //   * some SF templates top-anchor the poster (align-items:flex-start)
+        //     leaving a large black slab at the bottom;
+        //   * EN Low Phos SF has no scale script at all (renders tiny).
+        // Measure the rendered poster; if it is fully visible, centered, and
+        // at best-fit scale (the geometry the well-rendered sf-/safety
+        // templates produce: 1176x1568 at 12,116 for a 900x1200 poster), leave
+        // it byte-for-byte alone. Otherwise re-fit it to exactly that
+        // geometry. Band/frame color stays the page background, matching the
+        // correct templates (dark frame even on light editions).
+        await page.evaluate((W, H) => {
+          const poster = document.getElementById("poster") || document.querySelector(".poster");
+          if (!poster) return;
+          const MARGIN = 24; // total frame allowance, matches good templates
+          const r = poster.getBoundingClientRect();
+          const s = Math.min((W - MARGIN) / poster.offsetWidth, (H - MARGIN) / poster.offsetHeight);
+          const fits = r.top >= -1 && r.left >= -1 && r.bottom <= H + 1 && r.right <= W + 1;
+          const centered =
+            Math.abs((r.left + r.right) / 2 - W / 2) <= 20 &&
+            Math.abs((r.top + r.bottom) / 2 - H / 2) <= 20;
+          const filled = r.height >= poster.offsetHeight * s * 0.95;
+          if (fits && centered && filled) return; // well-rendered path — do not touch
+          // Re-parent to <body>: the broken templates re-run their own
+          // scalePoster() on window resize (the screenshot machinery can fire
+          // one), which would re-transform the wrap and displace the poster.
+          // As a direct child of <body> (no transformed ancestor) the fixed
+          // poster is immune to that.
+          const pw = poster.offsetWidth, ph = poster.offsetHeight;
+          document.body.appendChild(poster);
+          poster.style.position = "fixed";
+          poster.style.top = "0";
+          poster.style.left = "0";
+          poster.style.margin = "0";
+          poster.style.transformOrigin = "top left";
+          const tx = (W - pw * s) / 2;
+          const ty = (H - ph * s) / 2;
+          poster.style.transform = `translate(${tx}px, ${ty}px) scale(${s})`;
+        }, OUTPUT_WIDTH, OUTPUT_HEIGHT);
+
         await page.screenshot({
           path: outPath,
           type: "jpeg",
           quality: 85,
           clip: { x: 0, y: 0, width: OUTPUT_WIDTH, height: OUTPUT_HEIGHT },
+          // Default (true) resizes the render surface, firing a resize event
+          // that lets template scale scripts reflow mid-capture.
+          captureBeyondViewport: false,
         });
 
         // Watermark every preview — captured/saved previews must be obviously

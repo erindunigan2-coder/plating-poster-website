@@ -75,14 +75,14 @@ html,body{margin:0;padding:0;background:#0a0c14;}.stage{width:100vw;min-height:1
           <thead><tr><th>Parameter</th><th>Range</th><th>Notes</th></tr></thead>
           <tbody>
             <tr><td>Zinc (as metal)</td><td class="mono">25&ndash;40 g/L</td><td>Replenished from Zn anodes + Zn concentrate</td></tr>
-            <tr><td>Nickel (as metal)</td><td class="mono">25&ndash;40 g/L</td><td>Added as NiCl&sub2; solution; no Ni anodes</td></tr>
-            <tr><td>Total Chloride (KCl or NH&sub4;Cl)</td><td class="mono">120&ndash;200 g/L</td><td>Conductivity salt; controls throwing power</td></tr>
-            <tr><td>Boric Acid (H&sub3;BO&sub3;)</td><td class="mono">20&ndash;30 g/L</td><td>pH buffer; prevents sharp pH swings at cathode</td></tr>
+            <tr><td>Nickel (as metal)</td><td class="mono">25&ndash;40 g/L</td><td>Added as NiCl₂ solution; no Ni anodes</td></tr>
+            <tr><td>Total Chloride (KCl or NH₄Cl)</td><td class="mono">120&ndash;200 g/L</td><td>Conductivity salt; controls throwing power</td></tr>
+            <tr><td>Boric Acid (H₃BO₃)</td><td class="mono">20&ndash;30 g/L</td><td>pH buffer; prevents sharp pH swings at cathode</td></tr>
             <tr><td>pH</td><td class="mono">5.0&ndash;6.5 (target 5.5)</td><td>Adjust with HCl (down) or NaOH (up) slowly</td></tr>
             <tr><td>Temperature</td><td class="mono">25&ndash;35&deg;C (target 30&deg;C)</td><td>&gt;35&deg;C accelerates brightener breakdown</td></tr>
             <tr><td>CD (rack)</td><td class="mono">1&ndash;5 A/dm&sup2;</td><td>Optimal 2&ndash;4 A/dm&sup2; for 12&ndash;15% Ni</td></tr>
             <tr><td>CD (barrel)</td><td class="mono">0.3&ndash;1.5 A/dm&sup2;</td><td>Lower CD; monitor Ni% closely</td></tr>
-            <tr><td>Cathode Efficiency</td><td class="mono">90&ndash;98%</td><td>Much higher than alkaline (~55%); less H&sub2;</td></tr>
+            <tr><td>Cathode Efficiency</td><td class="mono">90&ndash;98%</td><td>Much higher than alkaline (~55%); less H₂</td></tr>
             <tr><td>Plating Rate</td><td class="mono">~0.8 &micro;m/min at 3 A/dm&sup2;</td><td>~2&times; faster than alkaline at comparable CD</td></tr>
             <tr><td>Thickness Target</td><td class="mono">8&ndash;15 &micro;m</td><td>Per customer spec / ASTM B841</td></tr>
             <tr><td>Brightener / Carrier / Auxiliary</td><td class="mono">Per supplier TDS</td><td>Hull cell to verify addition rates</td></tr>
@@ -98,7 +98,7 @@ html,body{margin:0;padding:0;background:#0a0c14;}.stage{width:100vw;min-height:1
     <div>
       <h3 class="section-title">Key Procedures <span class="sub">7 steps</span></h3>
       <div class="numbered-list">
-        <div class="numbered-item"><div class="num-bullet">1</div><div class="num-text"><strong>Verify bath analysis:</strong> Zn 25&ndash;40 g/L, Ni 25&ndash;40 g/L, Cl 120&ndash;200 g/L, H&sub3;BO&sub3; 20&ndash;30 g/L.</div></div>
+        <div class="numbered-item"><div class="num-bullet">1</div><div class="num-text"><strong>Verify bath analysis:</strong> Zn 25&ndash;40 g/L, Ni 25&ndash;40 g/L, Cl 120&ndash;200 g/L, H₃BO₃ 20&ndash;30 g/L.</div></div>
         <div class="numbered-item"><div class="num-bullet">2</div><div class="num-text"><strong>Check pH 5.0&ndash;6.5;</strong> adjust &le;0.5 units at a time with dilute HCl or NaOH.</div></div>
         <div class="numbered-item"><div class="num-bullet">3</div><div class="num-text"><strong>Check temp 25&ndash;35&deg;C</strong> (heater or chiller; target 30&deg;C for best brightness).</div></div>
         <div class="numbered-item"><div class="num-bullet">4</div><div class="num-text"><strong>Set CD + Hull cell:</strong> 2 A, 10 min, 30&deg;C &mdash; evaluate brightness, coverage, and Ni% by XRF.</div></div>
@@ -159,7 +159,7 @@ html,body{margin:0;padding:0;background:#0a0c14;}.stage{width:100vw;min-height:1
             <line x1="178" y1="78" x2="66" y2="81" stroke="var(--muted)" stroke-width="1" stroke-dasharray="3 3" opacity=".4"/>
             <text x="118" y="88" text-anchor="middle" fill="var(--muted)" font-family="JetBrains Mono,monospace" font-size="7" opacity=".6">Cl&minus;</text>
             <!-- H2 bubbles at cathode (small — 95% efficiency) -->
-            <text x="222" y="48" fill="var(--faint)" font-family="JetBrains Mono,monospace" font-size="5.5">H&sub2;&uarr;</text>
+            <text x="222" y="48" fill="var(--faint)" font-family="JetBrains Mono,monospace" font-size="5.5">H₂&uarr;</text>
             <text x="222" y="55" fill="var(--faint)" font-family="JetBrains Mono,monospace" font-size="4.5" opacity=".5">(~5%)</text>
             <!-- Current path -->
             <path d="M43 18 L43 10 L209 10 L209 18" stroke="var(--amber)" stroke-width="1.2"/>
@@ -185,7 +185,7 @@ html,body{margin:0;padding:0;background:#0a0c14;}.stage{width:100vw;min-height:1
 
     <div class="safety-card">
       <div class="safety-head">&#9888; Safety &mdash; Nickel + Acid Chloride Mist + Hydrogen + Ammonia</div>
-      <div class="safety-body"><strong>Nickel compounds are Category 1A carcinogens by inhalation</strong> (IARC Group 1). Airborne Ni must remain <strong>&lt;0.1 mg/m&sup3;</strong> (ACGIH TLV). <strong>Acid chloride mist</strong> is corrosive to respiratory tract and equipment &mdash; local exhaust ventilation and mist suppressant required. <strong>Hydrogen gas</strong> evolution is lower than alkaline (~5% of cathode current) but still requires ventilation (explosive at 4&ndash;75% in air). <strong>NH&sub3; release</strong> from NH&sub4;Cl-based baths if pH exceeds 7 &mdash; monitor and ventilate. Nickel in wastewater must be treated to <strong>&lt;1 mg/L</strong> before discharge. PPE: chemical goggles, face shield, nitrile/neoprene gloves, apron. LOTO before adjusting rectifier contacts.</div>
+      <div class="safety-body"><strong>Nickel compounds are Category 1A carcinogens by inhalation</strong> (IARC Group 1). Airborne Ni must remain <strong>&lt;0.1 mg/m&sup3;</strong> (ACGIH TLV). <strong>Acid chloride mist</strong> is corrosive to respiratory tract and equipment &mdash; local exhaust ventilation and mist suppressant required. <strong>Hydrogen gas</strong> evolution is lower than alkaline (~5% of cathode current) but still requires ventilation (explosive at 4&ndash;75% in air). <strong>NH₃ release</strong> from NH₄Cl-based baths if pH exceeds 7 &mdash; monitor and ventilate. Nickel in wastewater must be treated to <strong>&lt;1 mg/L</strong> before discharge. PPE: chemical goggles, face shield, nitrile/neoprene gloves, apron. LOTO before adjusting rectifier contacts.</div>
     </div>
 
   </div>

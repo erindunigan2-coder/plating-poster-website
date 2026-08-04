@@ -80,82 +80,83 @@ html,body{margin:0;padding:0;background:#0a0c14;}
       <h3 class="section-title">Par&aacute;metros Operativos <span class="sub">Enjuague Pre-Activaci&oacute;n</span></h3>
       <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
         <table class="data-table compact">
-          <thead><tr><th>Parameter</th><th>Range</th><th>Notes</th></tr></thead>
+          <thead><tr><th>Par&aacute;metro</th><th>Rango</th><th>Notas</th></tr></thead>
           <tbody>
-            <tr><td>Temperature</td><td class="mono">Ambient (60&ndash;85&deg;F / 16&ndash;29&deg;C)</td><td>No heating required</td></tr>
-            <tr><td>Time</td><td class="mono">30&ndash;60 sec with agitation</td><td>Longer for blind holes/tubing</td></tr>
-            <tr><td>Water Source</td><td class="mono">Municipal or DI</td><td>DI preferred for nickel lines</td></tr>
-            <tr><td>Conductivity</td><td class="mono">&lt;500 &micro;S/cm (target &lt;300)</td><td>Monitor daily</td></tr>
-            <tr><td>Flow Rate</td><td class="mono">Continuous overflow or counter-current</td><td>2&ndash;4 gal/min typical</td></tr>
-            <tr><td>Tank Turnover</td><td class="mono">4&ndash;6/hour</td><td>Prevents stagnation</td></tr>
-            <tr><td>pH</td><td class="mono">7&ndash;10</td><td>Elevated pH = cleaner drag-in</td></tr>
+            <tr><td>Temperatura</td><td class="mono">Ambiente (60&ndash;85&deg;F / 16&ndash;29&deg;C)</td><td>No requiere calentamiento</td></tr>
+            <tr><td>Tiempo</td><td class="mono">30&ndash;60 seg con agitaci&oacute;n</td><td>M&aacute;s para orificios ciegos/tubos</td></tr>
+            <tr><td>Fuente de Agua</td><td class="mono">Municipal o DI</td><td>Se prefiere DI en l&iacute;neas de n&iacute;quel</td></tr>
+            <tr><td>Conductividad</td><td class="mono">&lt;500 &micro;S/cm (meta &lt;300)</td><td>Revise a diario</td></tr>
+            <tr><td>Flujo</td><td class="mono">Rebose continuo o contracorriente</td><td>2&ndash;4 gal/min t&iacute;pico</td></tr>
+            <tr><td>Recambio del Tanque</td><td class="mono">4&ndash;6/hora</td><td>Evita el estancamiento</td></tr>
+            <tr><td>pH</td><td class="mono">7&ndash;10</td><td>pH alto = arrastre de limpiador</td></tr>
           </tbody>
         </table>
       </div>
     </div>
     <div class="insight-card">
       <div class="insight-label">Por Qu&eacute; Importa Este Enjuague</div>
-      <div class="insight-text">Alkaline cleaner contains surfactants, silicates, and sodium &mdash; all harmful downstream. Surfactants cause foaming and pitting in the nickel bath. Silicates form insoluble films that block adhesion. Sodium accumulates permanently. This rinse is the only barrier between the cleaner and everything downstream.</div>
+
+      <div class="insight-text">El limpiador alcalino contiene surfactantes, silicatos y sodio &mdash; todos da&ntilde;inos aguas abajo. Los surfactantes causan espuma y picadura en el ba&ntilde;o de n&iacute;quel. Los silicatos forman pel&iacute;culas insolubles que bloquean la adherencia. El sodio se acumula de forma permanente. Este enjuague es la &uacute;nica barrera entre el limpiador y todo lo que sigue.</div>
     </div>
 
     <!-- COUNTER-FLOW RINSE DIAGRAM -->
     <div class="glass" style="padding:12px 16px;">
-      <h3 class="section-title">Dise&ntilde;o de Enjuague Contracorriente <span class="sub">c&oacute;mo funciona</span></h3>
+      <h3 class="section-title">Enjuague a Contracorriente <span class="sub">c&oacute;mo funciona</span></h3>
       <svg viewBox="0 0 1100 120" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
         <!-- From cleaner label -->
-        <text x="25" y="48" fill="var(--muted)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle">FROM</text>
-        <text x="25" y="60" fill="var(--muted)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle">CLEANER</text>
+        <text x="25" y="48" fill="var(--muted)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle">DEL</text>
+        <text x="25" y="60" fill="var(--muted)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle">LIMPIADOR</text>
         <!-- Arrow into tank 1 -->
         <line x1="55" y1="52" x2="90" y2="52" stroke="var(--coral)" stroke-width="1.5"/>
         <polygon points="90,48 90,56 98,52" fill="var(--coral)"/>
         <!-- Tank 1 (dirty) -->
         <rect x="100" y="20" width="200" height="70" rx="5" fill="rgba(224,92,92,.06)" stroke="var(--coral)" stroke-width="1.5"/>
-        <text x="200" y="42" fill="var(--coral)" font-family="Barlow,sans-serif" font-size="11" font-weight="700" text-anchor="middle">RINSE 1 (Dirty)</text>
-        <text x="200" y="56" fill="var(--muted)" font-family="JetBrains Mono,monospace" font-size="9" text-anchor="middle">&lt;500 &micro;S/cm typical</text>
-        <text x="200" y="70" fill="var(--faint)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle">High cleaner concentration</text>
-        <text x="200" y="82" fill="var(--coral)" font-family="JetBrains Mono,monospace" font-size="8" text-anchor="middle">DRAIN &darr;</text>
+        <text x="200" y="42" fill="var(--coral)" font-family="Barlow,sans-serif" font-size="11" font-weight="700" text-anchor="middle">ENJUAGUE 1 (Sucio)</text>
+        <text x="200" y="56" fill="var(--muted)" font-family="JetBrains Mono,monospace" font-size="9" text-anchor="middle">&lt;500 &micro;S/cm t&iacute;pico</text>
+        <text x="200" y="70" fill="var(--faint)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle">Alta concentraci&oacute;n de limpiador</text>
+        <text x="200" y="82" fill="var(--coral)" font-family="JetBrains Mono,monospace" font-size="8" text-anchor="middle">DRENAR &darr;</text>
         <!-- Part movement arrow (forward) -->
         <line x1="300" y1="52" x2="380" y2="52" stroke="var(--text)" stroke-width="2" opacity=".4"/>
         <polygon points="380,47 380,57 392,52" fill="var(--text)" opacity=".4"/>
-        <text x="340" y="44" fill="var(--text)" font-family="Inter,sans-serif" font-size="8" font-weight="600" text-anchor="middle" opacity=".5">PARTS &rarr;</text>
+        <text x="340" y="44" fill="var(--text)" font-family="Inter,sans-serif" font-size="8" font-weight="600" text-anchor="middle" opacity=".5">PIEZAS &rarr;</text>
         <!-- Tank 2 (clean) -->
         <rect x="395" y="20" width="200" height="70" rx="5" fill="rgba(39,174,96,.06)" stroke="var(--emerald)" stroke-width="1.5"/>
-        <text x="495" y="42" fill="var(--emerald)" font-family="Barlow,sans-serif" font-size="11" font-weight="700" text-anchor="middle">RINSE 2 (Clean)</text>
-        <text x="495" y="56" fill="var(--muted)" font-family="JetBrains Mono,monospace" font-size="9" text-anchor="middle">&lt;200 &micro;S/cm target</text>
-        <text x="495" y="70" fill="var(--faint)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle">Low contamination</text>
+        <text x="495" y="42" fill="var(--emerald)" font-family="Barlow,sans-serif" font-size="11" font-weight="700" text-anchor="middle">ENJUAGUE 2 (Limpio)</text>
+        <text x="495" y="56" fill="var(--muted)" font-family="JetBrains Mono,monospace" font-size="9" text-anchor="middle">&lt;200 &micro;S/cm meta</text>
+        <text x="495" y="70" fill="var(--faint)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle">Baja contaminaci&oacute;n</text>
         <!-- Arrow to acid dip -->
         <line x1="595" y1="52" x2="640" y2="52" stroke="var(--emerald)" stroke-width="1.5"/>
         <polygon points="640,48 640,56 648,52" fill="var(--emerald)"/>
-        <text x="668" y="48" fill="var(--muted)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle">TO</text>
-        <text x="668" y="60" fill="var(--muted)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle">ACID</text>
+        <text x="668" y="48" fill="var(--muted)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle">AL</text>
+        <text x="668" y="60" fill="var(--muted)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle">&Aacute;CIDO</text>
         <!-- Water flow (backward) — the key concept -->
         <path d="M570 95 L495 95 L340 95 L200 95 L125 95" fill="none" stroke="var(--teal)" stroke-width="2.5" stroke-dasharray="8 4"/>
         <polygon points="125,91 125,99 115,95" fill="var(--teal)"/>
-        <text x="350" y="112" fill="var(--teal)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle">&larr; FRESH WATER FLOWS BACKWARD &larr;</text>
+        <text x="350" y="112" fill="var(--teal)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle">&larr; EL AGUA FRESCA FLUYE HACIA ATR&Aacute;S &larr;</text>
         <!-- Fresh water input label -->
-        <text x="590" y="99" fill="var(--teal)" font-family="JetBrains Mono,monospace" font-size="8" text-anchor="start">FRESH IN</text>
+        <text x="590" y="99" fill="var(--teal)" font-family="JetBrains Mono,monospace" font-size="8" text-anchor="start">AGUA FRESCA</text>
         <!-- Overflow arrow from tank 2 to tank 1 -->
         <line x1="395" y1="95" x2="300" y2="95" stroke="var(--teal)" stroke-width="1" stroke-dasharray="4 2"/>
-        <text x="347" y="102" fill="var(--teal)" font-family="JetBrains Mono,monospace" font-size="7" text-anchor="middle">overflow</text>
+        <text x="347" y="102" fill="var(--teal)" font-family="JetBrains Mono,monospace" font-size="7" text-anchor="middle">rebose</text>
         <!-- Stats box -->
         <rect x="740" y="10" width="350" height="100" rx="8" fill="rgba(46,196,182,.06)" stroke="rgba(46,196,182,.2)" stroke-width="1"/>
-        <text x="915" y="30" fill="var(--teal)" font-family="Barlow,sans-serif" font-size="10" font-weight="700" text-anchor="middle" letter-spacing=".06em">COUNTER-FLOW ADVANTAGE</text>
-        <text x="780" y="48" fill="var(--text)" font-family="Inter,sans-serif" font-size="9">&#8226; Single stage: ~30:1 dilution ratio</text>
-        <text x="780" y="63" fill="var(--text)" font-family="Inter,sans-serif" font-size="9">&#8226; Two-stage counter-flow: ~900:1 effective</text>
-        <text x="780" y="78" fill="var(--text)" font-family="Inter,sans-serif" font-size="9">&#8226; Water savings: 70&ndash;85% vs running rinse</text>
-        <text x="780" y="93" fill="var(--text)" font-family="Inter,sans-serif" font-size="9">&#8226; Flow rate: 4&ndash;8 L/min (vs 15&ndash;30 single)</text>
+        <text x="915" y="30" fill="var(--teal)" font-family="Barlow,sans-serif" font-size="10" font-weight="700" text-anchor="middle" letter-spacing=".06em">VENTAJA DE LA CONTRACORRIENTE</text>
+        <text x="780" y="48" fill="var(--text)" font-family="Inter,sans-serif" font-size="9">&#8226; Una etapa: diluci&oacute;n ~30:1</text>
+        <text x="780" y="63" fill="var(--text)" font-family="Inter,sans-serif" font-size="9">&#8226; Dos etapas contracorriente: ~900:1 efectivo</text>
+        <text x="780" y="78" fill="var(--text)" font-family="Inter,sans-serif" font-size="9">&#8226; Ahorro de agua: 70&ndash;85% vs enjuague continuo</text>
+        <text x="780" y="93" fill="var(--text)" font-family="Inter,sans-serif" font-size="9">&#8226; Flujo: 4&ndash;8 L/min (vs 15&ndash;30 una etapa)</text>
       </svg>
     </div>
     <div>
-      <h3 class="section-title">Resoluci&oacute;n de Problemas <span class="sub">Stage 2</span></h3>
+      <h3 class="section-title">Resoluci&oacute;n de Problemas <span class="sub">Etapa 2</span></h3>
       <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
         <table class="data-table compact">
-          <thead><tr><th>Symptom</th><th>Probable Cause</th><th>Corrective Action</th></tr></thead>
+          <thead><tr><th>S&iacute;ntoma</th><th>Causa Probable</th><th>Acci&oacute;n Correctiva</th></tr></thead>
           <tbody>
-            <tr><td>High conductivity</td><td>Excessive drag-out; low flow rate</td><td>Increase drain time; increase fresh water flow</td></tr>
-            <tr><td>Soapy residue on parts</td><td>Inadequate rinse time or volume</td><td>Extend dwell; add agitation; double rinse</td></tr>
-            <tr><td>Acid dip goes alkaline</td><td>Cleaner carry-over</td><td>Tighten rinse; add second rinse stage</td></tr>
-            <tr><td>Foaming in rinse</td><td>Surfactant from cleaner</td><td>Increase water flow; check cleaner formulation</td></tr>
+            <tr><td>Conductividad alta</td><td>Arrastre excesivo; flujo bajo</td><td>Aumente el tiempo de escurrido; suba el flujo de agua fresca</td></tr>
+            <tr><td>Residuo jabonoso en las piezas</td><td>Tiempo o volumen de enjuague insuficiente</td><td>Alargue la permanencia; agregue agitaci&oacute;n; enjuague doble</td></tr>
+            <tr><td>La inmersi&oacute;n &aacute;cida se vuelve alcalina</td><td>Arrastre de limpiador</td><td>Ajuste el enjuague; agregue una segunda etapa</td></tr>
+            <tr><td>Espuma en el enjuague</td><td>Surfactante del limpiador</td><td>Suba el flujo de agua; revise la f&oacute;rmula del limpiador</td></tr>
           </tbody>
         </table>
       </div>
