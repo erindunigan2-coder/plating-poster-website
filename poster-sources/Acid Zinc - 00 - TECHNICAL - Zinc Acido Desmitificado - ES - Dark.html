@@ -46,6 +46,29 @@ html,body{margin:0;padding:0;background:#0a0c14;}
 .tweaks{position:fixed;bottom:16px;right:16px;z-index:100;background:rgba(13,16,32,.92);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:10px 14px;display:flex;flex-direction:column;gap:8px;font-family:'Inter',sans-serif;font-size:12px;color:#F0EDE8;}
 @media print{@page{size:12.5in 18.75in;margin:0;}html,body{background:#1A1F2E !important;-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}*{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}.stage{position:static;padding:0;display:block;overflow:visible;}.poster-wrap{transform:none !important;width:auto !important;height:auto !important;}.poster{box-shadow:none !important;width:1200px !important;height:1800px !important;overflow:hidden !important;}.glass,.insight-card,.safety-card{backdrop-filter:none !important;-webkit-backdrop-filter:none !important;}.tweaks{display:none !important;}}
 </style>
+<style id="wave2-fit">
+/* wave2-fit: vertical tightening to seat the safety card (Bailey 2026-08-05) */
+.poster-body{gap:3px;}
+.data-table td{padding:4px 10px;line-height:1.4;}
+.data-table th{padding:5px 10px;}
+.data-table.compact td{padding:4px 10px;line-height:1.38;}
+.data-table.compact th{padding:5px 10px;}
+.data-table.bath td{padding:4px 8px;line-height:1.35;}
+.data-table.bath th{padding:5px 8px;}
+.bottom-grid .data-table.bath td{padding:4px 10px;}
+.bottom-grid .data-table.bath th{padding:5px 10px;}
+.rule-card{padding:8px 22px;}
+.rule-text{margin-top:2px;line-height:1.42;}
+.section-title{margin:0 0 2px;}
+.compare-card{padding:8px 16px;}
+.compare-card li{line-height:1.42;padding:1px 0;}
+.compare-card h4{margin:0 0 5px;}
+.insight-card{padding:10px 18px;}
+.insight-text{line-height:1.42;}
+.safety-card{padding:9px 16px;}
+.safety-head{font-size:18px;margin-bottom:3px;}
+.safety-body{line-height:1.42;}
+</style>
 </head>
 <body>
 <div class="stage">
@@ -72,7 +95,7 @@ html,body{margin:0;padding:0;background:#0a0c14;}
     <div class="glass rule-card">
       <div class="rule-num">5&ndash;15</div>
       <div class="rule-body">
-        <div class="rule-label">Espesor T&iacute;pico del Dep&oacute;sito (&micro;m) &mdash; Zinc &Aacute;cido Brillante</div>
+        <div class="rule-label">Espesor T&iacute;pico del Dep&oacute;sito (<span style="text-transform:none">&micro;m</span>) &mdash; Zinc &Aacute;cido Brillante</div>
         <div class="rule-text">El zinc &aacute;cido (base cloruro de potasio o amonio) entrega dep&oacute;sitos brillantes y nivelados directamente del ba&ntilde;o. El rango inferior de espesor versus zinc alcalino es t&iacute;pico porque el dep&oacute;sito denso y brillante proporciona excelente protecci&oacute;n por micr&oacute;metro de recubrimiento.</div>
       </div>
     </div>
@@ -107,35 +130,35 @@ html,body{margin:0;padding:0;background:#0a0c14;}
       <h3 class="section-title" style="margin-bottom:4px;">Flujo del Proceso de Zinc &Aacute;cido <span class="sub">l&iacute;nea bastidor / tambor</span></h3>
       <svg viewBox="0 0 1060 80" width="100%" height="75" fill="none" xmlns="http://www.w3.org/2000/svg">
     <rect x="10" y="8" width="95" height="38" rx="7" fill="rgba(46,196,182,.10)" stroke="var(--teal)" stroke-width="1.5"/>
-    <text x="57" y="24" text-anchor="middle" fill="var(--teal)" font-family="Barlow Condensed,sans-serif" font-weight="900" font-size="11">CLEAN</text>
-    <text x="57" y="38" text-anchor="middle" fill="currentColor" font-family="Inter,sans-serif" font-weight="500" font-size="8" opacity=".6">Soak + E-Clean</text>
+    <text x="57.5" y="24" text-anchor="middle" fill="var(--teal)" font-family="Barlow Condensed,sans-serif" font-weight="900" font-size="11">LIMPIAR</text>
+    <text x="57.5" y="38" text-anchor="middle" fill="currentColor" font-family="Inter,sans-serif" font-weight="500" font-size="8" opacity=".6">Inm.+E-Limp.</text>
     <line x1="109" y1="27" x2="133" y2="27" stroke="currentColor" stroke-width="1" opacity=".3"/><polygon points="133,24 139,27 133,30" fill="currentColor" opacity=".3"/>
     <rect x="143" y="8" width="80" height="38" rx="7" fill="rgba(120,120,140,.08)" stroke="var(--muted)" stroke-width="1"/>
-    <text x="183" y="24" text-anchor="middle" fill="var(--muted)" font-family="Barlow Condensed,sans-serif" font-weight="900" font-size="11">RINSE</text>
-    <text x="183" y="38" text-anchor="middle" fill="currentColor" font-family="Inter,sans-serif" font-weight="500" font-size="8" opacity=".6">Overflow</text>
+    <text x="183" y="24" text-anchor="middle" fill="var(--muted)" font-family="Barlow Condensed,sans-serif" font-weight="900" font-size="11">ENJUAGUE</text>
+    <text x="183" y="38" text-anchor="middle" fill="currentColor" font-family="Inter,sans-serif" font-weight="500" font-size="8" opacity=".6">Rebose</text>
     <line x1="227" y1="27" x2="251" y2="27" stroke="currentColor" stroke-width="1" opacity=".3"/><polygon points="251,24 257,27 251,30" fill="currentColor" opacity=".3"/>
     <rect x="261" y="8" width="95" height="38" rx="7" fill="rgba(224,92,92,.10)" stroke="var(--coral)" stroke-width="1.2"/>
-    <text x="308" y="24" text-anchor="middle" fill="var(--coral)" font-family="Barlow Condensed,sans-serif" font-weight="900" font-size="11">ACTIVATE</text>
-    <text x="308" y="38" text-anchor="middle" fill="currentColor" font-family="Inter,sans-serif" font-weight="500" font-size="8" opacity=".6">HCl Dip</text>
+    <text x="308.5" y="24" text-anchor="middle" fill="var(--coral)" font-family="Barlow Condensed,sans-serif" font-weight="900" font-size="11">ACTIVAR</text>
+    <text x="308.5" y="38" text-anchor="middle" fill="currentColor" font-family="Inter,sans-serif" font-weight="500" font-size="8" opacity=".6">Inm. HCl</text>
     <line x1="360" y1="27" x2="384" y2="27" stroke="currentColor" stroke-width="1" opacity=".3"/><polygon points="384,24 390,27 384,30" fill="currentColor" opacity=".3"/>
     <rect x="394" y="4" width="160" height="46" rx="8" fill="rgba(232,160,32,.12)" stroke="var(--amber)" stroke-width="2"/>
-    <text x="474" y="22" text-anchor="middle" fill="var(--amber)" font-family="Barlow Condensed,sans-serif" font-weight="900" font-size="13">ACID ZINC PLATE</text>
-    <text x="474" y="38" text-anchor="middle" fill="currentColor" font-family="Inter,sans-serif" font-weight="500" font-size="8.5" opacity=".6">pH 4.8&ndash;5.8 &bull; 70&ndash;85&deg;F</text>
-    <text x="474" y="70" text-anchor="middle" fill="var(--amber)" font-family="JetBrains Mono,monospace" font-size="8" opacity=".7">KEY STAGE</text>
+    <text x="474" y="22" text-anchor="middle" fill="var(--amber)" font-family="Barlow Condensed,sans-serif" font-weight="900" font-size="13">ZINCADO &#193;CIDO</text>
+    <text x="474" y="38" text-anchor="middle" fill="currentColor" font-family="Inter,sans-serif" font-weight="500" font-size="8.5" opacity=".6">pH 4.8&#8211;5.8 &#8226; 21&#8211;29&#176;C</text>
+    <text x="474" y="70" text-anchor="middle" fill="var(--amber)" font-family="JetBrains Mono,monospace" font-size="8" opacity=".7">ETAPA CLAVE</text>
     <line x1="558" y1="27" x2="582" y2="27" stroke="currentColor" stroke-width="1" opacity=".3"/><polygon points="582,24 588,27 582,30" fill="currentColor" opacity=".3"/>
     <rect x="592" y="8" width="80" height="38" rx="7" fill="rgba(120,120,140,.08)" stroke="var(--muted)" stroke-width="1"/>
-    <text x="632" y="24" text-anchor="middle" fill="var(--muted)" font-family="Barlow Condensed,sans-serif" font-weight="900" font-size="11">RINSE</text>
-    <text x="632" y="38" text-anchor="middle" fill="currentColor" font-family="Inter,sans-serif" font-weight="500" font-size="8" opacity=".6">Drag-Out</text>
+    <text x="632" y="24" text-anchor="middle" fill="var(--muted)" font-family="Barlow Condensed,sans-serif" font-weight="900" font-size="11">ENJUAGUE</text>
+    <text x="632" y="38" text-anchor="middle" fill="currentColor" font-family="Inter,sans-serif" font-weight="500" font-size="8" opacity=".6">Arrastre</text>
     <line x1="676" y1="27" x2="700" y2="27" stroke="currentColor" stroke-width="1" opacity=".3"/><polygon points="700,24 706,27 700,30" fill="currentColor" opacity=".3"/>
     <rect x="710" y="8" width="115" height="38" rx="7" fill="rgba(39,174,96,.10)" stroke="var(--emerald)" stroke-width="1.2"/>
-    <text x="767" y="24" text-anchor="middle" fill="var(--emerald)" font-family="Barlow Condensed,sans-serif" font-weight="900" font-size="11">PASSIVATE</text>
-    <text x="767" y="38" text-anchor="middle" fill="currentColor" font-family="Inter,sans-serif" font-weight="500" font-size="8" opacity=".6">Cr(III) Trivalent</text>
+    <text x="767.5" y="24" text-anchor="middle" fill="var(--emerald)" font-family="Barlow Condensed,sans-serif" font-weight="900" font-size="11">PASIVAR</text>
+    <text x="767.5" y="38" text-anchor="middle" fill="currentColor" font-family="Inter,sans-serif" font-weight="500" font-size="8" opacity=".6">Cr(III) trivalente</text>
     <line x1="829" y1="27" x2="853" y2="27" stroke="currentColor" stroke-width="1" opacity=".3"/><polygon points="853,24 859,27 853,30" fill="currentColor" opacity=".3"/>
     <rect x="863" y="8" width="100" height="38" rx="7" fill="rgba(232,160,32,.08)" stroke="var(--amber)" stroke-width="1" stroke-dasharray="5,3"/>
-    <text x="913" y="24" text-anchor="middle" fill="var(--amber)" font-family="Barlow Condensed,sans-serif" font-weight="900" font-size="11">SEAL / DRY</text>
-    <text x="913" y="38" text-anchor="middle" fill="currentColor" font-family="Inter,sans-serif" font-weight="500" font-size="8" opacity=".6">Topcoat + Oven</text>
+    <text x="913" y="24" text-anchor="middle" fill="var(--amber)" font-family="Barlow Condensed,sans-serif" font-weight="900" font-size="11">SELLAR / SECAR</text>
+    <text x="913" y="38" text-anchor="middle" fill="currentColor" font-family="Inter,sans-serif" font-weight="500" font-size="8" opacity=".6">Sellador + horno</text>
     <line x1="10" y1="58" x2="963" y2="58" stroke="currentColor" stroke-width="1.5" opacity=".12" stroke-dasharray="8,4"/>
-    <text x="985" y="62" fill="currentColor" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="8" opacity=".35" letter-spacing=".06em">LINE</text>
+    <text x="986" y="62" fill="currentColor" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="8" opacity=".35" letter-spacing=".06em">L&#205;NEA</text>
 </svg>
     </div>
 
@@ -213,6 +236,11 @@ html,body{margin:0;padding:0;background:#0a0c14;}
           </ul>
         </div>
       </div>
+    </div>
+
+    <div class="safety-card">
+      <div class="safety-head">&#9888; Resumen de Seguridad</div>
+      <div class="safety-body"><strong>&Aacute;cido clorh&iacute;drico</strong> (ba&ntilde;o de activaci&oacute;n 5&ndash;10%) &mdash; corrosivo; causa quemaduras en piel y ojos y libera vapor de HCl. PEL federal de OSHA 5 ppm (techo). Siempre agregue el &aacute;cido al agua; ventile el ba&ntilde;o. <strong>Ba&ntilde;o &aacute;cido de zinc</strong> (pH 4.8&ndash;5.8) &mdash; electrolito corrosivo; el &aacute;cido b&oacute;rico y las sales de zinc irritan piel, ojos y v&iacute;as respiratorias. <strong>Gas hidr&oacute;geno</strong> se genera en el c&aacute;todo &mdash; sin llamas abiertas; asegure la ventilaci&oacute;n del tanque. <strong>Portadores de abrillantador</strong> pueden ser combustibles &mdash; almacene seg&uacute;n la SDS. Guantes impermeables, delantal y careta; regadera de emergencia y lavaojos al alcance; SDS vigente en cada estaci&oacute;n. No comer, beber ni fumar en la l&iacute;nea.</div>
     </div>
   </div>
   <footer class="footer poster-footer">
