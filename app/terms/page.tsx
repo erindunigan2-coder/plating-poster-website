@@ -25,7 +25,7 @@ export default function TermsPage() {
             Terms of Service
           </h1>
           <p className="text-sm" style={{ color: "#888880" }}>
-            Last updated: June 17, 2026
+            Last updated: August 7, 2026
           </p>
         </div>
       </section>
@@ -128,24 +128,73 @@ export default function TermsPage() {
         </div>
 
         <div>
-          <h2 className={heading} style={sectionStyle}>8. Limitation of Liability</h2>
+          <h2 className={heading} style={sectionStyle}>8. Educational Use and No Professional Advice</h2>
           <div className={body} style={bodyColor}>
             <p>
-              Our posters are intended as reference and educational materials. They are not a
-              substitute for professional training, engineering specifications, or regulatory
-              compliance. We make no warranty that the content is error-free or suitable for any
-              specific application. Use of poster content in your operations is at your own risk.
+              Our posters and training manuals are educational reference materials for the
+              surface-finishing and metal-plating industry. They describe processes in general
+              terms and are not tailored to any specific shop, chemistry, or piece of equipment.
+              They are not a substitute for the safety data sheets that accompany the chemicals you
+              use, for your chemical supplier's instructions, for your facility's written safety
+              procedures, or for professional training.
             </p>
             <p>
-              To the fullest extent permitted by law, Plating Posters Inc shall not be liable for
-              any indirect, incidental, special, or consequential damages arising from your use
-              of the Site or our products.
+              We do not provide legal, engineering, safety, or regulatory-compliance advice, and
+              nothing we sell should be treated as that kind of advice. You remain solely
+              responsible for operating safely and for complying with all laws and regulations that
+              apply to your business, including the requirements of OSHA, the EPA, and your state
+              and local authorities.
             </p>
           </div>
         </div>
 
         <div>
-          <h2 className={heading} style={sectionStyle}>9. Governing Law</h2>
+          <h2 className={heading} style={sectionStyle}>9. Disclaimer of Warranties</h2>
+          <div className={body} style={bodyColor}>
+            <p>
+              Our products are provided "as is" and "as available." We make a genuine effort to
+              keep the content accurate and current, but we do not warrant that it is complete,
+              error-free, up to date, or suitable for any particular purpose. To the fullest extent
+              permitted by law, we disclaim all warranties, whether express or implied, including
+              the implied warranties of merchantability, fitness for a particular purpose, and
+              non-infringement. You are responsible for verifying any information before you rely
+              on it.
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <h2 className={heading} style={sectionStyle}>10. Limitation of Liability</h2>
+          <div className={body} style={bodyColor}>
+            <p>
+              To the fullest extent permitted by law, Plating Posters Inc and its owners,
+              employees, and suppliers will not be liable for any indirect, incidental, special,
+              consequential, or punitive damages, or for any loss of profits, revenue, data, or
+              goodwill, arising out of or related to your use of the Site, our posters, or our
+              manuals. This applies regardless of the legal theory and even if we have been advised
+              of the possibility of such damages. In every case, our total liability to you for any
+              claim will not exceed the amount you paid us for the product that gave rise to the
+              claim. Some jurisdictions do not allow certain limitations, so some of these
+              limitations may not apply to you.
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <h2 className={heading} style={sectionStyle}>11. Indemnification</h2>
+          <div className={body} style={bodyColor}>
+            <p>
+              You agree to defend, indemnify, and hold harmless Plating Posters Inc and its owners,
+              employees, and suppliers from any claims, damages, losses, liabilities, and expenses,
+              including reasonable attorneys' fees, that arise out of or relate to your use of our
+              posters or manuals, your operation of any process they describe, or your violation of
+              these Terms or of any applicable law or regulation.
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <h2 className={heading} style={sectionStyle}>12. Governing Law</h2>
           <div className={body} style={bodyColor}>
             <p>
               These terms are governed by the laws of the State of Texas. Any disputes shall be
@@ -155,7 +204,7 @@ export default function TermsPage() {
         </div>
 
         <div>
-          <h2 className={heading} style={sectionStyle}>10. Contact</h2>
+          <h2 className={heading} style={sectionStyle}>13. Contact</h2>
           <div className={body} style={bodyColor}>
             <p>
               Questions about these Terms? Contact us at{" "}
