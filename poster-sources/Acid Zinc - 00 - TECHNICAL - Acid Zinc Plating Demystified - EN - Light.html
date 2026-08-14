@@ -46,6 +46,29 @@ html,body{margin:0;padding:0;background:#0a0c14;}
 .tweaks{position:fixed;bottom:16px;right:16px;z-index:100;background:rgba(13,16,32,.92);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:10px 14px;display:flex;flex-direction:column;gap:8px;font-family:'Inter',sans-serif;font-size:12px;color:#F0EDE8;}
 @media print{@page{size:12.5in 18.75in;margin:0;}html,body{background:#1A1F2E !important;-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}*{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}.stage{position:static;padding:0;display:block;overflow:visible;}.poster-wrap{transform:none !important;width:auto !important;height:auto !important;}.poster{box-shadow:none !important;width:1200px !important;height:1800px !important;overflow:hidden !important;}.glass,.insight-card,.safety-card{backdrop-filter:none !important;-webkit-backdrop-filter:none !important;}.tweaks{display:none !important;}}
 </style>
+<style id="wave2-fit">
+/* wave2-fit: vertical tightening to seat the safety card (Bailey 2026-08-05) */
+.poster-body{gap:3px;}
+.data-table td{padding:4px 10px;line-height:1.4;}
+.data-table th{padding:5px 10px;}
+.data-table.compact td{padding:4px 10px;line-height:1.38;}
+.data-table.compact th{padding:5px 10px;}
+.data-table.bath td{padding:4px 8px;line-height:1.35;}
+.data-table.bath th{padding:5px 8px;}
+.bottom-grid .data-table.bath td{padding:4px 10px;}
+.bottom-grid .data-table.bath th{padding:5px 10px;}
+.rule-card{padding:8px 22px;}
+.rule-text{margin-top:2px;line-height:1.42;}
+.section-title{margin:0 0 2px;}
+.compare-card{padding:8px 16px;}
+.compare-card li{line-height:1.42;padding:1px 0;}
+.compare-card h4{margin:0 0 5px;}
+.insight-card{padding:10px 18px;}
+.insight-text{line-height:1.42;}
+.safety-card{padding:9px 16px;}
+.safety-head{font-size:18px;margin-bottom:3px;}
+.safety-body{line-height:1.42;}
+</style>
 </head>
 <body>
 <div class="stage">
@@ -72,7 +95,7 @@ html,body{margin:0;padding:0;background:#0a0c14;}
     <div class="glass rule-card">
       <div class="rule-num">5&ndash;15</div>
       <div class="rule-body">
-        <div class="rule-label">Typical Deposit Thickness (&micro;m) &mdash; Bright Acid Zinc</div>
+        <div class="rule-label">Typical Deposit Thickness (<span style="text-transform:none">&micro;m</span>) &mdash; Bright Acid Zinc</div>
         <div class="rule-text">Acid zinc (ammonium chloride or potassium chloride based) delivers bright, leveled deposits directly from the bath. The lower thickness range versus alkaline zinc is typical because the bright, dense deposit and efficient passivation provide excellent corrosion protection per micrometer of coating.</div>
       </div>
     </div>
@@ -213,6 +236,11 @@ html,body{margin:0;padding:0;background:#0a0c14;}
           </ul>
         </div>
       </div>
+    </div>
+
+    <div class="safety-card">
+      <div class="safety-head">&#9888; Safety Snapshot</div>
+      <div class="safety-body"><strong>Hydrochloric acid</strong> (5&ndash;10% activation dip) &mdash; corrosive; causes skin and eye burns and releases HCl vapor. Federal OSHA PEL 5 ppm (ceiling). Always add acid to water; ventilate the dip. <strong>Acidic zinc bath</strong> (pH 4.8&ndash;5.8) &mdash; corrosive electrolyte; boric acid and zinc salts irritate skin, eyes, and airways. <strong>Hydrogen gas</strong> evolves at the cathode &mdash; no open flames; ensure tank ventilation. <strong>Brightener carriers</strong> may be combustible &mdash; store per SDS. Impervious gloves, apron, and face shield; emergency shower and eyewash within reach; current SDS at every station. No eating, drinking, or smoking on the line.</div>
     </div>
   </div>
   <footer class="footer poster-footer">

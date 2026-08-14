@@ -46,6 +46,29 @@ html,body{margin:0;padding:0;background:#0a0c14;}
 .tweaks{position:fixed;bottom:16px;right:16px;z-index:100;background:rgba(13,16,32,.92);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:10px 14px;display:flex;flex-direction:column;gap:8px;font-family:'Inter',sans-serif;font-size:12px;color:#F0EDE8;}
 @media print{@page{size:12.5in 18.75in;margin:0;}html,body{background:#1A1F2E !important;-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}*{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}.stage{position:static;padding:0;display:block;overflow:visible;}.poster-wrap{transform:none !important;width:auto !important;height:auto !important;}.poster{box-shadow:none !important;width:1200px !important;height:1800px !important;overflow:hidden !important;}.glass,.insight-card,.safety-card{backdrop-filter:none !important;-webkit-backdrop-filter:none !important;}.tweaks{display:none !important;}}
 </style>
+<style id="wave2-fit">
+/* wave2-fit: vertical tightening to seat the safety card (Bailey 2026-08-05) */
+.poster-body{gap:3px;}
+.data-table td{padding:4px 10px;line-height:1.4;}
+.data-table th{padding:5px 10px;}
+.data-table.compact td{padding:4px 10px;line-height:1.38;}
+.data-table.compact th{padding:5px 10px;}
+.data-table.bath td{padding:4px 8px;line-height:1.35;}
+.data-table.bath th{padding:5px 8px;}
+.bottom-grid .data-table.bath td{padding:4px 10px;}
+.bottom-grid .data-table.bath th{padding:5px 10px;}
+.rule-card{padding:8px 22px;}
+.rule-text{margin-top:2px;line-height:1.42;}
+.section-title{margin:0 0 2px;}
+.compare-card{padding:8px 16px;}
+.compare-card li{line-height:1.42;padding:1px 0;}
+.compare-card h4{margin:0 0 5px;}
+.insight-card{padding:10px 18px;}
+.insight-text{line-height:1.42;}
+.safety-card{padding:9px 16px;}
+.safety-head{font-size:18px;margin-bottom:3px;}
+.safety-body{line-height:1.42;}
+</style>
 </head>
 <body>
 <div class="stage">
@@ -72,7 +95,7 @@ html,body{margin:0;padding:0;background:#0a0c14;}
     <div class="glass rule-card">
       <div class="rule-num">8&ndash;25</div>
       <div class="rule-body">
-        <div class="rule-label">Espesor T&iacute;pico del Dep&oacute;sito (&micro;m) &mdash; Zinc Alcalino en Bastidor y Tambor</div>
+        <div class="rule-label">Espesor T&iacute;pico del Dep&oacute;sito (<span style="text-transform:none">&micro;m</span>) &mdash; Zinc Alcalino en Bastidor y Tambor</div>
         <div class="rule-text">El zinc alcalino no cianurado produce un dep&oacute;sito mate a brillante con excelente poder de penetraci&oacute;n. A 8&ndash;25 &micro;m con pasivaci&oacute;n trivalente, el zinc alcalino entrega 120&ndash;500+ horas de corrosi&oacute;n blanca en c&aacute;mara salina seg&uacute;n espesor y sellador.</div>
       </div>
     </div>
@@ -107,35 +130,35 @@ html,body{margin:0;padding:0;background:#0a0c14;}
       <h3 class="section-title" style="margin-bottom:4px;">Flujo del Proceso de Zinc Alcalino <span class="sub">l&iacute;nea bastidor / tambor</span></h3>
       <svg viewBox="0 0 1060 80" width="100%" height="75" fill="none" xmlns="http://www.w3.org/2000/svg">
     <rect x="10" y="8" width="95" height="38" rx="7" fill="rgba(46,196,182,.10)" stroke="var(--teal)" stroke-width="1.5"/>
-    <text x="57" y="24" text-anchor="middle" fill="var(--teal)" font-family="Barlow Condensed,sans-serif" font-weight="900" font-size="11">CLEAN</text>
-    <text x="57" y="38" text-anchor="middle" fill="currentColor" font-family="Inter,sans-serif" font-weight="500" font-size="8" opacity=".6">Soak + E-Clean</text>
+    <text x="57.5" y="24" text-anchor="middle" fill="var(--teal)" font-family="Barlow Condensed,sans-serif" font-weight="900" font-size="11">LIMPIAR</text>
+    <text x="57.5" y="38" text-anchor="middle" fill="currentColor" font-family="Inter,sans-serif" font-weight="500" font-size="8" opacity=".6">Inm.+E-Limp.</text>
     <line x1="109" y1="27" x2="133" y2="27" stroke="currentColor" stroke-width="1" opacity=".3"/><polygon points="133,24 139,27 133,30" fill="currentColor" opacity=".3"/>
     <rect x="143" y="8" width="80" height="38" rx="7" fill="rgba(120,120,140,.08)" stroke="var(--muted)" stroke-width="1"/>
-    <text x="183" y="24" text-anchor="middle" fill="var(--muted)" font-family="Barlow Condensed,sans-serif" font-weight="900" font-size="11">RINSE</text>
-    <text x="183" y="38" text-anchor="middle" fill="currentColor" font-family="Inter,sans-serif" font-weight="500" font-size="8" opacity=".6">Overflow</text>
+    <text x="183" y="24" text-anchor="middle" fill="var(--muted)" font-family="Barlow Condensed,sans-serif" font-weight="900" font-size="11">ENJUAGUE</text>
+    <text x="183" y="38" text-anchor="middle" fill="currentColor" font-family="Inter,sans-serif" font-weight="500" font-size="8" opacity=".6">Rebose</text>
     <line x1="227" y1="27" x2="251" y2="27" stroke="currentColor" stroke-width="1" opacity=".3"/><polygon points="251,24 257,27 251,30" fill="currentColor" opacity=".3"/>
     <rect x="261" y="8" width="95" height="38" rx="7" fill="rgba(224,92,92,.10)" stroke="var(--coral)" stroke-width="1.2"/>
-    <text x="308" y="24" text-anchor="middle" fill="var(--coral)" font-family="Barlow Condensed,sans-serif" font-weight="900" font-size="11">ACTIVATE</text>
-    <text x="308" y="38" text-anchor="middle" fill="currentColor" font-family="Inter,sans-serif" font-weight="500" font-size="8" opacity=".6">HCl Dip</text>
+    <text x="308.5" y="24" text-anchor="middle" fill="var(--coral)" font-family="Barlow Condensed,sans-serif" font-weight="900" font-size="11">ACTIVAR</text>
+    <text x="308.5" y="38" text-anchor="middle" fill="currentColor" font-family="Inter,sans-serif" font-weight="500" font-size="8" opacity=".6">Inm. HCl</text>
     <line x1="360" y1="27" x2="384" y2="27" stroke="currentColor" stroke-width="1" opacity=".3"/><polygon points="384,24 390,27 384,30" fill="currentColor" opacity=".3"/>
     <rect x="394" y="4" width="160" height="46" rx="8" fill="rgba(232,160,32,.12)" stroke="var(--amber)" stroke-width="2"/>
-    <text x="474" y="22" text-anchor="middle" fill="var(--amber)" font-family="Barlow Condensed,sans-serif" font-weight="900" font-size="13">ALK ZINC PLATE</text>
-    <text x="474" y="38" text-anchor="middle" fill="currentColor" font-family="Inter,sans-serif" font-weight="500" font-size="8.5" opacity=".6">NaOH 120&ndash;150 g/L &bull; 70&ndash;90&deg;F</text>
-    <text x="474" y="70" text-anchor="middle" fill="var(--amber)" font-family="JetBrains Mono,monospace" font-size="8" opacity=".7">KEY STAGE</text>
+    <text x="474" y="22" text-anchor="middle" fill="var(--amber)" font-family="Barlow Condensed,sans-serif" font-weight="900" font-size="13">ZINC ALCALINO</text>
+    <text x="474" y="38" text-anchor="middle" fill="currentColor" font-family="Inter,sans-serif" font-weight="500" font-size="8.5" opacity=".6">NaOH 120&#8211;150 g/L &#8226; 21&#8211;32&#176;C</text>
+    <text x="474" y="70" text-anchor="middle" fill="var(--amber)" font-family="JetBrains Mono,monospace" font-size="8" opacity=".7">ETAPA CLAVE</text>
     <line x1="558" y1="27" x2="582" y2="27" stroke="currentColor" stroke-width="1" opacity=".3"/><polygon points="582,24 588,27 582,30" fill="currentColor" opacity=".3"/>
     <rect x="592" y="8" width="80" height="38" rx="7" fill="rgba(120,120,140,.08)" stroke="var(--muted)" stroke-width="1"/>
-    <text x="632" y="24" text-anchor="middle" fill="var(--muted)" font-family="Barlow Condensed,sans-serif" font-weight="900" font-size="11">RINSE</text>
-    <text x="632" y="38" text-anchor="middle" fill="currentColor" font-family="Inter,sans-serif" font-weight="500" font-size="8" opacity=".6">Drag-Out</text>
+    <text x="632" y="24" text-anchor="middle" fill="var(--muted)" font-family="Barlow Condensed,sans-serif" font-weight="900" font-size="11">ENJUAGUE</text>
+    <text x="632" y="38" text-anchor="middle" fill="currentColor" font-family="Inter,sans-serif" font-weight="500" font-size="8" opacity=".6">Arrastre</text>
     <line x1="676" y1="27" x2="700" y2="27" stroke="currentColor" stroke-width="1" opacity=".3"/><polygon points="700,24 706,27 700,30" fill="currentColor" opacity=".3"/>
     <rect x="710" y="8" width="115" height="38" rx="7" fill="rgba(39,174,96,.10)" stroke="var(--emerald)" stroke-width="1.2"/>
-    <text x="767" y="24" text-anchor="middle" fill="var(--emerald)" font-family="Barlow Condensed,sans-serif" font-weight="900" font-size="11">PASSIVATE</text>
-    <text x="767" y="38" text-anchor="middle" fill="currentColor" font-family="Inter,sans-serif" font-weight="500" font-size="8" opacity=".6">Cr(III) Trivalent</text>
+    <text x="767.5" y="24" text-anchor="middle" fill="var(--emerald)" font-family="Barlow Condensed,sans-serif" font-weight="900" font-size="11">PASIVAR</text>
+    <text x="767.5" y="38" text-anchor="middle" fill="currentColor" font-family="Inter,sans-serif" font-weight="500" font-size="8" opacity=".6">Cr(III) trivalente</text>
     <line x1="829" y1="27" x2="853" y2="27" stroke="currentColor" stroke-width="1" opacity=".3"/><polygon points="853,24 859,27 853,30" fill="currentColor" opacity=".3"/>
     <rect x="863" y="8" width="100" height="38" rx="7" fill="rgba(232,160,32,.08)" stroke="var(--amber)" stroke-width="1" stroke-dasharray="5,3"/>
-    <text x="913" y="24" text-anchor="middle" fill="var(--amber)" font-family="Barlow Condensed,sans-serif" font-weight="900" font-size="11">SEAL / DRY</text>
-    <text x="913" y="38" text-anchor="middle" fill="currentColor" font-family="Inter,sans-serif" font-weight="500" font-size="8" opacity=".6">Topcoat + Oven</text>
+    <text x="913" y="24" text-anchor="middle" fill="var(--amber)" font-family="Barlow Condensed,sans-serif" font-weight="900" font-size="11">SELLAR / SECAR</text>
+    <text x="913" y="38" text-anchor="middle" fill="currentColor" font-family="Inter,sans-serif" font-weight="500" font-size="8" opacity=".6">Sellador + horno</text>
     <line x1="10" y1="58" x2="963" y2="58" stroke="currentColor" stroke-width="1.5" opacity=".12" stroke-dasharray="8,4"/>
-    <text x="985" y="62" fill="currentColor" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="8" opacity=".35" letter-spacing=".06em">LINE</text>
+    <text x="986" y="62" fill="currentColor" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="8" opacity=".35" letter-spacing=".06em">L&#205;NEA</text>
 </svg>
     </div>
 
@@ -156,7 +179,7 @@ html,body{margin:0;padding:0;background:#0a0c14;}
 
         <div class="glass" style="padding:12px 18px;border-left:3px solid var(--amber);margin-top:10px;">
   <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:17px;color:var(--amber);letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px;">&iquest;Sab&iacute;a Usted?</div>
-      <div style="font-family:'Inter',sans-serif;font-size:12.5px;color:var(--text);line-height:1.5;">El zincado alcalino fue desarrollado en los a&ntilde;os 60 como reemplazo directo de los ba&ntilde;os t&oacute;xicos de zinc cianurado. El avance fue usar <strong style="color:var(--amber);">hidr&oacute;xido de sodio</strong> como agente complejante en lugar de cianuro de sodio, logrando poder de penetraci&oacute;n casi id&eacute;ntico con toxicidad dram&aacute;ticamente menor. Hoy el zinc alcalino no cianurado representa m&aacute;s del <strong style="color:var(--amber);">60% de todo el zincado</strong> en Norteam&eacute;rica. El proceso es tan tolerante que muchos talleres operan la misma qu&iacute;mica durante d&eacute;cadas con ajustes m&iacute;nimos.</div>
+      <div style="font-family:'Inter',sans-serif;font-size:12.5px;color:var(--text);line-height:1.5;">El zincado alcalino fue desarrollado en los a&ntilde;os 60 como reemplazo directo de los ba&ntilde;os t&oacute;xicos de zinc cianurado. El avance fue usar <strong style="color:var(--amber);">hidr&oacute;xido de sodio</strong> como agente complejante en lugar de cianuro de sodio, logrando poder de penetraci&oacute;n casi id&eacute;ntico con toxicidad dram&aacute;ticamente menor. Hoy el zinc alcalino no cianurado representa m&aacute;s del <strong style="color:var(--amber);">60% de todo el zincado</strong> en Norteam&eacute;rica. El proceso es tan tolerante que muchos talleres operan la misma qu&iacute;mica durante d&eacute;cadas con ajustes m&iacute;nimos &mdash; uno de los procesos de recubrimiento m&aacute;s estables y de menor mantenimiento de la industria.</div>
 </div>
       </div>
       <div>
@@ -169,7 +192,7 @@ html,body{margin:0;padding:0;background:#0a0c14;}
               <tr><td>Hidr&oacute;xido de Sodio</td><td class="mono">120&ndash;150 g/L</td></tr>
               <tr><td>Abrillantador</td><td class="mono">Seg&uacute;n TDS del proveedor</td></tr>
               <tr><td>Temperatura</td><td class="mono">21&ndash;32&deg;C</td></tr>
-              <tr><td>DC C&aacute;todo</td><td class="mono">1&ndash;4 A/dm&sup2;</td></tr>
+              <tr><td>Densidad de Corriente (c&aacute;todo)</td><td class="mono">1&ndash;4 A/dm&sup2;</td></tr>
               <tr><td>pH</td><td class="mono">&gt;13 (inherente)</td></tr>
             </tbody>
           </table>
@@ -203,7 +226,7 @@ html,body{margin:0;padding:0;background:#0a0c14;}
           </ul>
         </div>
         <div class="glass compare-card dont" style="padding:8px 14px;">
-          <h4 style="font-size:18px;margin-bottom:5px;">Zinc &Aacute;cido <span class="tag bad">Elegir En Su Lugar</span></h4>
+          <h4 style="font-size:18px;margin-bottom:5px;">Zinc &Aacute;cido <span class="tag bad">Cu&aacute;ndo Elegir Otro Proceso</span></h4>
           <ul>
             <li>Acabado decorativo brillante requerido</li>
             <li>Fundiciones a presi&oacute;n o sustratos de zinc</li>
@@ -214,11 +237,16 @@ html,body{margin:0;padding:0;background:#0a0c14;}
         </div>
       </div>
     </div>
+
+    <div class="safety-card">
+      <div class="safety-head">&#9888; Resumen de Seguridad</div>
+      <div class="safety-body"><strong>Hidr&oacute;xido de sodio</strong> (NaOH 120&ndash;150 g/L) &mdash; fuertemente c&aacute;ustico; causa quemaduras graves en piel y ojos al contacto y genera niebla c&aacute;ustica y calor al mezclar. PEL federal de OSHA 2 mg/m&sup3;. Siempre agregue la sosa al agua, nunca al rev&eacute;s; se requiere careta completa, gafas qu&iacute;micas, guantes largos y delantal. <strong>Gas hidr&oacute;geno</strong> se genera en el c&aacute;todo &mdash; sin llamas ni chispas; ventile el tanque. <strong>Quelantes / abrillantadores</strong> complican el tratamiento de residuos &mdash; segregue y trate hasta los l&iacute;mites del permiso. Regadera de emergencia y lavaojos al alcance; SDS vigente en cada estaci&oacute;n. No comer, beber ni fumar en la l&iacute;nea.</div>
+    </div>
   </div>
   <footer class="footer poster-footer">
     <p class="footer-disclaimer">Referencia t&eacute;cnica solamente. Verifique todos los par&aacute;metros contra la TDS de su proveedor, especificaciones del cliente y requisitos regulatorios aplicables antes del uso en producci&oacute;n.</p>
     <p class="footer-title">Zinc Alcalino Desmitificado &mdash; Serie de Electrodeposici&oacute;n</p>
-    <span class="footer-brand">Plating Posters &middot; Metal Finishing Reference Series &middot; PP-ZnAlk-00-T / v1.0 / 2026</span>
+    <span class="footer-brand">Plating Posters &middot; Serie de Referencia de Acabados Met&aacute;licos &middot; PP-ZnAlk-00-T / v1.0 / 2026</span>
   </footer>
 </div>
 </div>
