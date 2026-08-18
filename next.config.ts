@@ -22,6 +22,17 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      {
+        // Printed QR target (2026 postcard campaign). Deliberately non-permanent:
+        // the QR on printed cards is fixed, so this must stay repointable.
+        source: "/wall",
+        destination: "/?utm_source=postcard&utm_medium=directmail&utm_campaign=postcard-2026-09",
+        permanent: false,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

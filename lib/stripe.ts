@@ -193,6 +193,9 @@ export async function createCheckoutSession(params: {
 
   const session = await getStripe().checkout.sessions.create({
     mode: "payment",
+    // Promo codes (e.g. postcard campaigns) are created in the Stripe dashboard;
+    // this only reveals the "Add promotion code" field on the hosted checkout page.
+    allow_promotion_codes: true,
     line_items: lineItems,
     shipping_options: shippingOptions,
     shipping_address_collection: {
