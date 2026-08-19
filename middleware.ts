@@ -16,9 +16,13 @@ export function middleware(req: NextRequest) {
     if (referer) {
       try {
         const refHost = new URL(referer).hostname;
-        const isAllowed = ALLOWED_ORIGINS.some(
-          (origin) => refHost === origin || refHost.endsWith(`.${origin}`)
-        );
+        // Same-host referers are always allowed — without this, preview
+        // deployments (*.vercel.app) 403 their own poster images.
+        const isAllowed =
+          refHost === req.nextUrl.hostname ||
+          ALLOWED_ORIGINS.some(
+            (origin) => refHost === origin || refHost.endsWith(`.${origin}`)
+          );
         if (!isAllowed) {
           return new NextResponse(null, { status: 403 });
         }
