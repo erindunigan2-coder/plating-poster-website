@@ -6,12 +6,12 @@
 <title>Recubrimiento de Zinc (Alcalino) | Plating Posters Inc</title>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Barlow:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#1A1F2E;--navy:#0D1020;--text:#F0EDE8;--muted:rgba(240,237,232,.62);--amber:#E8A020;--teal:#2EC4B6;--emerald:#27AE60;--coral:#E05C5C;--slate:#3A4055;--glass-bg:rgba(30,36,53,.55);--glass-border:rgba(255,255,255,.12);--glass-shadow:inset 0 1px 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(0,0,0,.2),0 4px 12px rgba(0,0,0,.25);}
+:root{--footer-muted:rgba(240,237,232,.62);--bg:#1A1F2E;--navy:#0D1020;--text:#F0EDE8;--muted:rgba(240,237,232,.62);--amber:#E8A020;--teal:#2EC4B6;--emerald:#27AE60;--coral:#E05C5C;--slate:#3A4055;--glass-bg:rgba(30,36,53,.55);--glass-border:rgba(255,255,255,.12);--glass-shadow:inset 0 1px 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(0,0,0,.2),0 4px 12px rgba(0,0,0,.25);}
 .poster[data-edition="light"]{--bg:#F5F4F0;--navy:#DDD8CE;--text:#1B2030;--muted:rgba(27,32,48,.66);--amber:#B8770D;--teal:#1A8C82;--emerald:#1E8449;--coral:#B7322F;--slate:#C5C0B5;--glass-bg:rgba(255,253,247,.66);--glass-border:rgba(27,32,48,.10);}
 html,body{margin:0;padding:0;background:#0a0c14;}
 .stage{width:100vw;height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;}
 .poster-wrap{transform-origin:top center;}
-.poster{width:900px;height:1200px;position:relative;overflow:hidden;background:radial-gradient(700px 500px at 10% 8%,rgba(46,196,182,.15),transparent 60%),radial-gradient(600px 450px at 92% 20%,rgba(232,160,32,.13),transparent 55%),radial-gradient(550px 500px at 50% 88%,rgba(224,92,92,.10),transparent 60%),var(--bg);font-family:'Inter',sans-serif;color:var(--text);display:flex;flex-direction:column;box-sizing:border-box;}
+.poster{width:900px;height:1200px;position:relative;overflow:hidden;background:radial-gradient(700px 500px at 10% 8%,rgba(46,196,182,.15),transparent 60%),radial-gradient(600px 450px at 92% 20%,rgba(232,160,32,.13),transparent 55%),radial-gradient(550px 500px at 50% 88%,rgba(224,92,92,.10),transparent 60%),var(--bg);font-family:'Inter',sans-serif;color:var(--text);display:flex;flex-direction:column;justify-content:space-between;box-sizing:border-box;}
 .poster::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:50px 50px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);pointer-events:none;z-index:0;}
 .poster>*{position:relative;z-index:1;}
 .glass{background-color:var(--glass-bg);background-image:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));border:1px solid var(--glass-border);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);box-shadow:var(--glass-shadow);border-radius:12px;}
@@ -28,10 +28,10 @@ html,body{margin:0;padding:0;background:#0a0c14;}
   <div class="corner-tab corner-tl"></div><div class="corner-tab corner-tr"></div><div class="corner-tab corner-bl"></div><div class="corner-tab corner-br"></div>
 
   <!-- ZONE 1 — HEADER -->
-  <div style="padding:22px 22px 0 22px;display:flex;align-items:flex-start;justify-content:space-between;gap:14px;min-height:155px;box-sizing:border-box;">
+  <div style="padding:22px 22px 0 22px;display:flex;align-items:flex-start;justify-content:space-between;gap:14px;min-height:155px;flex-shrink:0;box-sizing:border-box;">
     <div style="flex:1;min-width:0;">
       <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--amber);letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px;">Galvanoplastia — Recubrimiento de Zinc (Alcalino)</div>
-      <div style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:80px;color:var(--text);line-height:.95;letter-spacing:-.01em;margin-bottom:4px;">RECUBRIMIENTO DE ZINC (ALCALINO)</div>
+      <div class="poster-title" style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:80px;color:var(--text);line-height:.95;letter-spacing:-.01em;margin-bottom:4px;">RECUBRIMIENTO DE ZINC (ALCALINO)</div>
       <div style="font-family:'Barlow',sans-serif;font-weight:700;font-size:20px;color:var(--teal);margin-bottom:5px;">Electrodeposición de zinc alcalino sin cianuro</div>
       <div style="font-family:'Inter',sans-serif;font-weight:500;font-size:13px;color:var(--muted);line-height:1.4;max-width:540px;">El recubrimiento de zinc alcalino proporciona depósitos de zinc uniformes y dúctiles con excelente poder de penetración para la protección anticorrosiva de piezas de acero.</div>
     </div>
@@ -43,16 +43,16 @@ html,body{margin:0;padding:0;background:#0a0c14;}
   </div>
 
   <!-- ZONE 2 — KEY NUMBER -->
-  <div style="margin:12px 22px 0;" class="glass">
+  <div style="margin:12px 22px 0;flex-shrink:0;" class="glass">
     <div style="padding:16px 18px;background:rgba(232,160,32,.07);border-radius:12px;">
       <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--amber);letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px;">EL NÚMERO CLAVE</div>
-      <div style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:64px;color:var(--amber);line-height:1;margin-bottom:6px;">8–12 oz/gal (60–90 g/L) NaOH</div>
+      <div class="key-headline" style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:64px;color:var(--amber);line-height:1;margin-bottom:6px;">8–12 oz/gal (60–90 g/L) NaOH</div>
       <div style="font-family:'Inter',sans-serif;font-weight:500;font-size:13px;color:var(--muted);line-height:1.4;">La concentración de hidróxido de sodio controla la conductividad y la calidad del depósito — si es demasiado baja provoca quemaduras; si es demasiado alta, causa mala adhesión.</div>
     </div>
   </div>
 
   <!-- ZONE 3 — WHAT YOU MUST DO -->
-  <div style="margin:10px 22px 0;" class="glass">
+  <div style="margin:10px 22px 0;flex-shrink:0;" class="glass">
     <div style="padding:14px 16px;">
       <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:17px;color:var(--amber);letter-spacing:.07em;text-transform:uppercase;margin-bottom:10px;">LO QUE DEBE HACER</div>
       <div style="display:flex;flex-direction:column;gap:7px;">
@@ -66,7 +66,7 @@ html,body{margin:0;padding:0;background:#0a0c14;}
   </div>
 
   <!-- ZONE 4 — COMMON PROBLEMS -->
-  <div style="margin:10px 22px 0;min-height:0;flex-shrink:1;overflow:hidden;" class="glass">
+  <div style="margin:10px 22px 0;flex-shrink:0;" class="glass">
     <div style="padding:14px 16px;">
       <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:17px;color:var(--amber);letter-spacing:.07em;text-transform:uppercase;margin-bottom:10px;">PROBLEMAS COMUNES</div>
       <table style="width:100%;border-collapse:collapse;">
@@ -85,7 +85,7 @@ html,body{margin:0;padding:0;background:#0a0c14;}
   </div>
 
   <!-- ZONE 5 — SAFETY -->
-  <div style="margin:10px 22px 0;" class="glass">
+  <div style="margin:10px 22px 0;flex-shrink:0;" class="glass">
     <div style="padding:14px 16px;background:rgba(224,92,92,.06);border-radius:12px;">
       <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:17px;color:var(--coral);letter-spacing:.07em;text-transform:uppercase;margin-bottom:10px;">⚠ SEGURIDAD</div>
       <div style="display:flex;flex-direction:column;gap:6px;">
@@ -98,9 +98,9 @@ html,body{margin:0;padding:0;background:#0a0c14;}
   </div>
 
   <!-- ZONE 6 — FOOTER -->
-  <div style="margin-top:auto;flex-shrink:0;background:rgba(13,16,32,.92);border-top:1px solid rgba(255,255,255,.08);padding:11px 22px;text-align:center;">
-    <div style="font-family:'Inter',sans-serif;font-weight:400;font-size:11px;color:var(--muted);line-height:1.5;margin-bottom:4px;">Consulte al supervisor antes de ajustar los parámetros del proceso.</div>
-    <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted);">Plating Posters Inc — Metal Finishing Reference Series</div>
+  <div class="poster-footer" style="flex-shrink:0;background:rgba(13,16,32,.92);border-top:1px solid rgba(255,255,255,.08);padding:11px 22px;text-align:center;">
+    <div style="font-family:'Inter',sans-serif;font-weight:400;font-size:11px;color:var(--footer-muted);line-height:1.5;margin-bottom:4px;">Consulte al supervisor antes de ajustar los parámetros del proceso.</div>
+    <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--footer-muted);">Plating Posters Inc — Metal Finishing Reference Series</div>
   </div>
 </div></div></div>
 
@@ -109,4 +109,28 @@ html,body{margin:0;padding:0;background:#0a0c14;}
   <button onclick="window.print()" style="padding:4px 12px;border-radius:4px;border:1px solid rgba(255,255,255,.2);background:transparent;color:#F0EDE8;cursor:pointer;font-size:11px;">Print / PDF</button>
 </div>
 <script>const posterWrap=document.getElementById('posterWrap');function scalePoster(){const s=Math.min(window.innerWidth/900,window.innerHeight/1200);posterWrap.style.transform='scale('+s+')';}scalePoster();window.addEventListener('resize',scalePoster);if(location.hash==='#light'){document.getElementById('poster').dataset.edition='light';}if(window!==window.top){var tw=document.querySelector('.tweaks');if(tw)tw.style.display='none';}</script>
+<script>(function(){var P=document.getElementById('poster');if(!P)return;
+function zones(){return Array.prototype.filter.call(P.children,function(el){return el.tagName==='DIV'&&el.className.indexOf('corner-tab')===-1;});}
+function ovf(){return P.scrollHeight-P.clientHeight;}
+function lines(el){var cs=getComputedStyle(el);var lh=parseFloat(cs.lineHeight);if(!lh||isNaN(lh))lh=parseFloat(cs.fontSize)*1.1;return Math.max(1,Math.round(el.offsetHeight/lh));}
+function shrinkToLines(el,max,floor){if(!el)return;var fs=parseFloat(getComputedStyle(el).fontSize);while(lines(el)>max&&fs>floor){fs-=2;el.style.fontSize=fs+'px';}}
+function fit(){
+var key=P.querySelector('.key-headline');var title=P.querySelector('.poster-title');
+shrinkToLines(key,2,36);shrinkToLines(title,2,54);
+if(ovf()<=0)return;
+var zs=zones();var mid=zs.slice(1,zs.length-1);
+var m=[10,8,6];for(var i=0;i<m.length&&ovf()>0;i++){(function(mm){mid.forEach(function(z){var cur=parseFloat(getComputedStyle(z).marginTop);if(cur>mm)z.style.marginTop=mm+'px';});})(m[i]);}
+while(ovf()>0&&key&&parseFloat(getComputedStyle(key).fontSize)>40){key.style.fontSize=(parseFloat(getComputedStyle(key).fontSize)-2)+'px';}
+if(ovf()>0){mid.forEach(function(z){z.querySelectorAll('[style*="gap:7px"],[style*="gap:6px"]').forEach(function(g){g.style.gap='5px';});z.querySelectorAll('td,th').forEach(function(c){c.style.paddingTop='5px';c.style.paddingBottom='5px';});});}
+for(var pass=0;pass<5&&ovf()>0;pass++){
+zs.slice(0,zs.length-1).forEach(function(z,zi){
+var root=zi===0?z.firstElementChild:z;if(!root)return;
+root.querySelectorAll('[style*="font-size"]').forEach(function(el){
+if(el.className&&(el.className.indexOf('key-headline')>-1||el.className.indexOf('poster-title')>-1))return;
+var fs=parseFloat(getComputedStyle(el).fontSize);
+if(fs>=12&&fs<=22){el.style.fontSize=Math.max(11,fs*0.95)+'px';}});});}
+}
+window.__fitPoster=fit;fit();
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){fit();});
+})();</script>
 </body></html>
