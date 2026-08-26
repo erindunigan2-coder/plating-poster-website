@@ -234,7 +234,7 @@ export const STEPS: ProcessStep[] = [
   { id: "nitride-plasma", name: "Plasma Nitride", nameEs: "Nitruración por Plasma", group: "diffusion-heat", description: "Plasma/ion nitriding", posterId: "nitride-plasma" },
   { id: "fnc-qpq", name: "FNC / QPQ", nameEs: "FNC / QPQ", group: "diffusion-heat", description: "Ferritic nitrocarburizing / quench-polish-quench", posterId: "fnc-qpq" },
   { id: "induction-harden", name: "Induction Harden", nameEs: "Endurecimiento por Inducción", group: "diffusion-heat", description: "Localized induction hardening", posterId: "induction-harden" },
-  { id: "flame-harden", name: "Flame Harden", nameEs: "Endurecimiento por Llama", group: "diffusion-heat", description: "Flame hardening for large or selective areas", posterId: "flame-harden" },
+  { id: "flame-harden", name: "Flame Harden", nameEs: "Endurecimiento por Flama", group: "diffusion-heat", description: "Flame hardening for large or selective areas", posterId: "flame-harden" },
   { id: "austemper", name: "Austemper", nameEs: "Austempering", group: "diffusion-heat", description: "Austempering for bainitic transformation", posterId: "austemper" },
   { id: "martemper", name: "Martemper", nameEs: "Martempering", group: "diffusion-heat", description: "Martempering for reduced distortion", posterId: "martemper" },
   { id: "quench-oil", name: "Oil Quench", nameEs: "Temple en Aceite", group: "diffusion-heat", description: "Oil quenching after austenitizing", posterId: "quench-oil" },
@@ -256,7 +256,7 @@ export const STEPS: ProcessStep[] = [
   // ── Thermal Spray ────────────────────────────────────────────────────────
   { id: "plasma-spray", name: "Plasma Spray (APS)", nameEs: "Rociado por Plasma (APS)", group: "thermal-spray", description: "Atmospheric plasma spray", posterId: "plasma-spray" },
   { id: "hvof", name: "HVOF", nameEs: "HVOF", group: "thermal-spray", description: "High-velocity oxy-fuel spray", posterId: "hvof" },
-  { id: "flame-spray", name: "Flame Spray", nameEs: "Rociado por Llama", group: "thermal-spray", description: "Wire or powder flame spray", posterId: "flame-spray" },
+  { id: "flame-spray", name: "Flame Spray", nameEs: "Rociado por Flama", group: "thermal-spray", description: "Wire or powder flame spray", posterId: "flame-spray" },
   { id: "arc-spray", name: "Arc Spray", nameEs: "Rociado por Arco", group: "thermal-spray", description: "Twin wire arc spray", posterId: "arc-spray" },
   { id: "cold-spray", name: "Cold Spray", nameEs: "Rociado en Frío", group: "thermal-spray", description: "Kinetic/cold spray deposition", posterId: "cold-spray" },
   { id: "d-gun", name: "Detonation Gun", nameEs: "Pistola de Detonación", group: "thermal-spray", description: "D-Gun thermal spray", posterId: "d-gun" },
