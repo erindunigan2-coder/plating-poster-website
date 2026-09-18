@@ -39,7 +39,7 @@ export const CATEGORIES: CategoryEntry[] = [
       { id: pid("Zinc Plating (Alkaline)"), title: "Zinc Plating (Alkaline)", posterCount: 8, available: true },
       { id: pid("Zinc Plating (Acid)"), title: "Zinc Plating (Acid)", posterCount: 8, available: true },
       { id: pid("Zinc-Nickel Plating"), title: "Zinc-Nickel Plating", posterCount: 8, available: true },
-      { id: pid("Nickel Plating (Watts)"), title: "Nickel Plating (Watts)", posterCount: 8 },
+      { id: pid("Nickel Plating (Watts)"), title: "Nickel Plating (Watts)", posterCount: 8, available: true },
       { id: pid("Bright Nickel Plating"), title: "Bright Nickel Plating", posterCount: 8, available: true },
       { id: pid("Semi-Bright Nickel Plating"), title: "Semi-Bright Nickel Plating", posterCount: 8 },
       { id: pid("Nickel Plating (Sulfamate)"), title: "Nickel Plating (Sulfamate)", posterCount: 8 },

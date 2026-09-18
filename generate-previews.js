@@ -80,6 +80,7 @@ const STEP_OVERRIDES = {
   "anodize|desmut-deoxidize": "desmut-deoxidize",
   "anodize|dye-color": "dye-color",
   "bright-nickel|bright-nickel-plating": "plating",
+  "watts-nickel|watts-nickel-plating": "plating",
   "genknow|surface-preparation-fundamentals": "surface-preparation",
   "genknow|water-quality-and-rinse-theory": "water-quality",
   "genknow|substrate-metallurgy-for-the-plater": "substrate-metallurgy",

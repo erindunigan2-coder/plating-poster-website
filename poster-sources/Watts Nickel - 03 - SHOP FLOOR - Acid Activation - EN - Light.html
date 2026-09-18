@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Watts Nickel &mdash; Acid Activation &mdash; Shop Floor | Plating Posters Inc</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Barlow:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#1A1F2E;--navy:#0D1020;--text:#F0EDE8;--muted:rgba(240,237,232,.62);--faint:rgba(240,237,232,.38);--amber:#E8A020;--teal:#2EC4B6;--emerald:#27AE60;--coral:#E05C5C;--slate:#3A4055;--glass-bg:rgba(30,36,53,.55);--glass-border:rgba(255,255,255,.12);--glass-shadow:inset 0 1px 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(0,0,0,.2),0 4px 12px rgba(0,0,0,.25);}
+.poster[data-edition="light"]{--bg:#F5F4F0;--navy:#DDD8CE;--text:#1B2030;--muted:rgba(27,32,48,.74);--faint:rgba(27,32,48,.42);--amber:#B8770D;--teal:#1A8C82;--emerald:#1E8449;--coral:#B7322F;--slate:#C5C0B5;--glass-bg:rgba(255,253,247,.78);--glass-border:rgba(27,32,48,.16);--glass-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 4px 12px rgba(27,32,48,.08);}
+html,body{margin:0;padding:0;background:#e8e6df;}
+.stage{width:100vw;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;overflow:visible;padding:12px 0;box-sizing:border-box;}
+.poster-wrap{transform-origin:top left;}
+.poster{width:1200px;height:1800px;position:relative;overflow:hidden;background:radial-gradient(1200px 800px at 15% 8%,rgba(46,196,182,.14),transparent 60%),radial-gradient(1000px 700px at 90% 25%,rgba(232,160,32,.12),transparent 55%),radial-gradient(900px 900px at 50% 80%,rgba(224,92,92,.10),transparent 60%),var(--bg);font-family:'Inter',sans-serif;color:var(--text);display:flex;flex-direction:column;padding:32px;box-sizing:border-box;}
+.glass{background-color:var(--glass-bg);background-image:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));border:1px solid var(--glass-border);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);box-shadow:var(--glass-shadow);border-radius:12px;}
+.tack{position:absolute;width:24px;height:24px;border-radius:50%;border:1.5px solid rgba(232,160,32,.28);z-index:2;pointer-events:none;}
+.tack::before,.tack::after{content:"";position:absolute;background:rgba(232,160,32,.28);}
+.tack::before{left:50%;top:-3px;bottom:-3px;width:1px;transform:translateX(-50%);}
+.tack::after{top:50%;left:-3px;right:-3px;height:1px;transform:translateY(-50%);}
+.tack.tl{top:12px;left:12px;}.tack.tr{top:12px;right:12px;}.tack.bl{bottom:12px;left:12px;}.tack.br{bottom:12px;right:12px;}
+.poster-header{flex-shrink:0;}
+.poster-body{flex:1;overflow:hidden;display:flex;flex-direction:column;gap:12px;justify-content:space-between;margin-top:14px;}
+.poster-footer{flex-shrink:0;margin-top:12px;}
+.header-band{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;}
+.header-left{flex:1;min-width:0;}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--amber);letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px;display:flex;align-items:center;gap:12px;}
+.eyebrow::before{content:"";display:inline-block;width:36px;height:3px;background:var(--amber);}
+.headline{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:88px;color:var(--text);line-height:.92;margin:2px 0;letter-spacing:-.01em;text-transform:uppercase;}
+.headline em{font-style:normal;color:var(--amber);}
+.subhead{font-family:'Barlow',sans-serif;font-weight:700;font-size:22px;color:var(--amber);margin:6px 0 4px;}
+.tagline{font-family:'Inter',sans-serif;font-style:italic;font-size:15px;color:var(--muted);line-height:1.4;max-width:840px;margin:0;}
+.logo-card{flex-shrink:0;padding:14px 12px;display:flex;flex-direction:column;align-items:center;gap:8px;align-self:flex-start;min-width:150px;}
+.logo-tile{width:76px;height:76px;border-radius:13px;background:linear-gradient(135deg,#E8A020,#2EC4B6);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -2px 4px rgba(0,0,0,.15),0 4px 14px rgba(0,0,0,.35);}
+.logo-tile span{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:29px;color:#1A1F2E;letter-spacing:.02em;line-height:1;}
+.logo-word{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:20px;letter-spacing:.04em;text-transform:uppercase;line-height:1;text-align:center;white-space:nowrap;}
+.logo-word .a{color:var(--text);}.logo-word .b{color:var(--amber);}
+.logo-inc{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.05em;text-transform:lowercase;color:var(--muted);margin-top:-2px;}
+.section-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:24px;letter-spacing:.07em;text-transform:uppercase;color:var(--text);margin:0 0 8px;display:flex;align-items:center;gap:9px;}
+.section-title::before{content:"";width:6px;height:6px;background:var(--teal);border-radius:50%;}
+.section-title .sub{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;color:var(--muted);margin-left:auto;font-weight:500;}
+.key-card{padding:18px 24px;background:rgba(232,160,32,.07);}
+.key-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:64px;color:var(--amber);line-height:1;margin-bottom:4px;}
+.key-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;color:var(--amber);letter-spacing:.05em;text-transform:uppercase;line-height:1.15;}
+.key-text{font-family:'Inter',sans-serif;font-size:16px;color:var(--muted);line-height:1.45;margin-top:8px;}
+.param-grid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:10px;}
+.param-cell{padding:12px 14px;border-radius:10px;background:rgba(232,160,32,.06);border:1px solid rgba(232,160,32,.16);}
+.param-k{font-family:'Barlow',sans-serif;font-weight:700;font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:var(--amber);}
+.param-v{font-family:'JetBrains Mono',monospace;font-size:19px;color:var(--text);margin-top:4px;line-height:1.2;}
+.param-n{font-family:'Inter',sans-serif;font-size:12.5px;color:var(--muted);margin-top:4px;line-height:1.35;}
+.roles-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;}
+.role-card{padding:14px 16px;border-radius:10px;}
+.role-h{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:19px;letter-spacing:.04em;text-transform:uppercase;margin-bottom:6px;line-height:1.05;}
+.role-t{font-family:'JetBrains Mono',monospace;font-size:15px;color:var(--text);margin-bottom:6px;}
+.role-p{font-size:13.5px;color:var(--muted);line-height:1.42;}
+.role-p strong{color:var(--coral);font-weight:700;}
+.banner{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:17px;letter-spacing:.03em;text-transform:uppercase;text-align:center;color:var(--amber);background:rgba(232,160,32,.10);border:1px solid rgba(232,160,32,.30);border-radius:10px;padding:12px 16px;line-height:1.35;}
+.banner.coral{color:var(--coral);background:rgba(224,92,92,.10);border-color:rgba(224,92,92,.30);}
+.compare-row{display:flex;gap:12px;}
+.compare-card{flex:1;padding:16px 20px;}
+.compare-head{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:21px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:8px;display:flex;align-items:center;gap:8px;}
+.compare-head.good{color:var(--emerald);}
+.compare-head.bad{color:var(--coral);}
+.compare-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:7px;}
+.compare-list li{font-size:16px;line-height:1.42;display:flex;gap:9px;align-items:flex-start;}
+.compare-list li::before{content:"";width:6px;height:6px;border-radius:50%;margin-top:8px;flex-shrink:0;}
+.compare-card.do .compare-list li::before{background:var(--emerald);}
+.compare-card.dont .compare-list li::before{background:var(--coral);}
+.safety-card{padding:14px 20px;border-left:3px solid var(--coral);background:rgba(224,92,92,.06);border-radius:12px;}
+.safety-head{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:20px;color:var(--coral);letter-spacing:.07em;text-transform:uppercase;margin-bottom:6px;}
+.safety-text{font-family:'Inter',sans-serif;font-weight:500;font-size:14.5px;color:var(--text);line-height:1.5;}
+.safety-text strong{color:var(--coral);font-weight:700;}
+.footer{padding:10px 20px;background-color:rgba(13,16,32,.85);background-image:linear-gradient(180deg,rgba(255,255,255,.04),rgba(0,0,0,0));border:1px solid rgba(255,255,255,.10);border-radius:8px;text-align:center;display:flex;flex-direction:column;gap:3px;}
+.poster[data-edition="light"] .footer{background-color:rgba(221,216,206,.95);border-color:rgba(27,32,48,.10);}
+.poster[data-edition="light"] .footer-disclaimer{color:rgba(27,32,48,.62);}
+.footer-disclaimer{font-family:'Inter',sans-serif;font-size:10.5px;line-height:1.4;color:var(--faint);margin:0 auto;max-width:1060px;}
+.footer-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:15px;color:var(--text);letter-spacing:.04em;text-transform:uppercase;margin:0;}
+.footer-brand{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;}
+.tweaks{position:fixed;bottom:16px;right:16px;z-index:100;background:rgba(13,16,32,.92);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:12px 16px;display:flex;flex-direction:column;gap:8px;font-family:'Inter',sans-serif;font-size:12px;color:#F0EDE8;}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="poster-wrap" id="posterWrap">
+<div class="poster" id="poster" data-edition="light">
+  <span class="tack tl" aria-hidden="true"></span><span class="tack tr" aria-hidden="true"></span>
+  <span class="tack bl" aria-hidden="true"></span><span class="tack br" aria-hidden="true"></span>
+
+  <div class="poster-header">
+    <header class="header-band">
+      <div class="header-left">
+        <div class="eyebrow"><span>Plating Posters Inc &nbsp;&middot;&nbsp; Shop Floor &nbsp;&middot;&nbsp; Watts Nickel Series &nbsp;&middot;&nbsp; Stage 3 of 8</span></div>
+        <h1 class="headline">ACID <em>ACTIVATE</em></h1>
+        <h2 class="subhead">Dissolve the oxide layer and expose bare metal for nickel adhesion</h2>
+        <p class="tagline">&ldquo;Oxide is invisible. Adhesion failure &mdash; especially under a thick engineering build &mdash; is not.&rdquo;</p>
+      </div>
+      <aside class="glass logo-card">
+        <div class="logo-tile"><span>PP</span></div>
+        <div class="logo-word"><span class="a">Plating</span> <span class="b">Posters</span></div>
+        <div class="logo-inc">www.platingposters.com</div>
+      </aside>
+    </header>
+  </div>
+
+  <div class="poster-body">
+
+    <div class="glass key-card">
+      <div class="key-num">15&ndash;60 SEC</div>
+      <div class="key-label">Dip Time (Steel) &mdash; Seconds Count in Both Directions</div>
+      <div class="key-text">Under-dip = oxide remains = adhesion failure. Over-dip = etch and hydrogen loading. For thick build-up and salvage work, adhesion is everything &mdash; the deposit is only as good as the bond beneath it. Time every dip; don&rsquo;t eyeball it.</div>
+    </div>
+
+    <!-- Substrate Cards -->
+    <div class="glass" style="padding:14px 18px;">
+      <div class="section-title">Know Your Substrate <span class="sub">TIME IN SECONDS &middot; PER SUPPLIER TDS</span></div>
+      <div class="roles-grid">
+        <div class="role-card" style="background:rgba(46,196,182,.08);border:1px solid rgba(46,196,182,.2);">
+          <div class="role-h" style="color:var(--teal);">Steel / Cast Iron</div>
+          <div class="role-t">15&ndash;60 sec</div>
+          <div class="role-p">HCl or H&#8322;SO&#8324;. Heavy scale runs longer &mdash; mind hydrogen. <strong>&gt;40 HRC: inhibited acid, minimum time.</strong> Porous cast iron: extend rinse; consider a nickel strike before heavy plating.</div>
+        </div>
+        <div class="role-card" style="background:rgba(232,160,32,.08);border:1px solid rgba(232,160,32,.2);">
+          <div class="role-h" style="color:var(--amber);">Brass / Copper</div>
+          <div class="role-t">5&ndash;15 sec</div>
+          <div class="role-p">Short dip only &mdash; acid attacks copper alloys quickly, and dissolved copper drags into the nickel bath where it plates as dark streaks at low CD.</div>
+        </div>
+        <div class="role-card" style="background:rgba(224,92,92,.08);border:1px solid rgba(224,92,92,.2);">
+          <div class="role-h" style="color:var(--coral);">Zinc Die Cast</div>
+          <div class="role-t">5&ndash;15 sec</div>
+          <div class="role-p">Dilute fluoride activator per supplier TDS &mdash; never strong HCl. <strong>Then a copper strike (cyanide or alkaline non-cyanide) before Watts nickel &mdash; never straight into the acid nickel bath</strong> (immersion deposit, peeling, zinc contamination).</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Key Parameters -->
+    <div class="glass" style="padding:14px 18px;">
+      <div class="section-title">At the Tank</div>
+      <div class="param-grid">
+        <div class="param-cell"><div class="param-k">Acid Option A</div><div class="param-v">HCl 10&ndash;50%</div><div class="param-n">v/v. Most common; fumes &mdash; ventilation required</div></div>
+        <div class="param-cell"><div class="param-k">Acid Option B</div><div class="param-v">H&#8322;SO&#8324; 5&ndash;20%</div><div class="param-n">v/v. Less fuming; no chloride introduction</div></div>
+        <div class="param-cell"><div class="param-k">Temperature</div><div class="param-v">Amb&ndash;110&deg;F</div><div class="param-n">Ambient typical for mild activation</div></div>
+        <div class="param-cell"><div class="param-k">Dump Acid At</div><div class="param-v">Fe &gt; 50 g/L</div><div class="param-n">Spent acid = weak activation + Fe drag toward nickel</div></div>
+      </div>
+    </div>
+
+    <div class="banner coral">H-Embrittlement &mdash; &gt;40 HRC / &gt;180 ksi steel: inhibited acid, minimum concentration and time &mdash; then bake 375 &plusmn;25&deg;F within 4 hours per ASTM B850</div>
+
+    <!-- Do / Don't -->
+    <div class="compare-row">
+      <div class="compare-card glass do">
+        <div class="compare-head good">&#10003; Do</div>
+        <ul class="compare-list">
+          <li>Time every dip &mdash; substrate decides the clock</li>
+          <li>Use inhibited acid on hardened, embrittlement-sensitive steel</li>
+          <li>Rinse immediately and keep parts moving &mdash; oxide re-forms fast</li>
+          <li>Keep the pickle fresh &mdash; dump at Fe &gt; 50 g/L</li>
+        </ul>
+      </div>
+      <div class="compare-card glass dont">
+        <div class="compare-head bad">&#10007; Don&rsquo;t</div>
+        <ul class="compare-list">
+          <li>Air-agitate HCl &mdash; acid mist hazard; move the rack instead</li>
+          <li>Over-dip brass &mdash; dezincification leaves copper smut</li>
+          <li>Put strong HCl on zinc die cast &mdash; it eats the casting</li>
+          <li>Let activated parts dry before they reach the nickel</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Safety -->
+    <div class="glass safety-card">
+      <div class="safety-head">&#9888; Safety</div>
+      <div class="safety-text"><strong>Strong mineral acid &mdash; severe burns and eye damage. HCl fumes at room temperature: OSHA PEL 5 ppm ceiling.</strong> Hydrogen gas evolved during pickling is flammable &mdash; no flames or sparks. Fluoride activators for die cast are extremely hazardous &mdash; they require a specific first-aid protocol with calcium gluconate gel on hand before anyone uses the tank. Goggles + face shield, acid-resistant gloves, apron, boots; respirator if ventilation is inadequate.</div>
+    </div>
+
+  </div>
+
+  <footer class="footer poster-footer">
+    <p class="footer-disclaimer">Operator reference only. Follow your facility SOPs and verify parameters against your chemistry supplier&rsquo;s TDS and customer specifications. Nickel compounds are classified as suspected carcinogens and known skin sensitizers &mdash; consult current SDS. Report any process deviation to your supervisor. <em>Regulatory data reviewed 2026-09-17: exposure limits reflect published U.S. federal OSHA PELs as of this date; referenced standards should be checked against their current revision. State limits (e.g., Cal/OSHA) and ACGIH TLVs may be stricter.</em></p>
+    <p class="footer-title">Acid Activation &mdash; Watts Nickel Plating Series</p>
+    <span class="footer-brand">Plating Posters Inc &middot; Shop Floor Reference &middot; PP-WattsNi-SF / v1.0 / 2026</span>
+  </footer>
+
+</div>
+</div>
+</div>
+
+<div class="tweaks">
+  <div style="display:flex;gap:8px;align-items:center;">
+    <span style="color:rgba(240,237,232,.5);font-size:11px;letter-spacing:.06em;text-transform:uppercase;">Edition</span>
+    <button id="btnDark" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);" onclick="setEdition('')">Dark</button>
+    <button id="btnLight" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:#E8A020;color:#1A1F2E;border:1px solid #E8A020;" onclick="setEdition('light')">Light</button>
+  </div>
+  <button onclick="window.print()" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);">Print / PDF</button>
+</div>
+
+<script>
+const posterWrap=document.getElementById('posterWrap');
+const poster=document.getElementById('poster');
+function scalePoster(){const sW=(window.innerWidth-24)/1200;const sH=(window.innerHeight-24)/1800;const s=Math.min(sW,sH);posterWrap.style.transform='scale('+s+')';posterWrap.style.transformOrigin='top left';posterWrap.style.width=(1200*s)+'px';posterWrap.style.height=(1800*s)+'px';}
+function setEdition(e){if(e)poster.dataset.edition=e;else delete poster.dataset.edition;document.getElementById('btnDark').style.background=e?'transparent':'#E8A020';document.getElementById('btnDark').style.color=e?'#F0EDE8':'#1A1F2E';document.getElementById('btnDark').style.borderColor=e?'rgba(255,255,255,.2)':'#E8A020';document.getElementById('btnLight').style.background=e?'#E8A020':'transparent';document.getElementById('btnLight').style.color=e?'#1A1F2E':'#F0EDE8';document.getElementById('btnLight').style.borderColor=e?'#E8A020':'rgba(255,255,255,.2)';}
+scalePoster();window.addEventListener('resize',scalePoster);
+</script>
+</body>
+</html>

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Watts Nickel &mdash; Watts Nickel Plating &mdash; Technical | Plating Posters Inc</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Barlow:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#1A1F2E;--navy:#0D1020;--text:#F0EDE8;--muted:rgba(240,237,232,.62);
+  --faint:rgba(240,237,232,.38);
+  --amber:#E8A020;--teal:#2EC4B6;--emerald:#27AE60;--coral:#E05C5C;
+  --slate:#3A4055;--callout:#1E2435;--altrow:#252B3D;
+  --glass-bg:rgba(30,36,53,.55);--glass-border:rgba(255,255,255,.12);
+  --glass-shadow:inset 0 1px 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(0,0,0,.2),0 4px 12px rgba(0,0,0,.25);
+}
+.poster[data-edition="light"]{
+  --bg:#F5F4F0;--navy:#DDD8CE;--text:#1B2030;--muted:rgba(27,32,48,.74);
+  --faint:rgba(27,32,48,.42);
+  --amber:#B8770D;--teal:#1A8C82;--emerald:#1E8449;--coral:#B7322F;
+  --slate:#C5C0B5;--callout:#ECEAE1;--altrow:#E4E1D6;
+  --glass-bg:rgba(255,253,247,.78);--glass-border:rgba(27,32,48,.16);
+  --glass-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 4px 12px rgba(27,32,48,.08);
+}
+html,body{margin:0;padding:0;background:#e8e6df;}
+.stage{width:100vw;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;overflow:visible;padding:12px 0;box-sizing:border-box;}
+.poster-wrap{transform-origin:top left;}
+.poster{
+  width:1200px;height:1800px;position:relative;overflow:hidden;
+  background:
+    radial-gradient(1200px 800px at 15% 8%,rgba(46,196,182,.14),transparent 60%),
+    radial-gradient(1000px 700px at 90% 25%,rgba(232,160,32,.12),transparent 55%),
+    radial-gradient(900px 900px at 50% 80%,rgba(224,92,92,.10),transparent 60%),
+    var(--bg);
+  font-family:'Inter',sans-serif;color:var(--text);
+  display:flex;flex-direction:column;padding:32px;box-sizing:border-box;
+}
+.glass{background-color:var(--glass-bg);background-image:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));border:1px solid var(--glass-border);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);box-shadow:var(--glass-shadow);border-radius:12px;}
+.tack{position:absolute;width:24px;height:24px;border-radius:50%;border:1.5px solid rgba(232,160,32,.28);z-index:2;pointer-events:none;}
+.tack::before,.tack::after{content:"";position:absolute;background:rgba(232,160,32,.28);}
+.tack::before{left:50%;top:-3px;bottom:-3px;width:1px;transform:translateX(-50%);}
+.tack::after{top:50%;left:-3px;right:-3px;height:1px;transform:translateY(-50%);}
+.tack.tl{top:12px;left:12px;}.tack.tr{top:12px;right:12px;}.tack.bl{bottom:12px;left:12px;}.tack.br{bottom:12px;right:12px;}
+
+.poster-header{flex-shrink:0;}
+.poster-body{flex:1;overflow:hidden;display:flex;flex-direction:column;gap:7px;justify-content:space-between;}
+.poster-footer{flex-shrink:0;margin-top:6px;}
+
+.header-band{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:5px;}
+.header-left{flex:1;min-width:0;}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--amber);letter-spacing:.16em;text-transform:uppercase;margin-bottom:2px;display:flex;align-items:center;gap:12px;}
+.eyebrow::before{content:"";display:inline-block;width:30px;height:3px;background:var(--amber);}
+.headline{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:72px;color:var(--text);line-height:.92;margin:2px 0;letter-spacing:-.01em;text-transform:uppercase;}
+.headline em{font-style:normal;color:var(--amber);}
+.subhead{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:20px;color:var(--teal);margin:0 0 3px;letter-spacing:.02em;text-transform:uppercase;}
+.tagline{font-family:'Inter',sans-serif;font-style:italic;font-size:11px;color:var(--muted);line-height:1.35;max-width:700px;margin:0;}
+.logo-card{flex-shrink:0;padding:12px 10px;display:flex;flex-direction:column;align-items:center;gap:8px;align-self:flex-start;}
+.logo-tile{width:68px;height:68px;border-radius:12px;background:linear-gradient(135deg,#E8A020,#2EC4B6);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -2px 4px rgba(0,0,0,.15),0 4px 14px rgba(0,0,0,.35);}
+.logo-tile span{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:26px;color:#1A1F2E;letter-spacing:.02em;line-height:1;}
+.logo-word{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;letter-spacing:.04em;text-transform:uppercase;line-height:1;text-align:center;white-space:nowrap;}
+.logo-word .a{color:var(--text);}.logo-word .b{color:var(--amber);}
+.logo-inc{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.05em;text-transform:lowercase;color:var(--muted);margin-top:-2px;}
+
+.orient-strip{display:flex;align-items:center;gap:4px;padding:4px 10px;margin-bottom:0;flex-wrap:wrap;}
+.orient-stage{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;padding:4px 8px;border-radius:5px;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:11px;letter-spacing:.05em;text-transform:uppercase;background:rgba(58,64,85,.4);border:1px solid rgba(255,255,255,.06);color:var(--muted);}
+.orient-stage.active{background:rgba(46,196,182,.22);border-color:rgba(46,196,182,.5);color:var(--teal);box-shadow:0 0 12px rgba(46,196,182,.15);}
+.poster[data-edition="light"] .orient-stage{background:rgba(27,32,48,.06);border-color:rgba(27,32,48,.12);}
+.poster[data-edition="light"] .orient-stage.active{background:rgba(46,196,182,.22);border-color:rgba(46,196,182,.5);}
+.orient-arrow{color:var(--faint);font-size:11px;flex:none;}
+
+.section-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;letter-spacing:.08em;text-transform:uppercase;color:var(--text);margin:0 0 4px;display:flex;align-items:center;gap:8px;}
+.section-title::before{content:"";width:5px;height:5px;background:var(--teal);border-radius:50%;}
+.section-title .sub{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.14em;color:var(--muted);margin-left:auto;font-weight:500;}
+
+.rule-card{display:flex;align-items:center;gap:18px;padding:9px 20px;background:rgba(46,196,182,.07);}
+.rule-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:42px;color:var(--teal);line-height:1;letter-spacing:-.02em;}
+.rule-body{flex:1;}
+.rule-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:15px;color:var(--teal);letter-spacing:.08em;text-transform:uppercase;}
+.rule-text{font-family:'Inter',sans-serif;font-size:11px;color:var(--muted);line-height:1.32;margin-top:2px;}
+
+.insight-card{padding:14px 18px;border-left:3px solid var(--teal);background:rgba(46,196,182,.06);border-radius:0 12px 12px 0;}
+.insight-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;color:var(--teal);letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px;}
+.insight-text{font-family:'Inter',sans-serif;font-size:12px;color:var(--text);line-height:1.5;}
+
+.data-table{width:100%;border-collapse:collapse;}
+.data-table th{font-family:'Barlow',sans-serif;font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);padding:8px 12px;text-align:left;background:rgba(13,16,32,.35);border-bottom:1px solid var(--glass-border);}
+.poster[data-edition="light"] .data-table th{background:rgba(27,32,48,.06);}
+.data-table td{padding:8px 12px;color:var(--text);line-height:1.4;border-bottom:1px solid rgba(255,255,255,.05);font-family:'Inter',sans-serif;font-size:12px;}
+.data-table tr:last-child td{border-bottom:none;}
+.data-table tr:nth-child(even) td{background:rgba(255,255,255,.02);}
+.poster[data-edition="light"] .data-table tr:nth-child(even) td{background:rgba(27,32,48,.025);}
+.poster[data-edition="light"] .data-table td{border-bottom-color:rgba(27,32,48,.08);}
+.data-table .mono{font-family:'JetBrains Mono',monospace;font-size:11px;}
+
+.safety-card{padding:10px 16px;border-left:3px solid var(--coral);background:rgba(224,92,92,.06);border-radius:12px;}
+.safety-head{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;color:var(--coral);letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px;}
+.safety-body{font-family:'Inter',sans-serif;font-size:12px;color:var(--text);line-height:1.5;}
+.safety-body strong{color:var(--coral);font-weight:700;}
+
+.trouble-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.trouble-card{padding:12px 14px;border-radius:10px;border-left:3px solid var(--coral);display:flex;flex-direction:column;gap:4px;}
+.trouble-card h4{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;color:var(--coral);margin:0;text-transform:uppercase;letter-spacing:.06em;line-height:1.1;}
+.trouble-card p{font-size:11px;color:var(--muted);margin:0;line-height:1.4;}
+
+.context-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.context-card{padding:14px 16px;}
+.context-card h4{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;margin:0 0 6px;letter-spacing:.04em;text-transform:uppercase;}
+.context-card h4.teal{color:var(--teal);}
+.context-card h4.amber{color:var(--amber);}
+.context-card h4.coral{color:var(--coral);}
+.context-card p{font-size:12px;line-height:1.5;color:var(--text);margin:0;}
+.context-card .detail{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--muted);margin-top:6px;}
+
+/* pH strip infographic — acid-to-alkaline oxide-clock swing */
+.ph-card{padding:10px 16px;}
+.ph-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:5px;}
+.ph-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;letter-spacing:.06em;text-transform:uppercase;color:var(--teal);}
+.ph-scale-note{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.10em;text-transform:uppercase;color:var(--faint);}
+.ph-bar{position:relative;height:22px;border-radius:6px;overflow:visible;border:1px solid var(--glass-border);background:linear-gradient(90deg,#B7322F 0%,#B8770D 28%,#1E8449 48%,#1A8C82 64%,#5B3A8C 92%,#5B3A8C 100%);}
+.ph-bar .barclip{position:absolute;inset:0;border-radius:6px;overflow:hidden;}
+.ph-ticks{position:relative;height:12px;margin-top:2px;}
+.ph-tick{position:absolute;transform:translateX(-50%);font-family:'JetBrains Mono',monospace;font-size:8px;color:var(--muted);letter-spacing:.04em;}
+.ph-markers{position:relative;height:46px;margin-top:6px;}
+.ph-marker{position:absolute;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:2px;text-align:center;width:130px;}
+.ph-marker .dot{width:9px;height:9px;border-radius:50%;border:1.5px solid var(--text);}
+.ph-marker .lbl{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:11px;line-height:1;letter-spacing:.03em;text-transform:uppercase;color:var(--text);}
+.ph-marker .val{font-family:'JetBrains Mono',monospace;font-size:8.5px;color:var(--muted);letter-spacing:.02em;}
+/* dashed swing connector between the two endpoints */
+.ph-swing{position:absolute;top:13px;height:0;border-top:2px dashed var(--coral);z-index:1;}
+.ph-swing::after{content:"\003E13-UNIT pH SWING";position:absolute;left:50%;top:-15px;transform:translateX(-50%);white-space:nowrap;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:9px;letter-spacing:.08em;color:var(--coral);background:var(--glass-bg);padding:0 6px;}
+.ph-swing-note{font-family:'Inter',sans-serif;font-size:10px;color:var(--muted);line-height:1.3;margin-top:5px;text-align:center;}
+.oxide-tag{display:inline-flex;align-items:center;gap:7px;margin-top:10px;padding:7px 12px;border-radius:8px;background:rgba(184,119,13,.12);border:1px solid rgba(184,119,13,.4);border-left:3px solid var(--amber);}
+.oxide-tag .ot-lbl{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:11px;letter-spacing:.10em;text-transform:uppercase;color:var(--amber);}
+.oxide-tag .ot-txt{font-family:'Inter',sans-serif;font-size:10.5px;color:var(--text);line-height:1.3;}
+.oxide-tag .ot-txt strong{color:var(--amber);font-weight:700;}
+
+.footer{padding:8px 20px;background-color:rgba(13,16,32,.85);background-image:linear-gradient(180deg,rgba(255,255,255,.04),rgba(0,0,0,0));border:1px solid rgba(255,255,255,.10);border-radius:8px;text-align:center;display:flex;flex-direction:column;gap:2px;}
+.poster[data-edition="light"] .footer{background-color:rgba(221,216,206,.95);border-color:rgba(27,32,48,.10);}
+.poster[data-edition="light"] .footer-disclaimer{color:rgba(27,32,48,.62);}
+.footer-disclaimer{font-family:'Inter',sans-serif;font-size:8.5px;line-height:1.35;color:var(--faint);margin:0 auto;max-width:900px;}
+.footer-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:12px;color:var(--text);letter-spacing:.04em;text-transform:uppercase;margin:0;}
+.footer-brand{font-family:'JetBrains Mono',monospace;font-size:8.5px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;}
+
+/* ---- Watts 05 additions (compact tables + CD window + watch list) ---- */
+.data-table.tight th{font-size:9px;padding:4px 8px;letter-spacing:.05em;}
+.data-table.tight td{font-size:9.8px;padding:3px 8px;line-height:1.22;}
+.data-table.tight .mono{font-size:9.2px;}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:start;}
+.cd-zones{position:relative;height:27px;margin-top:3px;}
+.cd-zone{position:absolute;transform:translateX(-50%);text-align:center;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:9.5px;letter-spacing:.05em;text-transform:uppercase;line-height:1.2;}
+.cd-brackets{position:relative;height:18px;margin-top:0;}
+.cd-bracket{position:absolute;top:0;height:7px;border-left:1.5px solid;border-right:1.5px solid;border-bottom:1.5px solid;border-radius:0 0 4px 4px;}
+.cd-bracket .cb-lbl{position:absolute;top:8px;left:50%;transform:translateX(-50%);white-space:nowrap;font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.08em;text-transform:uppercase;}
+.watch-el{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:12px;color:var(--text);letter-spacing:.03em;}
+.watch-lvl{font-family:'JetBrains Mono',monospace;font-size:9.5px;color:var(--amber);font-weight:500;white-space:nowrap;}
+.watch-rm{color:var(--muted);font-size:9.2px;}
+.anode-sub{margin-top:5px;padding-top:5px;border-top:1px dashed var(--glass-border);}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="poster-wrap" id="posterWrap">
+<div class="poster" id="poster" data-edition="light">
+  <span class="tack tl" aria-hidden="true"></span><span class="tack tr" aria-hidden="true"></span>
+  <span class="tack bl" aria-hidden="true"></span><span class="tack br" aria-hidden="true"></span>
+
+  <div class="poster-header">
+    <header class="header-band">
+      <div class="header-left">
+        <div class="eyebrow"><span>Plating Posters Inc &nbsp;&middot;&nbsp; Watts Nickel Series &nbsp;&middot;&nbsp; Stage 5 of 8</span></div>
+        <h1 class="headline">WATTS <em>NICKEL</em></h1>
+        <h2 class="subhead" style="font-size:16px;">The plain Watts bath &mdash; nickel sulfate, nickel chloride, boric acid, an anti-pit wetter, and nothing else. Ductile, low-stress, sulfur-free by design.</h2>
+        <p class="tagline">&ldquo;No brightener to chase. Just metal, pH, temperature, and current &mdash; the four things that actually build an engineering deposit.&rdquo;</p>
+      </div>
+      <aside class="glass logo-card">
+        <div class="logo-tile"><span>PP</span></div>
+        <div class="logo-word"><span class="a">Plating</span> <span class="b">Posters</span></div>
+        <div class="logo-inc">www.platingposters.com</div>
+      </aside>
+    </header>
+
+    <div class="orient-strip glass">
+      <div class="orient-stage">Clean</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Rinse</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Activate</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Rinse</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage active">Watts&nbsp;Ni</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Rinse</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Post&#8209;Tx</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Rinse&nbsp;/&nbsp;Dry</div>
+    </div>
+  </div>
+
+  <div class="poster-body">
+
+    <div class="glass rule-card">
+      <div class="rule-num">93&ndash;97%</div>
+      <div class="rule-body">
+        <div class="rule-label">Cathode Efficiency</div>
+        <div class="rule-text">The Watts bath is over a century old and the most-used nickel electrolyte in the world. High cathode efficiency means most of your current deposits metal, not gas. But the remaining hydrogen co-evolution still loads enough atomic hydrogen to embrittle high-strength steel &mdash; the deposit is ductile, but the substrate underneath still needs the bake.</div>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="section-title">Operating Parameters <span class="sub">Rack vs barrel &mdash; plain Watts bath</span></h3>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table tight">
+          <thead><tr><th style="width:15%;">Parameter</th><th style="width:24%;">Rack</th><th style="width:19%;">Barrel</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td>Temperature</td><td class="mono">115&ndash;150&deg;F (46&ndash;66&deg;C)</td><td class="mono">120&ndash;150&deg;F (49&ndash;66&deg;C)</td><td>Higher temp = lower stress, higher ductility; target 130&ndash;140&deg;F for engineering work</td></tr>
+            <tr><td>NiSO&#8324;&middot;6H&#8322;O</td><td class="mono">225&ndash;300 g/L (30&ndash;40 oz/gal)</td><td class="mono">250&ndash;300 g/L</td><td>Higher for barrel to compensate for lower CD</td></tr>
+            <tr><td>NiCl&#8322;&middot;6H&#8322;O</td><td class="mono">30&ndash;60 g/L (4&ndash;8 oz/gal)</td><td class="mono">45&ndash;60 g/L</td><td>Higher chloride improves anode dissolution in barrel</td></tr>
+            <tr><td>H&#8323;BO&#8323;</td><td class="mono">30&ndash;45 g/L (4&ndash;6 oz/gal)</td><td class="mono">37&ndash;45 g/L</td><td>Buffer &mdash; keep above 30 g/L; dissolves slowly</td></tr>
+            <tr><td>pH</td><td class="mono">3.5&ndash;4.5</td><td class="mono">3.5&ndash;4.5</td><td>Lower pH &rarr; lower stress but more H&#8322;; higher pH &rarr; roughness/burning risk. H&#8322;SO&#8324; down, NiCO&#8323;/Ni(OH)&#8322; up &mdash; never NaOH</td></tr>
+            <tr><td>Current Density</td><td class="mono">20&ndash;50 ASF (2&ndash;5.5 A/dm&#178;)</td><td class="mono">5&ndash;15 ASF (0.5&ndash;1.6 A/dm&#178;)</td><td>Higher CD = faster build but more burning/stress risk</td></tr>
+            <tr><td>Cathode Efficiency</td><td class="mono">93&ndash;97%</td><td class="mono">93&ndash;97%</td><td>Some H&#8322; evolution always present</td></tr>
+            <tr><td>Deposition Rate</td><td class="mono">~0.001 in (25 <span style="text-transform:none">&micro;m</span>) per hr at ~20 ASF</td><td class="mono">Lower</td><td>Scales with CD &mdash; ~2 mil/hr at 40 ASF; verify by weight/coupon</td></tr>
+            <tr><td>Agitation</td><td class="mono">Air + cathode-rod movement</td><td class="mono">Barrel 6&ndash;12 RPM</td><td>Air agitation primary; mechanical supplements; agitation lowers pitting and evens thickness</td></tr>
+            <tr><td>Filtration</td><td class="mono">Continuous, 3&ndash;5 turnovers/hr</td><td class="mono">Continuous</td><td>5&ndash;10 <span style="text-transform:none">&micro;m</span> filter bags; periodic carbon for organics</td></tr>
+            <tr><td>Anodes</td><td class="mono">S-depolarized Ni (S-Rounds) OR rolled/electrolytic Ni</td><td class="mono">S-Rounds in Ti baskets</td><td>See anode selection below &mdash; S vs rolled matters for a sulfur-free deposit</td></tr>
+            <tr><td>Anode Bags</td><td class="mono">Polypropylene or cotton, doubled</td><td class="mono">Always</td><td>Prevents anode fines; leach bags before first use</td></tr>
+            <tr><td>Anode:Cathode Ratio</td><td class="mono">2:1 to 1:1</td><td class="mono">Per basket config</td><td>Maintain adequate anode area to prevent passivation</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="glass ph-card">
+      <div class="ph-head">
+        <span class="ph-title">Current-Density Window &mdash; Rack Scale 5&ndash;60 ASF</span>
+        <span class="ph-scale-note">Axis = deposit soundness &mdash; not brightness</span>
+      </div>
+      <div class="ph-bar" style="background:linear-gradient(90deg,var(--amber) 0%,var(--amber) 25.5%,var(--emerald) 29%,var(--emerald) 80%,var(--coral) 83.5%,var(--coral) 100%);"></div>
+      <div class="ph-ticks">
+        <span class="ph-tick" style="left:0%;">5</span>
+        <span class="ph-tick" style="left:9.1%;">10</span>
+        <span class="ph-tick" style="left:27.3%;">20</span>
+        <span class="ph-tick" style="left:45.5%;">30</span>
+        <span class="ph-tick" style="left:63.6%;">40</span>
+        <span class="ph-tick" style="left:81.8%;">50</span>
+        <span class="ph-tick" style="left:100%;">60&nbsp;ASF</span>
+      </div>
+      <div class="cd-zones">
+        <span class="cd-zone" style="left:13%;width:170px;color:var(--amber);">Thin / Slow &mdash; May Be Dull or Hazy</span>
+        <span class="cd-zone" style="left:54.5%;width:430px;color:var(--emerald);">Working Window ~20&ndash;50 ASF &mdash; Sound Uniform Engineering Deposit, Matte to Semi-Lustrous</span>
+        <span class="cd-zone" style="left:91%;width:180px;color:var(--coral);">Burning &middot; Roughness &middot; Stress &middot; Powdery Edges</span>
+      </div>
+      <div class="cd-brackets">
+        <span class="cd-bracket" style="left:0%;width:18.2%;border-color:var(--teal);"><span class="cb-lbl" style="color:var(--teal);">Barrel 5&ndash;15 ASF</span></span>
+        <span class="cd-bracket" style="left:27.3%;width:54.5%;border-color:var(--emerald);"><span class="cb-lbl" style="color:var(--emerald);">Rack Working Window 20&ndash;50 ASF</span></span>
+      </div>
+      <div class="ph-swing-note">For plain Watts the axis is a <strong style="color:var(--teal);font-weight:700;">sound deposit</strong>, not brightness &mdash; matte to semi-lustrous across the window is correct. Burning, roughness, and powdery edges mark the ceiling; thin, slow, hazy deposits mark the floor. Barrel work runs 5&ndash;15 ASF at 6&ndash;12 RPM &mdash; lower CD, longer cycles.</div>
+    </div>
+
+    <div class="split">
+      <div>
+        <h3 class="section-title" style="font-size:19px;">Contamination Watch List <span class="sub">ppm action levels</span></h3>
+        <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+          <table class="data-table tight">
+            <thead><tr><th>Metal</th><th>Action</th><th>Effect on Deposit</th><th>Removal</th></tr></thead>
+            <tbody>
+              <tr><td class="watch-el">Cu</td><td class="watch-lvl">5 ppm</td><td>Dark streaks, roughness, poor low-CD deposit</td><td class="watch-rm">Dummy plate 2&ndash;5 ASF; carbon treat first</td></tr>
+              <tr><td class="watch-el">Fe</td><td class="watch-lvl">25 ppm</td><td>Haze, roughness, raised stress, reduced ductility</td><td class="watch-rm">pH 5.0&ndash;5.5 + H&#8322;O&#8322; to oxidize Fe&#178;&#8314;&rarr;Fe&#179;&#8314;; filter; readjust pH</td></tr>
+              <tr><td class="watch-el">Zn</td><td class="watch-lvl">10 ppm</td><td>Hazy/dull deposit, dark at low CD, adhesion loss</td><td class="watch-rm">Dummy plate 2&ndash;5 ASF; or raise pH, precipitate Zn(OH)&#8322;, filter</td></tr>
+              <tr><td class="watch-el">Cr&#8310;&#8314;</td><td class="watch-lvl">1 ppm</td><td>Severe &mdash; dark/burnt, adhesion failure, skip plate</td><td class="watch-rm">Reduce with sodium bisulfite to Cr&#179;&#8314;; then treat as Cr&#179;&#8314;</td></tr>
+              <tr><td class="watch-el">Cr&#179;&#8314;</td><td class="watch-lvl">10 ppm</td><td>Dull, rough, poor throwing power and adhesion</td><td class="watch-rm">Difficult &mdash; raise pH + dummy at low CD; or dilution</td></tr>
+              <tr><td class="watch-el">Pb</td><td class="watch-lvl">0.5 ppm</td><td>Dark streaks, dendrites, stress cracking</td><td class="watch-rm">Dummy plate 2&ndash;5 ASF; check anode purity</td></tr>
+              <tr><td class="watch-el">Cd</td><td class="watch-lvl">0.5 ppm</td><td>Peeling, blistering, dark deposits</td><td class="watch-rm">Dummy plate; find source (legacy Cd drag-back)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div>
+        <h3 class="section-title" style="font-size:19px;">Anode Selection <span class="sub">S-nickel vs non-sulfur</span></h3>
+        <div class="context-card glass" style="padding:9px 14px;">
+          <h4 class="teal" style="font-size:13px;margin-bottom:3px;">Sulfur-Depolarized (S-Rounds)</h4>
+          <p style="font-size:10.5px;line-height:1.35;">A trace of sulfur keeps the anode dissolving cleanly and efficiently at higher current densities. Best general-purpose choice &mdash; low anode polarization.</p>
+          <h4 class="amber" style="font-size:13px;margin:5px 0 3px;">Rolled / Electrolytic (Non-Sulfur)</h4>
+          <p style="font-size:10.5px;line-height:1.35;">Dissolves less readily and can passivate if anode area or chloride is marginal &mdash; but introduces <strong>no sulfur</strong> into the system. Preferred where the end use is sulfur-sensitive (electroforming for thermal service, brazing preforms, diffusion applications). If running non-sulfur anodes, keep chloride toward the high end (50&ndash;60 g/L) and maintain generous anode area to prevent passivation.</p>
+          <div class="anode-sub">
+            <p style="font-size:10px;line-height:1.32;color:var(--muted);"><strong style="color:var(--teal);">Sulfur-free, defined:</strong> anode-borne trace sulfur does not make the <em>deposit</em> a sulfur-co-deposited layer the way a bright-nickel Class&nbsp;I carrier does. &ldquo;Sulfur-free deposit&rdquo; refers to the absence of organic sulfur-bearing brighteners. Where the spec demands a truly sulfur-free system end-to-end, use non-sulfur anodes and no sulfur-bearing additives.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="split">
+      <div>
+        <h3 class="section-title" style="font-size:19px;">Deposit Properties <span class="sub">Plain Watts vs bright nickel &mdash; typical, &ldquo;~&rdquo; values</span></h3>
+        <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+          <table class="data-table tight">
+            <thead><tr><th>Property</th><th>Plain Watts (well-run)</th><th>Bright Nickel (typical)</th></tr></thead>
+            <tbody>
+              <tr><td>Hardness</td><td class="mono">~150&ndash;250 HV &mdash; soft, ductile</td><td class="mono">~350&ndash;550 HV &mdash; harder, more brittle</td></tr>
+              <tr><td>Internal stress</td><td>Low-to-moderate tensile &mdash; stable, predictable, no additive input</td><td>Varies with additive balance &mdash; requires active brightener control</td></tr>
+              <tr><td>Ductility / elongation</td><td>High &mdash; bends without cracking</td><td>Lower</td></tr>
+              <tr><td>Sulfur content</td><td>Essentially nil (no brightener)</td><td>Present (from Class I carrier)</td></tr>
+              <tr><td>Appearance</td><td>Matte to semi-lustrous</td><td>Full mirror bright</td></tr>
+              <tr><td>Thermal / braze suitability</td><td>Good &mdash; no sulfur embrittlement on heating</td><td>Poor &mdash; sulfur can embrittle at temperature</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div>
+        <h3 class="section-title" style="font-size:19px;">Hull Cell &mdash; Plain Watts <span class="sub">267 mL &middot; 2 A &middot; 10 min &middot; ~130&deg;F &mdash; judges soundness, not brightness</span></h3>
+        <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+          <table class="data-table tight">
+            <thead><tr><th>Panel Pattern</th><th>Likely Cause</th><th>Corrective Action</th></tr></thead>
+            <tbody>
+              <tr><td>Sound, uniform matte/semi-lustrous</td><td>Bath in balance</td><td>Continue monitoring metals, pH, boric acid</td></tr>
+              <tr><td>Burnt / powdery at high CD</td><td>pH too high; boric acid or Ni metal low; temp too low; CD too high</td><td>Check boric acid; check pH; check Ni metal; raise temp; lower CD</td></tr>
+              <tr><td>Rough / nodular (sandpaper feel)</td><td>Particulate &mdash; poor filtration; anode fines; solids</td><td>Check filter pressure; inspect/replace anode bags</td></tr>
+              <tr><td>Gas pitting across panel</td><td>Low wetter; poor air agitation</td><td>Add anti-pit wetter; check air supply and sparger</td></tr>
+              <tr><td>Hazy / dull at low CD</td><td>Zinc, copper, or lead contamination</td><td>Analyze metals; dummy plate at 2&ndash;5 ASF</td></tr>
+              <tr><td>Dark streaks/spots at low CD</td><td>Copper or lead contamination</td><td>Analyze Cu and Pb; dummy plate</td></tr>
+              <tr><td>Peeling when panel is bent</td><td>Adhesion failure (prep) OR raised stress from metals/iron</td><td>Recheck cleaning/activation; analyze metals; carbon treat</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="section-title">Troubleshooting <span class="sub">Main-tank issues &mdash; see Hull Cell panel for burning &amp; roughness</span></h3>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table tight">
+          <thead><tr><th style="width:23%;">Symptom</th><th style="width:37%;">Probable Cause</th><th>Corrective Action</th></tr></thead>
+          <tbody>
+            <tr><td>Dull/hazy deposit</td><td>Metallic contamination; organic drag-in; low temp</td><td>Analyze metals; carbon treat; check temp</td></tr>
+            <tr><td>Pitting (gas pits)</td><td>Low anti-pit wetter; poor agitation; organic contamination</td><td>Add wetter; increase air; carbon treat; check filter</td></tr>
+            <tr><td>Peeling / poor adhesion</td><td>Poor cleaning; incomplete activation; oxidized surface</td><td>Recheck water break; recheck acid dip; speed transfer</td></tr>
+            <tr><td>Cracking in thick build-up</td><td>Raised internal stress; iron/metallic contamination; CD too high</td><td>Analyze metals; carbon treat; lower CD; raise temp</td></tr>
+            <tr><td>Poor throwing power / uneven thickness</td><td>Low NiCl&#8322;; pH too low; low temp; poor agitation</td><td>Raise chloride to 50&ndash;60 g/L; optimize pH/temp; improve agitation</td></tr>
+            <tr><td>Skip plating (bare areas)</td><td>Passive oxide; organic soil; inadequate electroclean</td><td>Improve cleaning; add anodic electroclean; recheck activation</td></tr>
+            <tr><td>Anodes passivating (voltage climbing)</td><td>Low chloride; insufficient anode area; non-sulfur anodes at high CD</td><td>Raise chloride; add anode area; switch to S-nickel if sulfur is acceptable</td></tr>
+            <tr><td>Deposit too soft / not building fast enough</td><td>CD too low; low metal; efficiency loss from contamination</td><td>Raise CD within window; check metal concentration; analyze contaminants</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="safety-card glass">
+      <div class="safety-head">&#9888; Safety</div>
+      <div class="safety-body" style="font-size:10.8px;line-height:1.38;"><strong>Hot acidic nickel solution (pH 3.5&ndash;4.5, up to 150&deg;F) &mdash; causes burns and is a dermal sensitizer. Soluble nickel salts are skin sensitizers and nickel compounds are classified as suspected carcinogens.</strong> Chronic nickel exposure causes allergic contact dermatitis (&ldquo;nickel itch&rdquo;) &mdash; cumulative and permanent once sensitized; minimize skin contact at all times. Air agitation generates nickel-containing mist &mdash; local exhaust ventilation mandatory; mist eliminators recommended. <strong>OSHA PEL for soluble nickel compounds: 1 mg/m&#179; TWA (as Ni).</strong> Rectifier = high amperage &mdash; LOTO for all maintenance. Use PP, CPVC, or lined tanks &mdash; nickel sulfate corrodes mild steel, and plain PVC is marginal above 140&deg;F. <strong>Boric acid:</strong> a reproductive-hazard concern &mdash; avoid dust inhalation when charging or making additions, wear gloves, wash after handling. PPE: goggles + face shield, elbow-length nitrile chemical gloves, apron, boots, P100 or supplied-air respirator if ventilation is inadequate.</div>
+    </div>
+
+  </div>
+
+  <footer class="footer poster-footer">
+    <p class="footer-disclaimer">Technical reference only. Verify all parameters against your chemistry supplier&rsquo;s TDS, customer specifications, and applicable regulatory requirements before production use. Nickel compounds are classified as suspected carcinogens and known skin sensitizers &mdash; always consult current SDS and comply with OSHA, REACH, and local regulations. <em>Regulatory data reviewed 2026-09-17: exposure limits reflect published U.S. federal OSHA PELs as of this date; referenced standards should be checked against their current revision. State limits (e.g., Cal/OSHA) and ACGIH TLVs may be stricter. Verify against current OSHA tables and supplier SDS before production use.</em></p>
+    <p class="footer-title">Watts Nickel Plating &mdash; Watts Nickel Plating Series</p>
+    <span class="footer-brand">Plating Posters Inc &middot; Metal Finishing Reference Series &middot; v1.0 / 2026</span>
+  </footer>
+
+</div>
+</div>
+</div>
+
+<div class="tweaks">
+  <div style="display:flex;gap:8px;align-items:center;">
+    <span style="color:rgba(240,237,232,.5);font-size:11px;letter-spacing:.06em;text-transform:uppercase;">Edition</span>
+    <button id="btnDark" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);" onclick="setEdition('')">Dark</button>
+    <button id="btnLight" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:#E8A020;color:#1A1F2E;border:1px solid #E8A020;" onclick="setEdition('light')">Light</button>
+  </div>
+  <button onclick="window.print()" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);">Print / PDF</button>
+</div>
+
+<script>
+const posterWrap=document.getElementById('posterWrap');
+const poster=document.getElementById('poster');
+function scalePoster(){const sW=(window.innerWidth-24)/1200;const sH=(window.innerHeight-24)/1800;const s=Math.min(sW,sH);posterWrap.style.transform='scale('+s+')';posterWrap.style.transformOrigin='top left';posterWrap.style.width=(1200*s)+'px';posterWrap.style.height=(1800*s)+'px';}
+function setEdition(e){if(e)poster.dataset.edition=e;else delete poster.dataset.edition;document.getElementById('btnDark').style.background=e?'transparent':'#E8A020';document.getElementById('btnDark').style.color=e?'#F0EDE8':'#1A1F2E';document.getElementById('btnDark').style.borderColor=e?'rgba(255,255,255,.2)':'#E8A020';document.getElementById('btnLight').style.background=e?'#E8A020':'transparent';document.getElementById('btnLight').style.color=e?'#1A1F2E':'#F0EDE8';document.getElementById('btnLight').style.borderColor=e?'#E8A020':'rgba(255,255,255,.2)';}
+scalePoster();window.addEventListener('resize',scalePoster);
+</script>
+</body>
+</html>

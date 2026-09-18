@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Watts Nickel &mdash; Cleaning &mdash; Shop Floor | Plating Posters Inc</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Barlow:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#1A1F2E;--navy:#0D1020;--text:#F0EDE8;--muted:rgba(240,237,232,.62);--faint:rgba(240,237,232,.38);--amber:#E8A020;--teal:#2EC4B6;--emerald:#27AE60;--coral:#E05C5C;--slate:#3A4055;--glass-bg:rgba(30,36,53,.55);--glass-border:rgba(255,255,255,.12);--glass-shadow:inset 0 1px 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(0,0,0,.2),0 4px 12px rgba(0,0,0,.25);}
+.poster[data-edition="light"]{--bg:#F5F4F0;--navy:#DDD8CE;--text:#1B2030;--muted:rgba(27,32,48,.74);--faint:rgba(27,32,48,.42);--amber:#B8770D;--teal:#1A8C82;--emerald:#1E8449;--coral:#B7322F;--slate:#C5C0B5;--glass-bg:rgba(255,253,247,.78);--glass-border:rgba(27,32,48,.16);--glass-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 4px 12px rgba(27,32,48,.08);}
+html,body{margin:0;padding:0;background:#e8e6df;}
+.stage{width:100vw;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;overflow:visible;padding:12px 0;box-sizing:border-box;}
+.poster-wrap{transform-origin:top left;}
+.poster{width:1200px;height:1800px;position:relative;overflow:hidden;background:radial-gradient(1200px 800px at 15% 8%,rgba(46,196,182,.14),transparent 60%),radial-gradient(1000px 700px at 90% 25%,rgba(232,160,32,.12),transparent 55%),radial-gradient(900px 900px at 50% 80%,rgba(224,92,92,.10),transparent 60%),var(--bg);font-family:'Inter',sans-serif;color:var(--text);display:flex;flex-direction:column;padding:32px;box-sizing:border-box;}
+.glass{background-color:var(--glass-bg);background-image:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));border:1px solid var(--glass-border);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);box-shadow:var(--glass-shadow);border-radius:12px;}
+.tack{position:absolute;width:24px;height:24px;border-radius:50%;border:1.5px solid rgba(232,160,32,.28);z-index:2;pointer-events:none;}
+.tack::before,.tack::after{content:"";position:absolute;background:rgba(232,160,32,.28);}
+.tack::before{left:50%;top:-3px;bottom:-3px;width:1px;transform:translateX(-50%);}
+.tack::after{top:50%;left:-3px;right:-3px;height:1px;transform:translateY(-50%);}
+.tack.tl{top:12px;left:12px;}.tack.tr{top:12px;right:12px;}.tack.bl{bottom:12px;left:12px;}.tack.br{bottom:12px;right:12px;}
+.poster-header{flex-shrink:0;}
+.poster-body{flex:1;overflow:hidden;display:flex;flex-direction:column;gap:12px;justify-content:space-between;margin-top:14px;}
+.poster-footer{flex-shrink:0;margin-top:12px;}
+.header-band{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;}
+.header-left{flex:1;min-width:0;}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--amber);letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px;display:flex;align-items:center;gap:12px;}
+.eyebrow::before{content:"";display:inline-block;width:36px;height:3px;background:var(--amber);}
+.headline{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:88px;color:var(--text);line-height:.92;margin:2px 0;letter-spacing:-.01em;text-transform:uppercase;}
+.headline em{font-style:normal;color:var(--amber);}
+.subhead{font-family:'Barlow',sans-serif;font-weight:700;font-size:22px;color:var(--amber);margin:6px 0 4px;}
+.tagline{font-family:'Inter',sans-serif;font-style:italic;font-size:15px;color:var(--muted);line-height:1.4;max-width:840px;margin:0;}
+.logo-card{flex-shrink:0;padding:14px 12px;display:flex;flex-direction:column;align-items:center;gap:8px;align-self:flex-start;min-width:150px;}
+.logo-tile{width:76px;height:76px;border-radius:13px;background:linear-gradient(135deg,#E8A020,#2EC4B6);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -2px 4px rgba(0,0,0,.15),0 4px 14px rgba(0,0,0,.35);}
+.logo-tile span{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:29px;color:#1A1F2E;letter-spacing:.02em;line-height:1;}
+.logo-word{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:20px;letter-spacing:.04em;text-transform:uppercase;line-height:1;text-align:center;white-space:nowrap;}
+.logo-word .a{color:var(--text);}.logo-word .b{color:var(--amber);}
+.logo-inc{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.05em;text-transform:lowercase;color:var(--muted);margin-top:-2px;}
+.section-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:24px;letter-spacing:.07em;text-transform:uppercase;color:var(--text);margin:0 0 8px;display:flex;align-items:center;gap:9px;}
+.section-title::before{content:"";width:6px;height:6px;background:var(--teal);border-radius:50%;}
+.section-title .sub{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;color:var(--muted);margin-left:auto;font-weight:500;}
+.key-card{padding:18px 24px;background:rgba(232,160,32,.07);}
+.key-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:64px;color:var(--amber);line-height:1;margin-bottom:4px;}
+.key-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;color:var(--amber);letter-spacing:.05em;text-transform:uppercase;line-height:1.15;}
+.key-text{font-family:'Inter',sans-serif;font-size:16px;color:var(--muted);line-height:1.45;margin-top:8px;}
+.gauge-wrap{padding:16px 20px;}
+.gauge-track{position:relative;height:54px;border-radius:10px;overflow:hidden;display:flex;border:1px solid var(--glass-border);}
+.gauge-seg{display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:600;color:#fff;text-align:center;line-height:1.25;padding:0 8px;box-sizing:border-box;}
+.gauge-scale{display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--muted);margin-top:6px;}
+.gauge-cap{font-family:'Inter',sans-serif;font-size:15px;color:var(--muted);line-height:1.45;margin-top:10px;}
+.gauge-cap strong{color:var(--coral);font-weight:700;}
+.param-grid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:10px;}
+.param-cell{padding:12px 14px;border-radius:10px;background:rgba(232,160,32,.06);border:1px solid rgba(232,160,32,.16);}
+.param-k{font-family:'Barlow',sans-serif;font-weight:700;font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:var(--amber);}
+.param-v{font-family:'JetBrains Mono',monospace;font-size:19px;color:var(--text);margin-top:4px;line-height:1.2;}
+.param-n{font-family:'Inter',sans-serif;font-size:12.5px;color:var(--muted);margin-top:4px;line-height:1.35;}
+.compare-row{display:flex;gap:12px;}
+.compare-card{flex:1;padding:16px 20px;}
+.compare-head{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:21px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:8px;display:flex;align-items:center;gap:8px;}
+.compare-head.good{color:var(--emerald);}
+.compare-head.bad{color:var(--coral);}
+.compare-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:7px;}
+.compare-list li{font-size:16px;line-height:1.42;display:flex;gap:9px;align-items:flex-start;}
+.compare-list li::before{content:"";width:6px;height:6px;border-radius:50%;margin-top:8px;flex-shrink:0;}
+.compare-card.do .compare-list li::before{background:var(--emerald);}
+.compare-card.dont .compare-list li::before{background:var(--coral);}
+.safety-card{padding:14px 20px;border-left:3px solid var(--coral);background:rgba(224,92,92,.06);border-radius:12px;}
+.safety-head{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:20px;color:var(--coral);letter-spacing:.07em;text-transform:uppercase;margin-bottom:6px;}
+.safety-text{font-family:'Inter',sans-serif;font-weight:500;font-size:14.5px;color:var(--text);line-height:1.5;}
+.safety-text strong{color:var(--coral);font-weight:700;}
+.footer{padding:10px 20px;background-color:rgba(13,16,32,.85);background-image:linear-gradient(180deg,rgba(255,255,255,.04),rgba(0,0,0,0));border:1px solid rgba(255,255,255,.10);border-radius:8px;text-align:center;display:flex;flex-direction:column;gap:3px;}
+.poster[data-edition="light"] .footer{background-color:rgba(221,216,206,.95);border-color:rgba(27,32,48,.10);}
+.poster[data-edition="light"] .footer-disclaimer{color:rgba(27,32,48,.62);}
+.footer-disclaimer{font-family:'Inter',sans-serif;font-size:10.5px;line-height:1.4;color:var(--faint);margin:0 auto;max-width:1060px;}
+.footer-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:15px;color:var(--text);letter-spacing:.04em;text-transform:uppercase;margin:0;}
+.footer-brand{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;}
+.tweaks{position:fixed;bottom:16px;right:16px;z-index:100;background:rgba(13,16,32,.92);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:12px 16px;display:flex;flex-direction:column;gap:8px;font-family:'Inter',sans-serif;font-size:12px;color:#F0EDE8;}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="poster-wrap" id="posterWrap">
+<div class="poster" id="poster" data-edition="light">
+  <span class="tack tl" aria-hidden="true"></span><span class="tack tr" aria-hidden="true"></span>
+  <span class="tack bl" aria-hidden="true"></span><span class="tack br" aria-hidden="true"></span>
+
+  <div class="poster-header">
+    <header class="header-band">
+      <div class="header-left">
+        <div class="eyebrow"><span>Plating Posters Inc &nbsp;&middot;&nbsp; Shop Floor &nbsp;&middot;&nbsp; Watts Nickel Series &nbsp;&middot;&nbsp; Stage 1 of 8</span></div>
+        <h1 class="headline" style="font-size:70px;">SOAK CLEAN &amp; <em>ELECTROCLEAN</em></h1>
+        <h2 class="subhead">Strip every trace of oil, oxide, and shop contamination &mdash; adhesion is built here</h2>
+        <p class="tagline">&ldquo;Watts nickel won&rsquo;t hide a dirty surface. With no leveling and no brightener, every prep failure plates through in plain sight.&rdquo;</p>
+      </div>
+      <aside class="glass logo-card">
+        <div class="logo-tile"><span>PP</span></div>
+        <div class="logo-word"><span class="a">Plating</span> <span class="b">Posters</span></div>
+        <div class="logo-inc">www.platingposters.com</div>
+      </aside>
+    </header>
+  </div>
+
+  <div class="poster-body">
+
+    <div class="glass key-card">
+      <div class="key-num">0 SEC</div>
+      <div class="key-label">Water Break Time &mdash; Pass = A Continuous Sheet</div>
+      <div class="key-text">Zero seconds for a continuous water sheet. If water beads or breaks, organic contamination remains &mdash; and it will plate as pits, skip plating, or peeling. For salvage and thick build-up work, prep is unforgiving: the deposit is only as good as the bond beneath it. This test is free and non-negotiable.</div>
+    </div>
+
+    <!-- Electroclean Cycle Bar -->
+    <div class="glass gauge-wrap">
+      <div class="section-title">Electroclean Cycle &mdash; Finish Anodic <span class="sub">60&ndash;180 SEC TOTAL &middot; 4&ndash;8 V &middot; 30&ndash;80 ASF</span></div>
+      <div class="gauge-track">
+        <div class="gauge-seg" style="width:72%;background:var(--emerald);">CATHODIC &mdash; SCRUB<br>2&times; THE GAS VOLUME, BEST SOIL LIFT</div>
+        <div class="gauge-seg" style="width:28%;background:var(--amber);">ANODIC LAST 15&ndash;30 SEC<br>STRIPS SMUT</div>
+      </div>
+      <div class="gauge-scale"><span>START</span><span>REVERSE</span><span>DONE &rarr; RINSE</span></div>
+      <div class="gauge-cap">Cathodic cleaning scrubs hardest but can redeposit metallic smut &mdash; always finish 15&ndash;30 seconds anodic to strip it. <strong>High-strength steel (&gt;40 HRC): prefer anodic-only &mdash; cathodic loads hydrogen into the steel.</strong> On zinc die cast, limit cathodic time &mdash; hydrogen blisters the casting.</div>
+    </div>
+
+    <!-- Key Parameters -->
+    <div class="glass" style="padding:14px 18px;">
+      <div class="section-title">At the Tank <span class="sub">SOAK + ELECTROCLEAN</span></div>
+      <div class="param-grid">
+        <div class="param-cell"><div class="param-k">Soak Temp</div><div class="param-v">140&ndash;180&deg;F</div><div class="param-n">Never over 200&deg;F &mdash; damages some cleaners</div></div>
+        <div class="param-cell"><div class="param-k">Soak Time</div><div class="param-v">3&ndash;10 min</div><div class="param-n">Heavy draw oil 8&ndash;10 min; light oil 3&ndash;5</div></div>
+        <div class="param-cell"><div class="param-k">Concentration</div><div class="param-v">4&ndash;8 oz/gal</div><div class="param-n">Titrate weekly minimum</div></div>
+        <div class="param-cell"><div class="param-k">Cleaner pH</div><div class="param-v">11.0&ndash;13.5</div><div class="param-n">Per formulation</div></div>
+        <div class="param-cell"><div class="param-k">EC Voltage</div><div class="param-v">4&ndash;8 V</div><div class="param-n">30&ndash;80 ASF typical</div></div>
+        <div class="param-cell"><div class="param-k">EC Time</div><div class="param-v">1&ndash;3 min</div><div class="param-n">&gt;40 HRC steel: anodic-only</div></div>
+        <div class="param-cell"><div class="param-k">EC Temp</div><div class="param-v">140&ndash;180&deg;F</div><div class="param-n">Same or dedicated electrocleaner</div></div>
+        <div class="param-cell"><div class="param-k">Water Break</div><div class="param-v">0 sec</div><div class="param-n">Mandatory before proceeding</div></div>
+      </div>
+    </div>
+
+    <!-- Do / Don't -->
+    <div class="compare-row">
+      <div class="compare-card glass do">
+        <div class="compare-head good">&#10003; Do</div>
+        <ul class="compare-list">
+          <li>Water-break test every rack &mdash; a continuous sheet or it goes back</li>
+          <li>Finish electroclean anodic 15&ndash;30 sec to strip smut</li>
+          <li>Titrate the cleaner weekly at minimum &mdash; don&rsquo;t run it blind</li>
+          <li>Extend soak to 8&ndash;10 min for heavy draw and machining oils</li>
+        </ul>
+      </div>
+      <div class="compare-card glass dont">
+        <div class="compare-head bad">&#10007; Don&rsquo;t</div>
+        <ul class="compare-list">
+          <li>Exceed 200&deg;F &mdash; it damages some cleaner packages</li>
+          <li>Cathodic-clean &gt;40 HRC steel &mdash; go anodic-only, hydrogen loads fast</li>
+          <li>Let floating oil sit &mdash; it redeposits on every part through it</li>
+          <li>Touch cleaned parts with bare hands &mdash; fingerprints = skip plate</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Safety -->
+    <div class="glass safety-card">
+      <div class="safety-head">&#9888; Safety</div>
+      <div class="safety-text"><strong>Hot alkaline solution &mdash; chemical burns on contact. Electrocleaning generates hydrogen and oxygen gas &mdash; ventilation required; no open flames near tanks.</strong> Goggles, face shield, elbow-length chemical gloves, apron, chemical-resistant boots. Skin contact: flush 15 min. Eye contact: eyewash 15 min. The electrocleaner runs DC current in solution &mdash; LOTO before reaching into the tank.</div>
+    </div>
+
+  </div>
+
+  <footer class="footer poster-footer">
+    <p class="footer-disclaimer">Operator reference only. Follow your facility SOPs and verify parameters against your chemistry supplier&rsquo;s TDS and customer specifications. Nickel compounds are classified as suspected carcinogens and known skin sensitizers &mdash; consult current SDS. Report any process deviation to your supervisor. <em>Regulatory data reviewed 2026-09-17: exposure limits reflect published U.S. federal OSHA PELs as of this date; referenced standards should be checked against their current revision. State limits (e.g., Cal/OSHA) and ACGIH TLVs may be stricter.</em></p>
+    <p class="footer-title">Cleaning &mdash; Watts Nickel Plating Series</p>
+    <span class="footer-brand">Plating Posters Inc &middot; Shop Floor Reference &middot; PP-WattsNi-SF / v1.0 / 2026</span>
+  </footer>
+
+</div>
+</div>
+</div>
+
+<div class="tweaks">
+  <div style="display:flex;gap:8px;align-items:center;">
+    <span style="color:rgba(240,237,232,.5);font-size:11px;letter-spacing:.06em;text-transform:uppercase;">Edition</span>
+    <button id="btnDark" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);" onclick="setEdition('')">Dark</button>
+    <button id="btnLight" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:#E8A020;color:#1A1F2E;border:1px solid #E8A020;" onclick="setEdition('light')">Light</button>
+  </div>
+  <button onclick="window.print()" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);">Print / PDF</button>
+</div>
+
+<script>
+const posterWrap=document.getElementById('posterWrap');
+const poster=document.getElementById('poster');
+function scalePoster(){const sW=(window.innerWidth-24)/1200;const sH=(window.innerHeight-24)/1800;const s=Math.min(sW,sH);posterWrap.style.transform='scale('+s+')';posterWrap.style.transformOrigin='top left';posterWrap.style.width=(1200*s)+'px';posterWrap.style.height=(1800*s)+'px';}
+function setEdition(e){if(e)poster.dataset.edition=e;else delete poster.dataset.edition;document.getElementById('btnDark').style.background=e?'transparent':'#E8A020';document.getElementById('btnDark').style.color=e?'#F0EDE8':'#1A1F2E';document.getElementById('btnDark').style.borderColor=e?'rgba(255,255,255,.2)':'#E8A020';document.getElementById('btnLight').style.background=e?'#E8A020':'transparent';document.getElementById('btnLight').style.color=e?'#1A1F2E':'#F0EDE8';document.getElementById('btnLight').style.borderColor=e?'#E8A020':'rgba(255,255,255,.2)';}
+scalePoster();window.addEventListener('resize',scalePoster);
+</script>
+</body>
+</html>
