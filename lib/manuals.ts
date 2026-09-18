@@ -14,7 +14,7 @@ export type Manual = {
   description: string;
   descriptionEs: string;
   pages: number;
-  priceDigital: number;       // digital PDF download (USD) — lowest
+  priceDigital: number;       // digital PDF download (USD) — priced near print so the PDF isn't a cheap self-print master (Erin, 2026-09-18)
   pricePrint: number;         // printed, coil-bound hard copy, shipped (USD)
   priceCombo: number;         // printed hard copy + digital PDF (USD)
   printVolumeTiers: { min: number; price: number }[]; // per-unit print price at quantity breaks (desc by min)
@@ -39,7 +39,7 @@ export const MANUALS: Manual[] = [
     descriptionEs:
       "Un manual de capacitación de 47 páginas, en lenguaje sencillo, para toda la línea de recubrimiento de níquel brillante — escrito en un estilo amigable “para principiantes” que no asume conocimientos previos. Cubre cada estación, desde la limpieza hasta el post-tratamiento, con el “por qué” de cada paso, seguridad integrada, listas de verificación y los errores comunes de los nuevos operadores. Termina con un examen de 20 preguntas, clave de respuestas y un certificado de finalización imprimible.",
     pages: 47,
-    priceDigital: 199,
+    priceDigital: 299,
     pricePrint: 329,
     priceCombo: 369,
     printVolumeTiers: [
@@ -82,7 +82,7 @@ export const MANUALS: Manual[] = [
     descriptionEs:
       "Un manual de capacitación de 46 páginas, en lenguaje sencillo, para toda la línea de níquel Watts simple (níquel de ingeniería) — escrito en un estilo amigable para principiantes que no asume conocimientos previos. Cubre cada estación, desde la limpieza hasta el post-tratamiento, con el “por qué” de cada paso, un capítulo a fondo sobre el baño Watts (control de contaminación, selección de ánodos, diagnóstico con Celda Hull, esfuerzo interno y el horneado de alivio de hidrógeno), seguridad integrada, listas de verificación y firmas del entrenador. Termina con un examen de 20 preguntas con filtros de seguridad, clave de respuestas y un certificado de finalización imprimible.",
     pages: 46,
-    priceDigital: 199,
+    priceDigital: 299,
     pricePrint: 329,
     priceCombo: 369,
     printVolumeTiers: [
@@ -125,7 +125,7 @@ export const MANUALS: Manual[] = [
     descriptionEs:
       "Un manual de capacitación de 46 páginas, en lenguaje sencillo, para toda la línea de recubrimiento de zinc ácido — escrito en un estilo amigable “para principiantes” que no asume conocimientos previos. Cubre cada estación, desde la limpieza hasta el pasivado con cromato trivalente, con el “por qué” de cada paso, seguridad integrada, listas de verificación y los errores comunes de los nuevos operadores. Termina con un examen de 20 preguntas, clave de respuestas y un certificado de finalización imprimible.",
     pages: 46,
-    priceDigital: 199,
+    priceDigital: 299,
     pricePrint: 329,
     priceCombo: 369,
     printVolumeTiers: [
@@ -169,7 +169,7 @@ export const MANUALS: Manual[] = [
     descriptionEs:
       "Un manual de capacitación de 48 páginas, en lenguaje sencillo, para toda la línea de recubrimiento de cobre ácido (sulfato) — escrito en un estilo amigable “para principiantes” que no asume conocimientos previos. Cubre cada estación, desde la limpieza hasta la capa de arranque de cobre, el recubrimiento de cobre ácido y el post-tratamiento/control de calidad — el corazón nivelador del níquel-cromo decorativo y del cobre para PCB. Explica el “por qué” de cada paso: por qué el cobre ácido se deposita por inmersión y ampolla sobre el acero desnudo y requiere una capa de arranque primero, la ventana de cloruro en partes por millón, el sistema de aditivos supresor/acelerador/nivelador, los ánodos de cobre fosforado y el horneado contra la fragilización por hidrógeno. La seguridad está integrada en cada estación — incluida la capa de arranque de cianuro y sin cianuro (co-iguales) y el peligro mortal de ácido más cianuro (HCN). Termina con un examen de 20 preguntas, clave de respuestas y un certificado de finalización imprimible.",
     pages: 48,
-    priceDigital: 199,
+    priceDigital: 299,
     pricePrint: 329,
     priceCombo: 369,
     printVolumeTiers: [
@@ -213,7 +213,7 @@ export const MANUALS: Manual[] = [
     descriptionEs:
       "Un manual de capacitación de 50 páginas, en lenguaje sencillo, para toda la línea moderna de zinc alcalino (zincato) sin cianuro — escrito en un estilo amigable “para principiantes” que no asume conocimientos previos. Cubre cada estación, desde la limpieza hasta el pasivado con cromato trivalente, la configuración de ánodos de acero/disolvedor de zinc, el poder de penetración y el horneado contra la fragilización por hidrógeno — con el “por qué” de cada paso, seguridad integrada, listas de verificación y los errores comunes de los nuevos operadores. Termina con un examen de 20 preguntas, clave de respuestas y un certificado de finalización imprimible.",
     pages: 50,
-    priceDigital: 199,
+    priceDigital: 299,
     pricePrint: 329,
     priceCombo: 369,
     printVolumeTiers: [
@@ -258,7 +258,7 @@ export const MANUALS: Manual[] = [
     descriptionEs:
       "Un manual de capacitación de 60 páginas, en lenguaje sencillo, para toda la línea de aleación de zinc-níquel alcalino (12–16% Ni) — escrito en un estilo amigable “para principiantes” que no asume conocimientos previos. Cubre cada estación, desde la limpieza hasta el pasivado con cromato trivalente y el sellado, la configuración de ánodos inertes/alimentación de níquel, la codeposición anómala y el control de la composición de la aleación, el desempeño en niebla salina y el horneado contra la fragilización por hidrógeno — con el “por qué” de cada paso, seguridad integrada, listas de verificación y los errores comunes de los nuevos operadores. Termina con un examen de 20 preguntas, clave de respuestas y un certificado de finalización imprimible.",
     pages: 60,
-    priceDigital: 199,
+    priceDigital: 299,
     pricePrint: 329,
     priceCombo: 369,
     printVolumeTiers: [
@@ -304,7 +304,7 @@ export const MANUALS: Manual[] = [
     descriptionEs:
       "Un manual de capacitación de 46 páginas, en lenguaje sencillo, para el cromado duro funcional (industrial) a partir de ácido crómico hexavalente — escrito en un estilo amigable “para principiantes” que no asume conocimientos previos. Cubre cada estación, desde el montaje/enmascarado y la limpieza hasta el tanque de cromo de alta densidad de corriente, el horneado contra la fragilización por hidrógeno y el rectificado a la medida — con el “por qué” de cada paso, el control de espesor por amperios-hora, los ánodos conformados y el poder de penetración, y el tratamiento de residuos de Cr(VI). La seguridad es primordial: este es el proceso más peligroso de la línea, así que el control del peligro del cromo hexavalente (supresión de niebla, ventilación, norma de Cr VI de OSHA, protección respiratoria) está integrado en cada estación. Termina con un examen de 20 preguntas, clave de respuestas y un certificado de finalización imprimible.",
     pages: 46,
-    priceDigital: 199,
+    priceDigital: 299,
     pricePrint: 329,
     priceCombo: 369,
     printVolumeTiers: [
@@ -350,7 +350,7 @@ export const MANUALS: Manual[] = [
     descriptionEs:
       "Un manual de capacitación de 47 páginas, en lenguaje sencillo, para el acabado de cromo decorativo brillante tipo espejo sobre una capa base de níquel — que cubre TANTO el cromo hexavalente tradicional COMO el cromo trivalente moderno — escrito en un estilo amigable “para principiantes” que no asume conocimientos previos. Enseña toda la línea: limpieza, la fundamental capa base de níquel semibrillante/brillante (dúplex) que hace el verdadero trabajo contra la corrosión, la delgada capa de cromo micro-discontinuo, el poder de penetración y la cobertura, y los controles de calidad (CASS, niebla salina, STEP). La seguridad está integrada en cada estación — incluido el control completo del peligro del cromo hexavalente (Cr VI) donde el taller usa cromo hexavalente. Termina con un examen de 20 preguntas, clave de respuestas y un certificado de finalización imprimible.",
     pages: 47,
-    priceDigital: 199,
+    priceDigital: 299,
     pricePrint: 329,
     priceCombo: 369,
     printVolumeTiers: [
@@ -396,7 +396,7 @@ export const MANUALS: Manual[] = [
     descriptionEs:
       "Un manual de capacitación de 49 páginas, en lenguaje sencillo, para el níquel químico de bajo fósforo (Bajo-P, ~2–5% P) — escrito en un estilo amigable “para principiantes” que no asume conocimientos previos. Como el recubrimiento químico es autocatalítico (SIN corriente eléctrica, sin ánodos), los fundamentos se enseñan desde cero: cómo un baño caliente a ~90°C deposita una aleación Ni-P perfectamente uniforme en cada superficie, incluso en barrenos y agujeros ciegos. Cubre el control de la química del baño (recambios metálicos / MTO, reposición, estabilizadores, evitar la descomposición), el perfil de dureza/desgaste/servicio alcalino del Bajo-P, el tratamiento térmico para dureza frente al horneado de alivio de fragilización por hidrógeno, y cómo el Bajo-P difiere del Medio-P y el Alto-P. La seguridad está integrada en cada estación — el baño casi en ebullición y el peligro de descomposición/fosfina son lo primero. Termina con un examen de 20 preguntas, clave de respuestas y un certificado de finalización imprimible.",
     pages: 49,
-    priceDigital: 199,
+    priceDigital: 299,
     pricePrint: 329,
     priceCombo: 369,
     printVolumeTiers: [
@@ -441,7 +441,7 @@ export const MANUALS: Manual[] = [
     descriptionEs:
       "Un manual de capacitación de 49 páginas, en lenguaje sencillo, para el níquel químico de fósforo medio (Medio-P, ~6–9% P) — el grado caballito de batalla, de propósito general y el más utilizado. Escrito en un estilo amigable “para principiantes” que no asume conocimientos previos, vuelve a enseñar los fundamentos del recubrimiento químico (autocatalítico, SIN corriente eléctrica): cómo un baño caliente a ~90°C deposita una aleación Ni-P perfectamente uniforme en cada superficie, incluso en barrenos y agujeros ciegos. Cubre el control de la química del baño (recambios metálicos / MTO, reposición, estabilizadores, evitar la descomposición), el perfil balanceado de corrosión y dureza y la tasa de depósito más rápida del Medio-P, el tratamiento térmico para dureza frente al horneado de alivio de fragilización por hidrógeno, y cómo el Medio-P se ubica entre el Bajo-P y el Alto-P. La seguridad está integrada en cada estación. Termina con un examen de 20 preguntas, clave de respuestas y un certificado de finalización imprimible.",
     pages: 49,
-    priceDigital: 199,
+    priceDigital: 299,
     pricePrint: 329,
     priceCombo: 369,
     printVolumeTiers: [
@@ -486,7 +486,7 @@ export const MANUALS: Manual[] = [
     descriptionEs:
       "Un manual de capacitación de 49 páginas, en lenguaje sencillo, para el níquel químico de fósforo alto (Alto-P, ~10–13% P) — el grado de máxima resistencia a la corrosión, y la elección cuando una pieza debe sobrevivir al ácido, la sal, el cloruro, el ambiente marino o un servicio químico severo, o debe ser no magnética. Escrito en un estilo amigable “para principiantes” que no asume conocimientos previos, vuelve a enseñar los fundamentos del recubrimiento químico (autocatalítico, SIN corriente eléctrica): cómo un baño caliente a ~90°C deposita una aleación Ni-P casi amorfa y perfectamente uniforme en cada superficie. Cubre el control de la química del baño (recambios metálicos / MTO, reposición, estabilizadores, evitar la descomposición), el perfil de corrosión/no magnético del Alto-P y — de forma crítica — el compromiso del tratamiento térmico (hornear para dureza cristaliza la estructura amorfa y sacrifica la resistencia a la corrosión, por eso el Alto-P normalmente se usa tal como se deposita). La seguridad está integrada en cada estación. Termina con un examen de 20 preguntas, clave de respuestas y un certificado de finalización imprimible.",
     pages: 49,
-    priceDigital: 199,
+    priceDigital: 299,
     pricePrint: 329,
     priceCombo: 369,
     printVolumeTiers: [
@@ -531,7 +531,7 @@ export const MANUALS: Manual[] = [
     descriptionEs:
       "Un manual de capacitación de 40 páginas, en lenguaje sencillo, para el anodizado estándar con ácido sulfúrico (Tipo II) del aluminio — escrito en un estilo amigable “para principiantes” que no asume conocimientos previos. El anodizado es distinto del recubrimiento: la pieza es el ÁNODO y se HACE CRECER una capa dura e integral de óxido de aluminio a partir del propio metal, en lugar de depositar un metal sobre él. Cubre toda la línea — limpiar, grabar, desmanchar, anodizar, teñir y sellar — con el “por qué” de cada paso: la estructura de óxido poroso, el teñido dentro de los poros y su sellado, el crecimiento dimensional (la capa crece ~mitad adentro y ~mitad afuera), el montaje y el contacto eléctrico, el enfriamiento del baño y los efectos de la aleación de aluminio. La seguridad está integrada en cada estación (ácido sulfúrico, grabado cáustico, hidrógeno en el cátodo, tanques de sellado casi en ebullición). Termina con un examen de 20 preguntas, clave de respuestas y un certificado de finalización imprimible.",
     pages: 40,
-    priceDigital: 199,
+    priceDigital: 299,
     pricePrint: 329,
     priceCombo: 369,
     printVolumeTiers: [
@@ -576,7 +576,7 @@ export const MANUALS: Manual[] = [
     descriptionEs:
       "Un manual de capacitación de 40 páginas, en lenguaje sencillo, para el anodizado duro (Tipo III) del aluminio — el anodizado de ingeniería grueso, duro y resistente al desgaste. Escrito en un estilo amigable “para principiantes” que no asume conocimientos previos, vuelve a enseñar los fundamentos del anodizado (la pieza es el ÁNODO; se HACE CRECER un óxido denso a partir del aluminio) y luego lo hace específico del Tipo III: un baño frío (~ -5 a +10 °C) y mayor voltaje/densidad de corriente en rampa hacen crecer una capa mucho más gruesa y dura (~25–100+ µm). Cubre el compromiso sellado-vs-desgaste (sellar mejora la corrosión pero reduce la resistencia a la abrasión, por eso el anodizado duro para desgaste suele dejarse sin sellar), el gran crecimiento dimensional y lo que significa para tolerancias y enmascarado, los efectos de la aleación de aluminio (cuáles anodizan bien y cuáles se “queman”) y el enfriamiento agresivo del baño. La seguridad está integrada en cada estación. Termina con un examen de 20 preguntas, clave de respuestas y un certificado de finalización imprimible.",
     pages: 40,
-    priceDigital: 199,
+    priceDigital: 299,
     pricePrint: 329,
     priceCombo: 369,
     printVolumeTiers: [
@@ -622,7 +622,7 @@ export const MANUALS: Manual[] = [
     descriptionEs:
       "Un manual de capacitación de 46 páginas, en lenguaje sencillo, para el anodizado con ácido crómico (Tipo I) del aluminio — el anodizado aeroespacial delgado, gris y protector contra la corrosión. Escrito en un estilo amigable “para principiantes” que no asume conocimientos previos, vuelve a enseñar los fundamentos del anodizado (la pieza es el ÁNODO; se HACE CRECER un óxido a partir del aluminio) y luego lo hace específico del Tipo I: un electrolito de ácido crómico y un voltaje bajo escalonado forman una capa muy delgada (~0.5–7.5 µm) con cambio dimensional mínimo. Explica por qué la industria aeroespacial lo especifica — NO reduce la resistencia a la fatiga del aluminio, cualquier electrolito atrapado en intersticios y ensambles es mucho menos corrosivo que el sulfúrico, y es una excelente base para pintura/adhesivo. Como el baño es cromo hexavalente (un cancerígeno confirmado), el control del peligro de Cr VI está integrado en cada estación (OSHA 1910.1026, control de niebla, protección respiratoria, tratamiento de residuos Cr⁶⁺→Cr³⁺). Termina con un examen de 20 preguntas, clave de respuestas y un certificado de finalización imprimible.",
     pages: 46,
-    priceDigital: 199,
+    priceDigital: 299,
     pricePrint: 329,
     priceCombo: 369,
     printVolumeTiers: [
@@ -667,7 +667,7 @@ export const MANUALS: Manual[] = [
     descriptionEs:
       "Un manual de capacitación de 44 páginas, en lenguaje sencillo, para el anodizado bórico-sulfúrico (BSAA) — el anodizado aeroespacial sin cromo que reemplazó al anodizado con ácido crómico (Tipo I). Escrito en un estilo amigable “para principiantes” que no asume conocimientos previos, vuelve a enseñar los fundamentos del anodizado (la pieza es el ÁNODO; se HACE CRECER un óxido a partir del aluminio) y luego lo hace específico del BSAA: un electrolito de ácido bórico + sulfúrico (bajo) operado a bajo voltaje forma una capa delgada (~2–7 µm) que es una excelente base para pintura/imprimación y es favorable al aluminio crítico por fatiga. Lo principal es la seguridad: el BSAA NO contiene cromo hexavalente, así que elimina el peligro cancerígeno de Cr VI del anodizado crómico — pero no está libre de peligros (ácidos, grabado cáustico, hidrógeno, sellado caliente, CD), y la elección del sellado importa (un sellado con dicromato reintroduciría Cr VI; los sellos trivalentes/sin cromato lo mantienen libre de cromo). Cubre MIL-PRF-8625 Tipo IC, las ventajas de adhesión de pintura y fatiga, y el manejo de residuos. Termina con un examen de 20 preguntas, clave de respuestas y un certificado de finalización imprimible.",
     pages: 44,
-    priceDigital: 199,
+    priceDigital: 299,
     pricePrint: 329,
     priceCombo: 369,
     printVolumeTiers: [
@@ -712,7 +712,7 @@ export const MANUALS: Manual[] = [
     descriptionEs:
       "Un manual de capacitación de 44 páginas, en lenguaje sencillo, para el anodizado con ácido fosfórico (PAA) — la preparación de superficie aeroespacial para el PEGADO ADHESIVO ESTRUCTURAL durable. Escrito en un estilo amigable “para principiantes” que no asume conocimientos previos, vuelve a enseñar los fundamentos del anodizado (la pieza es el ÁNODO; se HACE CRECER un óxido a partir del aluminio) y luego lo hace específico del PAA: un electrolito de ácido fosfórico a bajo voltaje forma un óxido muy delgado con una estructura de poros abiertos tipo “bigotes” en la que el adhesivo y la imprimación se anclan — dando uniones excepcionalmente durables y resistentes a la humedad. La regla que lo define: el PAA se deja SIN SELLAR (sellar cerraría los poros que el adhesivo necesita) y se imprima/pega dentro de una ventana de tiempo, no se pinta ni se sella. Cubre el grabado previo FPL/P2 (con la advertencia de Cr VI en el grabado FPL con dicromato), Boeing BAC5555, ASTM D3933 y la prueba de cuña/agrietamiento (ASTM D3762). La seguridad está integrada. Termina con un examen de 20 preguntas, clave de respuestas y un certificado de finalización imprimible.",
     pages: 44,
-    priceDigital: 199,
+    priceDigital: 299,
     pricePrint: 329,
     priceCombo: 369,
     printVolumeTiers: [
@@ -757,7 +757,7 @@ export const MANUALS: Manual[] = [
     descriptionEs:
       "Un manual de capacitación de 44 páginas, en lenguaje sencillo, para el anodizado brillante — el anodizado decorativo cuyo producto entero es el brillo: un acabado espejo y especular sobre aluminio. Escrito en un estilo amigable “para principiantes” que no asume conocimientos previos, vuelve a enseñar los fundamentos del anodizado (la pieza es el ÁNODO; se HACE CRECER un óxido a partir del aluminio) y luego lo hace específico del anodizado brillante: un proceso de dos etapas donde un abrillantado químico fosfórico-nítrico caliente nivela la superficie a espejo, y luego un anodizado sulfúrico CLARO (transparente) delgado fija el brillo. Explica por qué necesita aluminio de alta pureza (las inclusiones de aleación dispersan la luz y opacan el acabado), por qué se omite a propósito el grabado mate, y cómo mantener la capa clara transparente. La lección de seguridad destacada: el abrillantado caliente desprende NOx (humo pardo de óxidos de nitrógeno) — un peligro de inhalación grave y de efecto retardado que requiere ventilación fuerte — enseñada con plena prominencia. Termina con un examen de 20 preguntas, clave de respuestas y un certificado de finalización imprimible.",
     pages: 44,
-    priceDigital: 199,
+    priceDigital: 299,
     pricePrint: 329,
     priceCombo: 369,
     printVolumeTiers: [
@@ -802,7 +802,7 @@ export const MANUALS: Manual[] = [
     descriptionEs:
       "Un manual de capacitación de 48 páginas, en lenguaje sencillo, para el anodizado de color integral — el anodizado arquitectónico donde el color lo produce el anodizado mismo, en un solo paso, sin anilina. Escrito en un estilo amigable “para principiantes” que no asume conocimientos previos, vuelve a enseñar los fundamentos del anodizado (la pieza es el ÁNODO; se HACE CRECER un óxido a partir del aluminio) y luego lo hace específico del color integral: un electrolito de ácido sulfúrico + ácido orgánico (tipo Kalcolor/Duranodic) operado a mayor energía hace crecer un óxido duro con color inherente — de champaña a bronces, gris y negro — que es muy resistente a la luz y a la abrasión porque no hay anilina que se desvanezca. Explica cómo el color se oscurece con el espesor/amperios-hora, por qué la aleación y el temple del aluminio determinan el color (y el reto de igualar color entre lotes), las tres rutas de color comparadas (teñido vs color integral vs color electrolítico de dos pasos), y los requisitos arquitectónicos AAMA 611 Clase I. La seguridad está integrada. Termina con un examen de 20 preguntas, clave de respuestas y un certificado de finalización imprimible.",
     pages: 48,
-    priceDigital: 199,
+    priceDigital: 299,
     pricePrint: 329,
     priceCombo: 369,
     printVolumeTiers: [
@@ -847,7 +847,7 @@ export const MANUALS: Manual[] = [
     descriptionEs:
       "Un manual de capacitación de 55 páginas, en lenguaje sencillo, para el anodizado de color electrolítico en dos pasos — el estándar moderno de color arquitectónico. Escrito en un estilo amigable “para principiantes” que no asume conocimientos previos, vuelve a enseñar los fundamentos del anodizado (la pieza es el ÁNODO; se HACE CRECER un óxido a partir del aluminio) y luego enseña el método de dos pasos: (1) un anodizado sulfúrico claro normal (Tipo II), y luego (2) un baño de coloración electrolítica con corriente alterna que deposita metal (estaño, níquel o cobalto) en el fondo de los poros — dando colores durables y resistentes a la luz, de champaña a bronces y un negro excelente. La idea que lo define: la profundidad del color la fija el TIEMPO y el voltaje de coloración, no el espesor de la capa — por eso el de dos pasos es mucho más consistente e independiente de la aleación que el color integral, y por eso dominó el trabajo arquitectónico. Cubre el mecanismo de coloración con CA, las tres rutas de color comparadas, AAMA 611 Clase I, y la seguridad/residuos del baño de sales metálicas. Termina con un examen de 20 preguntas, clave de respuestas y un certificado de finalización imprimible.",
     pages: 55,
-    priceDigital: 199,
+    priceDigital: 299,
     pricePrint: 329,
     priceCombo: 369,
     printVolumeTiers: [
@@ -893,7 +893,7 @@ export const MANUALS: Manual[] = [
     descriptionEs:
       "Un manual de capacitación de 44 páginas, en lenguaje sencillo, para el fosfato de hierro — el recubrimiento de conversión ligero que es la base de PINTURA y recubrimiento en polvo por excelencia. Una nueva familia de procesos: este es un RECUBRIMIENTO DE CONVERSIÓN químico, SIN corriente eléctrica — la superficie de acero reacciona con la solución para formar un recubrimiento integral. Escrito en un estilo amigable “para principiantes” que no asume conocimientos previos, enseña los fundamentos de los recubrimientos de conversión desde cero, y luego el fosfato de hierro en concreto: cómo se forma un recubrimiento amorfo ligero (~30–90 mg/ft²) por inmersión o aspersión, el concepto de limpiador-recubridor, las lavadoras de aspersión de 3 vs 5 etapas, el control de peso/color del recubrimiento, el sellado (cromato vs sin cromo/circonio), y la alternativa moderna de pretratamiento de circonio/nano. Explica dónde encaja el fosfato de hierro frente a los fosfatos de zinc y manganeso más pesados. La seguridad está integrada en cada estación. Termina con un examen de 20 preguntas, clave de respuestas y un certificado de finalización imprimible.",
     pages: 44,
-    priceDigital: 199,
+    priceDigital: 299,
     pricePrint: 329,
     priceCombo: 369,
     printVolumeTiers: [
@@ -938,7 +938,7 @@ export const MANUALS: Manual[] = [
     descriptionEs:
       "Un manual de capacitación de 54 páginas, en lenguaje sencillo, para el fosfato de zinc — el recubrimiento de conversión pesado y cristalino que cumple tres funciones: base de corrosión + pintura, portador de lubricante para conformado en frío, y antioxidante bajo aceite. Parte de la familia de recubrimientos de conversión (un recubrimiento químico, SIN corriente eléctrica). Escrito en un estilo amigable “para principiantes” que no asume conocimientos previos, enseña los fundamentos de los recubrimientos de conversión, y luego el fosfato de zinc en concreto: el recubrimiento cristalino (~150–1,000+ mg/ft²), el fundamental pre-baño de ACTIVACIÓN afinador de grano (coloide de titanio) que nuclea cristales finos y apretados, el control de ácido libre/ácido total (“puntos”), los aceleradores de nitrito/nitrato, las versiones tri-catión (Zn/Ni/Mn) automotrices, y el mayor compromiso de lodo/mantenimiento. Explica dónde se ubica entre el fosfato de hierro (más ligero) y el de manganeso (más pesado). La seguridad está integrada en cada estación. Termina con un examen de 20 preguntas, clave de respuestas y un certificado de finalización imprimible.",
     pages: 54,
-    priceDigital: 199,
+    priceDigital: 299,
     pricePrint: 329,
     priceCombo: 369,
     printVolumeTiers: [
@@ -984,7 +984,7 @@ export const MANUALS: Manual[] = [
     descriptionEs:
       "Un manual de capacitación de 54 páginas, en lenguaje sencillo, para el fosfato de manganeso — el recubrimiento de conversión cristalino negro más pesado, usado para DESGASTE, asentamiento, anti-rayadura y retención de aceite (no como base para pintura). Parte de la familia de recubrimientos de conversión (un recubrimiento químico, SIN corriente eléctrica). Escrito en un estilo amigable “para principiantes” que no asume conocimientos previos, enseña los fundamentos de los recubrimientos de conversión, y luego el fosfato de manganeso en concreto: el recubrimiento cristalino pesado (~1,000–2,000+ mg/ft²) que retiene aceite y da lubricación sacrificial de asentamiento a partes de motor, engranes, cojinetes, sujetadores y armas de fuego (“parkerizado”); el baño caliente (~190–210 °F) que es el peligro de escaldadura destacado; la activación a base de manganeso; y el acabado obligatorio de aceite/cera (el aceite da la protección anticorrosiva y la lubricación). Explica dónde se ubica como el miembro más pesado de la familia de fosfatos (vs hierro y zinc). MIL-DTL-16232 Tipo M. La seguridad está integrada en cada estación. Termina con un examen de 20 preguntas, clave de respuestas y un certificado de finalización imprimible.",
     pages: 54,
-    priceDigital: 199,
+    priceDigital: 299,
     pricePrint: 329,
     priceCombo: 369,
     printVolumeTiers: [
@@ -1029,7 +1029,7 @@ export const MANUALS: Manual[] = [
     descriptionEs:
       "Un manual de capacitación de 49 páginas, en lenguaje sencillo, para los recubrimientos de conversión de cromato hexavalente — los clásicos “cromatos” transparente/azul, amarillo/oro, verde olivo y negro que pasivan las piezas recubiertas de zinc. Es un recubrimiento de conversión (una película química, SIN corriente eléctrica). Escrito en un estilo amigable “para principiantes” que no asume conocimientos previos, enseña los fundamentos de los recubrimientos de conversión, y luego el cromato hexavalente en concreto: la película auto-reparable de cromo hexavalente que aumenta mucho la resistencia a la corrosión y vuelve a proteger los rayones; la paleta de colores/tipos (color ≈ espesor ≈ protección); el baño ácido diluido, la inmersión corta, y el secado a baja temperatura crítico que preserva la auto-reparación. Como el baño es cromo hexavalente — un cancerígeno confirmado — el control del peligro de Cr VI está integrado (OSHA 1910.1026, control de niebla, protección respiratoria, tratamiento de residuos Cr⁶⁺→Cr³⁺), junto con la restricción RoHS/ELV/REACH que impulsa la migración al cromato trivalente. Termina con un examen de 20 preguntas, clave de respuestas y un certificado de finalización imprimible.",
     pages: 49,
-    priceDigital: 199,
+    priceDigital: 299,
     pricePrint: 329,
     priceCombo: 369,
     printVolumeTiers: [
@@ -1074,7 +1074,7 @@ export const MANUALS: Manual[] = [
     descriptionEs:
       "Un manual de capacitación de 49 páginas, en lenguaje sencillo, para los recubrimientos de conversión de cromato trivalente (Cr³⁺) — el pasivado moderno que cumple con RoHS y reemplazó al cromato hexavalente en piezas recubiertas de zinc. Es un recubrimiento de conversión (una película química, SIN corriente eléctrica). Escrito en un estilo amigable “para principiantes” que no asume conocimientos previos, enseña los fundamentos de los recubrimientos de conversión, y luego el trivalente en concreto: basado en cromo trivalente (sin hexavalente) para cumplir RoHS/ELV/REACH; la lección central de que el trivalente es una barrera pasiva (NO auto-reparable como el hex), así que depende de un pasivado más grueso y uniforme MÁS un sistema de capa superior/sellador para igualar la niebla salina del hex; las opciones de color transparente/azul, iridiscente y negro; y los puntos de cuidado (arrastre, pH, y no dejar que el Cr³⁺ se oxide a Cr⁶⁺). La seguridad se reformula con honestidad — el cromo trivalente no es cancerígeno como el Cr VI, pero sigue siendo un baño ácido con capas superiores que contienen cobalto, así que el EPP y la ventilación siguen aplicando. Termina con un examen de 20 preguntas, clave de respuestas y un certificado de finalización imprimible.",
     pages: 49,
-    priceDigital: 199,
+    priceDigital: 299,
     pricePrint: 329,
     priceCombo: 369,
     printVolumeTiers: [
@@ -1120,7 +1120,7 @@ export const MANUALS: Manual[] = [
     descriptionEs:
       "Un manual de capacitación de 51 páginas, en lenguaje sencillo, para la película química (chem film / Alodine / Iridite) — recubrimiento de conversión de cromato sobre ALUMINIO, MIL-DTL-5541. Es un recubrimiento de conversión (una película química, SIN corriente eléctrica). Escrito en un estilo amigable “para principiantes” que no asume conocimientos previos, enseña los fundamentos de los recubrimientos de conversión, y luego la película química en concreto: sus dos funciones que la definen — protección contra la corrosión + base para pintura/adhesivo, Y mantenerse eléctricamente CONDUCTIVA (baja resistencia de contacto) para proteger el aluminio sin dejar de permitir la conexión a tierra/EMI, la diferencia clave frente al anodizado aislante. Cubre el Tipo I (hexavalente, oro/dorado, máxima corrosión) vs el Tipo II (trivalente/sin cromo, transparente, RoHS), la Clase 1A (máx. corrosión) vs la Clase 3 (baja resistencia eléctrica), el paso decisivo de DESOXIDADO, la aplicación por brocha/inmersión/aspersión incluido el retoque en campo de aeronaves, y la verificación de cobertura para el Tipo II transparente. El control del peligro de Cr VI está integrado para el Tipo I (OSHA 1910.1026, control de niebla, respiradores, residuos Cr⁶⁺→Cr³⁺), con la migración RoHS/REACH al Tipo II. Termina con un examen de 20 preguntas, clave de respuestas y un certificado de finalización imprimible.",
     pages: 51,
-    priceDigital: 199,
+    priceDigital: 299,
     pricePrint: 329,
     priceCombo: 369,
     printVolumeTiers: [
@@ -1165,7 +1165,7 @@ export const MANUALS: Manual[] = [
     descriptionEs:
       "Un manual de capacitación de 56 páginas, en lenguaje sencillo, para el óxido negro (ennegrecido) del acero — el clásico acabado negro que convierte la superficie en magnetita negra (Fe₃O₄). Es un recubrimiento de conversión (una película química, SIN corriente eléctrica). Escrito en un estilo amigable “para principiantes” que no asume conocimientos previos, enseña los fundamentos de los recubrimientos de conversión, y luego el óxido negro en concreto: el recubrimiento delgado y dimensionalmente neutro (una ventaja clave para piezas de tolerancia cerrada); las TRES clases de temperatura — caliente de sosa cáustica-nitrato (~285–310 °F, magnetita verdadera, el clásico), temperatura media, y temperatura ambiente/frío (una película de cobre-selenio, NO magnetita verdadera, más delgada/menos durable); y el post-baño obligatorio de aceite/cera/laca que en realidad da la resistencia a la corrosión (el óxido desnudo protege poco). La seguridad va por delante: el baño caliente es sosa cáustica concentrada hirviente, con el peligro crítico de que el agua se convierta en vapor instantáneo y cause erupción, enseñado desde el principio. Cubre usos (herramientas, sujetadores, armas de fuego, engranes, partes ópticas antirreflejo), MIL-DTL-13924 / AMS 2485, y calidad/solución de problemas. Termina con un examen de 20 preguntas, clave de respuestas y un certificado de finalización imprimible.",
     pages: 56,
-    priceDigital: 199,
+    priceDigital: 299,
     pricePrint: 329,
     priceCombo: 369,
     printVolumeTiers: [
@@ -1210,7 +1210,7 @@ export const MANUALS: Manual[] = [
     descriptionEs:
       "Un manual de capacitación de 49 páginas, en lenguaje sencillo, para la pasivación del acero inoxidable. Importante: la pasivación NO es un recubrimiento — es un tratamiento químico que elimina el hierro libre y la contaminación de la superficie y deja que la propia capa pasiva de óxido de cromo del acero inoxidable se reforme más fuerte y uniforme. Escrito en un estilo amigable “para principiantes” que no asume conocimientos previos, replantea los fundamentos (no se deposita nada — el acero se protege solo) y luego cubre ambas químicas — ácido nítrico (clásico) y ácido cítrico (la tendencia moderna más verde y segura); la pre-limpieza decisiva; la dependencia del grado y el riesgo de ataque flash en inoxidables de libre maquinado y martensíticos; la distinción decapado vs. pasivación; ASTM A967 / AMS 2700 (nítrico Método 1 / cítrico Método 2); y — fundamental — las PRUEBAS de verificación (inmersión en agua, humedad, niebla salina, sulfato de cobre, ferroxyl) que demuestran que funcionó, ya que no hay recubrimiento visible que mirar. La seguridad pone por delante el peligro de inhalación de NOx (humos pardos) del ácido nítrico. Termina con un examen de 20 preguntas, clave de respuestas y un certificado de finalización imprimible.",
     pages: 49,
-    priceDigital: 199,
+    priceDigital: 299,
     pricePrint: 329,
     priceCombo: 369,
     printVolumeTiers: [
