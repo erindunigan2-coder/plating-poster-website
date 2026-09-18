@@ -4,6 +4,7 @@ import { getCategory, getProcess, CATEGORIES } from "@/lib/catalog";
 import { getPostersByProcess, getPostersByProcessAndType } from "@/lib/posters";
 import PosterCard from "@/components/PosterCard";
 import PosterPlaceholder from "@/components/PosterPlaceholder";
+import ManualSealButton from "@/components/ManualSealButton";
 
 type Props = {
   params: Promise<{ category: string; process: string }>;
@@ -175,26 +176,33 @@ export default async function ProcessSeriesPage({ params }: Props) {
             <span style={{ color: cat.accentColor }}>{proc.title}</span>
           </nav>
 
-          <p
-            className="font-mono text-xs tracking-widest uppercase mb-3"
-            style={{ color: cat.accentColor }}
-          >
-            {cat.title}
-          </p>
-          <h1
-            className="font-black uppercase leading-none mb-4"
-            style={{
-              fontFamily: "var(--font-barlow-condensed)",
-              fontSize: "clamp(2rem, 5vw, 3rem)",
-              color: "#F0EDE8",
-            }}
-          >
-            {proc.title}
-          </h1>
-          <p className="text-sm" style={{ color: "#9098A8" }}>
-            {proc.posterCount}-poster reference series covering each stage of the{" "}
-            {proc.title} process. Available in English and Spanish, dark and light editions.
-          </p>
+          <div className="flex items-start justify-between gap-6 flex-wrap">
+            <div className="min-w-0 flex-1">
+              <p
+                className="font-mono text-xs tracking-widest uppercase mb-3"
+                style={{ color: cat.accentColor }}
+              >
+                {cat.title}
+              </p>
+              <h1
+                className="font-black uppercase leading-none mb-4"
+                style={{
+                  fontFamily: "var(--font-barlow-condensed)",
+                  fontSize: "clamp(2rem, 5vw, 3rem)",
+                  color: "#F0EDE8",
+                }}
+              >
+                {proc.title}
+              </h1>
+              <p className="text-sm" style={{ color: "#9098A8" }}>
+                {proc.posterCount}-poster reference series covering each stage of the{" "}
+                {proc.title} process. Available in English and Spanish, dark and light editions.
+              </p>
+            </div>
+            {availablePosters.length > 0 && (
+              <ManualSealButton posterId={availablePosters[0].id} />
+            )}
+          </div>
 
           {/* Availability badge */}
           {isAvailable ? (
