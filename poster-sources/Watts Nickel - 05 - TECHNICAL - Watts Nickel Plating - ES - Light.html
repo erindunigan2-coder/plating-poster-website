@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>N&iacute;quel Watts &mdash; Enchapado de N&iacute;quel Watts &mdash; T&eacute;cnico | Plating Posters Inc</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Barlow:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#1A1F2E;--navy:#0D1020;--text:#F0EDE8;--muted:rgba(240,237,232,.62);
+  --faint:rgba(240,237,232,.38);
+  --amber:#E8A020;--teal:#2EC4B6;--emerald:#27AE60;--coral:#E05C5C;
+  --slate:#3A4055;--callout:#1E2435;--altrow:#252B3D;
+  --glass-bg:rgba(30,36,53,.55);--glass-border:rgba(255,255,255,.12);
+  --glass-shadow:inset 0 1px 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(0,0,0,.2),0 4px 12px rgba(0,0,0,.25);
+}
+.poster[data-edition="light"]{
+  --bg:#F5F4F0;--navy:#DDD8CE;--text:#1B2030;--muted:rgba(27,32,48,.74);
+  --faint:rgba(27,32,48,.42);
+  --amber:#B8770D;--teal:#1A8C82;--emerald:#1E8449;--coral:#B7322F;
+  --slate:#C5C0B5;--callout:#ECEAE1;--altrow:#E4E1D6;
+  --glass-bg:rgba(255,253,247,.78);--glass-border:rgba(27,32,48,.16);
+  --glass-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 4px 12px rgba(27,32,48,.08);
+}
+html,body{margin:0;padding:0;background:#e8e6df;}
+.stage{width:100vw;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;overflow:visible;padding:12px 0;box-sizing:border-box;}
+.poster-wrap{transform-origin:top left;}
+.poster{
+  width:1200px;height:1800px;position:relative;overflow:hidden;
+  background:
+    radial-gradient(1200px 800px at 15% 8%,rgba(46,196,182,.14),transparent 60%),
+    radial-gradient(1000px 700px at 90% 25%,rgba(232,160,32,.12),transparent 55%),
+    radial-gradient(900px 900px at 50% 80%,rgba(224,92,92,.10),transparent 60%),
+    var(--bg);
+  font-family:'Inter',sans-serif;color:var(--text);
+  display:flex;flex-direction:column;padding:32px;box-sizing:border-box;
+}
+.glass{background-color:var(--glass-bg);background-image:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));border:1px solid var(--glass-border);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);box-shadow:var(--glass-shadow);border-radius:12px;}
+.tack{position:absolute;width:24px;height:24px;border-radius:50%;border:1.5px solid rgba(232,160,32,.28);z-index:2;pointer-events:none;}
+.tack::before,.tack::after{content:"";position:absolute;background:rgba(232,160,32,.28);}
+.tack::before{left:50%;top:-3px;bottom:-3px;width:1px;transform:translateX(-50%);}
+.tack::after{top:50%;left:-3px;right:-3px;height:1px;transform:translateY(-50%);}
+.tack.tl{top:12px;left:12px;}.tack.tr{top:12px;right:12px;}.tack.bl{bottom:12px;left:12px;}.tack.br{bottom:12px;right:12px;}
+
+.poster-header{flex-shrink:0;}
+.poster-body{flex:1;overflow:hidden;display:flex;flex-direction:column;gap:5px;justify-content:space-between;}
+.poster-footer{flex-shrink:0;margin-top:6px;}
+
+.header-band{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:5px;}
+.header-left{flex:1;min-width:0;}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--amber);letter-spacing:.16em;text-transform:uppercase;margin-bottom:2px;display:flex;align-items:center;gap:12px;}
+.eyebrow::before{content:"";display:inline-block;width:30px;height:3px;background:var(--amber);}
+.headline{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:72px;color:var(--text);line-height:.92;margin:2px 0;letter-spacing:-.01em;text-transform:uppercase;}
+.headline em{font-style:normal;color:var(--amber);}
+.subhead{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:20px;color:var(--teal);margin:0 0 3px;letter-spacing:.02em;text-transform:uppercase;}
+.tagline{font-family:'Inter',sans-serif;font-style:italic;font-size:11px;color:var(--muted);line-height:1.35;max-width:700px;margin:0;}
+.logo-card{flex-shrink:0;padding:12px 10px;display:flex;flex-direction:column;align-items:center;gap:8px;align-self:flex-start;}
+.logo-tile{width:68px;height:68px;border-radius:12px;background:linear-gradient(135deg,#E8A020,#2EC4B6);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -2px 4px rgba(0,0,0,.15),0 4px 14px rgba(0,0,0,.35);}
+.logo-tile span{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:26px;color:#1A1F2E;letter-spacing:.02em;line-height:1;}
+.logo-word{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;letter-spacing:.04em;text-transform:uppercase;line-height:1;text-align:center;white-space:nowrap;}
+.logo-word .a{color:var(--text);}.logo-word .b{color:var(--amber);}
+.logo-inc{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.05em;text-transform:lowercase;color:var(--muted);margin-top:-2px;}
+
+.orient-strip{display:flex;align-items:center;gap:4px;padding:4px 10px;margin-bottom:0;flex-wrap:wrap;}
+.orient-stage{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;padding:4px 8px;border-radius:5px;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:11px;letter-spacing:.05em;text-transform:uppercase;background:rgba(58,64,85,.4);border:1px solid rgba(255,255,255,.06);color:var(--muted);}
+.orient-stage.active{background:rgba(46,196,182,.22);border-color:rgba(46,196,182,.5);color:var(--teal);box-shadow:0 0 12px rgba(46,196,182,.15);}
+.poster[data-edition="light"] .orient-stage{background:rgba(27,32,48,.06);border-color:rgba(27,32,48,.12);}
+.poster[data-edition="light"] .orient-stage.active{background:rgba(46,196,182,.22);border-color:rgba(46,196,182,.5);}
+.orient-arrow{color:var(--faint);font-size:11px;flex:none;}
+
+.section-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;letter-spacing:.08em;text-transform:uppercase;color:var(--text);margin:0 0 4px;display:flex;align-items:center;gap:8px;}
+.section-title::before{content:"";width:5px;height:5px;background:var(--teal);border-radius:50%;}
+.section-title .sub{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.14em;color:var(--muted);margin-left:auto;font-weight:500;}
+
+.rule-card{display:flex;align-items:center;gap:18px;padding:9px 20px;background:rgba(46,196,182,.07);}
+.rule-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:42px;color:var(--teal);line-height:1;letter-spacing:-.02em;}
+.rule-body{flex:1;}
+.rule-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:15px;color:var(--teal);letter-spacing:.08em;text-transform:uppercase;}
+.rule-text{font-family:'Inter',sans-serif;font-size:11px;color:var(--muted);line-height:1.32;margin-top:2px;}
+
+.insight-card{padding:14px 18px;border-left:3px solid var(--teal);background:rgba(46,196,182,.06);border-radius:0 12px 12px 0;}
+.insight-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;color:var(--teal);letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px;}
+.insight-text{font-family:'Inter',sans-serif;font-size:12px;color:var(--text);line-height:1.5;}
+
+.data-table{width:100%;border-collapse:collapse;}
+.data-table th{font-family:'Barlow',sans-serif;font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);padding:8px 12px;text-align:left;background:rgba(13,16,32,.35);border-bottom:1px solid var(--glass-border);}
+.poster[data-edition="light"] .data-table th{background:rgba(27,32,48,.06);}
+.data-table td{padding:8px 12px;color:var(--text);line-height:1.4;border-bottom:1px solid rgba(255,255,255,.05);font-family:'Inter',sans-serif;font-size:12px;}
+.data-table tr:last-child td{border-bottom:none;}
+.data-table tr:nth-child(even) td{background:rgba(255,255,255,.02);}
+.poster[data-edition="light"] .data-table tr:nth-child(even) td{background:rgba(27,32,48,.025);}
+.poster[data-edition="light"] .data-table td{border-bottom-color:rgba(27,32,48,.08);}
+.data-table .mono{font-family:'JetBrains Mono',monospace;font-size:11px;}
+
+.safety-card{padding:10px 16px;border-left:3px solid var(--coral);background:rgba(224,92,92,.06);border-radius:12px;}
+.safety-head{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;color:var(--coral);letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px;}
+.safety-body{font-family:'Inter',sans-serif;font-size:12px;color:var(--text);line-height:1.42;}
+.safety-body strong{color:var(--coral);font-weight:700;}
+
+.trouble-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.trouble-card{padding:12px 14px;border-radius:10px;border-left:3px solid var(--coral);display:flex;flex-direction:column;gap:4px;}
+.trouble-card h4{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;color:var(--coral);margin:0;text-transform:uppercase;letter-spacing:.06em;line-height:1.1;}
+.trouble-card p{font-size:11px;color:var(--muted);margin:0;line-height:1.4;}
+
+.context-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.context-card{padding:14px 16px;}
+.context-card h4{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;margin:0 0 6px;letter-spacing:.04em;text-transform:uppercase;}
+.context-card h4.teal{color:var(--teal);}
+.context-card h4.amber{color:var(--amber);}
+.context-card h4.coral{color:var(--coral);}
+.context-card p{font-size:12px;line-height:1.5;color:var(--text);margin:0;}
+.context-card .detail{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--muted);margin-top:6px;}
+
+/* pH strip infographic — acid-to-alkaline oxide-clock swing */
+.ph-card{padding:10px 16px;}
+.ph-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:5px;}
+.ph-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;letter-spacing:.06em;text-transform:uppercase;color:var(--teal);}
+.ph-scale-note{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.10em;text-transform:uppercase;color:var(--faint);}
+.ph-bar{position:relative;height:22px;border-radius:6px;overflow:visible;border:1px solid var(--glass-border);background:linear-gradient(90deg,#B7322F 0%,#B8770D 28%,#1E8449 48%,#1A8C82 64%,#5B3A8C 92%,#5B3A8C 100%);}
+.ph-bar .barclip{position:absolute;inset:0;border-radius:6px;overflow:hidden;}
+.ph-ticks{position:relative;height:12px;margin-top:2px;}
+.ph-tick{position:absolute;transform:translateX(-50%);font-family:'JetBrains Mono',monospace;font-size:8px;color:var(--muted);letter-spacing:.04em;}
+.ph-markers{position:relative;height:46px;margin-top:6px;}
+.ph-marker{position:absolute;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:2px;text-align:center;width:130px;}
+.ph-marker .dot{width:9px;height:9px;border-radius:50%;border:1.5px solid var(--text);}
+.ph-marker .lbl{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:11px;line-height:1;letter-spacing:.03em;text-transform:uppercase;color:var(--text);}
+.ph-marker .val{font-family:'JetBrains Mono',monospace;font-size:8.5px;color:var(--muted);letter-spacing:.02em;}
+/* dashed swing connector between the two endpoints */
+.ph-swing{position:absolute;top:13px;height:0;border-top:2px dashed var(--coral);z-index:1;}
+.ph-swing::after{content:"SALTO DE pH \003E13 UNIDADES";position:absolute;left:50%;top:-15px;transform:translateX(-50%);white-space:nowrap;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:9px;letter-spacing:.08em;color:var(--coral);background:var(--glass-bg);padding:0 6px;}
+.ph-swing-note{font-family:'Inter',sans-serif;font-size:10px;color:var(--muted);line-height:1.3;margin-top:5px;text-align:center;}
+.oxide-tag{display:inline-flex;align-items:center;gap:7px;margin-top:10px;padding:7px 12px;border-radius:8px;background:rgba(184,119,13,.12);border:1px solid rgba(184,119,13,.4);border-left:3px solid var(--amber);}
+.oxide-tag .ot-lbl{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:11px;letter-spacing:.10em;text-transform:uppercase;color:var(--amber);}
+.oxide-tag .ot-txt{font-family:'Inter',sans-serif;font-size:10.5px;color:var(--text);line-height:1.3;}
+.oxide-tag .ot-txt strong{color:var(--amber);font-weight:700;}
+
+.footer{padding:8px 20px;background-color:rgba(13,16,32,.85);background-image:linear-gradient(180deg,rgba(255,255,255,.04),rgba(0,0,0,0));border:1px solid rgba(255,255,255,.10);border-radius:8px;text-align:center;display:flex;flex-direction:column;gap:2px;}
+.poster[data-edition="light"] .footer{background-color:rgba(221,216,206,.95);border-color:rgba(27,32,48,.10);}
+.poster[data-edition="light"] .footer-disclaimer{color:rgba(27,32,48,.62);}
+.footer-disclaimer{font-family:'Inter',sans-serif;font-size:8.5px;line-height:1.35;color:var(--faint);margin:0 auto;max-width:900px;}
+.footer-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:12px;color:var(--text);letter-spacing:.04em;text-transform:uppercase;margin:0;}
+.footer-brand{font-family:'JetBrains Mono',monospace;font-size:8.5px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;}
+
+/* ---- Watts 05 additions (compact tables + CD window + watch list) ---- */
+.data-table.tight th{font-size:9px;padding:3px 8px;letter-spacing:.05em;}
+.data-table.tight td{font-size:9.8px;padding:2px 8px;line-height:1.18;}
+.data-table.tight .mono{font-size:9.2px;}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:start;}
+.cd-zones{position:relative;height:27px;margin-top:3px;}
+.cd-zone{position:absolute;transform:translateX(-50%);text-align:center;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:9.5px;letter-spacing:.05em;text-transform:uppercase;line-height:1.2;}
+.cd-brackets{position:relative;height:18px;margin-top:0;}
+.cd-bracket{position:absolute;top:0;height:7px;border-left:1.5px solid;border-right:1.5px solid;border-bottom:1.5px solid;border-radius:0 0 4px 4px;}
+.cd-bracket .cb-lbl{position:absolute;top:8px;left:50%;transform:translateX(-50%);white-space:nowrap;font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.08em;text-transform:uppercase;}
+.watch-el{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:12px;color:var(--text);letter-spacing:.03em;}
+.watch-lvl{font-family:'JetBrains Mono',monospace;font-size:9.5px;color:var(--amber);font-weight:500;white-space:nowrap;}
+.watch-rm{color:var(--muted);font-size:9.2px;}
+.anode-sub{margin-top:5px;padding-top:5px;border-top:1px dashed var(--glass-border);}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="poster-wrap" id="posterWrap">
+<div class="poster" id="poster" data-edition="light">
+  <span class="tack tl" aria-hidden="true"></span><span class="tack tr" aria-hidden="true"></span>
+  <span class="tack bl" aria-hidden="true"></span><span class="tack br" aria-hidden="true"></span>
+
+  <div class="poster-header">
+    <header class="header-band">
+      <div class="header-left">
+        <div class="eyebrow"><span>Plating Posters Inc &nbsp;&middot;&nbsp; Serie N&iacute;quel Watts &nbsp;&middot;&nbsp; Etapa 5 de 8</span></div>
+        <h1 class="headline">N&Iacute;QUEL <em>WATTS</em></h1>
+        <h2 class="subhead" style="font-size:16px;">El ba&ntilde;o Watts simple &mdash; sulfato de n&iacute;quel, cloruro de n&iacute;quel, &aacute;cido b&oacute;rico, un humectante antipicadura y nada m&aacute;s. D&uacute;ctil, de bajo esfuerzo, libre de azufre por dise&ntilde;o.</h2>
+        <p class="tagline">&ldquo;Sin abrillantador que perseguir. Solo metal, pH, temperatura y corriente &mdash; las cuatro cosas que de verdad construyen un dep&oacute;sito de ingenier&iacute;a.&rdquo;</p>
+      </div>
+      <aside class="glass logo-card">
+        <div class="logo-tile"><span>PP</span></div>
+        <div class="logo-word"><span class="a">Plating</span> <span class="b">Posters</span></div>
+        <div class="logo-inc">www.platingposters.com</div>
+      </aside>
+    </header>
+
+    <div class="orient-strip glass">
+      <div class="orient-stage">Limpieza</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Enjuague</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Activaci&oacute;n</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Enjuague</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage active">Ni&nbsp;Watts</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Enjuague</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Post&#8209;Trat.</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Enjuague&nbsp;/&nbsp;Secado</div>
+    </div>
+  </div>
+
+  <div class="poster-body">
+
+    <div class="glass rule-card">
+      <div class="rule-num">93&ndash;97%</div>
+      <div class="rule-body">
+        <div class="rule-label">Eficiencia Cat&oacute;dica</div>
+        <div class="rule-text">El ba&ntilde;o Watts tiene m&aacute;s de un siglo y es el electrolito de n&iacute;quel m&aacute;s usado del mundo. Una eficiencia cat&oacute;dica alta significa que la mayor parte de su corriente deposita metal, no gas. Pero la coevoluci&oacute;n restante de hidr&oacute;geno a&uacute;n carga suficiente hidr&oacute;geno at&oacute;mico para fragilizar el acero de alta resistencia &mdash; el dep&oacute;sito es d&uacute;ctil, pero el sustrato debajo sigue necesitando el horneado.</div>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="section-title">Par&aacute;metros Operativos <span class="sub">Rack vs tambor &mdash; ba&ntilde;o Watts simple</span></h3>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table tight">
+          <thead><tr><th style="width:15%;">Par&aacute;metro</th><th style="width:24%;">Rack</th><th style="width:19%;">Tambor</th><th>Notas</th></tr></thead>
+          <tbody>
+            <tr><td>Temperatura</td><td class="mono">115&ndash;150&deg;F (46&ndash;66&deg;C)</td><td class="mono">120&ndash;150&deg;F (49&ndash;66&deg;C)</td><td>M&aacute;s temp = menos esfuerzo, m&aacute;s ductilidad; objetivo 130&ndash;140&deg;F en trabajo de ingenier&iacute;a</td></tr>
+            <tr><td>NiSO&#8324;&middot;6H&#8322;O</td><td class="mono">225&ndash;300 g/L (30&ndash;40 oz/gal)</td><td class="mono">250&ndash;300 g/L</td><td>M&aacute;s alto en tambor para compensar la menor CD</td></tr>
+            <tr><td>NiCl&#8322;&middot;6H&#8322;O</td><td class="mono">30&ndash;60 g/L (4&ndash;8 oz/gal)</td><td class="mono">45&ndash;60 g/L</td><td>M&aacute;s cloruro mejora la disoluci&oacute;n del &aacute;nodo en tambor</td></tr>
+            <tr><td>H&#8323;BO&#8323;</td><td class="mono">30&ndash;45 g/L (4&ndash;6 oz/gal)</td><td class="mono">37&ndash;45 g/L</td><td>Buffer &mdash; mantenga arriba de 30 g/L; se disuelve lento</td></tr>
+            <tr><td>pH</td><td class="mono">3.5&ndash;4.5</td><td class="mono">3.5&ndash;4.5</td><td>pH m&aacute;s bajo &rarr; menos esfuerzo pero m&aacute;s H&#8322;; pH m&aacute;s alto &rarr; riesgo de rugosidad/quemado. H&#8322;SO&#8324; para bajar, NiCO&#8323;/Ni(OH)&#8322; para subir &mdash; nunca NaOH</td></tr>
+            <tr><td>Densidad de Corriente</td><td class="mono">20&ndash;50 ASF (2&ndash;5.5 A/dm&#178;)</td><td class="mono">5&ndash;15 ASF (0.5&ndash;1.6 A/dm&#178;)</td><td>M&aacute;s CD = construye m&aacute;s r&aacute;pido pero m&aacute;s riesgo de quemado/esfuerzo</td></tr>
+            <tr><td>Eficiencia Cat&oacute;dica</td><td class="mono">93&ndash;97%</td><td class="mono">93&ndash;97%</td><td>Siempre hay algo de evoluci&oacute;n de H&#8322;</td></tr>
+            <tr><td>Velocidad de Dep&oacute;sito</td><td class="mono">~0.001 in (25 <span style="text-transform:none">&micro;m</span>) por hr a ~20 ASF</td><td class="mono">Menor</td><td>Escala con la CD &mdash; ~2 mil/hr a 40 ASF; verifique por peso/cup&oacute;n</td></tr>
+            <tr><td>Agitaci&oacute;n</td><td class="mono">Aire + movimiento de barra cat&oacute;dica</td><td class="mono">Tambor 6&ndash;12 RPM</td><td>La agitaci&oacute;n por aire es primaria; la mec&aacute;nica complementa; la agitaci&oacute;n reduce picadura y empareja espesor</td></tr>
+            <tr><td>Filtraci&oacute;n</td><td class="mono">Continua, 3&ndash;5 recambios/hr</td><td class="mono">Continua</td><td>Bolsas filtrantes de 5&ndash;10 <span style="text-transform:none">&micro;m</span>; carb&oacute;n peri&oacute;dico para org&aacute;nicos</td></tr>
+            <tr><td>&Aacute;nodos</td><td class="mono">Ni despolarizado con S (S-Rounds) O Ni laminado/electrol&iacute;tico</td><td class="mono">S-Rounds en canastillas de Ti</td><td>Vea la selecci&oacute;n de &aacute;nodos abajo &mdash; S vs laminado importa para un dep&oacute;sito libre de azufre</td></tr>
+            <tr><td>Bolsas de &Aacute;nodo</td><td class="mono">Polipropileno o algod&oacute;n, dobles</td><td class="mono">Siempre</td><td>Evitan finos de &aacute;nodo; lixivie las bolsas antes del primer uso</td></tr>
+            <tr><td>Relaci&oacute;n &Aacute;nodo:C&aacute;todo</td><td class="mono">2:1 a 1:1</td><td class="mono">Seg&uacute;n canastilla</td><td>Mantenga &aacute;rea an&oacute;dica adecuada para evitar la pasivaci&oacute;n</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="glass ph-card">
+      <div class="ph-head">
+        <span class="ph-title">Ventana de Densidad de Corriente &mdash; Escala Rack 5&ndash;60 ASF</span>
+        <span class="ph-scale-note">Eje = solidez del dep&oacute;sito &mdash; no brillo</span>
+      </div>
+      <div class="ph-bar" style="background:linear-gradient(90deg,var(--amber) 0%,var(--amber) 25.5%,var(--emerald) 29%,var(--emerald) 80%,var(--coral) 83.5%,var(--coral) 100%);"></div>
+      <div class="ph-ticks">
+        <span class="ph-tick" style="left:0%;">5</span>
+        <span class="ph-tick" style="left:9.1%;">10</span>
+        <span class="ph-tick" style="left:27.3%;">20</span>
+        <span class="ph-tick" style="left:45.5%;">30</span>
+        <span class="ph-tick" style="left:63.6%;">40</span>
+        <span class="ph-tick" style="left:81.8%;">50</span>
+        <span class="ph-tick" style="left:100%;">60&nbsp;ASF</span>
+      </div>
+      <div class="cd-zones">
+        <span class="cd-zone" style="left:13%;width:170px;color:var(--amber);">Delgado / Lento &mdash; Puede Salir Opaco o Neblinoso</span>
+        <span class="cd-zone" style="left:54.5%;width:430px;color:var(--emerald);">Ventana de Trabajo ~20&ndash;50 ASF &mdash; Dep&oacute;sito de Ingenier&iacute;a Sano y Uniforme, Mate a Semilustroso</span>
+        <span class="cd-zone" style="left:91%;width:180px;color:var(--coral);">Quemado &middot; Rugosidad &middot; Esfuerzo &middot; Bordes Polvosos</span>
+      </div>
+      <div class="cd-brackets">
+        <span class="cd-bracket" style="left:0%;width:18.2%;border-color:var(--teal);"><span class="cb-lbl" style="color:var(--teal);">Tambor 5&ndash;15 ASF</span></span>
+        <span class="cd-bracket" style="left:27.3%;width:54.5%;border-color:var(--emerald);"><span class="cb-lbl" style="color:var(--emerald);">Ventana de Trabajo en Rack 20&ndash;50 ASF</span></span>
+      </div>
+      <div class="ph-swing-note">En Watts simple el eje es un <strong style="color:var(--teal);font-weight:700;">dep&oacute;sito sano</strong>, no el brillo &mdash; mate a semilustroso en toda la ventana es correcto. Quemado, rugosidad y bordes polvosos marcan el techo; dep&oacute;sitos delgados, lentos y neblinosos marcan el piso. El trabajo en tambor corre a 5&ndash;15 ASF y 6&ndash;12 RPM &mdash; menor CD, ciclos m&aacute;s largos.</div>
+    </div>
+
+    <div class="split">
+      <div>
+        <h3 class="section-title" style="font-size:19px;">Lista de Vigilancia de Contaminaci&oacute;n <span class="sub">niveles de acci&oacute;n en ppm</span></h3>
+        <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+          <table class="data-table tight">
+            <thead><tr><th>Metal</th><th>Acci&oacute;n</th><th>Efecto en el Dep&oacute;sito</th><th>Remoci&oacute;n</th></tr></thead>
+            <tbody>
+              <tr><td class="watch-el">Cu</td><td class="watch-lvl">5 ppm</td><td>Vetas oscuras, rugosidad, mal dep&oacute;sito a baja CD</td><td class="watch-rm">Dummy a 2&ndash;5 ASF; trate con carb&oacute;n primero</td></tr>
+              <tr><td class="watch-el">Fe</td><td class="watch-lvl">25 ppm</td><td>Neblina, rugosidad, m&aacute;s esfuerzo, menos ductilidad</td><td class="watch-rm">pH 5.0&ndash;5.5 + H&#8322;O&#8322; para oxidar Fe&#178;&#8314;&rarr;Fe&#179;&#8314;; filtre; reajuste pH</td></tr>
+              <tr><td class="watch-el">Zn</td><td class="watch-lvl">10 ppm</td><td>Dep&oacute;sito neblinoso/opaco, oscuro a baja CD, p&eacute;rdida de adhesi&oacute;n</td><td class="watch-rm">Dummy a 2&ndash;5 ASF; o suba pH, precipite Zn(OH)&#8322;, filtre</td></tr>
+              <tr><td class="watch-el">Cr&#8310;&#8314;</td><td class="watch-lvl">1 ppm</td><td>Severo &mdash; oscuro/quemado, falla de adhesi&oacute;n, salto de dep&oacute;sito</td><td class="watch-rm">Reduzca con bisulfito de sodio a Cr&#179;&#8314;; luego trate como Cr&#179;&#8314;</td></tr>
+              <tr><td class="watch-el">Cr&#179;&#8314;</td><td class="watch-lvl">10 ppm</td><td>Opaco, rugoso, mal poder de penetraci&oacute;n y adhesi&oacute;n</td><td class="watch-rm">Dif&iacute;cil &mdash; suba pH + dummy a baja CD; o diluci&oacute;n</td></tr>
+              <tr><td class="watch-el">Pb</td><td class="watch-lvl">0.5 ppm</td><td>Vetas oscuras, dendritas, agrietamiento por esfuerzo</td><td class="watch-rm">Dummy a 2&ndash;5 ASF; revise la pureza de los &aacute;nodos</td></tr>
+              <tr><td class="watch-el">Cd</td><td class="watch-lvl">0.5 ppm</td><td>Desprendimiento, ampollas, dep&oacute;sitos oscuros</td><td class="watch-rm">Dummy; ubique la fuente (arrastre residual de Cd)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div>
+        <h3 class="section-title" style="font-size:19px;">Selecci&oacute;n de &Aacute;nodos <span class="sub">n&iacute;quel-S vs sin azufre</span></h3>
+        <div class="context-card glass" style="padding:9px 14px;">
+          <h4 class="teal" style="font-size:13px;margin-bottom:3px;">Despolarizados con Azufre (S-Rounds)</h4>
+          <p style="font-size:10.5px;line-height:1.35;">Una traza de azufre mantiene al &aacute;nodo disolvi&eacute;ndose limpia y eficientemente a densidades de corriente m&aacute;s altas. La mejor opci&oacute;n de uso general &mdash; baja polarizaci&oacute;n an&oacute;dica.</p>
+          <h4 class="amber" style="font-size:13px;margin:5px 0 3px;">Laminados / Electrol&iacute;ticos (Sin Azufre)</h4>
+          <p style="font-size:10.5px;line-height:1.35;">Se disuelven con menos facilidad y pueden pasivarse si el &aacute;rea an&oacute;dica o el cloruro andan justos &mdash; pero no introducen <strong>nada de azufre</strong> al sistema. Preferidos cuando el uso final es sensible al azufre (electroformado para servicio t&eacute;rmico, preformas de soldadura fuerte, aplicaciones de difusi&oacute;n). Si opera &aacute;nodos sin azufre, mantenga el cloruro hacia el l&iacute;mite alto (50&ndash;60 g/L) y un &aacute;rea an&oacute;dica generosa para evitar la pasivaci&oacute;n.</p>
+          <div class="anode-sub">
+            <p style="font-size:10px;line-height:1.32;color:var(--muted);"><strong style="color:var(--teal);">&ldquo;Libre de azufre&rdquo;, definido:</strong> la traza de azufre aportada por el &aacute;nodo no convierte al <em>dep&oacute;sito</em> en una capa con azufre codepositado como lo hace un portador Clase&nbsp;I de n&iacute;quel brillante. &ldquo;Dep&oacute;sito libre de azufre&rdquo; se refiere a la ausencia de abrillantadores org&aacute;nicos con azufre. Donde la especificaci&oacute;n exija un sistema realmente libre de azufre de punta a punta, use &aacute;nodos sin azufre y ning&uacute;n aditivo con azufre.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="split">
+      <div>
+        <h3 class="section-title" style="font-size:19px;">Propiedades del Dep&oacute;sito <span class="sub">Watts simple vs n&iacute;quel brillante &mdash; valores t&iacute;picos, &ldquo;~&rdquo;</span></h3>
+        <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+          <table class="data-table tight">
+            <thead><tr><th>Propiedad</th><th>Watts Simple (bien llevado)</th><th>N&iacute;quel Brillante (t&iacute;pico)</th></tr></thead>
+            <tbody>
+              <tr><td>Dureza</td><td class="mono">~150&ndash;250 HV &mdash; suave, d&uacute;ctil</td><td class="mono">~350&ndash;550 HV &mdash; m&aacute;s duro, m&aacute;s fr&aacute;gil</td></tr>
+              <tr><td>Esfuerzo interno</td><td>Tensil bajo a moderado &mdash; estable, predecible, sin aporte de aditivos</td><td>Var&iacute;a con el balance de aditivos &mdash; requiere control activo de abrillantadores</td></tr>
+              <tr><td>Ductilidad / elongaci&oacute;n</td><td>Alta &mdash; dobla sin agrietarse</td><td>Menor</td></tr>
+              <tr><td>Contenido de azufre</td><td>Esencialmente nulo (sin abrillantador)</td><td>Presente (del portador Clase I)</td></tr>
+              <tr><td>Apariencia</td><td>Mate a semilustroso</td><td>Brillo espejo total</td></tr>
+              <tr><td>Aptitud t&eacute;rmica / brazing</td><td>Buena &mdash; sin fragilizaci&oacute;n por azufre al calentar</td><td>Mala &mdash; el azufre puede fragilizar a temperatura</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div>
+        <h3 class="section-title" style="font-size:19px;">Celda Hull &mdash; Watts Simple <span class="sub">267 mL &middot; 2 A &middot; 10 min &middot; ~130&deg;F &mdash; juzga solidez, no brillo</span></h3>
+        <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+          <table class="data-table tight">
+            <thead><tr><th>Patr&oacute;n del Panel</th><th>Causa Probable</th><th>Acci&oacute;n Correctiva</th></tr></thead>
+            <tbody>
+              <tr><td>Sano, uniforme, mate/semilustroso</td><td>Ba&ntilde;o en balance</td><td>Siga monitoreando metales, pH, &aacute;cido b&oacute;rico</td></tr>
+              <tr><td>Quemado / polvoso a alta CD</td><td>pH muy alto; &aacute;cido b&oacute;rico o metal Ni bajos; temp muy baja; CD muy alta</td><td>Revise &aacute;cido b&oacute;rico; revise pH; revise metal Ni; suba temp; baje CD</td></tr>
+              <tr><td>Rugoso / nodular (se siente como lija)</td><td>Part&iacute;culas &mdash; mala filtraci&oacute;n; finos de &aacute;nodo; s&oacute;lidos</td><td>Revise presi&oacute;n del filtro; inspeccione/reemplace bolsas de &aacute;nodo</td></tr>
+              <tr><td>Picadura por gas en todo el panel</td><td>Humectante bajo; mala agitaci&oacute;n por aire</td><td>Agregue humectante antipicadura; revise aire y flauta</td></tr>
+              <tr><td>Neblinoso / opaco a baja CD</td><td>Contaminaci&oacute;n con zinc, cobre o plomo</td><td>Analice metales; dummy a 2&ndash;5 ASF</td></tr>
+              <tr><td>Vetas/manchas oscuras a baja CD</td><td>Contaminaci&oacute;n con cobre o plomo</td><td>Analice Cu y Pb; haga dummy</td></tr>
+              <tr><td>Desprendimiento al doblar el panel</td><td>Falla de adhesi&oacute;n (preparaci&oacute;n) O esfuerzo elevado por metales/hierro</td><td>Revise limpieza/activaci&oacute;n; analice metales; trate con carb&oacute;n</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="section-title">Resoluci&oacute;n de Problemas <span class="sub">Fallas del tanque principal &mdash; vea el panel de Celda Hull para quemado y rugosidad</span></h3>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table tight">
+          <thead><tr><th style="width:23%;">S&iacute;ntoma</th><th style="width:37%;">Causa Probable</th><th>Acci&oacute;n Correctiva</th></tr></thead>
+          <tbody>
+            <tr><td>Dep&oacute;sito opaco/neblinoso</td><td>Contaminaci&oacute;n met&aacute;lica; arrastre de org&aacute;nicos; temp baja</td><td>Analice metales; trate con carb&oacute;n; revise temp</td></tr>
+            <tr><td>Picadura (poros por gas)</td><td>Humectante antipicadura bajo; mala agitaci&oacute;n; contaminaci&oacute;n org&aacute;nica</td><td>Agregue humectante; aumente aire; trate con carb&oacute;n; revise filtro</td></tr>
+            <tr><td>Desprendimiento / mala adhesi&oacute;n</td><td>Mala limpieza; activaci&oacute;n incompleta; superficie oxidada</td><td>Repita ruptura de agua; revise inmersi&oacute;n &aacute;cida; acelere transferencia</td></tr>
+            <tr><td>Agrietamiento en dep&oacute;sitos gruesos</td><td>Esfuerzo interno elevado; contaminaci&oacute;n de hierro/met&aacute;lica; CD muy alta</td><td>Analice metales; trate con carb&oacute;n; baje CD; suba temp</td></tr>
+            <tr><td>Mal poder de penetraci&oacute;n / espesor disparejo</td><td>NiCl&#8322; bajo; pH muy bajo; temp baja; mala agitaci&oacute;n</td><td>Suba cloruro a 50&ndash;60 g/L; optimice pH/temp; mejore agitaci&oacute;n</td></tr>
+            <tr><td>Salto de recubrimiento (&aacute;reas sin capa)</td><td>&Oacute;xido pasivo; suciedad org&aacute;nica; electrolimpieza insuficiente</td><td>Mejore limpieza; agregue electrolimpieza an&oacute;dica; revise activaci&oacute;n</td></tr>
+            <tr><td>&Aacute;nodos pasiv&aacute;ndose (voltaje subiendo)</td><td>Cloruro bajo; &aacute;rea an&oacute;dica insuficiente; &aacute;nodos sin azufre a alta CD</td><td>Suba cloruro; agregue &aacute;rea an&oacute;dica; cambie a n&iacute;quel-S si el azufre es aceptable</td></tr>
+            <tr><td>Dep&oacute;sito muy suave / construye lento</td><td>CD muy baja; metal bajo; p&eacute;rdida de eficiencia por contaminaci&oacute;n</td><td>Suba CD dentro de la ventana; revise concentraci&oacute;n de metal; analice contaminantes</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="safety-card glass">
+      <div class="safety-head">&#9888; Seguridad</div>
+      <div class="safety-body" style="font-size:10.8px;line-height:1.38;"><strong>Soluci&oacute;n de n&iacute;quel &aacute;cida y caliente (pH 3.5&ndash;4.5, hasta 150&deg;F) &mdash; causa quemaduras y es sensibilizante d&eacute;rmico. Las sales solubles de n&iacute;quel son sensibilizantes de la piel y los compuestos de n&iacute;quel est&aacute;n clasificados como sospechosos de ser cancer&iacute;genos.</strong> La exposici&oacute;n cr&oacute;nica al n&iacute;quel causa dermatitis al&eacute;rgica por contacto (&ldquo;comez&oacute;n del n&iacute;quel&rdquo;) &mdash; acumulativa y permanente una vez sensibilizado; minimice el contacto con la piel en todo momento. La agitaci&oacute;n por aire genera neblina con n&iacute;quel &mdash; ventilaci&oacute;n de extracci&oacute;n local obligatoria; se recomiendan eliminadores de neblina. <strong>PEL de OSHA para compuestos solubles de n&iacute;quel: 1 mg/m&#179; TWA (como Ni).</strong> Rectificador = alto amperaje &mdash; LOTO para todo mantenimiento. Use tanques de PP, CPVC o recubiertos &mdash; el sulfato de n&iacute;quel corroe el acero dulce, y el PVC simple es marginal arriba de 140&deg;F. <strong>&Aacute;cido b&oacute;rico:</strong> preocupaci&oacute;n por riesgo reproductivo &mdash; evite inhalar el polvo al cargar o hacer adiciones, use guantes, l&aacute;vese despu&eacute;s de manejarlo. EPP: lentes de seguridad + careta, guantes qu&iacute;micos de nitrilo hasta el codo, delantal, botas, respirador P100 o de aire suministrado si la ventilaci&oacute;n es inadecuada.</div>
+    </div>
+
+  </div>
+
+  <footer class="footer poster-footer">
+    <p class="footer-disclaimer">Solo referencia t&eacute;cnica. Verifique todos los par&aacute;metros contra la hoja t&eacute;cnica (TDS) de su proveedor de qu&iacute;micos, las especificaciones del cliente y los requisitos regulatorios aplicables antes de usarlos en producci&oacute;n. Los compuestos de n&iacute;quel est&aacute;n clasificados como sospechosos de ser cancer&iacute;genos y como sensibilizantes conocidos de la piel &mdash; consulte siempre la SDS vigente y cumpla con OSHA, REACH y las regulaciones locales. <em>Datos regulatorios revisados el 2026-09-17: los l&iacute;mites de exposici&oacute;n reflejan los PEL federales de OSHA (EE. UU.) publicados a esta fecha; las normas citadas deben verificarse contra su revisi&oacute;n vigente. Los l&iacute;mites estatales (p. ej., Cal/OSHA) y los TLV de la ACGIH pueden ser m&aacute;s estrictos. Verifique contra las tablas vigentes de OSHA y la SDS del proveedor antes de usar en producci&oacute;n.</em></p>
+    <p class="footer-title">Enchapado de N&iacute;quel Watts &mdash; Serie de Enchapado de N&iacute;quel Watts</p>
+    <span class="footer-brand">Plating Posters Inc &middot; Serie de Referencia de Acabado de Metales &middot; v1.0 / 2026</span>
+  </footer>
+
+</div>
+</div>
+</div>
+
+<div class="tweaks">
+  <div style="display:flex;gap:8px;align-items:center;">
+    <span style="color:rgba(240,237,232,.5);font-size:11px;letter-spacing:.06em;text-transform:uppercase;">Edition</span>
+    <button id="btnDark" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);" onclick="setEdition('')">Dark</button>
+    <button id="btnLight" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:#E8A020;color:#1A1F2E;border:1px solid #E8A020;" onclick="setEdition('light')">Light</button>
+  </div>
+  <button onclick="window.print()" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);">Print / PDF</button>
+</div>
+
+<script>
+const posterWrap=document.getElementById('posterWrap');
+const poster=document.getElementById('poster');
+function scalePoster(){const sW=(window.innerWidth-24)/1200;const sH=(window.innerHeight-24)/1800;const s=Math.min(sW,sH);posterWrap.style.transform='scale('+s+')';posterWrap.style.transformOrigin='top left';posterWrap.style.width=(1200*s)+'px';posterWrap.style.height=(1800*s)+'px';}
+function setEdition(e){if(e)poster.dataset.edition=e;else delete poster.dataset.edition;document.getElementById('btnDark').style.background=e?'transparent':'#E8A020';document.getElementById('btnDark').style.color=e?'#F0EDE8':'#1A1F2E';document.getElementById('btnDark').style.borderColor=e?'rgba(255,255,255,.2)':'#E8A020';document.getElementById('btnLight').style.background=e?'#E8A020':'transparent';document.getElementById('btnLight').style.color=e?'#1A1F2E':'#F0EDE8';document.getElementById('btnLight').style.borderColor=e?'#E8A020':'rgba(255,255,255,.2)';}
+scalePoster();window.addEventListener('resize',scalePoster);
+</script>
+</body>
+</html>

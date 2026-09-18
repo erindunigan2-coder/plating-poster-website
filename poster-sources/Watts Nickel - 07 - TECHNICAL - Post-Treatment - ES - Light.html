@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>N&iacute;quel Watts &mdash; Post-Tratamiento &mdash; T&eacute;cnico | Plating Posters Inc</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Barlow:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#1A1F2E;--navy:#0D1020;--text:#F0EDE8;--muted:rgba(240,237,232,.62);
+  --faint:rgba(240,237,232,.38);
+  --amber:#E8A020;--teal:#2EC4B6;--emerald:#27AE60;--coral:#E05C5C;
+  --slate:#3A4055;--callout:#1E2435;--altrow:#252B3D;
+  --glass-bg:rgba(30,36,53,.55);--glass-border:rgba(255,255,255,.12);
+  --glass-shadow:inset 0 1px 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(0,0,0,.2),0 4px 12px rgba(0,0,0,.25);
+}
+.poster[data-edition="light"]{
+  --bg:#F5F4F0;--navy:#DDD8CE;--text:#1B2030;--muted:rgba(27,32,48,.74);
+  --faint:rgba(27,32,48,.42);
+  --amber:#B8770D;--teal:#1A8C82;--emerald:#1E8449;--coral:#B7322F;
+  --slate:#C5C0B5;--callout:#ECEAE1;--altrow:#E4E1D6;
+  --glass-bg:rgba(255,253,247,.78);--glass-border:rgba(27,32,48,.16);
+  --glass-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 4px 12px rgba(27,32,48,.08);
+}
+html,body{margin:0;padding:0;background:#e8e6df;}
+.stage{width:100vw;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;overflow:visible;padding:12px 0;box-sizing:border-box;}
+.poster-wrap{transform-origin:top left;}
+.poster{
+  width:1200px;height:1800px;position:relative;overflow:hidden;
+  background:
+    radial-gradient(1200px 800px at 15% 8%,rgba(46,196,182,.14),transparent 60%),
+    radial-gradient(1000px 700px at 90% 25%,rgba(232,160,32,.12),transparent 55%),
+    radial-gradient(900px 900px at 50% 80%,rgba(224,92,92,.10),transparent 60%),
+    var(--bg);
+  font-family:'Inter',sans-serif;color:var(--text);
+  display:flex;flex-direction:column;padding:32px;box-sizing:border-box;
+}
+.glass{background-color:var(--glass-bg);background-image:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));border:1px solid var(--glass-border);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);box-shadow:var(--glass-shadow);border-radius:12px;}
+.tack{position:absolute;width:24px;height:24px;border-radius:50%;border:1.5px solid rgba(232,160,32,.28);z-index:2;pointer-events:none;}
+.tack::before,.tack::after{content:"";position:absolute;background:rgba(232,160,32,.28);}
+.tack::before{left:50%;top:-3px;bottom:-3px;width:1px;transform:translateX(-50%);}
+.tack::after{top:50%;left:-3px;right:-3px;height:1px;transform:translateY(-50%);}
+.tack.tl{top:12px;left:12px;}.tack.tr{top:12px;right:12px;}.tack.bl{bottom:12px;left:12px;}.tack.br{bottom:12px;right:12px;}
+
+.poster-header{flex-shrink:0;}
+.poster-body{flex:1;overflow:hidden;display:flex;flex-direction:column;gap:10px;justify-content:space-between;}
+.poster-footer{flex-shrink:0;margin-top:8px;}
+
+.header-band{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:8px;}
+.header-left{flex:1;min-width:0;}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--amber);letter-spacing:.16em;text-transform:uppercase;margin-bottom:4px;display:flex;align-items:center;gap:12px;}
+.eyebrow::before{content:"";display:inline-block;width:30px;height:3px;background:var(--amber);}
+.headline{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:72px;color:var(--text);line-height:.92;margin:4px 0;letter-spacing:-.01em;text-transform:uppercase;}
+.headline em{font-style:normal;color:var(--amber);}
+.subhead{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:20px;color:var(--teal);margin:0 0 3px;letter-spacing:.02em;text-transform:uppercase;}
+.tagline{font-family:'Inter',sans-serif;font-style:italic;font-size:11px;color:var(--muted);line-height:1.35;max-width:700px;margin:0;}
+.logo-card{flex-shrink:0;padding:12px 10px;display:flex;flex-direction:column;align-items:center;gap:8px;align-self:flex-start;}
+.logo-tile{width:68px;height:68px;border-radius:12px;background:linear-gradient(135deg,#E8A020,#2EC4B6);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -2px 4px rgba(0,0,0,.15),0 4px 14px rgba(0,0,0,.35);}
+.logo-tile span{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:26px;color:#1A1F2E;letter-spacing:.02em;line-height:1;}
+.logo-word{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;letter-spacing:.04em;text-transform:uppercase;line-height:1;text-align:center;white-space:nowrap;}
+.logo-word .a{color:var(--text);}.logo-word .b{color:var(--amber);}
+.logo-inc{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.05em;text-transform:lowercase;color:var(--muted);margin-top:-2px;}
+
+.orient-strip{display:flex;align-items:center;gap:4px;padding:6px 10px;margin-bottom:0;flex-wrap:wrap;}
+.orient-stage{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;padding:5px 8px;border-radius:5px;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:11px;letter-spacing:.05em;text-transform:uppercase;background:rgba(58,64,85,.4);border:1px solid rgba(255,255,255,.06);color:var(--muted);}
+.orient-stage.active{background:rgba(46,196,182,.22);border-color:rgba(46,196,182,.5);color:var(--teal);box-shadow:0 0 12px rgba(46,196,182,.15);}
+.poster[data-edition="light"] .orient-stage{background:rgba(27,32,48,.06);border-color:rgba(27,32,48,.12);}
+.poster[data-edition="light"] .orient-stage.active{background:rgba(46,196,182,.22);border-color:rgba(46,196,182,.5);}
+.orient-arrow{color:var(--faint);font-size:11px;flex:none;}
+
+.section-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;letter-spacing:.08em;text-transform:uppercase;color:var(--text);margin:0 0 6px;display:flex;align-items:center;gap:8px;}
+.section-title::before{content:"";width:5px;height:5px;background:var(--teal);border-radius:50%;}
+.section-title .sub{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.14em;color:var(--muted);margin-left:auto;font-weight:500;}
+
+.rule-card{display:flex;align-items:center;gap:18px;padding:14px 20px;background:rgba(46,196,182,.07);}
+.rule-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:42px;color:var(--teal);line-height:1;letter-spacing:-.02em;}
+.rule-body{flex:1;}
+.rule-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:15px;color:var(--teal);letter-spacing:.08em;text-transform:uppercase;}
+.rule-text{font-family:'Inter',sans-serif;font-size:11px;color:var(--muted);line-height:1.4;margin-top:3px;}
+
+.insight-card{padding:14px 18px;border-left:3px solid var(--teal);background:rgba(46,196,182,.06);border-radius:0 12px 12px 0;}
+.insight-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;color:var(--teal);letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px;}
+.insight-text{font-family:'Inter',sans-serif;font-size:12px;color:var(--text);line-height:1.5;}
+
+.data-table{width:100%;border-collapse:collapse;}
+.data-table th{font-family:'Barlow',sans-serif;font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);padding:8px 12px;text-align:left;background:rgba(13,16,32,.35);border-bottom:1px solid var(--glass-border);}
+.poster[data-edition="light"] .data-table th{background:rgba(27,32,48,.06);}
+.data-table td{padding:8px 12px;color:var(--text);line-height:1.4;border-bottom:1px solid rgba(255,255,255,.05);font-family:'Inter',sans-serif;font-size:12px;}
+.data-table tr:last-child td{border-bottom:none;}
+.data-table tr:nth-child(even) td{background:rgba(255,255,255,.02);}
+.poster[data-edition="light"] .data-table tr:nth-child(even) td{background:rgba(27,32,48,.025);}
+.poster[data-edition="light"] .data-table td{border-bottom-color:rgba(27,32,48,.08);}
+.data-table .mono{font-family:'JetBrains Mono',monospace;font-size:11px;}
+
+.safety-card{padding:14px 18px;border-left:3px solid var(--coral);background:rgba(224,92,92,.06);border-radius:12px;}
+.safety-head{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;color:var(--coral);letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px;}
+.safety-body{font-family:'Inter',sans-serif;font-size:12px;color:var(--text);line-height:1.5;}
+.safety-body strong{color:var(--coral);font-weight:700;}
+
+.trouble-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.trouble-card{padding:12px 14px;border-radius:10px;border-left:3px solid var(--coral);display:flex;flex-direction:column;gap:4px;}
+.trouble-card h4{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;color:var(--coral);margin:0;text-transform:uppercase;letter-spacing:.06em;line-height:1.1;}
+.trouble-card p{font-size:11px;color:var(--muted);margin:0;line-height:1.4;}
+
+.context-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.context-card{padding:14px 16px;}
+.context-card h4{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;margin:0 0 6px;letter-spacing:.04em;text-transform:uppercase;}
+.context-card h4.teal{color:var(--teal);}
+.context-card h4.amber{color:var(--amber);}
+.context-card h4.coral{color:var(--coral);}
+.context-card p{font-size:12px;line-height:1.5;color:var(--text);margin:0;}
+.context-card .detail{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--muted);margin-top:6px;}
+.context-card ul{margin:0;padding-left:16px;font-size:11.5px;line-height:1.5;color:var(--text);}
+.context-card ul li{margin:0 0 3px;}
+
+/* Cr(VI) conditional card — amber-framed hazard callout, deliberately NOT the poster's centerpiece */
+.crvi-card{padding:13px 18px;border-left:3px solid var(--amber);background:rgba(232,160,32,.07);border-radius:0 12px 12px 0;}
+.crvi-head{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;color:var(--amber);letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px;}
+.crvi-body{font-family:'Inter',sans-serif;font-size:11.5px;color:var(--text);line-height:1.5;}
+.crvi-body strong{color:var(--coral);font-weight:700;}
+
+/* which-post-treatment decision tree — selected by end use (basis: Busbar 18 tree) */
+.dtree-card{padding:13px 18px 14px;}
+.dtree-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:9px;}
+.dtree-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);}
+.dtree-note{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.10em;text-transform:uppercase;color:var(--faint);}
+.dtree-root{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:15px;letter-spacing:.03em;text-transform:uppercase;color:var(--text);text-align:center;padding:8px 12px;border-radius:8px;background:rgba(13,16,32,.18);border:1px solid var(--glass-border);margin-bottom:4px;}
+.poster[data-edition="light"] .dtree-root{background:rgba(27,32,48,.05);}
+.dtree-stem{display:block;width:0;height:10px;border-left:2px solid var(--faint);margin:0 auto;}
+.dtree-branches{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:10px;}
+.dtree-branch{display:flex;flex-direction:column;border-radius:10px;border:1px solid var(--glass-border);overflow:hidden;background:rgba(13,16,32,.10);}
+.poster[data-edition="light"] .dtree-branch{background:rgba(27,32,48,.03);}
+.dtree-cond{padding:8px 10px;font-family:'Inter',sans-serif;font-size:10.5px;line-height:1.35;color:var(--text);}
+.dtree-cond b{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:12px;letter-spacing:.03em;text-transform:uppercase;display:block;margin-bottom:2px;}
+.dtree-verdict{padding:6px 10px;display:flex;align-items:center;gap:7px;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:16px;letter-spacing:.05em;text-transform:uppercase;border-top:1px solid var(--glass-border);}
+.dtree-verdict .arrow{font-size:12px;font-weight:700;opacity:.7;}
+.dtree-action{flex:1;padding:7px 10px 8px;font-family:'JetBrains Mono',monospace;font-size:9px;line-height:1.45;color:var(--muted);letter-spacing:.01em;border-top:1px solid rgba(255,255,255,.05);}
+.poster[data-edition="light"] .dtree-action{border-top-color:rgba(27,32,48,.08);}
+.dtree-action .crit{color:var(--coral);font-weight:500;}
+.dtree-branch.bake{border-left:3px solid var(--coral);}
+.dtree-branch.bake .dtree-verdict{color:var(--coral);background:rgba(224,92,92,.07);}
+.dtree-branch.asplated{border-left:3px solid var(--teal);}
+.dtree-branch.asplated .dtree-verdict{color:var(--teal);background:rgba(46,196,182,.07);}
+.dtree-branch.machine{border-left:3px solid var(--amber);}
+.dtree-branch.machine .dtree-verdict{color:var(--amber);background:rgba(232,160,32,.07);}
+.dtree-branch.topcoat{border-left:3px solid var(--slate);}
+.dtree-branch.topcoat .dtree-verdict{color:var(--text);background:rgba(13,16,32,.10);}
+.poster[data-edition="light"] .dtree-branch.topcoat .dtree-verdict{background:rgba(27,32,48,.05);}
+.dtree-foot{margin-top:9px;padding:7px 12px;border-radius:8px;border-left:3px solid var(--coral);background:rgba(224,92,92,.06);font-family:'Inter',sans-serif;font-size:11px;line-height:1.4;color:var(--text);text-align:center;}
+.dtree-foot strong{color:var(--coral);font-weight:700;}
+
+.footer{padding:10px 20px;background-color:rgba(13,16,32,.85);background-image:linear-gradient(180deg,rgba(255,255,255,.04),rgba(0,0,0,0));border:1px solid rgba(255,255,255,.10);border-radius:8px;text-align:center;display:flex;flex-direction:column;gap:2px;}
+.poster[data-edition="light"] .footer{background-color:rgba(221,216,206,.95);border-color:rgba(27,32,48,.10);}
+.poster[data-edition="light"] .footer-disclaimer{color:rgba(27,32,48,.62);}
+.footer-disclaimer{font-family:'Inter',sans-serif;font-size:8.5px;line-height:1.35;color:var(--faint);margin:0 auto;max-width:900px;}
+.footer-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:12px;color:var(--text);letter-spacing:.04em;text-transform:uppercase;margin:0;}
+.footer-brand{font-family:'JetBrains Mono',monospace;font-size:8.5px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;}
+
+.tweaks{position:fixed;bottom:16px;right:16px;z-index:100;background:rgba(13,16,32,.92);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:10px 14px;display:flex;flex-direction:column;gap:8px;font-family:'Inter',sans-serif;font-size:12px;color:#F0EDE8;}
+@media print{
+  @page{size:12.5in 18.75in;margin:0;}
+  html,body{background:#F5F4F0 !important;-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
+  *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
+  .stage{position:static;padding:0;display:block;overflow:visible;}
+  .poster-wrap{transform:none !important;width:auto !important;height:auto !important;}
+  .poster{box-shadow:none !important;width:1200px !important;height:1800px !important;overflow:hidden !important;}
+  .glass,.trouble-card,.insight-card,.safety-card,.context-card{backdrop-filter:none !important;-webkit-backdrop-filter:none !important;}
+  .tweaks{display:none !important;}
+}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="poster-wrap" id="posterWrap">
+<div class="poster" id="poster" data-edition="light">
+  <span class="tack tl" aria-hidden="true"></span><span class="tack tr" aria-hidden="true"></span>
+  <span class="tack bl" aria-hidden="true"></span><span class="tack br" aria-hidden="true"></span>
+
+  <div class="poster-header">
+    <header class="header-band">
+      <div class="header-left">
+        <div class="eyebrow"><span>Plating Posters Inc &nbsp;&middot;&nbsp; Serie N&iacute;quel Watts &nbsp;&middot;&nbsp; Etapas 7&ndash;8 de 8</span></div>
+        <h1 class="headline">POST-<em>TRATAMIENTO</em></h1>
+        <h2 class="subhead">Hornear, Pasivar, Capa Final, o Dejarlo Tal Como Se Deposita</h2>
+        <p class="tagline">&ldquo;El n&iacute;quel Watts simple es una capa funcional &mdash; lo que sigue despu&eacute;s lo dicta el trabajo, no la apariencia.&rdquo;</p>
+      </div>
+      <aside class="glass logo-card">
+        <div class="logo-tile"><span>PP</span></div>
+        <div class="logo-word"><span class="a">Plating</span> <span class="b">Posters</span></div>
+        <div class="logo-inc">www.platingposters.com</div>
+      </aside>
+    </header>
+
+    <div class="orient-strip glass">
+      <div class="orient-stage">Limpieza</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Enjuague</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Activaci&oacute;n</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Enjuague</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Ni&nbsp;Watts</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Enjuague</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage active">Post&#8209;Trat.</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage active">Enjuague&nbsp;/&nbsp;Secado</div>
+    </div>
+  </div>
+
+  <div class="poster-body">
+
+    <div class="glass rule-card">
+      <div class="rule-num">375 &plusmn;25&deg;F</div>
+      <div class="rule-body">
+        <div class="rule-label">Horneado de Alivio de H</div>
+        <div class="rule-text">Para acero de alta resistencia, el post-tratamiento m&aacute;s importante es el horneado de alivio de fragilizaci&oacute;n por hidr&oacute;geno &mdash; 375 &plusmn;25&deg;F por al menos 8 horas, iniciado dentro de las 4 horas posteriores al &uacute;ltimo paso de enchapado, seg&uacute;n ASTM B850 (use la revisi&oacute;n vigente). Es un paso cr&iacute;tico de seguridad para piezas endurecidas que soportan carga, no un toque final opcional.</div>
+      </div>
+    </div>
+
+    <div class="insight-card glass">
+      <div class="insight-label">Esto No Es una L&iacute;nea de Cromo</div>
+      <div class="insight-text">En una l&iacute;nea de n&iacute;quel brillante, el post-tratamiento normalmente significa cromo decorativo. El Watts simple es n&iacute;quel de ingenier&iacute;a &mdash; su post-tratamiento es m&aacute;s a menudo un horneado, una capa final, o nada en absoluto. Una capa de cromo es una opci&oacute;n <em>posible</em> entre muchas, no el titular. Elija el tratamiento seg&uacute;n el uso final de la pieza: el acero endurecido que soporta carga recibe el horneado; las superficies soldables suelen embarcarse tal como se depositan; la reconstrucci&oacute;n dimensional se va al taller de maquinado.</div>
+    </div>
+
+    <div class="glass dtree-card">
+      <div class="dtree-head">
+        <span class="dtree-title">&iquest;Cu&aacute;l Post-Tratamiento?</span>
+        <span class="dtree-note">Se elige por uso final &mdash; no por apariencia</span>
+      </div>
+      <div class="dtree-root">&iquest;Cu&aacute;l es el uso final de la pieza?</div>
+      <span class="dtree-stem"></span>
+      <div class="dtree-branches">
+        <div class="dtree-branch bake">
+          <div class="dtree-cond"><b>Acero de Alta Resistencia</b>&gt; 40 HRC &mdash; endurecido, soporta carga</div>
+          <div class="dtree-verdict"><span class="arrow">&rarr;</span> Horneado de Alivio de H</div>
+          <div class="dtree-action">375 &plusmn;25&deg;F &middot; &ge; 8 hr &middot; inicie dentro de 4 hr tras el enchapado &middot; ASTM B850 (rev. vigente)<br><span class="crit">cr&iacute;tico de seguridad &mdash; no opcional</span></div>
+        </div>
+        <div class="dtree-branch asplated">
+          <div class="dtree-cond"><b>Soldable / Brazing</b>Pieza interna de ingenier&iacute;a &middot; uni&oacute;n t&eacute;rmica por delante</div>
+          <div class="dtree-verdict"><span class="arrow">&rarr;</span> Tal Como Se Deposita</div>
+          <div class="dtree-action">almacene limpio + seco &middot; VCI / desecante para limitar el deslustre &middot; el dep&oacute;sito libre de azufre resiste la uni&oacute;n t&eacute;rmica</div>
+        </div>
+        <div class="dtree-branch machine">
+          <div class="dtree-cond"><b>Recuperaci&oacute;n / Reconstrucci&oacute;n</b>Restauraci&oacute;n dimensional</div>
+          <div class="dtree-verdict"><span class="arrow">&rarr;</span> Maquinar / Rectificar</div>
+          <div class="dtree-action">dep&oacute;sito construido con sobremedida &rarr; maquinado o rectificado a dimensi&oacute;n final</div>
+        </div>
+        <div class="dtree-branch topcoat">
+          <div class="dtree-cond"><b>Requiere Capa Final de Corrosi&oacute;n o Apariencia</b>Superficie expuesta, decorativa o de conector</div>
+          <div class="dtree-verdict"><span class="arrow">&rarr;</span> Capa Final</div>
+          <div class="dtree-action">inmersi&oacute;n antideslustre &middot; sello de cromato &mdash; seg&uacute;n TDS del proveedor<br>laca transparente 5&ndash;15 <span style="text-transform:none">&micro;m</span> &middot; cure seg&uacute;n TDS<br>Cr &mdash; deco 0.25&ndash;0.75 <span style="text-transform:none">&micro;m</span>; Cr duro seg&uacute;n su propio proceso<br>Au &mdash; el Ni es la capa base barrera de difusi&oacute;n<br><span class="crit">reactive primero el n&iacute;quel pasivado (inmersi&oacute;n &aacute;cida ligera) &mdash; o la capa final se desprende</span></div>
+        </div>
+      </div>
+      <div class="dtree-foot"><strong>Una capa final de cromo es una opci&oacute;n entre muchas</strong> &mdash; esto no es una l&iacute;nea de cromo.</div>
+    </div>
+
+    <div class="context-grid">
+      <div class="context-card glass">
+        <h4 class="teal">Tal Como Se Deposita y Almacenaje</h4>
+        <p>El n&iacute;quel Watts simple resiste la corrosi&oacute;n pero no es a prueba de corrosi&oacute;n &mdash; se deslustra y empa&ntilde;a lentamente en aire h&uacute;medo o industrial. Para piezas almacenadas antes de ensamblar o aplicar capa final, mant&eacute;ngalas limpias, secas y protegidas (empaque VCI o desecante). Para una capa de enchapado posterior (cromo, oro), <strong style="color:var(--teal);">reactive el n&iacute;quel</strong> &mdash; se pasiva en reposo y necesita una inmersi&oacute;n &aacute;cida ligera para restaurar la adhesi&oacute;n antes del siguiente dep&oacute;sito.</p>
+      </div>
+      <div class="context-card glass">
+        <h4 class="amber">Enjuague Final y Secado &mdash; Cierre de la L&iacute;nea</h4>
+        <ul>
+          <li>Enjuague con agua DI, ambiente, inmersi&oacute;n suave 15&ndash;30 s</li>
+          <li>Secado con aire tibio: 120&ndash;140&deg;F m&aacute;x</li>
+          <li>El n&iacute;quel en s&iacute; no requiere tiempo de curado; las capas finales curan seg&uacute;n su propio TDS</li>
+          <li>Maneje con guantes limpios, secos y sin pelusa &mdash; las huellas en n&iacute;quel fresco pueden manchar o interferir con la adhesi&oacute;n de la capa final</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="crvi-card glass">
+      <div class="crvi-head">&#9888; Si Se Aplica una Capa Final de Cromo (Opcional)</div>
+      <div class="crvi-body">Si el trabajo pide cromo decorativo o duro sobre el n&iacute;quel Watts, el proceso de cromo trae sus propios riesgos severos. <strong>El cromo hexavalente (Cr&#8310;&#8314;) es un cancer&iacute;geno humano confirmado (IARC Grupo 1). PEL de OSHA: 5 <span style="text-transform:none">&micro;g/m&sup3;</span> TWA (nivel de acci&oacute;n 2.5 <span style="text-transform:none">&micro;g/m&sup3;</span>) como Cr(VI).</strong> Aplican EPP completo, supresor de neblina, extracci&oacute;n local y vigilancia m&eacute;dica seg&uacute;n OSHA 29 CFR 1910.1026. Esa es responsabilidad de la l&iacute;nea de cromo &mdash; vea las referencias de Cromo Decorativo / Cromo Duro &mdash; no de la l&iacute;nea de n&iacute;quel.</div>
+    </div>
+
+    <div>
+      <h3 class="section-title">Resoluci&oacute;n de Problemas <span class="sub">Fallas del post-tratamiento</span></h3>
+      <div class="trouble-grid">
+        <div class="trouble-card glass">
+          <h4>El N&iacute;quel Se Deslustra o Empa&ntilde;a Almacenado</h4>
+          <p><strong>Causa:</strong> Esperado &mdash; el n&iacute;quel desnudo no es a prueba de corrosi&oacute;n. <strong>Correcci&oacute;n:</strong> Aplique inmersi&oacute;n antideslustre o capa final; use empaque VCI.</p>
+        </div>
+        <div class="trouble-card glass">
+          <h4>La Capa Final (Cromo/Oro) Se Desprende del N&iacute;quel</h4>
+          <p><strong>Causa:</strong> N&iacute;quel pasivado en reposo; no se reactiv&oacute;. <strong>Correcci&oacute;n:</strong> Reactive el n&iacute;quel con una inmersi&oacute;n &aacute;cida ligera antes de la capa final; minimice la demora.</p>
+        </div>
+        <div class="trouble-card glass">
+          <h4>Agrietamiento Tras el Horneado en Dep&oacute;sitos Gruesos</h4>
+          <p><strong>Causa:</strong> El dep&oacute;sito ya ven&iacute;a con alto esfuerzo (contaminaci&oacute;n). <strong>Correcci&oacute;n:</strong> Corrija en la etapa de enchapado &mdash; analice metales, baje la CD. El horneado alivia hidr&oacute;geno, no el esfuerzo del dep&oacute;sito.</p>
+        </div>
+        <div class="trouble-card glass">
+          <h4>Manchas / Huellas Bajo la Capa Final</h4>
+          <p><strong>Causa:</strong> Manejo con manos desnudas o sucias. <strong>Correcci&oacute;n:</strong> Maneje con guantes limpios sin pelusa; mantenga las piezas limpias y secas.</p>
+        </div>
+        <div class="trouble-card glass">
+          <h4>La Reconstrucci&oacute;n Se Agrieta al Maquinar</h4>
+          <p><strong>Causa:</strong> Esfuerzo interno excesivo en el dep&oacute;sito. <strong>Correcci&oacute;n:</strong> Corrija en la etapa de enchapado (temp, pH, CD, contaminaci&oacute;n); un n&iacute;quel Watts simple sano debe maquinar bien.</p>
+        </div>
+        <div class="trouble-card glass" style="border-left-color:var(--amber);">
+          <h4 style="color:var(--amber);">Recordatorio del Tiempo de Horneado</h4>
+          <p>El reloj de 4 horas arranca al terminar el &uacute;ltimo paso de electrodeposici&oacute;n. Algunas especificaciones exigen hornear <strong>antes</strong> de cualquier post-tratamiento o segunda capa de enchapado &mdash; verifique la especificaci&oacute;n del cliente. Pruebas seg&uacute;n ASTM F519 donde se requiera.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="safety-card glass">
+      <div class="safety-head">&#9888; Seguridad</div>
+      <div class="safety-body">Los hornos de horneado son un <strong>riesgo de quemadura e incendio</strong> &mdash; siga el LOTO del horno y los procedimientos de trabajo en caliente; nada de inflamables cerca de los hornos. Qu&iacute;micas de antideslustre y sello: consulte la SDS del producto espec&iacute;fico. Si se aplica una capa final de cromo, <strong>aplican los controles completos de Cr(VI) seg&uacute;n OSHA 29 CFR 1910.1026</strong> (vea las referencias de cromo). El n&iacute;quel sigue siendo un <strong>sensibilizante de la piel</strong> durante el manejo &mdash; guantes en todo momento.</div>
+    </div>
+
+  </div>
+
+  <footer class="footer poster-footer">
+    <p class="footer-disclaimer">Solo referencia t&eacute;cnica. Verifique todos los par&aacute;metros contra la hoja t&eacute;cnica (TDS) de su proveedor de qu&iacute;micos, las especificaciones del cliente y los requisitos regulatorios aplicables antes de usarlos en producci&oacute;n. Los compuestos de n&iacute;quel est&aacute;n clasificados como sospechosos de ser cancer&iacute;genos y como sensibilizantes conocidos de la piel &mdash; consulte siempre la SDS vigente y cumpla con OSHA, REACH y las regulaciones locales. <em>Datos regulatorios revisados el 2026-09-17: los l&iacute;mites de exposici&oacute;n reflejan los PEL federales de OSHA (EE. UU.) publicados a esta fecha; las normas citadas deben verificarse contra su revisi&oacute;n vigente. Los l&iacute;mites estatales (p. ej., Cal/OSHA) y los TLV de la ACGIH pueden ser m&aacute;s estrictos. Verifique contra las tablas vigentes de OSHA y la SDS del proveedor antes de usar en producci&oacute;n.</em></p>
+    <p class="footer-title">Post-Tratamiento &mdash; Serie de Enchapado de N&iacute;quel Watts</p>
+    <span class="footer-brand">Plating Posters Inc &middot; Serie de Referencia de Acabado de Metales &middot; v1.0 / 2026</span>
+  </footer>
+
+</div>
+</div>
+</div>
+
+<div class="tweaks">
+  <div style="display:flex;gap:8px;align-items:center;">
+    <span style="color:rgba(240,237,232,.5);font-size:11px;letter-spacing:.06em;text-transform:uppercase;">Edition</span>
+    <button id="btnDark" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);" onclick="setEdition('')">Dark</button>
+    <button id="btnLight" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:#E8A020;color:#1A1F2E;border:1px solid #E8A020;" onclick="setEdition('light')">Light</button>
+  </div>
+  <button onclick="window.print()" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);">Print / PDF</button>
+</div>
+
+<script>
+const posterWrap=document.getElementById('posterWrap');
+const poster=document.getElementById('poster');
+function scalePoster(){const sW=(window.innerWidth-24)/1200;const sH=(window.innerHeight-24)/1800;const s=Math.min(sW,sH);posterWrap.style.transform='scale('+s+')';posterWrap.style.transformOrigin='top left';posterWrap.style.width=(1200*s)+'px';posterWrap.style.height=(1800*s)+'px';}
+function setEdition(e){if(e)poster.dataset.edition=e;else delete poster.dataset.edition;document.getElementById('btnDark').style.background=e?'transparent':'#E8A020';document.getElementById('btnDark').style.color=e?'#F0EDE8':'#1A1F2E';document.getElementById('btnDark').style.borderColor=e?'rgba(255,255,255,.2)':'#E8A020';document.getElementById('btnLight').style.background=e?'#E8A020':'transparent';document.getElementById('btnLight').style.color=e?'#1A1F2E':'#F0EDE8';document.getElementById('btnLight').style.borderColor=e?'#E8A020':'rgba(255,255,255,.2)';}
+scalePoster();window.addEventListener('resize',scalePoster);
+</script>
+</body>
+</html>
