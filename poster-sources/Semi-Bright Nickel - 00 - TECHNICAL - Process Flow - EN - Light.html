@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Semi-Bright Nickel &mdash; Process Flow &mdash; Technical | Plating Posters Inc</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Barlow:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#1A1F2E;--navy:#0D1020;--text:#F0EDE8;--muted:rgba(240,237,232,.62);
+  --faint:rgba(240,237,232,.38);
+  --amber:#E8A020;--teal:#2EC4B6;--emerald:#27AE60;--coral:#E05C5C;
+  --slate:#3A4055;--callout:#1E2435;--altrow:#252B3D;
+  --glass-bg:rgba(30,36,53,.55);--glass-border:rgba(255,255,255,.12);
+  --glass-shadow:inset 0 1px 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(0,0,0,.2),0 4px 12px rgba(0,0,0,.25);
+}
+.poster[data-edition="light"]{
+  --bg:#F5F4F0;--navy:#DDD8CE;--text:#1B2030;--muted:rgba(27,32,48,.74);
+  --faint:rgba(27,32,48,.42);
+  --amber:#B8770D;--teal:#1A8C82;--emerald:#1E8449;--coral:#B7322F;
+  --slate:#C5C0B5;--callout:#ECEAE1;--altrow:#E4E1D6;
+  --glass-bg:rgba(255,253,247,.78);--glass-border:rgba(27,32,48,.16);
+  --glass-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 4px 12px rgba(27,32,48,.08);
+}
+html,body{margin:0;padding:0;background:#e8e6df;}
+.stage{width:100vw;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;overflow:visible;padding:12px 0;box-sizing:border-box;}
+.poster-wrap{transform-origin:top left;}
+.poster{
+  width:1200px;height:1800px;position:relative;overflow:hidden;
+  background:
+    radial-gradient(1200px 800px at 15% 8%,rgba(46,196,182,.14),transparent 60%),
+    radial-gradient(1000px 700px at 90% 25%,rgba(232,160,32,.12),transparent 55%),
+    radial-gradient(900px 900px at 50% 80%,rgba(224,92,92,.10),transparent 60%),
+    var(--bg);
+  font-family:'Inter',sans-serif;color:var(--text);
+  display:flex;flex-direction:column;padding:32px;box-sizing:border-box;
+}
+.glass{background-color:var(--glass-bg);background-image:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));border:1px solid var(--glass-border);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);box-shadow:var(--glass-shadow);border-radius:12px;}
+.tack{position:absolute;width:24px;height:24px;border-radius:50%;border:1.5px solid rgba(232,160,32,.28);z-index:2;pointer-events:none;}
+.tack::before,.tack::after{content:"";position:absolute;background:rgba(232,160,32,.28);}
+.tack::before{left:50%;top:-3px;bottom:-3px;width:1px;transform:translateX(-50%);}
+.tack::after{top:50%;left:-3px;right:-3px;height:1px;transform:translateY(-50%);}
+.tack.tl{top:12px;left:12px;}.tack.tr{top:12px;right:12px;}.tack.bl{bottom:12px;left:12px;}.tack.br{bottom:12px;right:12px;}
+
+.poster-header{flex-shrink:0;}
+.poster-body{flex:1;overflow:hidden;display:flex;flex-direction:column;gap:7px;justify-content:space-between;}
+.poster-footer{flex-shrink:0;margin-top:6px;}
+
+.header-band{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:5px;}
+.header-left{flex:1;min-width:0;}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--amber);letter-spacing:.16em;text-transform:uppercase;margin-bottom:2px;display:flex;align-items:center;gap:12px;}
+.eyebrow::before{content:"";display:inline-block;width:30px;height:3px;background:var(--amber);}
+.headline{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:72px;color:var(--text);line-height:.92;margin:2px 0;letter-spacing:-.01em;text-transform:uppercase;}
+.headline em{font-style:normal;color:var(--amber);}
+.subhead{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:20px;color:var(--teal);margin:0 0 3px;letter-spacing:.02em;text-transform:uppercase;}
+.tagline{font-family:'Inter',sans-serif;font-style:italic;font-size:11px;color:var(--muted);line-height:1.35;max-width:700px;margin:0;}
+.logo-card{flex-shrink:0;padding:12px 10px;display:flex;flex-direction:column;align-items:center;gap:8px;align-self:flex-start;}
+.logo-tile{width:68px;height:68px;border-radius:12px;background:linear-gradient(135deg,#E8A020,#2EC4B6);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -2px 4px rgba(0,0,0,.15),0 4px 14px rgba(0,0,0,.35);}
+.logo-tile span{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:26px;color:#1A1F2E;letter-spacing:.02em;line-height:1;}
+.logo-word{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;letter-spacing:.04em;text-transform:uppercase;line-height:1;text-align:center;white-space:nowrap;}
+.logo-word .a{color:var(--text);}.logo-word .b{color:var(--amber);}
+.logo-inc{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.05em;text-transform:lowercase;color:var(--muted);margin-top:-2px;}
+
+.orient-strip{display:flex;align-items:center;gap:4px;padding:4px 10px;margin-bottom:0;flex-wrap:wrap;}
+.orient-stage{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;padding:4px 8px;border-radius:5px;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:11px;letter-spacing:.05em;text-transform:uppercase;background:rgba(58,64,85,.4);border:1px solid rgba(255,255,255,.06);color:var(--muted);}
+.orient-stage.active{background:rgba(46,196,182,.22);border-color:rgba(46,196,182,.5);color:var(--teal);box-shadow:0 0 12px rgba(46,196,182,.15);}
+.poster[data-edition="light"] .orient-stage{background:rgba(27,32,48,.06);border-color:rgba(27,32,48,.12);}
+.poster[data-edition="light"] .orient-stage.active{background:rgba(46,196,182,.22);border-color:rgba(46,196,182,.5);}
+.orient-arrow{color:var(--faint);font-size:11px;flex:none;}
+
+.section-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;letter-spacing:.08em;text-transform:uppercase;color:var(--text);margin:0 0 4px;display:flex;align-items:center;gap:8px;}
+.section-title::before{content:"";width:5px;height:5px;background:var(--teal);border-radius:50%;}
+.section-title .sub{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.14em;color:var(--muted);margin-left:auto;font-weight:500;}
+
+.rule-card{display:flex;align-items:center;gap:18px;padding:10px 20px;background:rgba(46,196,182,.07);}
+.rule-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:42px;color:var(--teal);line-height:1;letter-spacing:-.02em;}
+.rule-body{flex:1;}
+.rule-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:15px;color:var(--teal);letter-spacing:.08em;text-transform:uppercase;}
+.rule-text{font-family:'Inter',sans-serif;font-size:11px;color:var(--muted);line-height:1.32;margin-top:2px;}
+
+.insight-card{padding:11px 16px;border-left:3px solid var(--teal);background:rgba(46,196,182,.06);border-radius:0 12px 12px 0;}
+.insight-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;color:var(--teal);letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px;}
+.insight-text{font-family:'Inter',sans-serif;font-size:12px;color:var(--text);line-height:1.5;}
+
+.data-table{width:100%;border-collapse:collapse;}
+.data-table th{font-family:'Barlow',sans-serif;font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);padding:8px 12px;text-align:left;background:rgba(13,16,32,.35);border-bottom:1px solid var(--glass-border);}
+.poster[data-edition="light"] .data-table th{background:rgba(27,32,48,.06);}
+.data-table td{padding:8px 12px;color:var(--text);line-height:1.4;border-bottom:1px solid rgba(255,255,255,.05);font-family:'Inter',sans-serif;font-size:12px;}
+.data-table tr:last-child td{border-bottom:none;}
+.data-table tr:nth-child(even) td{background:rgba(255,255,255,.02);}
+.poster[data-edition="light"] .data-table tr:nth-child(even) td{background:rgba(27,32,48,.025);}
+.poster[data-edition="light"] .data-table td{border-bottom-color:rgba(27,32,48,.08);}
+.data-table .mono{font-family:'JetBrains Mono',monospace;font-size:11px;}
+
+.safety-card{padding:14px 18px;border-left:3px solid var(--coral);background:rgba(224,92,92,.06);border-radius:12px;}
+.safety-head{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;color:var(--coral);letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px;}
+.safety-body{font-family:'Inter',sans-serif;font-size:12px;color:var(--text);line-height:1.5;}
+.safety-body strong{color:var(--coral);font-weight:700;}
+
+.trouble-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.trouble-card{padding:12px 14px;border-radius:10px;border-left:3px solid var(--coral);display:flex;flex-direction:column;gap:4px;}
+.trouble-card h4{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;color:var(--coral);margin:0;text-transform:uppercase;letter-spacing:.06em;line-height:1.1;}
+.trouble-card p{font-size:11px;color:var(--muted);margin:0;line-height:1.4;}
+
+.context-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.context-card{padding:14px 16px;}
+.context-card h4{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;margin:0 0 6px;letter-spacing:.04em;text-transform:uppercase;}
+.context-card h4.teal{color:var(--teal);}
+.context-card h4.amber{color:var(--amber);}
+.context-card h4.coral{color:var(--coral);}
+.context-card p{font-size:12px;line-height:1.5;color:var(--text);margin:0;}
+.context-card .detail{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--muted);margin-top:6px;}
+
+.footer{padding:8px 20px;background-color:rgba(13,16,32,.85);background-image:linear-gradient(180deg,rgba(255,255,255,.04),rgba(0,0,0,0));border:1px solid rgba(255,255,255,.10);border-radius:8px;text-align:center;display:flex;flex-direction:column;gap:2px;}
+.poster[data-edition="light"] .footer{background-color:rgba(221,216,206,.95);border-color:rgba(27,32,48,.10);}
+.poster[data-edition="light"] .footer-disclaimer{color:rgba(27,32,48,.62);}
+.footer-disclaimer{font-family:'Inter',sans-serif;font-size:8.5px;line-height:1.35;color:var(--faint);margin:0 auto;max-width:900px;}
+.footer-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:12px;color:var(--text);letter-spacing:.04em;text-transform:uppercase;margin:0;}
+.footer-brand{font-family:'JetBrains Mono',monospace;font-size:8.5px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;}
+
+/* ---- 00 additions: compact tables, comparison centerpiece (triptych), mini bullet lists ---- */
+.data-table.compact th{padding:3px 10px;font-size:10px;}
+.data-table.compact td{padding:3px 10px;font-size:10.5px;line-height:1.24;}
+.data-table.compact .mono{font-size:10px;}
+.table-note{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.06em;color:var(--muted);padding:4px 10px 4px;border-top:1px solid var(--glass-border);}
+.table-note strong{font-weight:500;color:var(--teal);}
+.mini-list{margin:0;padding-left:15px;font-size:10.5px;line-height:1.32;color:var(--text);}
+.mini-list li{margin-bottom:1px;}
+.mini-list li:last-child{margin-bottom:0;}
+
+.cmp-card{padding:9px 16px;border-top:3px solid var(--teal);}
+.cmp-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:6px;}
+.cmp-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:22px;letter-spacing:.06em;text-transform:uppercase;color:var(--text);}
+.cmp-title em{font-style:normal;color:var(--amber);}
+.cmp-sub{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.10em;text-transform:uppercase;color:var(--faint);}
+.swatch-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:6px;}
+.swatch-cell{text-align:center;}
+.swatch{height:24px;border-radius:8px;border:1px solid var(--glass-border);box-shadow:inset 0 1px 0 rgba(255,255,255,.35),inset 0 -2px 4px rgba(0,0,0,.12);}
+.swatch.matte{background:linear-gradient(180deg,#A4A9B0,#969BA3);}
+.swatch.satin{background:linear-gradient(105deg,#C6CAD0 0%,#AEB3BB 26%,#D3D7DC 48%,#A8AEB6 72%,#CBCFD5 100%);}
+.swatch.mirror{background:linear-gradient(105deg,#E8EBEE 0%,#B9BEC6 20%,#F6F8FA 38%,#8F959E 55%,#DFE3E8 70%,#AAB0B8 88%,#E4E7EB 100%);}
+.swatch-lbl{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:3px;}
+.swatch-lbl strong{color:var(--teal);font-weight:500;}
+.not-lead{font-family:'Inter',sans-serif;font-size:11px;color:var(--muted);line-height:1.35;margin:0 0 6px;}
+.not-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:5px 18px;}
+.not-list li{position:relative;padding-left:16px;font-family:'Inter',sans-serif;font-size:11px;line-height:1.38;color:var(--text);}
+.not-list li::before{content:"\00D7";position:absolute;left:0;top:0;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:14px;line-height:1.2;color:var(--amber);}
+.not-list li.is::before{content:"\2713";font-size:12px;color:var(--teal);}
+.not-list li strong{font-weight:700;}
+.not-list li em{font-style:normal;color:var(--amber);}
+.not-list li em.t{color:var(--teal);}
+.not-guard{margin-top:7px;padding:6px 14px;border:1px solid rgba(224,92,92,.30);border-left:3px solid var(--coral);border-radius:8px;background:rgba(224,92,92,.07);font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--coral);line-height:1.3;}
+.not-guard .why{display:block;font-family:'Inter',sans-serif;font-weight:400;font-size:10.5px;letter-spacing:0;text-transform:none;color:var(--text);line-height:1.4;margin-top:2px;}
+
+.tweaks{position:fixed;bottom:16px;right:16px;z-index:100;background:rgba(13,16,32,.92);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:10px 14px;display:flex;flex-direction:column;gap:8px;font-family:'Inter',sans-serif;font-size:12px;color:#F0EDE8;}
+@media print{
+  @page{size:12.5in 18.75in;margin:0;}
+  html,body{background:#F5F4F0 !important;-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
+  *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
+  .stage{position:static;padding:0;display:block;overflow:visible;}
+  .poster-wrap{transform:none !important;width:auto !important;height:auto !important;}
+  .poster{box-shadow:none !important;width:1200px !important;height:1800px !important;overflow:hidden !important;}
+  .glass,.trouble-card,.insight-card,.safety-card,.context-card{backdrop-filter:none !important;-webkit-backdrop-filter:none !important;}
+  .tweaks{display:none !important;}
+}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="poster-wrap" id="posterWrap">
+<div class="poster" id="poster" data-edition="light">
+  <span class="tack tl" aria-hidden="true"></span><span class="tack tr" aria-hidden="true"></span>
+  <span class="tack bl" aria-hidden="true"></span><span class="tack br" aria-hidden="true"></span>
+
+  <div class="poster-header">
+    <header class="header-band">
+      <div class="header-left">
+        <div class="eyebrow"><span>Plating Posters Inc &nbsp;&middot;&nbsp; Semi-Bright Nickel Series &nbsp;&middot;&nbsp; Process Overview</span></div>
+        <h1 class="headline">PROCESS <em>FLOW</em></h1>
+        <h2 class="subhead">8 stages from raw substrate to a leveled, sulfur-free nickel underlayer &mdash; the corrosion-engineering foundation of the duplex decorative stack</h2>
+        <p class="tagline">&ldquo;Semi-bright is the layer nobody sees and every good finish depends on. Leveled, ductile, sulfur-free &mdash; and deliberately more noble than the bright nickel that protects it.&rdquo;</p>
+      </div>
+      <aside class="glass logo-card">
+        <div class="logo-tile"><span>PP</span></div>
+        <div class="logo-word"><span class="a">Plating</span> <span class="b">Posters</span></div>
+        <div class="logo-inc">www.platingposters.com</div>
+      </aside>
+    </header>
+
+    <div class="orient-strip glass">
+      <div class="orient-stage">Clean</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Rinse</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Activate</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Rinse</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Semi&#8209;Bright&nbsp;Ni</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Rinse</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Post&#8209;Tx</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Rinse&nbsp;/&nbsp;Dry</div>
+    </div>
+  </div>
+
+  <div class="poster-body">
+
+    <div class="glass rule-card">
+      <div class="rule-num">8</div>
+      <div class="rule-body">
+        <div class="rule-label">Process Stages</div>
+        <div class="rule-text">Semi-bright nickel sits between plain engineering Watts and full bright nickel. It has a leveling additive system &mdash; but a <strong style="color:var(--teal);">sulfur-free</strong> one &mdash; so it fills scratches without co-depositing the sulfur that makes bright nickel electrochemically active. Its job is to be the durable, more-noble base of a duplex system, with bright nickel and chrome plated over it. Every upstream stage still either protects the bath or poisons it. There is no neutral step.</div>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="section-title">Full Process Sequence <span class="sub">Substrate to finished duplex stack</span></h3>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table compact">
+          <thead><tr><th>#</th><th>Step</th><th>Temp</th><th>Time</th><th>Key Parameter</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">01</td><td>Alkaline Soak Clean / Electroclean</td><td class="mono">140&ndash;180&deg;F / 60&ndash;82&deg;C</td><td class="mono">3&ndash;10 min</td><td>Cleaner 4&ndash;8 oz/gal; water-break-free surface</td></tr>
+            <tr><td class="mono">02</td><td>Rinse (Pre-Activation)</td><td class="mono">Ambient</td><td class="mono">30&ndash;60 s</td><td>Conductivity &lt; 500 <span style="text-transform:none">&micro;S/cm</span></td></tr>
+            <tr><td class="mono">03</td><td>Acid Activation (Acid Dip)</td><td class="mono">Ambient to 110&deg;F / 43&deg;C</td><td class="mono">15&ndash;60 s</td><td>HCl 10&ndash;50% v/v or H&#8322;SO&#8324; 5&ndash;20% v/v</td></tr>
+            <tr><td class="mono">04</td><td>Rinse (Pre-Plate)</td><td class="mono">Ambient</td><td class="mono">30&ndash;60 s</td><td>Conductivity &lt; 200 <span style="text-transform:none">&micro;S/cm</span>; no acid drag-in</td></tr>
+            <tr><td class="mono">05</td><td>Semi-Bright Nickel Plating</td><td class="mono">120&ndash;150&deg;F / 49&ndash;66&deg;C</td><td class="mono">15&ndash;60+ min</td><td>NiSO&#8324; 240&ndash;330 g/L; pH 3.5&ndash;4.5; 20&ndash;50 ASF rack; sulfur-free leveler dosed on amp-hours</td></tr>
+            <tr><td class="mono">06</td><td>Rinse (Post-Plate)</td><td class="mono">Ambient</td><td class="mono">30&ndash;60 s</td><td>Conductivity &lt; 200 <span style="text-transform:none">&micro;S/cm</span>; no Ni drag-out into the bright bath</td></tr>
+            <tr><td class="mono">07</td><td>Post-Treatment (bright nickel + chrome overplate, or bake, or seal)</td><td class="mono">Varies</td><td class="mono">Varies</td><td>Duplex stack: bright Ni over semi-bright, then decorative Cr; STEP-verified</td></tr>
+            <tr><td class="mono">08</td><td>Final Rinse / Dry</td><td class="mono">Ambient to 140&deg;F / 60&deg;C</td><td class="mono">30&ndash;60 s + dry</td><td>Clean DI rinse; warm air dry; no water spots</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="glass cmp-card">
+      <div class="cmp-head">
+        <span class="cmp-title">Semi-Bright is <em>NEITHER</em> Plain Watts <em>NOR</em> Bright Nickel</span>
+        <span class="cmp-sub">Know what this deposit is &mdash; and is not</span>
+      </div>
+      <div class="swatch-row">
+        <div class="swatch-cell"><div class="swatch matte"></div><div class="swatch-lbl">Plain Watts &middot; Matte &middot; Not Leveled</div></div>
+        <div class="swatch-cell"><div class="swatch satin"></div><div class="swatch-lbl"><strong>Semi-Bright &middot; Satin / Leveled (this series)</strong></div></div>
+        <div class="swatch-cell"><div class="swatch mirror"></div><div class="swatch-lbl">Bright Nickel &middot; Full Mirror Bright</div></div>
+      </div>
+      <p class="not-lead">Same core bath &mdash; nickel sulfate, chloride, boric acid. The difference is the additive system: a <strong style="color:var(--teal);">sulfur-free leveler</strong>, not a sulfur-bearing brightener, and not nothing at all.</p>
+      <ul class="not-list">
+        <li><strong>It is <em>NOT</em> mirror-bright</strong> &mdash; the finish is satin / semi-lustrous, by design. Full brightness comes from the <em class="t">bright</em> nickel layer plated over it.</li>
+        <li class="is"><strong>It <em class="t">DOES</em> level</strong> &mdash; unlike plain Watts, the sulfur-free leveler fills scratches, polish lines, and minor tool marks.</li>
+        <li class="is"><strong>It is <em class="t">sulfur-FREE</em> (&lt;0.005% S)</strong> &mdash; no sulfur-bearing Class I carrier, no Class II brightener. This is what makes it more noble than the bright layer.</li>
+        <li><strong>It is <em>NOT</em> the top coat</strong> &mdash; it is the <em class="t">bottom</em> layer of a duplex stack: semi-bright &rarr; bright &rarr; chrome.</li>
+        <li class="is"><strong>It is deliberately <em class="t">MORE NOBLE</em> than the bright nickel above it</strong> &mdash; so the bright layer corrodes sacrificially and protects it. This is measured, not assumed (ASTM B764 STEP test).</li>
+        <li class="is"><strong>It is ductile and low-to-moderate stress</strong> &mdash; bends and forms without cracking; a sound base for the layers above.</li>
+      </ul>
+      <div class="not-guard">&#9888;&nbsp; Do NOT dose bright-nickel (sulfur-bearing) brightener into a semi-bright tank.
+        <span class="why">A single drag-over of bright-bath additive can add sulfur to the semi-bright deposit, collapse the STEP potential difference, and kill the corrosion performance of the whole stack.</span>
+      </div>
+    </div>
+
+    <div class="context-grid">
+      <div class="insight-card glass" style="border-radius:0 12px 12px 0;">
+        <div class="insight-label">What Is Semi-Bright Nickel?</div>
+        <div class="insight-text" style="font-size:11px;line-height:1.38;">A Watts-type nickel electrolyte &mdash; nickel sulfate, nickel chloride, and boric acid &mdash; run with a <strong>sulfur-free leveling additive system</strong> instead of the sulfur-bearing brightener package used in bright nickel. It produces a <strong>leveled, ductile, semi-lustrous (satin) deposit that is essentially sulfur-free (&lt;0.005% S)</strong>. It is NOT plated for its own appearance &mdash; it is the <strong>bottom layer of a duplex (or triplex) decorative system</strong>: semi-bright first, then bright nickel, then decorative chromium. Because it contains no co-deposited sulfur, it is more <strong>noble</strong> (more positive electrode potential) than the sulfur-bearing bright layer above it &mdash; so in a corrosive environment the bright layer corrodes <strong>preferentially and sacrificially</strong>, spreading corrosion sideways instead of driving it straight down to the steel. That is the entire reason the duplex system outperforms a single nickel layer of the same total thickness.</div>
+      </div>
+      <div>
+        <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+          <table class="data-table compact">
+            <thead><tr><th>Where It Is Used</th><th>Why Semi-Bright Nickel</th></tr></thead>
+            <tbody>
+              <tr><td>Duplex / multilayer decorative systems</td><td>The more-noble, sulfur-free base beneath bright nickel and chrome &mdash; the primary reason semi-bright exists</td></tr>
+              <tr><td>Automotive exterior trim &amp; hardware</td><td>Long-life corrosion systems where a single bright layer will not pass salt-spray / CASS testing</td></tr>
+              <tr><td>Plumbing, appliance &amp; marine hardware</td><td>High-corrosion service under decorative chrome</td></tr>
+              <tr><td>Leveling of imperfect substrates</td><td>The sulfur-free leveler fills scratches and polish lines a plain Watts bath would reproduce</td></tr>
+              <tr><td>Corrosion-engineering underlayer</td><td>Dense, ductile, sulfur-free &mdash; a durable barrier kept cathodically protected by the layers above</td></tr>
+              <tr><td>Sulfur-free under thermal service</td><td>No co-deposited sulfur to embrittle at temperature, unlike bright nickel</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="context-grid">
+      <div class="context-card glass" style="padding:10px 14px;">
+        <h4 class="teal">Strengths</h4>
+        <ul class="mini-list">
+          <li>Sulfur-free deposit (&lt;0.005% S) &mdash; the more-noble base that makes duplex corrosion protection work</li>
+          <li>Levels &mdash; fills scratches and polish lines a plain Watts bath would reproduce</li>
+          <li>Ductile, low-to-moderate stress &mdash; a sound foundation for the bright + chrome layers above</li>
+          <li>Dramatically better real-world corrosion life than single-layer nickel of equal thickness (the sacrificial-bright mechanism)</li>
+          <li>No sulfur to embrittle the deposit under downstream thermal service</li>
+          <li>Well-characterized within the ASTM B456 decorative-nickel system; broad automotive/appliance specification coverage</li>
+          <li>High cathode efficiency (93&ndash;97%) &mdash; most current makes metal, not gas</li>
+        </ul>
+      </div>
+      <div class="context-card glass" style="padding:10px 14px;">
+        <h4 class="coral">Limitations</h4>
+        <ul class="mini-list">
+          <li>Not decorative as-plated &mdash; satin, not mirror; needs the bright + chrome layers over it to be a finished surface</li>
+          <li>The leveler is dosed and monitored on <strong>amp-hours</strong> &mdash; it is consumed, and it breaks down</li>
+          <li>Carryover of the sulfur-free leveler into the bright bath &mdash; and sulfur-bearing bright additive back into the semi-bright bath &mdash; are both classic duplex-line failures</li>
+          <li>Metallic contaminants (Cu, Fe, Zn, Cr) accumulate and degrade the deposit &mdash; contamination control unchanged from the other nickel baths</li>
+          <li>120&ndash;150&deg;F operation requires heating &mdash; energy cost above ambient processes</li>
+          <li>Hydrogen embrittlement risk for high-strength steel (&gt;40 HRC) &mdash; bake required per ASTM B850</li>
+          <li>Nickel is a REACH SVHC candidate &mdash; regulatory pressure increasing in the EU</li>
+          <li>Dissolved nickel in waste requires precipitation to low mg/L limits in most jurisdictions</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="context-grid">
+      <div>
+        <h3 class="section-title">Bath Chemistry at a Glance <span class="sub">Semi-bright Watts type</span></h3>
+        <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+          <table class="data-table compact">
+            <thead><tr><th>Component</th><th>Concentration</th><th>Function</th></tr></thead>
+            <tbody>
+              <tr><td>Nickel Sulfate (NiSO&#8324;&middot;6H&#8322;O)</td><td class="mono">240&ndash;330 g/L</td><td>Primary metal source</td></tr>
+              <tr><td>Nickel Chloride (NiCl&#8322;&middot;6H&#8322;O)</td><td class="mono">30&ndash;45 g/L</td><td>Anode corrosion, conductivity, throwing power &mdash; often kept toward the LOW end vs bright baths</td></tr>
+              <tr><td>Boric Acid (H&#8323;BO&#8323;)</td><td class="mono">30&ndash;45 g/L</td><td>Cathode-film pH buffer &mdash; prevents burning</td></tr>
+              <tr><td>Sulfur-free leveler (coumarin OR coumarin-free)</td><td class="mono">Per TDS; dosed on amp-hours</td><td>Leveling WITHOUT sulfur co-deposit &mdash; the defining additive of this bath</td></tr>
+              <tr><td>Wetting / anti-pit agent</td><td class="mono">Per vendor TDS (low)</td><td>Pit prevention only &mdash; NOT a brightener</td></tr>
+              <tr><td>pH</td><td class="mono">3.5&ndash;4.5</td><td>H&#8322;SO&#8324; down; NiCO&#8323; up &mdash; never NaOH</td></tr>
+            </tbody>
+          </table>
+          <div class="table-note"><strong>No Class I carrier, no Class II brightener</strong> &mdash; that package belongs to the bright-nickel series. The sulfur-free leveler + a low anti-pit wetter are the only organics.</div>
+          <div class="table-note">Chloride often runs toward the LOW end vs bright baths for low stress and high ductility &mdash; confirm the target against the supplier&rsquo;s semi-bright TDS.</div>
+        </div>
+      </div>
+      <div>
+        <h3 class="section-title">Common Specifications <span class="sub">Decorative duplex system</span></h3>
+        <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+          <table class="data-table compact">
+            <thead><tr><th>Spec</th><th>Scope</th></tr></thead>
+            <tbody>
+              <tr><td class="mono">ASTM B456</td><td>Electrodeposited Cu+Ni+Cr and Ni+Cr coatings &mdash; THE governing spec for the semi-bright + bright + chrome decorative stack</td></tr>
+              <tr><td class="mono">ASTM B764</td><td>STEP test &mdash; simultaneous thickness &amp; electrode potential of individual nickel layers in a duplex/triplex system</td></tr>
+              <tr><td class="mono">AMS 2403</td><td>Nickel plating (general electrodeposit reference)</td></tr>
+              <tr><td class="mono">ASTM B571</td><td>Qualitative adhesion testing (bend, peel, thermal shock)</td></tr>
+              <tr><td class="mono">ASTM B850</td><td>Post-coating hydrogen-embrittlement relief bake</td></tr>
+              <tr><td class="mono">ASTM F519</td><td>Mechanical H-embrittlement evaluation where required</td></tr>
+              <tr><td class="mono">ISO 1456</td><td>Ni+Cr and Cu+Ni+Cr decorative coatings (international)</td></tr>
+            </tbody>
+          </table>
+          <div class="table-note"><strong>ASTM B456</strong> governs this decorative Ni+Cr / Cu+Ni+Cr system &mdash; do not substitute the engineering-nickel specification (that belongs to the plain-Watts series).</div>
+          <div class="table-note">All specifications: use current revision &mdash; verify against the published standard before production use.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer poster-footer">
+    <p class="footer-disclaimer">Technical reference only. Verify all parameters against your chemistry supplier&rsquo;s TDS, customer specifications, and applicable regulatory requirements before production use. Nickel compounds are classified as suspected carcinogens and known skin sensitizers &mdash; always consult current SDS and comply with OSHA, REACH, and local regulations. <em>Regulatory data reviewed 2026-09-18: exposure limits reflect published U.S. federal OSHA PELs as of this date; referenced standards should be checked against their current revision. State limits (e.g., Cal/OSHA) and ACGIH TLVs may be stricter. Verify against current OSHA tables and supplier SDS before production use.</em></p>
+    <p class="footer-title">Process Flow &mdash; Semi-Bright Nickel Plating Series</p>
+    <span class="footer-brand">Plating Posters Inc &middot; Metal Finishing Reference Series &middot; v1.0 / 2026</span>
+  </footer>
+
+</div>
+</div>
+</div>
+
+<div class="tweaks">
+  <div style="display:flex;gap:8px;align-items:center;">
+    <span style="color:rgba(240,237,232,.5);font-size:11px;letter-spacing:.06em;text-transform:uppercase;">Edition</span>
+    <button id="btnDark" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);" onclick="setEdition('')">Dark</button>
+    <button id="btnLight" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:#E8A020;color:#1A1F2E;border:1px solid #E8A020;" onclick="setEdition('light')">Light</button>
+  </div>
+  <button onclick="window.print()" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);">Print / PDF</button>
+</div>
+
+<script>
+const posterWrap=document.getElementById('posterWrap');
+const poster=document.getElementById('poster');
+function scalePoster(){const sW=(window.innerWidth-24)/1200;const sH=(window.innerHeight-24)/1800;const s=Math.min(sW,sH);posterWrap.style.transform='scale('+s+')';posterWrap.style.transformOrigin='top left';posterWrap.style.width=(1200*s)+'px';posterWrap.style.height=(1800*s)+'px';}
+function setEdition(e){if(e)poster.dataset.edition=e;else delete poster.dataset.edition;document.getElementById('btnDark').style.background=e?'transparent':'#E8A020';document.getElementById('btnDark').style.color=e?'#F0EDE8':'#1A1F2E';document.getElementById('btnDark').style.borderColor=e?'rgba(255,255,255,.2)':'#E8A020';document.getElementById('btnLight').style.background=e?'#E8A020':'transparent';document.getElementById('btnLight').style.color=e?'#1A1F2E':'#F0EDE8';document.getElementById('btnLight').style.borderColor=e?'#E8A020':'rgba(255,255,255,.2)';}
+scalePoster();window.addEventListener('resize',scalePoster);
+</script>
+</body>
+</html>

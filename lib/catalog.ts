@@ -34,14 +34,14 @@ export const CATEGORIES: CategoryEntry[] = [
     description:
       "Electrodeposition of metals onto a conductive substrate using electrical current through an electrolytic bath. Covers zinc, nickel, chrome, copper, tin, gold, silver, cadmium, and more.",
     accentColor: "#E8A020",
-    totalPosters: 172,
+    totalPosters: 188,
     processes: [
       { id: pid("Zinc Plating (Alkaline)"), title: "Zinc Plating (Alkaline)", posterCount: 8, available: true },
       { id: pid("Zinc Plating (Acid)"), title: "Zinc Plating (Acid)", posterCount: 8, available: true },
       { id: pid("Zinc-Nickel Plating"), title: "Zinc-Nickel Plating", posterCount: 8, available: true },
       { id: pid("Nickel Plating (Watts)"), title: "Nickel Plating (Watts)", posterCount: 8, available: true },
       { id: pid("Bright Nickel Plating"), title: "Bright Nickel Plating", posterCount: 8, available: true },
-      { id: pid("Semi-Bright Nickel Plating"), title: "Semi-Bright Nickel Plating", posterCount: 8 },
+      { id: pid("Semi-Bright Nickel Plating"), title: "Semi-Bright Nickel Plating", posterCount: 8, available: true },
       { id: pid("Nickel Plating (Sulfamate)"), title: "Nickel Plating (Sulfamate)", posterCount: 8 },
       { id: pid("Nickel-Cobalt Plating"), title: "Nickel-Cobalt Plating", posterCount: 8 },
       { id: pid("Chrome Plating (Decorative)"), title: "Chrome Plating (Decorative)", posterCount: 8, available: true },

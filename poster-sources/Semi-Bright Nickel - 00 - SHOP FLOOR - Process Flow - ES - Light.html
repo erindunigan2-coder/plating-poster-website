@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>N&iacute;quel Semibrillante &mdash; Flujo del Proceso &mdash; Piso de Producci&oacute;n | Plating Posters Inc</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Barlow:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#1A1F2E;--navy:#0D1020;--text:#F0EDE8;--muted:rgba(240,237,232,.62);--faint:rgba(240,237,232,.38);--amber:#E8A020;--teal:#2EC4B6;--emerald:#27AE60;--coral:#E05C5C;--slate:#3A4055;--glass-bg:rgba(30,36,53,.55);--glass-border:rgba(255,255,255,.12);--glass-shadow:inset 0 1px 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(0,0,0,.2),0 4px 12px rgba(0,0,0,.25);}
+.poster[data-edition="light"]{--bg:#F5F4F0;--navy:#DDD8CE;--text:#1B2030;--muted:rgba(27,32,48,.74);--faint:rgba(27,32,48,.42);--amber:#B8770D;--teal:#1A8C82;--emerald:#1E8449;--coral:#B7322F;--slate:#C5C0B5;--glass-bg:rgba(255,253,247,.78);--glass-border:rgba(27,32,48,.16);--glass-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 4px 12px rgba(27,32,48,.08);}
+html,body{margin:0;padding:0;background:#e8e6df;}
+.stage{width:100vw;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;overflow:visible;padding:12px 0;box-sizing:border-box;}
+.poster-wrap{transform-origin:top left;}
+.poster{width:1200px;height:1800px;position:relative;overflow:hidden;background:radial-gradient(1200px 800px at 15% 8%,rgba(46,196,182,.14),transparent 60%),radial-gradient(1000px 700px at 90% 25%,rgba(232,160,32,.12),transparent 55%),radial-gradient(900px 900px at 50% 80%,rgba(224,92,92,.10),transparent 60%),var(--bg);font-family:'Inter',sans-serif;color:var(--text);display:flex;flex-direction:column;padding:32px;box-sizing:border-box;}
+.glass{background-color:var(--glass-bg);background-image:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));border:1px solid var(--glass-border);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);box-shadow:var(--glass-shadow);border-radius:12px;}
+.tack{position:absolute;width:24px;height:24px;border-radius:50%;border:1.5px solid rgba(232,160,32,.28);z-index:2;pointer-events:none;}
+.tack::before,.tack::after{content:"";position:absolute;background:rgba(232,160,32,.28);}
+.tack::before{left:50%;top:-3px;bottom:-3px;width:1px;transform:translateX(-50%);}
+.tack::after{top:50%;left:-3px;right:-3px;height:1px;transform:translateY(-50%);}
+.tack.tl{top:12px;left:12px;}.tack.tr{top:12px;right:12px;}.tack.bl{bottom:12px;left:12px;}.tack.br{bottom:12px;right:12px;}
+.poster-header{flex-shrink:0;}
+.poster-body{flex:1;overflow:hidden;display:flex;flex-direction:column;gap:12px;justify-content:space-between;margin-top:14px;}
+.poster-footer{flex-shrink:0;margin-top:12px;}
+.header-band{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;}
+.header-left{flex:1;min-width:0;}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--amber);letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px;display:flex;align-items:center;gap:12px;}
+.eyebrow::before{content:"";display:inline-block;width:36px;height:3px;background:var(--amber);}
+.headline{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:88px;color:var(--text);line-height:.92;margin:2px 0;letter-spacing:-.01em;text-transform:uppercase;}
+.headline em{font-style:normal;color:var(--amber);}
+.subhead{font-family:'Barlow',sans-serif;font-weight:700;font-size:22px;color:var(--amber);margin:6px 0 4px;}
+.tagline{font-family:'Inter',sans-serif;font-style:italic;font-size:15px;color:var(--muted);line-height:1.4;max-width:840px;margin:0;}
+.logo-card{flex-shrink:0;padding:14px 12px;display:flex;flex-direction:column;align-items:center;gap:8px;align-self:flex-start;min-width:150px;}
+.logo-tile{width:76px;height:76px;border-radius:13px;background:linear-gradient(135deg,#E8A020,#2EC4B6);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -2px 4px rgba(0,0,0,.15),0 4px 14px rgba(0,0,0,.35);}
+.logo-tile span{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:29px;color:#1A1F2E;letter-spacing:.02em;line-height:1;}
+.logo-word{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:20px;letter-spacing:.04em;text-transform:uppercase;line-height:1;text-align:center;white-space:nowrap;}
+.logo-word .a{color:var(--text);}.logo-word .b{color:var(--amber);}
+.logo-inc{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.05em;text-transform:lowercase;color:var(--muted);margin-top:-2px;}
+.section-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:24px;letter-spacing:.07em;text-transform:uppercase;color:var(--text);margin:0 0 8px;display:flex;align-items:center;gap:9px;}
+.section-title::before{content:"";width:6px;height:6px;background:var(--teal);border-radius:50%;}
+.section-title .sub{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;color:var(--muted);margin-left:auto;font-weight:500;}
+.key-card{padding:16px 24px;background:rgba(232,160,32,.07);}
+.key-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:60px;color:var(--amber);line-height:1;margin-bottom:4px;}
+.key-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;color:var(--amber);letter-spacing:.05em;text-transform:uppercase;line-height:1.15;}
+.key-text{font-family:'Inter',sans-serif;font-size:15.5px;color:var(--muted);line-height:1.42;margin-top:8px;}
+.flow-wrap{padding:12px 18px;}
+.roles-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;}
+.role-card{padding:13px 16px;border-radius:10px;}
+.role-h{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:19px;letter-spacing:.04em;text-transform:uppercase;margin-bottom:6px;line-height:1.05;}
+.role-p{font-size:13px;color:var(--muted);line-height:1.4;}
+.flow-table{width:100%;border-collapse:collapse;}
+.flow-table th{font-family:'Barlow',sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);padding:7px 14px;text-align:left;background:rgba(13,16,32,.35);border-bottom:1px solid var(--glass-border);}
+.poster[data-edition="light"] .flow-table th{background:rgba(27,32,48,.06);}
+.flow-table td{font-family:'Inter',sans-serif;font-weight:500;font-size:14px;color:var(--text);padding:6px 14px;border-bottom:1px solid rgba(255,255,255,.05);line-height:1.32;}
+.poster[data-edition="light"] .flow-table td{border-bottom-color:rgba(27,32,48,.08);}
+.flow-table tr:last-child td{border-bottom:none;}
+.flow-table td.mono{font-family:'JetBrains Mono',monospace;font-size:13px;}
+.flow-table tr:nth-child(even) td{background:rgba(255,255,255,.02);}
+.poster[data-edition="light"] .flow-table tr:nth-child(even) td{background:rgba(27,32,48,.025);}
+.notcard{padding:14px 22px;border-top:3px solid var(--teal);}
+.notcard-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:7px;}
+.notcard-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:26px;letter-spacing:.04em;text-transform:uppercase;color:var(--text);line-height:1.05;}
+.notcard-title em,.not-list li em{font-style:normal;color:var(--amber);}
+.not-list li em.t{color:var(--teal);}
+.notcard-sub{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.10em;text-transform:uppercase;color:var(--faint);white-space:nowrap;}
+.swatch-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:8px;}
+.swatch-cell{text-align:center;}
+.swatch{height:26px;border-radius:8px;border:1px solid var(--glass-border);box-shadow:inset 0 1px 0 rgba(255,255,255,.35),inset 0 -2px 4px rgba(0,0,0,.12);}
+.swatch.matte{background:linear-gradient(180deg,#A4A9B0,#969BA3);}
+.swatch.satin{background:linear-gradient(105deg,#C6CAD0 0%,#AEB3BB 26%,#D3D7DC 48%,#A8AEB6 72%,#CBCFD5 100%);}
+.swatch.mirror{background:linear-gradient(105deg,#E8EBEE 0%,#B9BEC6 20%,#F6F8FA 38%,#8F959E 55%,#DFE3E8 70%,#AAB0B8 88%,#E4E7EB 100%);}
+.swatch-lbl{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:3px;}
+.swatch-lbl strong{color:var(--teal);font-weight:500;}
+.not-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px;}
+.not-list li{font-family:'Inter',sans-serif;font-size:14.5px;line-height:1.4;color:var(--text);position:relative;padding-left:24px;}
+.not-list li::before{content:"\00D7";position:absolute;left:0;top:-1px;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:19px;line-height:1.2;color:var(--amber);}
+.not-list li.is::before{content:"\2713";font-size:16px;color:var(--teal);}
+.not-list li strong{font-weight:700;}
+.not-guard{margin-top:9px;padding:8px 14px;border:1px solid rgba(224,92,92,.30);border-left:3px solid var(--coral);border-radius:8px;background:rgba(224,92,92,.07);font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:17px;letter-spacing:.05em;text-transform:uppercase;color:var(--coral);line-height:1.3;}
+.not-guard .why{display:block;font-family:'Inter',sans-serif;font-weight:400;font-size:12.5px;letter-spacing:0;text-transform:none;color:var(--text);line-height:1.4;margin-top:3px;}
+.banner{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:17px;letter-spacing:.03em;text-transform:uppercase;text-align:center;color:var(--amber);background:rgba(232,160,32,.10);border:1px solid rgba(232,160,32,.30);border-radius:10px;padding:11px 16px;line-height:1.35;}
+.safety-card{padding:13px 20px;border-left:3px solid var(--coral);background:rgba(224,92,92,.06);border-radius:12px;}
+.safety-head{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:20px;color:var(--coral);letter-spacing:.07em;text-transform:uppercase;margin-bottom:5px;}
+.safety-text{font-family:'Inter',sans-serif;font-weight:500;font-size:14px;color:var(--text);line-height:1.46;}
+.safety-text strong{color:var(--coral);font-weight:700;}
+.footer{padding:10px 20px;background-color:rgba(13,16,32,.85);background-image:linear-gradient(180deg,rgba(255,255,255,.04),rgba(0,0,0,0));border:1px solid rgba(255,255,255,.10);border-radius:8px;text-align:center;display:flex;flex-direction:column;gap:3px;}
+.poster[data-edition="light"] .footer{background-color:rgba(221,216,206,.95);border-color:rgba(27,32,48,.10);}
+.poster[data-edition="light"] .footer-disclaimer{color:rgba(27,32,48,.62);}
+.footer-disclaimer{font-family:'Inter',sans-serif;font-size:10.5px;line-height:1.4;color:var(--faint);margin:0 auto;max-width:1060px;}
+.footer-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:15px;color:var(--text);letter-spacing:.04em;text-transform:uppercase;margin:0;}
+.footer-brand{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;}
+.tweaks{position:fixed;bottom:16px;right:16px;z-index:100;background:rgba(13,16,32,.92);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:12px 16px;display:flex;flex-direction:column;gap:8px;font-family:'Inter',sans-serif;font-size:12px;color:#F0EDE8;}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="poster-wrap" id="posterWrap">
+<div class="poster" id="poster" data-edition="light">
+  <span class="tack tl" aria-hidden="true"></span><span class="tack tr" aria-hidden="true"></span>
+  <span class="tack bl" aria-hidden="true"></span><span class="tack br" aria-hidden="true"></span>
+
+  <div class="poster-header">
+    <header class="header-band">
+      <div class="header-left">
+        <div class="eyebrow"><span>Plating Posters Inc &nbsp;&middot;&nbsp; Piso de Producci&oacute;n &nbsp;&middot;&nbsp; Serie N&iacute;quel Semibrillante &nbsp;&middot;&nbsp; Resumen</span></div>
+        <h1 class="headline">FLUJO DEL <em>PROCESO</em></h1>
+        <h2 class="subhead">8 etapas del sustrato crudo a una capa de n&iacute;quel nivelada y libre de azufre &mdash; la base del sistema d&uacute;plex</h2>
+        <p class="tagline">&ldquo;El semibrillante es la capa que nadie ve y de la que depende todo buen acabado. Nivelada, d&uacute;ctil, libre de azufre &mdash; y deliberadamente m&aacute;s noble que el n&iacute;quel brillante que la protege.&rdquo;</p>
+      </div>
+      <aside class="glass logo-card">
+        <div class="logo-tile"><span>PP</span></div>
+        <div class="logo-word"><span class="a">Plating</span> <span class="b">Posters</span></div>
+        <div class="logo-inc">www.platingposters.com</div>
+      </aside>
+    </header>
+  </div>
+
+  <div class="poster-body">
+
+    <div class="glass key-card">
+      <div class="key-num">8</div>
+      <div class="key-label">Etapas del Proceso &mdash; Limpiar &rarr; Enjuagar &rarr; Activar &rarr; Enjuagar &rarr; Enchapar &rarr; Enjuagar &rarr; Post-Tratar &rarr; Enjuagar&thinsp;/&thinsp;Secar</div>
+      <div class="key-text">El n&iacute;quel semibrillante es un ba&ntilde;o tipo Watts con un <strong>nivelador libre de azufre</strong> &mdash; no un abrillantador, pero tampoco un ba&ntilde;o sin aditivos. El dep&oacute;sito es satinado, nivelado, d&uacute;ctil y libre de azufre: la capa base del sistema decorativo d&uacute;plex, deliberadamente m&aacute;s noble que el n&iacute;quel brillante que se enchapa encima. Cada etapa previa protege el ba&ntilde;o o lo envenena. No hay paso neutral.</div>
+    </div>
+
+    <!-- Process Flow SVG -->
+    <div class="glass flow-wrap">
+      <svg viewBox="0 0 830 70" width="100%" height="94" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="40" cy="28" r="16" stroke="var(--amber)" stroke-width="1.4" fill="rgba(232,160,32,.12)"/>
+        <text x="40" y="32" text-anchor="middle" fill="var(--amber)" font-family="Barlow Condensed,sans-serif" font-weight="900" font-size="13">01</text>
+        <text x="40" y="56" text-anchor="middle" fill="currentColor" font-family="Inter,sans-serif" font-size="9" opacity=".62">LIMPIEZA</text>
+        <line x1="59" y1="28" x2="121" y2="28" stroke="currentColor" stroke-width="1" opacity=".4"/>
+        <polygon points="121,25 127,28 121,31" fill="currentColor" opacity=".4"/>
+        <circle cx="147" cy="28" r="16" stroke="var(--teal)" stroke-width="1.4" fill="rgba(46,196,182,.12)"/>
+        <text x="147" y="32" text-anchor="middle" fill="var(--teal)" font-family="Barlow Condensed,sans-serif" font-weight="900" font-size="13">02</text>
+        <text x="147" y="56" text-anchor="middle" fill="currentColor" font-family="Inter,sans-serif" font-size="9" opacity=".62">ENJUAGUE</text>
+        <line x1="166" y1="28" x2="228" y2="28" stroke="currentColor" stroke-width="1" opacity=".4"/>
+        <polygon points="228,25 234,28 228,31" fill="currentColor" opacity=".4"/>
+        <circle cx="254" cy="28" r="16" stroke="var(--amber)" stroke-width="1.4" fill="rgba(232,160,32,.12)"/>
+        <text x="254" y="32" text-anchor="middle" fill="var(--amber)" font-family="Barlow Condensed,sans-serif" font-weight="900" font-size="13">03</text>
+        <text x="254" y="56" text-anchor="middle" fill="currentColor" font-family="Inter,sans-serif" font-size="9" opacity=".62">ACTIVACI&Oacute;N</text>
+        <line x1="273" y1="28" x2="335" y2="28" stroke="currentColor" stroke-width="1" opacity=".4"/>
+        <polygon points="335,25 341,28 335,31" fill="currentColor" opacity=".4"/>
+        <circle cx="361" cy="28" r="16" stroke="var(--teal)" stroke-width="1.4" fill="rgba(46,196,182,.12)"/>
+        <text x="361" y="32" text-anchor="middle" fill="var(--teal)" font-family="Barlow Condensed,sans-serif" font-weight="900" font-size="13">04</text>
+        <text x="361" y="56" text-anchor="middle" fill="currentColor" font-family="Inter,sans-serif" font-size="9" opacity=".62">ENJ. PROTECCI&Oacute;N</text>
+        <line x1="380" y1="28" x2="442" y2="28" stroke="currentColor" stroke-width="1" opacity=".4"/>
+        <polygon points="442,25 448,28 442,31" fill="currentColor" opacity=".4"/>
+        <circle cx="468" cy="28" r="18" stroke="#E05C5C" stroke-width="1.8" fill="rgba(224,92,92,.12)"/>
+        <text x="468" y="32" text-anchor="middle" fill="#E05C5C" font-family="Barlow Condensed,sans-serif" font-weight="900" font-size="13">05</text>
+        <text x="468" y="56" text-anchor="middle" fill="currentColor" font-family="Inter,sans-serif" font-size="9" opacity=".62">NI SEMIBRILLANTE</text>
+        <line x1="489" y1="28" x2="549" y2="28" stroke="currentColor" stroke-width="1" opacity=".4"/>
+        <polygon points="549,25 555,28 549,31" fill="currentColor" opacity=".4"/>
+        <circle cx="575" cy="28" r="16" stroke="var(--teal)" stroke-width="1.4" fill="rgba(46,196,182,.12)"/>
+        <text x="575" y="32" text-anchor="middle" fill="var(--teal)" font-family="Barlow Condensed,sans-serif" font-weight="900" font-size="13">06</text>
+        <text x="575" y="56" text-anchor="middle" fill="currentColor" font-family="Inter,sans-serif" font-size="9" opacity=".62">ENJUAGUE</text>
+        <line x1="594" y1="28" x2="656" y2="28" stroke="currentColor" stroke-width="1" opacity=".4"/>
+        <polygon points="656,25 662,28 656,31" fill="currentColor" opacity=".4"/>
+        <circle cx="682" cy="28" r="18" stroke="var(--emerald)" stroke-width="1.8" fill="rgba(39,174,96,.12)"/>
+        <text x="682" y="32" text-anchor="middle" fill="var(--emerald)" font-family="Barlow Condensed,sans-serif" font-weight="900" font-size="13">07</text>
+        <text x="682" y="56" text-anchor="middle" fill="currentColor" font-family="Inter,sans-serif" font-size="9" opacity=".62">POST-TRAT.</text>
+        <line x1="703" y1="28" x2="763" y2="28" stroke="currentColor" stroke-width="1" opacity=".4"/>
+        <polygon points="763,25 769,28 763,31" fill="currentColor" opacity=".4"/>
+        <circle cx="790" cy="28" r="16" stroke="var(--emerald)" stroke-width="1.4" fill="rgba(39,174,96,.12)"/>
+        <text x="790" y="32" text-anchor="middle" fill="var(--emerald)" font-family="Barlow Condensed,sans-serif" font-weight="900" font-size="13">08</text>
+        <text x="790" y="56" text-anchor="middle" fill="currentColor" font-family="Inter,sans-serif" font-size="9" opacity=".62">ENJ./SECADO</text>
+      </svg>
+    </div>
+
+    <!-- Critical Control Points -->
+    <div class="glass" style="padding:13px 18px;">
+      <div class="section-title">Puntos Cr&iacute;ticos de Control <span class="sub">VIGILE ESTOS 3</span></div>
+      <div class="roles-grid">
+        <div class="role-card" style="background:rgba(232,160,32,.08);border:1px solid rgba(232,160,32,.2);">
+          <div class="role-h" style="color:var(--amber);">01 &mdash; Limpieza</div>
+          <div class="role-p">El nivelador rellena rayas, no mugre &mdash; una falla de preparaci&oacute;n se enchapa a trav&eacute;s de cada capa encima, n&iacute;quel brillante y cromo incluidos. Superficie sin ruptura de agua o detenga el rack.</div>
+        </div>
+        <div class="role-card" style="background:rgba(224,92,92,.08);border:1px solid rgba(224,92,92,.2);">
+          <div class="role-h" style="color:var(--coral);">05 &mdash; Enchapado</div>
+          <div class="role-p">Mant&eacute;ngalo libre de azufre. Nivelador dosificado por amperes-hora, no al ojo. Quemado = pH demasiado alto o temperatura demasiado baja &mdash; no &ldquo;m&aacute;s amperes&rdquo;.</div>
+        </div>
+        <div class="role-card" style="background:rgba(46,196,182,.08);border:1px solid rgba(46,196,182,.2);">
+          <div class="role-h" style="color:var(--teal);">06 &mdash; Enjuague de Contenci&oacute;n</div>
+          <div class="role-p">La &uacute;nica barrera entre las dos qu&iacute;micas de n&iacute;quel. El nivelador libre de azufre no debe avanzar al ba&ntilde;o brillante &mdash; el aditivo brillante nunca debe regresar hacia atr&aacute;s.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Process Sequence Table -->
+    <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+      <table class="flow-table">
+        <thead><tr><th style="width:5%;">#</th><th style="width:28%;">Etapa</th><th style="width:17%;">Temp</th><th style="width:14%;">Tiempo</th><th>Par&aacute;metro Clave</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">01</td><td>Limpieza por Inmersi&oacute;n / Electrolimpieza</td><td class="mono">140&ndash;180&deg;F</td><td class="mono">3&ndash;10 min</td><td>Limpiador 4&ndash;8 oz/gal; superficie sin ruptura de agua</td></tr>
+          <tr><td class="mono">02</td><td>Enjuague (Pre-Activaci&oacute;n)</td><td class="mono">Ambiente</td><td class="mono">30&ndash;60 s</td><td>Conductividad &lt; 500 <span style="text-transform:none">&micro;S/cm</span></td></tr>
+          <tr><td class="mono">03</td><td>Activaci&oacute;n &Aacute;cida</td><td class="mono">Amb&ndash;110&deg;F</td><td class="mono">15&ndash;60 s</td><td>HCl 10&ndash;50% v/v o H&#8322;SO&#8324; 5&ndash;20% v/v</td></tr>
+          <tr><td class="mono">04</td><td>Enjuague (Pre-Enchapado)</td><td class="mono">Ambiente</td><td class="mono">30&ndash;60 s</td><td>Conductividad &lt; 200 <span style="text-transform:none">&micro;S/cm</span>; sin arrastre de &aacute;cido al ba&ntilde;o</td></tr>
+          <tr><td class="mono">05</td><td>Enchapado de Ni Semibrillante</td><td class="mono">120&ndash;150&deg;F</td><td class="mono">15&ndash;60+ min</td><td>NiSO&#8324; 240&ndash;330 g/L; pH 3.5&ndash;4.5; 20&ndash;50 ASF en rack; nivelador por amperes-hora (Ah)</td></tr>
+          <tr><td class="mono">06</td><td>Enjuague (Post-Enchapado)</td><td class="mono">Ambiente</td><td class="mono">30&ndash;60 s</td><td>Conductividad &lt; 200 <span style="text-transform:none">&micro;S/cm</span>; nada hacia el ba&ntilde;o brillante</td></tr>
+          <tr><td class="mono">07</td><td>Post-Tratamiento</td><td class="mono">Var&iacute;a</td><td class="mono">Var&iacute;a</td><td>Ni brillante + cromo sobre la base &mdash; sistema verificado por STEP; hornee si se requiere</td></tr>
+          <tr><td class="mono">08</td><td>Enjuague Final / Secado</td><td class="mono">Amb&ndash;140&deg;F</td><td class="mono">30&ndash;60 s</td><td>Enjuague limpio con agua DI; secado con aire tibio; sin manchas de agua</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Semi-Bright is NEITHER Plain Watts NOR Bright Nickel -->
+    <div class="glass notcard">
+      <div class="notcard-head">
+        <span class="notcard-title">El Semibrillante NO es <em>NI</em> Watts Simple <em>NI</em> N&iacute;quel Brillante</span>
+        <span class="notcard-sub">Mismo ba&ntilde;o base &mdash; el sistema de aditivos es la diferencia</span>
+      </div>
+      <div class="swatch-row">
+        <div class="swatch-cell"><div class="swatch matte"></div><div class="swatch-lbl">Watts Simple &middot; Mate &middot; Sin Nivelar</div></div>
+        <div class="swatch-cell"><div class="swatch satin"></div><div class="swatch-lbl"><strong>Semibrillante &middot; Satinado / Nivelado (esta serie)</strong></div></div>
+        <div class="swatch-cell"><div class="swatch mirror"></div><div class="swatch-lbl">N&iacute;quel Brillante &middot; Brillo de Espejo Total</div></div>
+      </div>
+      <ul class="not-list">
+        <li><strong><em>NO</em> es brillo de espejo</strong> &mdash; el acabado es satinado / semilustroso, por dise&ntilde;o. El brillo total viene de la capa de n&iacute;quel <em class="t">brillante</em> que se enchapa encima.</li>
+        <li class="is"><strong>Es <em class="t">LIBRE de azufre</em> (&lt;0.005% S)</strong> &mdash; sin portador Clase I con azufre, sin abrillantador Clase II. Esto es lo que lo hace m&aacute;s noble que la capa brillante.</li>
+        <li><strong><em>NO</em> es la capa final</strong> &mdash; es la capa <em class="t">inferior</em> de un sistema d&uacute;plex: semibrillante &rarr; brillante &rarr; cromo.</li>
+        <li class="is"><strong>Es deliberadamente <em class="t">M&Aacute;S NOBLE</em> que el n&iacute;quel brillante encima</strong> &mdash; as&iacute; la capa brillante se corroe sacrificialmente y lo protege. Esto se mide, no se supone (prueba STEP, ASTM B764).</li>
+      </ul>
+      <div class="not-guard">&#9888;&nbsp; NO dosifique abrillantador de n&iacute;quel brillante (con azufre) en un tanque semibrillante.
+        <span class="why">Un solo arrastre de aditivo del ba&ntilde;o brillante puede meter azufre al dep&oacute;sito semibrillante, colapsar la diferencia de potencial STEP y matar el desempe&ntilde;o anticorrosivo de todo el sistema.</span>
+      </div>
+    </div>
+
+    <div class="banner">Tip de especificaci&oacute;n &mdash; el sistema decorativo (semibrillante + brillante + cromo) se rige por ASTM B456 y se verifica con la prueba STEP ASTM B764 (use las revisiones vigentes). Hornee el acero de alta resistencia seg&uacute;n ASTM B850.</div>
+
+    <!-- Safety -->
+    <div class="glass safety-card">
+      <div class="safety-head">&#9888; Seguridad de la L&iacute;nea</div>
+      <div class="safety-text"><strong>Limpiadores alcalinos calientes, &aacute;cidos minerales fuertes y soluci&oacute;n &aacute;cida de n&iacute;quel caliente &mdash; las sales de n&iacute;quel son sensibilizantes de la piel y los compuestos de n&iacute;quel est&aacute;n clasificados como sospechosos de ser cancer&iacute;genos.</strong> PEL de OSHA, n&iacute;quel soluble: 1 mg/m&#179; TWA (como Ni). La comez&oacute;n por n&iacute;quel es acumulativa y permanente una vez sensibilizado &mdash; guantes siempre que maneje piezas, racks o trabajo h&uacute;medo. Rectificadores = alto amperaje: LOTO antes de meter las manos a cualquier tanque. Cada p&oacute;ster de etapa lleva su propio panel completo de seguridad.</div>
+    </div>
+
+  </div>
+
+  <footer class="footer poster-footer">
+    <p class="footer-disclaimer">Solo referencia para el operador. Siga los SOP de su planta y verifique los par&aacute;metros contra la hoja t&eacute;cnica (TDS) de su proveedor de qu&iacute;micos y las especificaciones del cliente. Los compuestos de n&iacute;quel est&aacute;n clasificados como sospechosos de ser cancer&iacute;genos y como sensibilizantes conocidos de la piel &mdash; consulte la SDS vigente. Reporte cualquier desviaci&oacute;n del proceso a su supervisor. <em>Datos regulatorios revisados el 2026-09-18: los l&iacute;mites de exposici&oacute;n reflejan los PEL federales de OSHA (EE. UU.) publicados a esta fecha; las normas citadas deben verificarse contra su revisi&oacute;n vigente. Los l&iacute;mites estatales (p. ej., Cal/OSHA) y los TLV de la ACGIH pueden ser m&aacute;s estrictos.</em></p>
+    <p class="footer-title">Flujo del Proceso &mdash; Serie de Enchapado de N&iacute;quel Semibrillante</p>
+    <span class="footer-brand">Plating Posters Inc &middot; Referencia de Piso de Producci&oacute;n &middot; PP-SemiBrightNi-SF / v1.0 / 2026</span>
+  </footer>
+
+</div>
+</div>
+</div>
+
+<div class="tweaks">
+  <div style="display:flex;gap:8px;align-items:center;">
+    <span style="color:rgba(240,237,232,.5);font-size:11px;letter-spacing:.06em;text-transform:uppercase;">Edition</span>
+    <button id="btnDark" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);" onclick="setEdition('')">Dark</button>
+    <button id="btnLight" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:#E8A020;color:#1A1F2E;border:1px solid #E8A020;" onclick="setEdition('light')">Light</button>
+  </div>
+  <button onclick="window.print()" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);">Print / PDF</button>
+</div>
+
+<script>
+const posterWrap=document.getElementById('posterWrap');
+const poster=document.getElementById('poster');
+function scalePoster(){const sW=(window.innerWidth-24)/1200;const sH=(window.innerHeight-24)/1800;const s=Math.min(sW,sH);posterWrap.style.transform='scale('+s+')';posterWrap.style.transformOrigin='top left';posterWrap.style.width=(1200*s)+'px';posterWrap.style.height=(1800*s)+'px';}
+function setEdition(e){if(e)poster.dataset.edition=e;else delete poster.dataset.edition;document.getElementById('btnDark').style.background=e?'transparent':'#E8A020';document.getElementById('btnDark').style.color=e?'#F0EDE8':'#1A1F2E';document.getElementById('btnDark').style.borderColor=e?'rgba(255,255,255,.2)':'#E8A020';document.getElementById('btnLight').style.background=e?'#E8A020':'transparent';document.getElementById('btnLight').style.color=e?'#1A1F2E':'#F0EDE8';document.getElementById('btnLight').style.borderColor=e?'#E8A020':'rgba(255,255,255,.2)';}
+scalePoster();window.addEventListener('resize',scalePoster);
+</script>
+</body>
+</html>

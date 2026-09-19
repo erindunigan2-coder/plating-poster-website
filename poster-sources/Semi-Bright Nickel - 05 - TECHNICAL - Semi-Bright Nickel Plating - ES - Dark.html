@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>N&iacute;quel Semibrillante &mdash; Enchapado de N&iacute;quel Semibrillante &mdash; T&eacute;cnico | Plating Posters Inc</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Barlow:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#1A1F2E;--navy:#0D1020;--text:#F0EDE8;--muted:rgba(240,237,232,.62);
+  --faint:rgba(240,237,232,.38);
+  --amber:#E8A020;--teal:#2EC4B6;--emerald:#27AE60;--coral:#E05C5C;
+  --slate:#3A4055;--callout:#1E2435;--altrow:#252B3D;
+  --glass-bg:rgba(30,36,53,.55);--glass-border:rgba(255,255,255,.12);
+  --glass-shadow:inset 0 1px 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(0,0,0,.2),0 4px 12px rgba(0,0,0,.25);
+}
+.poster[data-edition="light"]{
+  --bg:#F5F4F0;--navy:#DDD8CE;--text:#1B2030;--muted:rgba(27,32,48,.74);
+  --faint:rgba(27,32,48,.42);
+  --amber:#B8770D;--teal:#1A8C82;--emerald:#1E8449;--coral:#B7322F;
+  --slate:#C5C0B5;--callout:#ECEAE1;--altrow:#E4E1D6;
+  --glass-bg:rgba(255,253,247,.78);--glass-border:rgba(27,32,48,.16);
+  --glass-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 4px 12px rgba(27,32,48,.08);
+}
+html,body{margin:0;padding:0;background:#e8e6df;}
+.stage{width:100vw;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;overflow:visible;padding:12px 0;box-sizing:border-box;}
+.poster-wrap{transform-origin:top left;}
+.poster{
+  width:1200px;height:1800px;position:relative;overflow:hidden;
+  background:
+    radial-gradient(1200px 800px at 15% 8%,rgba(46,196,182,.14),transparent 60%),
+    radial-gradient(1000px 700px at 90% 25%,rgba(232,160,32,.12),transparent 55%),
+    radial-gradient(900px 900px at 50% 80%,rgba(224,92,92,.10),transparent 60%),
+    var(--bg);
+  font-family:'Inter',sans-serif;color:var(--text);
+  display:flex;flex-direction:column;padding:32px;box-sizing:border-box;
+}
+.glass{background-color:var(--glass-bg);background-image:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));border:1px solid var(--glass-border);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);box-shadow:var(--glass-shadow);border-radius:12px;}
+.tack{position:absolute;width:24px;height:24px;border-radius:50%;border:1.5px solid rgba(232,160,32,.28);z-index:2;pointer-events:none;}
+.tack::before,.tack::after{content:"";position:absolute;background:rgba(232,160,32,.28);}
+.tack::before{left:50%;top:-3px;bottom:-3px;width:1px;transform:translateX(-50%);}
+.tack::after{top:50%;left:-3px;right:-3px;height:1px;transform:translateY(-50%);}
+.tack.tl{top:12px;left:12px;}.tack.tr{top:12px;right:12px;}.tack.bl{bottom:12px;left:12px;}.tack.br{bottom:12px;right:12px;}
+
+.poster-header{flex-shrink:0;}
+.poster-body{flex:1;overflow:hidden;display:flex;flex-direction:column;gap:3px;justify-content:space-between;}
+.poster-footer{flex-shrink:0;margin-top:5px;}
+
+.header-band{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:3px;}
+.header-left{flex:1;min-width:0;}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--amber);letter-spacing:.16em;text-transform:uppercase;margin-bottom:2px;display:flex;align-items:center;gap:12px;}
+.eyebrow::before{content:"";display:inline-block;width:30px;height:3px;background:var(--amber);}
+.headline{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:72px;color:var(--text);line-height:.92;margin:2px 0;letter-spacing:-.01em;text-transform:uppercase;}
+.headline em{font-style:normal;color:var(--amber);}
+.subhead{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:20px;color:var(--teal);margin:0 0 3px;letter-spacing:.02em;text-transform:uppercase;}
+.tagline{font-family:'Inter',sans-serif;font-style:italic;font-size:11px;color:var(--muted);line-height:1.35;max-width:700px;margin:0;}
+.logo-card{flex-shrink:0;padding:12px 10px;display:flex;flex-direction:column;align-items:center;gap:8px;align-self:flex-start;}
+.logo-tile{width:68px;height:68px;border-radius:12px;background:linear-gradient(135deg,#E8A020,#2EC4B6);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -2px 4px rgba(0,0,0,.15),0 4px 14px rgba(0,0,0,.35);}
+.logo-tile span{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:26px;color:#1A1F2E;letter-spacing:.02em;line-height:1;}
+.logo-word{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;letter-spacing:.04em;text-transform:uppercase;line-height:1;text-align:center;white-space:nowrap;}
+.logo-word .a{color:var(--text);}.logo-word .b{color:var(--amber);}
+.logo-inc{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.05em;text-transform:lowercase;color:var(--muted);margin-top:-2px;}
+
+.orient-strip{display:flex;align-items:center;gap:4px;padding:3px 10px;margin-bottom:0;flex-wrap:wrap;}
+.orient-stage{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;padding:3px 8px;border-radius:5px;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:11px;letter-spacing:.05em;text-transform:uppercase;background:rgba(58,64,85,.4);border:1px solid rgba(255,255,255,.06);color:var(--muted);}
+.orient-stage.active{background:rgba(46,196,182,.22);border-color:rgba(46,196,182,.5);color:var(--teal);box-shadow:0 0 12px rgba(46,196,182,.15);}
+.poster[data-edition="light"] .orient-stage{background:rgba(27,32,48,.06);border-color:rgba(27,32,48,.12);}
+.poster[data-edition="light"] .orient-stage.active{background:rgba(46,196,182,.22);border-color:rgba(46,196,182,.5);}
+.orient-arrow{color:var(--faint);font-size:11px;flex:none;}
+
+.section-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;letter-spacing:.08em;text-transform:uppercase;color:var(--text);margin:0 0 2px;display:flex;align-items:center;gap:8px;}
+.section-title::before{content:"";width:5px;height:5px;background:var(--teal);border-radius:50%;}
+.section-title .sub{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.14em;color:var(--muted);margin-left:auto;font-weight:500;}
+
+.rule-card{display:flex;align-items:center;gap:18px;padding:6px 20px;background:rgba(46,196,182,.07);}
+.rule-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:42px;color:var(--teal);line-height:1;letter-spacing:-.02em;}
+.rule-body{flex:1;}
+.rule-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:15px;color:var(--teal);letter-spacing:.08em;text-transform:uppercase;}
+.rule-text{font-family:'Inter',sans-serif;font-size:11px;color:var(--muted);line-height:1.26;margin-top:2px;}
+
+.insight-card{padding:14px 18px;border-left:3px solid var(--teal);background:rgba(46,196,182,.06);border-radius:0 12px 12px 0;}
+.insight-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;color:var(--teal);letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px;}
+.insight-text{font-family:'Inter',sans-serif;font-size:12px;color:var(--text);line-height:1.5;}
+
+.data-table{width:100%;border-collapse:collapse;}
+.data-table th{font-family:'Barlow',sans-serif;font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);padding:8px 12px;text-align:left;background:rgba(13,16,32,.35);border-bottom:1px solid var(--glass-border);}
+.poster[data-edition="light"] .data-table th{background:rgba(27,32,48,.06);}
+.data-table td{padding:8px 12px;color:var(--text);line-height:1.4;border-bottom:1px solid rgba(255,255,255,.05);font-family:'Inter',sans-serif;font-size:12px;}
+.data-table tr:last-child td{border-bottom:none;}
+.data-table tr:nth-child(even) td{background:rgba(255,255,255,.02);}
+.poster[data-edition="light"] .data-table tr:nth-child(even) td{background:rgba(27,32,48,.025);}
+.poster[data-edition="light"] .data-table td{border-bottom-color:rgba(27,32,48,.08);}
+.data-table .mono{font-family:'JetBrains Mono',monospace;font-size:11px;}
+
+.safety-card{padding:7px 16px;border-left:3px solid var(--coral);background:rgba(224,92,92,.06);border-radius:12px;}
+.safety-head{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;color:var(--coral);letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px;}
+.safety-body{font-family:'Inter',sans-serif;font-size:13px;color:var(--text);line-height:1.55;}
+.safety-body strong{color:var(--coral);font-weight:700;}
+
+.context-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.context-card{padding:14px 16px;}
+.context-card h4{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;margin:0 0 6px;letter-spacing:.04em;text-transform:uppercase;}
+.context-card h4.teal{color:var(--teal);}
+.context-card h4.amber{color:var(--amber);}
+.context-card h4.coral{color:var(--coral);}
+.context-card p{font-size:12px;line-height:1.5;color:var(--text);margin:0;}
+.context-card .detail{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--muted);margin-top:6px;}
+
+.footer{padding:8px 20px;background-color:rgba(13,16,32,.85);background-image:linear-gradient(180deg,rgba(255,255,255,.04),rgba(0,0,0,0));border:1px solid rgba(255,255,255,.10);border-radius:8px;text-align:center;display:flex;flex-direction:column;gap:2px;}
+.poster[data-edition="light"] .footer{background-color:rgba(221,216,206,.95);border-color:rgba(27,32,48,.10);}
+.poster[data-edition="light"] .footer-disclaimer{color:rgba(27,32,48,.62);}
+.footer-disclaimer{font-family:'Inter',sans-serif;font-size:8.5px;line-height:1.35;color:var(--faint);margin:0 auto;max-width:900px;}
+.footer-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:12px;color:var(--text);letter-spacing:.04em;text-transform:uppercase;margin:0;}
+.footer-brand{font-family:'JetBrains Mono',monospace;font-size:8.5px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;}
+
+/* ---- 05 additions (tight tables + duplex stack infographic + watch list) ---- */
+.data-table.tight th{font-size:9px;padding:2px 8px;letter-spacing:.05em;}
+.data-table.tight td{font-size:9.8px;padding:2px 8px;line-height:1.12;}
+.data-table.tight .mono{font-size:9.2px;}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:start;}
+.table-note{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.06em;color:var(--muted);padding:2px 10px 2px;border-top:1px solid var(--glass-border);line-height:1.18;}
+.table-note strong{font-weight:500;color:var(--teal);}
+.table-note strong.c{color:var(--coral);}
+.watch-el{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:12px;color:var(--text);letter-spacing:.03em;}
+.watch-lvl{font-family:'JetBrains Mono',monospace;font-size:9.5px;color:var(--amber);font-weight:500;white-space:nowrap;}
+.watch-rm{color:var(--muted);font-size:9.2px;}
+.anode-sub{margin-top:5px;padding-top:5px;border-top:1px dashed var(--glass-border);}
+
+/* duplex-stack cross-section + STEP callout */
+.stack-card{padding:8px 16px;}
+.stack-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:4px;}
+.stack-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;letter-spacing:.06em;text-transform:uppercase;color:var(--teal);}
+.stack-note{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.10em;text-transform:uppercase;color:var(--faint);}
+.stack-grid{display:grid;grid-template-columns:1.55fr 1fr;gap:14px;align-items:stretch;}
+.stack-layers{position:relative;display:flex;flex-direction:column;border:1px solid var(--glass-border);border-radius:8px;overflow:hidden;}
+.layer{position:relative;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:0 12px;box-sizing:border-box;}
+.layer .ly-name{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;color:#1B2030;white-space:nowrap;}
+.layer .ly-tag{font-family:'JetBrains Mono',monospace;font-size:8.5px;line-height:1.35;color:rgba(27,32,48,.72);text-align:right;}
+.layer.cr{height:22px;background:linear-gradient(105deg,#E8EBEE 0%,#B9BEC6 30%,#F4F6F8 55%,#AAB0B8 80%,#E4E7EB 100%);}
+.layer.br{height:34px;background:linear-gradient(105deg,#DFE3E8 0%,#9FA6AF 38%,#EDF0F3 66%,#A8AEB6 100%);border-top:1px solid rgba(0,0,0,.18);}
+.layer.sb{height:52px;background:linear-gradient(105deg,#C6CAD0 0%,#AEB3BB 32%,#D3D7DC 58%,#A8AEB6 82%,#CBCFD5 100%);border-top:2px solid var(--teal);}
+.layer.st{height:28px;background:#3A4055;border-top:1px solid rgba(0,0,0,.25);}
+.layer.st .ly-name{color:#F0EDE8;}
+.layer.st .ly-tag{color:rgba(240,237,232,.65);}
+.layer.sb .ly-name{color:var(--teal);}
+.stack-corr{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;}
+.stack-foot{font-family:'Inter',sans-serif;font-size:10px;color:var(--muted);line-height:1.28;margin-top:4px;}
+.stack-foot strong{color:var(--teal);font-weight:700;}
+.step-panel{border:1px solid var(--glass-border);border-radius:8px;padding:6px 12px;display:flex;flex-direction:column;gap:3px;background:rgba(46,196,182,.05);}
+.sp-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--teal);}
+.sp-axis-lbl{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);}
+.sp-dot{display:flex;align-items:flex-start;gap:8px;font-family:'Inter',sans-serif;font-size:9.8px;line-height:1.24;color:var(--text);}
+.sp-dot::before{content:"";flex:none;width:9px;height:9px;border-radius:50%;margin-top:1px;border:1.5px solid var(--text);}
+.sp-dot.sb::before{background:var(--teal);border-color:var(--teal);}
+.sp-dot.br::before{background:var(--coral);border-color:var(--coral);}
+.sp-dot strong{font-weight:700;}
+.sp-dot.sb strong{color:var(--teal);}
+.sp-dot.br strong{color:var(--coral);}
+.sp-gap{margin-left:4px;padding-left:12px;border-left:2px dashed var(--amber);font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);line-height:1.25;}
+.sp-foot{font-family:'Inter',sans-serif;font-size:9px;color:var(--muted);line-height:1.22;border-top:1px dashed var(--glass-border);padding-top:3px;}
+
+.tweaks{position:fixed;bottom:16px;right:16px;z-index:100;background:rgba(13,16,32,.92);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:10px 14px;display:flex;flex-direction:column;gap:8px;font-family:'Inter',sans-serif;font-size:12px;color:#F0EDE8;}
+@media print{
+  @page{size:12.5in 18.75in;margin:0;}
+  html,body{background:#F5F4F0 !important;-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
+  *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
+  .stage{position:static;padding:0;display:block;overflow:visible;}
+  .poster-wrap{transform:none !important;width:auto !important;height:auto !important;}
+  .poster{box-shadow:none !important;width:1200px !important;height:1800px !important;overflow:hidden !important;}
+  .glass,.trouble-card,.insight-card,.safety-card,.context-card{backdrop-filter:none !important;-webkit-backdrop-filter:none !important;}
+  .tweaks{display:none !important;}
+}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="poster-wrap" id="posterWrap">
+<div class="poster" id="poster">
+  <span class="tack tl" aria-hidden="true"></span><span class="tack tr" aria-hidden="true"></span>
+  <span class="tack bl" aria-hidden="true"></span><span class="tack br" aria-hidden="true"></span>
+
+  <div class="poster-header">
+    <header class="header-band">
+      <div class="header-left">
+        <div class="eyebrow"><span>Plating Posters Inc &nbsp;&middot;&nbsp; Serie N&iacute;quel Semibrillante &nbsp;&middot;&nbsp; Etapa 5 de 8</span></div>
+        <h1 class="headline">N&Iacute;QUEL <em>SEMIBRILLANTE</em></h1>
+        <h2 class="subhead" style="font-size:14.5px;">Un ba&ntilde;o Watts con un nivelador libre de azufre &mdash; sulfato de n&iacute;quel, cloruro de n&iacute;quel, &aacute;cido b&oacute;rico, un aditivo nivelador libre de azufre y un humectante antipicadura. Nivelado, d&uacute;ctil, libre de azufre y m&aacute;s noble que la capa brillante encima de &eacute;l.</h2>
+        <p class="tagline">&ldquo;Sin azufre, sin espejo &mdash; a prop&oacute;sito. Esta capa nivela, se mantiene noble y deja que el n&iacute;quel brillante reciba el golpe de la corrosi&oacute;n por ella.&rdquo;</p>
+      </div>
+      <aside class="glass logo-card">
+        <div class="logo-tile"><span>PP</span></div>
+        <div class="logo-word"><span class="a">Plating</span> <span class="b">Posters</span></div>
+        <div class="logo-inc">www.platingposters.com</div>
+      </aside>
+    </header>
+
+    <div class="orient-strip glass">
+      <div class="orient-stage">Limpieza</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Enjuague</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Activaci&oacute;n</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Enjuague</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage active">Ni&nbsp;Semibrillante</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Enjuague</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Post&#8209;Trat.</div><div class="orient-arrow">&rsaquo;</div>
+      <div class="orient-stage">Enjuague&nbsp;/&nbsp;Secado</div>
+    </div>
+  </div>
+
+  <div class="poster-body">
+
+    <div class="glass rule-card">
+      <div class="rule-num">&lt; 0.005%</div>
+      <div class="rule-body">
+        <div class="rule-label">Azufre en el Dep&oacute;sito</div>
+        <div class="rule-text">Mantener el azufre fuera del dep&oacute;sito (&lt;0.005% S) es lo que hace a la capa semibrillante m&aacute;s noble que el n&iacute;quel brillante enchapado sobre ella. Esa diferencia de nobleza &mdash; verificada con la prueba STEP ASTM B764 &mdash; es la raz&oacute;n de que la capa brillante se corroa sacrificialmente y de que el sistema d&uacute;plex dure m&aacute;s que una sola capa de n&iacute;quel del mismo espesor. Agregue azufre (aditivo equivocado, arrastre del ba&ntilde;o brillante o residuos de &aacute;nodo donde se especifica un sistema libre de azufre) y se pierde todo el mecanismo.</div>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="section-title">Par&aacute;metros Operativos <span class="sub">Rack vs tambor &mdash; ba&ntilde;o semibrillante tipo Watts</span></h3>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table tight">
+          <thead><tr><th style="width:15%;">Par&aacute;metro</th><th style="width:24%;">Rack</th><th style="width:19%;">Tambor</th><th>Notas</th></tr></thead>
+          <tbody>
+            <tr><td>Temperatura</td><td class="mono">120&ndash;150&deg;F (49&ndash;66&deg;C)</td><td class="mono">120&ndash;150&deg;F (49&ndash;66&deg;C)</td><td>Objetivo 130&ndash;140&deg;F; m&aacute;s temperatura = menos esfuerzo; mant&eacute;ngala estable para una nivelaci&oacute;n consistente</td></tr>
+            <tr><td>NiSO&#8324;&middot;6H&#8322;O</td><td class="mono">240&ndash;330 g/L (32&ndash;44 oz/gal)</td><td class="mono">270&ndash;330 g/L</td><td>M&aacute;s alto en tambor para compensar la menor CD</td></tr>
+            <tr><td>NiCl&#8322;&middot;6H&#8322;O</td><td class="mono">30&ndash;45 g/L (4&ndash;6 oz/gal)</td><td class="mono">40&ndash;52 g/L</td><td>A menudo se mantiene BAJO vs ba&ntilde;os brillantes, para menos esfuerzo; s&uacute;balo solo lo necesario para disoluci&oacute;n de &aacute;nodo / poder de penetraci&oacute;n</td></tr>
+            <tr><td>H&#8323;BO&#8323;</td><td class="mono">30&ndash;45 g/L (4&ndash;6 oz/gal)</td><td class="mono">37&ndash;45 g/L</td><td>Buffer &mdash; mantenga arriba de 30 g/L; se disuelve lento</td></tr>
+            <tr><td>pH</td><td class="mono">3.5&ndash;4.5</td><td class="mono">3.5&ndash;4.5</td><td>H&#8322;SO&#8324; para bajar, NiCO&#8323;/Ni(OH)&#8322; para subir &mdash; nunca NaOH</td></tr>
+            <tr><td>Densidad de Corriente</td><td class="mono">20&ndash;50 ASF (2&ndash;5.5 A/dm&#178;)</td><td class="mono">5&ndash;15 ASF (0.5&ndash;1.6 A/dm&#178;)</td><td>M&aacute;s CD = construye m&aacute;s r&aacute;pido pero m&aacute;s riesgo de quemado/esfuerzo</td></tr>
+            <tr><td>Nivelador libre de azufre</td><td class="mono">Seg&uacute;n TDS &mdash; dosificado por AMPERES-HORA</td><td class="mono">Seg&uacute;n TDS</td><td>Cumarina O libre de cumarina; se consume y se degrada &mdash; contr&oacute;lelo por Ah, NO por calendario</td></tr>
+            <tr><td>Humectante antipicadura</td><td class="mono">Seg&uacute;n TDS (nivel bajo)</td><td class="mono">Seg&uacute;n TDS</td><td>Solo previene picaduras &mdash; NO es un abrillantador</td></tr>
+            <tr><td>Agitaci&oacute;n</td><td class="mono">Aire + movimiento de barra cat&oacute;dica</td><td class="mono">Tambor 6&ndash;12 RPM</td><td>La agitaci&oacute;n por aire es primaria; la agitaci&oacute;n estable mantiene la nivelaci&oacute;n uniforme y reduce la picadura</td></tr>
+            <tr><td>Filtraci&oacute;n</td><td class="mono">Continua, 3&ndash;5 recambios/hr</td><td class="mono">Continua</td><td>Bolsas filtrantes de 5&ndash;10 <span style="text-transform:none">&micro;m</span>; carb&oacute;n peri&oacute;dico para org&aacute;nicos / productos de degradaci&oacute;n del nivelador</td></tr>
+            <tr><td>&Aacute;nodos</td><td class="mono">S-Rounds O sin azufre (vea abajo)</td><td class="mono">S-Rounds en canastillas de Ti O sin azufre</td><td>El azufre del &aacute;nodo es una consideraci&oacute;n real para una capa libre de azufre</td></tr>
+            <tr><td>Bolsas de &Aacute;nodo</td><td class="mono">Polipropileno o algod&oacute;n, dobles</td><td class="mono">Siempre</td><td>Evitan finos de &aacute;nodo; lixivie las bolsas antes del primer uso</td></tr>
+            <tr><td>Relaci&oacute;n &Aacute;nodo:C&aacute;todo</td><td class="mono">2:1 a 1:1</td><td class="mono">Seg&uacute;n canastilla</td><td>Mantenga &aacute;rea an&oacute;dica adecuada para evitar la pasivaci&oacute;n</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="glass stack-card">
+      <div class="stack-head">
+        <span class="stack-title">El Sistema D&uacute;plex &mdash; Por Qu&eacute; Existe el Semibrillante</span>
+        <span class="stack-note">Corte transversal &mdash; representativo, no a escala</span>
+      </div>
+      <div class="stack-grid">
+        <div class="stack-layers">
+          <div class="layer cr"><span class="ly-name">Cromo Decorativo</span><span class="ly-tag">capa superior delgada &middot; 0.25&ndash;0.75 <span style="text-transform:none">&micro;m</span></span></div>
+          <div class="layer br"><span class="ly-name">N&iacute;quel Brillante</span><span class="ly-tag">MENOS NOBLE (an&oacute;dico) &middot; con azufre &middot; ~350&ndash;550 HV<br>se corroe preferencial y sacrificialmente &mdash; hacia los lados, no hacia abajo</span></div>
+          <div class="layer sb"><span class="ly-name">N&iacute;quel Semibrillante &mdash; esta serie</span><span class="ly-tag">M&Aacute;S NOBLE (cat&oacute;dico) &middot; libre de azufre &lt;0.005% S &middot; ~200&ndash;400 HV<br>satinado &middot; nivelado &middot; d&uacute;ctil &mdash; la base de ingenier&iacute;a de corrosi&oacute;n</span></div>
+          <div class="layer st"><span class="ly-name">Acero / Substrato</span><span class="ly-tag">protegido &mdash; la corrosi&oacute;n nunca llega</span></div>
+          <svg class="stack-corr" viewBox="0 0 600 136" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M 210 2 L 210 40 L 330 40" fill="none" stroke="#B7322F" stroke-width="2.5" stroke-dasharray="6 4" opacity=".85"/>
+            <polygon points="330,34 342,40 330,46" fill="#B7322F" opacity=".85"/>
+          </svg>
+        </div>
+        <div class="step-panel">
+          <div class="sp-title">Prueba STEP &mdash; ASTM B764</div>
+          <div class="sp-axis-lbl">Potencial de electrodo por capa &mdash; m&aacute;s noble &#9650;</div>
+          <div class="sp-dot sb"><span><strong>Semibrillante</strong> &mdash; m&aacute;s noble (cat&oacute;dico). Se mantiene protegido.</span></div>
+          <div class="sp-gap">El escal&oacute;n de potencial &mdash;<br>medido, no supuesto</div>
+          <div class="sp-dot br"><span><strong>Brillante</strong> &mdash; menos noble (an&oacute;dico). Se corroe primero, por dise&ntilde;o.</span></div>
+          <div class="sp-foot">Espesores correctos con potenciales equivocados = un sistema que falla la prueba de corrosi&oacute;n. Verifique los potenciales y espesores de capa seg&uacute;n ASTM B456 vigente / la especificaci&oacute;n del cliente.</div>
+        </div>
+      </div>
+      <div class="stack-foot">Cuando la corrosi&oacute;n llega al n&iacute;quel, la capa brillante se corroe <strong>preferencialmente y hacia los lados</strong> en lugar de picar directo hacia el acero &mdash; la raz&oacute;n completa de que un sistema d&uacute;plex supere a una sola capa de n&iacute;quel del mismo espesor total.</div>
+    </div>
+
+    <div class="split">
+      <div>
+        <h3 class="section-title" style="font-size:19px;">El Nivelador Libre de Azufre <span class="sub">Cumarina vs libre de cumarina</span></h3>
+        <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+          <table class="data-table tight">
+            <thead><tr><th>Enfoque</th><th>Qu&eacute; Hace</th><th>Cuidado</th></tr></thead>
+            <tbody>
+              <tr><td class="watch-el">Cumarina<br><span style="font-family:'JetBrains Mono',monospace;font-weight:400;font-size:8px;color:var(--muted);">tradicional</span></td><td>Alta nivelaci&oacute;n; dep&oacute;sito d&uacute;ctil y libre de azufre en un rango amplio de CD</td><td class="watch-rm">Se consume y se degrada &mdash; los productos de degradaci&oacute;n (especies tipo &aacute;cido melil&oacute;tico) se acumulan y causan zonas opacas, grises y dif&iacute;ciles de abrillantar si no se retiran con carb&oacute;n</td></tr>
+              <tr><td class="watch-el">Libre de cumarina<br><span style="font-family:'JetBrains Mono',monospace;font-weight:400;font-size:8px;color:var(--muted);">moderno</span></td><td>Se acerca a la nivelaci&oacute;n de la cumarina mantieni&eacute;ndose virtualmente libre de azufre; degradaci&oacute;n menos problem&aacute;tica</td><td class="watch-rm">Siga la TDS espec&iacute;fica del proveedor &mdash; la dosificaci&oacute;n y los programas de carb&oacute;n difieren de la cumarina</td></tr>
+            </tbody>
+          </table>
+          <div class="table-note"><strong>Sin portador Clase I con azufre, sin abrillantador Clase II.</strong> El &uacute;nico aditivo que define este ba&ntilde;o es el nivelador libre de azufre &mdash; dosifique por amperes-hora y confirme la nivelaci&oacute;n con un panel de nivelaci&oacute;n o Celda Hull, NO por el brillo.</div>
+          <div class="table-note"><strong class="c">El arrastre entre ba&ntilde;os es una falla d&uacute;plex cl&aacute;sica</strong> &mdash; el aditivo brillante de regreso a este tanque agrega azufre; el nivelador hacia adelante opaca el ba&ntilde;o brillante. Enjuagues dedicados; nunca comparta bombas, tazas ni l&iacute;neas de dosificaci&oacute;n entre los dos ba&ntilde;os de n&iacute;quel.</div>
+          <div class="table-note"><strong>Watts simple (ingenier&iacute;a):</strong> mate, sin nivelaci&oacute;n, sin aditivo, ~150&ndash;250 HV &mdash; no forma parte del sistema decorativo; vea la serie N&iacute;quel Watts.</div>
+        </div>
+      </div>
+      <div>
+        <h3 class="section-title" style="font-size:19px;">Selecci&oacute;n de &Aacute;nodos <span class="sub">n&iacute;quel-S vs sin azufre</span></h3>
+        <div class="context-card glass" style="padding:7px 12px;">
+          <h4 class="teal" style="font-size:13px;margin-bottom:3px;">Despolarizado con Azufre (S-Rounds)</h4>
+          <p style="font-size:10.5px;line-height:1.35;">Se disuelve limpia y eficientemente &mdash; el &aacute;nodo de batalla general. La traza de azufre del &aacute;nodo afecta la disoluci&oacute;n del &aacute;nodo, no el azufre del dep&oacute;sito como lo hace un portador Clase&nbsp;I &mdash; pero donde la especificaci&oacute;n exige un sistema genuinamente libre de azufre, sea deliberado al respecto.</p>
+          <h4 class="amber" style="font-size:13px;margin:5px 0 3px;">Laminado / Electrol&iacute;tico (Sin Azufre)</h4>
+          <p style="font-size:10.5px;line-height:1.35;">No introduce <strong>nada de azufre</strong> al sistema &mdash; preferido donde el contenido de azufre de la capa semibrillante est&aacute; estrictamente especificado. Se disuelve con menos facilidad y puede pasivarse si el &aacute;rea an&oacute;dica o el cloruro son marginales &mdash; mantenga el cloruro adecuado y el &aacute;rea an&oacute;dica generosa.</p>
+          <div class="anode-sub">
+            <p style="font-size:10px;line-height:1.32;color:var(--muted);"><strong style="color:var(--teal);">Libre de azufre, definido:</strong> para el semibrillante, &ldquo;dep&oacute;sito libre de azufre&rdquo; significa sin azufre <em>codepositado</em> de aditivos org&aacute;nicos con azufre. Esta elecci&oacute;n importa m&aacute;s aqu&iacute; que en cualquiera de los ba&ntilde;os hermanos &mdash; confirme el &aacute;nodo contra el requisito de contenido de azufre del cliente para la capa.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="split">
+      <div>
+        <h3 class="section-title" style="font-size:19px;">Lista de Vigilancia de Contaminaci&oacute;n <span class="sub">niveles de acci&oacute;n en ppm</span></h3>
+        <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+          <table class="data-table tight">
+            <thead><tr><th>Metal</th><th>Acci&oacute;n</th><th>Efecto en el Dep&oacute;sito</th><th>Remoci&oacute;n</th></tr></thead>
+            <tbody>
+              <tr><td class="watch-el">Cu</td><td class="watch-lvl">5 ppm</td><td>Vetas oscuras, rugosidad, mal dep&oacute;sito a baja CD</td><td class="watch-rm">Dummy a 2&ndash;5 ASF; trate con carb&oacute;n primero</td></tr>
+              <tr><td class="watch-el">Fe</td><td class="watch-lvl">25 ppm</td><td>Neblina, rugosidad, m&aacute;s esfuerzo, menos ductilidad</td><td class="watch-rm">pH 5.0&ndash;5.5 + H&#8322;O&#8322; para oxidar Fe&#178;&#8314;&rarr;Fe&#179;&#8314;; filtre; reajuste pH</td></tr>
+              <tr><td class="watch-el">Zn</td><td class="watch-lvl">10 ppm</td><td>Dep&oacute;sito neblinoso/opaco, oscuro a baja CD, p&eacute;rdida de adhesi&oacute;n</td><td class="watch-rm">Dummy a 2&ndash;5 ASF; o suba pH, precipite Zn(OH)&#8322;, filtre</td></tr>
+              <tr><td class="watch-el">Cr&#8310;&#8314;</td><td class="watch-lvl">1 ppm</td><td>Severo &mdash; oscuro/quemado, falla de adhesi&oacute;n, salto de dep&oacute;sito</td><td class="watch-rm">Reduzca con bisulfito de sodio a Cr&#179;&#8314;; luego trate como Cr&#179;&#8314;</td></tr>
+              <tr><td class="watch-el">Cr&#179;&#8314;</td><td class="watch-lvl">10 ppm</td><td>Opaco, rugoso, mal poder de penetraci&oacute;n y adhesi&oacute;n</td><td class="watch-rm">Dif&iacute;cil &mdash; suba pH + dummy a baja CD; o diluci&oacute;n</td></tr>
+              <tr><td class="watch-el">Pb</td><td class="watch-lvl">0.5 ppm</td><td>Vetas oscuras, dendritas, agrietamiento por esfuerzo</td><td class="watch-rm">Dummy a 2&ndash;5 ASF; revise la pureza de los &aacute;nodos</td></tr>
+              <tr><td class="watch-el">Cd</td><td class="watch-lvl">0.5 ppm</td><td>Desprendimiento, ampollas, dep&oacute;sitos oscuros</td><td class="watch-rm">Dummy; ubique la fuente (arrastre residual de Cd)</td></tr>
+            </tbody>
+          </table>
+          <div class="table-note"><strong class="c">Nota de l&iacute;nea d&uacute;plex:</strong> el arrastre de regreso de Cr&#8310;&#8314; desde el tanque de cromo aguas abajo amenaza a AMBOS ba&ntilde;os de n&iacute;quel &mdash; enjuague disciplinado y ruteo de racks para que el cromo nunca reentre a un ba&ntilde;o de n&iacute;quel.</div>
+        </div>
+      </div>
+      <div>
+        <h3 class="section-title" style="font-size:19px;">Celda Hull / Panel de Nivelaci&oacute;n <span class="sub">267 mL &middot; 2 A &middot; 10 min &middot; ~130&ndash;140&deg;F &mdash; juzga nivelaci&oacute;n y sanidad, no brillo</span></h3>
+        <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+          <table class="data-table tight">
+            <thead><tr><th>Patr&oacute;n del Panel</th><th>Causa Probable</th><th>Acci&oacute;n Correctiva</th></tr></thead>
+            <tbody>
+              <tr><td>Mala nivelaci&oacute;n &mdash; los rayones se reproducen</td><td>Nivelador bajo o agotado</td><td>Agregue nivelador libre de azufre por Ah; repita el panel</td></tr>
+              <tr><td>Zonas grises y opacas que la capa brillante no cubre</td><td>Productos de degradaci&oacute;n de la cumarina acumul&aacute;ndose; arrastre org&aacute;nico (aceite)</td><td>Trate con carb&oacute;n; reanude el nivelador en programa por Ah</td></tr>
+              <tr><td>Quemado / polvoso a alta CD</td><td>pH demasiado ALTO; &aacute;cido b&oacute;rico o metal Ni bajos; temperatura demasiado BAJA; CD demasiado alta</td><td>Revise el &aacute;cido b&oacute;rico; revise el pH; revise el metal Ni; suba la temperatura; baje la CD</td></tr>
+              <tr><td>Rugoso / nodular (se siente como lija)</td><td>Part&iacute;culas &mdash; mala filtraci&oacute;n; finos de &aacute;nodo</td><td>Revise la presi&oacute;n del filtro; inspeccione/reemplace las bolsas de &aacute;nodo</td></tr>
+              <tr><td>Picadura por gas en todo el panel</td><td>Humectante antipicadura bajo; mala agitaci&oacute;n por aire</td><td>Agregue humectante; revise el suministro de aire y el difusor</td></tr>
+              <tr><td>Neblinoso / opaco o vetas oscuras a baja CD</td><td>Contaminaci&oacute;n con zinc, cobre o plomo</td><td>Analice metales (Zn, Cu, Pb); placa dummy a 2&ndash;5 ASF</td></tr>
+              <tr><td>Desprendimiento al doblar el panel</td><td>Falla de adhesi&oacute;n (preparaci&oacute;n) O esfuerzo elevado por metales/hierro</td><td>Revise limpieza/activaci&oacute;n; analice metales; trate con carb&oacute;n</td></tr>
+            </tbody>
+          </table>
+          <div class="table-note"><strong>Panel saludable = sano, nivelado, satinado uniforme</strong> &mdash; siga monitoreando nivelador (Ah), metales, pH y &aacute;cido b&oacute;rico.</div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="section-title">Resoluci&oacute;n de Problemas <span class="sub">Fallas del tanque principal &mdash; vea el panel de Celda Hull para quemado, nivelaci&oacute;n, picadura y rugosidad</span></h3>
+      <div class="glass" style="padding:0;overflow:hidden;border-radius:10px;">
+        <table class="data-table tight">
+          <thead><tr><th style="width:23%;">S&iacute;ntoma</th><th style="width:37%;">Causa Probable</th><th>Acci&oacute;n Correctiva</th></tr></thead>
+          <tbody>
+            <tr><td>El dep&oacute;sito se opaca / la capa brillante se ve manchada despu&eacute;s de enchapar</td><td>Captaci&oacute;n de azufre en el semibrillante (aditivo equivocado, arrastre del ba&ntilde;o brillante o &aacute;nodo con azufre donde se requiere libre de azufre)</td><td>Detenga la contaminaci&oacute;n cruzada; verifique el aditivo; revise la elecci&oacute;n de &aacute;nodo; haga la prueba STEP para confirmar los potenciales de capa</td></tr>
+            <tr><td>Esfuerzo elevado / agrietamiento</td><td>Contaminaci&oacute;n con hierro/metales; desbalance del nivelador; CD demasiado alta; cloruro demasiado alto</td><td>Analice metales; trate con carb&oacute;n; baje la CD; revise el cloruro; suba la temperatura</td></tr>
+            <tr><td>Mal poder de penetraci&oacute;n / espesor disparejo</td><td>NiCl&#8322; bajo; pH demasiado bajo; temperatura baja; mala agitaci&oacute;n</td><td>Ajuste el cloruro dentro del objetivo semibrillante; optimice pH/temperatura; mejore la agitaci&oacute;n</td></tr>
+            <tr><td>&Aacute;nodos pasiv&aacute;ndose (voltaje subiendo)</td><td>Cloruro bajo; &aacute;rea an&oacute;dica insuficiente; &aacute;nodos sin azufre a alta CD</td><td>Suba el cloruro dentro del objetivo; agregue &aacute;rea an&oacute;dica; revise el tipo de &aacute;nodo contra la especificaci&oacute;n de azufre</td></tr>
+            <tr><td>El d&uacute;plex falla la prueba de corrosi&oacute;n a pesar de buen espesor</td><td>La diferencia de potencial STEP colaps&oacute; &mdash; el semibrillante capt&oacute; azufre, o los espesores/la relaci&oacute;n de capas est&aacute;n mal</td><td>Haga la prueba STEP a ambas capas; elimine la contaminaci&oacute;n cruzada de azufre; verifique la partici&oacute;n de espesores seg&uacute;n ASTM B456 / especificaci&oacute;n del cliente</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="safety-card glass">
+      <div class="safety-head">&#9888; Seguridad</div>
+      <div class="safety-body" style="font-size:10.8px;line-height:1.26;"><strong>Soluci&oacute;n de n&iacute;quel &aacute;cida y caliente (pH 3.5&ndash;4.5, hasta 150&deg;F) &mdash; causa quemaduras y es sensibilizante d&eacute;rmico. Las sales solubles de n&iacute;quel son sensibilizantes de la piel y los compuestos de n&iacute;quel est&aacute;n clasificados como sospechosos de ser cancer&iacute;genos.</strong> La exposici&oacute;n cr&oacute;nica al n&iacute;quel causa dermatitis al&eacute;rgica por contacto (&ldquo;comez&oacute;n del n&iacute;quel&rdquo;) &mdash; acumulativa y permanente una vez sensibilizado; minimice el contacto con la piel en todo momento. La agitaci&oacute;n por aire genera neblina con n&iacute;quel &mdash; ventilaci&oacute;n de extracci&oacute;n local obligatoria; se recomiendan eliminadores de neblina. <strong>PEL de OSHA para compuestos solubles de n&iacute;quel: 1 mg/m&#179; TWA (como Ni).</strong> Rectificador = alto amperaje &mdash; LOTO para todo mantenimiento. Use tanques de PP, CPVC o recubiertos &mdash; el sulfato de n&iacute;quel corroe el acero dulce, y el PVC simple es marginal arriba de 140&deg;F. <strong>&Aacute;cido b&oacute;rico:</strong> preocupaci&oacute;n por riesgo reproductivo &mdash; evite inhalar el polvo al cargar o hacer adiciones, use guantes, l&aacute;vese despu&eacute;s de manejarlo. EPP: goggles qu&iacute;micos sellados + careta, guantes qu&iacute;micos de nitrilo hasta el codo, delantal, botas, respirador P100 o de aire suministrado si la ventilaci&oacute;n es inadecuada.</div>
+    </div>
+
+  </div>
+
+  <footer class="footer poster-footer">
+    <p class="footer-disclaimer">Solo referencia t&eacute;cnica. Verifique todos los par&aacute;metros contra la hoja t&eacute;cnica (TDS) de su proveedor de qu&iacute;micos, las especificaciones del cliente y los requisitos regulatorios aplicables antes de usarlos en producci&oacute;n. Los compuestos de n&iacute;quel est&aacute;n clasificados como sospechosos de ser cancer&iacute;genos y como sensibilizantes conocidos de la piel &mdash; consulte siempre la SDS vigente y cumpla con OSHA, REACH y las regulaciones locales. <em>Datos regulatorios revisados el 2026-09-18: los l&iacute;mites de exposici&oacute;n reflejan los PEL federales de OSHA (EE. UU.) publicados a esta fecha; las normas citadas deben verificarse contra su revisi&oacute;n vigente. Los l&iacute;mites estatales (p. ej., Cal/OSHA) y los TLV de la ACGIH pueden ser m&aacute;s estrictos. Verifique contra las tablas vigentes de OSHA y la SDS del proveedor antes de usar en producci&oacute;n.</em></p>
+    <p class="footer-title">Enchapado de N&iacute;quel Semibrillante &mdash; Serie de Enchapado de N&iacute;quel Semibrillante</p>
+    <span class="footer-brand">Plating Posters Inc &middot; Serie de Referencia de Acabado de Metales &middot; v1.0 / 2026</span>
+  </footer>
+
+</div>
+</div>
+</div>
+
+<div class="tweaks">
+  <div style="display:flex;gap:8px;align-items:center;">
+    <span style="color:rgba(240,237,232,.5);font-size:11px;letter-spacing:.06em;text-transform:uppercase;">Edition</span>
+    <button id="btnDark" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);" onclick="setEdition('')">Dark</button>
+    <button id="btnLight" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:#E8A020;color:#1A1F2E;border:1px solid #E8A020;" onclick="setEdition('light')">Light</button>
+  </div>
+  <button onclick="window.print()" style="padding:4px 11px;border-radius:5px;cursor:pointer;font-size:11px;background:transparent;color:#F0EDE8;border:1px solid rgba(255,255,255,.2);">Print / PDF</button>
+</div>
+
+<script>
+const posterWrap=document.getElementById('posterWrap');
+const poster=document.getElementById('poster');
+function scalePoster(){const sW=(window.innerWidth-24)/1200;const sH=(window.innerHeight-24)/1800;const s=Math.min(sW,sH);posterWrap.style.transform='scale('+s+')';posterWrap.style.transformOrigin='top left';posterWrap.style.width=(1200*s)+'px';posterWrap.style.height=(1800*s)+'px';}
+function setEdition(e){if(e)poster.dataset.edition=e;else delete poster.dataset.edition;document.getElementById('btnDark').style.background=e?'transparent':'#E8A020';document.getElementById('btnDark').style.color=e?'#F0EDE8':'#1A1F2E';document.getElementById('btnDark').style.borderColor=e?'rgba(255,255,255,.2)':'#E8A020';document.getElementById('btnLight').style.background=e?'#E8A020':'transparent';document.getElementById('btnLight').style.color=e?'#1A1F2E':'#F0EDE8';document.getElementById('btnLight').style.borderColor=e?'#E8A020':'rgba(255,255,255,.2)';}
+scalePoster();window.addEventListener('resize',scalePoster);
+</script>
+</body>
+</html>
