@@ -194,6 +194,31 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── NEW: TANK SPEC PLACARDS strip ── */}
+      <section style={{ background: "#12162A", borderTop: `1px solid ${borderDark}`, borderBottom: `1px solid ${borderDark}` }}>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div>
+            <p className="font-mono text-xs tracking-widest uppercase mb-1" style={{ color: "#5FB3A9" }}>
+              New product line
+            </p>
+            <h2 className="text-xl md:text-2xl font-extrabold uppercase tracking-tight text-gray-50">
+              Tank Spec <span style={{ color: amber }}>Placards</span>
+            </h2>
+            <p className="mt-2 max-w-xl text-sm" style={{ color: mutedText }}>
+              Tank ID, makeup, hazard &amp; PPE pictographs — and a QR code that opens the
+              tank&rsquo;s live chemistry page with its SDS, free to anyone who scans.
+            </p>
+          </div>
+          <Link
+            href="/placards"
+            className="shrink-0 rounded-lg px-6 py-3 text-sm font-bold uppercase tracking-wider transition-opacity hover:opacity-90"
+            style={{ background: amber, color: gunmetal }}
+          >
+            See it in action →
+          </Link>
+        </div>
+      </section>
+
       {/* ── SECTION 1: BROWSE OUR CATALOGUE ── */}
       <section id="catalogue" style={{ background: "#F8F7F4" }}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
