@@ -146,6 +146,36 @@ export default function Home() {
             </p>
           </div>
 
+          {/* NEW: Tank Spec Placards banner */}
+          <Link
+            href="/placards"
+            className="group mb-12 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 p-6 transition-all hover:-translate-y-0.5"
+            style={{
+              background: "#12162A",
+              border: `1px solid ${amber}55`,
+              borderRadius: "12px",
+            }}
+          >
+            <div>
+              <p className="font-mono text-xs tracking-widest uppercase mb-1" style={{ color: "#5FB3A9" }}>
+                New product line
+              </p>
+              <h2 className="text-xl md:text-2xl font-extrabold uppercase tracking-tight" style={{ color: "#F0EDE8" }}>
+                Tank Spec <span style={{ color: amber }}>Placards</span>
+              </h2>
+              <p className="mt-2 max-w-xl text-sm" style={{ color: mutedText }}>
+                Tank ID, makeup, hazard &amp; PPE pictographs — and a QR code that opens the
+                tank&rsquo;s live chemistry page with its SDS, free to anyone who scans.
+              </p>
+            </div>
+            <span
+              className="shrink-0 rounded-lg px-6 py-3 text-sm font-bold uppercase tracking-wider transition-opacity group-hover:opacity-90"
+              style={{ background: amber, color: gunmetal }}
+            >
+              See it in action →
+            </span>
+          </Link>
+
           {/* Three Ways to Shop */}
           <div>
             <p
@@ -191,31 +221,6 @@ export default function Home() {
               ))}
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* ── NEW: TANK SPEC PLACARDS strip ── */}
-      <section style={{ background: "#12162A", borderTop: `1px solid ${borderDark}`, borderBottom: `1px solid ${borderDark}` }}>
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col sm:flex-row items-center justify-between gap-6">
-          <div>
-            <p className="font-mono text-xs tracking-widest uppercase mb-1" style={{ color: "#5FB3A9" }}>
-              New product line
-            </p>
-            <h2 className="text-xl md:text-2xl font-extrabold uppercase tracking-tight text-gray-50">
-              Tank Spec <span style={{ color: amber }}>Placards</span>
-            </h2>
-            <p className="mt-2 max-w-xl text-sm" style={{ color: mutedText }}>
-              Tank ID, makeup, hazard &amp; PPE pictographs — and a QR code that opens the
-              tank&rsquo;s live chemistry page with its SDS, free to anyone who scans.
-            </p>
-          </div>
-          <Link
-            href="/placards"
-            className="shrink-0 rounded-lg px-6 py-3 text-sm font-bold uppercase tracking-wider transition-opacity hover:opacity-90"
-            style={{ background: amber, color: gunmetal }}
-          >
-            See it in action →
-          </Link>
         </div>
       </section>
 
