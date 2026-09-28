@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import PlacardInquiryForm from "@/components/PlacardInquiryForm";
@@ -17,7 +18,7 @@ const STEPS = [
   {
     n: "2",
     title: "Mount the placards",
-    body: "12×18 shop-tough placards, one per tank — tank ID and makeup on top, hazard & PPE pictographs below, QR on the right.",
+    body: "One placard per tank — standard 18×12 or compact 11×8.5 — tank ID and makeup on top, hazard & PPE pictographs below, QR on the right.",
   },
   {
     n: "3",
@@ -143,11 +144,23 @@ export default function PlacardsPage() {
         <div className="mt-10 grid gap-6 sm:grid-cols-2">
           <div className="rounded-2xl border p-6" style={{ borderColor: borderDark, background: "#161B2C" }}>
             <h3 className="text-sm font-bold uppercase tracking-wider" style={{ color: amber }}>
-              Placards — one-time
+              Placards — one-time, two sizes
             </h3>
-            <ul className="mt-4 space-y-3 text-sm text-gray-200">
+            <div className="mt-4 grid grid-cols-[1fr_auto_auto] gap-x-6 gap-y-3 text-sm text-gray-200">
+              <span />
+              {PLACARD_PRICING.sizes.map((s) => (
+                <span
+                  key={s.key}
+                  className="text-right text-xs font-semibold uppercase tracking-wider"
+                  style={{ color: mutedText }}
+                >
+                  {s.label}
+                  <br />
+                  {s.dims}
+                </span>
+              ))}
               {PLACARD_PRICING.finishes.map((f) => (
-                <li key={f.key} className="flex items-baseline justify-between">
+                <Fragment key={f.key}>
                   <span>
                     {f.label}
                     {"recommended" in f && f.recommended ? (
@@ -156,10 +169,20 @@ export default function PlacardsPage() {
                       </span>
                     ) : null}
                   </span>
-                  <span className="font-bold">${f.price}</span>
-                </li>
+                  {PLACARD_PRICING.sizes.map((s) => (
+                    <span key={s.key} className="text-right font-bold">
+                      ${f.prices[s.key]}
+                    </span>
+                  ))}
+                </Fragment>
               ))}
-              <li className="flex items-baseline justify-between border-t pt-3" style={{ borderColor: borderDark }}>
+            </div>
+            <p className="mt-3 text-xs" style={{ color: dimText }}>
+              Standard 18″×12″ reads across the aisle; compact 11″×8.5″ fits tight
+              spots and small tanks. Same layout, same QR, either way.
+            </p>
+            <ul className="mt-4 space-y-3 border-t pt-3 text-sm text-gray-200" style={{ borderColor: borderDark }}>
+              <li className="flex items-baseline justify-between">
                 <span>Volume: 10+ placards</span>
                 <span className="font-bold">−10%</span>
               </li>
@@ -168,7 +191,7 @@ export default function PlacardsPage() {
                 <span className="font-bold">−15%</span>
               </li>
               <li className="flex items-baseline justify-between">
-                <span>Reprint (bath change, damage)</span>
+                <span>Reprint (bath change, damage) — either size</span>
                 <span className="font-bold">${PLACARD_PRICING.reprint} flat</span>
               </li>
             </ul>

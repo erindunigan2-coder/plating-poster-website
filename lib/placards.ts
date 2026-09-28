@@ -116,11 +116,37 @@ export function getDemoTank(slug: string): DemoTank | undefined {
 }
 
 // ---------------------------------------------------------------- pricing
+// Two sizes: Standard 18×12 (the across-the-aisle read, recommended) and
+// Compact 11×8.5 (tight spaces, cell dividers, small tanks). Per-finish
+// prices are keyed by size; reprint is flat across sizes.
+export type PlacardSizeKey = "standard" | "compact";
+
 export const PLACARD_PRICING = {
+  sizes: [
+    {
+      key: "standard" as PlacardSizeKey,
+      label: "Standard",
+      dims: "18″ × 12″",
+      note: "readable across the aisle",
+      recommended: true,
+    },
+    {
+      key: "compact" as PlacardSizeKey,
+      label: "Compact",
+      dims: "11″ × 8.5″",
+      note: "tight spots & small tanks",
+      recommended: false,
+    },
+  ],
   finishes: [
-    { key: "matte", label: "Matte Laminate", price: 39 },
-    { key: "shopTough", label: "Shop Tough", price: 49, recommended: true },
-    { key: "aluminum", label: "Aluminum Composite", price: 99 },
+    { key: "matte", label: "Matte Laminate", prices: { standard: 39, compact: 29 } },
+    {
+      key: "shopTough",
+      label: "Shop Tough",
+      prices: { standard: 49, compact: 39 },
+      recommended: true,
+    },
+    { key: "aluminum", label: "Aluminum Composite", prices: { standard: 99, compact: 79 } },
   ],
   volumeBreaks: [
     { min: 10, discount: 0.1 },
@@ -135,15 +161,21 @@ export const PLACARD_PRICING = {
   ],
 } as const;
 
-export function estimateSet(tanks: number, finishKey: string) {
+export function estimateSet(
+  tanks: number,
+  finishKey: string,
+  sizeKey: PlacardSizeKey = "standard",
+) {
   const finish =
     PLACARD_PRICING.finishes.find((f) => f.key === finishKey) ??
     PLACARD_PRICING.finishes[1];
+  const size =
+    PLACARD_PRICING.sizes.find((s) => s.key === sizeKey) ?? PLACARD_PRICING.sizes[0];
   let discount = 0;
   for (const b of PLACARD_PRICING.volumeBreaks) {
     if (tanks >= b.min) discount = b.discount;
   }
-  const placards = Math.round(tanks * finish.price * (1 - discount));
+  const placards = Math.round(tanks * finish.prices[size.key] * (1 - discount));
   const sub =
     PLACARD_PRICING.subscription.find((s) => tanks <= s.maxTanks) ??
     PLACARD_PRICING.subscription[PLACARD_PRICING.subscription.length - 1];
@@ -155,5 +187,6 @@ export function estimateSet(tanks: number, finishKey: string) {
     firstYear: placards + PLACARD_PRICING.setupFee + sub.price,
     renewal: sub.price,
     finishLabel: finish.label,
+    sizeLabel: `${size.label} ${size.dims}`,
   };
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { PLACARD_PRICING, estimateSet } from "@/lib/placards";
+import { PLACARD_PRICING, estimateSet, type PlacardSizeKey } from "@/lib/placards";
 
 const amber = "#E8A020";
 const borderDark = "#2A3048";
@@ -17,9 +17,10 @@ export default function PlacardInquiryForm() {
   const [phone, setPhone] = useState("");
   const [tanks, setTanks] = useState(10);
   const [finish, setFinish] = useState("shopTough");
+  const [size, setSize] = useState<PlacardSizeKey>("standard");
   const [notes, setNotes] = useState("");
 
-  const est = useMemo(() => estimateSet(tanks, finish), [tanks, finish]);
+  const est = useMemo(() => estimateSet(tanks, finish, size), [tanks, finish, size]);
 
   const mailto = useMemo(() => {
     const subject = `Tank Placard Set Inquiry — ${company || "my facility"} (${tanks} tanks)`;
@@ -30,6 +31,7 @@ export default function PlacardInquiryForm() {
       `Phone: ${phone}`,
       ``,
       `Tanks: ${tanks}`,
+      `Size: ${est.sizeLabel}`,
       `Finish: ${est.finishLabel}`,
       ``,
       `Website estimate:`,
@@ -75,6 +77,28 @@ export default function PlacardInquiryForm() {
         </div>
         <div>
           <label className="mb-2 block text-xs font-semibold uppercase tracking-wider" style={{ color: mutedText }}>
+            Size
+          </label>
+          <div className="flex flex-wrap gap-2">
+            {PLACARD_PRICING.sizes.map((s) => (
+              <button
+                key={s.key}
+                type="button"
+                onClick={() => setSize(s.key)}
+                className="rounded-full border px-4 py-2 text-sm font-medium transition-colors"
+                style={
+                  size === s.key
+                    ? { background: amber, color: "#141B2D", borderColor: amber }
+                    : { color: mutedText, borderColor: borderDark }
+                }
+              >
+                {s.label} {s.dims}
+              </button>
+            ))}
+          </div>
+        </div>
+        <div className="sm:col-span-2">
+          <label className="mb-2 block text-xs font-semibold uppercase tracking-wider" style={{ color: mutedText }}>
             Finish
           </label>
           <div className="flex flex-wrap gap-2">
@@ -90,7 +114,7 @@ export default function PlacardInquiryForm() {
                     : { color: mutedText, borderColor: borderDark }
                 }
               >
-                {f.label} ${f.price}
+                {f.label} ${f.prices[size]}
               </button>
             ))}
           </div>
@@ -117,7 +141,7 @@ export default function PlacardInquiryForm() {
             · renews at ${est.renewal}/yr
           </div>
           <div className="mt-1 text-xs">
-            {tanks} × {est.finishLabel}
+            {tanks} × {est.finishLabel} {est.sizeLabel}
             {est.discount ? ` (−${est.discount * 100}% volume)` : ""} + $
             {est.setup} setup + ${est.subscription}/yr hosting. Estimate only —
             final quote follows your tank list.
