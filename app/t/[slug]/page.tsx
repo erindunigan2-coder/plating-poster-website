@@ -100,7 +100,9 @@ export default async function TankPage({
           {/* Documents */}
           <div className="mt-5 space-y-3">
             <a
-              href="#"
+              href={tank.sampleSds.file}
+              target="_blank"
+              rel="noopener"
               className="block rounded-xl px-5 py-4 text-center text-sm font-bold uppercase tracking-wider text-white"
               style={{ background: ink }}
             >
@@ -109,13 +111,18 @@ export default async function TankPage({
             <p className="text-center font-mono text-[11px] text-black/50">
               SDS is free to anyone who scans — no login required
             </p>
-            <a
-              href="#"
-              className="block rounded-xl border-2 px-5 py-4 text-center text-sm font-bold uppercase tracking-wider"
+            <p className="text-center text-[11px] leading-relaxed text-black/40">
+              Sample document: a real SDS from A Brite Company for a comparable
+              bath — {tank.sampleSds.product}. Your placards serve your own
+              chemistry&rsquo;s documents.
+            </p>
+            <div
+              aria-disabled="true"
+              className="block cursor-default rounded-xl border-2 px-5 py-4 text-center text-sm font-bold uppercase tracking-wider opacity-50"
               style={{ borderColor: ink, color: ink }}
             >
               Technical Data Sheet (TDS)
-            </a>
+            </div>
             <p className="text-center font-mono text-[11px] text-black/50">
               TDS access included with the facility subscription
             </p>

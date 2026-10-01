@@ -18,6 +18,10 @@ export type DemoTank = {
   transport: string;
   verified: string;
   finePrint: string;
+  // Real A Brite Company SDS for a comparable bath chemistry, served as the
+  // demo's sample document (Erin's call 2026-10-01). Customer tanks serve
+  // their own products' documents.
+  sampleSds: { file: string; product: string };
 };
 
 export const DEMO_TANKS: DemoTank[] = [
@@ -41,6 +45,10 @@ export const DEMO_TANKS: DemoTank[] = [
     verified: "2026-09-25",
     finePrint:
       "Working-bath hazard shown reflects hot alkaline cleaner service — exact classification per the SDS.",
+    sampleSds: {
+      file: "/placards/sds/brite-kleen-ec-145l-sds.pdf",
+      product: "Brite-Kleen EC-145L (liquid soak / electrocleaner)",
+    },
   },
   {
     slug: "DEMO-02",
@@ -62,6 +70,10 @@ export const DEMO_TANKS: DemoTank[] = [
     verified: "2026-09-25",
     finePrint:
       "Working-bath hazard shown reflects acid pickling service — exact classification per the SDS.",
+    sampleSds: {
+      file: "/placards/sds/brite-acid-pa-1-sds.pdf",
+      product: "Brite-Acid PA-1 (acid pickling compound)",
+    },
   },
   {
     slug: "DEMO-03",
@@ -85,6 +97,10 @@ export const DEMO_TANKS: DemoTank[] = [
     verified: "2026-09-25",
     finePrint:
       "Working-bath hazard shown reflects electrolytic nickel plating service — sensitizer / carcinogenicity classification per the SDS.",
+    sampleSds: {
+      file: "/placards/sds/brite-nickel-bni-600-sds.pdf",
+      product: "Brite-Nickel BNI-600 (bright nickel additive)",
+    },
   },
   {
     slug: "DEMO-04",
@@ -108,6 +124,10 @@ export const DEMO_TANKS: DemoTank[] = [
     verified: "2026-09-25",
     finePrint:
       "Working-bath hazard shown reflects hexavalent chromium conversion-coating service — carcinogen / oxidizer classification per the SDS. Cr(VI) is a regulated carcinogen; see SDS and site exposure controls.",
+    sampleSds: {
+      file: "/placards/sds/brite-guard-dc-70-sds.pdf",
+      product: "Brite-Guard DC-70 (liquid chromate)",
+    },
   },
 ];
 
