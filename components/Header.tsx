@@ -54,10 +54,11 @@ export default function Header() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
             {[
               { href: "/categories", label: "Catalogue" },
               { href: "/manuals", label: "Manuals" },
+              { href: "/placards", label: "Placards" },
               { href: "/build", label: "Build Your Line" },
               { href: "/contact", label: "Custom Series" },
               { href: "/about", label: "About" },
@@ -65,7 +66,7 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="font-semibold text-sm tracking-wider uppercase transition-colors"
+                className="font-semibold text-sm tracking-wider uppercase whitespace-nowrap transition-colors"
                 style={{ color: mutedLight }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = amber)}
                 onMouseLeave={(e) => (e.currentTarget.style.color = mutedLight)}
@@ -80,7 +81,7 @@ export default function Header() {
             {/* Contact Us button */}
             <a
               href="mailto:info@platingposters.com"
-              className="hidden md:inline-flex items-center justify-center px-4 py-1.5 font-black text-xs tracking-widest uppercase transition-opacity hover:opacity-90"
+              className="hidden lg:inline-flex items-center justify-center px-4 py-1.5 font-black text-xs tracking-widest uppercase whitespace-nowrap transition-opacity hover:opacity-90"
               style={{ background: amber, color: gunmetal }}
             >
               Contact Us
@@ -88,7 +89,7 @@ export default function Header() {
 
             {/* Mobile menu button */}
             <button
-              className="md:hidden p-2"
+              className="lg:hidden p-2"
               style={{ color: mutedLight }}
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label="Toggle menu"
@@ -109,12 +110,13 @@ export default function Header() {
       {menuOpen && (
         <div
           style={{ background: "#141929", borderTop: `1px solid ${borderDark}` }}
-          className="md:hidden px-4 pb-4 pt-3"
+          className="lg:hidden px-4 pb-4 pt-3"
         >
           <nav className="flex flex-col gap-4">
             {[
               { href: "/categories", label: "Catalogue" },
               { href: "/manuals", label: "Manuals" },
+              { href: "/placards", label: "Placards" },
               { href: "/build", label: "Build Your Line" },
               { href: "/contact", label: "Custom Series" },
               { href: "/about", label: "About" },

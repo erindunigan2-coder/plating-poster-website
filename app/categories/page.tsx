@@ -113,18 +113,18 @@ export default function CategoriesPage() {
 
                 {/* CTA */}
                 <div
-                  className="flex items-center justify-between mt-5 pt-4"
+                  className="flex items-center justify-between gap-4 mt-5 pt-4"
                   style={{ borderTop: "1px solid #2A3048" }}
                 >
                   <span
-                    className="font-mono text-xs tracking-widest"
+                    className="font-mono text-xs tracking-widest min-w-0 flex-1 truncate"
                     style={{ color: "#3A4055" }}
                   >
                     {cat.processes.slice(0, 3).map(p => p.title.split(" ")[0]).join(" · ")}
                     {cat.processes.length > 3 ? ` · +${cat.processes.length - 3} more` : ""}
                   </span>
                   <span
-                    className="font-black text-xs uppercase tracking-widest transition-colors"
+                    className="font-black text-xs uppercase tracking-widest whitespace-nowrap shrink-0 transition-colors"
                     style={{ color: cat.accentColor }}
                   >
                     Explore →

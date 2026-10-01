@@ -294,7 +294,7 @@ export default function LineBuilder({ onLineChange }: Props) {
                 Build your process line
               </p>
               <p className="text-xs text-center max-w-xs" style={{ color: "#9098A8" }}>
-                Click steps from the library on the left to add them here.
+                Click steps from the library <span className="lg:hidden">above</span><span className="hidden lg:inline">on the left</span> to add them here.
                 Arrange them in the order your shop runs — left to right, tank by tank.
               </p>
             </div>

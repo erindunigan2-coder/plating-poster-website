@@ -30,8 +30,9 @@ const STEPS = [
 export default function PlacardsPage() {
   return (
     <main className="min-h-screen" style={{ background: "#0F1320" }}>
-      {/* Hero video */}
-      <section className="relative">
+      {/* Hero video — hidden on phones: the 1920×800 frame shrinks to an
+          unreadable strip and the intro below carries the same headline */}
+      <section className="relative hidden sm:block">
         <video
           className="w-full"
           autoPlay
@@ -164,7 +165,7 @@ export default function PlacardsPage() {
                   <span>
                     {f.label}
                     {"recommended" in f && f.recommended ? (
-                      <span className="ml-2 text-xs" style={{ color: "#5FB3A9" }}>
+                      <span className="ml-2 inline-block whitespace-nowrap text-xs" style={{ color: "#5FB3A9" }}>
                         recommended tank-side
                       </span>
                     ) : null}
@@ -192,7 +193,7 @@ export default function PlacardsPage() {
               </li>
               <li className="flex items-baseline justify-between">
                 <span>Reprint (bath change, damage) — either size</span>
-                <span className="font-bold">${PLACARD_PRICING.reprint} flat</span>
+                <span className="font-bold whitespace-nowrap shrink-0 ml-4">${PLACARD_PRICING.reprint} flat</span>
               </li>
             </ul>
           </div>
