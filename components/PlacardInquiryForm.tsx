@@ -152,7 +152,7 @@ export default function PlacardInquiryForm() {
           className="inline-block shrink-0 rounded-lg px-6 py-3 text-center text-sm font-bold uppercase tracking-wider transition-opacity hover:opacity-90"
           style={{ background: amber, color: "#141B2D" }}
         >
-          Request my quote
+          Start my placard set
         </a>
       </div>
 
