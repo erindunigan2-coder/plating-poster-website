@@ -178,10 +178,17 @@ export default function PlacardsPage() {
                 </Fragment>
               ))}
             </div>
-            <p className="mt-3 text-xs" style={{ color: dimText }}>
-              Standard 18″×12″ reads across the aisle; compact 11″×8.5″ fits tight
-              spots and small tanks. Same layout, same QR, either way.
-            </p>
+            <div className="mt-3 space-y-1 text-xs" style={{ color: dimText }}>
+              {PLACARD_PRICING.finishes.map((f) => (
+                <p key={f.key}>
+                  <span className="text-gray-300">{f.label}:</span> {f.material}.
+                </p>
+              ))}
+              <p>
+                Standard 18″×12″ reads across the aisle; compact 11″×8.5″ fits tight
+                spots and small tanks. Same layout, same QR, either way.
+              </p>
+            </div>
             <ul className="mt-4 space-y-3 border-t pt-3 text-sm text-gray-200" style={{ borderColor: borderDark }}>
               <li className="flex items-baseline justify-between">
                 <span>Volume: 10+ placards</span>
@@ -191,11 +198,18 @@ export default function PlacardsPage() {
                 <span>25+ placards</span>
                 <span className="font-bold">−15%</span>
               </li>
-              <li className="flex items-baseline justify-between">
-                <span>Reprint (bath change, damage) — either size</span>
-                <span className="font-bold whitespace-nowrap shrink-0 ml-4">${PLACARD_PRICING.reprint} flat</span>
-              </li>
+              {PLACARD_PRICING.reprints.map((r) => (
+                <li key={r.finishKey} className="flex items-baseline justify-between">
+                  <span>Reprint (bath change, damage) — {r.label}</span>
+                  <span className="font-bold whitespace-nowrap shrink-0 ml-4">
+                    ${r.prices.standard} / ${r.prices.compact}
+                  </span>
+                </li>
+              ))}
             </ul>
+            <p className="mt-3 text-xs" style={{ color: dimText }}>
+              Reprint prices are standard / compact. {PLACARD_PRICING.reprintShippingNote}
+            </p>
           </div>
           <div className="rounded-2xl border p-6" style={{ borderColor: borderDark, background: "#161B2C" }}>
             <h3 className="text-sm font-bold uppercase tracking-wider" style={{ color: amber }}>

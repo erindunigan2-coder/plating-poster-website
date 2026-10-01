@@ -137,8 +137,12 @@ export function getDemoTank(slug: string): DemoTank | undefined {
 
 // ---------------------------------------------------------------- pricing
 // Two sizes: Standard 18×12 (the across-the-aisle read, recommended) and
-// Compact 11×8.5 (tight spaces, cell dividers, small tanks). Per-finish
-// prices are keyed by size; reprint is flat across sizes.
+// Compact 11×8.5 (tight spaces, cell dividers, small tanks). Two finishes
+// since 2026-10-01 (printer costs in hand, Erin's call): Shop Tough is now
+// 3mm PVC Sintra + matte laminate at the old entry price (card stock and
+// styrene retired), Aluminum is .040 aluminum + matte laminate. Reprints
+// are priced per finish and size; Shop Tough standard stays at the
+// published $29.
 export type PlacardSizeKey = "standard" | "compact";
 
 export const PLACARD_PRICING = {
@@ -159,21 +163,31 @@ export const PLACARD_PRICING = {
     },
   ],
   finishes: [
-    { key: "matte", label: "Matte Laminate", prices: { standard: 39, compact: 29 } },
     {
       key: "shopTough",
       label: "Shop Tough",
-      prices: { standard: 49, compact: 39 },
+      material: "3mm PVC with matte laminate — rigid, waterproof, tank-side ready",
+      prices: { standard: 39, compact: 29 },
       recommended: true,
     },
-    { key: "aluminum", label: "Aluminum Composite", prices: { standard: 99, compact: 79 } },
+    {
+      key: "aluminum",
+      label: "Aluminum",
+      material: ".040 aluminum with matte laminate — the lifetime option",
+      prices: { standard: 99, compact: 79 },
+    },
   ],
   volumeBreaks: [
     { min: 10, discount: 0.1 },
     { min: 25, discount: 0.15 },
   ],
   setupFee: 199,
-  reprint: 29,
+  reprints: [
+    { finishKey: "shopTough", label: "Shop Tough", prices: { standard: 29, compact: 19 } },
+    { finishKey: "aluminum", label: "Aluminum", prices: { standard: 59, compact: 39 } },
+  ],
+  reprintShippingNote:
+    "Reprints ship $9.95 flat — free with any other order, or on 3+ reprints.",
   subscription: [
     { maxTanks: 10, price: 249, label: "Up to 10 tanks" },
     { maxTanks: 25, price: 399, label: "11–25 tanks" },
@@ -188,7 +202,7 @@ export function estimateSet(
 ) {
   const finish =
     PLACARD_PRICING.finishes.find((f) => f.key === finishKey) ??
-    PLACARD_PRICING.finishes[1];
+    PLACARD_PRICING.finishes[0];
   const size =
     PLACARD_PRICING.sizes.find((s) => s.key === sizeKey) ?? PLACARD_PRICING.sizes[0];
   let discount = 0;
