@@ -147,12 +147,12 @@ export default function PlacardsPage() {
             <h3 className="text-sm font-bold uppercase tracking-wider" style={{ color: amber }}>
               Per placard — customized to your line
             </h3>
-            <div className="mt-4 grid grid-cols-[1fr_auto_auto] gap-x-3 gap-y-3 text-sm text-gray-200 sm:gap-x-6">
+            <div className="mt-4 grid grid-cols-[minmax(0,1fr)_auto_auto] gap-x-3 gap-y-3 text-sm text-gray-200 sm:gap-x-6">
               <span />
               {PLACARD_PRICING.sizes.map((s) => (
                 <span
                   key={s.key}
-                  className="text-right text-xs font-semibold uppercase tracking-wider"
+                  className="text-right text-[10px] font-semibold uppercase tracking-wide sm:text-xs sm:tracking-wider"
                   style={{ color: mutedText }}
                 >
                   {s.label}
@@ -202,9 +202,9 @@ export default function PlacardsPage() {
                 Change the chemistry in the process? Have us do a quick re-print:
               </li>
               {PLACARD_PRICING.reprints.map((r) => (
-                <li key={r.finishKey} className="flex items-baseline justify-between">
+                <li key={r.finishKey} className="flex flex-wrap items-baseline justify-between gap-x-4">
                   <span>Re-print — {r.label}</span>
-                  <span className="font-bold whitespace-nowrap shrink-0 ml-4">
+                  <span className="font-bold whitespace-nowrap">
                     ${r.prices.standard} / ${r.prices.compact}
                   </span>
                 </li>
