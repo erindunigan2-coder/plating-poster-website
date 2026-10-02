@@ -143,11 +143,11 @@ export default function PlacardsPage() {
           Straightforward pricing
         </h2>
         <div className="mt-10 grid gap-6 sm:grid-cols-2">
-          <div className="rounded-2xl border p-6" style={{ borderColor: borderDark, background: "#161B2C" }}>
+          <div className="min-w-0 rounded-2xl border p-6" style={{ borderColor: borderDark, background: "#161B2C" }}>
             <h3 className="text-sm font-bold uppercase tracking-wider" style={{ color: amber }}>
-              Placards — one-time, two sizes
+              Per placard — customized to your line
             </h3>
-            <div className="mt-4 grid grid-cols-[1fr_auto_auto] gap-x-6 gap-y-3 text-sm text-gray-200">
+            <div className="mt-4 grid grid-cols-[1fr_auto_auto] gap-x-3 gap-y-3 text-sm text-gray-200 sm:gap-x-6">
               <span />
               {PLACARD_PRICING.sizes.map((s) => (
                 <span
@@ -165,7 +165,7 @@ export default function PlacardsPage() {
                   <span>
                     {f.label}
                     {"recommended" in f && f.recommended ? (
-                      <span className="ml-2 inline-block whitespace-nowrap text-xs" style={{ color: "#5FB3A9" }}>
+                      <span className="block text-xs sm:ml-2 sm:inline-block sm:whitespace-nowrap" style={{ color: "#5FB3A9" }}>
                         recommended tank-side
                       </span>
                     ) : null}
@@ -198,9 +198,12 @@ export default function PlacardsPage() {
                 <span>25+ placards</span>
                 <span className="font-bold">−15%</span>
               </li>
+              <li className="border-t pt-3 text-gray-300" style={{ borderColor: borderDark }}>
+                Change the chemistry in the process? Have us do a quick re-print:
+              </li>
               {PLACARD_PRICING.reprints.map((r) => (
                 <li key={r.finishKey} className="flex items-baseline justify-between">
-                  <span>Reprint (bath change, damage) — {r.label}</span>
+                  <span>Re-print — {r.label}</span>
                   <span className="font-bold whitespace-nowrap shrink-0 ml-4">
                     ${r.prices.standard} / ${r.prices.compact}
                   </span>
@@ -208,10 +211,10 @@ export default function PlacardsPage() {
               ))}
             </ul>
             <p className="mt-3 text-xs" style={{ color: dimText }}>
-              Reprint prices are standard / compact. {PLACARD_PRICING.reprintShippingNote}
+              Re-print prices are standard / compact. {PLACARD_PRICING.reprintShippingNote}
             </p>
           </div>
-          <div className="rounded-2xl border p-6" style={{ borderColor: borderDark, background: "#161B2C" }}>
+          <div className="min-w-0 rounded-2xl border p-6" style={{ borderColor: borderDark, background: "#161B2C" }}>
             <h3 className="text-sm font-bold uppercase tracking-wider" style={{ color: amber }}>
               Hosting subscription — per facility, per year
             </h3>

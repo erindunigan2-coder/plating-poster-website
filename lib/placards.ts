@@ -138,9 +138,11 @@ export function getDemoTank(slug: string): DemoTank | undefined {
 // ---------------------------------------------------------------- pricing
 // Two sizes: Standard 18×12 (the across-the-aisle read, recommended) and
 // Compact 11×8.5 (tight spaces, cell dividers, small tanks). Two finishes
-// since 2026-10-01 (printer costs in hand, Erin's call): Shop Tough is now
-// 3mm PVC Sintra + matte laminate at the old entry price (card stock and
-// styrene retired), Aluminum is .040 aluminum + matte laminate. Reprints
+// since 2026-10-01 (printer costs in hand, Erin's call): Shop Tough is
+// 3mm PVC Sintra at the old entry price (card stock and styrene retired
+// for placards — poster Shop Tough is still .030 styrene), Aluminum is
+// .040 aluminum. Laminate overcoat is part of the printer's construction
+// but not part of the marketed description (Erin, 2026-10-02). Reprints
 // are priced per finish and size; Shop Tough standard stays at the
 // published $29.
 export type PlacardSizeKey = "standard" | "compact";
@@ -166,14 +168,14 @@ export const PLACARD_PRICING = {
     {
       key: "shopTough",
       label: "Shop Tough",
-      material: "3mm PVC with matte laminate — rigid, waterproof, tank-side ready",
+      material: "rigid, waterproof 3mm PVC",
       prices: { standard: 39, compact: 29 },
       recommended: true,
     },
     {
       key: "aluminum",
       label: "Aluminum",
-      material: ".040 aluminum with matte laminate — the lifetime option",
+      material: ".040 aluminum",
       prices: { standard: 99, compact: 79 },
     },
   ],
