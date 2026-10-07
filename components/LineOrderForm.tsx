@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { getUnitPrice, LOGO_UPGRADE_PRICE } from "@/lib/pricing";
 import { getGroupInfo, type ProcessStep } from "@/lib/steps";
+import HeardAboutField from "./HeardAboutField";
 
 type LineStep = {
   instanceId: string;
@@ -95,6 +96,8 @@ export default function LineOrderForm({ lineSteps }: Props) {
   const [size, setSize] = useState("18×24");
   const [finish, setFinish] = useState("Matte Laminate");
   const [logoUpgrade, setLogoUpgrade] = useState(false);
+  const [heard, setHeard] = useState("");
+  const [referrer, setReferrer] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [showPreview, setShowPreview] = useState(false);
@@ -137,7 +140,7 @@ export default function LineOrderForm({ lineSteps }: Props) {
       const res = await fetch("/api/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ items, logoUpgrade }),
+        body: JSON.stringify({ items, logoUpgrade, heardAbout: heard, referrer }),
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Checkout failed");
@@ -546,6 +549,10 @@ export default function LineOrderForm({ lineSteps }: Props) {
                     ${total.toFixed(2)}
                   </span>
                 </div>
+              </div>
+
+              <div className="mb-4">
+                <HeardAboutField heard={heard} referrer={referrer} onHeardChange={setHeard} onReferrerChange={setReferrer} />
               </div>
 
               {error && (

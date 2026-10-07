@@ -9,10 +9,12 @@ export async function POST(req: NextRequest) {
 
   try {
     const body = await req.json();
-    const { items, manualItems, logoUpgrade } = body as {
+    const { items, manualItems, logoUpgrade, heardAbout, referrer } = body as {
       items?: CheckoutItem[];
       manualItems?: ManualCheckoutItem[];
       logoUpgrade: boolean;
+      heardAbout?: string;
+      referrer?: string;
     };
 
     const posterItems = Array.isArray(items) ? items : [];
@@ -29,6 +31,8 @@ export async function POST(req: NextRequest) {
       logoUpgrade: !!logoUpgrade,
       successUrl: `${origin}/checkout/success`,
       cancelUrl: `${origin}/checkout/cancel`,
+      heardAbout: typeof heardAbout === "string" ? heardAbout : undefined,
+      referrer: typeof referrer === "string" ? referrer : undefined,
     });
 
     return NextResponse.json({ url });

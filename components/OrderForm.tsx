@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Poster } from "@/lib/posters";
 import { getUnitPrice, LOGO_UPGRADE_PRICE } from "@/lib/pricing";
+import HeardAboutField from "./HeardAboutField";
 
 type Props = {
   poster: Poster;
@@ -48,6 +49,8 @@ export default function OrderForm({ poster, edition: editionProp, onEditionChang
   };
   const [logoUpgrade, setLogoUpgrade] = useState(false);
   const [quantity, setQuantity] = useState(1);
+  const [heard, setHeard] = useState("");
+  const [referrer, setReferrer] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
@@ -73,6 +76,8 @@ export default function OrderForm({ poster, edition: editionProp, onEditionChang
             quantity,
           }],
           logoUpgrade,
+          heardAbout: heard,
+          referrer,
         }),
       });
       const data = await res.json();
@@ -230,6 +235,9 @@ export default function OrderForm({ poster, edition: editionProp, onEditionChang
           </div>
         </label>
       </div>
+
+      {/* Attribution */}
+      <HeardAboutField heard={heard} referrer={referrer} onHeardChange={setHeard} onReferrerChange={setReferrer} />
 
       {/* Error */}
       {error && (

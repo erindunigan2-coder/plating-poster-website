@@ -77,9 +77,14 @@ export async function POST(req: NextRequest) {
       const shippingCost = (session.shipping_cost?.amount_total || 0) / 100;
       const taxAmount = (session.total_details?.amount_tax || 0) / 100;
 
+      const heardAbout = session.metadata?.heard_about || "";
+      const referredBy = session.metadata?.referred_by || "";
+
       const notes = [
         `Stripe Session: ${session.id}`,
         `Payment: ${session.payment_status}`,
+        heardAbout ? `How they heard about us: ${heardAbout}` : "",
+        referredBy ? `Referred by (rep name or code): ${referredBy}` : "",
         "",
         "Items:",
         itemDetails,

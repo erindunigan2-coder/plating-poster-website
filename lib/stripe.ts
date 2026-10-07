@@ -40,8 +40,11 @@ export async function createCheckoutSession(params: {
   logoUpgrade: boolean;
   successUrl: string;
   cancelUrl: string;
+  /** "How did you hear about us?" attribution — free text, used for rep commission tracking. */
+  heardAbout?: string;
+  referrer?: string;
 }): Promise<string> {
-  const { items, manualItems = [], logoUpgrade, successUrl, cancelUrl } = params;
+  const { items, manualItems = [], logoUpgrade, successUrl, cancelUrl, heardAbout, referrer } = params;
 
   // Validate and build line items with server-side pricing
   const lineItems: Stripe.Checkout.SessionCreateParams.LineItem[] = [];
@@ -208,6 +211,8 @@ export async function createCheckoutSession(params: {
       order_summary: orderSummary.slice(0, 500),
       logo_upgrade: logoUpgrade ? "true" : "false",
       manuals_json: manualsMeta,
+      ...(heardAbout && heardAbout.trim() ? { heard_about: heardAbout.trim().slice(0, 100) } : {}),
+      ...(referrer && referrer.trim() ? { referred_by: referrer.trim().slice(0, 100) } : {}),
     },
   });
 
