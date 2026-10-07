@@ -10,6 +10,18 @@ const mutedText = "#9098A8";
 const inputCls =
   "w-full rounded-lg border bg-[#12162280] px-4 py-3 text-sm text-gray-100 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#E8A020]/60";
 
+const HEARD_OPTIONS = [
+  "Sales rep or distributor",
+  "Colleague / word of mouth",
+  "LinkedIn",
+  "Postcard / mailer",
+  "Trade show / event",
+  "Web search",
+  "Other",
+];
+
+const REFERRAL_OPTIONS = new Set(["Sales rep or distributor", "Colleague / word of mouth"]);
+
 export default function PlacardInquiryForm() {
   const [company, setCompany] = useState("");
   const [name, setName] = useState("");
@@ -18,6 +30,8 @@ export default function PlacardInquiryForm() {
   const [tanks, setTanks] = useState(10);
   const [finish, setFinish] = useState("shopTough");
   const [size, setSize] = useState<PlacardSizeKey>("standard");
+  const [heard, setHeard] = useState("");
+  const [referrer, setReferrer] = useState("");
   const [notes, setNotes] = useState("");
 
   const est = useMemo(() => estimateSet(tanks, finish, size), [tanks, finish, size]);
@@ -29,6 +43,8 @@ export default function PlacardInquiryForm() {
       `Contact: ${name}`,
       `Email: ${email}`,
       `Phone: ${phone}`,
+      `How they heard about us: ${heard || "(not answered)"}`,
+      ...(referrer ? [`Referred by (rep name or code): ${referrer}`] : []),
       ``,
       `Tanks: ${tanks}`,
       `Size: ${est.sizeLabel}`,
@@ -47,7 +63,7 @@ export default function PlacardInquiryForm() {
       `— sent from platingposters.com/placards`,
     ].join("\n");
     return `mailto:info@platingposters.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  }, [company, name, email, phone, tanks, finish, notes, est]);
+  }, [company, name, email, phone, heard, referrer, tanks, finish, notes, est]);
 
   return (
     <div
@@ -59,6 +75,33 @@ export default function PlacardInquiryForm() {
         <input className={inputCls} style={{ borderColor: borderDark }} placeholder="Your name *" value={name} onChange={(e) => setName(e.target.value)} />
         <input className={inputCls} style={{ borderColor: borderDark }} placeholder="Email *" type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
         <input className={inputCls} style={{ borderColor: borderDark }} placeholder="Phone" value={phone} onChange={(e) => setPhone(e.target.value)} />
+        <select
+          className={inputCls}
+          style={{ borderColor: borderDark, color: heard ? undefined : "#6B7280" }}
+          value={heard}
+          onChange={(e) => {
+            setHeard(e.target.value);
+            if (!REFERRAL_OPTIONS.has(e.target.value)) setReferrer("");
+          }}
+        >
+          <option value="" disabled>
+            How did you hear about us?
+          </option>
+          {HEARD_OPTIONS.map((o) => (
+            <option key={o} value={o}>
+              {o}
+            </option>
+          ))}
+        </select>
+        {REFERRAL_OPTIONS.has(heard) && (
+          <input
+            className={inputCls}
+            style={{ borderColor: borderDark }}
+            placeholder="Who referred you? (rep name or code)"
+            value={referrer}
+            onChange={(e) => setReferrer(e.target.value)}
+          />
+        )}
       </div>
 
       <div className="mt-6 grid gap-6 sm:grid-cols-2">
