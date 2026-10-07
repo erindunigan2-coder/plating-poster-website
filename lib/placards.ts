@@ -46,8 +46,8 @@ export const DEMO_TANKS: DemoTank[] = [
     finePrint:
       "Working-bath hazard shown reflects hot alkaline cleaner service — exact classification per the SDS.",
     sampleSds: {
-      file: "/placards/sds/brite-kleen-ec-145l-sds.pdf",
-      product: "Brite-Kleen EC-145L (liquid soak / electrocleaner)",
+      file: "/placards/sds/brite-kleen-sc-200l-sds.pdf",
+      product: "Brite-Kleen SC-200L (soak cleaner)",
     },
   },
   {
@@ -71,8 +71,8 @@ export const DEMO_TANKS: DemoTank[] = [
     finePrint:
       "Working-bath hazard shown reflects acid pickling service — exact classification per the SDS.",
     sampleSds: {
-      file: "/placards/sds/brite-acid-pa-1-sds.pdf",
-      product: "Brite-Acid PA-1 (acid pickling compound)",
+      file: "/placards/sds/hydrochloric-acid-22be-sds.pdf",
+      product: "Hydrochloric Acid 22BE",
     },
   },
   {
