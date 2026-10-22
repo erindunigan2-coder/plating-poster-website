@@ -259,6 +259,8 @@ export const DEMO_TANKS: DemoTank[] = [
       file: "/placards/sds/brite-copper-cn-707-sds.pdf",
       product: "Brite-Copper CN-707 (cyanide copper strike)",
     },
+    sampleSdsCaption:
+      "Sample document: the Brite-Copper CN-707 SDS — the cyanide copper strike specified for this line, supplied by A Brite Company. Your placards serve your own chemistry's documents.",
     unlisted: true,
   },
 ];
