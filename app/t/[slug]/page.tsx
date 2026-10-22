@@ -116,6 +116,11 @@ export default async function TankPage({
               bath — {tank.sampleSds.product}. Your placards serve your own
               chemistry&rsquo;s documents.
             </p>
+            {tank.sdsNote && (
+              <p className="text-center text-[11px] leading-relaxed text-black/40">
+                {tank.sdsNote}
+              </p>
+            )}
             <div
               aria-disabled="true"
               className="block cursor-default rounded-xl border-2 px-5 py-4 text-center text-sm font-bold uppercase tracking-wider opacity-50"

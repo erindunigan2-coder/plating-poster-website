@@ -25,6 +25,9 @@ export type DemoTank = {
   // Prospect-specific sample tanks (e.g. the QRV set) resolve at /t/<slug>
   // but stay off the public /placards demo gallery.
   unlisted?: boolean;
+  // Extra caption when the sample SDS is a chemistry stand-in whose hazard
+  // profile differs from the named tank (Dr. Elena referee, 2026-10-22).
+  sdsNote?: string;
 };
 
 export const DEMO_TANKS: DemoTank[] = [
@@ -178,6 +181,7 @@ export const DEMO_TANKS: DemoTank[] = [
       "Never cross-rack; never let zincate solution enter this tank",
       "Oxidizer — may intensify fire (GHS03)",
       "Corrosive — acid bath (GHS05)",
+      "Local exhaust required — acid strip can evolve nitrogen oxide (NOx) fumes; keep lid / ventilation controls in service",
     ],
     ppe: ["Goggles", "Gloves", "Face shield", "Apron"],
     image: "/placards/demo-tank-3.jpg",
@@ -188,8 +192,10 @@ export const DEMO_TANKS: DemoTank[] = [
       "Qorvo sample page — Rev A, verify before qualification. 1.21 is a line position, not a specific gravity. Acid strength is withheld pending qualification. Sample SDS is for a comparable A Brite acid deoxidizer bath.",
     sampleSds: {
       file: "/placards/sds/brite-kleen-apt-deox-nc-620-sds.pdf",
-      product: "Brite-Kleen APT-DEOX NC-620 (comparable acid deoxidizer)",
+      product: "Brite-Kleen APT-DEOX NC-620 (comparable oxidizing acid deoxidizer)",
     },
+    sdsNote:
+      "NC-620 is a ferric sulfate / sulfuric / nitric acid deoxidizer shown as a representative acid-bath SDS — it is not the nitric strip's own document, and it carries classifications (e.g. acid-mist carcinogenicity) that a straight nitric strip does not. Your subscription serves this tank's actual SDS.",
     unlisted: true,
   },
   {
