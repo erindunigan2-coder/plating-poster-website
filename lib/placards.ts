@@ -22,6 +22,9 @@ export type DemoTank = {
   // demo's sample document (Erin's call 2026-10-01). Customer tanks serve
   // their own products' documents.
   sampleSds: { file: string; product: string };
+  // Prospect-specific sample tanks (e.g. the QRV set) resolve at /t/<slug>
+  // but stay off the public /placards demo gallery.
+  unlisted?: boolean;
 };
 
 export const DEMO_TANKS: DemoTank[] = [
@@ -128,6 +131,121 @@ export const DEMO_TANKS: DemoTank[] = [
       file: "/placards/sds/brite-guard-dc-70-sds.pdf",
       product: "Brite-Guard DC-70 (liquid chromate)",
     },
+  },
+
+  // ---- QRV set: Qorvo prospect sample placards (2026-10-22). Chemistry
+  // mirrors the Qorvo sample placard set at Rev A — qualitative only (no
+  // acid concentrations, no hard contamination limits, per the project's
+  // withheld-data rules). Tank numbers are LINE POSITIONS. Unlisted.
+  {
+    slug: "QRV-01",
+    tankNumber: 1.18,
+    name: "Bondal Zincate 1",
+    makeup: "Alkaline Zincate — Cyanide-Bearing · Full Strength",
+    makeupDetail: "Immersion 20–120 s by alloy · Rev A — verify before qualification",
+    volume: "Per facility spec",
+    temp: "65–85 °F (ambient)",
+    signalWord: "DANGER",
+    hazards: [
+      "Contains cyanide — contact with acid liberates deadly HCN gas (GHS06)",
+      "Corrosive — strong alkaline bath (GHS05)",
+      "Never let this solution reach the nitric strip (position 1.21)",
+    ],
+    ppe: ["Goggles", "Gloves", "Face shield", "Apron"],
+    image: "/placards/demo-tank-1.jpg",
+    transport:
+      "Cyanide-bearing zincate concentrates ship as corrosive / toxic as classified on the SDS. Transport classification applies to the packaged concentrate — not this tank.",
+    verified: "2026-10-22",
+    finePrint:
+      "Qorvo sample page — Rev A, verify before qualification. 1.18 is a line position, not a specific gravity. Working-bath hazard reflects cyanide-bearing alkaline zincate service — exact classification per the SDS.",
+    sampleSds: {
+      file: "/placards/sds/potassium-zincate-460-sds.pdf",
+      product: "Potassium Zincate Concentrate 460 (comparable alkaline zincate)",
+    },
+    unlisted: true,
+  },
+  {
+    slug: "QRV-02",
+    tankNumber: 1.21,
+    name: "Nitric Acid Strip",
+    makeup: "Nitric Acid Strip — Strength per Qualified Spec",
+    makeupDetail: "Strips the first zincate film · Rev A — verify before qualification",
+    volume: "Per facility spec",
+    temp: "Ambient",
+    signalWord: "DANGER",
+    hazards: [
+      "CYANIDE + ACID = DEADLY HCN GAS — this tank sits between two cyanide zincates (1.18 / 1.24)",
+      "Never cross-rack; never let zincate solution enter this tank",
+      "Oxidizer — may intensify fire (GHS03)",
+      "Corrosive — acid bath (GHS05)",
+    ],
+    ppe: ["Goggles", "Gloves", "Face shield", "Apron"],
+    image: "/placards/demo-tank-3.jpg",
+    transport:
+      "Nitric acid concentrate ships as an oxidizing, corrosive liquid (Class 8 / 5.1 as classified). Transport classification applies to the packaged concentrate — not this tank.",
+    verified: "2026-10-22",
+    finePrint:
+      "Qorvo sample page — Rev A, verify before qualification. 1.21 is a line position, not a specific gravity. Acid strength is withheld pending qualification. Sample SDS is for a comparable A Brite acid deoxidizer bath.",
+    sampleSds: {
+      file: "/placards/sds/brite-kleen-apt-deox-nc-620-sds.pdf",
+      product: "Brite-Kleen APT-DEOX NC-620 (comparable acid deoxidizer)",
+    },
+    unlisted: true,
+  },
+  {
+    slug: "QRV-03",
+    tankNumber: 1.24,
+    name: "Bondal Zincate 2",
+    makeup: "Alkaline Zincate — Cyanide-Bearing · Full Strength",
+    makeupDetail: "Second, finer zincate film · Rev A — verify before qualification",
+    volume: "Per facility spec",
+    temp: "65–85 °F (ambient)",
+    signalWord: "DANGER",
+    hazards: [
+      "Contains cyanide — contact with acid liberates deadly HCN gas (GHS06)",
+      "Corrosive — strong alkaline bath (GHS05)",
+      "Rinse before the strike — cyanide must never ride into the acid side",
+    ],
+    ppe: ["Goggles", "Gloves", "Face shield", "Apron"],
+    image: "/placards/demo-tank-1.jpg",
+    transport:
+      "Cyanide-bearing zincate concentrates ship as corrosive / toxic as classified on the SDS. Transport classification applies to the packaged concentrate — not this tank.",
+    verified: "2026-10-22",
+    finePrint:
+      "Qorvo sample page — Rev A, verify before qualification. 1.24 is a line position, not a specific gravity. Working-bath hazard reflects cyanide-bearing alkaline zincate service — exact classification per the SDS.",
+    sampleSds: {
+      file: "/placards/sds/potassium-zincate-460-sds.pdf",
+      product: "Potassium Zincate Concentrate 460 (comparable alkaline zincate)",
+    },
+    unlisted: true,
+  },
+  {
+    slug: "QRV-04",
+    tankNumber: 1.28,
+    name: "Cyanide Copper Strike",
+    makeup: "Brite-Copper CN-707 · Cyanide Copper Strike",
+    makeupDetail: "Heated bath — setpoint finalized at qualification · Rev A",
+    volume: "Per facility spec",
+    temp: "Heated bath",
+    signalWord: "DANGER",
+    hazards: [
+      "Contains cyanide — contact with acid liberates deadly HCN gas (GHS06)",
+      "Electrified tank — power off before reaching in",
+      "Hot — burn hazard",
+      "Corrosive — alkaline bath (GHS05)",
+    ],
+    ppe: ["Power off before reaching in", "Goggles", "Gloves", "Face shield"],
+    image: "/placards/demo-tank-6.jpg",
+    transport:
+      "Cyanide copper concentrates ship as toxic (Class 6.1 as classified). Transport classification applies to the packaged concentrate — not this tank.",
+    verified: "2026-10-22",
+    finePrint:
+      "Qorvo sample page — Rev A, verify before qualification. 1.28 is a line position, not a specific gravity. Operating setpoints are finalized at qualification — exact classification per the SDS.",
+    sampleSds: {
+      file: "/placards/sds/brite-copper-cn-707-sds.pdf",
+      product: "Brite-Copper CN-707 (cyanide copper strike)",
+    },
+    unlisted: true,
   },
 ];
 

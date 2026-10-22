@@ -73,7 +73,7 @@ export default function PlacardsPage() {
           </p>
         </div>
         <div className="grid gap-8 sm:grid-cols-2">
-          {DEMO_TANKS.map((t) => (
+          {DEMO_TANKS.filter((t) => !t.unlisted).map((t) => (
             <div
               key={t.slug}
               className="overflow-hidden rounded-2xl border"
