@@ -28,6 +28,10 @@ export type DemoTank = {
   // Extra caption when the sample SDS is a chemistry stand-in whose hazard
   // profile differs from the named tank (Dr. Elena referee, 2026-10-22).
   sdsNote?: string;
+  // Replaces the default "real SDS from A Brite Company for a comparable
+  // bath" caption when the served SDS is the tank's ACTUAL product or
+  // otherwise not A Brite-issued (e.g. the QRV Bondal pages, Erin 10/22).
+  sampleSdsCaption?: string;
 };
 
 export const DEMO_TANKS: DemoTank[] = [
@@ -162,9 +166,11 @@ export const DEMO_TANKS: DemoTank[] = [
     finePrint:
       "Qorvo sample page — Rev A, verify before qualification. 1.18 is a line position, not a specific gravity. Working-bath hazard reflects cyanide-bearing alkaline zincate service — exact classification per the SDS.",
     sampleSds: {
-      file: "/placards/sds/potassium-zincate-460-sds.pdf",
-      product: "Potassium Zincate Concentrate 460 (comparable alkaline zincate)",
+      file: "/placards/sds/bondal-sds.pdf",
+      product: "BONDAL (alkaline zincate immersion process)",
     },
+    sampleSdsCaption:
+      "Sample document: the BONDAL process SDS (MacDermid Enthone — the zincate specified for this line, supplied through A Brite Company). Your placards serve your own chemistry's documents.",
     unlisted: true,
   },
   {
@@ -220,9 +226,11 @@ export const DEMO_TANKS: DemoTank[] = [
     finePrint:
       "Qorvo sample page — Rev A, verify before qualification. 1.24 is a line position, not a specific gravity. Working-bath hazard reflects cyanide-bearing alkaline zincate service — exact classification per the SDS.",
     sampleSds: {
-      file: "/placards/sds/potassium-zincate-460-sds.pdf",
-      product: "Potassium Zincate Concentrate 460 (comparable alkaline zincate)",
+      file: "/placards/sds/bondal-sds.pdf",
+      product: "BONDAL (alkaline zincate immersion process)",
     },
+    sampleSdsCaption:
+      "Sample document: the BONDAL process SDS (MacDermid Enthone — the zincate specified for this line, supplied through A Brite Company). Your placards serve your own chemistry's documents.",
     unlisted: true,
   },
   {

@@ -111,11 +111,17 @@ export default async function TankPage({
             <p className="text-center font-mono text-[11px] text-black/50">
               SDS is free to anyone who scans — no login required
             </p>
-            <p className="text-center text-[11px] leading-relaxed text-black/40">
-              Sample document: a real SDS from A Brite Company for a comparable
-              bath — {tank.sampleSds.product}. Your placards serve your own
-              chemistry&rsquo;s documents.
-            </p>
+            {tank.sampleSdsCaption ? (
+              <p className="text-center text-[11px] leading-relaxed text-black/40">
+                {tank.sampleSdsCaption}
+              </p>
+            ) : (
+              <p className="text-center text-[11px] leading-relaxed text-black/40">
+                Sample document: a real SDS from A Brite Company for a comparable
+                bath — {tank.sampleSds.product}. Your placards serve your own
+                chemistry&rsquo;s documents.
+              </p>
+            )}
             {tank.sdsNote && (
               <p className="text-center text-[11px] leading-relaxed text-black/40">
                 {tank.sdsNote}
